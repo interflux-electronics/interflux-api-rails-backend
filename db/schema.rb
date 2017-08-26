@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,38 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_170_815_104_252) do
+ActiveRecord::Schema.define(version: 20170803154942) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'leads', force: :cascade do |t|
-    t.string 'name'
-    t.string 'company'
-    t.string 'country'
-    t.string 'phone'
-    t.string 'email'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.string "product_type"
+    t.boolean "visible", default: false
+    t.string "pitch"
+    t.text "corpus"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'product_translations', force: :cascade do |t|
-    t.integer 'product_id'
-    t.string 'locale'
-    t.text 'pitch'
-    t.text 'corpus'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-  end
-
-  create_table 'products', force: :cascade do |t|
-    t.string 'name'
-    t.string 'slug'
-    t.boolean 'visible', default: false, null: false
-    t.string 'product_type'
-    t.string 'image_url'
-    t.text 'pitch'
-    t.text 'corpus'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-  end
 end

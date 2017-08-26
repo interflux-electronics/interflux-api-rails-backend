@@ -9,10 +9,14 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  # config.eager_load = false
+  # JW: Turned on because better according http://blog.plataformatec.com.br/2012/08/eager-loading-for-greater-good/
+  config.eager_load = true
 
   # Show full error reports.
-  config.consider_all_requests_local = true
+  # config.consider_all_requests_local = true
+  # JW: Set to false to avoid HTML pages being used for throwing errors
+  config.consider_all_requests_local = false
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?

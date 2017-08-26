@@ -5,9 +5,9 @@ class CreateProducts < ActiveRecord::Migration[5.1]
     create_table :products do |t|
       t.string :name
       t.string :slug
-      t.string :language
-      t.string :image_url
-      t.string :teaser
+      t.string :product_type
+      t.boolean :visible, default: false
+      t.string :pitch
       t.text :corpus
 
       t.timestamps

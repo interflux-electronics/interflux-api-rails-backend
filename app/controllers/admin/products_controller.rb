@@ -1,52 +1,36 @@
 # frozen_string_literal: true
 
-class Admin
+module Admin
   class ProductsController < ApplicationController
-    before_action :set_product, only: %i[show update destroy]
-
-    # GET /admin/products
     def index
-      @products = Product.all
-      json_response(@products)
+      byebug
+      @products = Product.where(visible: true)
+      render json: JSONAPI::ResourceSerializer.new(ProductResource).serialize_to_hash(ProductResource.new(@products, nil))
     end
-
-    # POST /admin/products
-    def create
-      @product = Product.create!(product_params)
-      json_response(@product, :created)
-    end
-
-    # GET /admin/products/:id
     def show
-      json_response(@product)
+      byebug
+      product = Product.find(params[:id])
+      render json: JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(ProductResource.new(product, nil))
+    end
+    # POST /todos/:todo_id/items
+    def create
+      byebug
+      @todo.items.create!(item_params)
+      json_response(@todo, :created)
     end
 
-    # PUT /admin/products/:id
+    # PUT /todos/:todo_id/items/:id
     def update
-      @product.update(product_params)
+      byebug
+      @item.update(item_params)
       head :no_content
     end
 
-    # DELETE /admin/products/:id
+    # DELETE /todos/:todo_id/items/:id
     def destroy
-      @product.destroy
+      byebug
+      @item.destroy
       head :no_content
-    end
-
-    private
-
-    def product_params
-      params.permit(
-        :name,
-        :slug,
-        :image_url,
-        :teaser,
-        :corpus
-      )
-    end
-
-    def set_product
-      @product = Product.find(params[:id])
     end
   end
 end

@@ -1,28 +1,38 @@
 # frozen_string_literal: true
 
-Product.create!(
-  name: 'Demo product 5000',
-  slug: 'demo-product-5000',
-  language: 'en',
-  image_url: 'https://cdn.interflux.com/images/products/demo-product-5000-1.jpg',
-  teaser: 'Teaser lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  corpus: 'Corpus lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+Product.all.delete_all
+
+IF_2005M = Product.create!(
+name: 'IF 2005M',
+visible: true,
+product_type: 'soldering_flux',
+pitch: 'Interflux® IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**.'
 )
 
-Product.create!(
-  name: 'Demo product 5000',
-  slug: 'demo-product-5000',
-  language: 'it',
-  image_url: 'https://cdn.interflux.com/images/products/demo-product-5000-1.jpg',
-  teaser: 'Teaser lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  corpus: 'Corpus lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+OSPI_3311M = Product.create!(
+  name: 'OSPI 3311M',
+  visible: true,
+  product_type: 'soldering_flux',
+  pitch: 'Interflux® OSPI 3311M is an alcohol based no-clean flux for **soldering OSP** finished boards that have passed one or more reflow cycles.'
 )
 
-Product.create!(
-  name: 'Demo product 123X',
-  slug: 'demo-product-123X',
-  language: 'en',
-  image_url: 'https://cdn.interflux.com/images/products/demo-product-123X-1.jpg',
-  teaser: 'Teaser lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  corpus: 'Corpus lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+DP_5600 = Product.create!(
+  name: 'DP 5600',
+  visible: true,
+  product_type: 'solder_paste',
+  pitch: 'Interflux® DP 5600 is a no-clean solder paste for **low temperature SnBi(Ag)** alloys.'
+)
+
+QF_60 = Product.create!(
+  name: 'QF 70',
+  visible: true,
+  product_type: 'solder_wire',
+  pitch: 'Interflux® **QF 70** is an absolutely halide-free, rosin based no-clean solder wire with **fast wetting for fast soldering** operations in lead-free alloys.'
+)
+
+QF_50 = Product.create!(
+  name: 'QF 50',
+  visible: false,
+  product_type: 'solder_wire',
+  pitch: 'Interflux® **QF 50** is an absolutely halide-free, rosin based no-clean solder wire with **fast wetting for fast soldering** operations in lead-free alloys.'
 )
