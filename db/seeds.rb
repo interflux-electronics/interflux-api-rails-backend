@@ -3,10 +3,10 @@
 Product.all.delete_all
 
 IF_2005M = Product.create!(
-name: 'IF 2005M',
-visible: true,
-product_type: 'soldering_flux',
-pitch: 'Interflux® IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**.'
+  name: 'IF 2005M',
+  visible: true,
+  product_type: 'soldering_flux',
+  pitch: 'Interflux® IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**.'
 )
 
 OSPI_3311M = Product.create!(

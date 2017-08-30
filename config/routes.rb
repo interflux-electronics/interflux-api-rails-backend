@@ -10,5 +10,4 @@ Rails.application.routes.draw do
     # resources :products, only: %i[index show]
     jsonapi_resources :products
   end
-  resources :documents, only: [:index show]
 end

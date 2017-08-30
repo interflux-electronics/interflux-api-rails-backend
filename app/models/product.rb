@@ -18,5 +18,4 @@
 class Product < ApplicationRecord
   validates :name, presence: true
   validates :product_type, presence: true
-  validates :pitch, presence: true
 end

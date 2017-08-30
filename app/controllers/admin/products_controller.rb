@@ -2,35 +2,54 @@
 
 module Admin
   class ProductsController < ApplicationController
+    before_action :set_product, only: %i[update destroy]
+
+    # GET /admin/products
     def index
-      byebug
-      @products = Product.where(visible: true)
-      render json: JSONAPI::ResourceSerializer.new(ProductResource).serialize_to_hash(ProductResource.new(@products, nil))
+      process_request # Default to JSON API Resources controller
     end
+
+    # GET /admin/products/:id
     def show
-      byebug
-      product = Product.find(params[:id])
-      render json: JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(ProductResource.new(product, nil))
+      process_request # Default to JSON API Resources controller
     end
-    # POST /todos/:todo_id/items
+
+    # POST /admin/products
     def create
-      byebug
-      @todo.items.create!(item_params)
-      json_response(@todo, :created)
+      product = Product.create!(product_params)
+      json = JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(Admin::ProductResource.new(product, nil))
+      render json: json, status: 201
     end
 
-    # PUT /todos/:todo_id/items/:id
+    # PUT /admin/products/:id
     def update
-      byebug
-      @item.update(item_params)
-      head :no_content
+      @product.update(product_params)
+      head 204
     end
 
-    # DELETE /todos/:todo_id/items/:id
+    # DELETE /admin/products/:id
     def destroy
-      byebug
-      @item.destroy
-      head :no_content
+      @product.destroy
+      head 204
+    end
+
+    private
+
+    def set_product
+      @product = Product.find(params[:id])
+    end
+
+    def product_params
+      params.require(:data)
+            .require(:attributes)
+            .permit(
+              :name,
+              :slug,
+              :visible,
+              :product_type,
+              :pitch,
+              :corpus
+            )
     end
   end
 end
