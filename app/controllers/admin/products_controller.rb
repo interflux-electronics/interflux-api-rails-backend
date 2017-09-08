@@ -2,22 +2,25 @@
 
 module Admin
   class ProductsController < ApplicationController
-    before_action :set_product, only: %i[update destroy]
+    before_action :set_product, only: %i[show update destroy]
 
     # GET /admin/products
     def index
-      process_request # Default to JSON API Resources controller
+      @products = Product.all
+      @product_resources = @products.map { |product| ProductResource.new(product, nil) }
+      render json: JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(@product_resources)
     end
 
     # GET /admin/products/:id
     def show
-      process_request # Default to JSON API Resources controller
+      json = JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(Admin::ProductResource.new(@product, nil))
+      render json: json, status: 200
     end
 
     # POST /admin/products
     def create
-      product = Product.create!(product_params)
-      json = JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(Admin::ProductResource.new(product, nil))
+      @new_product = Product.create!(product_params)
+      json = JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(Admin::ProductResource.new(@new_product, nil))
       render json: json, status: 201
     end
 

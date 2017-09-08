@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class ProductsTest < ActionDispatch::IntegrationTest
+class IntegrationTestAdminProduct < ActionDispatch::IntegrationTest
   def setup
     @product1 = products('IF_2005M')
     @product2 = products('OSPI_3311M')
@@ -71,5 +71,13 @@ class ProductsTest < ActionDispatch::IntegrationTest
     assert_response 204
     product = Product.find_by(id: @product1.id)
     assert_equal product.name, 'IF 2005M X', 'Adfter the test name of the product should be "IF 2005M X"'
+  end
+
+  test 'Admin can delete a product' do
+    assert_equal Product.count, 5, 'Before deletion there should be 5 products'
+    refute_empty Product.where(name: @product1.name), 'Before deletion the database should contain a product with name "IF 2005M"'
+    delete "/admin/products/#{@product1.id}"
+    assert_equal Product.count, 4, 'After deletion there should be 4 products'
+    assert_empty Product.where(name: @product1.name), 'After deletion the database should no longer contain a product with name "IF 2005M"'
   end
 end
