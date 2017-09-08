@@ -49,7 +49,7 @@ class IntegrationTestPublicProduct < ActionDispatch::IntegrationTest
   #       attributes: {
   #         name: 'New Product',
   #         slug: nil,
-  #         visible: false,
+  #         public: false,
   #         product_type: 'soldering_flux',
   #         pitch: nil,
   #         corpus: nil

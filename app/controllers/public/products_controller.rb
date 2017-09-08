@@ -7,7 +7,7 @@ module Public
       @slug = params['slug']
       return show_by_slug(@slug) if @slug.present?
       @type = params['type']
-      @products = Product.where(visible: true)
+      @products = Product.where(public: true)
       @products = @products.where(product_type: @type) if @type.present?
       @product_resources = @products.map { |product| ProductResource.new(product, nil) }
       render json: JSONAPI::ResourceSerializer.new(ProductResource).serialize_to_hash(@product_resources)
@@ -15,7 +15,7 @@ module Public
 
     # GET /public/products?slug=:slug
     def show_by_slug(slug)
-      @product = Product.where(visible: true).find_by(slug: slug)
+      @product = Product.where(public: true).find_by(slug: slug)
       if @product.present?
         @json = JSONAPI::ResourceSerializer.new(Public::ProductResource).serialize_to_hash(Public::ProductResource.new(@product, nil))
         render json: @json, status: 200

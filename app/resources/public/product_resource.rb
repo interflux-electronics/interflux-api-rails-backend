@@ -4,7 +4,7 @@ module Public
   class ProductResource < JSONAPI::Resource
     attributes :name,
                :slug,
-               :visible,
+               :public,
                :product_type,
                :pitch,
                :corpus

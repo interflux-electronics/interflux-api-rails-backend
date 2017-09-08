@@ -48,7 +48,7 @@ module Admin
             .permit(
               :name,
               :slug,
-              :visible,
+              :public,
               :product_type,
               :pitch,
               :corpus

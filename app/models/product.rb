@@ -7,8 +7,8 @@
 #  id           :integer          not null, primary key
 #  name         :string
 #  slug         :string
-#  visible      :string           default("f")
 #  product_type :string
+#  public       :boolean          default(FALSE)
 #  pitch        :string
 #  corpus       :text
 #  created_at   :datetime         not null
