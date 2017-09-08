@@ -54,26 +54,6 @@ class IntegrationTestAdminDocument < ActionDispatch::IntegrationTest
     assert_equal data['attributes']['name'], 'New Document'
   end
 
-  # TODO: Make validations return JSON format 422
-  # test 'Admin cannot make a document with a name that already exists' do
-  #   json = {
-  #     data: {
-  #       attributes: {
-  #         name: @document1.name,
-  #         slug: nil,
-  #         public: false,
-  #         document_type: 'soldering_flux',
-  #         pitch: nil,
-  #         corpus: nil
-  #       },
-  #       type: 'documents'
-  #     }
-  #   }
-  #   assert_equal Document.count, 5, 'Before creation there should be 5 documents'
-  #   post '/admin/documents', params: json
-  #   assert_response 422
-  # end
-
   test 'Admin can update a document' do
     json = {
       data: {
@@ -98,4 +78,24 @@ class IntegrationTestAdminDocument < ActionDispatch::IntegrationTest
     assert Document.count == 3, 'After deletion there should be 4 documents'
     assert Document.find_by(id: @document1.id).nil?, "After deletion the document with ID #{@document1.id} should no longer exist"
   end
+
+  # TODO: Make validations return JSON format 422
+  # test 'Admin cannot make a document with a name that already exists' do
+  #   json = {
+  #     data: {
+  #       attributes: {
+  #         name: @document1.name,
+  #         slug: nil,
+  #         public: false,
+  #         document_type: 'soldering_flux',
+  #         pitch: nil,
+  #         corpus: nil
+  #       },
+  #       type: 'documents'
+  #     }
+  #   }
+  #   assert_equal Document.count, 5, 'Before creation there should be 5 documents'
+  #   post '/admin/documents', params: json
+  #   assert_response 422
+  # end
 end
