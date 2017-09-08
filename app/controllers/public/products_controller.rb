@@ -6,9 +6,9 @@ module Public
     def index
       @slug = params['slug']
       return show_by_slug(@slug) if @slug.present?
-      @type = params['type']
+      @product_type = params['product_type']
       @products = Product.where(public: true)
-      @products = @products.where(product_type: @type) if @type.present?
+      @products = @products.where(product_type: @product_type) if @product_type.present?
       @product_resources = @products.map { |product| ProductResource.new(product, nil) }
       render json: JSONAPI::ResourceSerializer.new(ProductResource).serialize_to_hash(@product_resources)
     end

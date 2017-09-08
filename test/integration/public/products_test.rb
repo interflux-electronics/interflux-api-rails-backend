@@ -11,7 +11,7 @@ class IntegrationTestPublicProduct < ActionDispatch::IntegrationTest
     @product5 = products('QF_50')
   end
 
-  test 'Public can fetch a product by slug' do
+  test 'Public can fetch a public product by slug' do
     get "/public/products?slug=#{@product1.slug}"
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -19,9 +19,16 @@ class IntegrationTestPublicProduct < ActionDispatch::IntegrationTest
     assert_equal data['attributes']['name'], @product1.name
   end
 
-  test 'Public cannot fetch products which are not public ' do
+  test 'Public cannot fetch a not-public products' do
     get "/public/products?slug=#{@product5.slug}"
     assert_response 422
+  end
+
+  test 'Public can fetch all products of the same type' do
+    get "/public/products?product_type=#{@product4.product_type}"
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal data.length, 1, 'Should return 1 product'
   end
 
   test 'Public can fetch all public products' do
