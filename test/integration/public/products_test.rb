@@ -11,7 +11,7 @@ class IntegrationTestPublicProduct < ActionDispatch::IntegrationTest
     @product5 = products('QF_50')
   end
 
-  test 'Public can not fetch a products by ID' do
+  test 'Public cannot fetch a products by ID' do
     get "/public/products/#{@product1.id}"
     assert_response 405
   end
@@ -38,7 +38,7 @@ class IntegrationTestPublicProduct < ActionDispatch::IntegrationTest
     refute_empty data.find { |p| p['id'].to_i == @product2.id }, 'Should contain OSPI 3311M'
     refute_empty data.find { |p| p['id'].to_i == @product3.id }, 'Should contain DP 5600'
     refute_empty data.find { |p| p['id'].to_i == @product4.id }, 'Should contain QF 70'
-    assert_empty data.find { |p| p['id'].to_i == @product5.id }, 'Should not contain QF 50'
+    assert_nil data.find { |p| p['id'].to_i == @product5.id }, 'Should not contain QF 50'
   end
 
   test 'Public cannot create products' do
