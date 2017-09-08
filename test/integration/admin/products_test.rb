@@ -54,23 +54,46 @@ class IntegrationTestAdminProduct < ActionDispatch::IntegrationTest
     data = JSON.parse(@response.body)['data']
     assert_equal data['id'].to_i, product.id, 'The response includes the ID of the created product (important)'
     assert_equal data['attributes']['name'], 'New Product'
+    assert_equal data['attributes']['slug'], 'new-product'
   end
 
-  test 'Admin can update a product 2' do
+  # TODO: Make validations return JSON format 422
+  # test 'Admin cannot make a product with a name that already exists' do
+  #   json = {
+  #     data: {
+  #       attributes: {
+  #         name: @product1.name,
+  #         slug: nil,
+  #         public: false,
+  #         product_type: 'soldering_flux',
+  #         pitch: nil,
+  #         corpus: nil
+  #       },
+  #       type: 'products'
+  #     }
+  #   }
+  #   assert_equal Product.count, 5, 'Before creation there should be 5 products'
+  #   post '/admin/products', params: json
+  #   assert_response 422
+  # end
+
+  test 'Admin can update a product' do
     json = {
       data: {
         attributes: {
-          name: 'IF 2005M X'
+          name: 'IF 2005M X',
+          slug: 'IF-2005M-X'
         },
         id: @product1.id,
         type: 'products'
       }
     }
-    assert_equal @product1.name, 'IF 2005M', 'Before the test name of the product should be "IF 2005M"'
+    assert_equal @product1.name, 'IF 2005M', 'Before the update the name of the product should be "IF 2005M"'
     put "/admin/products/#{@product1.id}", params: json
     assert_response 204
     product = Product.find_by(id: @product1.id)
-    assert_equal product.name, 'IF 2005M X', 'Adfter the test name of the product should be "IF 2005M X"'
+    assert_equal product.name, 'IF 2005M X', 'After the update the name of the product should be "IF 2005M X"'
+    assert_equal product.slug, 'IF-2005M-X', 'After the update the slug of the product should be "IF-2005M-X"'
   end
 
   test 'Admin can delete a product' do

@@ -16,6 +16,19 @@
 #
 
 class Product < ApplicationRecord
-  validates :name, presence: true
+
+  validates :name, presence: true, uniqueness: true
+  validates :slug, presence: true, uniqueness: true
   validates :product_type, presence: true
+
+  before_validation do
+    create_slug if slug.nil?
+  end
+
+  def create_slug
+    return if name.blank?
+    new_slug = name.parameterize # TODO: Allow capitals
+    slug_exists = Product.exists?(slug: new_slug)
+    self.slug = new_slug unless slug_exists
+  end
 end
