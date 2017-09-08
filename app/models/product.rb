@@ -16,6 +16,11 @@
 #
 
 class Product < ApplicationRecord
+  # has_one :language
+  # has_one :product_type
+
+  has_many :documents
+  # has_many :images
 
   validates :name, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true

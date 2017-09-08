@@ -1,0 +1,37 @@
+# == Schema Information
+#
+# Table name: documents
+#
+#  id            :integer          not null, primary key
+#  name          :string
+#  url           :string
+#  document_type :string
+#  locale        :string
+#  public        :boolean
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+document_1:
+  name: Technical Data IF 2005M
+  url: https://cdn.interflux.com/documents/technical-data-for-soldering-flux-IF-2005M-English.pdf
+  document_type: TD
+  public: true
+
+document_2:
+  name: Technical Data OSPI 3311M
+  url: https://cdn.interflux.com/documents/technical-data-for-soldering-flux-OSPI-3311M-English.pdf
+  document_type: TD
+  public: true
+
+document_3:
+  name: Outdated document
+  url: https://cdn.interflux.com/documents/outdated-document.pdf
+  document_type: TD
+  public: false
+
+document_4:
+  name: Wave Soldering best practices
+  url: https://cdn.interflux.com/documents/wave-soldering-best-practices.pdf
+  document_type: guide
+  public: true

@@ -10,6 +10,9 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :pitch
       t.text :corpus
 
+      # TODO
+      # t.text :documents, array: true, default: []
+
       t.timestamps
     end
   end
