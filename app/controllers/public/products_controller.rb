@@ -17,11 +17,18 @@ module Public
     def show_by_slug(slug)
       @product = Product.where(public: true).find_by(slug: slug)
       if @product.present?
-        @json = JSONAPI::ResourceSerializer.new(Public::ProductResource).serialize_to_hash(Public::ProductResource.new(@product, nil))
+        @json = JSONAPI::ResourceSerializer.new(Public::ProductResource, include: ['product_translations']).serialize_to_hash(Public::ProductResource.new(@product, nil))
         render json: @json, status: 200
       else
         render status: 422, json: { error: "Could not find product with slug \"#{slug}\"." }
       end
+    end
+
+    # GET /admin/products/:id
+    def show
+      @product = Product.find(params[:id])
+      json = JSONAPI::ResourceSerializer.new(Public::ProductResource).serialize_to_hash(Public::ProductResource.new(@product, nil))
+      render json: json, status: 200
     end
   end
 end

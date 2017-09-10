@@ -11,27 +11,7 @@ class IntegrationTestPublicProduct < ActionDispatch::IntegrationTest
     @product5 = products('QF_50')
   end
 
-  test 'Public can fetch a public product by slug' do
-    get "/public/products?slug=#{@product1.slug}"
-    data = JSON.parse(@response.body)['data']
-    assert_response 200
-    assert_equal data['id'].to_i, @product1.id
-    assert_equal data['attributes']['name'], @product1.name
-  end
-
-  test 'Public cannot fetch a not-public products' do
-    get "/public/products?slug=#{@product5.slug}"
-    assert_response 422
-  end
-
-  test 'Public can fetch all products of the same type' do
-    get "/public/products?product_type=#{@product4.product_type}"
-    data = JSON.parse(@response.body)['data']
-    assert_response 200
-    assert_equal data.length, 1, 'Should return 1 product'
-  end
-
-  test 'Public can fetch all public products' do
+  test 'Public can GET all public products' do
     get '/public/products'
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -43,50 +23,57 @@ class IntegrationTestPublicProduct < ActionDispatch::IntegrationTest
     assert_nil data.find { |p| p['id'].to_i == @product5.id }, 'Should not contain QF 50'
   end
 
-  # TODO
-  # test 'Public cannot fetch a products by ID' do
-  #   get "/public/products/#{@product1.id}"
-  #   assert_response 405
-  # end
+  test 'Public can GET a product by ID' do
+    get "/public/products/#{@product1.id}"
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal data['id'].to_i, @product1.id
+    assert_equal data['attributes']['name'], @product1.name
+  end
 
-  # TODO
-  # test 'Public cannot create products' do
-  #   json = {
-  #     data: {
-  #       attributes: {
-  #         name: 'New Product',
-  #         slug: nil,
-  #         public: false,
-  #         product_type: 'soldering_flux',
-  #         pitch: nil,
-  #         corpus: nil
-  #       },
-  #       type: 'products'
-  #     }
-  #   }
-  #   post '/public/products', params: json
-  #   assert_response 405
-  # end
+  test 'Public can GET a product by slug' do
+    get "/public/products?slug=#{@product1.slug}"
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal data['id'].to_i, @product1.id
+    assert_equal data['attributes']['name'], @product1.name
+  end
 
-  # TODO
-  # test 'Public cannot update a product' do
-  #   json = {
-  #     data: {
-  #       attributes: {
-  #         name: 'IF 2005M X'
-  #       },
-  #       id: @product1.id,
-  #       type: 'products'
-  #     }
-  #   }
-  #   put "/public/products/#{@product1.id}", params: json
-  #   assert_response 405
-  # end
+  test 'Public cannot GET none-public products by ID' do
+    get "/public/products/#{@product5.id}"
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal data['id'].to_i, @product5.id
+    assert_equal data['attributes']['name'], @product5.name
+  end
 
-  # TODO
-  # test 'Public cannot delete a product' do
-  #   assert_equal Product.count, 5, 'Before deletion there should be 5 products'
-  #   delete "/public/products/#{@product1.id}"
-  #   assert_equal Product.count, 5, 'After deletion there should still be 5 products'
-  # end
+  test 'Public cannot GET none-public products by slug' do
+    get "/public/products?slug=#{@product5.slug}"
+    assert_response 422
+  end
+
+  test 'Public can fetch all products of the same type' do
+    get "/public/products?product_type=#{@product4.product_type}"
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal data.length, 1, 'Should return 1 product'
+  end
+
+  test 'Public cannot create products' do
+    assert_raise ActionController::RoutingError do
+      post '/public/products', params: {}
+    end
+  end
+
+  test 'Public cannot update a product' do
+    assert_raise ActionController::RoutingError do
+      put "/public/products/#{@product1.id}", params: {}
+    end
+  end
+
+  test 'Public cannot delete a product' do
+    assert_raise ActionController::RoutingError do
+      delete "/public/products/#{@product1.id}"
+    end
+  end
 end

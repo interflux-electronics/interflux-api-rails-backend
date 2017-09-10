@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     jsonapi_resources :documents
   end
   namespace :public do
-    jsonapi_resources :products, only: %i[index]
-    jsonapi_resources :documents, only: %i[index]
+    jsonapi_resources :products, only: %i[index show]
+    jsonapi_resources :documents, only: %i[index show]
   end
 end

@@ -3,11 +3,11 @@
 # Table name: products
 #
 #  id           :integer          not null, primary key
-#  name         :string
-#  slug         :string
-#  product_type :string
 #  public       :boolean          default(FALSE)
+#  name         :string
 #  pitch        :string
+#  product_type :string
+#  slug         :string
 #  corpus       :text
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null

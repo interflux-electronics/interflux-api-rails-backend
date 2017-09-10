@@ -5,22 +5,26 @@
 # Table name: products
 #
 #  id           :integer          not null, primary key
-#  name         :string
-#  slug         :string
-#  product_type :string
 #  public       :boolean          default(FALSE)
+#  name         :string
 #  pitch        :string
+#  product_type :string
+#  slug         :string
 #  corpus       :text
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #
 
 class Product < ApplicationRecord
-  # has_one :language
   # has_one :product_type
 
   has_many :documents
+  has_many :product_translations
   # has_many :images
+  # has_many :processes
+  # has_many :uses
+  # has_many :related_products
+  # has_many :related_articles
 
   validates :name, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true

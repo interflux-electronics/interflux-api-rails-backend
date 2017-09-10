@@ -3,8 +3,8 @@
 module Public
   class DocumentResource < JSONAPI::Resource
     attributes :name,
-               :url,
+               :document_type,
                :public,
-               :document_type
+               :url
   end
 end
