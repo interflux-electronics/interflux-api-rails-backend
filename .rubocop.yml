@@ -1,4 +1,10 @@
 Metrics/LineLength:
   Enabled: false
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+Metrics/BlockLength:
+  Enabled: false
 Documentation:
   Enabled: false
