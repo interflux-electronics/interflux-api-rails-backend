@@ -17,11 +17,23 @@ gem 'rails', '~> 5.1.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
+
+# For encoding and decoding JWT tokens
+# https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
+# https://jwt.io/
+gem 'jwt'
+
+# The simple command gem is an easy way of creating services. Its role is
+# similar to the role of a helper, but instead of facilitating the connection
+# between the controller and the view, it does the same for the controller and
+# the model. In this way, we can shorten the code in the models and controllers.
+# https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
+gem 'simple_command'
 
 group :development, :test do
   gem 'awesome_print', require: 'ap' # For coloured printing in debuggger `ap data`

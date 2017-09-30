@@ -31,5 +31,9 @@ module ApiInterfluxCom
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # To include the JSON web token encode and decode methods
+    # https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
+    config.autoload_paths << Rails.root.join('lib')
   end
 end
