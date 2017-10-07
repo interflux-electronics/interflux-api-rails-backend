@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class IntegrationTestAdminProduct < ActionDispatch::IntegrationTest
+class AdminProductIntegrationTests < ActionDispatch::IntegrationTest
   def setup
     @product1 = products('IF_2005M')
     @product2 = products('OSPI_3311M')

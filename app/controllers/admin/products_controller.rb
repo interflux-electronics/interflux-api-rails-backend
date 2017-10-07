@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class ProductsController < ApplicationController
+  class ProductsController < Admin::ApplicationController
     before_action :set_product, only: %i[show update destroy]
 
     # GET /admin/products

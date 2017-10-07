@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
   # Authenticated routes
   post 'authenticate', to: 'authentication#authenticate'
   namespace :admin do

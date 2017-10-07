@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class IntegrationTestAdminDocument < ActionDispatch::IntegrationTest
+class AdminDocumentIntegrationTests < ActionDispatch::IntegrationTest
   def setup
     @document1 = documents('document_1')
     @document2 = documents('document_2')
