@@ -4,14 +4,16 @@
 # # https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
 # # https://github.com/nebulab/simple_command
 #
-# class AuthorizeApiRequest
-#   prepend SimpleCommand
+# module AuthorizeApiRequest
+#   extend ActiveSupport::Concern
 #
-#   def initialize(headers = {})
+#   # def initialize(headers = {})
+#   #   @headers = headers
+#   # end
+#
+#   # def call
+#   def authorize_api_request(headers)
 #     @headers = headers
-#   end
-#
-#   def call
 #     user
 #   end
 #
@@ -20,6 +22,7 @@
 #   attr_reader :headers
 #
 #   def user
+#     byebug
 #     @user ||= User.find(decoded_auth_token[:user_id]) if decoded_auth_token
 #     @user || errors.add(:token, 'Invalid token') && nil
 #   end

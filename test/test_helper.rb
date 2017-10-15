@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require File.expand_path('../../config/environment', __FILE__)
+# include Rack::Minitest::JSON
 
 # To improve the outputs of `rails test` (Minitest)
 require 'minitest/reporters'

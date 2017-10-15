@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Admin
-  class DocumentsController < Admin::ApplicationController
+  class DocumentsController < Admin::AuthenticatedController
     before_action :set_document, only: %i[show update destroy]
 
     # GET /admin/documents
