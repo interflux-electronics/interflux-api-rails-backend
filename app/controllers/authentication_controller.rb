@@ -1,17 +1,24 @@
 # frozen_string_literal: true
 
-# https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
-
 class AuthenticationController < ApplicationController
   # skip_before_action :authenticate_request
 
   def authenticate
-    command = AuthenticateUser.call(params[:email], params[:password])
+    user = User.find_by(email: params[:email])
+    return invalid_login unless user && user.authenticate(params[:password])
+    JsonWebToken.encode(user_id: user.id)
+    render json: { auth_token: JsonWebToken.encode(user_id: user.id) }
+  end
 
-    if command.success?
-      render json: { auth_token: command.result }
-    else
-      render json: { error: command.errors }, status: :unauthorized
-    end
+  private
+
+  def invalid_login
+    render status: 401, json: {
+      errors: [{
+        status: '401',
+        code: 'invalid_login',
+        detail: 'Your login credentials are invalid.'
+      }]
+    }
   end
 end
