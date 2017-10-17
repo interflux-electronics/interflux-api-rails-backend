@@ -3,3 +3,9 @@
 admin_user:
   email: admin@interflux.com
   password_digest: $2a$10$2zT5Pb8gJuNDTM0Sbo1tjO/l.P/CpK6W5IY7PpzfjOX5/W1sHvVwq
+  can_access_admin: true
+
+casual_user:
+  email: casual@interflux.com
+  password_digest: $2a$10$2zT5Pb8gJuNDTM0Sbo1tjO/l.P/CpK6W5IY7PpzfjOX5/W1sHvVwq
+  can_access_admin: false
