@@ -47,19 +47,11 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
   end
 
   test 'Users can receive auth token with their login credentials' do
-    @headers = {
-      'Accept' => 'application/au.com.hotdoc.v4',
-      'Content-Type' => 'application/json'
-    }
-    params = {
-      patient: {
-        email: @casual_user.email,
-        password: 'password'
-      }
-    }
-    post '/authenticate', params: params, as: :json
-    response = JSON.parse(@response.body)['response']
+    post '/authenticate', params: { email: @casual_user.email, password: 'password' }
     assert_response 200
-    assert_equal response['auth_token'], 'xxx'
+    response = JSON.parse(@response.body)
+    token = response['auth_token']
+    assert token
+    assert_equal JsonWebToken.decode(token.split(' ').last)['user_id'], @casual_user.id
   end
 end
