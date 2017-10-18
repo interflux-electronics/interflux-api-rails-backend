@@ -52,7 +52,7 @@ class AdminProductIntegrationTest < ActionDispatch::IntegrationTest
   end
 
   test 'Authorized admin users can fetch all products' do
-    get "/admin/products", headers: @authorized_header
+    get '/admin/products', headers: @authorized_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
     assert_equal data.length, 5, 'Should return 5 products'

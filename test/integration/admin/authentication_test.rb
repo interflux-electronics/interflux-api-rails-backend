@@ -3,7 +3,6 @@
 require 'test_helper'
 
 class AuthenticationTest < ActionDispatch::IntegrationTest
-
   def setup
     @casual_user = users('casual_user')
     @casual_user_token = JsonWebToken.encode(user_id: @casual_user.id)
