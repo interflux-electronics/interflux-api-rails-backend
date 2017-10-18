@@ -28,13 +28,6 @@ gem 'bcrypt', '~> 3.1.7'
 # https://jwt.io/
 gem 'jwt'
 
-# The simple command gem is an easy way of creating services. Its role is
-# similar to the role of a helper, but instead of facilitating the connection
-# between the controller and the view, it does the same for the controller and
-# the model. In this way, we can shorten the code in the models and controllers.
-# https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
-gem 'simple_command'
-
 group :development, :test do
   gem 'awesome_print', require: 'ap' # For coloured printing in debuggger `ap data`
   gem 'byebug', platforms: %i[mri mingw x64_mingw] # For halting the code and debugging `byebug`
