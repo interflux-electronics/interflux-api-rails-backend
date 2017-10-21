@@ -88,6 +88,12 @@ Document.create!(
   public: true
 )
 
+User.create!(
+  email: 'admin@interflux.com',
+  password: 'password',
+  can_access_admin: true
+)
+
 # TODO: Learn how to do to many relationships
 # product1.update(documents: [document1.id, document4.id])
 # product2.update(documents: [document2.id, document4.id])

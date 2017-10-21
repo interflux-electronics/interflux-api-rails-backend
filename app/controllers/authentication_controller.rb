@@ -16,7 +16,7 @@ class AuthenticationController < ApplicationController
     render status: 401, json: {
       errors: [{
         status: '401',
-        code: 'invalid_login',
+        code: 'invalid-login',
         detail: 'Your login credentials are invalid.'
       }]
     }
