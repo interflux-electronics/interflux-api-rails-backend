@@ -1,5 +1,7 @@
 # README
 
+gem install bundle; bundle install; bundle exec rake db:migrate; bundle exec rake db:migrate RAILS_ENV=test
+
 rails db:drop && rails db:create && rails db:migrate && rails db:migrate RAILS_ENV=test && rails db:seed
 
 # How to auth:
