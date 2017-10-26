@@ -86,3 +86,9 @@ on_worker_boot do
   ActiveRecord::Base.connection.disconnect! rescue ActiveRecord::ConnectionNotEstablished
   ActiveRecord::Base.establish_connection(YAML.load_file("#{app_dir}/config/database.yml")[rails_env])
 end
+
+# To star
+# bundle exec puma
+
+# To stop
+# bundle exec pumactl -S /var/www/api.interflux.com/shared/pids/puma.state stop
