@@ -19,9 +19,19 @@ module Admin
 
     # POST /admin/products
     def create
-      @new_product = Product.create!(product_params)
-      json = JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(Admin::ProductResource.new(@new_product, nil))
-      render json: json, status: 201
+      @new_product = Product.create(product_params)
+      if @new_product.save
+        json = JSONAPI::ResourceSerializer.new(Admin::ProductResource).serialize_to_hash(Admin::ProductResource.new(@new_product, nil))
+        render json: json, status: 201
+      else
+
+        # TODO
+
+        return not_unique
+        # return no_permission unless user.can_access_admin?
+        # return no_permission unless user.can_access_admin?
+        # return not_unique unless user.can_access_admin?
+      end
     end
 
     # PUT /admin/products/:id
@@ -53,6 +63,16 @@ module Admin
               :pitch,
               :corpus
             )
+    end
+
+    def not_unique
+      render status: 422, json: {
+        errors: [{
+          status: '422',
+          code: 'not-unique',
+          detail: 'This product name is already in use, please choose another.'
+        }]
+      }
     end
   end
 end

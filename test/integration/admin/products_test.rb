@@ -116,23 +116,27 @@ class AdminProductIntegrationTest < ActionDispatch::IntegrationTest
     assert_empty Product.where(name: @product1.name), 'After deletion the database should no longer contain a product with name "IF 2005M"'
   end
 
-  # TODO: Make validations return JSON format 422
-  # test 'Admin cannot make a product with a name that already exists' do
-  #   json = {
-  #     data: {
-  #       attributes: {
-  #         name: @product1.name,
-  #         slug: nil,
-  #         public: false,
-  #         product_type: 'soldering_flux',
-  #         pitch: nil,
-  #         corpus: nil
-  #       },
-  #       type: 'products'
-  #     }
-  #   }
-  #   assert_equal Product.count, 5, 'Before creation there should be 5 products'
-  #   post '/admin/products', params: json
-  #   assert_response 422
-  # end
+  test 'Admin cannot make a product with a name that already exists' do
+    json = {
+      data: {
+        attributes: {
+          name: @product1.name,
+          slug: nil,
+          public: false,
+          product_type: 'soldering_flux',
+          pitch: nil,
+          corpus: nil
+        },
+        type: 'products'
+      }
+    }
+    assert_equal Product.count, 5, 'Before creation there should be 5 products'
+    post '/admin/products', params: json, headers: @authorized_header
+    assert_equal Product.count, 5, 'After error creation there should be still 5 products'
+    assert_response 422
+    first_error = JSON.parse(@response.body)['errors'][0]
+    assert_equal first_error['status'], '401'
+    assert_equal first_error['code'], 'missing-header'
+    assert_equal first_error['detail'], 'The header of your request is missing the Authorization field.'
+  end
 end
