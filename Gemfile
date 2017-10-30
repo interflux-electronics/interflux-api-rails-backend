@@ -7,9 +7,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'jsonapi-resources' # Resources JSON API compliance http://jsonapi-resources.com/
 gem 'pg', '~> 0.18' # Database for Active Record
-# gem 'puma', '~> 3.7' # App server
 gem 'rails', '~> 5.1.2'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -27,6 +25,10 @@ gem 'rack-cors'
 # https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
 # https://jwt.io/
 gem 'jwt'
+
+# For making Rails JSON API compliant
+# http://jsonapi-resources.com/
+gem 'jsonapi-resources'
 
 group :development, :test do
   gem 'awesome_print', require: 'ap' # For coloured printing in debuggger `ap data`
@@ -47,7 +49,7 @@ group :development do
 end
 
 group :production do
-   gem 'puma', '~> 3.7' # App server
+   gem 'puma', '~> 3.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
