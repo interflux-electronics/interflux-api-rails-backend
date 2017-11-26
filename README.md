@@ -1,8 +1,28 @@
 # README
 
-gem install bundle; bundle install; bundle exec rake db:migrate; bundle exec rake db:migrate RAILS_ENV=test
+#### Gems
 
-rails db:drop && rails db:create && rails db:migrate && rails db:migrate RAILS_ENV=test && rails db:seed
+gem install bundle;
+bundle install
+
+#### Migrations
+
+rake db:drop;
+rake db:create;
+rake db:migrate;
+rake db:migrate RAILS_ENV=test;
+annotate;
+rake db:fixtures:load
+
+#### Seeding
+
+http://brandonhilkert.com/blog/using-rails-fixtures-to-seed-a-database/
+
+rake db:fixtures:load
+rake db:fixtures:load FIXTURES=credit_card_types
+rake db:fixtures:load FIXTURES=credit_card_types,states,cities
+
+#### Authentication
 
 # How to auth:
 # curl -H "Content-Type: application/json" -X POST -d '{"email":"example@mail.com","password":"123123123"}' http://localhost:3000/authenticate
