@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170930033429) do
+ActiveRecord::Schema.define(version: 20171126104459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,23 +43,41 @@ ActiveRecord::Schema.define(version: 20170930033429) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "product_groups", force: :cascade do |t|
+    t.string "single"
+    t.string "plural"
+    t.string "slug"
+  end
+
+  create_table "product_sub_groups", force: :cascade do |t|
+    t.integer "product_group_id"
+    t.string "single"
+    t.string "plural"
+    t.string "slug"
+  end
+
   create_table "product_translations", force: :cascade do |t|
     t.integer "product_id"
     t.string "locale"
     t.string "name"
-    t.text "corpus"
+    t.text "body"
     t.text "pitch"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.boolean "public", default: false
+  create_table "product_uses", force: :cascade do |t|
     t.string "name"
-    t.string "pitch"
-    t.string "product_type"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
     t.string "slug"
-    t.text "corpus"
+    t.integer "product_group_id"
+    t.integer "product_sub_group_id"
+    t.boolean "public", default: false
+    t.text "pitch"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

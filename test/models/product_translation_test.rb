@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: product_translations
@@ -8,7 +7,7 @@
 #  product_id :integer
 #  locale     :string
 #  name       :string
-#  corpus     :text
+#  body       :text
 #  pitch      :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

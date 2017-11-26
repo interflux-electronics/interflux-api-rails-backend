@@ -1,25 +1,27 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: products
 #
-#  id           :integer          not null, primary key
-#  public       :boolean          default(FALSE)
-#  name         :string
-#  pitch        :string
-#  product_type :string
-#  slug         :string
-#  corpus       :text
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  slug                 :string
+#  product_group_id     :integer
+#  product_sub_group_id :integer
+#  public               :boolean          default(FALSE)
+#  pitch                :text
+#  body                 :text
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
 #
 
 class Product < ApplicationRecord
-  # has_one :product_type
 
-  has_many :documents
-  has_many :product_translations
+  belongs_to :product_group
+  belongs_to :product_sub_group
+
+  # has_many :documents
+  # has_many :product_translations
   # has_many :images
   # has_many :processes
   # has_many :uses
@@ -28,7 +30,6 @@ class Product < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :slug, presence: true, uniqueness: true
-  validates :product_type, presence: true
 
   before_validation do
     create_slug if slug.nil?

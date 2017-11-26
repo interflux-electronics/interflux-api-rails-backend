@@ -1,18 +1,18 @@
 # frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: products
 #
-#  id           :integer          not null, primary key
-#  public       :boolean          default(FALSE)
-#  name         :string
-#  pitch        :string
-#  product_type :string
-#  slug         :string
-#  corpus       :text
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id                   :integer          not null, primary key
+#  name                 :string
+#  slug                 :string
+#  product_group_id     :integer
+#  product_sub_group_id :integer
+#  public               :boolean          default(FALSE)
+#  pitch                :text
+#  body                 :text
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
 #
 
 require 'test_helper'

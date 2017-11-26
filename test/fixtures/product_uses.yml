@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id           :integer          not null, primary key
+#  public       :boolean          default(FALSE)
+#  name         :string
+#  pitch        :string
+#  product_type :string
+#  slug         :string
+#  corpus       :text
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+for_wave:
+  name: For wave soldering
+
+for_selective:
+  name: For selective soldering
+
+for_reflow:
+  name: Solder wires
+
+for_rework:
+  name: For rework & repair
+
+for_pre_tinning:
+  name: For pre-tinning

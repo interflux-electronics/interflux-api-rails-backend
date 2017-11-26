@@ -6,7 +6,7 @@ class CreateProductTranslations < ActiveRecord::Migration[5.1]
       t.integer :product_id
       t.string :locale
       t.string :name
-      t.text :corpus
+      t.text :body
       t.text :pitch
 
       t.timestamps

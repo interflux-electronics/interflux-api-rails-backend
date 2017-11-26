@@ -3,12 +3,13 @@
 class CreateProducts < ActiveRecord::Migration[5.1]
   def change
     create_table :products do |t|
-      t.boolean :public, default: false
       t.string :name
-      t.string :pitch
-      t.string :product_type
       t.string :slug
-      t.text :corpus
+      t.integer :product_group_id
+      t.integer :product_sub_group_id
+      t.boolean :public, default: false
+      t.text :pitch
+      t.text :body
 
       t.timestamps
     end
