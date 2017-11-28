@@ -31,7 +31,7 @@ gem 'jwt'
 gem 'jsonapi-resources'
 
 group :development, :test do
-  gem 'awesome_print', require: 'ap' # For coloured printing in debuggger `ap data`
+  gem 'awesome_print', require: 'ap' # For coloured printing in byebug and console `ap`
   gem 'byebug', platforms: %i[mri mingw x64_mingw] # For halting the code and debugging `byebug`
 end
 
