@@ -235,7 +235,7 @@
 #   locale: 'fr',
 #   name: 'French name',
 #   pitch: 'French pitch',
-#   corpus: 'French corpus',
+#   body: 'French body',
 #   product_id: @product1.id
 # )
 #
@@ -243,7 +243,7 @@
 #   locale: 'de',
 #   name: 'German name',
 #   pitch: 'German pitch',
-#   corpus: 'German corpus',
+#   body: 'German body',
 #   product_id: @product1.id
 # )
 #

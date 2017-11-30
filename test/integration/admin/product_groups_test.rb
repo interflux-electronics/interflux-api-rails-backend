@@ -2,11 +2,11 @@
 
 require 'test_helper'
 
-class AdminProductGroupIntegrationTest < ActionDispatch::IntegrationTest
+class AdminProductGroupsIntegrationTest < ActionDispatch::IntegrationTest
   def setup
-    @soldering_flux = product_groups('soldering_flux')
-    @solder_paste = product_groups('solder_paste')
-    @solder_wire = product_groups('solder_wire')
+    @soldering_fluxes = product_groups('soldering_fluxes')
+    @solder_pastes = product_groups('solder_pastes')
+    @solder_wires = product_groups('solder_wires')
     @spray_fluxers = product_groups('spray_fluxers')
     @auxiliaries = product_groups('auxiliaries')
     admin_user = users('admin_user')
@@ -48,11 +48,11 @@ class AdminProductGroupIntegrationTest < ActionDispatch::IntegrationTest
     data = JSON.parse(@response.body)['data']
     assert_response 200
     assert_equal data.length, 5, 'Should return 5 product groups'
-    refute_empty data.find { |p| p['id'].to_i == @product_group_1.id }, 'Contains soldering fluxes'
-    refute_empty data.find { |p| p['id'].to_i == @product_group_2.id }, 'Contains solder paste'
-    refute_empty data.find { |p| p['id'].to_i == @product_group_3.id }, 'Contains solder wire'
-    refute_empty data.find { |p| p['id'].to_i == @product_group_4.id }, 'Contains spray fluxers'
-    refute_empty data.find { |p| p['id'].to_i == @product_group_5.id }, 'Contains auxiliaries'
+    refute_empty data.find { |p| p['id'].to_i == @soldering_fluxes.id }, 'Contains soldering fluxes'
+    refute_empty data.find { |p| p['id'].to_i == @solder_wires.id }, 'Contains solder paste'
+    refute_empty data.find { |p| p['id'].to_i == @solder_pastes.id }, 'Contains solder wire'
+    refute_empty data.find { |p| p['id'].to_i == @spray_fluxers.id }, 'Contains spray fluxers'
+    refute_empty data.find { |p| p['id'].to_i == @auxiliaries.id }, 'Contains auxiliaries'
   end
 
   # test 'Authorized admin cannot can fetch a product group by ID' do
@@ -69,7 +69,7 @@ class AdminProductGroupIntegrationTest < ActionDispatch::IntegrationTest
   #         public: false,
   #         product_type: 'soldering_flux',
   #         pitch: nil,
-  #         corpus: nil
+  #         body: nil
   #       },
   #       type: 'products'
   #     }
@@ -122,7 +122,7 @@ class AdminProductGroupIntegrationTest < ActionDispatch::IntegrationTest
   #         public: false,
   #         product_type: 'soldering_flux',
   #         pitch: nil,
-  #         corpus: nil
+  #         body: nil
   #       },
   #       type: 'products'
   #     }

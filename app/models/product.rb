@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: products
@@ -16,7 +17,6 @@
 #
 
 class Product < ApplicationRecord
-
   belongs_to :product_group
   belongs_to :product_sub_group
 

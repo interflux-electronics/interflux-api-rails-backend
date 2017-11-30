@@ -8,7 +8,7 @@
 #  pitch        :string
 #  product_type :string
 #  slug         :string
-#  corpus       :text
+#  body       :text
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

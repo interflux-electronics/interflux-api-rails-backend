@@ -49,7 +49,7 @@ group :development do
 end
 
 group :production do
-   gem 'puma', '~> 3.7'
+  gem 'puma', '~> 3.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

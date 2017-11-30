@@ -72,7 +72,7 @@ class AdminProductIntegrationTest < ActionDispatch::IntegrationTest
           public: false,
           product_type: 'soldering_flux',
           pitch: nil,
-          corpus: nil
+          body: nil
         },
         type: 'products'
       }
@@ -125,7 +125,7 @@ class AdminProductIntegrationTest < ActionDispatch::IntegrationTest
           public: false,
           product_type: 'soldering_flux',
           pitch: nil,
-          corpus: nil
+          body: nil
         },
         type: 'products'
       }

@@ -61,7 +61,7 @@ module Admin
               :public,
               :product_type,
               :pitch,
-              :corpus
+              :body
             )
     end
 

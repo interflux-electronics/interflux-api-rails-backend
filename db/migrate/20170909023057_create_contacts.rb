@@ -10,7 +10,7 @@ class CreateContacts < ActiveRecord::Migration[5.1]
       t.string :phone
       t.string :fax
       t.string :address
-      t.string :country_id
+      t.integer :country_id
 
       t.timestamps
     end

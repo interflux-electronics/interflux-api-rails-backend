@@ -64,7 +64,7 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
   end
 
   test 'Users get thrown a 401 invalid_login when logging in with unexisting email' do
-    post '/authenticate', params: { email:'doesnot@exist.com', password: 'password' }
+    post '/authenticate', params: { email: 'doesnot@exist.com', password: 'password' }
     assert_response 401
     first_error = JSON.parse(@response.body)['errors'][0]
     assert_equal first_error['status'], '401'

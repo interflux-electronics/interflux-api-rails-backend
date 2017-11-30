@@ -4,9 +4,11 @@ module Admin
   class ProductResource < JSONAPI::Resource
     attributes :name,
                :slug,
-               :corpus,
+               :public,
                :pitch,
-               :product_type,
-               :public
+               :body
+
+    relationship :product_group, to: :one
+    relationship :product_sub_group, to: :one
   end
 end

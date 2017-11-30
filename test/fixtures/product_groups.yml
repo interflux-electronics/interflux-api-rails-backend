@@ -9,26 +9,26 @@
 #
 
 soldering_fluxes:
-  slug: soldering-fluxes,
-  plural: Soldering fluxes,
+  slug: soldering-fluxes
+  plural: Soldering fluxes
   single: Soldering flux
 
 solder_pastes:
-  slug: solder-pastes,
-  plural: Solder paste,
+  slug: solder-pastes
+  plural: Solder paste
   single: Solder pastes
 
 solder_wires:
-  slug: solder-wires,
-  plural: Solder wires,
+  slug: solder-wires
+  plural: Solder wires
   single: Solder wire
 
 spray_fluxers:
-  slug: spray-fluxers,
-  plural: Spray fluxers,
+  slug: spray-fluxers
+  plural: Spray fluxers
   single: Spray fluxer
 
 auxiliaries:
-  slug: auxiliaries,
-  plural: Auxiliaries,
+  slug: auxiliaries
+  plural: Auxiliaries
   single: Auxiliary

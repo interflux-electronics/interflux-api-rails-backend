@@ -49,37 +49,37 @@ no_clean:
   product_group: solder_pastes,
   single: No-clean solder paste,
   plural: No-clean solder pastes,
-  slug: no-clean-solder-pastes
+  slug: no-clean
 
 lmpa:
   product_group: solder_pastes,
   single: Low melting point solder paste,
   plural: Low melting point solder pastes,
-  slug: low-melting-point-solder-pastes
+  slug: low-melting-point
 
 lead_free:
   product_group: solder_wires,
   single: Lead-free solder wire,
   plural: Lead-free solder wires,
-  slug: lead-free-solder-wires
+  slug: lead-free
 
 lead_based:
   product_group: solder_wires,
   single: Lead-based solder wire,
   plural: Lead-based solder wires,
-  slug: lead-based-solder-wires
+  slug: lead-based
 
 standalone_spray:
   product_group: spray_fluxers,
   single: Standalone spray fluxer,
   plural: Standalone spray fluxers,
-  slug: standalone-spray-fluxers
+  slug: standalone
 
 retrofit_spray:
   product_group: spray_fluxers,
   single: Retrofit spray fluxer,
   plural: Retrofit spray fluxers,
-  slug: retrofit-spray-fluxers
+  slug: retrofit
 
 product_tool:
   product_group: auxiliaries,
@@ -95,9 +95,9 @@ cleaning_product:
 
 solder_bath_treatement:
   product_group: auxiliaries,
-  single: Cleaning product,
-  plural: Cleaning products,
-  slug: cleaning-products
+  single: Solder bath treatment,
+  plural: Solder bath treatment,
+  slug: solder-bath-treatment
 
 solder_alloys:
   product_group: auxiliaries,

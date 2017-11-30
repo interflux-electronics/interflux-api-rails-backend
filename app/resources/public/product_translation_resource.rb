@@ -6,6 +6,6 @@ module Public
                :locale,
                :name,
                :pitch,
-               :corpus
+               :body
   end
 end

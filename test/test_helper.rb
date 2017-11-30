@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
-require 'rails/test_help'
+# To avoid bug with require test_help
+# https://github.com/burke/zeus/issues/474
 require File.expand_path('../../config/environment', __FILE__)
-# include Rack::Minitest::JSON
+require 'rails/test_help'
 
 # To improve the outputs of `rails test` (Minitest)
 require 'minitest/reporters'

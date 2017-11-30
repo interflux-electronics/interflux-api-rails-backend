@@ -12,7 +12,7 @@
 #  phone      :string
 #  fax        :string
 #  address    :string
-#  country_id :string
+#  country_id :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

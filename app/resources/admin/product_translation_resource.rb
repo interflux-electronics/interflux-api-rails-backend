@@ -6,6 +6,6 @@ module Admin
                :locale,
                :name,
                :pitch,
-               :corpus
+               :body
   end
 end
