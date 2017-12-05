@@ -10,97 +10,97 @@
 #
 
 alcohol_based:
-  product_group: soldering_fluxes,
-  single: Alcohol-based soldering flux,
-  plural: Alcohol-based soldering fluxes,
+  product_group: soldering_fluxes
+  single: Alcohol-based soldering flux
+  plural: Alcohol-based soldering fluxes
   slug: alcohol-based
 
 voc_free:
-  product_group: soldering_fluxes,
-  single: VOC-free soldering flux,
-  plural: VOC-free soldering flux,
+  product_group: soldering_fluxes
+  single: VOC-free soldering flux
+  plural: VOC-free soldering flux
   slug: VOC-free
 
 low_voc:
-  product_group: soldering_fluxes,
-  single: Low VOC soldering flux,
-  plural: Low VOC soldering flux,
+  product_group: soldering_fluxes
+  single: Low VOC soldering flux
+  plural: Low VOC soldering flux
   slug: low-VOC
 
 rosin_based:
-  product_group: soldering_fluxes,
-  single: Rosin-based soldering flux,
-  plural: Rosin-based soldering flux,
+  product_group: soldering_fluxes
+  single: Rosin-based soldering flux
+  plural: Rosin-based soldering flux
   slug: rosin-based
 
 rework-and-repair:
-  product_group: soldering_fluxes,
-  single: Soldering flux for rework & repair,
-  plural: Soldering fluxes for rework & repair,
+  product_group: soldering_fluxes
+  single: Soldering flux for rework & repair
+  plural: Soldering fluxes for rework & repair
   slug: rework-and-repair
 
 flux_thinner:
-  product_group: soldering_fluxes,
-  single: Flux thinner,
-  plural: Flux thinners,
+  product_group: soldering_fluxes
+  single: Flux thinner
+  plural: Flux thinners
   slug: flux-thinner
 
 no_clean:
-  product_group: solder_pastes,
-  single: No-clean solder paste,
-  plural: No-clean solder pastes,
+  product_group: solder_pastes
+  single: No-clean solder paste
+  plural: No-clean solder pastes
   slug: no-clean
 
 lmpa:
-  product_group: solder_pastes,
-  single: Low melting point solder paste,
-  plural: Low melting point solder pastes,
+  product_group: solder_pastes
+  single: Low melting point solder paste
+  plural: Low melting point solder pastes
   slug: low-melting-point
 
 lead_free:
-  product_group: solder_wires,
-  single: Lead-free solder wire,
-  plural: Lead-free solder wires,
+  product_group: solder_wires
+  single: Lead-free solder wire
+  plural: Lead-free solder wires
   slug: lead-free
 
 lead_based:
-  product_group: solder_wires,
-  single: Lead-based solder wire,
-  plural: Lead-based solder wires,
+  product_group: solder_wires
+  single: Lead-based solder wire
+  plural: Lead-based solder wires
   slug: lead-based
 
 standalone_spray:
-  product_group: spray_fluxers,
-  single: Standalone spray fluxer,
-  plural: Standalone spray fluxers,
+  product_group: spray_fluxers
+  single: Standalone spray fluxer
+  plural: Standalone spray fluxers
   slug: standalone
 
 retrofit_spray:
-  product_group: spray_fluxers,
-  single: Retrofit spray fluxer,
-  plural: Retrofit spray fluxers,
+  product_group: spray_fluxers
+  single: Retrofit spray fluxer
+  plural: Retrofit spray fluxers
   slug: retrofit
 
 product_tool:
-  product_group: auxiliaries,
-  single: Production tool,
-  plural: Production tools,
+  product_group: auxiliaries
+  single: Production tool
+  plural: Production tools
   slug: production-tools
 
 cleaning_product:
-  product_group: auxiliaries,
-  single: Cleaning product,
-  plural: Cleaning products,
+  product_group: auxiliaries
+  single: Cleaning product
+  plural: Cleaning products
   slug: cleaning-products
 
 solder_bath_treatement:
-  product_group: auxiliaries,
-  single: Solder bath treatment,
-  plural: Solder bath treatment,
+  product_group: auxiliaries
+  single: Solder bath treatment
+  plural: Solder bath treatment
   slug: solder-bath-treatment
 
 solder_alloys:
-  product_group: auxiliaries,
-  single: Solder alloy,
-  plural: Solder alloys,
+  product_group: auxiliaries
+  single: Solder alloy
+  plural: Solder alloys
   slug: solder-alloys

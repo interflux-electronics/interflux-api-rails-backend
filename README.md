@@ -19,8 +19,8 @@ rake db:fixtures:load
 http://brandonhilkert.com/blog/using-rails-fixtures-to-seed-a-database/
 
 rake db:fixtures:load
-rake db:fixtures:load FIXTURES=credit_card_types
-rake db:fixtures:load FIXTURES=credit_card_types,states,cities
+rake db:fixtures:load FIXTURES=product_groups
+rake db:fixtures:load FIXTURES=product_groups,products,users
 
 #### Authentication
 

@@ -1,0 +1,89 @@
+# == Schema Information
+#
+# Table name: languages
+#
+#  id           :integer          not null, primary key
+#  locale       :string
+#  name_english :string
+#  name_native  :string
+#
+
+en:
+  locale: en
+  name_english: English
+  name_native: English
+
+de:
+  locale: de
+  name_english: German
+  name_native: Deutsch
+
+fr:
+  locale: fr
+  name_english: French
+  name_native: Français
+
+zh-hans:
+  locale: zh-hans
+  name_english: Chinese
+  name_native: 简体中文
+
+cs:
+  locale: cs
+  name_english: Chech
+  name_native: Čeština
+
+cs:
+  locale: it
+  name_english: Italian
+  name_native: Italiano
+
+id:
+  locale: id
+  name_english: Indonesian
+  name_native: Bahasa Indonesia
+
+pt-pt:
+  locale: pt-pt
+  name_english: Portugese
+  name_native: Português
+
+ro:
+  locale: ro
+  name_english: Romanian
+  name_native: Română
+
+ru:
+  locale: ru
+  name_english: Russian
+  name_native: Русский
+
+th:
+  locale: th
+  name_english: Thai
+  name_native: ภาษาไทย
+
+tr:
+  locale: tr
+  name_english: Turkish
+  name_native: Türkçe
+
+pl:
+  locale: pl
+  name_english: Polish
+  name_native: Polski
+
+pl:
+  locale: pl
+  name_english: Polish
+  name_native: Polski
+
+es:
+  locale: es
+  name_english: Spanish
+  name_native: Español
+
+sv:
+  locale: sv
+  name_english: Swedish
+  name_native: Svenska
