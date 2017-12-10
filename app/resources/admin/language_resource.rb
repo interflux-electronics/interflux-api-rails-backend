@@ -2,7 +2,7 @@
 
 module Admin
   class LanguageResource < JSONAPI::Resource
-    attributes :name,
+    attributes :locale,
                :name_english,
                :name_native
   end
