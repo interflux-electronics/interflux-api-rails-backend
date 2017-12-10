@@ -24,14 +24,14 @@ rake db:fixtures:load FIXTURES=product_groups,products,users
 
 #### Authentication
 
-# How to auth:
-# curl -H "Content-Type: application/json" -X POST -d '{"email":"example@mail.com","password":"123123123"}' http://localhost:3000/authenticate
-# curl -H "Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MDc0NDMwMTB9.xPlcqij4Gpi9wnPvgmI8rdVP23b7Zw1yBD22uu8nApI" http://localhost:3000/admin/products
-# http GET http://localhost:3000/admin/products Authorization:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MDc0NDMwMTB9.xPlcqij4Gpi9wnPvgmI8rdVP23b7Zw1yBD22uu8nApI
+How to auth:
+curl -H "Content-Type: application/json" -X POST -d '{"email":"example@mail.com","password":"123123123"}' http://localhost:3000/authenticate
+curl -H "Authorization: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MDc0NDMwMTB9.xPlcqij4Gpi9wnPvgmI8rdVP23b7Zw1yBD22uu8nApI" http://localhost:3000/admin/products
+http GET http://localhost:3000/admin/products Authorization:eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE1MDc0NDMwMTB9.xPlcqij4Gpi9wnPvgmI8rdVP23b7Zw1yBD22uu8nApI
 
-# Update password
-# User.create!(email: 'example@mail.com' , password: '123123123' , password_confirmation: '123123123')
-# User.where(email: 'jw@interflux.com').first.update!(password: 'password123' , password_confirmation: 'password123')
+Update password
+User.create!(email: 'example@mail.com' , password: '123123123' , password_confirmation: '123123123')
+User.where(email: 'jw@interflux.com').first.update!(password: 'password123' , password_confirmation: 'password123')
 
 
 
@@ -43,7 +43,7 @@ https://github.com/rails-api/active_model_serializers/issues/983
 
 
 
-### Making Puma purr
+### Working with Puma
 
 To start:
 1. cd /var/www/api.interflux.com
@@ -55,3 +55,9 @@ To stop:
 
 Finding and stopping the puma pid manually:
 http://ruby-journal.com/how-to-setup-rails-app-with-puma-and-nginx/
+
+### Working with Rails
+
+To kill running Rails process.  
+`lsof -wni tcp:3000`  
+`kill -9 [the PID]`
