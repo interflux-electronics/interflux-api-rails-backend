@@ -17,8 +17,8 @@
 #
 
 class Product < ApplicationRecord
-  belongs_to :product_group
-  belongs_to :product_sub_group
+  belongs_to :product_group, optional: true
+  belongs_to :product_sub_group, optional: true
 
   # has_many :documents
   # has_many :product_translations
@@ -28,17 +28,17 @@ class Product < ApplicationRecord
   # has_many :related_products
   # has_many :related_articles
 
-  validates :name, presence: true, uniqueness: true
-  validates :slug, presence: true, uniqueness: true
+  # validates :name, presence: true, uniqueness: true
+  # validates :slug, presence: true, uniqueness: true
 
-  before_validation do
-    create_slug if slug.nil?
-  end
+  # before_validation do
+  #   create_slug if slug.nil?
+  # end
 
-  def create_slug
-    return if name.blank?
-    new_slug = name.parameterize # TODO: Allow capitals
-    slug_exists = Product.exists?(slug: new_slug)
-    self.slug = new_slug unless slug_exists
-  end
+  # def create_slug
+  #   return if name.blank?
+  #   new_slug = name.parameterize # TODO: Allow capitals
+  #   slug_exists = Product.exists?(slug: new_slug)
+  #   self.slug = new_slug unless slug_exists
+  # end
 end
