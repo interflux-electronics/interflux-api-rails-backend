@@ -4,17 +4,20 @@ module Admin
   class ProductsController < Admin::AuthenticatedController
     before_action :set_product, only: %i[show update destroy]
 
+    # Return all products
     # GET /admin/products
     def index
       @products = Product.all
-      render status: 200, json: json_resources(Admin::ProductResource, @products, nil)
+      render status: 200, json: json_resources(Admin::ProductResource, @products)
     end
 
+    # Return 1 product by ID
     # GET /admin/products/:id
     def show
       render status: 200, json: json_resource(Admin::ProductResource, @product)
     end
 
+    # Create a product
     # POST /admin/products
     def create
       @product = Product.new(attributes)
@@ -27,6 +30,7 @@ module Admin
       end
     end
 
+    # Update a product
     # PUT /admin/products/:id
     def update
       super # Magically enables relationships to be saved as well ¯\_(ツ)_/¯
@@ -34,6 +38,7 @@ module Admin
       head 204
     end
 
+    # Delete a product
     # DELETE /admin/products/:id
     def destroy
       @product.destroy
@@ -64,19 +69,19 @@ module Admin
     end
 
     def not_unique
-      render status: 422, json: json_error({
-        status: '422',
+      json_error(
+        status: 422,
         code: 'not-unique',
         detail: 'This product name is already in use, please choose another.'
-      })
+      )
     end
 
     def not_found
-      render status: 422, json: json_error({
-        status: '422',
+      json_error(
+        status: 422,
         code: 'not-found',
         detail: 'No product with this ID was found.'
-      })
+      )
     end
   end
 end

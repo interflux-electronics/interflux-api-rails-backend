@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class ApplicationController < JSONAPI::ResourceController
-
   # Serialise and return 1 record into JSON using JSON API resources
   # Example: render status: 200, json: json_resource(Admin::ProductResource, @product, nil)
   def json_resource(klass, record, context = nil)
@@ -15,14 +14,24 @@ class ApplicationController < JSONAPI::ResourceController
     JSONAPI::ResourceSerializer.new(klass).serialize_to_hash(resources)
   end
 
-	# Wraps a single error in JSON API format
-  # How to use:
-  # render status: 401, json: json_error({
-  #   code: 'unauthorised',
-  #   detail: 'Patients must be signed in in order to see, create and update appointments.'
-  # })
-  def json_error(error)
-    { errors: [error] }
+  # Wraps a single error in JSON API format
+  # Documentation: http://jsonapi.org/format/#errors
+  # Usage: return not_found unless @product.present?
+  # def not_found
+  #   json_error(
+  #     status: 422,
+  #     code: 'not-found',
+  #     detail: 'No product with this ID was found.'
+  #   )
+  # end
+  def json_error(status, code, detail)
+    render status, json: {
+      errors: [{
+        status: status.to_s,
+        code: code,
+        detail: detail
+      }]
+    }
   end
 
   # Converts the errors on a resource to a valid JSON API error response
@@ -43,5 +52,4 @@ class ApplicationController < JSONAPI::ResourceController
     end.flatten
     { errors: @errors }
   end
-
 end

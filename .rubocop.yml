@@ -1,3 +1,5 @@
+# Always attempt to keep all of the things as short as possible
+# However, to pedantically put a fixed number on what is acceptable is just not productive
 Metrics/LineLength:
   Enabled: false
 Metrics/MethodLength:
@@ -6,5 +8,21 @@ Metrics/ModuleLength:
   Enabled: false
 Metrics/BlockLength:
   Enabled: false
+Metrics/ClassLength:
+  Enabled: false
+Metrics/AbcSize:
+  Enabled: false
+
+# Forcing ASCII is outdated and restricts comments to English only
+# Many international teams write comments in their native tongue and need non-English characters (e.g. Chinese)
+# Also UTF-8 is widely supported today, forget ASCII
+AsciiComments:
+  Enabled: false
+
+# Forcing top-level class documentation comments seems like a good idea,
+# but it's tidious and against the idea of "convention over configuration".
+# When someone finds `class CreateProducts < ActiveRecord::Migration[5.1]` in
+# `db/migration` they well know it's a migration. No need to comment.
+# Same applies to models, controllers, resources and so on.
 Documentation:
   Enabled: false
