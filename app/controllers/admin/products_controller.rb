@@ -1,5 +1,3 @@
-
-
 module Admin
   class ProductsController < Admin::AuthenticatedController
     before_action :set_product, only: %i[show update destroy]

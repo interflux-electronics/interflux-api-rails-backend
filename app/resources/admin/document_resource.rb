@@ -1,5 +1,3 @@
-
-
 module Admin
   class DocumentResource < JSONAPI::Resource
     attributes :name,

@@ -1,5 +1,3 @@
-
-
 module Admin
   class ProductGroupsController < Admin::AuthenticatedController
     # GET /admin/product_groups

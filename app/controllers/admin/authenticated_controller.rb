@@ -1,5 +1,3 @@
-
-
 module Admin
   class AuthenticatedController < ApplicationController
     before_action :authorize_request

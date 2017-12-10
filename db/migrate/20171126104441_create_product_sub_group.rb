@@ -1,5 +1,3 @@
-
-
 class CreateProductSubGroup < ActiveRecord::Migration[5.1]
   def change
     create_table :product_sub_groups do |t|

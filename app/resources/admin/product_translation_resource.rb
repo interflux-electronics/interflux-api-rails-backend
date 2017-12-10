@@ -1,5 +1,3 @@
-
-
 module Admin
   class ProductTranslationResource < JSONAPI::Resource
     attributes :product_id,

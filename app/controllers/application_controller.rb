@@ -1,5 +1,3 @@
-
-
 class ApplicationController < JSONAPI::ResourceController
   # Serialise and return 1 record into JSON using JSON API resources
   # Example: render status: 200, json: json_resource(Admin::ProductResource, @product, nil)
@@ -34,6 +32,7 @@ class ApplicationController < JSONAPI::ResourceController
     }
   end
 
+  # TODO: review
   # Converts the errors on a resource to a valid JSON API error response
   # How to use:
   # suburb.errors.add(:postcode, 'Message for users',

@@ -1,5 +1,3 @@
-
-
 module Public
   class ProductTranslationResource < JSONAPI::Resource
     attributes :product_id,

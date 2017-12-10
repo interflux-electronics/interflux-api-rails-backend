@@ -1,5 +1,3 @@
-
-
 module Public
   class ProductsController < ApplicationController
     # GET /public/products

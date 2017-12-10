@@ -1,5 +1,3 @@
-
-
 module Admin
   class ProductResource < JSONAPI::Resource
     attributes :name,

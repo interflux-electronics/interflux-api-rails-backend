@@ -1,5 +1,3 @@
-
-
 module Admin
   class ProductGroupResource < JSONAPI::Resource
     attributes :slug,

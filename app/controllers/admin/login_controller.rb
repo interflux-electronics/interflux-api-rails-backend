@@ -1,5 +1,3 @@
-
-
 module Admin
   class LoginController < ApplicationController
     def authenticate

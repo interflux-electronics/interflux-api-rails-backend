@@ -1,5 +1,3 @@
-
-
 module Admin
   class LanguagesController < Admin::AuthenticatedController
     # GET /admin/languages

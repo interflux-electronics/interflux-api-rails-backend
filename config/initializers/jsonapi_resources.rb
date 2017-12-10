@@ -1,5 +1,3 @@
-
-
 # Documentation:
 # http://jsonapi-resources.com/v0.9/guide/configuration.html#Override-the-defaults
 

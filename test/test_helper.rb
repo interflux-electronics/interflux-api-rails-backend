@@ -1,5 +1,3 @@
-
-
 # To avoid bug with require test_help
 # https://github.com/burke/zeus/issues/474
 require File.expand_path('../../config/environment', __FILE__)

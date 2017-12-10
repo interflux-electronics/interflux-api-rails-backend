@@ -1,5 +1,3 @@
-
-
 module Admin
   class LanguageResource < JSONAPI::Resource
     attributes :locale,

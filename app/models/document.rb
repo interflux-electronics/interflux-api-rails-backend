@@ -1,5 +1,3 @@
-
-
 # == Schema Information
 #
 # Table name: documents

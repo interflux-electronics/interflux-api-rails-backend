@@ -1,5 +1,3 @@
-
-
 module Admin
   class UserResource < JSONAPI::Resource
     attributes :name,
