@@ -26,3 +26,7 @@ AsciiComments:
 # Same applies to models, controllers, resources and so on.
 Documentation:
   Enabled: false
+
+# This is default behaviour since Rails 3, rendering this cop way outdated.
+Style/FrozenStringLiteralComment:
+  Enabled: false

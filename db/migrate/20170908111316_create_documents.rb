@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 class CreateDocuments < ActiveRecord::Migration[5.1]
   def change

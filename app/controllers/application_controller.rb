@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 class ApplicationController < JSONAPI::ResourceController
   # Serialise and return 1 record into JSON using JSON API resources

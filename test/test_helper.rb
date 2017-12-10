@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 # To avoid bug with require test_help
 # https://github.com/burke/zeus/issues/474
