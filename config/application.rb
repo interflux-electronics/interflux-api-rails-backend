@@ -34,6 +34,21 @@ module ApiInterfluxCom
     # https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
     config.autoload_paths << Rails.root.join('lib')
 
+    # TODO: Make CORS strict once API is working
+    # config.middleware.insert_before 0, Rack::Cors do
+    #   domain = '*'
+    #   domain = 'https://admin.interflux.com' if Rails.env.production?
+    #   methods = [:get, :post, :put, :delete, :options]
+    #   allow do
+    #     origins domain
+    #     resource '/admin/*', headers: :any, methods: methods
+    #   end
+    #   allow do
+    #     origins '*'
+    #     resource '/public/*', headers: :any, methods: methods
+    #   end
+    # end
+
     config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins '*'
