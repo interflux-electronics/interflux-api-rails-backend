@@ -28,5 +28,19 @@ module Public
       json = JSONAPI::ResourceSerializer.new(Public::ProductResource).serialize_to_hash(Public::ProductResource.new(@product, nil))
       render json: json, status: 200
     end
+
+    def create
+      return forbidden
+    end
+
+    private
+
+    def forbidden
+      json_error(
+        status: 403,
+        code: 'forbidden',
+        detail: 'This request is forbidden.'
+      )
+    end
   end
 end
