@@ -1,8 +1,4 @@
 class ApplicationController < JSONAPI::ResourceController
-
-  # All controllers respond only with JSON
-  respond_to :json
-
   # Serialise and return 1 record into JSON using JSON API resources
   # Example: render status: 200, json: json_resource(Admin::ProductResource, @product, nil)
   def json_resource(klass, record, context = nil)
