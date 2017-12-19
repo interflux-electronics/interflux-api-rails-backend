@@ -100,6 +100,21 @@ User.create!(email: 'example@mail.com' , password: '123123123' , password_confir
 User.where(email: 'jw@interflux.com').first.update!(password: 'password123' , password_confirmation: 'password123')
 ```
 
+## Deploys
+
+Locally
+```
+git push server production
+```
+Remote
+```
+bundle exec pumactl -S ./shared/pids/puma.state stop;
+export RAILS_ENV=production;
+bundle install;
+rake db:migrate;
+bundle exec puma
+```
+
 ## Puma
 
 To start:
