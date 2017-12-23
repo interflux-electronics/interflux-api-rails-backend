@@ -56,7 +56,7 @@ class ApplicationController < JSONAPI::ResourceController
   #   )
   # end
   def json_error(status, code, detail)
-    render status, json: {
+    render status: status, json: {
       errors: [{
         status: status.to_s,
         code: code,

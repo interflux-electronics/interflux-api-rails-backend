@@ -39,4 +39,15 @@ class Product < ApplicationRecord
   #   slug_exists = Product.exists?(slug: new_slug)
   #   self.slug = new_slug unless slug_exists
   # end
+  scope :active, ->(slug) {
+    where(public: true)
+  }
+
+  # Gotcha: joins() use the relation name, where() uses the table name
+  scope :with_group, ->(slug) {
+    joins(:product_group).where(product_groups: { slug: slug })
+  }
+  scope :sub_group, ->(slug) {
+    where(product_sub_group: { slug: slug })
+  }
 end

@@ -6,6 +6,7 @@ require 'rails/test_help'
 # To improve the outputs of `rails test` (Minitest)
 require 'minitest/reporters'
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+# Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
 
 module ActiveSupport
   class TestCase

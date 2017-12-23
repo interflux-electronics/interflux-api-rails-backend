@@ -2,12 +2,10 @@ module Public
   class ProductResource < JSONAPI::Resource
     attributes :name,
                :slug,
-               :body,
                :pitch,
-               :product_type,
-               :public
+               :body
 
-    has_many :documents
-    has_many :product_translations
+    relationship :product_group, to: :one
+    relationship :product_sub_group, to: :one
   end
 end
