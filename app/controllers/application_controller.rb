@@ -1,4 +1,37 @@
 class ApplicationController < JSONAPI::ResourceController
+
+  def index
+    return forbidden
+  end
+
+  def show
+    return forbidden
+  end
+
+  def create
+    return forbidden
+  end
+
+  def update
+    return forbidden
+  end
+
+  def edit
+    return forbidden
+  end
+
+  def new
+    return forbidden
+  end
+
+  def destroy
+    return forbidden
+  end
+
+  def forbidden
+    json_error(403, 'forbidden', 'This request is forbidden.')
+  end
+
   # Serialise and return 1 record into JSON using JSON API resources
   # Example: render status: 200, json: json_resource(Admin::ProductResource, @product, nil)
   def json_resource(klass, record, context = nil)
