@@ -30,3 +30,13 @@ Documentation:
 # This is default behaviour since Rails 3, rendering this cop way outdated.
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+# Ignore just this files
+Style/VariableName:
+  Exclude:
+    - test/integration/public/products_test.rb
+
+# Ignore just this files
+Style/VariableNumber:
+  Exclude:
+    - test/integration/public/products_test.rb
