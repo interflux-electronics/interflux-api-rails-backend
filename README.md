@@ -22,11 +22,12 @@ bundle install
 #### Local
 
 ```
-rake db:drop;
-rake db:create;
-rake db:migrate;
-rake db:migrate RAILS_ENV=test;
-rake db:fixtures:load
+rails db:environment:set RAILS_ENV=development;
+rails db:drop;
+rails db:create;
+rails db:migrate;
+rails db:migrate RAILS_ENV=test;
+rails db:fixtures:load
 annotate;
 ```
 
@@ -51,8 +52,8 @@ rake db:migrate;
 
 ```
 rake db:fixtures:load
-rake db:fixtures:load FIXTURES=product_groups
-rake db:fixtures:load FIXTURES=product_groups,products,users
+rake db:fixtures:load FIXTURES=product_categories
+rake db:fixtures:load FIXTURES=product_categories,products,users
 ```
 Source: http://brandonhilkert.com/blog/using-rails-fixtures-to-seed-a-database/
 
@@ -145,3 +146,11 @@ kill -9 [the PID]
 
 To return errors as JSON API compliant errors:  
 https://github.com/rails-api/active_model_serializers/issues/983
+
+## Testing
+
+```
+rails test
+rails test test/integration/admin
+rails test test/integration/public
+```
