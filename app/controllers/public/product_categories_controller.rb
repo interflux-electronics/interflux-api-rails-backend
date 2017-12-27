@@ -6,7 +6,7 @@ module Public
     def index
       return show if params[:slug]
       categories = ProductCategory.all.order('name_plural desc')
-      categories = categories.parent_category(category) if category.present?
+      categories = categories.parent_category(parent_category) if parent_category.present?
       render status: 200, json: json_resources(Public::ProductCategoryResource, categories)
     end
 
@@ -27,8 +27,8 @@ module Public
       params.require(:filter) if params['filter']
     end
 
-    def category
-      filter['product-category'] if filter
+    def parent_category
+      filter['parent-category'] if filter
     end
 
     def not_found
