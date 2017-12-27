@@ -1,152 +1,99 @@
 require 'test_helper'
 
 class PublicProductIntegrationTest < ActionDispatch::IntegrationTest
-
   before do
-    @product1 = products('IF_2005M')
-    @product2 = products('OSPI_3311M')
-    @product3 = products('DP_5600')
-    @product4 = products('QF_70')
-    @product5 = products('QF_50')
+    @IF_2005M = products('IF_2005M')
+    @OSPI_3311M = products('OSPI_3311M')
+    @pacific_2009M = products('pacific_2009M')
+    @DP_5600 = products('DP_5600')
+    @QF_70 = products('QF_70')
+    @QF_50 = products('QF_50')
   end
 
   describe 'GET' do
     describe '#index' do
-      it 'return products' do
+      it 'return all active products' do
         get '/public/products'
         assert_response 200
         data = JSON.parse(@response.body)['data']
-        assert_equal data.length, 4, 'Should return 4 products'
-        refute_empty data.find { |p| p['id'].to_i == @product1.id }, 'Should contain IF 2005M'
-        refute_empty data.find { |p| p['id'].to_i == @product2.id }, 'Should contain OSPI 3311M'
-        refute_empty data.find { |p| p['id'].to_i == @product3.id }, 'Should contain DP 5600'
-        refute_empty data.find { |p| p['id'].to_i == @product4.id }, 'Should contain QF 70'
-        assert_nil data.find { |p| p['id'].to_i == @product5.id }, 'Should not contain QF 50'
+        assert_equal data.length, 5, 'Should return 5 products'
+        refute_empty data.find { |p| p['id'].to_i == @IF_2005M.id }, 'Should contain IF 2005M'
+        refute_empty data.find { |p| p['id'].to_i == @OSPI_3311M.id }, 'Should contain OSPI 3311M'
+        refute_empty data.find { |p| p['id'].to_i == @pacific_2009M.id }, 'Should contain Pacific 2009M'
+        refute_empty data.find { |p| p['id'].to_i == @DP_5600.id }, 'Should contain DP 5600'
+        refute_empty data.find { |p| p['id'].to_i == @QF_70.id }, 'Should contain QF 70'
+        assert_nil data.find { |p| p['id'].to_i == @QF_50.id }, 'Should not contain QF 50'
       end
-      it 'return products' do
-        get '/public/products?filter[product_group]=soldering-fluxes'
+      it 'return all active soldering fluxes' do
+        get '/public/products?filter[main-category]=soldering-fluxes'
         assert_response 200
         data = JSON.parse(@response.body)['data']
-        assert_equal data.length, 4, 'Should return 4 products'
-        refute_empty data.find { |p| p['id'].to_i == @product1.id }, 'Should contain IF 2005M'
-        refute_empty data.find { |p| p['id'].to_i == @product2.id }, 'Should contain OSPI 3311M'
-        refute_empty data.find { |p| p['id'].to_i == @product3.id }, 'Should contain DP 5600'
-        refute_empty data.find { |p| p['id'].to_i == @product4.id }, 'Should contain QF 70'
-        assert_nil data.find { |p| p['id'].to_i == @product5.id }, 'Should not contain QF 50'
+        assert_equal data.length, 3, 'Should return 3 products'
+        refute_empty data.find { |p| p['id'].to_i == @IF_2005M.id }, 'Should contain IF 2005M'
+        refute_empty data.find { |p| p['id'].to_i == @OSPI_3311M.id }, 'Should contain OSPI 3311M'
+        refute_empty data.find { |p| p['id'].to_i == @pacific_2009M.id }, 'Should contain Pacific 2009M'
+        assert_nil data.find { |p| p['id'].to_i == @DP_5600.id }, 'Should contain DP 5600'
+        assert_nil data.find { |p| p['id'].to_i == @QF_70.id }, 'Should contain QF 70'
+        assert_nil data.find { |p| p['id'].to_i == @QF_50.id }, 'Should not contain QF 50'
+      end
+      it 'return all active VOC-free soldering fluxes' do
+        get '/public/products?filter[sub-category]=VOC-free'
+        assert_response 200
+        data = JSON.parse(@response.body)['data']
+        assert_equal data.length, 1, 'Should return 1 products'
+        assert_nil data.find { |p| p['id'].to_i == @IF_2005M.id }, 'Should not contain IF 2005M'
+        assert_nil data.find { |p| p['id'].to_i == @OSPI_3311M.id }, 'Should not contain OSPI 3311M'
+        refute_empty data.find { |p| p['id'].to_i == @pacific_2009M.id }, 'Should contain Pacific 2009M'
+        assert_nil data.find { |p| p['id'].to_i == @DP_5600.id }, 'Should not contain DP 5600'
+        assert_nil data.find { |p| p['id'].to_i == @QF_70.id }, 'Should not contain QF 70'
+        assert_nil data.find { |p| p['id'].to_i == @QF_50.id }, 'Should not contain QF 50'
       end
     end
 
     describe '#show' do
-      it "returns product by ID" do
-        get "/public/products/#{@product1.id}"
+      it 'returns product by ID' do
+        get "/public/products/#{@IF_2005M.id}"
         assert_response 200
         data = JSON.parse(@response.body)['data']
-        assert_equal data['id'].to_i, @product1.id
-        assert_equal data['attributes']['name'], @product1.name
+        assert_equal data['id'].to_i, @IF_2005M.id
+        assert_equal data['attributes']['name'], @IF_2005M.name
       end
-      it "returns product by slug" do
-        get "/public/products/?slug=#{@product1.slug}"
+      it 'returns product by slug' do
+        get "/public/products/?slug=#{@IF_2005M.slug}"
         assert_response 200
         data = JSON.parse(@response.body)['data']
-        assert_equal data['id'].to_i, @product1.id
-        assert_equal data['attributes']['name'], @product1.name
+        assert_equal data['id'].to_i, @IF_2005M.id
+        assert_equal data['attributes']['name'], @IF_2005M.name
+      end
+      it 'returns 422 for bogus ID' do
+        get '/public/products/?slug=123'
+        assert_response 422
+      end
+      it 'returns 422 for bogus slug' do
+        get '/public/products/?slug=bogus'
+        assert_response 422
       end
     end
   end
 
   describe 'POST' do
-    it "should be forbidden" do
+    it 'should be forbidden' do
       post '/public/products'
       assert_response 403
     end
   end
 
   describe 'PUT' do
-    it "should be forbidden" do
-      put "/public/products/#{@product1.id}"
+    it 'should be forbidden' do
+      put "/public/products/#{@IF_2005M.id}"
       assert_response 403
     end
   end
 
   describe 'DELETE' do
-    it "should be forbidden" do
-      delete "/public/products/#{@product1.id}"
+    it 'should be forbidden' do
+      delete "/public/products/#{@IF_2005M.id}"
       assert_response 403
     end
   end
 end
-# class IntegrationTestPublicProduct < ActionDispatch::IntegrationTest
-#   def setup
-#     @product1 = products('IF_2005M')
-#     @product2 = products('OSPI_3311M')
-#     @product3 = products('DP_5600')
-#     @product4 = products('QF_70')
-#     @product5 = products('QF_50')
-#   end
-#
-#   test 'Public can GET all public products' do
-#     get '/public/products'
-#     data = JSON.parse(@response.body)['data']
-#     assert_response 200
-#     assert_equal data.length, 4, 'Should return 4 products'
-#     refute_empty data.find { |p| p['id'].to_i == @product1.id }, 'Should contain IF 2005M'
-#     refute_empty data.find { |p| p['id'].to_i == @product2.id }, 'Should contain OSPI 3311M'
-#     refute_empty data.find { |p| p['id'].to_i == @product3.id }, 'Should contain DP 5600'
-#     refute_empty data.find { |p| p['id'].to_i == @product4.id }, 'Should contain QF 70'
-#     assert_nil data.find { |p| p['id'].to_i == @product5.id }, 'Should not contain QF 50'
-#   end
-#
-#   test 'Public can GET a product by ID' do
-#     get "/public/products/#{@product1.id}"
-#     data = JSON.parse(@response.body)['data']
-#     assert_response 200
-#     assert_equal data['id'].to_i, @product1.id
-#     assert_equal data['attributes']['name'], @product1.name
-#   end
-#
-#   test 'Public can GET a product by slug' do
-#     get "/public/products?slug=#{@product1.slug}"
-#     data = JSON.parse(@response.body)['data']
-#     assert_response 200
-#     assert_equal data['id'].to_i, @product1.id
-#     assert_equal data['attributes']['name'], @product1.name
-#   end
-#
-#   test 'Public cannot GET none-public products by ID' do
-#     get "/public/products/#{@product5.id}"
-#     data = JSON.parse(@response.body)['data']
-#     assert_response 200
-#     assert_equal data['id'].to_i, @product5.id
-#     assert_equal data['attributes']['name'], @product5.name
-#   end
-#
-#   test 'Public cannot GET none-public products by slug' do
-#     get "/public/products?slug=#{@product5.slug}"
-#     assert_response 422
-#   end
-#
-#   test 'Public can fetch all products of the same type' do
-#     get "/public/products?product_type=#{@product4.product_type}"
-#     data = JSON.parse(@response.body)['data']
-#     assert_response 200
-#     assert_equal data.length, 1, 'Should return 1 product'
-#   end
-#
-#   test 'Public cannot create products' do
-#     assert_raise ActionController::RoutingError do
-#       post '/public/products', params: {}
-#     end
-#   end
-#
-#   test 'Public cannot update a product' do
-#     assert_raise ActionController::RoutingError do
-#       put "/public/products/#{@product1.id}", params: {}
-#     end
-#   end
-#
-#   test 'Public cannot delete a product' do
-#     assert_raise ActionController::RoutingError do
-#       delete "/public/products/#{@product1.id}"
-#     end
-#   end
-# end

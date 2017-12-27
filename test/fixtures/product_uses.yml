@@ -1,16 +1,9 @@
 # == Schema Information
 #
-# Table name: products
+# Table name: product_uses
 #
-#  id           :integer          not null, primary key
-#  public       :boolean          default(FALSE)
-#  name         :string
-#  pitch        :string
-#  product_type :string
-#  slug         :string
-#  body       :text
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id   :integer          not null, primary key
+#  name :string
 #
 
 for_wave:

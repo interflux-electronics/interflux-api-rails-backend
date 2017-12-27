@@ -19,7 +19,7 @@ module Admin
     # POST /admin/products
     def create
       @product = Product.new(attributes)
-      @product.product_group_id = relationships[:'product-group']['data']['id']
+      @product.product_category_id = relationships[:'product-group']['data']['id']
       @product.product_sub_group_id = relationships[:'product-sub-group']['data']['id']
       if @product.save!
         render status: 201, json: json_resource(Admin::ProductResource, @product)

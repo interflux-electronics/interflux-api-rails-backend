@@ -1,0 +1,137 @@
+# == Schema Information
+#
+# Table name: product_categories
+#
+#  id                 :integer          not null, primary key
+#  slug               :string
+#  name_plural        :string
+#  name_single        :string
+#  parent_category_id :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+# TOP CATEGORIES
+
+soldering_fluxes:
+  slug: soldering-fluxes
+  name_plural: Soldering fluxes
+  name_single: Soldering flux
+
+solder_pastes:
+  slug: solder-pastes
+  name_plural: Solder paste
+  name_single: Solder pastes
+
+solder_wires:
+  slug: solder-wires
+  name_plural: Solder wires
+  name_single: Solder wire
+
+spray_fluxers:
+  slug: spray-fluxers
+  name_plural: Spray fluxers
+  name_single: Spray fluxer
+
+auxiliaries:
+  slug: auxiliaries
+  name_plural: Auxiliaries
+  name_single: Auxiliary
+
+# SUB CATEGORIES
+
+alcohol_based:
+  parent_category: soldering_fluxes
+  name_single: Alcohol-based soldering flux
+  name_plural: Alcohol-based soldering fluxes
+  slug: alcohol-based
+
+voc_free:
+  parent_category: soldering_fluxes
+  name_single: VOC-free soldering flux
+  name_plural: VOC-free soldering flux
+  slug: VOC-free
+
+low_voc:
+  parent_category: soldering_fluxes
+  name_single: Low VOC soldering flux
+  name_plural: Low VOC soldering flux
+  slug: low-VOC
+
+rosin_based:
+  parent_category: soldering_fluxes
+  name_single: Rosin-based soldering flux
+  name_plural: Rosin-based soldering flux
+  slug: rosin-based
+
+rework-and-repair:
+  parent_category: soldering_fluxes
+  name_single: Soldering flux for rework & repair
+  name_plural: Soldering fluxes for rework & repair
+  slug: rework-and-repair
+
+flux_thinner:
+  parent_category: soldering_fluxes
+  name_single: Flux thinner
+  name_plural: Flux thinners
+  slug: flux-thinner
+
+no_clean:
+  parent_category: solder_pastes
+  name_single: No-clean solder paste
+  name_plural: No-clean solder pastes
+  slug: no-clean
+
+lmpa:
+  parent_category: solder_pastes
+  name_single: Low melting point solder paste
+  name_plural: Low melting point solder pastes
+  slug: low-melting-point
+
+lead_free:
+  parent_category: solder_wires
+  name_single: Lead-free solder wire
+  name_plural: Lead-free solder wires
+  slug: lead-free
+
+lead_based:
+  parent_category: solder_wires
+  name_single: Lead-based solder wire
+  name_plural: Lead-based solder wires
+  slug: lead-based
+
+standalone_spray:
+  parent_category: spray_fluxers
+  name_single: Standalone spray fluxer
+  name_plural: Standalone spray fluxers
+  slug: standalone
+
+retrofit_spray:
+  parent_category: spray_fluxers
+  name_single: Retrofit spray fluxer
+  name_plural: Retrofit spray fluxers
+  slug: retrofit
+
+product_tool:
+  parent_category: auxiliaries
+  name_single: Production tool
+  name_plural: Production tools
+  slug: production-tools
+
+cleaning_product:
+  parent_category: auxiliaries
+  name_single: Cleaning product
+  name_plural: Cleaning products
+  slug: cleaning-products
+
+solder_bath_treatement:
+  parent_category: auxiliaries
+  name_single: Solder bath treatment
+  name_plural: Solder bath treatment
+  slug: solder-bath-treatment
+
+solder_alloys:
+  parent_category: auxiliaries
+  name_single: Solder alloy
+  name_plural: Solder alloys
+  slug: solder-alloys

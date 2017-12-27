@@ -1,12 +1,12 @@
 require 'test_helper'
 
-class AdminProductGroupsIntegrationTest < ActionDispatch::IntegrationTest
+class AdminProductCategorysIntegrationTest < ActionDispatch::IntegrationTest
   def setup
-    @soldering_fluxes = product_groups('soldering_fluxes')
-    @solder_pastes = product_groups('solder_pastes')
-    @solder_wires = product_groups('solder_wires')
-    @spray_fluxers = product_groups('spray_fluxers')
-    @auxiliaries = product_groups('auxiliaries')
+    @soldering_fluxes = product_categories('soldering_fluxes')
+    @solder_pastes = product_categories('solder_pastes')
+    @solder_wires = product_categories('solder_wires')
+    @spray_fluxers = product_categories('spray_fluxers')
+    @auxiliaries = product_categories('auxiliaries')
     admin_user = users('admin_user')
     user_token = JsonWebToken.encode(user_id: admin_user.id)
     @authorized_header = { 'Authorization': user_token }

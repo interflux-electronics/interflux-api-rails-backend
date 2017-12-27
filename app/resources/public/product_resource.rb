@@ -5,7 +5,7 @@ module Public
                :pitch,
                :body
 
-    relationship :product_group, to: :one
-    relationship :product_sub_group, to: :one
+    relationship :main_category, class_name: 'ProductCategory', foreign_key: 'main_category_id', to: :one
+    relationship :sub_category, class_name: 'ProductCategory', foreign_key: 'sub_category_id', to: :one
   end
 end

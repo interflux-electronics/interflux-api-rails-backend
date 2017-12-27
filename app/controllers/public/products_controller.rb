@@ -1,16 +1,15 @@
 module Public
   class ProductsController < ApplicationController
-
-    # Return all appointments
-    # Optionally filter per group
-    # Optionally filter per sub group
-    # GET /public/products/?filter[group]=:group
-    # GET /public/products/?filter[sub_group]=:sub_group
+    # Return all products
+    # Optionally filter per main category
+    # Optionally filter per sub category
+    # GET /public/products/?filter[main-category]=:slug
+    # GET /public/products/?filter[sub-category]=:slug
     def index
       return show if params[:slug]
-      products = Product.active.order('name desc')
-      products = products.with_group(product_group) if product_group.present?
-      # products = products.with_sub_group(sub_group) if sub_group.present?
+      products = Product.which_are_public.order('name desc')
+      products = products.where_main_category(main_category) if main_category.present?
+      products = products.where_sub_category(sub_category) if sub_category.present?
       render status: 200, json: json_resources(Public::ProductResource, products)
     end
 
@@ -31,12 +30,16 @@ module Public
       params.require(:filter) if params['filter']
     end
 
-    def product_group
-      filter[:product_group] if filter
+    def main_category
+      filter['main-category'] if filter
     end
 
-    def sub_group
-      filter[:sub_group]
+    def sub_category
+      filter['sub-category'] if filter
+    end
+
+    def not_found
+      json_error(422, 'product-not-found', 'No product with this ID / slug was found.')
     end
   end
 end

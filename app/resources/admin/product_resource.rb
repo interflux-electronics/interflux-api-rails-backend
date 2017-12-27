@@ -6,7 +6,6 @@ module Admin
                :pitch,
                :body
 
-    relationship :product_group, to: :one
-    relationship :product_sub_group, to: :one
+    relationship :product_category, to: :one
   end
 end
