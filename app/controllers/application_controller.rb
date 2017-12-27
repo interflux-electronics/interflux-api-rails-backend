@@ -1,31 +1,30 @@
 class ApplicationController < JSONAPI::ResourceController
-
   def index
-    return forbidden
+    forbidden
   end
 
   def show
-    return forbidden
+    forbidden
   end
 
   def create
-    return forbidden
+    forbidden
   end
 
   def update
-    return forbidden
+    forbidden
   end
 
   def edit
-    return forbidden
+    forbidden
   end
 
   def new
-    return forbidden
+    forbidden
   end
 
   def destroy
-    return forbidden
+    forbidden
   end
 
   def forbidden
