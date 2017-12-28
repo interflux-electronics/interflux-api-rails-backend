@@ -17,7 +17,7 @@ class PublicProductCategoryIntegrationTest < ActionDispatch::IntegrationTest
         refute_empty data.find { |p| p['id'].to_i == @voc_free.id }, 'Should contain VOC-free soldering fluxes'
       end
       it 'return all sub categories of soldering-fluxes' do
-        get '/public/product-categories?filter[product-category]=soldering-fluxes'
+        get '/public/product-categories?filter[parent-category]=soldering-fluxes'
         assert_response 200
         data = JSON.parse(@response.body)['data']
         assert_equal data.length, 6, 'Should return 6 categories'

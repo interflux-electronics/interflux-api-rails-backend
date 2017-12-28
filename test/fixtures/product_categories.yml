@@ -49,19 +49,19 @@ alcohol_based:
 voc_free:
   parent_category: soldering_fluxes
   name_single: VOC-free soldering flux
-  name_plural: VOC-free soldering flux
+  name_plural: VOC-free soldering fluxes
   slug: VOC-free
 
 low_voc:
   parent_category: soldering_fluxes
   name_single: Low VOC soldering flux
-  name_plural: Low VOC soldering flux
+  name_plural: Low VOC soldering fluxes
   slug: low-VOC
 
 rosin_based:
   parent_category: soldering_fluxes
   name_single: Rosin-based soldering flux
-  name_plural: Rosin-based soldering flux
+  name_plural: Rosin-based soldering fluxes
   slug: rosin-based
 
 rework-and-repair:
@@ -127,7 +127,7 @@ cleaning_product:
 solder_bath_treatement:
   parent_category: auxiliaries
   name_single: Solder bath treatment
-  name_plural: Solder bath treatment
+  name_plural: Solder bath treatments
   slug: solder-bath-treatment
 
 solder_alloys:
