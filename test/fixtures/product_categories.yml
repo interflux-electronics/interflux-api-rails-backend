@@ -20,8 +20,8 @@ soldering_fluxes:
 
 solder_pastes:
   slug: solder-pastes
-  name_plural: Solder paste
-  name_single: Solder pastes
+  name_plural: Solder pastes
+  name_single: Solder paste
 
 solder_wires:
   slug: solder-wires
