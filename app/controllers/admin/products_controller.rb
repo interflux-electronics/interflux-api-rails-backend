@@ -18,9 +18,9 @@ module Admin
     # Create a product
     # POST /admin/products
     def create
-      @product = Product.new(attributes)
-      @product.main_category_id = relationships[:'main-category']['data']['id']
-      @product.sub_category_id = relationships[:'sub-category']['data']['id']
+      @product = Product.new(permitted_attributes)
+      @product.main_category_id = main_category
+      @product.sub_category_id = sub_category
       if @product.save!
         render status: 201, json: json_resource(Admin::ProductResource, @product)
       else
@@ -31,9 +31,14 @@ module Admin
     # Update a product
     # PUT /admin/products/:id
     def update
-      super # Magically enables relationships to be saved as well ¯\_(ツ)_/¯
-      @product.update(attributes)
-      head 204
+      @product.assign_attributes(permitted_attributes)
+      @product.main_category_id = main_category
+      @product.sub_category_id = sub_category
+      if @product.save!
+        render status: 204, json: json_resource(Admin::ProductResource, @product)
+      else
+        render status: 422, json: json_errors(@product)
+      end
     end
 
     # Delete a product
@@ -50,7 +55,7 @@ module Admin
       return not_found unless @product.present?
     end
 
-    def attributes
+    def permitted_attributes
       params.require(:data)
             .require(:attributes)
             .permit(
@@ -63,6 +68,14 @@ module Admin
 
     def relationships
       params.require(:data).require(:relationships)
+    end
+
+    def main_category
+      relationships[:'main-category']['data']['id']
+    end
+
+    def sub_category
+      relationships[:'sub-category']['data']['id']
     end
 
     def not_unique
