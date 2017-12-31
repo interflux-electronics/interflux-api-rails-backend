@@ -2,10 +2,11 @@ module Admin
   class ProductResource < JSONAPI::Resource
     attributes :name,
                :slug,
-               :public,
                :pitch,
-               :body
+               :body,
+               :public
 
-    relationship :product_category, to: :one
+    relationship :main_category, class_name: 'ProductCategory', foreign_key: 'main_category_id', to: :one
+    relationship :sub_category, class_name: 'ProductCategory', foreign_key: 'sub_category_id', to: :one
   end
 end

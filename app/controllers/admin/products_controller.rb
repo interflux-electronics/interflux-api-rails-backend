@@ -5,8 +5,8 @@ module Admin
     # Return all products
     # GET /admin/products
     def index
-      @products = Product.all
-      render status: 200, json: json_resources(Admin::ProductResource, @products)
+      products = Product.all.order('name desc')
+      render status: 200, json: json_resources(Admin::ProductResource, products)
     end
 
     # Return 1 product by ID
@@ -19,8 +19,8 @@ module Admin
     # POST /admin/products
     def create
       @product = Product.new(attributes)
-      @product.product_category_id = relationships[:'product-group']['data']['id']
-      @product.product_sub_group_id = relationships[:'product-sub-group']['data']['id']
+      @product.main_category_id = relationships[:'main-category']['data']['id']
+      @product.sub_category_id = relationships[:'sub-category']['data']['id']
       if @product.save!
         render status: 201, json: json_resource(Admin::ProductResource, @product)
       else
@@ -55,7 +55,6 @@ module Admin
             .require(:attributes)
             .permit(
               :name,
-              :slug,
               :public,
               :pitch,
               :body
