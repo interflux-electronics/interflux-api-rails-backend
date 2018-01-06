@@ -21,4 +21,12 @@ class Product < ApplicationRecord
   scope :which_are_public, -> () { where(public: true) }
   scope :where_main_category, ->(slug) { where(main_category: ProductCategory.where(slug: slug)) }
   scope :where_sub_category, ->(slug) { where(sub_category: ProductCategory.where(slug: slug)) }
+
+  before_save :generate_slug
+
+  private
+
+  def generate_slug
+    self.slug = self.name.parameterize(preserve_case: true)
+  end
 end

@@ -1,6 +1,6 @@
 module Admin
   class AuthenticatedController < ApplicationController
-    # before_action :authorize_request
+    before_action :authorize_request
 
     attr_accessor :user
 
@@ -16,35 +16,19 @@ module Admin
     end
 
     def missing_header
-      json_errors(
-        status: 401,
-        code: 'missing-header',
-        detail: 'The header of your request is missing the Authorization field.'
-      )
+      json_error(401, 'missing-header', 'The header of your request is missing the Authorization field.')
     end
 
     def invalid_token
-      json_error(
-        status: 401,
-        code: 'invalid-token',
-        detail: 'Your JWT token is either invalid or expired.'
-      )
+      json_error(401, 'invalid-token', 'Your JWT token is either invalid or expired.')
     end
 
     def missing_user
-      json_error(
-        status: 401,
-        code: 'missing-user',
-        detail: 'No user was found for your authentication token.'
-      )
+      json_error(401, 'missing-user', 'No user was found for your authentication token.')
     end
 
     def no_permission
-      json_error(
-        status: 401,
-        code: 'no-permission',
-        detail: 'User does not have permission.'
-      )
+      json_error(401, 'no-permission', 'User does not have permission.')
     end
   end
 end

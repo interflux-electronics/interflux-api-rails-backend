@@ -1,15 +1,18 @@
 module Admin
   class ProductsController < Admin::AuthenticatedController
-    before_action :set_product, only: %i[show update destroy]
+    before_action :find_product, only: %i[index show update destroy]
 
     # Return all products
     # GET /admin/products
     def index
+      return show if params[:slug]
       products = Product.all.order('name desc')
       render status: 200, json: json_resources(Admin::ProductResource, products)
     end
 
-    # Return 1 product by ID
+    # Return product with slug
+    # Return product with ID
+    # GET /admin/products/?slug=:slug
     # GET /admin/products/:id
     def show
       render status: 200, json: json_resource(Admin::ProductResource, @product)
@@ -18,13 +21,13 @@ module Admin
     # Create a product
     # POST /admin/products
     def create
-      @product = Product.new(permitted_attributes)
-      @product.main_category_id = main_category
-      @product.sub_category_id = sub_category
-      if @product.save!
-        render status: 201, json: json_resource(Admin::ProductResource, @product)
+      product = Product.new(permitted_attributes)
+      product.main_category_id = main_category
+      product.sub_category_id = sub_category
+      if product.save!
+        render status: 201, json: json_resource(Admin::ProductResource, product)
       else
-        render status: 422, json: json_errors(@product)
+        render status: 422, json: json_errors(product)
       end
     end
 
@@ -50,9 +53,10 @@ module Admin
 
     private
 
-    def set_product
-      @product = Product.find(params[:id])
-      return not_found unless @product.present?
+    def find_product
+      @product = Product.find_by_slug(params[:slug]) if params[:slug]
+      @product = Product.find_by_id(params[:id]) if params[:id]
+      return not_found if @product.nil? && (params[:id] || params[:slug])
     end
 
     def permitted_attributes
@@ -60,6 +64,7 @@ module Admin
             .require(:attributes)
             .permit(
               :name,
+              :slug,
               :public,
               :pitch,
               :body
@@ -78,20 +83,8 @@ module Admin
       relationships[:'sub-category']['data']['id']
     end
 
-    def not_unique
-      json_error(
-        status: 422,
-        code: 'not-unique',
-        detail: 'This product name is already in use, please choose another.'
-      )
-    end
-
     def not_found
-      json_error(
-        status: 422,
-        code: 'not-found',
-        detail: 'No product with this ID was found.'
-      )
+      json_error(422, 'product-not-found', 'No product with this ID / slug was found.')
     end
   end
 end
