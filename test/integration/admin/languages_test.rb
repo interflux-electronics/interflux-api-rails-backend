@@ -15,7 +15,7 @@ class AdminLanguagesIntegrationTest < ActionDispatch::IntegrationTest
   # end
   #
   # test 'Nobody can GET "/admin/products/:id" without authentication' do
-  #   get "/admin/products/#{@product1.id}"
+  #   get "/admin/products/#{products('IF_2005M').id}"
   #   assert_response 401
   # end
   #
@@ -25,12 +25,12 @@ class AdminLanguagesIntegrationTest < ActionDispatch::IntegrationTest
   # end
   #
   # test 'Nobody can PUT "/admin/products/:id" without authentication' do
-  #   put "/admin/products/#{@product1.id}", params: {}
+  #   put "/admin/products/#{products('IF_2005M').id}", params: {}
   #   assert_response 401
   # end
   #
   # test 'Nobody can DELETE "/admin/products/:id" without authentication' do
-  #   delete "/admin/products/#{@product1.id}"
+  #   delete "/admin/products/#{products('IF_2005M').id}"
   #   assert_response 401
   # end
 
@@ -44,7 +44,7 @@ class AdminLanguagesIntegrationTest < ActionDispatch::IntegrationTest
   end
 
   # test 'Authorized admin cannot can fetch a product group by ID' do
-  #   get "/admin/product-groups/#{@product1.id}", headers: @authorized_header
+  #   get "/admin/product-groups/#{products('IF_2005M').id}", headers: @authorized_header
   #   assert_response 401
   # end
 
@@ -81,31 +81,31 @@ class AdminLanguagesIntegrationTest < ActionDispatch::IntegrationTest
   #         name: 'IF 2005M X',
   #         slug: 'IF-2005M-X'
   #       },
-  #       id: @product1.id,
+  #       id: products('IF_2005M').id,
   #       type: 'products'
   #     }
   #   }
-  #   assert_equal @product1.name, 'IF 2005M', 'Before the update the name of the product should be "IF 2005M"'
-  #   put "/admin/products/#{@product1.id}", params: json, headers: @authorized_header
+  #   assert_equal products('IF_2005M').name, 'IF 2005M', 'Before the update the name of the product should be "IF 2005M"'
+  #   put "/admin/products/#{products('IF_2005M').id}", params: json, headers: @authorized_header
   #   assert_response 204
-  #   product = Product.find_by(id: @product1.id)
+  #   product = Product.find_by(id: products('IF_2005M').id)
   #   assert_equal product.name, 'IF 2005M X', 'After the update the name of the product should be "IF 2005M X"'
   #   assert_equal product.slug, 'IF-2005M-X', 'After the update the slug of the product should be "IF-2005M-X"'
   # end
 
   # test 'Authorized admin users can delete a product' do
   #   assert_equal Product.count, 5, 'Before deletion there should be 5 products'
-  #   refute_empty Product.where(name: @product1.name), 'Before deletion the database should contain a product with name "IF 2005M"'
-  #   delete "/admin/products/#{@product1.id}", headers: @authorized_header
+  #   refute_empty Product.where(name: products('IF_2005M').name), 'Before deletion the database should contain a product with name "IF 2005M"'
+  #   delete "/admin/products/#{products('IF_2005M').id}", headers: @authorized_header
   #   assert_equal Product.count, 4, 'After deletion there should be 4 products'
-  #   assert_empty Product.where(name: @product1.name), 'After deletion the database should no longer contain a product with name "IF 2005M"'
+  #   assert_empty Product.where(name: products('IF_2005M').name), 'After deletion the database should no longer contain a product with name "IF 2005M"'
   # end
 
   # test 'Admin cannot make a product with a name that already exists' do
   #   json = {
   #     data: {
   #       attributes: {
-  #         name: @product1.name,
+  #         name: products('IF_2005M').name,
   #         slug: nil,
   #         public: false,
   #         product_type: 'soldering_flux',

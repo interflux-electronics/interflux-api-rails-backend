@@ -33,27 +33,22 @@ class ApplicationController < JSONAPI::ResourceController
 
   # Serialise and return 1 record into JSON using JSON API resources
   # Example: render status: 200, json: json_resource(Admin::ProductResource, @product, nil)
+  # Documentation: https://github.com/cerebris/jsonapi-resources/issues/1100
   def json_resource(klass, record, context = nil)
     JSONAPI::ResourceSerializer.new(klass).serialize_to_hash(klass.new(record, context))
   end
 
   # Serialise and return an array of records into JSON using JSON API resources
   # Example: render status: 200, json: json_resources(Admin::ProductResource, @products, nil)
+  # Documentation: https://github.com/cerebris/jsonapi-resources/issues/1100
   def json_resources(klass, records, context = nil)
     resources = records.map { |record| klass.new(record, context) }
     JSONAPI::ResourceSerializer.new(klass).serialize_to_hash(resources)
   end
 
   # Wraps a single error in JSON API format
+  # Example: json_error(422, 'not-found', 'No product with this ID was found.')
   # Documentation: http://jsonapi.org/format/#errors
-  # Usage: return not_found unless @product.present?
-  # def not_found
-  #   json_error(
-  #     status: 422,
-  #     code: 'not-found',
-  #     detail: 'No product with this ID was found.'
-  #   )
-  # end
   def json_error(status, code, detail)
     render status: status, json: {
       errors: [{
