@@ -28,6 +28,10 @@ gem 'jwt'
 # http://jsonapi-resources.com/
 gem 'jsonapi-resources'
 
+# For dumping database data into a YAML
+# https://github.com/yamldb/yaml_db
+gem 'yaml_db'
+
 group :development, :test do
   gem 'awesome_print', require: 'ap' # For coloured printing in byebug and console `ap`
   gem 'byebug', platforms: %i[mri mingw x64_mingw] # For halting the code and debugging `byebug`
