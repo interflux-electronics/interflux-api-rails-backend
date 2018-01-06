@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PublicProductCategoryIntegrationTest < ActionDispatch::IntegrationTest
+class PublicProductCategoryTest < ActionDispatch::IntegrationTest
   before do
     @soldering_fluxes = product_categories('soldering_fluxes')
     @voc_free = product_categories('voc_free')

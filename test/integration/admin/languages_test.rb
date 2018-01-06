@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AdminLanguagesIntegrationTest < ActionDispatch::IntegrationTest
+class AdminLanguagesTest < ActionDispatch::IntegrationTest
   def setup
     admin_user = users('admin_user')
     user_token = JsonWebToken.encode(user_id: admin_user.id)

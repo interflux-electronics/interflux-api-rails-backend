@@ -121,9 +121,9 @@ git push server production
 Remote
 
 ```
+bundle install;
 bundle exec pumactl -S ./shared/pids/puma.state stop;
 export RAILS_ENV=production;
-bundle install;
 rake db:migrate;
 bundle exec puma
 ```

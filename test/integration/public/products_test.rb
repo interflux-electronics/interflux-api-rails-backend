@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PublicProductIntegrationTest < ActionDispatch::IntegrationTest
+class PublicProductTest < ActionDispatch::IntegrationTest
   before do
     @IF_2005M = products('IF_2005M')
     @OSPI_3311M = products('OSPI_3311M')

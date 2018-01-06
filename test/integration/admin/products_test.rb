@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AdminProductIntegrationTest < ActionDispatch::IntegrationTest
+class AdminProductTest < ActionDispatch::IntegrationTest
   describe 'without authentication' do
     describe 'GET' do
       describe '#index' do
