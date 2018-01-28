@@ -12,7 +12,6 @@ module Admin
       return forbidden unless token
       decoded = JsonWebToken.decode(token)
       return invalid_token unless decoded
-      byebug
       user = Users.find_by_id(params[:id])
       render status: 200, json: json_resource(Admin::UserResource, user)
     end
