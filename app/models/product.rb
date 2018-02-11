@@ -18,6 +18,7 @@ class Product < ApplicationRecord
   belongs_to :main_category, class_name: 'ProductCategory', foreign_key: 'main_category_id', optional: true
   belongs_to :sub_category, class_name: 'ProductCategory', foreign_key: 'sub_category_id', optional: true
 
+  has_many :product_translations
   has_many :images
 
   scope :which_are_public, -> () { where(public: true) }
