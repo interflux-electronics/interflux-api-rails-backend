@@ -26,6 +26,5 @@ module Admin
     def invalid_password
       json_error(401, 'invalid-password', 'This password is incorrect.')
     end
-
   end
 end

@@ -9,4 +9,6 @@
 #
 
 class Language < ApplicationRecord
+  has_many :product_translations
+  has_many :image_translations
 end

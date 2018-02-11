@@ -17,47 +17,47 @@
 IF_2005M:
   name: IF 2005M
   slug: IF-2005M
-  main_category: soldering_fluxes
-  sub_category: alcohol_based
   public: true
   pitch: Interflux® IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**.
+  main_category: soldering_fluxes
+  sub_category: alcohol_based
 
 OSPI_3311M:
   name: OSPI 3311M
   slug: OSPI-3311M
-  main_category: soldering_fluxes
-  sub_category: alcohol_based
   public: true
   pitch: Interflux® OSPI 3311M is an alcohol based no-clean flux for **soldering OSP** finished boards that have passed one or more reflow cycles.
+  main_category: soldering_fluxes
+  sub_category: alcohol_based
 
 pacific_2009M:
   name: PacIFic 2009M
   slug: PacIFic-2009M
-  main_category: soldering_fluxes
-  sub_category: voc_free
   public: true
   pitch: Interflux® PacIFic 2009M is a water based no-clean flux mainly used for wave and selective soldering.
+  main_category: soldering_fluxes
+  sub_category: voc_free
 
 DP_5600:
   name: DP 5600
   slug: DP-5600
-  main_category: solder_pastes
-  sub_category: no_clean
   public: true
   pitch: Interflux® DP 5600 is a no-clean solder paste for **low temperature SnBi(Ag)** alloys.
+  main_category: solder_pastes
+  sub_category: no_clean
 
 QF_70:
   name: QF 70
   slug: QF-70
-  main_category: solder_wires
-  sub_category: lead_free
   public: true
   pitch: Interflux® **QF 70** is an absolutely halide-free, rosin based no-clean solder wire with **fast wetting for fast soldering** operations in lead-free alloys.
+  main_category: solder_wires
+  sub_category: lead_free
 
 QF_50:
   name: QF 50
   slug: QF-50
-  main_category: solder_wires
-  sub_category: lead_free
   public: false
   pitch: Interflux® **QF 50** is an absolutely halide-free, rosin based no-clean solder wire with **fast wetting for fast soldering** operations in lead-free alloys.
+  main_category: solder_wires
+  sub_category: lead_free

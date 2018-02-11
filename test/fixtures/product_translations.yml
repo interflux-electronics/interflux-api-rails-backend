@@ -11,7 +11,14 @@
 #  updated_at  :datetime         not null
 #
 
-class ProductTranslation < ApplicationRecord
-  belongs_to :product
-  belongs_to :language
-end
+translation_IF_2005M_fr:
+  pitch: Pitch in French.
+  body: Body in French.
+  product: IF_2005M
+  language: fr
+
+translation_IF_2005M_de:
+  pitch: Pitch in German.
+  body: Body in German.
+  product: IF_2005M
+  language: de

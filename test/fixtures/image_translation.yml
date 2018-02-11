@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id               :integer          not null, primary key
+#  name             :string
+#  slug             :string
+#  public           :boolean          default(FALSE)
+#  pitch            :text
+#  body             :text
+#  main_category_id :integer
+#  sub_category_id  :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#
+
+image_translation_1_fr:
+  caption: Conteneur de 25 litres, vue de face
+  image: image_1
+  language: fr
+
+image_translation_1_de:
+  caption: 25-Liter-Behälter, Vorderansicht
+  image: image_1
+  language: de

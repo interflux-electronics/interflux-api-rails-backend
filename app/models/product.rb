@@ -18,6 +18,8 @@ class Product < ApplicationRecord
   belongs_to :main_category, class_name: 'ProductCategory', foreign_key: 'main_category_id', optional: true
   belongs_to :sub_category, class_name: 'ProductCategory', foreign_key: 'sub_category_id', optional: true
 
+  has_many :images
+
   scope :which_are_public, -> () { where(public: true) }
   scope :where_main_category, ->(slug) { where(main_category: ProductCategory.where(slug: slug)) }
   scope :where_sub_category, ->(slug) { where(sub_category: ProductCategory.where(slug: slug)) }
@@ -27,6 +29,6 @@ class Product < ApplicationRecord
   private
 
   def generate_slug
-    self.slug = self.name.parameterize(preserve_case: true)
+    self.slug = name.parameterize(preserve_case: true)
   end
 end

@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: images
+#
+#  id         :integer          not null, primary key
+#  caption    :string
+#  product_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+image_1:
+  caption: 25 liter container, front view
+  product: IF_2005M
+
+image_2:
+  caption: 25 liter container, side view
+  product: IF_2005M
+
+image_1:
+  caption: 25 liter container
+  product: PacIFic_2009M
