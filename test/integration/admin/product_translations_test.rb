@@ -112,10 +112,8 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
             }
           }
         }
-        # assert_equal ProductTranslation.where(language: @chinese).count 0
         post '/admin/product-translations', params: json, headers: @authorized_header
         assert_response 201
-        # assert_equal ProductTranslation.where(language: @chinese).count 1
         translation = ProductTranslation.where(language: @chinese).first
         data = JSON.parse(@response.body)['data']
         assert_equal data['id'].to_i, translation.id, 'The response includes the ID of the created translation (important)'
