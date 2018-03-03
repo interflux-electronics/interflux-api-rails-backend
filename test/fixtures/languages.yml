@@ -8,82 +8,77 @@
 #  name_native  :string
 #
 
-en:
+english:
   locale: en
   name_english: English
   name_native: English
 
-de:
+german:
   locale: de
   name_english: German
   name_native: Deutsch
 
-fr:
+french:
   locale: fr
   name_english: French
   name_native: Français
 
-zh-hans:
+chinese:
   locale: zh-hans
   name_english: Chinese
   name_native: 简体中文
 
-cs:
+chech:
   locale: cs
   name_english: Chech
   name_native: Čeština
 
-cs:
+italian:
   locale: it
   name_english: Italian
   name_native: Italiano
 
-id:
+indonesian:
   locale: id
   name_english: Indonesian
   name_native: Bahasa Indonesia
 
-pt-pt:
+portugese:
   locale: pt-pt
   name_english: Portugese
   name_native: Português
 
-ro:
+romanian:
   locale: ro
   name_english: Romanian
   name_native: Română
 
-ru:
+russian:
   locale: ru
   name_english: Russian
   name_native: Русский
 
-th:
+thai:
   locale: th
   name_english: Thai
   name_native: ภาษาไทย
 
-tr:
+turkish:
   locale: tr
   name_english: Turkish
   name_native: Türkçe
 
-pl:
+polish:
   locale: pl
   name_english: Polish
   name_native: Polski
 
-pl:
-  locale: pl
-  name_english: Polish
-  name_native: Polski
-
-es:
+spanish:
   locale: es
   name_english: Spanish
   name_native: Español
 
-sv:
+swedish:
   locale: sv
   name_english: Swedish
   name_native: Svenska

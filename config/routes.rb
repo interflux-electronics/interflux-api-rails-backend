@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     post 'login', to: 'login#authenticate'
     jsonapi_resources :products
     jsonapi_resources :product_categories
+    jsonapi_resources :product_translations
     jsonapi_resources :languages
     jsonapi_resources :users
   end

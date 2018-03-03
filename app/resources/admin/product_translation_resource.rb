@@ -1,8 +1,7 @@
 module Admin
   class ProductTranslationResource < JSONAPI::Resource
     attributes :product_id,
-               :locale,
-               :name,
+               :language_id,
                :pitch,
                :body
   end

@@ -12,13 +12,19 @@
 #
 
 translation_IF_2005M_fr:
-  pitch: Pitch in French.
-  body: Body in French.
+  pitch: Pitch en Français IF 2005M.
+  body: Body en Français IF 2005M.
   product: IF_2005M
   language: fr
 
 translation_IF_2005M_de:
-  pitch: Pitch in German.
-  body: Body in German.
+  pitch: Pitch in Deutsch IF 2005M.
+  body: Body in Deutsch IF 2005M.
   product: IF_2005M
   language: de
+
+pacific_2009M:
+  pitch: Pitch en Français Pacific 2009M.
+  body: Body en Français Pacific 2009M.
+  product: pacific_2009M
+  language: fr
