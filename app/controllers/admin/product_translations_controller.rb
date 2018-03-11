@@ -1,62 +1,66 @@
 module Admin
   class ProductTranslationsController < Admin::AuthenticatedController
-    before_action :find_resource, only: %i[index show update destroy]
+    before_action :find_resource, only: %i[show update destroy]
 
-    # Return all products
-    # GET /admin/product-translations
+    # Fetch all translations for one particular product
+    # GET /admin/product-translations?slug=:product_slug
     def index
-      return forbidden unless params[:product]
-      translations = ProductTranslation.where(product_id: params[:product])
+      slug = params[:slug]
+      return missing_slug unless slug
+      product = Product.find_by_slug(slug)
+      return unknown_slug(slug) if product.nil?
+      translations = ProductTranslation.where(product: product)
       render status: 200, json: json_resources(Admin::ProductTranslationResource, translations)
     end
 
-    # Return product with ID
+    # Return a single product translation by ID
     # GET /admin/product-translations/:id
     def show
-      render status: 200, json: json_resource(Admin::ProductTranslationResource, @translation)
+      render status: 200, json: json_resource(Admin::ProductTranslationResource, @resource)
     end
 
-    # Create a product
+    # Create a product translation
     # POST /admin/product-translations
     def create
-      translation = ProductTranslation.new(permitted_attributes)
-      translation.product_id = product_id
-      translation.language_id = language_id
-      if translation.save!
-        render status: 201, json: json_resource(Admin::ProductTranslationResource, translation)
+      resource = ProductTranslation.new(resource_attributes)
+      resource.product_id = product_id
+      resource.language_id = language_id
+      if resource.save!
+        render status: 201, json: json_resource(Admin::ProductTranslationResource, resource)
       else
-        render status: 422, json: json_errors(translation)
+        render status: 422, json: json_errors(resource)
       end
     end
 
-    # Update a product
+    # Update a product translation
     # PUT /admin/product-translations/:id
     def update
-      @translation.assign_attributes(permitted_attributes)
-      @translation.product_id = product_id
-      @translation.language_id = language_id
-      if @translation.save!
-        render status: 204, json: json_resource(Admin::ProductTranslationResource, @translation)
+      @resource.assign_attributes(resource_attributes)
+      @resource.product_id = product_id
+      @resource.language_id = language_id
+      if @resource.save!
+        render status: 204, json: json_resource(Admin::ProductTranslationResource, @resource)
       else
-        render status: 422, json: json_errors(@translation)
+        render status: 422, json: json_errors(@resource)
       end
     end
 
     # Delete a product translation
     # DELETE /admin/product-translations/:id
     def destroy
-      @translation.destroy
+      @resource.destroy
       head 204
     end
 
     private
 
     def find_resource
-      @translation = ProductTranslation.find_by_id(params[:id]) if params[:id]
-      return not_found if @translation.nil? && params[:id]
+      id = params[:id]
+      @resource = ProductTranslation.find_by_id(id)
+      return not_found(id) if @resource.nil?
     end
 
-    def permitted_attributes
+    def resource_attributes
       params.require(:data)
             .require(:attributes)
             .permit(
@@ -77,8 +81,16 @@ module Admin
       relationships[:'language']['data']['id']
     end
 
-    def not_found
-      json_error(422, 'product-translation-not-found', 'No product translation with this ID was found.')
+    def missing_slug
+      json_error(422, 'missing-slug', 'This endpoint requires a product slug param.')
+    end
+
+    def unknown_slug(slug)
+      json_error(422, 'unknown-slug', "No product was found for product slug \"#{slug}\".")
+    end
+
+    def not_found(id)
+      json_error(422, 'not-found', "No product translation was found for ID \"#{id}\".")
     end
   end
 end

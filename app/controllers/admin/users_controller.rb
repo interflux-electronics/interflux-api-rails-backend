@@ -1,5 +1,5 @@
 module Admin
-  class UsersController < ApplicationController
+  class UsersController < Admin::AuthenticatedController
     def index
       return show if token
       forbidden

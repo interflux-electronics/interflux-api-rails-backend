@@ -59,11 +59,11 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
       describe '#index' do
         it 'does not return translations without product_id param' do
           get '/admin/product-translations', headers: @authorized_header
-          assert_response 403
+          assert_response 422
         end
 
         it 'return all translation of 1 specific product' do
-          get "/admin/product-translations?product=#{@product.id}", headers: @authorized_header
+          get "/admin/product-translations?slug=#{@product.slug}", headers: @authorized_header
           assert_response 200
           data = JSON.parse(@response.body)['data']
           assert_equal data.length, 2, 'Should return 2 translations'

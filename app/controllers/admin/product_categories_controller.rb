@@ -1,5 +1,5 @@
 module Admin
-  class ProductCategoriesController < ApplicationController
+  class ProductCategoriesController < Admin::AuthenticatedController
     # Return all product categories
     # GET /public/product-categories
     # GET /public/product-categories?filter[parent_category]=:slug
