@@ -2,21 +2,22 @@
 #
 # Table name: images
 #
-#  id         :integer          not null, primary key
-#  caption    :string
-#  product_id :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :uuid             not null, primary key
+#  image_owner_id   :uuid
+#  image_owner_type :string
+#  alt              :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 image_1:
-  caption: 25 liter container, front view
-  product: IF_2005M
+  alt: 25 liter container, front view
+  image_owner: IF_2005M (Product)
 
 image_2:
-  caption: 25 liter container, side view
-  product: IF_2005M
+  alt: 25 liter container, side view
+  image_owner: IF_2005M (Product)
 
-image_1:
-  caption: 25 liter container
-  product: PacIFic_2009M
+image_3:
+  alt: 25 liter container
+  image_owner: IF_2005M (Product)

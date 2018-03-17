@@ -62,7 +62,7 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
           assert_response 422
         end
 
-        it 'return all translation of 1 specific product' do
+        it 'return all translations of 1 specific product' do
           get "/admin/product-translations?slug=#{@product.slug}", headers: @authorized_header
           assert_response 200
           data = JSON.parse(@response.body)['data']

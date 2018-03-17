@@ -10,7 +10,12 @@
 #  updated_at  :datetime         not null
 #
 
-class ImageTranslation < ApplicationRecord
-  belongs_to :image
-  belongs_to :language
-end
+image_1_french:
+  alt: Conteneur de 25 litres, vue de face
+  image: image_1
+  language: fr
+
+image_1_german:
+  alt: 25-Liter-Behälter, Vorderansicht
+  image: image_1
+  language: de

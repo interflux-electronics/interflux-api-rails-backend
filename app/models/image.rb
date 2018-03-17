@@ -2,15 +2,16 @@
 #
 # Table name: images
 #
-#  id         :integer          not null, primary key
-#  caption    :string
-#  product_id :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :uuid             not null, primary key
+#  image_owner_id   :uuid
+#  image_owner_type :string
+#  alt              :string
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class Image < ApplicationRecord
-  belongs_to :product, optional: true
+  belongs_to :image_owner, polymorphic: true
   has_many :image_sources
   has_many :image_translations
 end

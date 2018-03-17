@@ -2,11 +2,11 @@
 #
 # Table name: product_translations
 #
-#  id          :integer          not null, primary key
+#  id          :uuid             not null, primary key
 #  body        :text
 #  pitch       :text
-#  product_id  :integer
-#  language_id :integer
+#  product_id  :uuid
+#  language_id :uuid
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

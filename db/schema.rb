@@ -10,104 +10,77 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180211052418) do
+ActiveRecord::Schema.define(version: 20180315101917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pgcrypto"
 
-  create_table "contacts", force: :cascade do |t|
-    t.string "name"
-    t.string "company"
-    t.string "email"
-    t.string "website"
-    t.string "phone"
-    t.string "fax"
-    t.string "address"
-    t.integer "country_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "countries", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "documents", force: :cascade do |t|
-    t.string "name"
-    t.string "url"
-    t.string "document_type"
-    t.string "locale"
-    t.boolean "public"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "image_sources", force: :cascade do |t|
+  create_table "image_sources", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "url"
     t.integer "width"
     t.integer "height"
-    t.integer "image_id"
+    t.uuid "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "image_translations", force: :cascade do |t|
-    t.string "caption"
-    t.integer "image_id"
-    t.integer "language_id"
+  create_table "image_translations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "alt"
+    t.uuid "image_id"
+    t.uuid "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "caption"
-    t.integer "product_id"
+  create_table "images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "image_owner_id"
+    t.string "image_owner_type"
+    t.string "alt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "languages", force: :cascade do |t|
+  create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "locale"
     t.string "name_english"
     t.string "name_native"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "product_categories", force: :cascade do |t|
+  create_table "product_categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "slug"
     t.string "name_plural"
     t.string "name_single"
-    t.integer "parent_category_id"
+    t.uuid "parent_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "product_translations", force: :cascade do |t|
+  create_table "product_translations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.text "body"
     t.text "pitch"
-    t.integer "product_id"
-    t.integer "language_id"
+    t.uuid "product_id"
+    t.uuid "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "product_uses", force: :cascade do |t|
-    t.string "name"
-  end
-
-  create_table "products", force: :cascade do |t|
+  create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.string "slug"
     t.boolean "public", default: false
     t.text "pitch"
     t.text "body"
-    t.integer "main_category_id"
-    t.integer "sub_category_id"
+    t.uuid "avatar_image_id"
+    t.uuid "main_category_id"
+    t.uuid "sub_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"

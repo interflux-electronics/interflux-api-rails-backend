@@ -2,11 +2,11 @@
 #
 # Table name: product_categories
 #
-#  id                 :integer          not null, primary key
+#  id                 :uuid             not null, primary key
 #  slug               :string
 #  name_plural        :string
 #  name_single        :string
-#  parent_category_id :integer
+#  parent_category_id :uuid
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #

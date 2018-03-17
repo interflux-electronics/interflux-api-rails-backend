@@ -2,11 +2,11 @@
 #
 # Table name: image_sources
 #
-#  id         :integer          not null, primary key
+#  id         :uuid             not null, primary key
 #  url        :string
 #  width      :integer
 #  height     :integer
-#  image_id   :integer
+#  image_id   :uuid
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

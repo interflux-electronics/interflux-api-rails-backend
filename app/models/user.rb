@@ -2,7 +2,7 @@
 #
 # Table name: users
 #
-#  id               :integer          not null, primary key
+#  id               :uuid             not null, primary key
 #  name             :string
 #  email            :string
 #  password_digest  :string
