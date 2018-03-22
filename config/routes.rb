@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     jsonapi_resources :product_translations
     jsonapi_resources :languages
     jsonapi_resources :users
+    resources :product_images, path: '/product-images'
   end
   namespace :public do
     jsonapi_resources :products
     jsonapi_resources :product_categories
   end
+  match '*catch', to: 'application#not_found', via: :all
 end

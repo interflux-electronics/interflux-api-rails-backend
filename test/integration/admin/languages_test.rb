@@ -40,7 +40,7 @@ class AdminLanguagesTest < ActionDispatch::IntegrationTest
     get '/admin/languages', headers: @authorized_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
-    assert_equal data.length, 14, 'Should return 14 languages'
+    assert_equal 15, data.length, 'Should return 14 languages'
   end
 
   # test 'Authorized admin cannot can fetch a product group by ID' do

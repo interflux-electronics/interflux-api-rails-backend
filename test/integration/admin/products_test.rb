@@ -58,12 +58,12 @@ class AdminProductTest < ActionDispatch::IntegrationTest
           assert_response 200
           data = JSON.parse(@response.body)['data']
           assert_equal data.length, 6, 'Should return 6 products'
-          refute_empty data.find { |p| p['id'].to_i == products('IF_2005M').id }
-          refute_empty data.find { |p| p['id'].to_i == products('OSPI_3311M').id }
-          refute_empty data.find { |p| p['id'].to_i == products('pacific_2009M').id }
-          refute_empty data.find { |p| p['id'].to_i == products('DP_5600').id }
-          refute_empty data.find { |p| p['id'].to_i == products('QF_70').id }
-          refute_empty data.find { |p| p['id'].to_i == products('QF_50').id }
+          refute_empty data.find { |p| p['id'] == products('IF_2005M').id }
+          refute_empty data.find { |p| p['id'] == products('OSPI_3311M').id }
+          refute_empty data.find { |p| p['id'] == products('pacific_2009M').id }
+          refute_empty data.find { |p| p['id'] == products('DP_5600').id }
+          refute_empty data.find { |p| p['id'] == products('QF_70').id }
+          refute_empty data.find { |p| p['id'] == products('QF_50').id }
         end
       end
 
@@ -72,14 +72,14 @@ class AdminProductTest < ActionDispatch::IntegrationTest
           get "/admin/products/#{products('IF_2005M').id}", headers: @authorized_header
           assert_response 200
           data = JSON.parse(@response.body)['data']
-          assert_equal data['id'].to_i, products('IF_2005M').id
+          assert_equal data['id'], products('IF_2005M').id
           assert_equal data['attributes']['name'], products('IF_2005M').name
         end
         it 'returns product by slug' do
           get "/admin/products/?slug=#{products('IF_2005M').slug}", headers: @authorized_header
           assert_response 200
           data = JSON.parse(@response.body)['data']
-          assert_equal data['id'].to_i, products('IF_2005M').id
+          assert_equal data['id'], products('IF_2005M').id
           assert_equal data['attributes']['name'], products('IF_2005M').name
         end
         it 'returns 422 for bogus ID' do
@@ -127,7 +127,7 @@ class AdminProductTest < ActionDispatch::IntegrationTest
         refute_empty Product.where(name: 'New Product éçüñ')
         product = Product.where(name: 'New Product éçüñ').first
         data = JSON.parse(@response.body)['data']
-        assert_equal data['id'].to_i, product.id, 'The response includes the ID of the created product (important)'
+        assert_equal data['id'], product.id, 'The response includes the ID of the created product (important)'
         assert_equal data['attributes']['name'], 'New Product éçüñ'
         assert_equal data['attributes']['slug'], 'New-Product-ecun'
       end

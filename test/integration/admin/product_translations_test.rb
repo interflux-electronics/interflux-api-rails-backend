@@ -94,7 +94,7 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
             type: 'product-translation',
             attributes: {
               pitch: '吃饭',
-              body: '招商好',
+              body: '招商好'
             },
             relationships: {
               'product': {
@@ -129,7 +129,7 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
             type: 'product-translation',
             attributes: {
               pitch: '吃饭 interflux',
-              body: '招商好 interflux',
+              body: '招商好 interflux'
             },
             relationships: {
               'product': {

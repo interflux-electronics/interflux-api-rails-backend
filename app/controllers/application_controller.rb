@@ -31,6 +31,10 @@ class ApplicationController < JSONAPI::ResourceController
     json_error(403, 'forbidden', 'This request is forbidden.')
   end
 
+  def not_found
+    json_error(404, 'not-found', 'This route does not exist in Rails. Check routes.rb whether 1) it exists and 2) if you have added the hyphenated path.')
+  end
+
   # Serialise and return 1 record into JSON using JSON API resources
   # Example: render status: 200, json: json_resource(Admin::ProductResource, @product, nil)
   # Documentation: https://github.com/cerebris/jsonapi-resources/issues/1100

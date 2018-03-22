@@ -7,14 +7,16 @@ module Admin
     def index
       return show if params[:slug]
       products = Product.all.order('name desc')
+      # render status: 200, json: Admin::ProductSerializer.new(products).serialized_json
       render status: 200, json: json_resources(Admin::ProductResource, products)
     end
 
     # Return product with slug
-    # Return product with ID
     # GET /admin/products/?slug=:slug
+    # Return product with ID
     # GET /admin/products/:id
     def show
+      # render status: 200, json: Admin::ProductSerializer.new(@product).serialized_json
       render status: 200, json: json_resource(Admin::ProductResource, @product)
     end
 

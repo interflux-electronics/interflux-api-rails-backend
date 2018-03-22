@@ -74,11 +74,11 @@ module Admin
     end
 
     def product_id
-      relationships[:'product']['data']['id']
+      relationships[:product]['data']['id']
     end
 
     def language_id
-      relationships[:'language']['data']['id']
+      relationships[:language]['data']['id']
     end
 
     def missing_slug

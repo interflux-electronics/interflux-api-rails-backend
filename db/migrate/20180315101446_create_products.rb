@@ -1,6 +1,5 @@
 class CreateProducts < ActiveRecord::Migration[5.1]
   def change
-
     create_table :products, id: :uuid do |t|
       t.string :name
       t.string :slug
@@ -40,6 +39,5 @@ class CreateProducts < ActiveRecord::Migration[5.1]
     #   t.uuid :use_id
     #   t.timestamps
     # end
-
   end
 end

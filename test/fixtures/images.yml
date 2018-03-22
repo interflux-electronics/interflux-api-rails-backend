@@ -21,3 +21,7 @@ image_2:
 image_3:
   alt: 25 liter container
   image_owner: IF_2005M (Product)
+
+image_4:
+  alt: this is not IF_2005M
+  image_owner: pacific_2009M (Product)
