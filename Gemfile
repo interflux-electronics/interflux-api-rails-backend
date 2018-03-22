@@ -24,6 +24,10 @@ gem 'rack-cors'
 # https://jwt.io/
 gem 'jwt'
 
+# For JSON API serialisers
+# https://github.com/Netflix/fast_jsonapi
+gem 'fast_jsonapi'
+
 # For making Rails JSON API compliant
 # http://jsonapi-resources.com/
 gem 'jsonapi-resources'
@@ -40,6 +44,11 @@ end
 group :test do
   gem 'minitest-reporters'
   gem 'minitest-spec-rails'
+
+  # For running test by line number
+  # https://github.com/qrush/m
+  # TODO: Does not work with spec-rails
+  # gem 'm', '~> 1.5.1'
 end
 
 group :development do
