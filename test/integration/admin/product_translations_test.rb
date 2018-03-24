@@ -5,163 +5,136 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
     @product = products('IF_2005M')
     @translation_french = product_translations('translation_IF_2005M_fr')
     @translation_german = product_translations('translation_IF_2005M_de')
+    @french = languages('french')
     @german = languages('german')
     @chinese = languages('chinese')
   end
 
-  describe 'without authentication' do
-    describe 'GET' do
-      describe '#index' do
-        it 'returns 401' do
-          get '/admin/product-translations'
-          assert_response 401
-        end
-      end
-
-      describe '#show' do
-        it 'returns 401 by ID' do
-          get "/admin/product-translations/#{@translation_french.id}"
-          assert_response 401
-        end
-      end
-    end
-
-    describe 'POST' do
-      it 'returns 401' do
-        post '/admin/product-translations', params: {}
-        assert_response 401
-      end
-    end
-
-    describe 'PUT' do
-      it 'returns 401' do
-        put "/admin/product-translations/#{@translation_french.id}", params: {}
-        assert_response 401
-      end
-    end
-
-    describe 'DELETE' do
-      it 'returns 401' do
-        delete "/admin/product-translations/#{@translation_french.id}"
-        assert_response 401
-      end
-    end
+  test 'Authorized users can fetch all translations of a single product' do
+    get "/admin/product-translations/?slug=#{@product.slug}", headers: admin_header
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal Array, data.class
+    assert_equal 2, data.length
   end
 
-  describe 'authenticated' do
-    before do
-      admin_user = users('admin_user')
-      user_token = JsonWebToken.encode(user_id: admin_user.id)
-      @authorized_header = { 'Authorization': user_token }
-    end
+  test 'Authorized users cannot fetch all translations' do
+    get '/admin/product-translations', headers: admin_header
+    data = JSON.parse(@response.body)['data']
+    assert_response 422
+  end
 
-    describe 'GET' do
-      describe '#index' do
-        it 'does not return translations without product_id param' do
-          get '/admin/product-translations', headers: @authorized_header
-          assert_response 422
-        end
+  test 'Authorized users can fetch a single translation by ID' do
+    get "/admin/product-translations/#{@translation_french.id}", headers: admin_header
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal Hash, data.class
+    assert_equal data['id'], @translation_french.id
+    assert_equal data['attributes']['body'], @translation_french.body
+    assert_equal data['attributes']['pitch'], @translation_french.pitch
+    assert_equal data['attributes'].length, 2
+    assert_equal data['relationships']['product']['data']['id'], @translation_french.product.id
+    assert_equal data['relationships']['language']['data']['id'], @translation_french.language.id
+    assert_equal data['relationships'].length, 2
+  end
 
-        it 'return all translations of 1 specific product' do
-          get "/admin/product-translations?slug=#{@product.slug}", headers: @authorized_header
-          assert_response 200
-          data = JSON.parse(@response.body)['data']
-          assert_equal data.length, 2, 'Should return 2 translations'
-          refute_empty data.find { |p| p['id'].to_i == @translation_french.id }
-          refute_empty data.find { |p| p['id'].to_i == @translation_german.id }
-        end
-      end
+  test 'returns 422 for bogus IDs' do
+    get '/admin/product-translations/123', headers: admin_header
+    assert_response 422
+  end
 
-      describe '#show' do
-        it 'returns translation by ID' do
-          get "/admin/product-translations/#{@translation_french.id}", headers: @authorized_header
-          assert_response 200
-          data = JSON.parse(@response.body)['data']
-          assert_equal data['id'].to_i, @translation_french.id
-          assert_equal data['attributes']['language'], @translation_french.language
-        end
-        it 'returns 422 for bogus ID' do
-          get '/admin/product-translations/123', headers: @authorized_header
-          assert_response 422
-        end
-      end
-    end
+  test 'returns 422 for bogus slugs' do
+    get '/admin/product-translations/?slug=bogus', headers: admin_header
+    assert_response 422
+  end
 
-    describe 'POST' do
-      it 'creates a translation' do
-        json = {
-          data: {
-            type: 'product-translation',
-            attributes: {
-              pitch: '吃饭',
-              body: '招商好'
-            },
-            relationships: {
-              'product': {
-                data: {
-                  type: 'product',
-                  id: @product.id
-                }
-              },
-              'language': {
-                data: {
-                  type: 'language',
-                  id: @chinese.id
-                }
-              }
+  # TODO: Is this needed? Seems like it should be a side effect of creating a product and creating new languages
+  test 'Authorized users can create a translation' do
+    json = {
+      data: {
+        type: 'product-translation',
+        attributes: {
+          pitch: '吃饭',
+          body: '招商好'
+        },
+        relationships: {
+          'product': {
+            data: {
+              type: 'product',
+              id: @product.id
+            }
+          },
+          'language': {
+            data: {
+              type: 'language',
+              id: @chinese.id
             }
           }
         }
-        post '/admin/product-translations', params: json, headers: @authorized_header
-        assert_response 201
-        translation = ProductTranslation.where(language: @chinese).first
-        data = JSON.parse(@response.body)['data']
-        assert_equal data['id'].to_i, translation.id, 'The response includes the ID of the created translation (important)'
-        assert_equal data['attributes']['pitch'], '吃饭'
-        assert_equal data['attributes']['body'], '招商好'
-      end
-    end
+      }
+    }
+    post '/admin/product-translations', params: json, headers: admin_header
+    data = JSON.parse(@response.body)['data']
+    assert_response 201
+    assert_equal Hash, data.class
+    refute_equal data['id'], ProductTranslation.last.id
+    assert_equal data['attributes']['body'], '招商好'
+    assert_equal data['attributes']['pitch'], '吃饭'
+    assert_equal data['attributes'].length, 2
+    assert_equal data['relationships']['product']['data']['id'], @product.id
+    assert_equal data['relationships']['language']['data']['id'], @chinese.id
+    assert_equal data['relationships'].length, 2
+  end
 
-    describe 'PUT' do
-      it 'updates a translation' do
-        json = {
-          data: {
-            type: 'product-translation',
-            attributes: {
-              pitch: '吃饭 interflux',
-              body: '招商好 interflux'
-            },
-            relationships: {
-              'product': {
-                data: {
-                  type: 'product',
-                  id: @product.id
-                }
-              },
-              'language': {
-                data: {
-                  type: 'language',
-                  id: @chinese.id
-                }
-              }
+  test 'Authorized users can update a translation' do
+    json = {
+      data: {
+        type: 'product-translation',
+        attributes: {
+          pitch: '吃饭 interflux',
+          body: '招商好 interflux'
+        },
+        relationships: {
+          'product': {
+            data: {
+              type: 'product',
+              id: @product.id
+            }
+          },
+          'language': {
+            data: {
+              type: 'language',
+              id: @chinese.id
             }
           }
         }
-        put "/admin/product-translations/#{@translation_french.id}", params: json, headers: @authorized_header
-        assert_response 204
-        product = ProductTranslation.find_by(id: @translation_french.id)
-        assert_equal product.pitch, '吃饭 interflux'
-        assert_equal product.body, '招商好 interflux'
-      end
-    end
+      }
+    }
+    put "/admin/product-translations/#{@translation_french.id}", params: json, headers: admin_header
+    assert_response 204
+    product = ProductTranslation.find_by(id: @translation_french.id)
+    assert_equal product.pitch, '吃饭 interflux'
+    assert_equal product.body, '招商好 interflux'
+  end
 
-    describe 'DELETE' do
-      it 'deletes a translation' do
-        id = @translation_german.id
-        refute_nil ProductTranslation.find_by(id: id)
-        delete "/admin/product-translations/#{id}", headers: @authorized_header
-        assert_nil ProductTranslation.find_by(id: id)
-      end
-    end
+  # TODO: Is this needed? Seems like it should be a side effect of creating a product and creating new languages
+  test 'Authorized users can delete a translation' do
+    id = @translation_french.id
+    refute_nil ProductTranslation.find_by(id: id)
+    delete "/admin/product-translations/#{id}", headers: admin_header
+    assert_nil ProductTranslation.find_by(id: id)
+  end
+
+  test 'Unauthorized' do
+    get '/admin/product-translations'
+    assert_response 401
+    get "/admin/product-translations/#{@translation_french.id}"
+    assert_response 401
+    post '/admin/product-translations'
+    assert_response 401
+    put "/admin/product-translations/#{@translation_french.id}"
+    assert_response 401
+    delete "/admin/product-translations/#{@translation_french.id}"
+    assert_response 401
   end
 end

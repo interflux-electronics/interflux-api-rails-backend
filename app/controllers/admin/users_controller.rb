@@ -13,7 +13,7 @@ module Admin
       decoded = JsonWebToken.decode(token)
       return invalid_token unless decoded
       user = Users.find_by_id(params[:id])
-      render status: 200, json: json_resource(Admin::UserResource, user)
+      render status: 200, json: json_resource(Admin::UserSerializer, user)
     end
 
     private

@@ -10,7 +10,7 @@ class AdminProductCategoriesTest < ActionDispatch::IntegrationTest
     data = JSON.parse(@response.body)['data']
     assert_response 200
     assert_equal Array, data.class
-    assert_equal 21, data.length, 'Should return 21 product categories'
+    assert_equal 21, data.length
     main_categories = data.find_all { |x| x['relationships']['parent-category']['data'].nil? }
     sub_categories = data.find_all { |x| !x['relationships']['parent-category']['data'].nil? }
     assert_equal 5, main_categories.length
@@ -22,6 +22,7 @@ class AdminProductCategoriesTest < ActionDispatch::IntegrationTest
     data = JSON.parse(@response.body)['data']
     assert_response 200
     assert_equal Hash, data.class
+    assert_equal data['id'], @alcohol_based.id
     assert_equal data['attributes']['slug'], 'alcohol-based'
     assert_equal data['attributes']['name-plural'], 'Alcohol-based soldering fluxes'
     assert_equal data['attributes']['name-single'], 'Alcohol-based soldering flux'

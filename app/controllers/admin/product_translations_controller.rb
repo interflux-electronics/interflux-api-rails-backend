@@ -1,8 +1,7 @@
 module Admin
   class ProductTranslationsController < Admin::AuthenticatedController
-    before_action :find_resource, only: %i[show update destroy]
-
-    # Fetch all translations for one particular product
+    # Fetch all translations for one particular product.
+    # There is no user cases for fetching ALL translations, so it's forbidden.
     # GET /admin/product-translations?slug=:product_slug
     def index
       slug = params[:slug]
@@ -10,57 +9,61 @@ module Admin
       product = Product.find_by_slug(slug)
       return unknown_slug(slug) if product.nil?
       translations = ProductTranslation.where(product: product)
-      render status: 200, json: json_resources(Admin::ProductTranslationResource, translations)
+      json = Admin::ProductTranslationSerializer.new(translations).serialized_json
+      render status: 200, json: json
     end
 
     # Return a single product translation by ID
     # GET /admin/product-translations/:id
     def show
-      render status: 200, json: json_resource(Admin::ProductTranslationResource, @resource)
+      translation = ProductTranslation.find_by_id(params[:id])
+      return resource_not_found if translation.nil?
+      json = Admin::ProductTranslationSerializer.new(translation).serialized_json
+      render status: 200, json: json
     end
 
     # Create a product translation
     # POST /admin/product-translations
     def create
-      resource = ProductTranslation.new(resource_attributes)
-      resource.product_id = product_id
-      resource.language_id = language_id
-      if resource.save!
-        render status: 201, json: json_resource(Admin::ProductTranslationResource, resource)
+      translation = ProductTranslation.new(attributes)
+      translation.product_id = product_id
+      translation.language_id = language_id
+      if translation.save!
+        json = Admin::ProductTranslationSerializer.new(translation).serialized_json
+        render status: 201, json: json
       else
-        render status: 422, json: json_errors(resource)
+        render status: 422, json: json_errors(translation)
       end
     end
 
     # Update a product translation
     # PUT /admin/product-translations/:id
     def update
-      @resource.assign_attributes(resource_attributes)
-      @resource.product_id = product_id
-      @resource.language_id = language_id
-      if @resource.save!
-        render status: 204, json: json_resource(Admin::ProductTranslationResource, @resource)
+      translation = ProductTranslation.find_by_id(params[:id])
+      return resource_not_found if translation.nil?
+      translation.assign_attributes(attributes)
+      translation.product_id = product_id
+      translation.language_id = language_id
+      if translation.save!
+        json = Admin::ProductTranslationSerializer.new(translation).serialized_json
+        render status: 204, json: json
       else
-        render status: 422, json: json_errors(@resource)
+        render status: 422, json: json_errors(translation)
       end
     end
 
     # Delete a product translation
     # DELETE /admin/product-translations/:id
     def destroy
-      @resource.destroy
+      translation = ProductTranslation.find_by_id(params[:id])
+      return resource_not_found if translation.nil?
+      translation.destroy
       head 204
     end
 
     private
 
-    def find_resource
-      id = params[:id]
-      @resource = ProductTranslation.find_by_id(id)
-      return not_found(id) if @resource.nil?
-    end
-
-    def resource_attributes
+    def attributes
       params.require(:data)
             .require(:attributes)
             .permit(

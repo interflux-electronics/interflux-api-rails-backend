@@ -1,159 +1,136 @@
 require 'test_helper'
 
-class AdminProductImagesTest < ActionDispatch::IntegrationTest
-  describe 'logged in user' do
-    before do
-      admin_user = users('admin_user')
-      user_token = JsonWebToken.encode(user_id: admin_user.id)
-      @authorized_header = { 'Authorization': user_token }
-    end
-
-    describe 'GET' do
-      describe '#index' do
-        it 'returns all images' do
-          get '/admin/product-images', headers: @authorized_header
-          assert_response 200
-          data = JSON.parse(@response.body)['data']
-          data = JSON.parse(@response.body)['data']
-          assert_equal data.length, 4
-          refute_empty data.find { |p| p['id'] == images('image_1').id }
-          refute_empty data.find { |p| p['id'] == images('image_2').id }
-          refute_empty data.find { |p| p['id'] == images('image_3').id }
-          refute_empty data.find { |p| p['id'] == images('image_4').id }
-        end
-
-        it 'returns all images of a specific product' do
-          params = {
-            filter: {
-              type: 'Product',
-              id: products('IF_2005M').id
-            }
-          }
-          get '/admin/product-images', headers: @authorized_header, params: params
-          assert_response 200
-          data = JSON.parse(@response.body)['data']
-          assert_equal 3, data.length
-          refute_empty data.find { |p| p['id'] == images('image_1').id }
-          refute_empty data.find { |p| p['id'] == images('image_2').id }
-          refute_empty data.find { |p| p['id'] == images('image_3').id }
-        end
-      end
-
-      describe '#show' do
-        it 'returns 1 image by ID' do
-          get "/admin/product-images/#{images('image_1').id}", headers: @authorized_header
-          assert_response 200
-          data = JSON.parse(@response.body)['data']
-          assert_equal data['id'], images('image_1').id
-          assert_equal data['attributes']['alt'], images('image_1').alt
-        end
-        it 'returns 422 for bogus ID' do
-          get '/admin/product-images/123', headers: @authorized_header
-          assert_response 422
-        end
-      end
-    end
-
-    describe 'POST' do
-      it 'creates a image for a product' do
-        json = {
-          data: {
-            type: 'images',
-            attributes: {
-              alt: 'new image'
-            },
-            relationships: {
-              'image-owner': {
-                data: {
-                  type: 'Product',
-                  id: products('IF_2005M').id
-                }
-              }
-            }
-          }
-        }
-        assert_equal Image.count, 4
-        post '/admin/product-images', params: json, headers: @authorized_header
-        assert_response 201
-        assert_equal Image.count, 5
-        refute_empty Image.where(alt: 'new image')
-        image = Image.where(alt: 'new image').first
-        data = JSON.parse(@response.body)['data']
-        assert_equal data['id'], image.id, 'The response includes the ID of the created image (important)'
-        assert_equal data['attributes']['alt'], 'new image'
-      end
-    end
-
-    describe 'PUT' do
-      it 'updates a image' do
-        json = {
-          data: {
-            type: 'images',
-            attributes: {
-              alt: 'updated image'
-            },
-            relationships: {
-              'image-owner': {
-                data: {
-                  type: 'Product',
-                  id: products('IF_2005M').id
-                }
-              }
-            }
-          }
-        }
-        put "/admin/product-images/#{images('image_1').id}", params: json, headers: @authorized_header
-        assert_response 204
-        image = Image.find_by(id: images('image_1').id)
-        assert_equal image.alt, 'updated image'
-      end
-    end
-
-    describe 'DELETE' do
-      it 'deletes a image' do
-        assert_equal Image.count, 4
-        delete "/admin/product-images/#{images('image_1').id}", headers: @authorized_header
-        assert_equal Image.count, 3
-      end
-    end
+class AdminProductImageTest < ActionDispatch::IntegrationTest
+  def setup
+    @product = products('IF_2005M')
+    @image_1 = images('image_1')
   end
 
-  describe 'unauthenticated user' do
-    describe 'GET' do
-      describe '#index' do
-        it 'returns 401' do
-          get '/admin/product-images'
-          assert_response 401
-        end
-      end
+  test 'Authorized users can fetch' do
+    get '/admin/product-images', headers: admin_header
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal Array, data.class
+    assert_equal 200, data.length
+  end
 
-      describe '#show' do
-        it 'returns 401' do
-          get "/admin/product-images/#{images('image_1').id}"
-          assert_response 401
-        end
-      end
-    end
+  test 'Authorized users can fetch all images of a single product' do
+    get "/admin/product-images/?slug=#{@product.slug}", headers: admin_header
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal Array, data.class
+    assert_equal 100, data.length
+  end
 
-    describe 'POST' do
-      it 'returns 401' do
-        post '/admin/product-images', params: {}
-        assert_response 401
-      end
-    end
+  test 'Authorized users can fetch a single image by ID' do
+    get "/admin/product-images/#{@image_1.id}", headers: admin_header
+    data = JSON.parse(@response.body)['data']
+    assert_response 200
+    assert_equal Hash, data.class
+    assert_equal data['id'], @image_1.id
+    # assert_equal data['attributes']['body'], @image_1.body
+    # assert_equal data['attributes']['pitch'], @image_1.pitch
+    # assert_equal data['attributes'].length, 2
+    # assert_equal data['relationships']['product']['data']['id'], @image_1.product.id
+    # assert_equal data['relationships']['language']['data']['id'], @image_1.language.id
+    # assert_equal data['relationships'].length, 2
+  end
 
-    describe 'PUT' do
-      it 'returns 401' do
-        put "/admin/product-images/#{images('image_1').id}", params: {}
-        assert_response 401
-      end
-    end
+  test 'returns 422 for bogus IDs' do
+    get '/admin/product-images/123', headers: admin_header
+    assert_response 422
+  end
 
-    describe 'DELETE' do
-      it 'returns 401' do
-        delete "/admin/product-images/#{images('image_1').id}"
-        assert_response 401
-      end
-    end
+  test 'returns 422 for bogus slugs' do
+    get '/admin/product-images/?slug=bogus', headers: admin_header
+    assert_response 422
+  end
+
+  test 'Authorized users can create a image' do
+    json = {
+      data: {
+        type: 'product-image',
+        attributes: {
+          pitch: '吃饭',
+          body: '招商好'
+        },
+        relationships: {
+          'product': {
+            data: {
+              type: 'product',
+              id: @product.id
+            }
+          },
+          'language': {
+            data: {
+              type: 'language',
+              id: @chinese.id
+            }
+          }
+        }
+      }
+    }
+    post '/admin/product-images', params: json, headers: admin_header
+    data = JSON.parse(@response.body)['data']
+    assert_response 201
+    assert_equal Hash, data.class
+    refute_equal data['id'], ProductImage.last.id
+    assert_equal data['attributes']['body'], '招商好'
+    assert_equal data['attributes']['pitch'], '吃饭'
+    assert_equal data['attributes'].length, 2
+    assert_equal data['relationships']['product']['data']['id'], @product.id
+    assert_equal data['relationships']['language']['data']['id'], @chinese.id
+    assert_equal data['relationships'].length, 2
+  end
+
+  test 'Authorized users can update a image' do
+    json = {
+      data: {
+        type: 'product-image',
+        attributes: {
+          pitch: '吃饭 interflux',
+          body: '招商好 interflux'
+        },
+        relationships: {
+          'product': {
+            data: {
+              type: 'product',
+              id: @product.id
+            }
+          },
+          'language': {
+            data: {
+              type: 'language',
+              id: @chinese.id
+            }
+          }
+        }
+      }
+    }
+    put "/admin/product-images/#{@image_1.id}", params: json, headers: admin_header
+    assert_response 204
+    product = ProductImage.find_by(id: @image_1.id)
+    assert_equal product.pitch, '吃饭 interflux'
+    assert_equal product.body, '招商好 interflux'
+  end
+
+  test 'Authorized users can delete a image' do
+    id = @image_1.id
+    refute_nil ProductImage.find_by(id: id)
+    delete "/admin/product-images/#{id}", headers: admin_header
+    assert_nil ProductImage.find_by(id: id)
+  end
+
+  test 'Unauthorized' do
+    get '/admin/product-images'
+    assert_response 401
+    get "/admin/product-images/#{@image_1.id}"
+    assert_response 401
+    post '/admin/product-images'
+    assert_response 401
+    put "/admin/product-images/#{@image_1.id}"
+    assert_response 401
+    delete "/admin/product-images/#{@image_1.id}"
+    assert_response 401
   end
 end

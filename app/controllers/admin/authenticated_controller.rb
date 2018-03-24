@@ -10,7 +10,7 @@ module Admin
       return missing_header if request.headers['Authorization'].nil?
       token = JsonWebToken.decode(request.headers['Authorization'].split(' ').last)
       return invalid_token if token.nil?
-      user ||= User.find_by(id: token['user_id'])
+      user ||= User.find_by_id(token['user_id'])
       return missing_user if user.nil?
       return no_permission unless user.can_access_admin?
     end

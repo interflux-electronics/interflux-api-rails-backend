@@ -1,22 +1,23 @@
 module Admin
   class ProductsController < Admin::AuthenticatedController
-    before_action :find_product, only: %i[index show update destroy]
-
     # Return all products
     # GET /admin/products
     def index
       return show if params[:slug]
-      products = Product.all.order('name desc')
+      products = Product.all
       json = Admin::ProductSerializer.new(products).serialized_json
       render status: 200, json: json
     end
 
-    # Return product with ID
-    # Return product with slug
+    # Return product by ID
+    # Return product by slug
     # GET /admin/products/:id
     # GET /admin/products/?slug=:slug
     def show
-      json = Admin::ProductSerializer.new(@product).serialized_json
+      product = Product.find_by_slug(params[:slug]) if params[:slug]
+      product = Product.find_by_id(params[:id]) if params[:id]
+      return resource_not_found if product.nil?
+      json = Admin::ProductSerializer.new(product).serialized_json
       render status: 200, json: json
     end
 
@@ -37,31 +38,29 @@ module Admin
     # Update a product
     # PUT /admin/products/:id
     def update
-      @product.assign_attributes(permitted_attributes)
-      @product.main_category_id = main_category
-      @product.sub_category_id = sub_category
-      if @product.save!
-        json = Admin::ProductSerializer.new(@product).serialized_json
+      product = Product.find_by_id(params[:id])
+      return resource_not_found if product.nil?
+      product.assign_attributes(permitted_attributes)
+      product.main_category_id = main_category
+      product.sub_category_id = sub_category
+      if product.save!
+        json = Admin::ProductSerializer.new(product).serialized_json
         render status: 204, json: json
       else
-        render status: 422, json: json_errors(@product)
+        render status: 422, json: json_errors(product)
       end
     end
 
     # Delete a product
     # DELETE /admin/products/:id
     def destroy
-      @product.destroy
+      product = Product.find_by_id(params[:id])
+      return resource_not_found if product.nil?
+      product.destroy
       head 204
     end
 
     private
-
-    def find_product
-      @product = Product.find_by_slug(params[:slug]) if params[:slug]
-      @product = Product.find_by_id(params[:id]) if params[:id]
-      return not_found if @product.nil? && (params[:id] || params[:slug])
-    end
 
     def permitted_attributes
       params.require(:data)
@@ -85,10 +84,6 @@ module Admin
 
     def sub_category
       relationships[:'sub-category']['data']['id']
-    end
-
-    def not_found
-      json_error(422, 'product-not-found', 'No product with this ID / slug was found.')
     end
   end
 end

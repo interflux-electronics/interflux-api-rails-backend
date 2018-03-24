@@ -9,9 +9,9 @@ module Admin
     end
 
     # Return language by ID
-    # GET /public/product-categories/:id
+    # GET /admin/languages/:id
     def show
-      language = Language.find(params[:id])
+      language = Language.find_by_id(params[:id])
       return ressource_not_found if language.nil?
       json = Admin::LanguageSerializer.new(language).serialized_json
       render status: 200, json: json

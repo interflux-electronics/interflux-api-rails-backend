@@ -1,4 +1,4 @@
-class ApplicationController
+class ApplicationController < ActionController::Base
   def index
     forbidden
   end
@@ -40,8 +40,8 @@ class ApplicationController
   end
 
   # Wraps a single error in JSON API format
-  # Example: json_error(422, 'not-found', 'No product with this ID was found.')
   # Documentation: http://jsonapi.org/format/#errors
+  # Example: json_error(422, 'not-found', 'No product with this ID was found.')
   def json_error(status, code, detail)
     render status: status, json: {
       errors: [{

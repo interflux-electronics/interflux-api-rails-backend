@@ -15,16 +15,16 @@ translation_IF_2005M_fr:
   pitch: Pitch en Français IF 2005M.
   body: Body en Français IF 2005M.
   product: IF_2005M
-  language: fr
+  language: french
 
 translation_IF_2005M_de:
   pitch: Pitch in Deutsch IF 2005M.
   body: Body in Deutsch IF 2005M.
   product: IF_2005M
-  language: de
+  language: german
 
 pacific_2009M:
   pitch: Pitch en Français Pacific 2009M.
   body: Body en Français Pacific 2009M.
   product: pacific_2009M
-  language: fr
+  language: french
