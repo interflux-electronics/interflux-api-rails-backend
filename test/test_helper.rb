@@ -1,6 +1,6 @@
 # To avoid bug with require test_help
 # https://github.com/burke/zeus/issues/474
-require File.expand_path('../../config/environment', __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require 'rails/test_help'
 
 # To improve the outputs of `rails test` (Minitest)

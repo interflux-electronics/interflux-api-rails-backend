@@ -23,7 +23,7 @@ class Product < ApplicationRecord
   has_many :product_translations
   has_many :images, as: :image_owner
 
-  scope :which_are_public, -> () { where(public: true) }
+  scope :which_are_public, -> { where(public: true) }
   scope :where_main_category, ->(slug) { where(main_category: ProductCategory.where(slug: slug)) }
   scope :where_sub_category, ->(slug) { where(sub_category: ProductCategory.where(slug: slug)) }
 
