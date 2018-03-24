@@ -28,10 +28,6 @@ gem 'jwt'
 # https://github.com/Netflix/fast_jsonapi
 gem 'fast_jsonapi'
 
-# For making Rails JSON API compliant
-# http://jsonapi-resources.com/
-gem 'jsonapi-resources'
-
 # For dumping database data into a YAML
 # https://github.com/yamldb/yaml_db
 gem 'yaml_db'

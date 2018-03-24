@@ -1,4 +1,4 @@
-class ApplicationController < JSONAPI::ResourceController
+class ApplicationController
   def index
     forbidden
   end
