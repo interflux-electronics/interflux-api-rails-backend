@@ -5,7 +5,7 @@ class AdminLanguagesTest < ActionDispatch::IntegrationTest
     @german = languages('german')
   end
 
-  test 'Authorized users can fetch all languages' do
+  test 'Users can fetch all languages' do
     get '/admin/languages', headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -13,7 +13,7 @@ class AdminLanguagesTest < ActionDispatch::IntegrationTest
     assert_equal 15, data.length
   end
 
-  test 'Authorized users can fetch a single language by ID' do
+  test 'Users can fetch a single language by ID' do
     get "/admin/languages/#{@german.id}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -24,7 +24,7 @@ class AdminLanguagesTest < ActionDispatch::IntegrationTest
     assert_equal data['attributes'].length, 3
   end
 
-  test 'Unauthorized' do
+  test 'Unauthorized requests' do
     get '/admin/languages'
     assert_response 401
     get "/admin/languages/#{@german.id}"
@@ -37,7 +37,7 @@ class AdminLanguagesTest < ActionDispatch::IntegrationTest
     assert_response 401
   end
 
-  test 'Forbidden' do
+  test 'Forbidden requests' do
     post '/admin/languages', headers: admin_header
     assert_response 403
     put "/admin/languages/#{@german.id}", headers: admin_header

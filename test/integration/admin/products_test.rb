@@ -5,7 +5,7 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     @IF_2005M = products('IF_2005M')
   end
 
-  test 'Authorized users can fetch all products' do
+  test 'Users can fetch all products' do
     get '/admin/products', headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -13,7 +13,7 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     assert_equal 6, data.length
   end
 
-  test 'Authorized users can fetch a single product by ID' do
+  test 'Users can fetch a single product by ID' do
     get "/admin/products/#{@IF_2005M.id}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -29,7 +29,7 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     assert_equal data['relationships'].length, 2
   end
 
-  test 'Authorized users can fetch a single product by slug' do
+  test 'Users can fetch a single product by slug' do
     get "/admin/products/?slug=#{@IF_2005M.slug}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -46,17 +46,17 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     assert_equal data['relationships'].length, 2
   end
 
-  test 'returns 422 for bogus IDs' do
+  test 'Returns 422 for bogus IDs' do
     get '/admin/products/123', headers: admin_header
     assert_response 422
   end
 
-  test 'returns 422 for bogus slugs' do
+  test 'Returns 422 for bogus slugs' do
     get '/admin/products/?slug=bogus', headers: admin_header
     assert_response 422
   end
 
-  test 'Authorized users can create a product' do
+  test 'Users can create a product' do
     json = {
       data: {
         type: 'products',
@@ -94,7 +94,7 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     assert_equal data['attributes']['slug'], 'New-Product-ecun'
   end
 
-  test 'Authorized users can update a product' do
+  test 'Users can update a product' do
     json = {
       data: {
         type: 'products',
@@ -128,7 +128,7 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     assert_equal product.slug, 'Updated-Product'
   end
 
-  test 'Authorized users can delete a product' do
+  test 'Users can delete a product' do
     assert_equal Product.count, 6
     refute_empty Product.where(name: products('IF_2005M').name)
     delete "/admin/products/#{@IF_2005M.id}", headers: admin_header
@@ -136,7 +136,7 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     assert_empty Product.where(name: products('IF_2005M').name)
   end
 
-  test 'Unauthorized' do
+  test 'Unauthorized requests' do
     get '/admin/products'
     assert_response 401
     get "/admin/products/#{@IF_2005M.id}"

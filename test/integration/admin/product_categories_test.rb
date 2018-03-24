@@ -5,7 +5,7 @@ class AdminProductCategoriesTest < ActionDispatch::IntegrationTest
     @alcohol_based = product_categories('alcohol_based')
   end
 
-  test 'Authorized users can fetch all product categories' do
+  test 'Users can fetch all product categories' do
     get '/admin/product-categories', headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -17,7 +17,7 @@ class AdminProductCategoriesTest < ActionDispatch::IntegrationTest
     assert_equal 16, sub_categories.length
   end
 
-  test 'Authorized users can fetch a single product category by ID' do
+  test 'Users can fetch a single product category by ID' do
     get "/admin/product-categories/#{@alcohol_based.id}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -31,7 +31,7 @@ class AdminProductCategoriesTest < ActionDispatch::IntegrationTest
     assert_equal data['relationships'].length, 1
   end
 
-  test 'Unauthorized' do
+  test 'Unauthorized requests' do
     get '/admin/product-categories'
     assert_response 401
     get "/admin/product-categories/#{@alcohol_based.id}"
@@ -44,7 +44,7 @@ class AdminProductCategoriesTest < ActionDispatch::IntegrationTest
     assert_response 401
   end
 
-  test 'Forbidden' do
+  test 'Forbidden requests' do
     post '/admin/product-categories', headers: admin_header
     assert_response 403
     put "/admin/product-categories/#{@alcohol_based.id}", headers: admin_header

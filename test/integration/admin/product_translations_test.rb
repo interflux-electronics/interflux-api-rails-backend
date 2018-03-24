@@ -10,7 +10,7 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
     @chinese = languages('chinese')
   end
 
-  test 'Authorized users can fetch all translations of a single product' do
+  test 'Users can fetch all translations of a single product' do
     get "/admin/product-translations/?slug=#{@product.slug}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -18,13 +18,13 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
     assert_equal 2, data.length
   end
 
-  test 'Authorized users cannot fetch all translations' do
+  test 'Users cannot fetch all translations' do
     get '/admin/product-translations', headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 422
   end
 
-  test 'Authorized users can fetch a single translation by ID' do
+  test 'Users can fetch a single translation by ID' do
     get "/admin/product-translations/#{@translation_french.id}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -38,18 +38,18 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
     assert_equal data['relationships'].length, 2
   end
 
-  test 'returns 422 for bogus IDs' do
+  test 'Returns 422 for bogus IDs' do
     get '/admin/product-translations/123', headers: admin_header
     assert_response 422
   end
 
-  test 'returns 422 for bogus slugs' do
+  test 'Returns 422 for bogus slugs' do
     get '/admin/product-translations/?slug=bogus', headers: admin_header
     assert_response 422
   end
 
   # TODO: Is this needed? Seems like it should be a side effect of creating a product and creating new languages
-  test 'Authorized users can create a translation' do
+  test 'Users can create a translation' do
     json = {
       data: {
         type: 'product-translation',
@@ -86,7 +86,7 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
     assert_equal data['relationships'].length, 2
   end
 
-  test 'Authorized users can update a translation' do
+  test 'Users can update a translation' do
     json = {
       data: {
         type: 'product-translation',
@@ -118,14 +118,14 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
   end
 
   # TODO: Is this needed? Seems like it should be a side effect of creating a product and creating new languages
-  test 'Authorized users can delete a translation' do
+  test 'Users can delete a translation' do
     id = @translation_french.id
     refute_nil ProductTranslation.find_by(id: id)
     delete "/admin/product-translations/#{id}", headers: admin_header
     assert_nil ProductTranslation.find_by(id: id)
   end
 
-  test 'Unauthorized' do
+  test 'Unauthorized requests' do
     get '/admin/product-translations'
     assert_response 401
     get "/admin/product-translations/#{@translation_french.id}"

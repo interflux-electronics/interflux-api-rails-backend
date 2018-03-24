@@ -6,7 +6,7 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     @image_1 = images('image_1')
   end
 
-  test 'Authorized users can fetch' do
+  test 'Users can fetch' do
     get '/admin/product-images', headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -14,7 +14,7 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     assert_equal 200, data.length
   end
 
-  test 'Authorized users can fetch all images of a single product' do
+  test 'Users can fetch all images of a single product' do
     get "/admin/product-images/?slug=#{@product.slug}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -22,7 +22,7 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     assert_equal 100, data.length
   end
 
-  test 'Authorized users can fetch a single image by ID' do
+  test 'Users can fetch a single image by ID' do
     get "/admin/product-images/#{@image_1.id}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -36,17 +36,17 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     # assert_equal data['relationships'].length, 2
   end
 
-  test 'returns 422 for bogus IDs' do
+  test 'Returns 422 for bogus IDs' do
     get '/admin/product-images/123', headers: admin_header
     assert_response 422
   end
 
-  test 'returns 422 for bogus slugs' do
+  test 'Returns 422 for bogus slugs' do
     get '/admin/product-images/?slug=bogus', headers: admin_header
     assert_response 422
   end
 
-  test 'Authorized users can create a image' do
+  test 'Users can create a image' do
     json = {
       data: {
         type: 'product-image',
@@ -83,7 +83,7 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     assert_equal data['relationships'].length, 2
   end
 
-  test 'Authorized users can update a image' do
+  test 'Users can update a image' do
     json = {
       data: {
         type: 'product-image',
@@ -114,14 +114,14 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     assert_equal product.body, '招商好 interflux'
   end
 
-  test 'Authorized users can delete a image' do
+  test 'Users can delete a image' do
     id = @image_1.id
     refute_nil ProductImage.find_by(id: id)
     delete "/admin/product-images/#{id}", headers: admin_header
     assert_nil ProductImage.find_by(id: id)
   end
 
-  test 'Unauthorized' do
+  test 'Unauthorized requests' do
     get '/admin/product-images'
     assert_response 401
     get "/admin/product-images/#{@image_1.id}"
