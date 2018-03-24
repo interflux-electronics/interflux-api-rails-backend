@@ -1,42 +1,28 @@
 require 'test_helper'
 
 class ApplicationTest < ActionDispatch::IntegrationTest
-  describe 'Unknown routes' do
-    describe 'GET' do
-      describe '#index' do
-        it 'returns 404' do
-          get '/unknown'
-          assert_response 404
-        end
-      end
+  test 'GET to unknown route index returns 404' do
+    get '/unknown'
+    assert_response 404
+  end
 
-      describe '#show' do
-        it 'returns 404' do
-          get '/unknown/123'
-          assert_response 404
-        end
-      end
-    end
+  test 'GET to unknown show route returns 404' do
+    get '/unknown/123'
+    assert_response 404
+  end
 
-    describe 'POST' do
-      it 'returns 404' do
-        post '/unknown/123'
-        assert_response 404
-      end
-    end
+  test 'POST to unknown route returns 404' do
+    post '/unknown/123'
+    assert_response 404
+  end
 
-    describe 'PUT' do
-      it 'returns 404' do
-        put '/unknown/123'
-        assert_response 404
-      end
-    end
+  test 'PUT to unknown route returns 404' do
+    put '/unknown/123'
+    assert_response 404
+  end
 
-    describe 'DELETE' do
-      it 'returns 404' do
-        delete '/unknown/123'
-        assert_response 404
-      end
-    end
+  test 'DELETE to unknown route returns 404' do
+    delete '/unknown/123'
+    assert_response 404
   end
 end
