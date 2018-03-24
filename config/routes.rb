@@ -1,16 +1,16 @@
 Rails.application.routes.draw do
   namespace :admin do
     post 'login', to: 'login#authenticate'
-    jsonapi_resources :products
-    jsonapi_resources :product_categories
-    jsonapi_resources :product_translations
-    jsonapi_resources :languages
-    jsonapi_resources :users
+    resources :products
+    resources :product_categories, path: '/product-categories'
+    resources :product_translations, path: '/product-translations'
+    resources :languages
+    resources :users
     resources :product_images, path: '/product-images'
   end
   namespace :public do
-    jsonapi_resources :products
-    jsonapi_resources :product_categories
+    resources :products
+    resources :product_categories
   end
-  match '*catch', to: 'application#not_found', via: :all
+  match '*catch', to: 'application#route_not_found', via: :all
 end

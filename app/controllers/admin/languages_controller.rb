@@ -1,10 +1,20 @@
 module Admin
   class LanguagesController < Admin::AuthenticatedController
+    # Return all languages
     # GET /admin/languages
     def index
-      @records = Language.all
-      @resources = @records.map { |language| LanguageResource.new(language, nil) }
-      render json: JSONAPI::ResourceSerializer.new(Admin::LanguageResource).serialize_to_hash(@resources)
+      languages = Language.all
+      json = Admin::LanguageSerializer.new(languages).serialized_json
+      render status: 200, json: json
+    end
+
+    # Return language by ID
+    # GET /public/product-categories/:id
+    def show
+      language = Language.find(params[:id])
+      return ressource_not_found if language.nil?
+      json = Admin::LanguageSerializer.new(language).serialized_json
+      render status: 200, json: json
     end
   end
 end

@@ -4,15 +4,28 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 
 # To improve the outputs of `rails test` (Minitest)
+# Without the test suite stops at first failed test
 require 'minitest/reporters'
+
+# Lists all tests run, green for passed, red for failed
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+
+# Shows green dots for passes and red error messages for failed specs
 # Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
 
 module ActiveSupport
   class TestCase
-    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+    # Make all fixtures available to every test
     fixtures :all
 
-    # Add more helper methods to be used by all tests here...
+    # Generate a valid JWT token for an admin user
+    def admin_user_token
+      JsonWebToken.encode(user_id: users('admin_user').id)
+    end
+
+    # Return the HTTP headers a logged in admin would be sending
+    def admin_header
+      { 'Authorization': admin_user_token }
+    end
   end
 end

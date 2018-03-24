@@ -7,17 +7,17 @@ module Admin
     def index
       return show if params[:slug]
       products = Product.all.order('name desc')
-      # render status: 200, json: Admin::ProductSerializer.new(products).serialized_json
-      render status: 200, json: json_resources(Admin::ProductResource, products)
+      json = Admin::ProductSerializer.new(products).serialized_json
+      render status: 200, json: json
     end
 
-    # Return product with slug
-    # GET /admin/products/?slug=:slug
     # Return product with ID
+    # Return product with slug
     # GET /admin/products/:id
+    # GET /admin/products/?slug=:slug
     def show
-      # render status: 200, json: Admin::ProductSerializer.new(@product).serialized_json
-      render status: 200, json: json_resource(Admin::ProductResource, @product)
+      json = Admin::ProductSerializer.new(@product).serialized_json
+      render status: 200, json: json
     end
 
     # Create a product
@@ -27,7 +27,8 @@ module Admin
       product.main_category_id = main_category
       product.sub_category_id = sub_category
       if product.save!
-        render status: 201, json: json_resource(Admin::ProductResource, product)
+        json = Admin::ProductSerializer.new(product).serialized_json
+        render status: 201, json: json
       else
         render status: 422, json: json_errors(product)
       end
@@ -40,7 +41,8 @@ module Admin
       @product.main_category_id = main_category
       @product.sub_category_id = sub_category
       if @product.save!
-        render status: 204, json: json_resource(Admin::ProductResource, @product)
+        json = Admin::ProductSerializer.new(@product).serialized_json
+        render status: 204, json: json
       else
         render status: 422, json: json_errors(@product)
       end

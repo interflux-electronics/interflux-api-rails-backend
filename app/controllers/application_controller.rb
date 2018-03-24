@@ -31,23 +31,12 @@ class ApplicationController < JSONAPI::ResourceController
     json_error(403, 'forbidden', 'This request is forbidden.')
   end
 
-  def not_found
-    json_error(404, 'not-found', 'This route does not exist in Rails. Check routes.rb whether 1) it exists and 2) if you have added the hyphenated path.')
+  def route_not_found
+    json_error(404, 'route-not-found', 'This route does not exist in Rails. Check routes.rb whether 1) it exists and 2) if you have added the hyphenated path.')
   end
 
-  # Serialise and return 1 record into JSON using JSON API resources
-  # Example: render status: 200, json: json_resource(Admin::ProductResource, @product, nil)
-  # Documentation: https://github.com/cerebris/jsonapi-resources/issues/1100
-  def json_resource(klass, record, context = nil)
-    JSONAPI::ResourceSerializer.new(klass).serialize_to_hash(klass.new(record, context))
-  end
-
-  # Serialise and return an array of records into JSON using JSON API resources
-  # Example: render status: 200, json: json_resources(Admin::ProductResource, @products, nil)
-  # Documentation: https://github.com/cerebris/jsonapi-resources/issues/1100
-  def json_resources(klass, records, context = nil)
-    resources = records.map { |record| klass.new(record, context) }
-    JSONAPI::ResourceSerializer.new(klass).serialize_to_hash(resources)
+  def resource_not_found
+    json_error(422, 'resource-not-found', 'The controller attempt to find your resource (by ID or slug) but could not find anything that matched. Are you sure it exists?')
   end
 
   # Wraps a single error in JSON API format

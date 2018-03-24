@@ -2,26 +2,19 @@ module Admin
   class ProductCategoriesController < Admin::AuthenticatedController
     # Return all product categories
     # GET /public/product-categories
-    # GET /public/product-categories?filter[parent_category]=:slug
     def index
-      categories = ProductCategory.all.order('name_plural desc')
-      render status: 200, json: json_resources(Public::ProductCategoryResource, categories)
+      categories = ProductCategory.all
+      json = Admin::ProductCategorySerializer.new(categories).serialized_json
+      render status: 200, json: json
     end
 
-    # Return product category with slug
-    # Return product category with ID
-    # GET /public/product-categories/?slug=:slug
+    # Return product category by ID
     # GET /public/product-categories/:id
     def show
-      category = ProductCategory.find_by_id(params[:id])
-      return not_found unless category.present?
-      render status: 200, json: json_resource(Public::ProductCategoryResource, category)
-    end
-
-    private
-
-    def not_found
-      json_error(422, 'product-category-not-found', 'No product category with this ID / slug was found.')
+      category = ProductCategory.find(params[:id])
+      return ressource_not_found if category.nil?
+      json = Admin::ProductCategorySerializer.new(category).serialized_json
+      render status: 200, json: json
     end
   end
 end
