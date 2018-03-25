@@ -12,6 +12,10 @@
 
 class Image < ApplicationRecord
   belongs_to :image_owner, polymorphic: true
+
   has_many :image_sources
   has_many :image_translations
+
+  scope :for_products, -> { where(image_owner_type: 'Product') }
+  scope :for_owner, ->(id) { where(image_owner_id: id) }
 end

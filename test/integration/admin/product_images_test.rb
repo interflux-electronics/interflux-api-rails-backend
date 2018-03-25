@@ -2,24 +2,30 @@ require 'test_helper'
 
 class AdminProductImageTest < ActionDispatch::IntegrationTest
   def setup
-    @product = products('IF_2005M')
+    @IF_2005M = products('IF_2005M')
     @image_1 = images('image_1')
+    @chinese = languages('chinese')
   end
 
-  test 'Users can fetch' do
+  test 'Users can fetch all images' do
     get '/admin/product-images', headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
     assert_equal Array, data.class
-    assert_equal 200, data.length
+    assert_equal 4, data.length
   end
 
   test 'Users can fetch all images of a single product' do
-    get "/admin/product-images/?slug=#{@product.slug}", headers: admin_header
+    params = {
+      filter: {
+        'product-id': @IF_2005M.id
+      }
+    }
+    get "/admin/product-images/", headers: admin_header, params: params
     data = JSON.parse(@response.body)['data']
     assert_response 200
     assert_equal Array, data.class
-    assert_equal 100, data.length
+    assert_equal 3, data.length
   end
 
   test 'Users can fetch a single image by ID' do
@@ -28,12 +34,12 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     assert_response 200
     assert_equal Hash, data.class
     assert_equal data['id'], @image_1.id
-    # assert_equal data['attributes']['body'], @image_1.body
-    # assert_equal data['attributes']['pitch'], @image_1.pitch
-    # assert_equal data['attributes'].length, 2
-    # assert_equal data['relationships']['product']['data']['id'], @image_1.product.id
-    # assert_equal data['relationships']['language']['data']['id'], @image_1.language.id
-    # assert_equal data['relationships'].length, 2
+    assert_equal data['attributes']['alt'], @image_1.alt
+    assert_equal data['attributes'].length, 1
+    assert_equal data['relationships']['image-owner']['data']['id'], @image_1.image_owner_id
+    assert_equal data['relationships']['image-sources']['data'].length, 2
+    assert_equal data['relationships']['image-translations']['data'].length, 2
+    assert_equal data['relationships'].length, 3
   end
 
   test 'Returns 422 for bogus IDs' do
@@ -41,84 +47,65 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     assert_response 422
   end
 
-  test 'Returns 422 for bogus slugs' do
-    get '/admin/product-images/?slug=bogus', headers: admin_header
-    assert_response 422
-  end
-
-  test 'Users can create a image' do
+  test 'Users can create a product image' do
     json = {
       data: {
         type: 'product-image',
         attributes: {
-          pitch: '吃饭',
-          body: '招商好'
+          alt: 'Some alt text'
         },
         relationships: {
           'product': {
             data: {
               type: 'product',
-              id: @product.id
-            }
-          },
-          'language': {
-            data: {
-              type: 'language',
-              id: @chinese.id
+              id: @IF_2005M.id
             }
           }
         }
       }
     }
+    assert_equal Image.for_products.length, 4
     post '/admin/product-images', params: json, headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 201
     assert_equal Hash, data.class
-    refute_equal data['id'], ProductImage.last.id
-    assert_equal data['attributes']['body'], '招商好'
-    assert_equal data['attributes']['pitch'], '吃饭'
-    assert_equal data['attributes'].length, 2
-    assert_equal data['relationships']['product']['data']['id'], @product.id
-    assert_equal data['relationships']['language']['data']['id'], @chinese.id
-    assert_equal data['relationships'].length, 2
+    assert_equal Image.for_products.length, 5
+    assert_equal data['attributes']['alt'], 'Some alt text'
+    assert_equal data['attributes'].length, 1
+    assert_equal data['relationships']['image-owner']['data']['id'], @image_1.image_owner_id
+    assert_equal data['relationships']['image-sources']['data'].length, 0
+    assert_equal data['relationships']['image-translations']['data'].length, 0
+    assert_equal data['relationships'].length, 3
   end
 
-  test 'Users can update a image' do
+  test 'Users can update a product image' do
     json = {
       data: {
         type: 'product-image',
         attributes: {
-          pitch: '吃饭 interflux',
-          body: '招商好 interflux'
+          alt: 'Updated alt text'
         },
         relationships: {
           'product': {
             data: {
               type: 'product',
-              id: @product.id
-            }
-          },
-          'language': {
-            data: {
-              type: 'language',
-              id: @chinese.id
+              id: @IF_2005M.id
             }
           }
         }
       }
     }
+    assert_equal @image_1.alt, "25 liter container, front view"
     put "/admin/product-images/#{@image_1.id}", params: json, headers: admin_header
     assert_response 204
-    product = ProductImage.find_by(id: @image_1.id)
-    assert_equal product.pitch, '吃饭 interflux'
-    assert_equal product.body, '招商好 interflux'
+    assert_equal Image.find_by_id(@image_1.id).alt, "Updated alt text"
   end
 
-  test 'Users can delete a image' do
+  test 'Users can delete a product image' do
     id = @image_1.id
-    refute_nil ProductImage.find_by(id: id)
+    refute_nil Image.for_products.find_by_id(id)
     delete "/admin/product-images/#{id}", headers: admin_header
-    assert_nil ProductImage.find_by(id: id)
+    assert_nil Image.for_products.find_by_id(id)
   end
 
   test 'Unauthorized requests' do

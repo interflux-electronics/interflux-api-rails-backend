@@ -77,7 +77,6 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
     data = JSON.parse(@response.body)['data']
     assert_response 201
     assert_equal Hash, data.class
-    refute_equal data['id'], ProductTranslation.last.id
     assert_equal data['attributes']['body'], '招商好'
     assert_equal data['attributes']['pitch'], '吃饭'
     assert_equal data['attributes'].length, 2

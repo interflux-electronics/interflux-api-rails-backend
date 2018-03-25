@@ -1,69 +1,62 @@
 module Admin
   class ProductImagesController < Admin::AuthenticatedController
-    before_action :find_images, only: %i[index]
-    before_action :find_image, only: %i[show update destroy]
 
-    # Return all images
-    # Return all images of 1 product
+    # Return all product images
+    # Return all all images belonging to a single product
     # GET /admin/images
-    # GET /admin/images?filter[type:Product, id:123]
+    # GET /admin/images?filter[product_id:123]
     def index
-      render status: 200, json: Admin::ImageSerializer.new(@images).serialized_json
+      images = Image.for_products
+      images = images.for_owner(product_id) if product_id
+      render status: 200, json: Admin::ImageSerializer.new(images).serialized_json
     end
 
-    # Return image with ID
-    # GET /admin/images/:id
+    # Return a single product image by ID
+    # GET /admin/product-images/:id
     def show
-      render status: 200, json: Admin::ImageSerializer.new(@image).serialized_json
+      image = Image.find_by_id(params[:id])
+      return resource_not_found if image.nil?
+      render status: 200, json: Admin::ImageSerializer.new(image).serialized_json
     end
 
-    # Create a image
-    # POST /admin/images
+    # Create a product image
+    # POST /admin/product-images
     def create
-      @image = Image.new(attributes)
-      return no_image_owner unless relationships && image_owner_id && image_owner_type
-      @image.image_owner_id = image_owner_id
-      @image.image_owner_type = image_owner_type
-      if @image.save!
-        render status: 201, json: Admin::ImageSerializer.new(@image).serialized_json
+      image = Image.new(attributes)
+      image.image_owner_type = 'Product'
+      image.image_owner_id = relationships['product']['data']['id']
+      if image.save!
+        render status: 201, json: Admin::ImageSerializer.new(image).serialized_json
       else
         render status: 422, json: json_errors(image)
       end
     end
 
-    # Update a image
-    # PUT /admin/images/:id
+    # Update a product image
+    # PUT /admin/product-images/:id
     def update
-      @image.assign_attributes(attributes)
-      @image.image_owner_id = image_owner_id
-      @image.image_owner_type = image_owner_type
-      if @image.save!
-        render status: 204, json: Admin::ImageSerializer.new(@image).serialized_json
+      image = Image.find_by_id(params[:id])
+      return resource_not_found if image.nil?
+      image.assign_attributes(attributes)
+      image.image_owner_type = 'Product'
+      image.image_owner_id = relationships['product']['data']['id']
+      if image.save!
+        render status: 204, json: Admin::ImageSerializer.new(image).serialized_json
       else
-        render status: 422, json: json_errors(@image)
+        render status: 422, json: json_errors(image)
       end
     end
 
-    # Delete a image
-    # DELETE /admin/images/:id
+    # Delete a product image
+    # DELETE /admin/product-images/:id
     def destroy
-      @image.destroy
+      image = Image.find_by_id(params[:id])
+      return resource_not_found if image.nil?
+      image.destroy
       head 204
     end
 
     private
-
-    def find_image
-      @image = Image.find_by_id(params[:id])
-      return not_found if @image.nil?
-    end
-
-    def find_images
-      return @images = Image.all unless filter_type && filter_id
-      @images = Image
-                .where(image_owner_type: filter_type)
-                .where(image_owner_id: filter_id)
-    end
 
     def attributes
       params.require(:data)
@@ -77,24 +70,12 @@ module Admin
       params.require(:data).require(:relationships)
     end
 
-    def product_id
-      relationships[:product]['data']['id']
-    end
-
     def filter
       params.require(:filter) if params['filter']
     end
 
-    def filter_type
-      filter[:type] if filter
-    end
-
-    def filter_id
-      filter[:id] if filter
-    end
-
-    def not_found
-      json_error(422, 'image-not-found', 'No image with this ID was found.')
+    def product_id
+      filter['product-id'] if filter
     end
 
     def no_image_owner
