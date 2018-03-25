@@ -14,7 +14,7 @@ module Admin
       params.require(:authentication).permit(:email, :password)
     end
 
-    # TODO:
+    # TODO: Replace invalid_email and invalid_password with invalid_login for security
     # def invalid_login
     #   json_error(401, 'invalid-login', 'Your login credentials are invalid.')
     # end

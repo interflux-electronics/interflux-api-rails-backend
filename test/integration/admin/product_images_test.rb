@@ -21,7 +21,7 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
         'product-id': @IF_2005M.id
       }
     }
-    get "/admin/product-images/", headers: admin_header, params: params
+    get '/admin/product-images/', headers: admin_header, params: params
     data = JSON.parse(@response.body)['data']
     assert_response 200
     assert_equal Array, data.class
@@ -95,10 +95,10 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
         }
       }
     }
-    assert_equal @image_1.alt, "25 liter container, front view"
+    assert_equal @image_1.alt, '25 liter container, front view'
     put "/admin/product-images/#{@image_1.id}", params: json, headers: admin_header
     assert_response 204
-    assert_equal Image.find_by_id(@image_1.id).alt, "Updated alt text"
+    assert_equal Image.find_by_id(@image_1.id).alt, 'Updated alt text'
   end
 
   test 'Users can delete a product image' do

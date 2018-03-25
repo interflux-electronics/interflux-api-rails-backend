@@ -1,6 +1,5 @@
 module Admin
   class ProductImagesController < Admin::AuthenticatedController
-
     # Return all product images
     # Return all all images belonging to a single product
     # GET /admin/images

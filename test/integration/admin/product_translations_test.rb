@@ -20,7 +20,6 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
 
   test 'Users cannot fetch all translations' do
     get '/admin/product-translations', headers: admin_header
-    data = JSON.parse(@response.body)['data']
     assert_response 422
   end
 
