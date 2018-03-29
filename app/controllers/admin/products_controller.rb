@@ -24,14 +24,31 @@ module Admin
     # Create a product
     # POST /admin/products
     def create
+      begin
+        # do something dodgy
+
+      byebug
       product = Product.new(permitted_attributes)
       product.main_category_id = main_category
       product.sub_category_id = sub_category
       if product.save!
+        byebug
         json = Admin::ProductSerializer.new(product).serialized_json
         render status: 201, json: json
       else
+        byebug
         render status: 422, json: json_errors(product)
+      end
+
+      rescue ActiveRecord::RecordNotFound
+        # handle not found error
+      rescue ActiveRecord::ActiveRecordError
+        # handle other ActiveRecord errors
+      rescue # StandardError
+        # handle most other errors
+      rescue Exception
+        # handle everything else
+        raise
       end
     end
 

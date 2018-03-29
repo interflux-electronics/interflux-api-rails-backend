@@ -1,17 +1,17 @@
 module Admin
-  class ProductImagesController < Admin::AuthenticatedController
+  class ImagesController < Admin::AuthenticatedController
     # Return all product images
     # Return all all images belonging to a single product
     # GET /admin/images
     # GET /admin/images?filter[product_id:123]
     def index
-      images = Image.for_products
-      images = images.for_owner(product_id) if product_id
+      images = Image.all
+      images = images.for(owner_type, owner_id) if owner_type && owner_id
       render status: 200, json: Admin::ImageSerializer.new(images).serialized_json
     end
 
     # Return a single product image by ID
-    # GET /admin/product-images/:id
+    # GET /admin/images/:id
     def show
       image = Image.find_by_id(params[:id])
       return resource_not_found if image.nil?
@@ -19,11 +19,13 @@ module Admin
     end
 
     # Create a product image
-    # POST /admin/product-images
+    # POST /admin/images
     def create
-      image = Image.new(attributes)
-      image.image_owner_type = 'Product'
-      image.image_owner_id = relationships['product']['data']['id']
+      image = Image.new(image_attributes)
+      if relationships['product']
+        image.image_owner_type = 'Product'
+        image.image_owner_id = relationships[:'product']['data']['id']
+      end
       if image.save!
         render status: 201, json: Admin::ImageSerializer.new(image).serialized_json
       else
@@ -32,13 +34,15 @@ module Admin
     end
 
     # Update a product image
-    # PUT /admin/product-images/:id
+    # PUT /admin/images/:id
     def update
       image = Image.find_by_id(params[:id])
       return resource_not_found if image.nil?
-      image.assign_attributes(attributes)
-      image.image_owner_type = 'Product'
-      image.image_owner_id = relationships['product']['data']['id']
+      image.assign_attributes(image_attributes)
+      if relationships['product']
+        image.image_owner_type = 'Product'
+        image.image_owner_id = relationships[:'product']['data']['id']
+      end
       if image.save!
         render status: 204, json: Admin::ImageSerializer.new(image).serialized_json
       else
@@ -47,7 +51,7 @@ module Admin
     end
 
     # Delete a product image
-    # DELETE /admin/product-images/:id
+    # DELETE /admin/images/:id
     def destroy
       image = Image.find_by_id(params[:id])
       return resource_not_found if image.nil?
@@ -57,7 +61,7 @@ module Admin
 
     private
 
-    def attributes
+    def image_attributes
       params.require(:data)
             .require(:attributes)
             .permit(
@@ -73,8 +77,12 @@ module Admin
       params.require(:filter) if params['filter']
     end
 
-    def product_id
-      filter['product-id'] if filter
+    def owner_type
+      filter['type'] if filter
+    end
+
+    def owner_id
+      filter['id'] if filter
     end
 
     def no_image_owner

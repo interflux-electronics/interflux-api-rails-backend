@@ -35,10 +35,8 @@ Style/FrozenStringLiteralComment:
 Style/VariableName:
   Exclude:
     - test/integration/admin/products_test.rb
-    - test/integration/admin/product_images_test.rb
 
 # Ignore just this files
 Style/VariableNumber:
   Exclude:
     - test/integration/admin/products_test.rb
-    - test/integration/admin/product_images_test.rb

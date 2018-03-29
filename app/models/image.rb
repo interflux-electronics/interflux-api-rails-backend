@@ -18,4 +18,8 @@ class Image < ApplicationRecord
 
   scope :for_products, -> { where(image_owner_type: 'Product') }
   scope :for_owner, ->(id) { where(image_owner_id: id) }
+  scope :for, ->(type, id) {
+                where(image_owner_type: type)
+                where(image_owner_id: id)
+              }
 end
