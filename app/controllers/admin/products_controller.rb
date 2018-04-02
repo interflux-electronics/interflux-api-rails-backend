@@ -24,31 +24,14 @@ module Admin
     # Create a product
     # POST /admin/products
     def create
-      begin
-        # do something dodgy
-
-      byebug
-      product = Product.new(permitted_attributes)
-      product.main_category_id = main_category
-      product.sub_category_id = sub_category
+      product = Product.new(attributes)
       if product.save!
-        byebug
         json = Admin::ProductSerializer.new(product).serialized_json
         render status: 201, json: json
+        # render status: 201, json: serialize(product, serializer)
+        # render status: 422, json: json_response(product, serializer)
       else
-        byebug
         render status: 422, json: json_errors(product)
-      end
-
-      rescue ActiveRecord::RecordNotFound
-        # handle not found error
-      rescue ActiveRecord::ActiveRecordError
-        # handle other ActiveRecord errors
-      rescue # StandardError
-        # handle most other errors
-      rescue Exception
-        # handle everything else
-        raise
       end
     end
 
@@ -57,10 +40,7 @@ module Admin
     def update
       product = Product.find_by_id(params[:id])
       return resource_not_found if product.nil?
-      product.assign_attributes(permitted_attributes)
-      product.main_category_id = main_category
-      product.sub_category_id = sub_category
-      if product.save!
+      if product.update!(attributes)
         json = Admin::ProductSerializer.new(product).serialized_json
         render status: 204, json: json
       else
@@ -74,33 +54,45 @@ module Admin
       product = Product.find_by_id(params[:id])
       return resource_not_found if product.nil?
       product.destroy
+
+      # TODO: also destroy everything related and dependent on this product
+
       head 204
     end
 
     private
 
-    def permitted_attributes
-      params.require(:data)
-            .require(:attributes)
-            .permit(
-              :name,
-              :slug,
-              :public,
-              :pitch,
-              :body
-            )
+    def attributes
+      params
+        .require(:data)
+        .require(:attributes)
+        .permit(
+          :name,
+          :slug,
+          :public,
+          :pitch,
+          :body
+        )
+        .merge(relationships)
     end
 
     def relationships
-      params.require(:data).require(:relationships)
+      {
+        main_category_id: relationship('main-category')[:id],
+        sub_category_id: relationship('sub-category')[:id]
+      }
     end
 
-    def main_category
-      relationships[:'main-category']['data']['id']
-    end
-
-    def sub_category
-      relationships[:'sub-category']['data']['id']
+    def relationship(key)
+      params
+        .require(:data)
+        .require(:relationships)
+        .require(key)
+        .require(:data)
+        .permit(
+          :id,
+          :type
+        )
     end
   end
 end

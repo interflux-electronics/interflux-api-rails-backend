@@ -24,7 +24,7 @@ module Admin
       image = Image.new(image_attributes)
       if relationships['product']
         image.image_owner_type = 'Product'
-        image.image_owner_id = relationships[:'product']['data']['id']
+        image.image_owner_id = relationships[:product]['data']['id']
       end
       if image.save!
         render status: 201, json: Admin::ImageSerializer.new(image).serialized_json
@@ -41,7 +41,7 @@ module Admin
       image.assign_attributes(image_attributes)
       if relationships['product']
         image.image_owner_type = 'Product'
-        image.image_owner_id = relationships[:'product']['data']['id']
+        image.image_owner_id = relationships[:product]['data']['id']
       end
       if image.save!
         render status: 204, json: Admin::ImageSerializer.new(image).serialized_json
