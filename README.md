@@ -165,6 +165,34 @@ Copy the PID then ...
 kill -9 [the PID]
 ```
 
+#### Bumping Ruby versions
+
+```
+rbenv list
+```
+
+Find the most recent version, then update the `.ruby-version` in the project root.
+
+```
+ls -la ~/rbenv/versions/
+rbenv install 2.4.4
+rbenv uninstall 2.4.1
+ls -la ~/rbenv/versions/
+gem install bundler && rbenv rehash
+bundle install
+```
+
+Each folder in `~/rbenv/versions/` can be over 250MB and together they rack up to several GB. Always delete versions you don't use.
+
+#### Nokogiri
+
+In case Nokigiri keeps breaking `bundle install` on Mac OS it's likely [this issue](https://github.com/SlatherOrg/slather/issues/227) and this resolves it once and for all:
+
+```
+xcode-select --install
+gem install nokogiri
+```
+
 ## Errors
 
 To return errors as JSON API compliant errors:  
