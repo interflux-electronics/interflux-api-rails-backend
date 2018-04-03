@@ -5,10 +5,10 @@ require 'rails/test_help'
 
 # To improve the outputs of `rails test` (Minitest)
 # Without the test suite stops at first failed test
-require 'minitest/reporters'
+# require 'minitest/reporters'
 
 # Lists all tests run, green for passed, red for failed
-Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
+# Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
 # Shows green dots for passes and red error messages for failed specs
 # Minitest::Reporters.use! Minitest::Reporters::DefaultReporter.new
