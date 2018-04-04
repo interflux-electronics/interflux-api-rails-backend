@@ -23,7 +23,7 @@ module Admin
     # end
     #
     # def invalid_token
-    #   json_error(401, 'invalid-token', 'Your JWT token is either invalid or expired.')
+    #   render_error(401, 'invalid-token', 'Your JWT token is either invalid or expired.')
     # end
   end
 end

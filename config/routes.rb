@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   namespace :admin do
     post 'login', to: 'login#authenticate'
     resources :images
+    resources :image_sources, path: '/image-sources'
     resources :languages
     resources :product_categories, path: '/product-categories'
     resources :product_translations, path: '/product-translations'

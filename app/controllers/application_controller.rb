@@ -28,21 +28,26 @@ class ApplicationController < ActionController::Base
   end
 
   def forbidden
-    json_error(403, 'forbidden', 'This request is forbidden.')
+    render_error(403, 'forbidden', 'This request is forbidden.')
   end
 
   def route_not_found
-    json_error(404, 'route-not-found', 'This route does not exist in Rails. Check routes.rb whether 1) it exists and 2) if you have added the hyphenated path.')
+    render_error(404, 'route-not-found', 'This route does not exist in Rails. Check routes.rb whether 1) it exists and 2) if you have added the hyphenated path.')
   end
 
   def resource_not_found
-    json_error(422, 'resource-not-found', 'The controller attempt to find your resource (by ID or slug) but could not find anything that matched. Are you sure it exists?')
+    render_error(422, 'resource-not-found', 'The controller attempt to find your resource (by ID or slug) but could not find anything that matched. Are you sure it exists?')
+  end
+
+  def render_response(status, record, serializer)
+    json = serializer.new(record).serialized_json
+    render status: status, json: json
   end
 
   # Wraps a single error in JSON API format
   # Documentation: http://jsonapi.org/format/#errors
-  # Example: json_error(422, 'not-found', 'No product with this ID was found.')
-  def json_error(status, code, detail)
+  # Example: render_error(422, 'not-found', 'No product with this ID was found.')
+  def render_error(status, code, detail)
     render status: status, json: {
       errors: [{
         status: status.to_s,
@@ -50,25 +55,5 @@ class ApplicationController < ActionController::Base
         detail: detail
       }]
     }
-  end
-
-  # TODO: review
-  # Converts the errors on a resource to a valid JSON API error response
-  # How to use:
-  # suburb.errors.add(:postcode, 'Message for users',
-  #                   error: {
-  #                     code: 'error_code_1',
-  #                     detail: 'Message for developers.',
-  #                     meta: { extras: 'details' }
-  #                   })
-  def json_errors(resource)
-    @errors = []
-    resource.errors.details.map do |_association, errors|
-      errors.map do |detail|
-        next if detail[:error].blank?
-        @errors.push(detail[:error])
-      end
-    end.flatten
-    { errors: @errors }
   end
 end

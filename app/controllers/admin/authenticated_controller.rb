@@ -16,19 +16,19 @@ module Admin
     end
 
     def missing_header
-      json_error(401, 'missing-header', 'The header of your request is missing the Authorization field.')
+      render_error(401, 'missing-header', 'The header of your request is missing the Authorization field.')
     end
 
     def invalid_token
-      json_error(401, 'invalid-token', 'Your JWT token is either invalid or expired.')
+      render_error(401, 'invalid-token', 'Your JWT token is either invalid or expired.')
     end
 
     def missing_user
-      json_error(401, 'missing-user', 'No user was found for your authentication token.')
+      render_error(401, 'missing-user', 'No user was found for your authentication token.')
     end
 
     def no_permission
-      json_error(401, 'no-permission', 'User does not have permission.')
+      render_error(401, 'no-permission', 'User does not have permission.')
     end
   end
 end

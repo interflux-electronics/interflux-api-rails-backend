@@ -85,15 +85,15 @@ module Admin
     end
 
     def missing_slug
-      json_error(422, 'missing-slug', 'This endpoint requires a product slug param.')
+      render_error(422, 'missing-slug', 'This endpoint requires a product slug param.')
     end
 
     def unknown_slug(slug)
-      json_error(422, 'unknown-slug', "No product was found for product slug \"#{slug}\".")
+      render_error(422, 'unknown-slug', "No product was found for product slug \"#{slug}\".")
     end
 
     def not_found(id)
-      json_error(422, 'not-found', "No product translation was found for ID \"#{id}\".")
+      render_error(422, 'not-found', "No product translation was found for ID \"#{id}\".")
     end
   end
 end

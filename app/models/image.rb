@@ -11,7 +11,7 @@
 #
 
 class Image < ApplicationRecord
-  belongs_to :image_owner, polymorphic: true
+  belongs_to :image_owner, polymorphic: true, optional: true
 
   has_many :image_sources
   has_many :image_translations

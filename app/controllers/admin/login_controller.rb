@@ -16,15 +16,15 @@ module Admin
 
     # TODO: Replace invalid_email and invalid_password with invalid_login for security
     # def invalid_login
-    #   json_error(401, 'invalid-login', 'Your login credentials are invalid.')
+    #   render_error(401, 'invalid-login', 'Your login credentials are invalid.')
     # end
 
     def invalid_email
-      json_error(401, 'invalid-email', 'There are no users associated with this email.')
+      render_error(401, 'invalid-email', 'There are no users associated with this email.')
     end
 
     def invalid_password
-      json_error(401, 'invalid-password', 'This password is incorrect.')
+      render_error(401, 'invalid-password', 'This password is incorrect.')
     end
   end
 end
