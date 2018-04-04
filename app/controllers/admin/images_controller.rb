@@ -46,7 +46,6 @@ module Admin
   end
 end
 
-
 # module Admin
 #   # class ImagesController < Admin::AuthenticatedController
 #   class ImagesController < Admin::BaseController
