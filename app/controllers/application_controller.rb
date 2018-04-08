@@ -131,8 +131,8 @@ class ApplicationController < ActionController::Base
   end
 
   def strong_filters
-    json_keys = filters.collect{|item| item.to_s.dasherize}
     return unless params[:filter]
+    json_keys = filters.collect{|item| item.to_s.dasherize}
     params
       .require(:filter)
       .permit(json_keys)

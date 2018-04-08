@@ -1,6 +1,9 @@
 module Admin
   class ProductTranslationsController < Admin::AuthenticatedController
     def index
+      # There is no user case for someone wanting to fetch ALL translations
+      return forbidden unless params[:filter]
+      # Inherit as usual, but requires a filter param.
       super
     end
 
@@ -37,24 +40,17 @@ module Admin
       ]
     end
 
-    def belongs_to
+    def relationships
       %i[
-        product
-        language
+        product_id
+        language_id
       ]
     end
 
-    # def relationships
-    #   {
-    #     product_id: permit_relationship('product')['id'],
-    #     language_id: permit_relationship('language')['id']
-    #   }
-    # end
-
     def filters
       %i[
-        product-id
-        language-id
+        product_id
+        language_id
       ]
     end
 

@@ -10,17 +10,22 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
     @chinese = languages('chinese')
   end
 
-  test 'Users can fetch all translations of a single product' do
-    get "/admin/product-translations/?slug=#{@product.slug}", headers: admin_header
+  test 'Users cannot fetch all translations' do
+    get '/admin/product-translations', headers: admin_header
+    assert_response 403
+  end
+
+  test 'Users can fetch all translations of one particular product' do
+    params = {
+      filter: {
+        'product-id': @product.id
+      }
+    }
+    get '/admin/product-translations/', headers: admin_header, params: params
     data = JSON.parse(@response.body)['data']
     assert_response 200
     assert_equal Array, data.class
     assert_equal 2, data.length
-  end
-
-  test 'Users cannot fetch all translations' do
-    get '/admin/product-translations', headers: admin_header
-    assert_response 422
   end
 
   test 'Users can fetch a single translation by ID' do
@@ -42,9 +47,9 @@ class AdminProductTranslationTest < ActionDispatch::IntegrationTest
     assert_response 422
   end
 
-  test 'Returns 422 for bogus slugs' do
+  test 'Returns 403 for bogus slugs' do
     get '/admin/product-translations/?slug=bogus', headers: admin_header
-    assert_response 422
+    assert_response 403
   end
 
   # TODO: Is this needed? Seems like it should be a side effect of creating a product and creating new languages
