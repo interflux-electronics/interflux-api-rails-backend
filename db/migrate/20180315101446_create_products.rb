@@ -6,7 +6,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.boolean :public, default: false
       t.text :pitch
       t.text :body
-      t.uuid :avatar_image_id
       t.uuid :main_category_id
       t.uuid :sub_category_id
       t.timestamps
@@ -28,11 +27,11 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    # create_table :product_images, id: :uuid do |t|
-    #   t.uuid :product_id
-    #   t.uuid :image_id
-    #   t.timestamps
-    # end
+    create_table :product_images, id: :uuid do |t|
+      t.uuid :product_id
+      t.string :alt
+      t.timestamps
+    end
 
     # create_table :product_uses, id: :uuid do |t|
     #   t.uuid :product_id

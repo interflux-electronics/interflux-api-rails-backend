@@ -1,11 +1,11 @@
 module Admin
-  class ImageSourcesController < Admin::AuthenticatedController
+  class ProductImagesController < Admin::AuthenticatedController
     def index
-      forbidden
+      super
     end
 
     def show
-      forbidden
+      super
     end
 
     def create
@@ -23,29 +23,29 @@ module Admin
     private
 
     def resource_klass
-      ImageSource
+      ProductImage
     end
 
     def serializer_klass
-      Admin::ImageSourceSerializer
+      Admin::ProductImageSerializer
     end
 
     def attributes
       %i[
-        url
-        width
-        height
+        alt
       ]
     end
 
     def relationships
       {
-        image_id: permit_relationship('image')['id']
+        product_id: permit_relationship('product')['id']
       }
     end
 
     def filters
-      %i[]
+      %i[
+        product-id
+      ]
     end
 
     def includes

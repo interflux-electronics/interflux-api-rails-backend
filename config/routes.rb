@@ -13,9 +13,10 @@ Rails.application.routes.draw do
     resources :images
     resources :image_sources, path: '/image-sources'
     resources :languages
-    resources :product_categories, path: '/product-categories'
-    resources :product_translations, path: '/product-translations'
     resources :products
+    resources :product_categories, path: '/product-categories'
+    resources :product_images, path: '/product-images'
+    resources :product_translations, path: '/product-translations'
     resources :users
   end
 

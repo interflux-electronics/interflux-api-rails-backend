@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: product_images
+#
+#  id         :uuid             not null, primary key
+#  product_id :uuid
+#  alt        :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+product_image_1:
+  alt: 25 liter container, front view
+  product: IF_2005M
+
+product_image_2:
+  alt: 25 liter container, side view
+  product: IF_2005M
+
+product_image_3:
+  alt: 25 liter container
+  product: IF_2005M
+
+product_image_4:
+  alt: this is not IF_2005M
+  product: pacific_2009M

@@ -18,8 +18,8 @@ class AdminImageTest < ActionDispatch::IntegrationTest
   test 'Users can fetch all images of one particular product' do
     params = {
       filter: {
-        type: 'Product',
-        id: @product.id
+        'image-owner-type': 'Product',
+        'image-owner-id': @product.id
       }
     }
     get '/admin/images/', headers: admin_header, params: params

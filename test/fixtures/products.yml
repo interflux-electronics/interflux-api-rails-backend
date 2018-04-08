@@ -8,7 +8,6 @@
 #  public           :boolean          default(FALSE)
 #  pitch            :text
 #  body             :text
-#  avatar_image_id  :uuid
 #  main_category_id :uuid
 #  sub_category_id  :uuid
 #  created_at       :datetime         not null
@@ -22,7 +21,6 @@ IF_2005M:
   pitch: Interflux® IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**.
   main_category: soldering_fluxes
   sub_category: alcohol_based
-  avatar_image: image_1
 
 OSPI_3311M:
   name: OSPI 3311M
