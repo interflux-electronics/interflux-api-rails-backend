@@ -41,10 +41,10 @@ module Admin
     end
 
     def relationships
-      {
-        main_category_id: permit_relationship('main-category')[:id],
-        sub_category_id: permit_relationship('sub-category')[:id]
-      }
+      %i[
+        main_category_id
+        sub_category_id
+      ]
     end
 
     def filters

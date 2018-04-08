@@ -37,14 +37,14 @@ module Admin
     end
 
     def relationships
-      {
-        product_id: permit_relationship('product')['id']
-      }
+      %i[
+        product_id
+      ]
     end
 
     def filters
       %i[
-        product-id
+        product_id
       ]
     end
 

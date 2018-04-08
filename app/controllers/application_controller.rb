@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def index
     return show if params[:slug] # Redirect if :slug based
     resources = resource_klass.all
-    permitted_filters&.each do |key, value|
+    strong_filters&.each do |key, value|
       resources = resources.where("#{key.underscore}": value)
     end
     json = serializer_klass.new(resources).serialized_json
@@ -36,7 +36,7 @@ class ApplicationController < ActionController::Base
   # Update a resource
   # POST /namespace/route
   def create
-    resource = resource_klass.new(merged_attributes)
+    resource = resource_klass.new(attributes_and_relationships)
     if resource.save!
       json = serializer_klass.new(resource).serialized_json
       render status: 201, json: json
@@ -50,7 +50,7 @@ class ApplicationController < ActionController::Base
   def update
     resource = resource_klass.find_by_id(params[:id])
     return resource_not_found if resource.nil?
-    if resource.update!(merged_attributes)
+    if resource.update!(attributes_and_relationships)
       json = serializer_klass.new(resource).serialized_json
       render status: 204, json: json
     else
@@ -82,31 +82,60 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def merged_attributes
+  #
+  def attributes_and_relationships
+    strong_attributes
+      .merge(strong_relationships)
+  end
+
+  # Allow only predifined list of attributes that can saved to the resource
+  def strong_attributes
     params
       .require(:data)
       .require(:attributes)
       .permit(attributes)
-      .merge(relationships)
   end
 
-  def permit_relationship(key)
-    params
-      .require(:data)
-      .require(:relationships)
-      .require(key)
-      .require(:data)
-      .permit(
-        :id,
-        :type
-      )
+  # Return a hash of permitted relationship and strong IDs pulled from the params.
+  # Usage: Make sure each controller has a similar array:
+  # ```
+  # def relationships
+  #   %i[
+  #     main_category
+  #     sub_category
+  #   ]
+  # end
+  # ```
+  def strong_relationships
+    # First we convert the array into  we convert `relationships` into a nested array like:
+    # [[:main_category, "d6461197-e618-5502-95a5-1e171f8f71e9"], [:sub_category, "8147cd48-12b6-500e-a001-d80288d644f1"]]
+    # The keys are underscored for later use when creating / updating the resource.
+    # The values are strong IDs grabbed from the JSON API structured package.
+    nested_array = relationships.collect do |key|
+      json_key = key.to_s.chomp('_id').dasherize
+      id = params
+           .require(:data)
+           .require(:relationships)
+           .require(json_key)
+           .require(:data)
+           .permit(
+             :id,
+             :type
+           )
+           .fetch(:id)
+      [key, id]
+    end
+    # Then we convert the array into a hash and return it.
+    # Example: {:main_category=>"d6461197-e618-5502-95a5-1e171f8f71e9", :sub_category=>"8147cd48-12b6-500e-a001-d80288d644f1"}
+    Hash[nested_array]
   end
 
-  def permitted_filters
+  def strong_filters
+    json_keys = filters.collect{|item| item.to_s.dasherize}
     return unless params[:filter]
     params
       .require(:filter)
-      .permit(filters)
+      .permit(json_keys)
       .to_hash
   end
 
