@@ -2,20 +2,20 @@
 #
 # Table name: image_translations
 #
-#  id          :uuid             not null, primary key
-#  alt         :string
-#  image_id    :uuid
-#  language_id :uuid
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id               :uuid             not null, primary key
+#  alt              :string
+#  product_image_id :uuid
+#  language_id      :uuid
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 image_1_french:
   alt: Conteneur de 25 litres, vue de face
-  image: image_1
+  product_image: product_image_1
   language: fr
 
 image_1_german:
   alt: 25-Liter-Behälter, Vorderansicht
-  image: image_1
+  product_image: product_image_1
   language: de

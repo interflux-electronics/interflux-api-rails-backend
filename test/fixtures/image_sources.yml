@@ -2,35 +2,35 @@
 #
 # Table name: image_sources
 #
-#  id         :uuid             not null, primary key
-#  url        :string
-#  width      :integer
-#  height     :integer
-#  image_id   :uuid
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :uuid             not null, primary key
+#  url              :string
+#  width            :integer
+#  height           :integer
+#  product_image_id :uuid
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 image_source_1a:
   url: https://cdn.interflux.com/images/products/interflux-alcohol-based-soldering-flux-IF-2005M-25-liter-container-front@250x250.jpg
   width: 250
   height: 250
-  image: image_1
+  product_image: product_image_1
 
 image_source_1b:
   url: https://cdn.interflux.com/images/products/interflux-alcohol-based-soldering-flux-IF-2005M-25-liter-container-front@500x500.jpg
   width: 500
   height: 500
-  image: image_1
+  product_image: product_image_1
 
 image_source_2a:
   url: https://cdn.interflux.com/images/products/interflux-alcohol-based-soldering-flux-IF-2005M-25-liter-container-side@250x250.jpg
   width: 250
   height: 250
-  image: image_2
+  product_image: product_image_2
 
 image_source_2b:
   url: https://cdn.interflux.com/images/products/interflux-alcohol-based-soldering-flux-IF-2005M-25-liter-container-side@500x500.jpg
   width: 500
   height: 500
-  image: image_2
+  product_image: product_image_2

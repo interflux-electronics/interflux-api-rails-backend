@@ -1,9 +1,10 @@
 module Admin
   class ProductTranslationsController < Admin::AuthenticatedController
     def index
-      # There is no user case for someone wanting to fetch ALL translations
+      # There are no user case for someone wanting to fetch ALL translations
+      # Instead a filter param is required
       return forbidden unless params[:filter]
-      # Inherit as usual, but requires a filter param.
+      # Inherit as usual
       super
     end
 

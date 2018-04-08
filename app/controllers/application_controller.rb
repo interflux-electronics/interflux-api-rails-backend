@@ -8,27 +8,26 @@ class ApplicationController < ActionController::Base
     strong_filters&.each do |key, value|
       resources = resources.where("#{key.underscore}": value)
     end
-    json = serializer_klass.new(resources).serialized_json
+    options = {}
+    options[:include] = strong_includes if strong_includes
+    json = serializer_klass.new(resources, options).serialized_json
     render status: 200, json: json
   end
 
   # Return a single resource
-  # GET /namespace/route/:id
+  # GET /namespace/route/:uuid
   # GET /namespace/route/?slug=:slug
   # Note: For human and SEO we avoid embedding UUIDs in URLs. Instead we use
   # hyphenated strings referred to as slugs. These slugs are the only bit of
   # information the front-end can send to the API to fetch a resource. Given
   # these are unique in every table, we can use them for for finding resources
-  # just like we would with an :id.
+  # just like we would with an :uuid.
   def show
     resource = resource_klass.find_by_id(params[:id]) if params[:id]
     resource = resource_klass.find_by_slug(params[:slug]) if params[:slug]
     return resource_not_found if resource.nil?
     options = {}
-
-    # TODO: Make top level includes work
-    # options[:include] = includes if includes
-
+    options[:include] = strong_includes if strong_includes
     json = serializer_klass.new(resource, options).serialized_json
     render status: 200, json: json
   end
@@ -132,16 +131,21 @@ class ApplicationController < ActionController::Base
 
   def strong_filters
     return unless params[:filter]
-    json_keys = filters.collect{|item| item.to_s.dasherize}
+    json_keys = filters.collect { |item| item.to_s.dasherize }
     params
       .require(:filter)
       .permit(json_keys)
       .to_hash
   end
 
-  # def permitted_includes
-  #   params[:include].split(',').select { |i| i[/images|translations$/] }.map(&:to_sym)
-  # end
+  def strong_includes
+    return unless params[:include]
+    arr = params[:include]
+          .split(',')
+          .collect { |item| item.parameterize.underscore.to_sym }
+    # Intersect both arrays so we only keep the param include keys that are also defined in the controller.
+    arr && includes
+  end
 
   # Render a JSON API response Netlflix' Fast JSON API Serializers
   # https://github.com/Netflix/fast_jsonapi

@@ -49,7 +49,10 @@ module Admin
     end
 
     def includes
-      %i[]
+      %i[
+        image_sources
+        image_translations
+      ]
     end
   end
 end

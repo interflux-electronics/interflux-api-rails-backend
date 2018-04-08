@@ -47,7 +47,7 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     get '/admin/product-images/123', headers: admin_header
     assert_response 422
   end
-  
+
   test 'Users can create a product image' do
     json = {
       data: {

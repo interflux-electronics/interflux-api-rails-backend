@@ -28,7 +28,6 @@ rails db:create &&
 rails db:migrate &&
 rails db:migrate RAILS_ENV=test &&
 rails db:fixtures:load &&
-rake db:fixtures:load FIXTURES=users,languages,product_categories,products,product_translations,images,image_sources,image_translations &&
 annotate
 ```
 

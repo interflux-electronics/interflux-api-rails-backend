@@ -4,6 +4,6 @@ module Admin
                :width,
                :height
 
-    belongs_to :image
+    belongs_to :product_image
   end
 end

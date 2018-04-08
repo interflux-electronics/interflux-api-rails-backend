@@ -4,13 +4,13 @@ class CreateImages < ActiveRecord::Migration[5.1]
       t.string :url
       t.integer :width
       t.integer :height
-      t.uuid :image_id
+      t.uuid :product_image_id
       t.timestamps
     end
 
     create_table :image_translations, id: :uuid do |t|
       t.string :alt
-      t.uuid :image_id
+      t.uuid :product_image_id
       t.uuid :language_id
       t.timestamps
     end

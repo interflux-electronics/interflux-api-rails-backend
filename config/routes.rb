@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   # https://admin.interflux.com
   namespace :admin do
     post 'login', to: 'login#authenticate'
-    resources :images
     resources :image_sources, path: '/image-sources'
     resources :languages
     resources :products
