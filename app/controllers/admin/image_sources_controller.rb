@@ -1,5 +1,8 @@
 module Admin
   class ImageSourcesController < Admin::AuthenticatedController
+
+    # There are no user cases for fetching image sources.
+    # Instead always include with product image.
     def index
       forbidden
     end
@@ -39,9 +42,9 @@ module Admin
     end
 
     def relationships
-      {
-        image_id: permit_relationship('image')['id']
-      }
+      %i[
+        product_image_id
+      ]
     end
 
     def filters
