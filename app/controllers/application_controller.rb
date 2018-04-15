@@ -183,7 +183,7 @@ class ApplicationController < ActionController::Base
     render_error(422, 'resource-not-found', 'The controller attempt to find your resource (by ID or slug) but could not find anything that matched. Are you sure it exists?')
   end
 
-  rescue_from(ActionController::ParameterMissing) do |parameter_missing_exception|
+  rescue_from(ActionController::ParameterMissing) do |_parameter_missing_exception|
     render_error(422, 'parameter-missing', 'This request is missing a param.')
   end
 end

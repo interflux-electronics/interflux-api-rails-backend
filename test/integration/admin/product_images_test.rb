@@ -37,7 +37,7 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     assert_equal data['attributes']['alt'], @image.alt
     assert_equal data['attributes'].length, 1
     assert_equal data['relationships']['product']['data']['id'], @image.product.id
-    # TODO:
+    # TODO: Update these
     # assert_equal data['relationships']['image-sources']['data'].length, 2
     # assert_equal data['relationships']['image-translations']['data'].length, 2
     # assert_equal data['relationships'].length, 3
@@ -74,7 +74,7 @@ class AdminProductImageTest < ActionDispatch::IntegrationTest
     assert_equal data['attributes']['alt'], 'Some alt text'
     assert_equal data['attributes'].length, 1
     assert_equal data['relationships']['product']['data']['id'], @image.product.id
-    # TODO:
+    # TODO: Update these
     # assert_equal data['relationships']['image-sources']['data'].length, 0
     # assert_equal data['relationships']['image-translations']['data'].length, 0
     # assert_equal data['relationships'].length, 3
