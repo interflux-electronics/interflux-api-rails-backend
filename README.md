@@ -38,10 +38,10 @@ Clean wipe and restart:
 ```
 export RAILS_ENV=production;
 export DISABLE_DATABASE_ENVIRONMENT_CHECK=1;
-rake db:drop;
-rake db:create;
-rake db:migrate;
-rake db:fixtures:load
+rails db:drop;
+rails db:create;
+rails db:migrate;
+rails db:fixtures:load
 ```
 
 On running database:
@@ -168,17 +168,17 @@ kill -9 [the PID]
 
 ```
 rbenv list
+rbenv install --list
 ```
 
 Find the most recent version, then update the `.ruby-version` in the project root.
 
 ```
-ls -la ~/rbenv/versions/
+ls -la ~/.rbenv/versions/
 rbenv install 2.4.4
 rbenv uninstall 2.4.1
-ls -la ~/rbenv/versions/
-gem install bundler && rbenv rehash
-bundle install
+ls -la ~/.rbenv/versions/
+gem install bundler && rbenv rehash && bundle install
 ```
 
 Each folder in `~/rbenv/versions/` can be over 250MB and together they rack up to several GB. Always delete versions you don't use.
