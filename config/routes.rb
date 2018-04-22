@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # https://www.interflux.com
   namespace :public do
     resources :products
-    resources :product_categories
+    resources :product_categories, path: '/product-categories'
   end
 
   # For authenticated admins:
