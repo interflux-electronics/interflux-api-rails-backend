@@ -1,5 +1,7 @@
 module Admin
-  class ProductsController < Admin::AuthenticatedController
+  class ProductsController < ApplicationController
+    include Authentication
+
     def index
       super
     end

@@ -1,5 +1,7 @@
 module Admin
-  class UsersController < Admin::AuthenticatedController
+  class UsersController < ApplicationController
+    include Authentication
+
     # Return the current userr
     # def show
     #   return forbidden unless token

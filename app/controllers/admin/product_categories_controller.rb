@@ -1,5 +1,7 @@
 module Admin
-  class ProductCategoriesController < Admin::AuthenticatedController
+  class ProductCategoriesController < ApplicationController
+    include Authentication
+
     # Admins can fetch all product categories
     def index
       super

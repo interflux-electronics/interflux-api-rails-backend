@@ -1,5 +1,7 @@
 module Admin
-  class LanguagesController < Admin::AuthenticatedController
+  class LanguagesController < ApplicationController
+    include Authentication
+
     # Admins can fetch all languages
     def index
       super

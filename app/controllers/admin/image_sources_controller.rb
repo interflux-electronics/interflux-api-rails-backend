@@ -1,5 +1,7 @@
 module Admin
-  class ImageSourcesController < Admin::AuthenticatedController
+  class ImageSourcesController < ApplicationController
+    include Authentication
+    
     # There are no user cases for fetching image sources.
     # Instead always include with product image.
     def index

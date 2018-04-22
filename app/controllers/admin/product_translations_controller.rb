@@ -1,5 +1,7 @@
 module Admin
-  class ProductTranslationsController < Admin::AuthenticatedController
+  class ProductTranslationsController < ApplicationController
+    include Authentication
+
     def index
       # There are no user case for someone wanting to fetch ALL translations
       # Instead a filter param is required
