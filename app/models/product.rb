@@ -25,6 +25,9 @@ class Product < ApplicationRecord
   scope :where_main_category, ->(slug) { where(main_category: ProductCategory.where(slug: slug)) }
   scope :where_sub_category, ->(slug) { where(sub_category: ProductCategory.where(slug: slug)) }
 
+  # TODO: Use joins() instead of construction above
+  # Product.joins(:main_category).where(:product_categories => {:slug => "solder-wires"})
+
   before_save :generate_slug
   # before_destroy :delete_images
   # before_destroy :delete_translations
