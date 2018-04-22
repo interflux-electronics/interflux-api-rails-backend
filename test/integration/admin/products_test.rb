@@ -1,11 +1,16 @@
 require 'test_helper'
+require "minitest/autorun"
+
 
 class AdminProductTest < ActionDispatch::IntegrationTest
+
+  describe "TIETEN" do
+
   def setup
     @IF_2005M = products('IF_2005M')
   end
 
-  test 'Users can fetch all products' do
+  it 'Users can fetch all products' do
     get '/admin/products', headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -13,7 +18,7 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     assert_equal 6, data.length
   end
 
-  test 'Users can fetch a single product by ID' do
+  it 'Users can fetch a single product by ID' do
     get "/admin/products/#{@IF_2005M.id}", headers: admin_header
     data = JSON.parse(@response.body)['data']
     assert_response 200
@@ -147,5 +152,6 @@ class AdminProductTest < ActionDispatch::IntegrationTest
     assert_response 401
     delete "/admin/products/#{@IF_2005M.id}"
     assert_response 401
+  end
   end
 end
