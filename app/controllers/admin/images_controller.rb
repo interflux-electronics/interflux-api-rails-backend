@@ -1,25 +1,28 @@
 module Admin
-  class ImageSourcesController < ApplicationController
+  class ImagesController < ApplicationController
     include Authentication
-    
-    # There are no user cases for fetching image sources.
-    # Instead always include with product image.
+
+    # Admins can fetch all images
     def index
-      forbidden
+      super
     end
 
+    # Admins can fetch a single image
     def show
-      forbidden
+      super
     end
 
+    # Admins can create images
     def create
       super
     end
 
+    # Admins can update images
     def update
       super
     end
 
+    # Admins can remove images
     def destroy
       super
     end
@@ -27,11 +30,11 @@ module Admin
     private
 
     def resource_klass
-      ImageSource
+      Image
     end
 
     def serializer_klass
-      Admin::ImageSourceSerializer
+      ImageSerializer
     end
 
     def attributes
@@ -43,9 +46,7 @@ module Admin
     end
 
     def relationships
-      %i[
-        product_image_id
-      ]
+      %i[]
     end
 
     def filters

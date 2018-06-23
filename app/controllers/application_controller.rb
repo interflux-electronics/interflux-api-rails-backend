@@ -89,6 +89,7 @@ class ApplicationController < ActionController::Base
 
   # Allow only predifined list of attributes that can saved to the resource
   def strong_attributes
+    return {} if attributes.empty?
     params
       .require(:data)
       .require(:attributes)
@@ -144,7 +145,7 @@ class ApplicationController < ActionController::Base
           .split(',')
           .collect { |item| item.parameterize.underscore.to_sym }
     # Intersect both arrays so we only keep the param include keys that are also defined in the controller.
-    arr && includes
+    includes && arr
   end
 
   # Render a JSON API response Netlflix' Fast JSON API Serializers
@@ -177,6 +178,10 @@ class ApplicationController < ActionController::Base
 
   def route_not_found
     render_error(404, 'route-not-found', 'This route does not exist in Rails. Check routes.rb whether 1) it exists and 2) if you have added the hyphenated path.')
+  end
+
+  def not_acceptable
+    render_error(406, 'not-acceptable', 'This language is not supported.')
   end
 
   def resource_not_found

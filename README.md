@@ -27,8 +27,19 @@ rails db:drop &&
 rails db:create &&
 rails db:migrate &&
 rails db:migrate RAILS_ENV=test &&
-rails db:fixtures:load &&
+rails db:fixtures:load FIXTURES=users &&
+rails db:fixtures:load FIXTURES=languages &&
+rails db:fixtures:load FIXTURES=product_categories
 annotate
+```
+
+Optional:
+
+```
+rails db:fixtures:load FIXTURES=products &&
+rails db:fixtures:load FIXTURES=features &&
+rails db:fixtures:load FIXTURES=product_features &&
+rails db:fixtures:load FIXTURES=product_translations &&
 ```
 
 #### Production

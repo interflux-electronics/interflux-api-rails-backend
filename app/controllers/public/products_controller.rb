@@ -60,7 +60,10 @@ module Public
     end
 
     def includes
-      %i[]
+      %i[
+        main_category
+        sub_category
+      ]
     end
   end
 end

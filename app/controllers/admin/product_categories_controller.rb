@@ -34,7 +34,7 @@ module Admin
     end
 
     def serializer_klass
-      Admin::ProductCategorySerializer
+      ProductCategorySerializer
     end
 
     def attributes

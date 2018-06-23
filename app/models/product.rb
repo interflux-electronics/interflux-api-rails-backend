@@ -19,7 +19,15 @@ class Product < ApplicationRecord
   belongs_to :sub_category, class_name: 'ProductCategory', foreign_key: 'sub_category_id', optional: true
 
   has_many :product_images
+  has_many :product_features
   has_many :product_translations
+
+  # def product_image_sources
+  #   byebug
+  #   product_images.image_sources
+  # end
+  # delegate :product_images_sources, to: :product_images.image_sources
+  # delegate :name, to: :provider, prefix: true
 
   scope :which_are_public, -> { where(public: true) }
   scope :where_main_category, ->(slug) { where(main_category: ProductCategory.where(slug: slug)) }
@@ -29,8 +37,13 @@ class Product < ApplicationRecord
   # Product.joins(:main_category).where(:product_categories => {:slug => "solder-wires"})
 
   before_save :generate_slug
-  # before_destroy :delete_images
-  # before_destroy :delete_translations
+  
+  # TODO: before_destroy :delete_images
+  # TODO: before_destroy :delete_features
+  # TODO: before_destroy :delete_translations
+  # TODO: before_destroy :delete_product_images
+  # TODO: before_destroy :delete_product_features
+  # TODO: before_destroy :delete_product_translations
 
   private
 

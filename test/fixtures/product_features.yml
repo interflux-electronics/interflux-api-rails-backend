@@ -1,0 +1,46 @@
+# == Schema Information
+#
+# Table name: product_features
+#
+#  id         :uuid             not null, primary key
+#  product_id :uuid
+#  feature_id :uuid
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+product_feature_1:
+  product: IF_2005M
+  feature: feature_alcohol
+
+product_feature_2:
+  product: IF_2005M
+  feature: feature_wave
+
+product_feature_3:
+  product: IF_2005M
+  feature: feature_halide_free
+
+product_feature_4:
+  product: IF_2005M
+  feature: feature_conformal_coating
+
+product_feature_5:
+  product: IF_2005M
+  feature: feature_no_residu
+
+product_feature_6:
+  product: OSPI_3311M
+  feature: feature_alcohol
+
+product_feature_7:
+  product: OSPI_3311M
+  feature: feature_wave
+
+product_feature_8:
+  product: OSPI_3311M
+  feature: feature_halide_free
+
+product_feature_9:
+  product: OSPI_3311M
+  feature: high_deoxidation

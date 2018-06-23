@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class ProductImage < ApplicationRecord
+class ProductImageSerializer < ApplicationSerializer
   belongs_to :product
   belongs_to :image
 end

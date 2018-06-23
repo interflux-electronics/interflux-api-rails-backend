@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: product_images
+# Table name: images
 #
 #  id         :uuid             not null, primary key
-#  product_id :uuid
-#  image_id   :uuid
+#  url        :string
+#  width      :integer
+#  height     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class ProductImage < ApplicationRecord
-  belongs_to :product
-  belongs_to :image
+class Image < ApplicationRecord
+  has_many :product_images
 end

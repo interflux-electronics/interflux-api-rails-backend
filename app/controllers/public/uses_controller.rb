@@ -1,5 +1,5 @@
 module Public
-  class ProductCategoriesController < ApplicationController
+  class UsesController < ApplicationController
     # Public users can fetch all product categories
     def index
       super
@@ -28,15 +28,18 @@ module Public
     private
 
     def resource_klass
-      ProductCategory
+      Use
     end
 
     def serializer_klass
-      ProductCategorySerializer
+      UseSerializer
     end
 
     def attributes
-      %i[]
+      %i[
+        slug
+        name
+      ]
     end
 
     def relationships

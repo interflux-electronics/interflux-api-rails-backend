@@ -1,40 +1,39 @@
-module Admin
-  class ProductImagesController < ApplicationController
-    include Authentication
+module Public
+  class ProductFeaturesController < ApplicationController
 
-    # Admins can fetch all images
+    # Admins can fetch all product features
     def index
       super
     end
 
-    # Admins can fetch a single image
+    # Admins can fetch a single product feature
     def show
       super
     end
 
-    # Admins can create images
+    # Admins can create product features
     def create
-      super
+      forbidden
     end
 
-    # Admins can update images
+    # Admins can update product features
     def update
-      super
+      forbidden
     end
 
-    # Admins can remove images
+    # Admins can remove product features
     def destroy
-      super
+      forbidden
     end
 
     private
 
     def resource_klass
-      ProductImage
+      ProductFeature
     end
 
     def serializer_klass
-      ProductImageSerializer
+      ProductFeatureSerializer
     end
 
     def attributes
@@ -44,7 +43,7 @@ module Admin
     def relationships
       %i[
         product_id
-        image_id
+        feature_id
       ]
     end
 
@@ -56,7 +55,7 @@ module Admin
 
     def includes
       %i[
-        image
+        feature
       ]
     end
   end

@@ -18,25 +18,5 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.uuid :language_id
       t.timestamps
     end
-
-    create_table :product_categories, id: :uuid do |t|
-      t.string :slug
-      t.string :name_plural
-      t.string :name_single
-      t.uuid :parent_category_id
-      t.timestamps
-    end
-
-    create_table :product_images, id: :uuid do |t|
-      t.uuid :product_id
-      t.string :alt
-      t.timestamps
-    end
-
-    # create_table :product_uses, id: :uuid do |t|
-    #   t.uuid :product_id
-    #   t.uuid :use_id
-    #   t.timestamps
-    # end
   end
 end
