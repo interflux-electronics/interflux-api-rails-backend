@@ -79,9 +79,12 @@ class ApplicationController < ActionController::Base
     forbidden
   end
 
+  def health_check
+    alive
+  end
+
   private
 
-  #
   def attributes_and_relationships
     strong_attributes
       .merge(strong_relationships)
@@ -186,6 +189,10 @@ class ApplicationController < ActionController::Base
 
   def resource_not_found
     render_error(422, 'resource-not-found', 'The controller attempt to find your resource (by ID or slug) but could not find anything that matched. Are you sure it exists?')
+  end
+
+  def alive
+    render_error(200, 'alive', 'This back-end is up and running.')
   end
 
   rescue_from(ActionController::ParameterMissing) do |_parameter_missing_exception|
