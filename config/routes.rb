@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # Return a 404 for all other routes
+  match '*catch', to: 'application#route_not_found', via: :all
 end
