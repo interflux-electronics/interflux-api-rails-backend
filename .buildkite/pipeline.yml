@@ -1,3 +1,3 @@
 steps:
-  - name: ":rubygems:"
-    command: "bundle install && rails test"
+  - name: ":rails:"
+    command: "bundle install && rake db:create && rails test"
