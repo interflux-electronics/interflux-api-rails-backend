@@ -1,0 +1,3 @@
+steps:
+  - name: ":rubygems:"
+    command: "bundle install && rails test"

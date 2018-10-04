@@ -1,3 +1,9 @@
+# Ignore some folders completely
+AllCops:
+  Exclude:
+    - 'bin/**/*'
+    - 'legacy/**/*'
+
 # Always attempt to keep all of the things as short as possible
 # However, to pedantically put a fixed number on what is acceptable is just not productive
 Metrics/LineLength:
@@ -32,11 +38,11 @@ Style/FrozenStringLiteralComment:
   Enabled: false
 
 # Ignore just this files
-Style/VariableName:
+Naming/VariableName:
   Exclude:
     - test/integration/admin/products_test.rb
 
 # Ignore just this files
-Style/VariableNumber:
+Naming/VariableNumber:
   Exclude:
     - test/integration/admin/products_test.rb
