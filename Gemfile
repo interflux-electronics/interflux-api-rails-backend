@@ -7,19 +7,15 @@ git_source(:github) do |repo_name|
 end
 
 # Ruby on Rails framework
-# https://rubyonrails.org/
 gem 'rails', '~> 5.1.6'
 
 # Puma app server
-# https://github.com/puma/puma
 gem 'puma', '~> 3.7'
 
 # Postgress database
-# https://bitbucket.org/ged/ruby-pg/wiki/Home
 gem 'pg'
 
 # For dumping database data into a YAML
-# https://github.com/yamldb/yaml_db
 gem 'yaml_db'
 
 group :development, :test do
