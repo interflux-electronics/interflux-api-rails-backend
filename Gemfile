@@ -35,6 +35,9 @@ group :development do
   # For listening to file changes
   gem 'listen', '>= 3.0.5', '< 3.2'
 
+  # For deploying code to remote servers
+  gem "mina", "~> 1.2"
+
   # For Ruby syntax formatting
   gem 'rubocop', require: false
 
