@@ -23,5 +23,23 @@
 #  updated_at        :datetime         not null
 #
 
-class Country < ApplicationRecord
+class CountrySerializer
+  include FastJsonapi::ObjectSerializer
+
+  attributes :name,
+             :native_name,
+             :region,
+             :subregion,
+             :alpha_2_code,
+             :alpha_3_code,
+             :numeric_code,
+             :flag,
+             :latlng,
+             :area,
+             :population,
+             :languages,
+             :timezones,
+             :currencies,
+             :top_level_domains,
+             :calling_codes
 end
