@@ -4,9 +4,21 @@ require 'rails/test_help'
 
 module ActiveSupport
   class TestCase
-    # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+    # Make all fixtures available to every test
     fixtures :all
 
-    # Add more helper methods to be used by all tests here...
+    # Generate a valid JWT token for an admin user
+    # def admin_user_token
+    #   JsonWebToken.encode(user_id: users('admin_user').id)
+    # end
+
+    # Return the HTTP headers a logged in admin would be sending
+    # def admin_header
+    #   { 'Authorization': admin_user_token }
+    # end
+
+    def public_header
+      {}
+    end
   end
 end

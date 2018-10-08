@@ -1,24 +1,30 @@
-# README
+# Rails - api.interflux.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This Rails app is the back-end for three Ember apps:
 
-Things you may want to cover:
+* [www.interflux.com](https://www.interflux.com)  
+* [lmpa.interflux.com](https://lmpa.interflux.com)  
+* [admin.interflux.com](https://admin.interflux.com)  
 
-* Ruby version
+It is hosted on:
 
-* System dependencies
+* [api.interflux.com](https://api.interflux.com)
 
-* Configuration
+Build status:
 
-* Database creation
+`master` | `production`
+-------- | ------------
+[![Build status](https://badge.buildkite.com/feec3c1bb9d5fa10832931944a2af6a98fa4d2225c3b002045.svg?branch=master)](https://buildkite.com/nabu/api-dot-interflux-dot-com) | [![Build status](https://badge.buildkite.com/feec3c1bb9d5fa10832931944a2af6a98fa4d2225c3b002045.svg?branch=production)](https://buildkite.com/nabu/api-dot-interflux-dot-com)
 
-* Database initialization
+## Get started
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+git clone git@github.com:janwerkhoven/api.interflux.com.git ~/Code/api.interflux.com
+```
+```
+bundle install;
+rake db:create;
+rake db:migrate;
+env RAILS_ENV=test;
+rake db:migrate
+```
