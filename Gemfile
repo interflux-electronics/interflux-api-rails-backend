@@ -15,7 +15,12 @@ gem 'puma', '~> 3.7'
 # Postgress database
 gem 'pg'
 
+# For JSON API compliant serialisers
+# https://github.com/Netflix/fast_jsonapi
+gem 'fast_jsonapi'
+
 # For dumping database data into a YAML
+# https://github.com/yamldb/yaml_dbrai
 gem 'yaml_db'
 
 group :development, :test do

@@ -49,6 +49,8 @@ GEM
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     erubi (1.7.1)
+    fast_jsonapi (1.4)
+      activesupport (>= 4.2)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -144,6 +146,7 @@ DEPENDENCIES
   annotate
   awesome_print
   byebug
+  fast_jsonapi
   listen (>= 3.0.5, < 3.2)
   pg
   puma (~> 3.7)
