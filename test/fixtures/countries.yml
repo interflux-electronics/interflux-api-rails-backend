@@ -1,0 +1,7857 @@
+# == Schema Information
+#
+# Table name: countries
+#
+#  id                :uuid             not null, primary key
+#  name              :string
+#  native_name       :string
+#  region            :string
+#  subregion         :string
+#  alpha_2_code      :string
+#  alpha_3_code      :string
+#  numeric_code      :string
+#  flag              :string
+#  latlng            :string
+#  area              :decimal(, )
+#  population        :decimal(, )
+#  languages         :string
+#  timezones         :string
+#  currencies        :string
+#  top_level_domains :string
+#  calling_codes     :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
+---
+Afghanistan:
+  currencies:
+  - code: AFN
+    name: Afghan afghani
+    symbol: "؋"
+  languages:
+  - iso639_1: ps
+    iso639_2: pus
+    name: Pashto
+    native_name: پښتو
+  - iso639_1: uz
+    iso639_2: uzb
+    name: Uzbek
+    native_name: Oʻzbek
+  - iso639_1: tk
+    iso639_2: tuk
+    name: Turkmen
+    native_name: Türkmen
+  flag: https://restcountries.eu/data/afg.svg
+  name: Afghanistan
+  top_level_domains:
+  - ".af"
+  alpha_2_code: AF
+  alpha_3_code: AFG
+  calling_codes:
+  - '93'
+  region: Asia
+  subregion: Southern Asia
+  population: 27657145
+  latlng:
+  - 33.0
+  - 65.0
+  area: 652230.0
+  timezones:
+  - UTC+04:30
+  native_name: افغانستان
+  numeric_code: '004'
+Åland Islands:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: sv
+    iso639_2: swe
+    name: Swedish
+    native_name: svenska
+  flag: https://restcountries.eu/data/ala.svg
+  name: Åland Islands
+  top_level_domains:
+  - ".ax"
+  alpha_2_code: AX
+  alpha_3_code: ALA
+  calling_codes:
+  - '358'
+  region: Europe
+  subregion: Northern Europe
+  population: 28875
+  latlng:
+  - 60.116667
+  - 19.9
+  area: 1580.0
+  timezones:
+  - UTC+02:00
+  native_name: Åland
+  numeric_code: '248'
+Albania:
+  currencies:
+  - code: ALL
+    name: Albanian lek
+    symbol: L
+  languages:
+  - iso639_1: sq
+    iso639_2: sqi
+    name: Albanian
+    native_name: Shqip
+  flag: https://restcountries.eu/data/alb.svg
+  name: Albania
+  top_level_domains:
+  - ".al"
+  alpha_2_code: AL
+  alpha_3_code: ALB
+  calling_codes:
+  - '355'
+  region: Europe
+  subregion: Southern Europe
+  population: 2886026
+  latlng:
+  - 41.0
+  - 20.0
+  area: 28748.0
+  timezones:
+  - UTC+01:00
+  native_name: Shqipëria
+  numeric_code: '008'
+Algeria:
+  currencies:
+  - code: DZD
+    name: Algerian dinar
+    symbol: د.ج
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/dza.svg
+  name: Algeria
+  top_level_domains:
+  - ".dz"
+  alpha_2_code: DZ
+  alpha_3_code: DZA
+  calling_codes:
+  - '213'
+  region: Africa
+  subregion: Northern Africa
+  population: 40400000
+  latlng:
+  - 28.0
+  - 3.0
+  area: 2381741.0
+  timezones:
+  - UTC+01:00
+  native_name: الجزائر
+  numeric_code: '012'
+American Samoa:
+  currencies:
+  - code: USD
+    name: United State Dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: sm
+    iso639_2: smo
+    name: Samoan
+    native_name: gagana fa'a Samoa
+  flag: https://restcountries.eu/data/asm.svg
+  name: American Samoa
+  top_level_domains:
+  - ".as"
+  alpha_2_code: AS
+  alpha_3_code: ASM
+  calling_codes:
+  - '1684'
+  region: Oceania
+  subregion: Polynesia
+  population: 57100
+  latlng:
+  - -14.33333333
+  - -170.0
+  area: 199.0
+  timezones:
+  - UTC-11:00
+  native_name: American Samoa
+  numeric_code: '016'
+Andorra:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: ca
+    iso639_2: cat
+    name: Catalan
+    native_name: català
+  flag: https://restcountries.eu/data/and.svg
+  name: Andorra
+  top_level_domains:
+  - ".ad"
+  alpha_2_code: AD
+  alpha_3_code: AND
+  calling_codes:
+  - '376'
+  region: Europe
+  subregion: Southern Europe
+  population: 78014
+  latlng:
+  - 42.5
+  - 1.5
+  area: 468.0
+  timezones:
+  - UTC+01:00
+  native_name: Andorra
+  numeric_code: '020'
+Angola:
+  currencies:
+  - code: AOA
+    name: Angolan kwanza
+    symbol: Kz
+  languages:
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/ago.svg
+  name: Angola
+  top_level_domains:
+  - ".ao"
+  alpha_2_code: AO
+  alpha_3_code: AGO
+  calling_codes:
+  - '244'
+  region: Africa
+  subregion: Middle Africa
+  population: 25868000
+  latlng:
+  - -12.5
+  - 18.5
+  area: 1246700.0
+  timezones:
+  - UTC+01:00
+  native_name: Angola
+  numeric_code: '024'
+Anguilla:
+  currencies:
+  - code: XCD
+    name: East Caribbean dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/aia.svg
+  name: Anguilla
+  top_level_domains:
+  - ".ai"
+  alpha_2_code: AI
+  alpha_3_code: AIA
+  calling_codes:
+  - '1264'
+  region: Americas
+  subregion: Caribbean
+  population: 13452
+  latlng:
+  - 18.25
+  - -63.16666666
+  area: 91.0
+  timezones:
+  - UTC-04:00
+  native_name: Anguilla
+  numeric_code: '660'
+Antarctica:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  - code: GBP
+    name: British pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/ata.svg
+  name: Antarctica
+  top_level_domains:
+  - ".aq"
+  alpha_2_code: AQ
+  alpha_3_code: ATA
+  calling_codes:
+  - '672'
+  region: Polar
+  subregion: ''
+  population: 1000
+  latlng:
+  - -74.65
+  - 4.48
+  area: 14000000.0
+  timezones:
+  - UTC-03:00
+  - UTC+03:00
+  - UTC+05:00
+  - UTC+06:00
+  - UTC+07:00
+  - UTC+08:00
+  - UTC+10:00
+  - UTC+12:00
+  native_name: Antarctica
+  numeric_code: '010'
+Antigua and Barbuda:
+  currencies:
+  - code: XCD
+    name: East Caribbean dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/atg.svg
+  name: Antigua and Barbuda
+  top_level_domains:
+  - ".ag"
+  alpha_2_code: AG
+  alpha_3_code: ATG
+  calling_codes:
+  - '1268'
+  region: Americas
+  subregion: Caribbean
+  population: 86295
+  latlng:
+  - 17.05
+  - -61.8
+  area: 442.0
+  timezones:
+  - UTC-04:00
+  native_name: Antigua and Barbuda
+  numeric_code: '028'
+Argentina:
+  currencies:
+  - code: ARS
+    name: Argentine peso
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  - iso639_1: gn
+    iso639_2: grn
+    name: Guaraní
+    native_name: Avañe'ẽ
+  flag: https://restcountries.eu/data/arg.svg
+  name: Argentina
+  top_level_domains:
+  - ".ar"
+  alpha_2_code: AR
+  alpha_3_code: ARG
+  calling_codes:
+  - '54'
+  region: Americas
+  subregion: South America
+  population: 43590400
+  latlng:
+  - -34.0
+  - -64.0
+  area: 2780400.0
+  timezones:
+  - UTC-03:00
+  native_name: Argentina
+  numeric_code: '032'
+Armenia:
+  currencies:
+  - code: AMD
+    name: Armenian dram
+  languages:
+  - iso639_1: hy
+    iso639_2: hye
+    name: Armenian
+    native_name: Հայերեն
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/arm.svg
+  name: Armenia
+  top_level_domains:
+  - ".am"
+  alpha_2_code: AM
+  alpha_3_code: ARM
+  calling_codes:
+  - '374'
+  region: Asia
+  subregion: Western Asia
+  population: 2994400
+  latlng:
+  - 40.0
+  - 45.0
+  area: 29743.0
+  timezones:
+  - UTC+04:00
+  native_name: Հայաստան
+  numeric_code: '051'
+Aruba:
+  currencies:
+  - code: AWG
+    name: Aruban florin
+    symbol: ƒ
+  languages:
+  - iso639_1: nl
+    iso639_2: nld
+    name: Dutch
+    native_name: Nederlands
+  - iso639_1: pa
+    iso639_2: pan
+    name: "(Eastern) Punjabi"
+    native_name: ਪੰਜਾਬੀ
+  flag: https://restcountries.eu/data/abw.svg
+  name: Aruba
+  top_level_domains:
+  - ".aw"
+  alpha_2_code: AW
+  alpha_3_code: ABW
+  calling_codes:
+  - '297'
+  region: Americas
+  subregion: Caribbean
+  population: 107394
+  latlng:
+  - 12.5
+  - -69.96666666
+  area: 180.0
+  timezones:
+  - UTC-04:00
+  native_name: Aruba
+  numeric_code: '533'
+Australia:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/aus.svg
+  name: Australia
+  top_level_domains:
+  - ".au"
+  alpha_2_code: AU
+  alpha_3_code: AUS
+  calling_codes:
+  - '61'
+  region: Oceania
+  subregion: Australia and New Zealand
+  population: 24117360
+  latlng:
+  - -27.0
+  - 133.0
+  area: 7692024.0
+  timezones:
+  - UTC+05:00
+  - UTC+06:30
+  - UTC+07:00
+  - UTC+08:00
+  - UTC+09:30
+  - UTC+10:00
+  - UTC+10:30
+  - UTC+11:30
+  native_name: Australia
+  numeric_code: '036'
+Austria:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: de
+    iso639_2: deu
+    name: German
+    native_name: Deutsch
+  flag: https://restcountries.eu/data/aut.svg
+  name: Austria
+  top_level_domains:
+  - ".at"
+  alpha_2_code: AT
+  alpha_3_code: AUT
+  calling_codes:
+  - '43'
+  region: Europe
+  subregion: Western Europe
+  population: 8725931
+  latlng:
+  - 47.33333333
+  - 13.33333333
+  area: 83871.0
+  timezones:
+  - UTC+01:00
+  native_name: Österreich
+  numeric_code: '040'
+Azerbaijan:
+  currencies:
+  - code: AZN
+    name: Azerbaijani manat
+  languages:
+  - iso639_1: az
+    iso639_2: aze
+    name: Azerbaijani
+    native_name: azərbaycan dili
+  flag: https://restcountries.eu/data/aze.svg
+  name: Azerbaijan
+  top_level_domains:
+  - ".az"
+  alpha_2_code: AZ
+  alpha_3_code: AZE
+  calling_codes:
+  - '994'
+  region: Asia
+  subregion: Western Asia
+  population: 9730500
+  latlng:
+  - 40.5
+  - 47.5
+  area: 86600.0
+  timezones:
+  - UTC+04:00
+  native_name: Azərbaycan
+  numeric_code: '031'
+Bahamas:
+  currencies:
+  - code: BSD
+    name: Bahamian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/bhs.svg
+  name: Bahamas
+  top_level_domains:
+  - ".bs"
+  alpha_2_code: BS
+  alpha_3_code: BHS
+  calling_codes:
+  - '1242'
+  region: Americas
+  subregion: Caribbean
+  population: 378040
+  latlng:
+  - 24.25
+  - -76.0
+  area: 13943.0
+  timezones:
+  - UTC-05:00
+  native_name: Bahamas
+  numeric_code: '044'
+Bahrain:
+  currencies:
+  - code: BHD
+    name: Bahraini dinar
+    symbol: ".د.ب"
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/bhr.svg
+  name: Bahrain
+  top_level_domains:
+  - ".bh"
+  alpha_2_code: BH
+  alpha_3_code: BHR
+  calling_codes:
+  - '973'
+  region: Asia
+  subregion: Western Asia
+  population: 1404900
+  latlng:
+  - 26.0
+  - 50.55
+  area: 765.0
+  timezones:
+  - UTC+03:00
+  native_name: "‏البحرين"
+  numeric_code: '048'
+Bangladesh:
+  currencies:
+  - code: BDT
+    name: Bangladeshi taka
+    symbol: "৳"
+  languages:
+  - iso639_1: bn
+    iso639_2: ben
+    name: Bengali
+    native_name: বাংলা
+  flag: https://restcountries.eu/data/bgd.svg
+  name: Bangladesh
+  top_level_domains:
+  - ".bd"
+  alpha_2_code: BD
+  alpha_3_code: BGD
+  calling_codes:
+  - '880'
+  region: Asia
+  subregion: Southern Asia
+  population: 161006790
+  latlng:
+  - 24.0
+  - 90.0
+  area: 147570.0
+  timezones:
+  - UTC+06:00
+  native_name: Bangladesh
+  numeric_code: '050'
+Barbados:
+  currencies:
+  - code: BBD
+    name: Barbadian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/brb.svg
+  name: Barbados
+  top_level_domains:
+  - ".bb"
+  alpha_2_code: BB
+  alpha_3_code: BRB
+  calling_codes:
+  - '1246'
+  region: Americas
+  subregion: Caribbean
+  population: 285000
+  latlng:
+  - 13.16666666
+  - -59.53333333
+  area: 430.0
+  timezones:
+  - UTC-04:00
+  native_name: Barbados
+  numeric_code: '052'
+Belarus:
+  currencies:
+  - code: BYN
+    name: New Belarusian ruble
+    symbol: Br
+  - code: BYR
+    name: Old Belarusian ruble
+    symbol: Br
+  languages:
+  - iso639_1: be
+    iso639_2: bel
+    name: Belarusian
+    native_name: беларуская мова
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/blr.svg
+  name: Belarus
+  top_level_domains:
+  - ".by"
+  alpha_2_code: BY
+  alpha_3_code: BLR
+  calling_codes:
+  - '375'
+  region: Europe
+  subregion: Eastern Europe
+  population: 9498700
+  latlng:
+  - 53.0
+  - 28.0
+  area: 207600.0
+  timezones:
+  - UTC+03:00
+  native_name: Белару́сь
+  numeric_code: '112'
+Belgium:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: nl
+    iso639_2: nld
+    name: Dutch
+    native_name: Nederlands
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: de
+    iso639_2: deu
+    name: German
+    native_name: Deutsch
+  flag: https://restcountries.eu/data/bel.svg
+  name: Belgium
+  top_level_domains:
+  - ".be"
+  alpha_2_code: BE
+  alpha_3_code: BEL
+  calling_codes:
+  - '32'
+  region: Europe
+  subregion: Western Europe
+  population: 11319511
+  latlng:
+  - 50.83333333
+  - 4.0
+  area: 30528.0
+  timezones:
+  - UTC+01:00
+  native_name: België
+  numeric_code: '056'
+Belize:
+  currencies:
+  - code: BZD
+    name: Belize dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/blz.svg
+  name: Belize
+  top_level_domains:
+  - ".bz"
+  alpha_2_code: BZ
+  alpha_3_code: BLZ
+  calling_codes:
+  - '501'
+  region: Americas
+  subregion: Central America
+  population: 370300
+  latlng:
+  - 17.25
+  - -88.75
+  area: 22966.0
+  timezones:
+  - UTC-06:00
+  native_name: Belize
+  numeric_code: '084'
+Benin:
+  currencies:
+  - code: XOF
+    name: West African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/ben.svg
+  name: Benin
+  top_level_domains:
+  - ".bj"
+  alpha_2_code: BJ
+  alpha_3_code: BEN
+  calling_codes:
+  - '229'
+  region: Africa
+  subregion: Western Africa
+  population: 10653654
+  latlng:
+  - 9.5
+  - 2.25
+  area: 112622.0
+  timezones:
+  - UTC+01:00
+  native_name: Bénin
+  numeric_code: '204'
+Bermuda:
+  currencies:
+  - code: BMD
+    name: Bermudian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/bmu.svg
+  name: Bermuda
+  top_level_domains:
+  - ".bm"
+  alpha_2_code: BM
+  alpha_3_code: BMU
+  calling_codes:
+  - '1441'
+  region: Americas
+  subregion: Northern America
+  population: 61954
+  latlng:
+  - 32.33333333
+  - -64.75
+  area: 54.0
+  timezones:
+  - UTC-04:00
+  native_name: Bermuda
+  numeric_code: '060'
+Bhutan:
+  currencies:
+  - code: BTN
+    name: Bhutanese ngultrum
+    symbol: Nu.
+  - code: INR
+    name: Indian rupee
+    symbol: "₹"
+  languages:
+  - iso639_1: dz
+    iso639_2: dzo
+    name: Dzongkha
+    native_name: རྫོང་ཁ
+  flag: https://restcountries.eu/data/btn.svg
+  name: Bhutan
+  top_level_domains:
+  - ".bt"
+  alpha_2_code: BT
+  alpha_3_code: BTN
+  calling_codes:
+  - '975'
+  region: Asia
+  subregion: Southern Asia
+  population: 775620
+  latlng:
+  - 27.5
+  - 90.5
+  area: 38394.0
+  timezones:
+  - UTC+06:00
+  native_name: ʼbrug-yul
+  numeric_code: '064'
+Bolivia:
+  currencies:
+  - code: BOB
+    name: Bolivian boliviano
+    symbol: Bs.
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  - iso639_1: ay
+    iso639_2: aym
+    name: Aymara
+    native_name: aymar aru
+  - iso639_1: qu
+    iso639_2: que
+    name: Quechua
+    native_name: Runa Simi
+  flag: https://restcountries.eu/data/bol.svg
+  name: Bolivia
+  top_level_domains:
+  - ".bo"
+  alpha_2_code: BO
+  alpha_3_code: BOL
+  calling_codes:
+  - '591'
+  region: Americas
+  subregion: South America
+  population: 10985059
+  latlng:
+  - -17.0
+  - -65.0
+  area: 1098581.0
+  timezones:
+  - UTC-04:00
+  native_name: Bolivia
+  numeric_code: '068'
+Bonaire:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: nl
+    iso639_2: nld
+    name: Dutch
+    native_name: Nederlands
+  flag: https://restcountries.eu/data/bes.svg
+  name: Bonaire
+  top_level_domains:
+  - ".an"
+  - ".nl"
+  alpha_2_code: BQ
+  alpha_3_code: BES
+  calling_codes:
+  - '5997'
+  region: Americas
+  subregion: Caribbean
+  population: 17408
+  latlng:
+  - 12.15
+  - -68.266667
+  area: 294.0
+  timezones:
+  - UTC-04:00
+  native_name: Bonaire
+  numeric_code: '535'
+Bosnia and Herzegovina:
+  currencies:
+  - code: BAM
+    name: Bosnia and Herzegovina convertible mark
+  languages:
+  - iso639_1: bs
+    iso639_2: bos
+    name: Bosnian
+    native_name: bosanski jezik
+  - iso639_1: hr
+    iso639_2: hrv
+    name: Croatian
+    native_name: hrvatski jezik
+  - iso639_1: sr
+    iso639_2: srp
+    name: Serbian
+    native_name: српски језик
+  flag: https://restcountries.eu/data/bih.svg
+  name: Bosnia and Herzegovina
+  top_level_domains:
+  - ".ba"
+  alpha_2_code: BA
+  alpha_3_code: BIH
+  calling_codes:
+  - '387'
+  region: Europe
+  subregion: Southern Europe
+  population: 3531159
+  latlng:
+  - 44.0
+  - 18.0
+  area: 51209.0
+  timezones:
+  - UTC+01:00
+  native_name: Bosna i Hercegovina
+  numeric_code: '070'
+Botswana:
+  currencies:
+  - code: BWP
+    name: Botswana pula
+    symbol: P
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: tn
+    iso639_2: tsn
+    name: Tswana
+    native_name: Setswana
+  flag: https://restcountries.eu/data/bwa.svg
+  name: Botswana
+  top_level_domains:
+  - ".bw"
+  alpha_2_code: BW
+  alpha_3_code: BWA
+  calling_codes:
+  - '267'
+  region: Africa
+  subregion: Southern Africa
+  population: 2141206
+  latlng:
+  - -22.0
+  - 24.0
+  area: 582000.0
+  timezones:
+  - UTC+02:00
+  native_name: Botswana
+  numeric_code: '072'
+Bouvet Island:
+  currencies:
+  - code: NOK
+    name: Norwegian krone
+    symbol: kr
+  languages:
+  - iso639_1: 'no'
+    iso639_2: nor
+    name: Norwegian
+    native_name: Norsk
+  - iso639_1: nb
+    iso639_2: nob
+    name: Norwegian Bokmål
+    native_name: Norsk bokmål
+  - iso639_1: nn
+    iso639_2: nno
+    name: Norwegian Nynorsk
+    native_name: Norsk nynorsk
+  flag: https://restcountries.eu/data/bvt.svg
+  name: Bouvet Island
+  top_level_domains:
+  - ".bv"
+  alpha_2_code: BV
+  alpha_3_code: BVT
+  calling_codes:
+  - ''
+  region: ''
+  subregion: ''
+  population: 0
+  latlng:
+  - -54.43333333
+  - 3.4
+  area: 49.0
+  timezones:
+  - UTC+01:00
+  native_name: Bouvetøya
+  numeric_code: '074'
+Brazil:
+  currencies:
+  - code: BRL
+    name: Brazilian real
+    symbol: R$
+  languages:
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/bra.svg
+  name: Brazil
+  top_level_domains:
+  - ".br"
+  alpha_2_code: BR
+  alpha_3_code: BRA
+  calling_codes:
+  - '55'
+  region: Americas
+  subregion: South America
+  population: 206135893
+  latlng:
+  - -10.0
+  - -55.0
+  area: 8515767.0
+  timezones:
+  - UTC-05:00
+  - UTC-04:00
+  - UTC-03:00
+  - UTC-02:00
+  native_name: Brasil
+  numeric_code: '076'
+British Indian Ocean Territory:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/iot.svg
+  name: British Indian Ocean Territory
+  top_level_domains:
+  - ".io"
+  alpha_2_code: IO
+  alpha_3_code: IOT
+  calling_codes:
+  - '246'
+  region: Africa
+  subregion: Eastern Africa
+  population: 3000
+  latlng:
+  - -6.0
+  - 71.5
+  area: 60.0
+  timezones:
+  - UTC+06:00
+  native_name: British Indian Ocean Territory
+  numeric_code: '086'
+United States Minor Outlying Islands:
+  currencies:
+  - code: USD
+    name: United States Dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/umi.svg
+  name: United States Minor Outlying Islands
+  top_level_domains:
+  - ".us"
+  alpha_2_code: UM
+  alpha_3_code: UMI
+  calling_codes:
+  - ''
+  region: Americas
+  subregion: Northern America
+  population: 300
+  latlng: []
+  timezones:
+  - UTC-11:00
+  - UTC-10:00
+  - UTC+12:00
+  native_name: United States Minor Outlying Islands
+  numeric_code: '581'
+British Virgin Islands:
+  currencies:
+  - name: "[D]"
+    symbol: "$"
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/vgb.svg
+  name: British Virgin Islands
+  top_level_domains:
+  - ".vg"
+  alpha_2_code: VG
+  alpha_3_code: VGB
+  calling_codes:
+  - '1284'
+  region: Americas
+  subregion: Caribbean
+  population: 28514
+  latlng:
+  - 18.431383
+  - -64.62305
+  area: 151.0
+  timezones:
+  - UTC-04:00
+  native_name: British Virgin Islands
+  numeric_code: '092'
+Virgin Islands of the United States:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/vir.svg
+  name: Virgin Islands of the United States
+  top_level_domains:
+  - ".vi"
+  alpha_2_code: VI
+  alpha_3_code: VIR
+  calling_codes:
+  - 1 340
+  region: Americas
+  subregion: Caribbean
+  population: 114743
+  latlng:
+  - 18.34
+  - -64.93
+  area: 346.36
+  timezones:
+  - UTC-04:00
+  native_name: Virgin Islands of the United States
+  numeric_code: '850'
+Brunei Darussalam:
+  currencies:
+  - code: BND
+    name: Brunei dollar
+    symbol: "$"
+  - code: SGD
+    name: Singapore dollar
+    symbol: "$"
+  languages:
+  - iso639_1: ms
+    iso639_2: msa
+    name: Malay
+    native_name: bahasa Melayu
+  flag: https://restcountries.eu/data/brn.svg
+  name: Brunei Darussalam
+  top_level_domains:
+  - ".bn"
+  alpha_2_code: BN
+  alpha_3_code: BRN
+  calling_codes:
+  - '673'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 411900
+  latlng:
+  - 4.5
+  - 114.66666666
+  area: 5765.0
+  timezones:
+  - UTC+08:00
+  native_name: Negara Brunei Darussalam
+  numeric_code: '096'
+Bulgaria:
+  currencies:
+  - code: BGN
+    name: Bulgarian lev
+    symbol: лв
+  languages:
+  - iso639_1: bg
+    iso639_2: bul
+    name: Bulgarian
+    native_name: български език
+  flag: https://restcountries.eu/data/bgr.svg
+  name: Bulgaria
+  top_level_domains:
+  - ".bg"
+  alpha_2_code: BG
+  alpha_3_code: BGR
+  calling_codes:
+  - '359'
+  region: Europe
+  subregion: Eastern Europe
+  population: 7153784
+  latlng:
+  - 43.0
+  - 25.0
+  area: 110879.0
+  timezones:
+  - UTC+02:00
+  native_name: България
+  numeric_code: '100'
+Burkina Faso:
+  currencies:
+  - code: XOF
+    name: West African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: ff
+    iso639_2: ful
+    name: Fula
+    native_name: Fulfulde
+  flag: https://restcountries.eu/data/bfa.svg
+  name: Burkina Faso
+  top_level_domains:
+  - ".bf"
+  alpha_2_code: BF
+  alpha_3_code: BFA
+  calling_codes:
+  - '226'
+  region: Africa
+  subregion: Western Africa
+  population: 19034397
+  latlng:
+  - 13.0
+  - -2.0
+  area: 272967.0
+  timezones:
+  - UTC
+  native_name: Burkina Faso
+  numeric_code: '854'
+Burundi:
+  currencies:
+  - code: BIF
+    name: Burundian franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: rn
+    iso639_2: run
+    name: Kirundi
+    native_name: Ikirundi
+  flag: https://restcountries.eu/data/bdi.svg
+  name: Burundi
+  top_level_domains:
+  - ".bi"
+  alpha_2_code: BI
+  alpha_3_code: BDI
+  calling_codes:
+  - '257'
+  region: Africa
+  subregion: Eastern Africa
+  population: 10114505
+  latlng:
+  - -3.5
+  - 30.0
+  area: 27834.0
+  timezones:
+  - UTC+02:00
+  native_name: Burundi
+  numeric_code: '108'
+Cambodia:
+  currencies:
+  - code: KHR
+    name: Cambodian riel
+    symbol: "៛"
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: km
+    iso639_2: khm
+    name: Khmer
+    native_name: ខ្មែរ
+  flag: https://restcountries.eu/data/khm.svg
+  name: Cambodia
+  top_level_domains:
+  - ".kh"
+  alpha_2_code: KH
+  alpha_3_code: KHM
+  calling_codes:
+  - '855'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 15626444
+  latlng:
+  - 13.0
+  - 105.0
+  area: 181035.0
+  timezones:
+  - UTC+07:00
+  native_name: Kâmpŭchéa
+  numeric_code: '116'
+Cameroon:
+  currencies:
+  - code: XAF
+    name: Central African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/cmr.svg
+  name: Cameroon
+  top_level_domains:
+  - ".cm"
+  alpha_2_code: CM
+  alpha_3_code: CMR
+  calling_codes:
+  - '237'
+  region: Africa
+  subregion: Middle Africa
+  population: 22709892
+  latlng:
+  - 6.0
+  - 12.0
+  area: 475442.0
+  timezones:
+  - UTC+01:00
+  native_name: Cameroon
+  numeric_code: '120'
+Canada:
+  currencies:
+  - code: CAD
+    name: Canadian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/can.svg
+  name: Canada
+  top_level_domains:
+  - ".ca"
+  alpha_2_code: CA
+  alpha_3_code: CAN
+  calling_codes:
+  - '1'
+  region: Americas
+  subregion: Northern America
+  population: 36155487
+  latlng:
+  - 60.0
+  - -95.0
+  area: 9984670.0
+  timezones:
+  - UTC-08:00
+  - UTC-07:00
+  - UTC-06:00
+  - UTC-05:00
+  - UTC-04:00
+  - UTC-03:30
+  native_name: Canada
+  numeric_code: '124'
+Cabo Verde:
+  currencies:
+  - code: CVE
+    name: Cape Verdean escudo
+    symbol: Esc
+  languages:
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/cpv.svg
+  name: Cabo Verde
+  top_level_domains:
+  - ".cv"
+  alpha_2_code: CV
+  alpha_3_code: CPV
+  calling_codes:
+  - '238'
+  region: Africa
+  subregion: Western Africa
+  population: 531239
+  latlng:
+  - 16.0
+  - -24.0
+  area: 4033.0
+  timezones:
+  - UTC-01:00
+  native_name: Cabo Verde
+  numeric_code: '132'
+Cayman Islands:
+  currencies:
+  - code: KYD
+    name: Cayman Islands dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/cym.svg
+  name: Cayman Islands
+  top_level_domains:
+  - ".ky"
+  alpha_2_code: KY
+  alpha_3_code: CYM
+  calling_codes:
+  - '1345'
+  region: Americas
+  subregion: Caribbean
+  population: 58238
+  latlng:
+  - 19.5
+  - -80.5
+  area: 264.0
+  timezones:
+  - UTC-05:00
+  native_name: Cayman Islands
+  numeric_code: '136'
+Central African Republic:
+  currencies:
+  - code: XAF
+    name: Central African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: sg
+    iso639_2: sag
+    name: Sango
+    native_name: yângâ tî sängö
+  flag: https://restcountries.eu/data/caf.svg
+  name: Central African Republic
+  top_level_domains:
+  - ".cf"
+  alpha_2_code: CF
+  alpha_3_code: CAF
+  calling_codes:
+  - '236'
+  region: Africa
+  subregion: Middle Africa
+  population: 4998000
+  latlng:
+  - 7.0
+  - 21.0
+  area: 622984.0
+  timezones:
+  - UTC+01:00
+  native_name: Ködörösêse tî Bêafrîka
+  numeric_code: '140'
+Chad:
+  currencies:
+  - code: XAF
+    name: Central African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/tcd.svg
+  name: Chad
+  top_level_domains:
+  - ".td"
+  alpha_2_code: TD
+  alpha_3_code: TCD
+  calling_codes:
+  - '235'
+  region: Africa
+  subregion: Middle Africa
+  population: 14497000
+  latlng:
+  - 15.0
+  - 19.0
+  area: 1284000.0
+  timezones:
+  - UTC+01:00
+  native_name: Tchad
+  numeric_code: '148'
+Chile:
+  currencies:
+  - code: CLP
+    name: Chilean peso
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/chl.svg
+  name: Chile
+  top_level_domains:
+  - ".cl"
+  alpha_2_code: CL
+  alpha_3_code: CHL
+  calling_codes:
+  - '56'
+  region: Americas
+  subregion: South America
+  population: 18191900
+  latlng:
+  - -30.0
+  - -71.0
+  area: 756102.0
+  timezones:
+  - UTC-06:00
+  - UTC-04:00
+  native_name: Chile
+  numeric_code: '152'
+China:
+  currencies:
+  - code: CNY
+    name: Chinese yuan
+    symbol: "¥"
+  languages:
+  - iso639_1: zh
+    iso639_2: zho
+    name: Chinese
+    native_name: 中文 (Zhōngwén)
+  flag: https://restcountries.eu/data/chn.svg
+  name: China
+  top_level_domains:
+  - ".cn"
+  alpha_2_code: CN
+  alpha_3_code: CHN
+  calling_codes:
+  - '86'
+  region: Asia
+  subregion: Eastern Asia
+  population: 1377422166
+  latlng:
+  - 35.0
+  - 105.0
+  area: 9640011.0
+  timezones:
+  - UTC+08:00
+  native_name: 中国
+  numeric_code: '156'
+Christmas Island:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/cxr.svg
+  name: Christmas Island
+  top_level_domains:
+  - ".cx"
+  alpha_2_code: CX
+  alpha_3_code: CXR
+  calling_codes:
+  - '61'
+  region: Oceania
+  subregion: Australia and New Zealand
+  population: 2072
+  latlng:
+  - -10.5
+  - 105.66666666
+  area: 135.0
+  timezones:
+  - UTC+07:00
+  native_name: Christmas Island
+  numeric_code: '162'
+Cocos (Keeling) Islands:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/cck.svg
+  name: Cocos (Keeling) Islands
+  top_level_domains:
+  - ".cc"
+  alpha_2_code: CC
+  alpha_3_code: CCK
+  calling_codes:
+  - '61'
+  region: Oceania
+  subregion: Australia and New Zealand
+  population: 550
+  latlng:
+  - -12.5
+  - 96.83333333
+  area: 14.0
+  timezones:
+  - UTC+06:30
+  native_name: Cocos (Keeling) Islands
+  numeric_code: '166'
+Colombia:
+  currencies:
+  - code: COP
+    name: Colombian peso
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/col.svg
+  name: Colombia
+  top_level_domains:
+  - ".co"
+  alpha_2_code: CO
+  alpha_3_code: COL
+  calling_codes:
+  - '57'
+  region: Americas
+  subregion: South America
+  population: 48759958
+  latlng:
+  - 4.0
+  - -72.0
+  area: 1141748.0
+  timezones:
+  - UTC-05:00
+  native_name: Colombia
+  numeric_code: '170'
+Comoros:
+  currencies:
+  - code: KMF
+    name: Comorian franc
+    symbol: Fr
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/com.svg
+  name: Comoros
+  top_level_domains:
+  - ".km"
+  alpha_2_code: KM
+  alpha_3_code: COM
+  calling_codes:
+  - '269'
+  region: Africa
+  subregion: Eastern Africa
+  population: 806153
+  latlng:
+  - -12.16666666
+  - 44.25
+  area: 1862.0
+  timezones:
+  - UTC+03:00
+  native_name: Komori
+  numeric_code: '174'
+Congo:
+  currencies:
+  - code: CDF
+    name: Congolese franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: ln
+    iso639_2: lin
+    name: Lingala
+    native_name: Lingála
+  - iso639_1: kg
+    iso639_2: kon
+    name: Kongo
+    native_name: Kikongo
+  - iso639_1: sw
+    iso639_2: swa
+    name: Swahili
+    native_name: Kiswahili
+  - iso639_1: lu
+    iso639_2: lub
+    name: Luba-Katanga
+    native_name: Tshiluba
+  flag: https://restcountries.eu/data/cod.svg
+  name: Congo
+  top_level_domains:
+  - ".cd"
+  alpha_2_code: CD
+  alpha_3_code: COD
+  calling_codes:
+  - '243'
+  region: Africa
+  subregion: Middle Africa
+  population: 85026000
+  latlng:
+  - 0.0
+  - 25.0
+  area: 2344858.0
+  timezones:
+  - UTC+01:00
+  - UTC+02:00
+  native_name: République démocratique du Congo
+  numeric_code: '180'
+Cook Islands:
+  currencies:
+  - code: NZD
+    name: New Zealand dollar
+    symbol: "$"
+  - code: CKD
+    name: Cook Islands dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/cok.svg
+  name: Cook Islands
+  top_level_domains:
+  - ".ck"
+  alpha_2_code: CK
+  alpha_3_code: COK
+  calling_codes:
+  - '682'
+  region: Oceania
+  subregion: Polynesia
+  population: 18100
+  latlng:
+  - -21.23333333
+  - -159.76666666
+  area: 236.0
+  timezones:
+  - UTC-10:00
+  native_name: Cook Islands
+  numeric_code: '184'
+Costa Rica:
+  currencies:
+  - code: CRC
+    name: Costa Rican colón
+    symbol: "₡"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/cri.svg
+  name: Costa Rica
+  top_level_domains:
+  - ".cr"
+  alpha_2_code: CR
+  alpha_3_code: CRI
+  calling_codes:
+  - '506'
+  region: Americas
+  subregion: Central America
+  population: 4890379
+  latlng:
+  - 10.0
+  - -84.0
+  area: 51100.0
+  timezones:
+  - UTC-06:00
+  native_name: Costa Rica
+  numeric_code: '188'
+Croatia:
+  currencies:
+  - code: HRK
+    name: Croatian kuna
+    symbol: kn
+  languages:
+  - iso639_1: hr
+    iso639_2: hrv
+    name: Croatian
+    native_name: hrvatski jezik
+  flag: https://restcountries.eu/data/hrv.svg
+  name: Croatia
+  top_level_domains:
+  - ".hr"
+  alpha_2_code: HR
+  alpha_3_code: HRV
+  calling_codes:
+  - '385'
+  region: Europe
+  subregion: Southern Europe
+  population: 4190669
+  latlng:
+  - 45.16666666
+  - 15.5
+  area: 56594.0
+  timezones:
+  - UTC+01:00
+  native_name: Hrvatska
+  numeric_code: '191'
+Cuba:
+  currencies:
+  - code: CUC
+    name: Cuban convertible peso
+    symbol: "$"
+  - code: CUP
+    name: Cuban peso
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/cub.svg
+  name: Cuba
+  top_level_domains:
+  - ".cu"
+  alpha_2_code: CU
+  alpha_3_code: CUB
+  calling_codes:
+  - '53'
+  region: Americas
+  subregion: Caribbean
+  population: 11239004
+  latlng:
+  - 21.5
+  - -80.0
+  area: 109884.0
+  timezones:
+  - UTC-05:00
+  native_name: Cuba
+  numeric_code: '192'
+Curaçao:
+  currencies:
+  - code: ANG
+    name: Netherlands Antillean guilder
+    symbol: ƒ
+  languages:
+  - iso639_1: nl
+    iso639_2: nld
+    name: Dutch
+    native_name: Nederlands
+  - iso639_1: pa
+    iso639_2: pan
+    name: "(Eastern) Punjabi"
+    native_name: ਪੰਜਾਬੀ
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/cuw.svg
+  name: Curaçao
+  top_level_domains:
+  - ".cw"
+  alpha_2_code: CW
+  alpha_3_code: CUW
+  calling_codes:
+  - '599'
+  region: Americas
+  subregion: Caribbean
+  population: 154843
+  latlng:
+  - 12.116667
+  - -68.933333
+  area: 444.0
+  timezones:
+  - UTC-04:00
+  native_name: Curaçao
+  numeric_code: '531'
+Cyprus:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: el
+    iso639_2: ell
+    name: Greek (modern)
+    native_name: ελληνικά
+  - iso639_1: tr
+    iso639_2: tur
+    name: Turkish
+    native_name: Türkçe
+  - iso639_1: hy
+    iso639_2: hye
+    name: Armenian
+    native_name: Հայերեն
+  flag: https://restcountries.eu/data/cyp.svg
+  name: Cyprus
+  top_level_domains:
+  - ".cy"
+  alpha_2_code: CY
+  alpha_3_code: CYP
+  calling_codes:
+  - '357'
+  region: Europe
+  subregion: Southern Europe
+  population: 847000
+  latlng:
+  - 35.0
+  - 33.0
+  area: 9251.0
+  timezones:
+  - UTC+02:00
+  native_name: Κύπρος
+  numeric_code: '196'
+Czech Republic:
+  currencies:
+  - code: CZK
+    name: Czech koruna
+    symbol: Kč
+  languages:
+  - iso639_1: cs
+    iso639_2: ces
+    name: Czech
+    native_name: čeština
+  - iso639_1: sk
+    iso639_2: slk
+    name: Slovak
+    native_name: slovenčina
+  flag: https://restcountries.eu/data/cze.svg
+  name: Czech Republic
+  top_level_domains:
+  - ".cz"
+  alpha_2_code: CZ
+  alpha_3_code: CZE
+  calling_codes:
+  - '420'
+  region: Europe
+  subregion: Eastern Europe
+  population: 10558524
+  latlng:
+  - 49.75
+  - 15.5
+  area: 78865.0
+  timezones:
+  - UTC+01:00
+  native_name: Česká republika
+  numeric_code: '203'
+Denmark:
+  currencies:
+  - code: DKK
+    name: Danish krone
+    symbol: kr
+  languages:
+  - iso639_1: da
+    iso639_2: dan
+    name: Danish
+    native_name: dansk
+  flag: https://restcountries.eu/data/dnk.svg
+  name: Denmark
+  top_level_domains:
+  - ".dk"
+  alpha_2_code: DK
+  alpha_3_code: DNK
+  calling_codes:
+  - '45'
+  region: Europe
+  subregion: Northern Europe
+  population: 5717014
+  latlng:
+  - 56.0
+  - 10.0
+  area: 43094.0
+  timezones:
+  - UTC-04:00
+  - UTC-03:00
+  - UTC-01:00
+  - UTC
+  - UTC+01:00
+  native_name: Danmark
+  numeric_code: '208'
+Djibouti:
+  currencies:
+  - code: DJF
+    name: Djiboutian franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/dji.svg
+  name: Djibouti
+  top_level_domains:
+  - ".dj"
+  alpha_2_code: DJ
+  alpha_3_code: DJI
+  calling_codes:
+  - '253'
+  region: Africa
+  subregion: Eastern Africa
+  population: 900000
+  latlng:
+  - 11.5
+  - 43.0
+  area: 23200.0
+  timezones:
+  - UTC+03:00
+  native_name: Djibouti
+  numeric_code: '262'
+Dominica:
+  currencies:
+  - code: XCD
+    name: East Caribbean dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/dma.svg
+  name: Dominica
+  top_level_domains:
+  - ".dm"
+  alpha_2_code: DM
+  alpha_3_code: DMA
+  calling_codes:
+  - '1767'
+  region: Americas
+  subregion: Caribbean
+  population: 71293
+  latlng:
+  - 15.41666666
+  - -61.33333333
+  area: 751.0
+  timezones:
+  - UTC-04:00
+  native_name: Dominica
+  numeric_code: '212'
+Dominican Republic:
+  currencies:
+  - code: DOP
+    name: Dominican peso
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/dom.svg
+  name: Dominican Republic
+  top_level_domains:
+  - ".do"
+  alpha_2_code: DO
+  alpha_3_code: DOM
+  calling_codes:
+  - '1809'
+  - '1829'
+  - '1849'
+  region: Americas
+  subregion: Caribbean
+  population: 10075045
+  latlng:
+  - 19.0
+  - -70.66666666
+  area: 48671.0
+  timezones:
+  - UTC-04:00
+  native_name: República Dominicana
+  numeric_code: '214'
+Ecuador:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/ecu.svg
+  name: Ecuador
+  top_level_domains:
+  - ".ec"
+  alpha_2_code: EC
+  alpha_3_code: ECU
+  calling_codes:
+  - '593'
+  region: Americas
+  subregion: South America
+  population: 16545799
+  latlng:
+  - -2.0
+  - -77.5
+  area: 276841.0
+  timezones:
+  - UTC-06:00
+  - UTC-05:00
+  native_name: Ecuador
+  numeric_code: '218'
+Egypt:
+  currencies:
+  - code: EGP
+    name: Egyptian pound
+    symbol: "£"
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/egy.svg
+  name: Egypt
+  top_level_domains:
+  - ".eg"
+  alpha_2_code: EG
+  alpha_3_code: EGY
+  calling_codes:
+  - '20'
+  region: Africa
+  subregion: Northern Africa
+  population: 91290000
+  latlng:
+  - 27.0
+  - 30.0
+  area: 1002450.0
+  timezones:
+  - UTC+02:00
+  native_name: مصر‎
+  numeric_code: '818'
+El Salvador:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/slv.svg
+  name: El Salvador
+  top_level_domains:
+  - ".sv"
+  alpha_2_code: SV
+  alpha_3_code: SLV
+  calling_codes:
+  - '503'
+  region: Americas
+  subregion: Central America
+  population: 6520675
+  latlng:
+  - 13.83333333
+  - -88.91666666
+  area: 21041.0
+  timezones:
+  - UTC-06:00
+  native_name: El Salvador
+  numeric_code: '222'
+Equatorial Guinea:
+  currencies:
+  - code: XAF
+    name: Central African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/gnq.svg
+  name: Equatorial Guinea
+  top_level_domains:
+  - ".gq"
+  alpha_2_code: GQ
+  alpha_3_code: GNQ
+  calling_codes:
+  - '240'
+  region: Africa
+  subregion: Middle Africa
+  population: 1222442
+  latlng:
+  - 2.0
+  - 10.0
+  area: 28051.0
+  timezones:
+  - UTC+01:00
+  native_name: Guinea Ecuatorial
+  numeric_code: '226'
+Eritrea:
+  currencies:
+  - code: ERN
+    name: Eritrean nakfa
+    symbol: Nfk
+  languages:
+  - iso639_1: ti
+    iso639_2: tir
+    name: Tigrinya
+    native_name: ትግርኛ
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/eri.svg
+  name: Eritrea
+  top_level_domains:
+  - ".er"
+  alpha_2_code: ER
+  alpha_3_code: ERI
+  calling_codes:
+  - '291'
+  region: Africa
+  subregion: Eastern Africa
+  population: 5352000
+  latlng:
+  - 15.0
+  - 39.0
+  area: 117600.0
+  timezones:
+  - UTC+03:00
+  native_name: ኤርትራ
+  numeric_code: '232'
+Estonia:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: et
+    iso639_2: est
+    name: Estonian
+    native_name: eesti
+  flag: https://restcountries.eu/data/est.svg
+  name: Estonia
+  top_level_domains:
+  - ".ee"
+  alpha_2_code: EE
+  alpha_3_code: EST
+  calling_codes:
+  - '372'
+  region: Europe
+  subregion: Northern Europe
+  population: 1315944
+  latlng:
+  - 59.0
+  - 26.0
+  area: 45227.0
+  timezones:
+  - UTC+02:00
+  native_name: Eesti
+  numeric_code: '233'
+Ethiopia:
+  currencies:
+  - code: ETB
+    name: Ethiopian birr
+    symbol: Br
+  languages:
+  - iso639_1: am
+    iso639_2: amh
+    name: Amharic
+    native_name: አማርኛ
+  flag: https://restcountries.eu/data/eth.svg
+  name: Ethiopia
+  top_level_domains:
+  - ".et"
+  alpha_2_code: ET
+  alpha_3_code: ETH
+  calling_codes:
+  - '251'
+  region: Africa
+  subregion: Eastern Africa
+  population: 92206005
+  latlng:
+  - 8.0
+  - 38.0
+  area: 1104300.0
+  timezones:
+  - UTC+03:00
+  native_name: ኢትዮጵያ
+  numeric_code: '231'
+Falkland Islands (Malvinas):
+  currencies:
+  - code: FKP
+    name: Falkland Islands pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/flk.svg
+  name: Falkland Islands (Malvinas)
+  top_level_domains:
+  - ".fk"
+  alpha_2_code: FK
+  alpha_3_code: FLK
+  calling_codes:
+  - '500'
+  region: Americas
+  subregion: South America
+  population: 2563
+  latlng:
+  - -51.75
+  - -59.0
+  area: 12173.0
+  timezones:
+  - UTC-04:00
+  native_name: Falkland Islands
+  numeric_code: '238'
+Faroe Islands:
+  currencies:
+  - code: DKK
+    name: Danish krone
+    symbol: kr
+  - code: "(none)"
+    name: Faroese króna
+    symbol: kr
+  languages:
+  - iso639_1: fo
+    iso639_2: fao
+    name: Faroese
+    native_name: føroyskt
+  flag: https://restcountries.eu/data/fro.svg
+  name: Faroe Islands
+  top_level_domains:
+  - ".fo"
+  alpha_2_code: FO
+  alpha_3_code: FRO
+  calling_codes:
+  - '298'
+  region: Europe
+  subregion: Northern Europe
+  population: 49376
+  latlng:
+  - 62.0
+  - -7.0
+  area: 1393.0
+  timezones:
+  - UTC+00:00
+  native_name: Føroyar
+  numeric_code: '234'
+Fiji:
+  currencies:
+  - code: FJD
+    name: Fijian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: fj
+    iso639_2: fij
+    name: Fijian
+    native_name: vosa Vakaviti
+  - iso639_1: hi
+    iso639_2: hin
+    name: Hindi
+    native_name: हिन्दी
+  - iso639_1: ur
+    iso639_2: urd
+    name: Urdu
+    native_name: اردو
+  flag: https://restcountries.eu/data/fji.svg
+  name: Fiji
+  top_level_domains:
+  - ".fj"
+  alpha_2_code: FJ
+  alpha_3_code: FJI
+  calling_codes:
+  - '679'
+  region: Oceania
+  subregion: Melanesia
+  population: 867000
+  latlng:
+  - -18.0
+  - 175.0
+  area: 18272.0
+  timezones:
+  - UTC+12:00
+  native_name: Fiji
+  numeric_code: '242'
+Finland:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fi
+    iso639_2: fin
+    name: Finnish
+    native_name: suomi
+  - iso639_1: sv
+    iso639_2: swe
+    name: Swedish
+    native_name: svenska
+  flag: https://restcountries.eu/data/fin.svg
+  name: Finland
+  top_level_domains:
+  - ".fi"
+  alpha_2_code: FI
+  alpha_3_code: FIN
+  calling_codes:
+  - '358'
+  region: Europe
+  subregion: Northern Europe
+  population: 5491817
+  latlng:
+  - 64.0
+  - 26.0
+  area: 338424.0
+  timezones:
+  - UTC+02:00
+  native_name: Suomi
+  numeric_code: '246'
+France:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/fra.svg
+  name: France
+  top_level_domains:
+  - ".fr"
+  alpha_2_code: FR
+  alpha_3_code: FRA
+  calling_codes:
+  - '33'
+  region: Europe
+  subregion: Western Europe
+  population: 66710000
+  latlng:
+  - 46.0
+  - 2.0
+  area: 640679.0
+  timezones:
+  - UTC-10:00
+  - UTC-09:30
+  - UTC-09:00
+  - UTC-08:00
+  - UTC-04:00
+  - UTC-03:00
+  - UTC+01:00
+  - UTC+03:00
+  - UTC+04:00
+  - UTC+05:00
+  - UTC+11:00
+  - UTC+12:00
+  native_name: France
+  numeric_code: '250'
+French Guiana:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/guf.svg
+  name: French Guiana
+  top_level_domains:
+  - ".gf"
+  alpha_2_code: GF
+  alpha_3_code: GUF
+  calling_codes:
+  - '594'
+  region: Americas
+  subregion: South America
+  population: 254541
+  latlng:
+  - 4.0
+  - -53.0
+  timezones:
+  - UTC-03:00
+  native_name: Guyane française
+  numeric_code: '254'
+French Polynesia:
+  currencies:
+  - code: XPF
+    name: CFP franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/pyf.svg
+  name: French Polynesia
+  top_level_domains:
+  - ".pf"
+  alpha_2_code: PF
+  alpha_3_code: PYF
+  calling_codes:
+  - '689'
+  region: Oceania
+  subregion: Polynesia
+  population: 271800
+  latlng:
+  - -15.0
+  - -140.0
+  area: 4167.0
+  timezones:
+  - UTC-10:00
+  - UTC-09:30
+  - UTC-09:00
+  native_name: Polynésie française
+  numeric_code: '258'
+French Southern Territories:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/atf.svg
+  name: French Southern Territories
+  top_level_domains:
+  - ".tf"
+  alpha_2_code: TF
+  alpha_3_code: ATF
+  calling_codes:
+  - ''
+  region: Africa
+  subregion: Southern Africa
+  population: 140
+  latlng:
+  - -49.25
+  - 69.167
+  area: 7747.0
+  timezones:
+  - UTC+05:00
+  native_name: Territoire des Terres australes et antarctiques françaises
+  numeric_code: '260'
+Gabon:
+  currencies:
+  - code: XAF
+    name: Central African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/gab.svg
+  name: Gabon
+  top_level_domains:
+  - ".ga"
+  alpha_2_code: GA
+  alpha_3_code: GAB
+  calling_codes:
+  - '241'
+  region: Africa
+  subregion: Middle Africa
+  population: 1802278
+  latlng:
+  - -1.0
+  - 11.75
+  area: 267668.0
+  timezones:
+  - UTC+01:00
+  native_name: Gabon
+  numeric_code: '266'
+Gambia:
+  currencies:
+  - code: GMD
+    name: Gambian dalasi
+    symbol: D
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/gmb.svg
+  name: Gambia
+  top_level_domains:
+  - ".gm"
+  alpha_2_code: GM
+  alpha_3_code: GMB
+  calling_codes:
+  - '220'
+  region: Africa
+  subregion: Western Africa
+  population: 1882450
+  latlng:
+  - 13.46666666
+  - -16.56666666
+  area: 11295.0
+  timezones:
+  - UTC+00:00
+  native_name: Gambia
+  numeric_code: '270'
+Georgia:
+  currencies:
+  - code: GEL
+    name: Georgian Lari
+    symbol: ლ
+  languages:
+  - iso639_1: ka
+    iso639_2: kat
+    name: Georgian
+    native_name: ქართული
+  flag: https://restcountries.eu/data/geo.svg
+  name: Georgia
+  top_level_domains:
+  - ".ge"
+  alpha_2_code: GE
+  alpha_3_code: GEO
+  calling_codes:
+  - '995'
+  region: Asia
+  subregion: Western Asia
+  population: 3720400
+  latlng:
+  - 42.0
+  - 43.5
+  area: 69700.0
+  timezones:
+  - UTC-05:00
+  native_name: საქართველო
+  numeric_code: '268'
+Germany:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: de
+    iso639_2: deu
+    name: German
+    native_name: Deutsch
+  flag: https://restcountries.eu/data/deu.svg
+  name: Germany
+  top_level_domains:
+  - ".de"
+  alpha_2_code: DE
+  alpha_3_code: DEU
+  calling_codes:
+  - '49'
+  region: Europe
+  subregion: Western Europe
+  population: 81770900
+  latlng:
+  - 51.0
+  - 9.0
+  area: 357114.0
+  timezones:
+  - UTC+01:00
+  native_name: Deutschland
+  numeric_code: '276'
+Ghana:
+  currencies:
+  - code: GHS
+    name: Ghanaian cedi
+    symbol: "₵"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/gha.svg
+  name: Ghana
+  top_level_domains:
+  - ".gh"
+  alpha_2_code: GH
+  alpha_3_code: GHA
+  calling_codes:
+  - '233'
+  region: Africa
+  subregion: Western Africa
+  population: 27670174
+  latlng:
+  - 8.0
+  - -2.0
+  area: 238533.0
+  timezones:
+  - UTC
+  native_name: Ghana
+  numeric_code: '288'
+Gibraltar:
+  currencies:
+  - code: GIP
+    name: Gibraltar pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/gib.svg
+  name: Gibraltar
+  top_level_domains:
+  - ".gi"
+  alpha_2_code: GI
+  alpha_3_code: GIB
+  calling_codes:
+  - '350'
+  region: Europe
+  subregion: Southern Europe
+  population: 33140
+  latlng:
+  - 36.13333333
+  - -5.35
+  area: 6.0
+  timezones:
+  - UTC+01:00
+  native_name: Gibraltar
+  numeric_code: '292'
+Greece:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: el
+    iso639_2: ell
+    name: Greek (modern)
+    native_name: ελληνικά
+  flag: https://restcountries.eu/data/grc.svg
+  name: Greece
+  top_level_domains:
+  - ".gr"
+  alpha_2_code: GR
+  alpha_3_code: GRC
+  calling_codes:
+  - '30'
+  region: Europe
+  subregion: Southern Europe
+  population: 10858018
+  latlng:
+  - 39.0
+  - 22.0
+  area: 131990.0
+  timezones:
+  - UTC+02:00
+  native_name: Ελλάδα
+  numeric_code: '300'
+Greenland:
+  currencies:
+  - code: DKK
+    name: Danish krone
+    symbol: kr
+  languages:
+  - iso639_1: kl
+    iso639_2: kal
+    name: Kalaallisut
+    native_name: kalaallisut
+  flag: https://restcountries.eu/data/grl.svg
+  name: Greenland
+  top_level_domains:
+  - ".gl"
+  alpha_2_code: GL
+  alpha_3_code: GRL
+  calling_codes:
+  - '299'
+  region: Americas
+  subregion: Northern America
+  population: 55847
+  latlng:
+  - 72.0
+  - -40.0
+  area: 2166086.0
+  timezones:
+  - UTC-04:00
+  - UTC-03:00
+  - UTC-01:00
+  - UTC+00:00
+  native_name: Kalaallit Nunaat
+  numeric_code: '304'
+Grenada:
+  currencies:
+  - code: XCD
+    name: East Caribbean dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/grd.svg
+  name: Grenada
+  top_level_domains:
+  - ".gd"
+  alpha_2_code: GD
+  alpha_3_code: GRD
+  calling_codes:
+  - '1473'
+  region: Americas
+  subregion: Caribbean
+  population: 103328
+  latlng:
+  - 12.11666666
+  - -61.66666666
+  area: 344.0
+  timezones:
+  - UTC-04:00
+  native_name: Grenada
+  numeric_code: '308'
+Guadeloupe:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/glp.svg
+  name: Guadeloupe
+  top_level_domains:
+  - ".gp"
+  alpha_2_code: GP
+  alpha_3_code: GLP
+  calling_codes:
+  - '590'
+  region: Americas
+  subregion: Caribbean
+  population: 400132
+  latlng:
+  - 16.25
+  - -61.583333
+  timezones:
+  - UTC-04:00
+  native_name: Guadeloupe
+  numeric_code: '312'
+Guam:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: ch
+    iso639_2: cha
+    name: Chamorro
+    native_name: Chamoru
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/gum.svg
+  name: Guam
+  top_level_domains:
+  - ".gu"
+  alpha_2_code: GU
+  alpha_3_code: GUM
+  calling_codes:
+  - '1671'
+  region: Oceania
+  subregion: Micronesia
+  population: 184200
+  latlng:
+  - 13.46666666
+  - 144.78333333
+  area: 549.0
+  timezones:
+  - UTC+10:00
+  native_name: Guam
+  numeric_code: '316'
+Guatemala:
+  currencies:
+  - code: GTQ
+    name: Guatemalan quetzal
+    symbol: Q
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/gtm.svg
+  name: Guatemala
+  top_level_domains:
+  - ".gt"
+  alpha_2_code: GT
+  alpha_3_code: GTM
+  calling_codes:
+  - '502'
+  region: Americas
+  subregion: Central America
+  population: 16176133
+  latlng:
+  - 15.5
+  - -90.25
+  area: 108889.0
+  timezones:
+  - UTC-06:00
+  native_name: Guatemala
+  numeric_code: '320'
+Guernsey:
+  currencies:
+  - code: GBP
+    name: British pound
+    symbol: "£"
+  - code: "(none)"
+    name: Guernsey pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/ggy.svg
+  name: Guernsey
+  top_level_domains:
+  - ".gg"
+  alpha_2_code: GG
+  alpha_3_code: GGY
+  calling_codes:
+  - '44'
+  region: Europe
+  subregion: Northern Europe
+  population: 62999
+  latlng:
+  - 49.46666666
+  - -2.58333333
+  area: 78.0
+  timezones:
+  - UTC+00:00
+  native_name: Guernsey
+  numeric_code: '831'
+Guinea:
+  currencies:
+  - code: GNF
+    name: Guinean franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: ff
+    iso639_2: ful
+    name: Fula
+    native_name: Fulfulde
+  flag: https://restcountries.eu/data/gin.svg
+  name: Guinea
+  top_level_domains:
+  - ".gn"
+  alpha_2_code: GN
+  alpha_3_code: GIN
+  calling_codes:
+  - '224'
+  region: Africa
+  subregion: Western Africa
+  population: 12947000
+  latlng:
+  - 11.0
+  - -10.0
+  area: 245857.0
+  timezones:
+  - UTC
+  native_name: Guinée
+  numeric_code: '324'
+Guinea-Bissau:
+  currencies:
+  - code: XOF
+    name: West African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/gnb.svg
+  name: Guinea-Bissau
+  top_level_domains:
+  - ".gw"
+  alpha_2_code: GW
+  alpha_3_code: GNB
+  calling_codes:
+  - '245'
+  region: Africa
+  subregion: Western Africa
+  population: 1547777
+  latlng:
+  - 12.0
+  - -15.0
+  area: 36125.0
+  timezones:
+  - UTC
+  native_name: Guiné-Bissau
+  numeric_code: '624'
+Guyana:
+  currencies:
+  - code: GYD
+    name: Guyanese dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/guy.svg
+  name: Guyana
+  top_level_domains:
+  - ".gy"
+  alpha_2_code: GY
+  alpha_3_code: GUY
+  calling_codes:
+  - '592'
+  region: Americas
+  subregion: South America
+  population: 746900
+  latlng:
+  - 5.0
+  - -59.0
+  area: 214969.0
+  timezones:
+  - UTC-04:00
+  native_name: Guyana
+  numeric_code: '328'
+Haiti:
+  currencies:
+  - code: HTG
+    name: Haitian gourde
+    symbol: G
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: ht
+    iso639_2: hat
+    name: Haitian
+    native_name: Kreyòl ayisyen
+  flag: https://restcountries.eu/data/hti.svg
+  name: Haiti
+  top_level_domains:
+  - ".ht"
+  alpha_2_code: HT
+  alpha_3_code: HTI
+  calling_codes:
+  - '509'
+  region: Americas
+  subregion: Caribbean
+  population: 11078033
+  latlng:
+  - 19.0
+  - -72.41666666
+  area: 27750.0
+  timezones:
+  - UTC-05:00
+  native_name: Haïti
+  numeric_code: '332'
+Heard Island and McDonald Islands:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/hmd.svg
+  name: Heard Island and McDonald Islands
+  top_level_domains:
+  - ".hm"
+  - ".aq"
+  alpha_2_code: HM
+  alpha_3_code: HMD
+  calling_codes:
+  - ''
+  region: ''
+  subregion: ''
+  population: 0
+  latlng:
+  - -53.1
+  - 72.51666666
+  area: 412.0
+  timezones:
+  - UTC+05:00
+  native_name: Heard Island and McDonald Islands
+  numeric_code: '334'
+Holy See:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: la
+    iso639_2: lat
+    name: Latin
+    native_name: latine
+  - iso639_1: it
+    iso639_2: ita
+    name: Italian
+    native_name: Italiano
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: de
+    iso639_2: deu
+    name: German
+    native_name: Deutsch
+  flag: https://restcountries.eu/data/vat.svg
+  name: Holy See
+  top_level_domains:
+  - ".va"
+  alpha_2_code: VA
+  alpha_3_code: VAT
+  calling_codes:
+  - '379'
+  region: Europe
+  subregion: Southern Europe
+  population: 451
+  latlng:
+  - 41.9
+  - 12.45
+  area: 0.44
+  timezones:
+  - UTC+01:00
+  native_name: Sancta Sedes
+  numeric_code: '336'
+Honduras:
+  currencies:
+  - code: HNL
+    name: Honduran lempira
+    symbol: L
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/hnd.svg
+  name: Honduras
+  top_level_domains:
+  - ".hn"
+  alpha_2_code: HN
+  alpha_3_code: HND
+  calling_codes:
+  - '504'
+  region: Americas
+  subregion: Central America
+  population: 8576532
+  latlng:
+  - 15.0
+  - -86.5
+  area: 112492.0
+  timezones:
+  - UTC-06:00
+  native_name: Honduras
+  numeric_code: '340'
+Hong Kong:
+  currencies:
+  - code: HKD
+    name: Hong Kong dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: zh
+    iso639_2: zho
+    name: Chinese
+    native_name: 中文 (Zhōngwén)
+  flag: https://restcountries.eu/data/hkg.svg
+  name: Hong Kong
+  top_level_domains:
+  - ".hk"
+  alpha_2_code: HK
+  alpha_3_code: HKG
+  calling_codes:
+  - '852'
+  region: Asia
+  subregion: Eastern Asia
+  population: 7324300
+  latlng:
+  - 22.25
+  - 114.16666666
+  area: 1104.0
+  timezones:
+  - UTC+08:00
+  native_name: 香港
+  numeric_code: '344'
+Hungary:
+  currencies:
+  - code: HUF
+    name: Hungarian forint
+    symbol: Ft
+  languages:
+  - iso639_1: hu
+    iso639_2: hun
+    name: Hungarian
+    native_name: magyar
+  flag: https://restcountries.eu/data/hun.svg
+  name: Hungary
+  top_level_domains:
+  - ".hu"
+  alpha_2_code: HU
+  alpha_3_code: HUN
+  calling_codes:
+  - '36'
+  region: Europe
+  subregion: Eastern Europe
+  population: 9823000
+  latlng:
+  - 47.0
+  - 20.0
+  area: 93028.0
+  timezones:
+  - UTC+01:00
+  native_name: Magyarország
+  numeric_code: '348'
+Iceland:
+  currencies:
+  - code: ISK
+    name: Icelandic króna
+    symbol: kr
+  languages:
+  - iso639_1: is
+    iso639_2: isl
+    name: Icelandic
+    native_name: Íslenska
+  flag: https://restcountries.eu/data/isl.svg
+  name: Iceland
+  top_level_domains:
+  - ".is"
+  alpha_2_code: IS
+  alpha_3_code: ISL
+  calling_codes:
+  - '354'
+  region: Europe
+  subregion: Northern Europe
+  population: 334300
+  latlng:
+  - 65.0
+  - -18.0
+  area: 103000.0
+  timezones:
+  - UTC
+  native_name: Ísland
+  numeric_code: '352'
+India:
+  currencies:
+  - code: INR
+    name: Indian rupee
+    symbol: "₹"
+  languages:
+  - iso639_1: hi
+    iso639_2: hin
+    name: Hindi
+    native_name: हिन्दी
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/ind.svg
+  name: India
+  top_level_domains:
+  - ".in"
+  alpha_2_code: IN
+  alpha_3_code: IND
+  calling_codes:
+  - '91'
+  region: Asia
+  subregion: Southern Asia
+  population: 1295210000
+  latlng:
+  - 20.0
+  - 77.0
+  area: 3287590.0
+  timezones:
+  - UTC+05:30
+  native_name: भारत
+  numeric_code: '356'
+Indonesia:
+  currencies:
+  - code: IDR
+    name: Indonesian rupiah
+    symbol: Rp
+  languages:
+  - iso639_1: id
+    iso639_2: ind
+    name: Indonesian
+    native_name: Bahasa Indonesia
+  flag: https://restcountries.eu/data/idn.svg
+  name: Indonesia
+  top_level_domains:
+  - ".id"
+  alpha_2_code: ID
+  alpha_3_code: IDN
+  calling_codes:
+  - '62'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 258705000
+  latlng:
+  - -5.0
+  - 120.0
+  area: 1904569.0
+  timezones:
+  - UTC+07:00
+  - UTC+08:00
+  - UTC+09:00
+  native_name: Indonesia
+  numeric_code: '360'
+Côte d'Ivoire:
+  currencies:
+  - code: XOF
+    name: West African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/civ.svg
+  name: Côte d'Ivoire
+  top_level_domains:
+  - ".ci"
+  alpha_2_code: CI
+  alpha_3_code: CIV
+  calling_codes:
+  - '225'
+  region: Africa
+  subregion: Western Africa
+  population: 22671331
+  latlng:
+  - 8.0
+  - -5.0
+  area: 322463.0
+  timezones:
+  - UTC
+  native_name: Côte d'Ivoire
+  numeric_code: '384'
+Iran:
+  currencies:
+  - code: IRR
+    name: Iranian rial
+    symbol: "﷼"
+  languages:
+  - iso639_1: fa
+    iso639_2: fas
+    name: Persian (Farsi)
+    native_name: فارسی
+  flag: https://restcountries.eu/data/irn.svg
+  name: Iran
+  top_level_domains:
+  - ".ir"
+  alpha_2_code: IR
+  alpha_3_code: IRN
+  calling_codes:
+  - '98'
+  region: Asia
+  subregion: Southern Asia
+  population: 79369900
+  latlng:
+  - 32.0
+  - 53.0
+  area: 1648195.0
+  timezones:
+  - UTC+03:30
+  native_name: ایران
+  numeric_code: '364'
+Iraq:
+  currencies:
+  - code: IQD
+    name: Iraqi dinar
+    symbol: ع.د
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  - iso639_1: ku
+    iso639_2: kur
+    name: Kurdish
+    native_name: Kurdî
+  flag: https://restcountries.eu/data/irq.svg
+  name: Iraq
+  top_level_domains:
+  - ".iq"
+  alpha_2_code: IQ
+  alpha_3_code: IRQ
+  calling_codes:
+  - '964'
+  region: Asia
+  subregion: Western Asia
+  population: 37883543
+  latlng:
+  - 33.0
+  - 44.0
+  area: 438317.0
+  timezones:
+  - UTC+03:00
+  native_name: العراق
+  numeric_code: '368'
+Ireland:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: ga
+    iso639_2: gle
+    name: Irish
+    native_name: Gaeilge
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/irl.svg
+  name: Ireland
+  top_level_domains:
+  - ".ie"
+  alpha_2_code: IE
+  alpha_3_code: IRL
+  calling_codes:
+  - '353'
+  region: Europe
+  subregion: Northern Europe
+  population: 6378000
+  latlng:
+  - 53.0
+  - -8.0
+  area: 70273.0
+  timezones:
+  - UTC
+  native_name: Éire
+  numeric_code: '372'
+Isle of Man:
+  currencies:
+  - code: GBP
+    name: British pound
+    symbol: "£"
+  - code: IMP[G]
+    name: Manx pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: gv
+    iso639_2: glv
+    name: Manx
+    native_name: Gaelg
+  flag: https://restcountries.eu/data/imn.svg
+  name: Isle of Man
+  top_level_domains:
+  - ".im"
+  alpha_2_code: IM
+  alpha_3_code: IMN
+  calling_codes:
+  - '44'
+  region: Europe
+  subregion: Northern Europe
+  population: 84497
+  latlng:
+  - 54.25
+  - -4.5
+  area: 572.0
+  timezones:
+  - UTC+00:00
+  native_name: Isle of Man
+  numeric_code: '833'
+Israel:
+  currencies:
+  - code: ILS
+    name: Israeli new shekel
+    symbol: "₪"
+  languages:
+  - iso639_1: he
+    iso639_2: heb
+    name: Hebrew (modern)
+    native_name: עברית
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/isr.svg
+  name: Israel
+  top_level_domains:
+  - ".il"
+  alpha_2_code: IL
+  alpha_3_code: ISR
+  calling_codes:
+  - '972'
+  region: Asia
+  subregion: Western Asia
+  population: 8527400
+  latlng:
+  - 31.5
+  - 34.75
+  area: 20770.0
+  timezones:
+  - UTC+02:00
+  native_name: יִשְׂרָאֵל
+  numeric_code: '376'
+Italy:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: it
+    iso639_2: ita
+    name: Italian
+    native_name: Italiano
+  flag: https://restcountries.eu/data/ita.svg
+  name: Italy
+  top_level_domains:
+  - ".it"
+  alpha_2_code: IT
+  alpha_3_code: ITA
+  calling_codes:
+  - '39'
+  region: Europe
+  subregion: Southern Europe
+  population: 60665551
+  latlng:
+  - 42.83333333
+  - 12.83333333
+  area: 301336.0
+  timezones:
+  - UTC+01:00
+  native_name: Italia
+  numeric_code: '380'
+Jamaica:
+  currencies:
+  - code: JMD
+    name: Jamaican dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/jam.svg
+  name: Jamaica
+  top_level_domains:
+  - ".jm"
+  alpha_2_code: JM
+  alpha_3_code: JAM
+  calling_codes:
+  - '1876'
+  region: Americas
+  subregion: Caribbean
+  population: 2723246
+  latlng:
+  - 18.25
+  - -77.5
+  area: 10991.0
+  timezones:
+  - UTC-05:00
+  native_name: Jamaica
+  numeric_code: '388'
+Japan:
+  currencies:
+  - code: JPY
+    name: Japanese yen
+    symbol: "¥"
+  languages:
+  - iso639_1: ja
+    iso639_2: jpn
+    name: Japanese
+    native_name: 日本語 (にほんご)
+  flag: https://restcountries.eu/data/jpn.svg
+  name: Japan
+  top_level_domains:
+  - ".jp"
+  alpha_2_code: JP
+  alpha_3_code: JPN
+  calling_codes:
+  - '81'
+  region: Asia
+  subregion: Eastern Asia
+  population: 126960000
+  latlng:
+  - 36.0
+  - 138.0
+  area: 377930.0
+  timezones:
+  - UTC+09:00
+  native_name: 日本
+  numeric_code: '392'
+Jersey:
+  currencies:
+  - code: GBP
+    name: British pound
+    symbol: "£"
+  - code: JEP[G]
+    name: Jersey pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/jey.svg
+  name: Jersey
+  top_level_domains:
+  - ".je"
+  alpha_2_code: JE
+  alpha_3_code: JEY
+  calling_codes:
+  - '44'
+  region: Europe
+  subregion: Northern Europe
+  population: 100800
+  latlng:
+  - 49.25
+  - -2.16666666
+  area: 116.0
+  timezones:
+  - UTC+01:00
+  native_name: Jersey
+  numeric_code: '832'
+Jordan:
+  currencies:
+  - code: JOD
+    name: Jordanian dinar
+    symbol: د.ا
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/jor.svg
+  name: Jordan
+  top_level_domains:
+  - ".jo"
+  alpha_2_code: JO
+  alpha_3_code: JOR
+  calling_codes:
+  - '962'
+  region: Asia
+  subregion: Western Asia
+  population: 9531712
+  latlng:
+  - 31.0
+  - 36.0
+  area: 89342.0
+  timezones:
+  - UTC+03:00
+  native_name: الأردن
+  numeric_code: '400'
+Kazakhstan:
+  currencies:
+  - code: KZT
+    name: Kazakhstani tenge
+  languages:
+  - iso639_1: kk
+    iso639_2: kaz
+    name: Kazakh
+    native_name: қазақ тілі
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/kaz.svg
+  name: Kazakhstan
+  top_level_domains:
+  - ".kz"
+  - ".қаз"
+  alpha_2_code: KZ
+  alpha_3_code: KAZ
+  calling_codes:
+  - '76'
+  - '77'
+  region: Asia
+  subregion: Central Asia
+  population: 17753200
+  latlng:
+  - 48.0
+  - 68.0
+  area: 2724900.0
+  timezones:
+  - UTC+05:00
+  - UTC+06:00
+  native_name: Қазақстан
+  numeric_code: '398'
+Kenya:
+  currencies:
+  - code: KES
+    name: Kenyan shilling
+    symbol: Sh
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: sw
+    iso639_2: swa
+    name: Swahili
+    native_name: Kiswahili
+  flag: https://restcountries.eu/data/ken.svg
+  name: Kenya
+  top_level_domains:
+  - ".ke"
+  alpha_2_code: KE
+  alpha_3_code: KEN
+  calling_codes:
+  - '254'
+  region: Africa
+  subregion: Eastern Africa
+  population: 47251000
+  latlng:
+  - 1.0
+  - 38.0
+  area: 580367.0
+  timezones:
+  - UTC+03:00
+  native_name: Kenya
+  numeric_code: '404'
+Kiribati:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  - code: "(none)"
+    name: Kiribati dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/kir.svg
+  name: Kiribati
+  top_level_domains:
+  - ".ki"
+  alpha_2_code: KI
+  alpha_3_code: KIR
+  calling_codes:
+  - '686'
+  region: Oceania
+  subregion: Micronesia
+  population: 113400
+  latlng:
+  - 1.41666666
+  - 173.0
+  area: 811.0
+  timezones:
+  - UTC+12:00
+  - UTC+13:00
+  - UTC+14:00
+  native_name: Kiribati
+  numeric_code: '296'
+Kuwait:
+  currencies:
+  - code: KWD
+    name: Kuwaiti dinar
+    symbol: د.ك
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/kwt.svg
+  name: Kuwait
+  top_level_domains:
+  - ".kw"
+  alpha_2_code: KW
+  alpha_3_code: KWT
+  calling_codes:
+  - '965'
+  region: Asia
+  subregion: Western Asia
+  population: 4183658
+  latlng:
+  - 29.5
+  - 45.75
+  area: 17818.0
+  timezones:
+  - UTC+03:00
+  native_name: الكويت
+  numeric_code: '414'
+Kyrgyzstan:
+  currencies:
+  - code: KGS
+    name: Kyrgyzstani som
+    symbol: с
+  languages:
+  - iso639_1: ky
+    iso639_2: kir
+    name: Kyrgyz
+    native_name: Кыргызча
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/kgz.svg
+  name: Kyrgyzstan
+  top_level_domains:
+  - ".kg"
+  alpha_2_code: KG
+  alpha_3_code: KGZ
+  calling_codes:
+  - '996'
+  region: Asia
+  subregion: Central Asia
+  population: 6047800
+  latlng:
+  - 41.0
+  - 75.0
+  area: 199951.0
+  timezones:
+  - UTC+06:00
+  native_name: Кыргызстан
+  numeric_code: '417'
+Lao:
+  currencies:
+  - code: LAK
+    name: Lao kip
+    symbol: "₭"
+  languages:
+  - iso639_1: lo
+    iso639_2: lao
+    name: Lao
+    native_name: ພາສາລາວ
+  flag: https://restcountries.eu/data/lao.svg
+  name: Lao
+  top_level_domains:
+  - ".la"
+  alpha_2_code: LA
+  alpha_3_code: LAO
+  calling_codes:
+  - '856'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 6492400
+  latlng:
+  - 18.0
+  - 105.0
+  area: 236800.0
+  timezones:
+  - UTC+07:00
+  native_name: ສປປລາວ
+  numeric_code: '418'
+Latvia:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: lv
+    iso639_2: lav
+    name: Latvian
+    native_name: latviešu valoda
+  flag: https://restcountries.eu/data/lva.svg
+  name: Latvia
+  top_level_domains:
+  - ".lv"
+  alpha_2_code: LV
+  alpha_3_code: LVA
+  calling_codes:
+  - '371'
+  region: Europe
+  subregion: Northern Europe
+  population: 1961600
+  latlng:
+  - 57.0
+  - 25.0
+  area: 64559.0
+  timezones:
+  - UTC+02:00
+  native_name: Latvija
+  numeric_code: '428'
+Lebanon:
+  currencies:
+  - code: LBP
+    name: Lebanese pound
+    symbol: ل.ل
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/lbn.svg
+  name: Lebanon
+  top_level_domains:
+  - ".lb"
+  alpha_2_code: LB
+  alpha_3_code: LBN
+  calling_codes:
+  - '961'
+  region: Asia
+  subregion: Western Asia
+  population: 5988000
+  latlng:
+  - 33.83333333
+  - 35.83333333
+  area: 10452.0
+  timezones:
+  - UTC+02:00
+  native_name: لبنان
+  numeric_code: '422'
+Lesotho:
+  currencies:
+  - code: LSL
+    name: Lesotho loti
+    symbol: L
+  - code: ZAR
+    name: South African rand
+    symbol: R
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: st
+    iso639_2: sot
+    name: Southern Sotho
+    native_name: Sesotho
+  flag: https://restcountries.eu/data/lso.svg
+  name: Lesotho
+  top_level_domains:
+  - ".ls"
+  alpha_2_code: LS
+  alpha_3_code: LSO
+  calling_codes:
+  - '266'
+  region: Africa
+  subregion: Southern Africa
+  population: 1894194
+  latlng:
+  - -29.5
+  - 28.5
+  area: 30355.0
+  timezones:
+  - UTC+02:00
+  native_name: Lesotho
+  numeric_code: '426'
+Liberia:
+  currencies:
+  - code: LRD
+    name: Liberian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/lbr.svg
+  name: Liberia
+  top_level_domains:
+  - ".lr"
+  alpha_2_code: LR
+  alpha_3_code: LBR
+  calling_codes:
+  - '231'
+  region: Africa
+  subregion: Western Africa
+  population: 4615000
+  latlng:
+  - 6.5
+  - -9.5
+  area: 111369.0
+  timezones:
+  - UTC
+  native_name: Liberia
+  numeric_code: '430'
+Libya:
+  currencies:
+  - code: LYD
+    name: Libyan dinar
+    symbol: ل.د
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/lby.svg
+  name: Libya
+  top_level_domains:
+  - ".ly"
+  alpha_2_code: LY
+  alpha_3_code: LBY
+  calling_codes:
+  - '218'
+  region: Africa
+  subregion: Northern Africa
+  population: 6385000
+  latlng:
+  - 25.0
+  - 17.0
+  area: 1759540.0
+  timezones:
+  - UTC+01:00
+  native_name: "‏ليبيا"
+  numeric_code: '434'
+Liechtenstein:
+  currencies:
+  - code: CHF
+    name: Swiss franc
+    symbol: Fr
+  languages:
+  - iso639_1: de
+    iso639_2: deu
+    name: German
+    native_name: Deutsch
+  flag: https://restcountries.eu/data/lie.svg
+  name: Liechtenstein
+  top_level_domains:
+  - ".li"
+  alpha_2_code: LI
+  alpha_3_code: LIE
+  calling_codes:
+  - '423'
+  region: Europe
+  subregion: Western Europe
+  population: 37623
+  latlng:
+  - 47.26666666
+  - 9.53333333
+  area: 160.0
+  timezones:
+  - UTC+01:00
+  native_name: Liechtenstein
+  numeric_code: '438'
+Lithuania:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: lt
+    iso639_2: lit
+    name: Lithuanian
+    native_name: lietuvių kalba
+  flag: https://restcountries.eu/data/ltu.svg
+  name: Lithuania
+  top_level_domains:
+  - ".lt"
+  alpha_2_code: LT
+  alpha_3_code: LTU
+  calling_codes:
+  - '370'
+  region: Europe
+  subregion: Northern Europe
+  population: 2872294
+  latlng:
+  - 56.0
+  - 24.0
+  area: 65300.0
+  timezones:
+  - UTC+02:00
+  native_name: Lietuva
+  numeric_code: '440'
+Luxembourg:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: de
+    iso639_2: deu
+    name: German
+    native_name: Deutsch
+  - iso639_1: lb
+    iso639_2: ltz
+    name: Luxembourgish
+    native_name: Lëtzebuergesch
+  flag: https://restcountries.eu/data/lux.svg
+  name: Luxembourg
+  top_level_domains:
+  - ".lu"
+  alpha_2_code: LU
+  alpha_3_code: LUX
+  calling_codes:
+  - '352'
+  region: Europe
+  subregion: Western Europe
+  population: 576200
+  latlng:
+  - 49.75
+  - 6.16666666
+  area: 2586.0
+  timezones:
+  - UTC+01:00
+  native_name: Luxembourg
+  numeric_code: '442'
+Macao:
+  currencies:
+  - code: MOP
+    name: Macanese pataca
+    symbol: P
+  languages:
+  - iso639_1: zh
+    iso639_2: zho
+    name: Chinese
+    native_name: 中文 (Zhōngwén)
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/mac.svg
+  name: Macao
+  top_level_domains:
+  - ".mo"
+  alpha_2_code: MO
+  alpha_3_code: MAC
+  calling_codes:
+  - '853'
+  region: Asia
+  subregion: Eastern Asia
+  population: 649100
+  latlng:
+  - 22.16666666
+  - 113.55
+  area: 30.0
+  timezones:
+  - UTC+08:00
+  native_name: 澳門
+  numeric_code: '446'
+Macedonia:
+  currencies:
+  - code: MKD
+    name: Macedonian denar
+    symbol: ден
+  languages:
+  - iso639_1: mk
+    iso639_2: mkd
+    name: Macedonian
+    native_name: македонски јазик
+  flag: https://restcountries.eu/data/mkd.svg
+  name: Macedonia
+  top_level_domains:
+  - ".mk"
+  alpha_2_code: MK
+  alpha_3_code: MKD
+  calling_codes:
+  - '389'
+  region: Europe
+  subregion: Southern Europe
+  population: 2058539
+  latlng:
+  - 41.83333333
+  - 22.0
+  area: 25713.0
+  timezones:
+  - UTC+01:00
+  native_name: Македонија
+  numeric_code: '807'
+Madagascar:
+  currencies:
+  - code: MGA
+    name: Malagasy ariary
+    symbol: Ar
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: mg
+    iso639_2: mlg
+    name: Malagasy
+    native_name: fiteny malagasy
+  flag: https://restcountries.eu/data/mdg.svg
+  name: Madagascar
+  top_level_domains:
+  - ".mg"
+  alpha_2_code: MG
+  alpha_3_code: MDG
+  calling_codes:
+  - '261'
+  region: Africa
+  subregion: Eastern Africa
+  population: 22434363
+  latlng:
+  - -20.0
+  - 47.0
+  area: 587041.0
+  timezones:
+  - UTC+03:00
+  native_name: Madagasikara
+  numeric_code: '450'
+Malawi:
+  currencies:
+  - code: MWK
+    name: Malawian kwacha
+    symbol: MK
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: ny
+    iso639_2: nya
+    name: Chichewa
+    native_name: chiCheŵa
+  flag: https://restcountries.eu/data/mwi.svg
+  name: Malawi
+  top_level_domains:
+  - ".mw"
+  alpha_2_code: MW
+  alpha_3_code: MWI
+  calling_codes:
+  - '265'
+  region: Africa
+  subregion: Eastern Africa
+  population: 16832910
+  latlng:
+  - -13.5
+  - 34.0
+  area: 118484.0
+  timezones:
+  - UTC+02:00
+  native_name: Malawi
+  numeric_code: '454'
+Malaysia:
+  currencies:
+  - code: MYR
+    name: Malaysian ringgit
+    symbol: RM
+  languages:
+  - iso639_2: zsm
+    name: Malaysian
+    native_name: بهاس مليسيا
+  flag: https://restcountries.eu/data/mys.svg
+  name: Malaysia
+  top_level_domains:
+  - ".my"
+  alpha_2_code: MY
+  alpha_3_code: MYS
+  calling_codes:
+  - '60'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 31405416
+  latlng:
+  - 2.5
+  - 112.5
+  area: 330803.0
+  timezones:
+  - UTC+08:00
+  native_name: Malaysia
+  numeric_code: '458'
+Maldives:
+  currencies:
+  - code: MVR
+    name: Maldivian rufiyaa
+    symbol: ".ރ"
+  languages:
+  - iso639_1: dv
+    iso639_2: div
+    name: Divehi
+    native_name: ދިވެހި
+  flag: https://restcountries.eu/data/mdv.svg
+  name: Maldives
+  top_level_domains:
+  - ".mv"
+  alpha_2_code: MV
+  alpha_3_code: MDV
+  calling_codes:
+  - '960'
+  region: Asia
+  subregion: Southern Asia
+  population: 344023
+  latlng:
+  - 3.25
+  - 73.0
+  area: 300.0
+  timezones:
+  - UTC+05:00
+  native_name: Maldives
+  numeric_code: '462'
+Mali:
+  currencies:
+  - code: XOF
+    name: West African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/mli.svg
+  name: Mali
+  top_level_domains:
+  - ".ml"
+  alpha_2_code: ML
+  alpha_3_code: MLI
+  calling_codes:
+  - '223'
+  region: Africa
+  subregion: Western Africa
+  population: 18135000
+  latlng:
+  - 17.0
+  - -4.0
+  area: 1240192.0
+  timezones:
+  - UTC
+  native_name: Mali
+  numeric_code: '466'
+Malta:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: mt
+    iso639_2: mlt
+    name: Maltese
+    native_name: Malti
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/mlt.svg
+  name: Malta
+  top_level_domains:
+  - ".mt"
+  alpha_2_code: MT
+  alpha_3_code: MLT
+  calling_codes:
+  - '356'
+  region: Europe
+  subregion: Southern Europe
+  population: 425384
+  latlng:
+  - 35.83333333
+  - 14.58333333
+  area: 316.0
+  timezones:
+  - UTC+01:00
+  native_name: Malta
+  numeric_code: '470'
+Marshall Islands:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: mh
+    iso639_2: mah
+    name: Marshallese
+    native_name: Kajin M̧ajeļ
+  flag: https://restcountries.eu/data/mhl.svg
+  name: Marshall Islands
+  top_level_domains:
+  - ".mh"
+  alpha_2_code: MH
+  alpha_3_code: MHL
+  calling_codes:
+  - '692'
+  region: Oceania
+  subregion: Micronesia
+  population: 54880
+  latlng:
+  - 9.0
+  - 168.0
+  area: 181.0
+  timezones:
+  - UTC+12:00
+  native_name: M̧ajeļ
+  numeric_code: '584'
+Martinique:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/mtq.svg
+  name: Martinique
+  top_level_domains:
+  - ".mq"
+  alpha_2_code: MQ
+  alpha_3_code: MTQ
+  calling_codes:
+  - '596'
+  region: Americas
+  subregion: Caribbean
+  population: 378243
+  latlng:
+  - 14.666667
+  - -61.0
+  timezones:
+  - UTC-04:00
+  native_name: Martinique
+  numeric_code: '474'
+Mauritania:
+  currencies:
+  - code: MRO
+    name: Mauritanian ouguiya
+    symbol: UM
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/mrt.svg
+  name: Mauritania
+  top_level_domains:
+  - ".mr"
+  alpha_2_code: MR
+  alpha_3_code: MRT
+  calling_codes:
+  - '222'
+  region: Africa
+  subregion: Western Africa
+  population: 3718678
+  latlng:
+  - 20.0
+  - -12.0
+  area: 1030700.0
+  timezones:
+  - UTC
+  native_name: موريتانيا
+  numeric_code: '478'
+Mauritius:
+  currencies:
+  - code: MUR
+    name: Mauritian rupee
+    symbol: "₨"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/mus.svg
+  name: Mauritius
+  top_level_domains:
+  - ".mu"
+  alpha_2_code: MU
+  alpha_3_code: MUS
+  calling_codes:
+  - '230'
+  region: Africa
+  subregion: Eastern Africa
+  population: 1262879
+  latlng:
+  - -20.28333333
+  - 57.55
+  area: 2040.0
+  timezones:
+  - UTC+04:00
+  native_name: Maurice
+  numeric_code: '480'
+Mayotte:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/myt.svg
+  name: Mayotte
+  top_level_domains:
+  - ".yt"
+  alpha_2_code: YT
+  alpha_3_code: MYT
+  calling_codes:
+  - '262'
+  region: Africa
+  subregion: Eastern Africa
+  population: 226915
+  latlng:
+  - -12.83333333
+  - 45.16666666
+  timezones:
+  - UTC+03:00
+  native_name: Mayotte
+  numeric_code: '175'
+Mexico:
+  currencies:
+  - code: MXN
+    name: Mexican peso
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/mex.svg
+  name: Mexico
+  top_level_domains:
+  - ".mx"
+  alpha_2_code: MX
+  alpha_3_code: MEX
+  calling_codes:
+  - '52'
+  region: Americas
+  subregion: Central America
+  population: 122273473
+  latlng:
+  - 23.0
+  - -102.0
+  area: 1964375.0
+  timezones:
+  - UTC-08:00
+  - UTC-07:00
+  - UTC-06:00
+  native_name: México
+  numeric_code: '484'
+Micronesia:
+  currencies:
+  - name: "[D]"
+    symbol: "$"
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/fsm.svg
+  name: Micronesia
+  top_level_domains:
+  - ".fm"
+  alpha_2_code: FM
+  alpha_3_code: FSM
+  calling_codes:
+  - '691'
+  region: Oceania
+  subregion: Micronesia
+  population: 102800
+  latlng:
+  - 6.91666666
+  - 158.25
+  area: 702.0
+  timezones:
+  - UTC+10:00
+  - UTC+11
+  native_name: Micronesia
+  numeric_code: '583'
+Moldova:
+  currencies:
+  - code: MDL
+    name: Moldovan leu
+    symbol: L
+  languages:
+  - iso639_1: ro
+    iso639_2: ron
+    name: Romanian
+    native_name: Română
+  flag: https://restcountries.eu/data/mda.svg
+  name: Moldova
+  top_level_domains:
+  - ".md"
+  alpha_2_code: MD
+  alpha_3_code: MDA
+  calling_codes:
+  - '373'
+  region: Europe
+  subregion: Eastern Europe
+  population: 3553100
+  latlng:
+  - 47.0
+  - 29.0
+  area: 33846.0
+  timezones:
+  - UTC+02:00
+  native_name: Moldova
+  numeric_code: '498'
+Monaco:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/mco.svg
+  name: Monaco
+  top_level_domains:
+  - ".mc"
+  alpha_2_code: MC
+  alpha_3_code: MCO
+  calling_codes:
+  - '377'
+  region: Europe
+  subregion: Western Europe
+  population: 38400
+  latlng:
+  - 43.73333333
+  - 7.4
+  area: 2.02
+  timezones:
+  - UTC+01:00
+  native_name: Monaco
+  numeric_code: '492'
+Mongolia:
+  currencies:
+  - code: MNT
+    name: Mongolian tögrög
+    symbol: "₮"
+  languages:
+  - iso639_1: mn
+    iso639_2: mon
+    name: Mongolian
+    native_name: Монгол хэл
+  flag: https://restcountries.eu/data/mng.svg
+  name: Mongolia
+  top_level_domains:
+  - ".mn"
+  alpha_2_code: MN
+  alpha_3_code: MNG
+  calling_codes:
+  - '976'
+  region: Asia
+  subregion: Eastern Asia
+  population: 3093100
+  latlng:
+  - 46.0
+  - 105.0
+  area: 1564110.0
+  timezones:
+  - UTC+07:00
+  - UTC+08:00
+  native_name: Монгол улс
+  numeric_code: '496'
+Montenegro:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: sr
+    iso639_2: srp
+    name: Serbian
+    native_name: српски језик
+  - iso639_1: bs
+    iso639_2: bos
+    name: Bosnian
+    native_name: bosanski jezik
+  - iso639_1: sq
+    iso639_2: sqi
+    name: Albanian
+    native_name: Shqip
+  - iso639_1: hr
+    iso639_2: hrv
+    name: Croatian
+    native_name: hrvatski jezik
+  flag: https://restcountries.eu/data/mne.svg
+  name: Montenegro
+  top_level_domains:
+  - ".me"
+  alpha_2_code: ME
+  alpha_3_code: MNE
+  calling_codes:
+  - '382'
+  region: Europe
+  subregion: Southern Europe
+  population: 621810
+  latlng:
+  - 42.5
+  - 19.3
+  area: 13812.0
+  timezones:
+  - UTC+01:00
+  native_name: Црна Гора
+  numeric_code: '499'
+Montserrat:
+  currencies:
+  - code: XCD
+    name: East Caribbean dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/msr.svg
+  name: Montserrat
+  top_level_domains:
+  - ".ms"
+  alpha_2_code: MS
+  alpha_3_code: MSR
+  calling_codes:
+  - '1664'
+  region: Americas
+  subregion: Caribbean
+  population: 4922
+  latlng:
+  - 16.75
+  - -62.2
+  area: 102.0
+  timezones:
+  - UTC-04:00
+  native_name: Montserrat
+  numeric_code: '500'
+Morocco:
+  currencies:
+  - code: MAD
+    name: Moroccan dirham
+    symbol: د.م.
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/mar.svg
+  name: Morocco
+  top_level_domains:
+  - ".ma"
+  alpha_2_code: MA
+  alpha_3_code: MAR
+  calling_codes:
+  - '212'
+  region: Africa
+  subregion: Northern Africa
+  population: 33337529
+  latlng:
+  - 32.0
+  - -5.0
+  area: 446550.0
+  timezones:
+  - UTC
+  native_name: المغرب
+  numeric_code: '504'
+Mozambique:
+  currencies:
+  - code: MZN
+    name: Mozambican metical
+    symbol: MT
+  languages:
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/moz.svg
+  name: Mozambique
+  top_level_domains:
+  - ".mz"
+  alpha_2_code: MZ
+  alpha_3_code: MOZ
+  calling_codes:
+  - '258'
+  region: Africa
+  subregion: Eastern Africa
+  population: 26423700
+  latlng:
+  - -18.25
+  - 35.0
+  area: 801590.0
+  timezones:
+  - UTC+02:00
+  native_name: Moçambique
+  numeric_code: '508'
+Myanmar:
+  currencies:
+  - code: MMK
+    name: Burmese kyat
+    symbol: Ks
+  languages:
+  - iso639_1: my
+    iso639_2: mya
+    name: Burmese
+    native_name: ဗမာစာ
+  flag: https://restcountries.eu/data/mmr.svg
+  name: Myanmar
+  top_level_domains:
+  - ".mm"
+  alpha_2_code: MM
+  alpha_3_code: MMR
+  calling_codes:
+  - '95'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 51419420
+  latlng:
+  - 22.0
+  - 98.0
+  area: 676578.0
+  timezones:
+  - UTC+06:30
+  native_name: Myanma
+  numeric_code: '104'
+Namibia:
+  currencies:
+  - code: NAD
+    name: Namibian dollar
+    symbol: "$"
+  - code: ZAR
+    name: South African rand
+    symbol: R
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: af
+    iso639_2: afr
+    name: Afrikaans
+    native_name: Afrikaans
+  flag: https://restcountries.eu/data/nam.svg
+  name: Namibia
+  top_level_domains:
+  - ".na"
+  alpha_2_code: NA
+  alpha_3_code: NAM
+  calling_codes:
+  - '264'
+  region: Africa
+  subregion: Southern Africa
+  population: 2324388
+  latlng:
+  - -22.0
+  - 17.0
+  area: 825615.0
+  timezones:
+  - UTC+01:00
+  native_name: Namibia
+  numeric_code: '516'
+Nauru:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  - code: "(none)"
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: na
+    iso639_2: nau
+    name: Nauruan
+    native_name: Dorerin Naoero
+  flag: https://restcountries.eu/data/nru.svg
+  name: Nauru
+  top_level_domains:
+  - ".nr"
+  alpha_2_code: NR
+  alpha_3_code: NRU
+  calling_codes:
+  - '674'
+  region: Oceania
+  subregion: Micronesia
+  population: 10084
+  latlng:
+  - -0.53333333
+  - 166.91666666
+  area: 21.0
+  timezones:
+  - UTC+12:00
+  native_name: Nauru
+  numeric_code: '520'
+Nepal:
+  currencies:
+  - code: NPR
+    name: Nepalese rupee
+    symbol: "₨"
+  languages:
+  - iso639_1: ne
+    iso639_2: nep
+    name: Nepali
+    native_name: नेपाली
+  flag: https://restcountries.eu/data/npl.svg
+  name: Nepal
+  top_level_domains:
+  - ".np"
+  alpha_2_code: NP
+  alpha_3_code: NPL
+  calling_codes:
+  - '977'
+  region: Asia
+  subregion: Southern Asia
+  population: 28431500
+  latlng:
+  - 28.0
+  - 84.0
+  area: 147181.0
+  timezones:
+  - UTC+05:45
+  native_name: नेपाल
+  numeric_code: '524'
+Netherlands:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: nl
+    iso639_2: nld
+    name: Dutch
+    native_name: Nederlands
+  flag: https://restcountries.eu/data/nld.svg
+  name: Netherlands
+  top_level_domains:
+  - ".nl"
+  alpha_2_code: NL
+  alpha_3_code: NLD
+  calling_codes:
+  - '31'
+  region: Europe
+  subregion: Western Europe
+  population: 17019800
+  latlng:
+  - 52.5
+  - 5.75
+  area: 41850.0
+  timezones:
+  - UTC-04:00
+  - UTC+01:00
+  native_name: Nederland
+  numeric_code: '528'
+New Caledonia:
+  currencies:
+  - code: XPF
+    name: CFP franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/ncl.svg
+  name: New Caledonia
+  top_level_domains:
+  - ".nc"
+  alpha_2_code: NC
+  alpha_3_code: NCL
+  calling_codes:
+  - '687'
+  region: Oceania
+  subregion: Melanesia
+  population: 268767
+  latlng:
+  - -21.5
+  - 165.5
+  area: 18575.0
+  timezones:
+  - UTC+11:00
+  native_name: Nouvelle-Calédonie
+  numeric_code: '540'
+New Zealand:
+  currencies:
+  - code: NZD
+    name: New Zealand dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: mi
+    iso639_2: mri
+    name: Māori
+    native_name: te reo Māori
+  flag: https://restcountries.eu/data/nzl.svg
+  name: New Zealand
+  top_level_domains:
+  - ".nz"
+  alpha_2_code: NZ
+  alpha_3_code: NZL
+  calling_codes:
+  - '64'
+  region: Oceania
+  subregion: Australia and New Zealand
+  population: 4697854
+  latlng:
+  - -41.0
+  - 174.0
+  area: 270467.0
+  timezones:
+  - UTC-11:00
+  - UTC-10:00
+  - UTC+12:00
+  - UTC+12:45
+  - UTC+13:00
+  native_name: New Zealand
+  numeric_code: '554'
+Nicaragua:
+  currencies:
+  - code: NIO
+    name: Nicaraguan córdoba
+    symbol: C$
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/nic.svg
+  name: Nicaragua
+  top_level_domains:
+  - ".ni"
+  alpha_2_code: NI
+  alpha_3_code: NIC
+  calling_codes:
+  - '505'
+  region: Americas
+  subregion: Central America
+  population: 6262703
+  latlng:
+  - 13.0
+  - -85.0
+  area: 130373.0
+  timezones:
+  - UTC-06:00
+  native_name: Nicaragua
+  numeric_code: '558'
+Niger:
+  currencies:
+  - code: XOF
+    name: West African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/ner.svg
+  name: Niger
+  top_level_domains:
+  - ".ne"
+  alpha_2_code: NE
+  alpha_3_code: NER
+  calling_codes:
+  - '227'
+  region: Africa
+  subregion: Western Africa
+  population: 20715000
+  latlng:
+  - 16.0
+  - 8.0
+  area: 1267000.0
+  timezones:
+  - UTC+01:00
+  native_name: Niger
+  numeric_code: '562'
+Nigeria:
+  currencies:
+  - code: NGN
+    name: Nigerian naira
+    symbol: "₦"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/nga.svg
+  name: Nigeria
+  top_level_domains:
+  - ".ng"
+  alpha_2_code: NG
+  alpha_3_code: NGA
+  calling_codes:
+  - '234'
+  region: Africa
+  subregion: Western Africa
+  population: 186988000
+  latlng:
+  - 10.0
+  - 8.0
+  area: 923768.0
+  timezones:
+  - UTC+01:00
+  native_name: Nigeria
+  numeric_code: '566'
+Niue:
+  currencies:
+  - code: NZD
+    name: New Zealand dollar
+    symbol: "$"
+  - code: "(none)"
+    name: Niue dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/niu.svg
+  name: Niue
+  top_level_domains:
+  - ".nu"
+  alpha_2_code: NU
+  alpha_3_code: NIU
+  calling_codes:
+  - '683'
+  region: Oceania
+  subregion: Polynesia
+  population: 1470
+  latlng:
+  - -19.03333333
+  - -169.86666666
+  area: 260.0
+  timezones:
+  - UTC-11:00
+  native_name: Niuē
+  numeric_code: '570'
+Norfolk Island:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/nfk.svg
+  name: Norfolk Island
+  top_level_domains:
+  - ".nf"
+  alpha_2_code: NF
+  alpha_3_code: NFK
+  calling_codes:
+  - '672'
+  region: Oceania
+  subregion: Australia and New Zealand
+  population: 2302
+  latlng:
+  - -29.03333333
+  - 167.95
+  area: 36.0
+  timezones:
+  - UTC+11:30
+  native_name: Norfolk Island
+  numeric_code: '574'
+Korea:
+  currencies:
+  - code: KPW
+    name: North Korean won
+    symbol: "₩"
+  languages:
+  - iso639_1: ko
+    iso639_2: kor
+    name: Korean
+    native_name: 한국어
+  flag: https://restcountries.eu/data/prk.svg
+  name: North Korea
+  top_level_domains:
+  - ".kp"
+  alpha_2_code: KP
+  alpha_3_code: PRK
+  calling_codes:
+  - '850'
+  region: Asia
+  subregion: Eastern Asia
+  population: 25281000
+  latlng:
+  - 40.0
+  - 127.0
+  area: 120538.0
+  timezones:
+  - UTC+09:00
+  native_name: 북한
+  numeric_code: '408'
+Northern Mariana Islands:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: ch
+    iso639_2: cha
+    name: Chamorro
+    native_name: Chamoru
+  flag: https://restcountries.eu/data/mnp.svg
+  name: Northern Mariana Islands
+  top_level_domains:
+  - ".mp"
+  alpha_2_code: MP
+  alpha_3_code: MNP
+  calling_codes:
+  - '1670'
+  region: Oceania
+  subregion: Micronesia
+  population: 56940
+  latlng:
+  - 15.2
+  - 145.75
+  area: 464.0
+  timezones:
+  - UTC+10:00
+  native_name: Northern Mariana Islands
+  numeric_code: '580'
+Norway:
+  currencies:
+  - code: NOK
+    name: Norwegian krone
+    symbol: kr
+  languages:
+  - iso639_1: 'no'
+    iso639_2: nor
+    name: Norwegian
+    native_name: Norsk
+  - iso639_1: nb
+    iso639_2: nob
+    name: Norwegian Bokmål
+    native_name: Norsk bokmål
+  - iso639_1: nn
+    iso639_2: nno
+    name: Norwegian Nynorsk
+    native_name: Norsk nynorsk
+  flag: https://restcountries.eu/data/nor.svg
+  name: Norway
+  top_level_domains:
+  - ".no"
+  alpha_2_code: 'NO'
+  alpha_3_code: NOR
+  calling_codes:
+  - '47'
+  region: Europe
+  subregion: Northern Europe
+  population: 5223256
+  latlng:
+  - 62.0
+  - 10.0
+  area: 323802.0
+  timezones:
+  - UTC+01:00
+  native_name: Norge
+  numeric_code: '578'
+Oman:
+  currencies:
+  - code: OMR
+    name: Omani rial
+    symbol: ر.ع.
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/omn.svg
+  name: Oman
+  top_level_domains:
+  - ".om"
+  alpha_2_code: OM
+  alpha_3_code: OMN
+  calling_codes:
+  - '968'
+  region: Asia
+  subregion: Western Asia
+  population: 4420133
+  latlng:
+  - 21.0
+  - 57.0
+  area: 309500.0
+  timezones:
+  - UTC+04:00
+  native_name: عمان
+  numeric_code: '512'
+Pakistan:
+  currencies:
+  - code: PKR
+    name: Pakistani rupee
+    symbol: "₨"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: ur
+    iso639_2: urd
+    name: Urdu
+    native_name: اردو
+  flag: https://restcountries.eu/data/pak.svg
+  name: Pakistan
+  top_level_domains:
+  - ".pk"
+  alpha_2_code: PK
+  alpha_3_code: PAK
+  calling_codes:
+  - '92'
+  region: Asia
+  subregion: Southern Asia
+  population: 194125062
+  latlng:
+  - 30.0
+  - 70.0
+  area: 881912.0
+  timezones:
+  - UTC+05:00
+  native_name: Pakistan
+  numeric_code: '586'
+Palau:
+  currencies:
+  - code: "(none)"
+    name: "[E]"
+    symbol: "$"
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/plw.svg
+  name: Palau
+  top_level_domains:
+  - ".pw"
+  alpha_2_code: PW
+  alpha_3_code: PLW
+  calling_codes:
+  - '680'
+  region: Oceania
+  subregion: Micronesia
+  population: 17950
+  latlng:
+  - 7.5
+  - 134.5
+  area: 459.0
+  timezones:
+  - UTC+09:00
+  native_name: Palau
+  numeric_code: '585'
+Palestine:
+  currencies:
+  - code: ILS
+    name: Israeli new sheqel
+    symbol: "₪"
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/pse.svg
+  name: Palestine
+  top_level_domains:
+  - ".ps"
+  alpha_2_code: PS
+  alpha_3_code: PSE
+  calling_codes:
+  - '970'
+  region: Asia
+  subregion: Western Asia
+  population: 4682467
+  latlng:
+  - 31.9
+  - 35.2
+  timezones:
+  - UTC+02:00
+  native_name: فلسطين
+  numeric_code: '275'
+Panama:
+  currencies:
+  - code: PAB
+    name: Panamanian balboa
+    symbol: B/.
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/pan.svg
+  name: Panama
+  top_level_domains:
+  - ".pa"
+  alpha_2_code: PA
+  alpha_3_code: PAN
+  calling_codes:
+  - '507'
+  region: Americas
+  subregion: Central America
+  population: 3814672
+  latlng:
+  - 9.0
+  - -80.0
+  area: 75417.0
+  timezones:
+  - UTC-05:00
+  native_name: Panamá
+  numeric_code: '591'
+Papua New Guinea:
+  currencies:
+  - code: PGK
+    name: Papua New Guinean kina
+    symbol: K
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/png.svg
+  name: Papua New Guinea
+  top_level_domains:
+  - ".pg"
+  alpha_2_code: PG
+  alpha_3_code: PNG
+  calling_codes:
+  - '675'
+  region: Oceania
+  subregion: Melanesia
+  population: 8083700
+  latlng:
+  - -6.0
+  - 147.0
+  area: 462840.0
+  timezones:
+  - UTC+10:00
+  native_name: Papua Niugini
+  numeric_code: '598'
+Paraguay:
+  currencies:
+  - code: PYG
+    name: Paraguayan guaraní
+    symbol: "₲"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  - iso639_1: gn
+    iso639_2: grn
+    name: Guaraní
+    native_name: Avañe'ẽ
+  flag: https://restcountries.eu/data/pry.svg
+  name: Paraguay
+  top_level_domains:
+  - ".py"
+  alpha_2_code: PY
+  alpha_3_code: PRY
+  calling_codes:
+  - '595'
+  region: Americas
+  subregion: South America
+  population: 6854536
+  latlng:
+  - -23.0
+  - -58.0
+  area: 406752.0
+  timezones:
+  - UTC-04:00
+  native_name: Paraguay
+  numeric_code: '600'
+Peru:
+  currencies:
+  - code: PEN
+    name: Peruvian sol
+    symbol: S/.
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/per.svg
+  name: Peru
+  top_level_domains:
+  - ".pe"
+  alpha_2_code: PE
+  alpha_3_code: PER
+  calling_codes:
+  - '51'
+  region: Americas
+  subregion: South America
+  population: 31488700
+  latlng:
+  - -10.0
+  - -76.0
+  area: 1285216.0
+  timezones:
+  - UTC-05:00
+  native_name: Perú
+  numeric_code: '604'
+Philippines:
+  currencies:
+  - code: NZD
+    name: New Zealand dollar
+    symbol: "$"
+  - name: Pitcairn Islands dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/pcn.svg
+  name: Pitcairn
+  top_level_domains:
+  - ".pn"
+  alpha_2_code: PN
+  alpha_3_code: PCN
+  calling_codes:
+  - '64'
+  region: Oceania
+  subregion: Polynesia
+  population: 56
+  latlng:
+  - -25.06666666
+  - -130.1
+  area: 47.0
+  timezones:
+  - UTC-08:00
+  native_name: Pitcairn Islands
+  numeric_code: '612'
+Poland:
+  currencies:
+  - code: PLN
+    name: Polish złoty
+    symbol: zł
+  languages:
+  - iso639_1: pl
+    iso639_2: pol
+    name: Polish
+    native_name: język polski
+  flag: https://restcountries.eu/data/pol.svg
+  name: Poland
+  top_level_domains:
+  - ".pl"
+  alpha_2_code: PL
+  alpha_3_code: POL
+  calling_codes:
+  - '48'
+  region: Europe
+  subregion: Eastern Europe
+  population: 38437239
+  latlng:
+  - 52.0
+  - 20.0
+  area: 312679.0
+  timezones:
+  - UTC+01:00
+  native_name: Polska
+  numeric_code: '616'
+Portugal:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/prt.svg
+  name: Portugal
+  top_level_domains:
+  - ".pt"
+  alpha_2_code: PT
+  alpha_3_code: PRT
+  calling_codes:
+  - '351'
+  region: Europe
+  subregion: Southern Europe
+  population: 10374822
+  latlng:
+  - 39.5
+  - -8.0
+  area: 92090.0
+  timezones:
+  - UTC-01:00
+  - UTC
+  native_name: Portugal
+  numeric_code: '620'
+Puerto Rico:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/pri.svg
+  name: Puerto Rico
+  top_level_domains:
+  - ".pr"
+  alpha_2_code: PR
+  alpha_3_code: PRI
+  calling_codes:
+  - '1787'
+  - '1939'
+  region: Americas
+  subregion: Caribbean
+  population: 3474182
+  latlng:
+  - 18.25
+  - -66.5
+  area: 8870.0
+  timezones:
+  - UTC-04:00
+  native_name: Puerto Rico
+  numeric_code: '630'
+Qatar:
+  currencies:
+  - code: QAR
+    name: Qatari riyal
+    symbol: ر.ق
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/qat.svg
+  name: Qatar
+  top_level_domains:
+  - ".qa"
+  alpha_2_code: QA
+  alpha_3_code: QAT
+  calling_codes:
+  - '974'
+  region: Asia
+  subregion: Western Asia
+  population: 2587564
+  latlng:
+  - 25.5
+  - 51.25
+  area: 11586.0
+  timezones:
+  - UTC+03:00
+  native_name: قطر
+  numeric_code: '634'
+Kosovo:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: sq
+    iso639_2: sqi
+    name: Albanian
+    native_name: Shqip
+  - iso639_1: sr
+    iso639_2: srp
+    name: Serbian
+    native_name: српски језик
+  flag: https://restcountries.eu/data/kos.svg
+  name: Kosovo
+  top_level_domains:
+  - ''
+  alpha_2_code: XK
+  alpha_3_code: KOS
+  calling_codes:
+  - '383'
+  region: Europe
+  subregion: Eastern Europe
+  population: 1733842
+  latlng:
+  - 42.666667
+  - 21.166667
+  area: 10908.0
+  timezones:
+  - UTC+01:00
+  native_name: Republika e Kosovës
+Réunion:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/reu.svg
+  name: Réunion
+  top_level_domains:
+  - ".re"
+  alpha_2_code: RE
+  alpha_3_code: REU
+  calling_codes:
+  - '262'
+  region: Africa
+  subregion: Eastern Africa
+  population: 840974
+  latlng:
+  - -21.15
+  - 55.5
+  timezones:
+  - UTC+04:00
+  native_name: La Réunion
+  numeric_code: '638'
+Romania:
+  currencies:
+  - code: RON
+    name: Romanian leu
+    symbol: lei
+  languages:
+  - iso639_1: ro
+    iso639_2: ron
+    name: Romanian
+    native_name: Română
+  flag: https://restcountries.eu/data/rou.svg
+  name: Romania
+  top_level_domains:
+  - ".ro"
+  alpha_2_code: RO
+  alpha_3_code: ROU
+  calling_codes:
+  - '40'
+  region: Europe
+  subregion: Eastern Europe
+  population: 19861408
+  latlng:
+  - 46.0
+  - 25.0
+  area: 238391.0
+  timezones:
+  - UTC+02:00
+  native_name: România
+  numeric_code: '642'
+Russia:
+  currencies:
+  - code: RUB
+    name: Russian ruble
+    symbol: "₽"
+  languages:
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/rus.svg
+  name: Russia
+  top_level_domains:
+  - ".ru"
+  alpha_2_code: RU
+  alpha_3_code: RUS
+  calling_codes:
+  - '7'
+  region: Europe
+  subregion: Eastern Europe
+  population: 146599183
+  latlng:
+  - 60.0
+  - 100.0
+  area: 17124442.0
+  timezones:
+  - UTC+03:00
+  - UTC+04:00
+  - UTC+06:00
+  - UTC+07:00
+  - UTC+08:00
+  - UTC+09:00
+  - UTC+10:00
+  - UTC+11:00
+  - UTC+12:00
+  native_name: Россия
+  numeric_code: '643'
+Rwanda:
+  currencies:
+  - code: RWF
+    name: Rwandan franc
+    symbol: Fr
+  languages:
+  - iso639_1: rw
+    iso639_2: kin
+    name: Kinyarwanda
+    native_name: Ikinyarwanda
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/rwa.svg
+  name: Rwanda
+  top_level_domains:
+  - ".rw"
+  alpha_2_code: RW
+  alpha_3_code: RWA
+  calling_codes:
+  - '250'
+  region: Africa
+  subregion: Eastern Africa
+  population: 11553188
+  latlng:
+  - -2.0
+  - 30.0
+  area: 26338.0
+  timezones:
+  - UTC+02:00
+  native_name: Rwanda
+  numeric_code: '646'
+Saint Barthélemy:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/blm.svg
+  name: Saint Barthélemy
+  top_level_domains:
+  - ".bl"
+  alpha_2_code: BL
+  alpha_3_code: BLM
+  calling_codes:
+  - '590'
+  region: Americas
+  subregion: Caribbean
+  population: 9417
+  latlng:
+  - 18.5
+  - -63.41666666
+  area: 21.0
+  timezones:
+  - UTC-04:00
+  native_name: Saint-Barthélemy
+  numeric_code: '652'
+Saint Helena:
+  currencies:
+  - code: SHP
+    name: Saint Helena pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/shn.svg
+  name: Saint Helena
+  top_level_domains:
+  - ".sh"
+  alpha_2_code: SH
+  alpha_3_code: SHN
+  calling_codes:
+  - '290'
+  region: Africa
+  subregion: Western Africa
+  population: 4255
+  latlng:
+  - -15.95
+  - -5.7
+  timezones:
+  - UTC+00:00
+  native_name: Saint Helena
+  numeric_code: '654'
+Saint Kitts and Nevis:
+  currencies:
+  - code: XCD
+    name: East Caribbean dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/kna.svg
+  name: Saint Kitts and Nevis
+  top_level_domains:
+  - ".kn"
+  alpha_2_code: KN
+  alpha_3_code: KNA
+  calling_codes:
+  - '1869'
+  region: Americas
+  subregion: Caribbean
+  population: 46204
+  latlng:
+  - 17.33333333
+  - -62.75
+  area: 261.0
+  timezones:
+  - UTC-04:00
+  native_name: Saint Kitts and Nevis
+  numeric_code: '659'
+Saint Lucia:
+  currencies:
+  - code: XCD
+    name: East Caribbean dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/lca.svg
+  name: Saint Lucia
+  top_level_domains:
+  - ".lc"
+  alpha_2_code: LC
+  alpha_3_code: LCA
+  calling_codes:
+  - '1758'
+  region: Americas
+  subregion: Caribbean
+  population: 186000
+  latlng:
+  - 13.88333333
+  - -60.96666666
+  area: 616.0
+  timezones:
+  - UTC-04:00
+  native_name: Saint Lucia
+  numeric_code: '662'
+Saint Martin:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: nl
+    iso639_2: nld
+    name: Dutch
+    native_name: Nederlands
+  flag: https://restcountries.eu/data/maf.svg
+  name: Saint Martin
+  top_level_domains:
+  - ".mf"
+  - ".fr"
+  - ".gp"
+  alpha_2_code: MF
+  alpha_3_code: MAF
+  calling_codes:
+  - '590'
+  region: Americas
+  subregion: Caribbean
+  population: 36979
+  latlng:
+  - 18.08333333
+  - -63.95
+  area: 53.0
+  timezones:
+  - UTC-04:00
+  native_name: Saint-Martin
+  numeric_code: '663'
+Saint Pierre and Miquelon:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/spm.svg
+  name: Saint Pierre and Miquelon
+  top_level_domains:
+  - ".pm"
+  alpha_2_code: PM
+  alpha_3_code: SPM
+  calling_codes:
+  - '508'
+  region: Americas
+  subregion: Northern America
+  population: 6069
+  latlng:
+  - 46.83333333
+  - -56.33333333
+  area: 242.0
+  timezones:
+  - UTC-03:00
+  native_name: Saint-Pierre-et-Miquelon
+  numeric_code: '666'
+Saint Vincent and the Grenadines:
+  currencies:
+  - code: XCD
+    name: East Caribbean dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/vct.svg
+  name: Saint Vincent and the Grenadines
+  top_level_domains:
+  - ".vc"
+  alpha_2_code: VC
+  alpha_3_code: VCT
+  calling_codes:
+  - '1784'
+  region: Americas
+  subregion: Caribbean
+  population: 109991
+  latlng:
+  - 13.25
+  - -61.2
+  area: 389.0
+  timezones:
+  - UTC-04:00
+  native_name: Saint Vincent and the Grenadines
+  numeric_code: '670'
+Samoa:
+  currencies:
+  - code: WST
+    name: Samoan tālā
+    symbol: T
+  languages:
+  - iso639_1: sm
+    iso639_2: smo
+    name: Samoan
+    native_name: gagana fa'a Samoa
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/wsm.svg
+  name: Samoa
+  top_level_domains:
+  - ".ws"
+  alpha_2_code: WS
+  alpha_3_code: WSM
+  calling_codes:
+  - '685'
+  region: Oceania
+  subregion: Polynesia
+  population: 194899
+  latlng:
+  - -13.58333333
+  - -172.33333333
+  area: 2842.0
+  timezones:
+  - UTC+13:00
+  native_name: Samoa
+  numeric_code: '882'
+San Marino:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: it
+    iso639_2: ita
+    name: Italian
+    native_name: Italiano
+  flag: https://restcountries.eu/data/smr.svg
+  name: San Marino
+  top_level_domains:
+  - ".sm"
+  alpha_2_code: SM
+  alpha_3_code: SMR
+  calling_codes:
+  - '378'
+  region: Europe
+  subregion: Southern Europe
+  population: 33005
+  latlng:
+  - 43.76666666
+  - 12.41666666
+  area: 61.0
+  timezones:
+  - UTC+01:00
+  native_name: San Marino
+  numeric_code: '674'
+Sao Tome and Principe:
+  currencies:
+  - code: STD
+    name: São Tomé and Príncipe dobra
+    symbol: Db
+  languages:
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/stp.svg
+  name: Sao Tome and Principe
+  top_level_domains:
+  - ".st"
+  alpha_2_code: ST
+  alpha_3_code: STP
+  calling_codes:
+  - '239'
+  region: Africa
+  subregion: Middle Africa
+  population: 187356
+  latlng:
+  - 1.0
+  - 7.0
+  area: 964.0
+  timezones:
+  - UTC
+  native_name: São Tomé e Príncipe
+  numeric_code: '678'
+Saudi Arabia:
+  currencies:
+  - code: SAR
+    name: Saudi riyal
+    symbol: ر.س
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/sau.svg
+  name: Saudi Arabia
+  top_level_domains:
+  - ".sa"
+  alpha_2_code: SA
+  alpha_3_code: SAU
+  calling_codes:
+  - '966'
+  region: Asia
+  subregion: Western Asia
+  population: 32248200
+  latlng:
+  - 25.0
+  - 45.0
+  area: 2149690.0
+  timezones:
+  - UTC+03:00
+  native_name: العربية السعودية
+  numeric_code: '682'
+Senegal:
+  currencies:
+  - code: XOF
+    name: West African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/sen.svg
+  name: Senegal
+  top_level_domains:
+  - ".sn"
+  alpha_2_code: SN
+  alpha_3_code: SEN
+  calling_codes:
+  - '221'
+  region: Africa
+  subregion: Western Africa
+  population: 14799859
+  latlng:
+  - 14.0
+  - -14.0
+  area: 196722.0
+  timezones:
+  - UTC
+  native_name: Sénégal
+  numeric_code: '686'
+Serbia:
+  currencies:
+  - code: RSD
+    name: Serbian dinar
+    symbol: дин.
+  languages:
+  - iso639_1: sr
+    iso639_2: srp
+    name: Serbian
+    native_name: српски језик
+  flag: https://restcountries.eu/data/srb.svg
+  name: Serbia
+  top_level_domains:
+  - ".rs"
+  alpha_2_code: RS
+  alpha_3_code: SRB
+  calling_codes:
+  - '381'
+  region: Europe
+  subregion: Southern Europe
+  population: 7076372
+  latlng:
+  - 44.0
+  - 21.0
+  area: 88361.0
+  timezones:
+  - UTC+01:00
+  native_name: Србија
+  numeric_code: '688'
+Seychelles:
+  currencies:
+  - code: SCR
+    name: Seychellois rupee
+    symbol: "₨"
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/syc.svg
+  name: Seychelles
+  top_level_domains:
+  - ".sc"
+  alpha_2_code: SC
+  alpha_3_code: SYC
+  calling_codes:
+  - '248'
+  region: Africa
+  subregion: Eastern Africa
+  population: 91400
+  latlng:
+  - -4.58333333
+  - 55.66666666
+  area: 452.0
+  timezones:
+  - UTC+04:00
+  native_name: Seychelles
+  numeric_code: '690'
+Sierra Leone:
+  currencies:
+  - code: SLL
+    name: Sierra Leonean leone
+    symbol: Le
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/sle.svg
+  name: Sierra Leone
+  top_level_domains:
+  - ".sl"
+  alpha_2_code: SL
+  alpha_3_code: SLE
+  calling_codes:
+  - '232'
+  region: Africa
+  subregion: Western Africa
+  population: 7075641
+  latlng:
+  - 8.5
+  - -11.5
+  area: 71740.0
+  timezones:
+  - UTC
+  native_name: Sierra Leone
+  numeric_code: '694'
+Singapore:
+  currencies:
+  - code: BND
+    name: Brunei dollar
+    symbol: "$"
+  - code: SGD
+    name: Singapore dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: ms
+    iso639_2: msa
+    name: Malay
+    native_name: bahasa Melayu
+  - iso639_1: ta
+    iso639_2: tam
+    name: Tamil
+    native_name: தமிழ்
+  - iso639_1: zh
+    iso639_2: zho
+    name: Chinese
+    native_name: 中文 (Zhōngwén)
+  flag: https://restcountries.eu/data/sgp.svg
+  name: Singapore
+  top_level_domains:
+  - ".sg"
+  alpha_2_code: SG
+  alpha_3_code: SGP
+  calling_codes:
+  - '65'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 5535000
+  latlng:
+  - 1.36666666
+  - 103.8
+  area: 710.0
+  timezones:
+  - UTC+08:00
+  native_name: Singapore
+  numeric_code: '702'
+Sint Maarten:
+  currencies:
+  - code: ANG
+    name: Netherlands Antillean guilder
+    symbol: ƒ
+  languages:
+  - iso639_1: nl
+    iso639_2: nld
+    name: Dutch
+    native_name: Nederlands
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/sxm.svg
+  name: Sint Maarten
+  top_level_domains:
+  - ".sx"
+  alpha_2_code: SX
+  alpha_3_code: SXM
+  calling_codes:
+  - '1721'
+  region: Americas
+  subregion: Caribbean
+  population: 38247
+  latlng:
+  - 18.033333
+  - -63.05
+  area: 34.0
+  timezones:
+  - UTC-04:00
+  native_name: Sint Maarten
+  numeric_code: '534'
+Slovakia:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: sk
+    iso639_2: slk
+    name: Slovak
+    native_name: slovenčina
+  flag: https://restcountries.eu/data/svk.svg
+  name: Slovakia
+  top_level_domains:
+  - ".sk"
+  alpha_2_code: SK
+  alpha_3_code: SVK
+  calling_codes:
+  - '421'
+  region: Europe
+  subregion: Eastern Europe
+  population: 5426252
+  latlng:
+  - 48.66666666
+  - 19.5
+  area: 49037.0
+  timezones:
+  - UTC+01:00
+  native_name: Slovensko
+  numeric_code: '703'
+Slovenia:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: sl
+    iso639_2: slv
+    name: Slovene
+    native_name: slovenski jezik
+  flag: https://restcountries.eu/data/svn.svg
+  name: Slovenia
+  top_level_domains:
+  - ".si"
+  alpha_2_code: SI
+  alpha_3_code: SVN
+  calling_codes:
+  - '386'
+  region: Europe
+  subregion: Southern Europe
+  population: 2064188
+  latlng:
+  - 46.11666666
+  - 14.81666666
+  area: 20273.0
+  timezones:
+  - UTC+01:00
+  native_name: Slovenija
+  numeric_code: '705'
+Solomon Islands:
+  currencies:
+  - code: SBD
+    name: Solomon Islands dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/slb.svg
+  name: Solomon Islands
+  top_level_domains:
+  - ".sb"
+  alpha_2_code: SB
+  alpha_3_code: SLB
+  calling_codes:
+  - '677'
+  region: Oceania
+  subregion: Melanesia
+  population: 642000
+  latlng:
+  - -8.0
+  - 159.0
+  area: 28896.0
+  timezones:
+  - UTC+11:00
+  native_name: Solomon Islands
+  numeric_code: '090'
+Somalia:
+  currencies:
+  - code: SOS
+    name: Somali shilling
+    symbol: Sh
+  languages:
+  - iso639_1: so
+    iso639_2: som
+    name: Somali
+    native_name: Soomaaliga
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/som.svg
+  name: Somalia
+  top_level_domains:
+  - ".so"
+  alpha_2_code: SO
+  alpha_3_code: SOM
+  calling_codes:
+  - '252'
+  region: Africa
+  subregion: Eastern Africa
+  population: 11079000
+  latlng:
+  - 10.0
+  - 49.0
+  area: 637657.0
+  timezones:
+  - UTC+03:00
+  native_name: Soomaaliya
+  numeric_code: '706'
+South Africa:
+  currencies:
+  - code: ZAR
+    name: South African rand
+    symbol: R
+  languages:
+  - iso639_1: af
+    iso639_2: afr
+    name: Afrikaans
+    native_name: Afrikaans
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: nr
+    iso639_2: nbl
+    name: Southern Ndebele
+    native_name: isiNdebele
+  - iso639_1: st
+    iso639_2: sot
+    name: Southern Sotho
+    native_name: Sesotho
+  - iso639_1: ss
+    iso639_2: ssw
+    name: Swati
+    native_name: SiSwati
+  - iso639_1: tn
+    iso639_2: tsn
+    name: Tswana
+    native_name: Setswana
+  - iso639_1: ts
+    iso639_2: tso
+    name: Tsonga
+    native_name: Xitsonga
+  - iso639_1: ve
+    iso639_2: ven
+    name: Venda
+    native_name: Tshivenḓa
+  - iso639_1: xh
+    iso639_2: xho
+    name: Xhosa
+    native_name: isiXhosa
+  - iso639_1: zu
+    iso639_2: zul
+    name: Zulu
+    native_name: isiZulu
+  flag: https://restcountries.eu/data/zaf.svg
+  name: South Africa
+  top_level_domains:
+  - ".za"
+  alpha_2_code: ZA
+  alpha_3_code: ZAF
+  calling_codes:
+  - '27'
+  region: Africa
+  subregion: Southern Africa
+  population: 55653654
+  latlng:
+  - -29.0
+  - 24.0
+  area: 1221037.0
+  timezones:
+  - UTC+02:00
+  native_name: South Africa
+  numeric_code: '710'
+South Georgia and the South Sandwich Islands:
+  currencies:
+  - code: GBP
+    name: British pound
+    symbol: "£"
+  - code: "(none)"
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/sgs.svg
+  name: South Georgia and the South Sandwich Islands
+  top_level_domains:
+  - ".gs"
+  alpha_2_code: GS
+  alpha_3_code: SGS
+  calling_codes:
+  - '500'
+  region: Americas
+  subregion: South America
+  population: 30
+  latlng:
+  - -54.5
+  - -37.0
+  timezones:
+  - UTC-02:00
+  native_name: South Georgia
+  numeric_code: '239'
+South Korea:
+  currencies:
+  - code: KRW
+    name: South Korean won
+    symbol: "₩"
+  languages:
+  - iso639_1: ko
+    iso639_2: kor
+    name: Korean
+    native_name: 한국어
+  flag: https://restcountries.eu/data/kor.svg
+  name: South Korea
+  top_level_domains:
+  - ".kr"
+  alpha_2_code: KR
+  alpha_3_code: KOR
+  calling_codes:
+  - '82'
+  region: Asia
+  subregion: Eastern Asia
+  population: 50801405
+  latlng:
+  - 37.0
+  - 127.5
+  area: 100210.0
+  timezones:
+  - UTC+09:00
+  native_name: 대한민국
+  numeric_code: '410'
+South Sudan:
+  currencies:
+  - code: SSP
+    name: South Sudanese pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/ssd.svg
+  name: South Sudan
+  top_level_domains:
+  - ".ss"
+  alpha_2_code: SS
+  alpha_3_code: SSD
+  calling_codes:
+  - '211'
+  region: Africa
+  subregion: Middle Africa
+  population: 12131000
+  latlng:
+  - 7.0
+  - 30.0
+  area: 619745.0
+  timezones:
+  - UTC+03:00
+  native_name: South Sudan
+  numeric_code: '728'
+Spain:
+  currencies:
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/esp.svg
+  name: Spain
+  top_level_domains:
+  - ".es"
+  alpha_2_code: ES
+  alpha_3_code: ESP
+  calling_codes:
+  - '34'
+  region: Europe
+  subregion: Southern Europe
+  population: 46438422
+  latlng:
+  - 40.0
+  - -4.0
+  area: 505992.0
+  timezones:
+  - UTC
+  - UTC+01:00
+  native_name: España
+  numeric_code: '724'
+Sri Lanka:
+  currencies:
+  - code: LKR
+    name: Sri Lankan rupee
+    symbol: Rs
+  languages:
+  - iso639_1: si
+    iso639_2: sin
+    name: Sinhalese
+    native_name: සිංහල
+  - iso639_1: ta
+    iso639_2: tam
+    name: Tamil
+    native_name: தமிழ்
+  flag: https://restcountries.eu/data/lka.svg
+  name: Sri Lanka
+  top_level_domains:
+  - ".lk"
+  alpha_2_code: LK
+  alpha_3_code: LKA
+  calling_codes:
+  - '94'
+  region: Asia
+  subregion: Southern Asia
+  population: 20966000
+  latlng:
+  - 7.0
+  - 81.0
+  area: 65610.0
+  timezones:
+  - UTC+05:30
+  native_name: śrī laṃkāva
+  numeric_code: '144'
+Sudan:
+  currencies:
+  - code: SDG
+    name: Sudanese pound
+    symbol: ج.س.
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/sdn.svg
+  name: Sudan
+  top_level_domains:
+  - ".sd"
+  alpha_2_code: SD
+  alpha_3_code: SDN
+  calling_codes:
+  - '249'
+  region: Africa
+  subregion: Northern Africa
+  population: 39598700
+  latlng:
+  - 15.0
+  - 30.0
+  area: 1886068.0
+  timezones:
+  - UTC+03:00
+  native_name: السودان
+  numeric_code: '729'
+Suriname:
+  currencies:
+  - code: SRD
+    name: Surinamese dollar
+    symbol: "$"
+  languages:
+  - iso639_1: nl
+    iso639_2: nld
+    name: Dutch
+    native_name: Nederlands
+  flag: https://restcountries.eu/data/sur.svg
+  name: Suriname
+  top_level_domains:
+  - ".sr"
+  alpha_2_code: SR
+  alpha_3_code: SUR
+  calling_codes:
+  - '597'
+  region: Americas
+  subregion: South America
+  population: 541638
+  latlng:
+  - 4.0
+  - -56.0
+  area: 163820.0
+  timezones:
+  - UTC-03:00
+  native_name: Suriname
+  numeric_code: '740'
+Svalbard and Jan Mayen:
+  currencies:
+  - code: NOK
+    name: Norwegian krone
+    symbol: kr
+  languages:
+  - iso639_1: 'no'
+    iso639_2: nor
+    name: Norwegian
+    native_name: Norsk
+  flag: https://restcountries.eu/data/sjm.svg
+  name: Svalbard and Jan Mayen
+  top_level_domains:
+  - ".sj"
+  alpha_2_code: SJ
+  alpha_3_code: SJM
+  calling_codes:
+  - '4779'
+  region: Europe
+  subregion: Northern Europe
+  population: 2562
+  latlng:
+  - 78.0
+  - 20.0
+  timezones:
+  - UTC+01:00
+  native_name: Svalbard og Jan Mayen
+  numeric_code: '744'
+Swaziland:
+  currencies:
+  - code: SZL
+    name: Swazi lilangeni
+    symbol: L
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: ss
+    iso639_2: ssw
+    name: Swati
+    native_name: SiSwati
+  flag: https://restcountries.eu/data/swz.svg
+  name: Swaziland
+  top_level_domains:
+  - ".sz"
+  alpha_2_code: SZ
+  alpha_3_code: SWZ
+  calling_codes:
+  - '268'
+  region: Africa
+  subregion: Southern Africa
+  population: 1132657
+  latlng:
+  - -26.5
+  - 31.5
+  area: 17364.0
+  timezones:
+  - UTC+02:00
+  native_name: Swaziland
+  numeric_code: '748'
+Sweden:
+  currencies:
+  - code: SEK
+    name: Swedish krona
+    symbol: kr
+  languages:
+  - iso639_1: sv
+    iso639_2: swe
+    name: Swedish
+    native_name: svenska
+  flag: https://restcountries.eu/data/swe.svg
+  name: Sweden
+  top_level_domains:
+  - ".se"
+  alpha_2_code: SE
+  alpha_3_code: SWE
+  calling_codes:
+  - '46'
+  region: Europe
+  subregion: Northern Europe
+  population: 9894888
+  latlng:
+  - 62.0
+  - 15.0
+  area: 450295.0
+  timezones:
+  - UTC+01:00
+  native_name: Sverige
+  numeric_code: '752'
+Switzerland:
+  currencies:
+  - code: CHF
+    name: Swiss franc
+    symbol: Fr
+  languages:
+  - iso639_1: de
+    iso639_2: deu
+    name: German
+    native_name: Deutsch
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  - iso639_1: it
+    iso639_2: ita
+    name: Italian
+    native_name: Italiano
+  flag: https://restcountries.eu/data/che.svg
+  name: Switzerland
+  top_level_domains:
+  - ".ch"
+  alpha_2_code: CH
+  alpha_3_code: CHE
+  calling_codes:
+  - '41'
+  region: Europe
+  subregion: Western Europe
+  population: 8341600
+  latlng:
+  - 47.0
+  - 8.0
+  area: 41284.0
+  timezones:
+  - UTC+01:00
+  native_name: Schweiz
+  numeric_code: '756'
+Syria:
+  currencies:
+  - code: SYP
+    name: Syrian pound
+    symbol: "£"
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/syr.svg
+  name: Syria
+  top_level_domains:
+  - ".sy"
+  alpha_2_code: SY
+  alpha_3_code: SYR
+  calling_codes:
+  - '963'
+  region: Asia
+  subregion: Western Asia
+  population: 18564000
+  latlng:
+  - 35.0
+  - 38.0
+  area: 185180.0
+  timezones:
+  - UTC+02:00
+  native_name: سوريا
+  numeric_code: '760'
+Taiwan:
+  currencies:
+  - code: TWD
+    name: New Taiwan dollar
+    symbol: "$"
+  languages:
+  - iso639_1: zh
+    iso639_2: zho
+    name: Chinese
+    native_name: 中文 (Zhōngwén)
+  flag: https://restcountries.eu/data/twn.svg
+  name: Taiwan (China)
+  top_level_domains:
+  - ".tw"
+  alpha_2_code: TW
+  alpha_3_code: TWN
+  calling_codes:
+  - '886'
+  region: Asia
+  subregion: Eastern Asia
+  population: 23503349
+  latlng:
+  - 23.5
+  - 121.0
+  area: 36193.0
+  timezones:
+  - UTC+08:00
+  native_name: 臺灣
+  numeric_code: '158'
+Tajikistan:
+  currencies:
+  - code: TJS
+    name: Tajikistani somoni
+    symbol: ЅМ
+  languages:
+  - iso639_1: tg
+    iso639_2: tgk
+    name: Tajik
+    native_name: тоҷикӣ
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/tjk.svg
+  name: Tajikistan
+  top_level_domains:
+  - ".tj"
+  alpha_2_code: TJ
+  alpha_3_code: TJK
+  calling_codes:
+  - '992'
+  region: Asia
+  subregion: Central Asia
+  population: 8593600
+  latlng:
+  - 39.0
+  - 71.0
+  area: 143100.0
+  timezones:
+  - UTC+05:00
+  native_name: Тоҷикистон
+  numeric_code: '762'
+Tanzania:
+  currencies:
+  - code: TZS
+    name: Tanzanian shilling
+    symbol: Sh
+  languages:
+  - iso639_1: sw
+    iso639_2: swa
+    name: Swahili
+    native_name: Kiswahili
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/tza.svg
+  name: Tanzania
+  top_level_domains:
+  - ".tz"
+  alpha_2_code: TZ
+  alpha_3_code: TZA
+  calling_codes:
+  - '255'
+  region: Africa
+  subregion: Eastern Africa
+  population: 55155000
+  latlng:
+  - -6.0
+  - 35.0
+  area: 945087.0
+  timezones:
+  - UTC+03:00
+  native_name: Tanzania
+  numeric_code: '834'
+Thailand:
+  currencies:
+  - code: THB
+    name: Thai baht
+    symbol: "฿"
+  languages:
+  - iso639_1: th
+    iso639_2: tha
+    name: Thai
+    native_name: ไทย
+  flag: https://restcountries.eu/data/tha.svg
+  name: Thailand
+  top_level_domains:
+  - ".th"
+  alpha_2_code: TH
+  alpha_3_code: THA
+  calling_codes:
+  - '66'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 65327652
+  latlng:
+  - 15.0
+  - 100.0
+  area: 513120.0
+  timezones:
+  - UTC+07:00
+  native_name: ประเทศไทย
+  numeric_code: '764'
+Timor-Leste:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  - {}
+  languages:
+  - iso639_1: pt
+    iso639_2: por
+    name: Portuguese
+    native_name: Português
+  flag: https://restcountries.eu/data/tls.svg
+  name: Timor-Leste
+  top_level_domains:
+  - ".tl"
+  alpha_2_code: TL
+  alpha_3_code: TLS
+  calling_codes:
+  - '670'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 1167242
+  latlng:
+  - -8.83333333
+  - 125.91666666
+  area: 14874.0
+  timezones:
+  - UTC+09:00
+  native_name: Timor-Leste
+  numeric_code: '626'
+Togo:
+  currencies:
+  - code: XOF
+    name: West African CFA franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/tgo.svg
+  name: Togo
+  top_level_domains:
+  - ".tg"
+  alpha_2_code: TG
+  alpha_3_code: TGO
+  calling_codes:
+  - '228'
+  region: Africa
+  subregion: Western Africa
+  population: 7143000
+  latlng:
+  - 8.0
+  - 1.16666666
+  area: 56785.0
+  timezones:
+  - UTC
+  native_name: Togo
+  numeric_code: '768'
+Tokelau:
+  currencies:
+  - code: NZD
+    name: New Zealand dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/tkl.svg
+  name: Tokelau
+  top_level_domains:
+  - ".tk"
+  alpha_2_code: TK
+  alpha_3_code: TKL
+  calling_codes:
+  - '690'
+  region: Oceania
+  subregion: Polynesia
+  population: 1411
+  latlng:
+  - -9.0
+  - -172.0
+  area: 12.0
+  timezones:
+  - UTC+13:00
+  native_name: Tokelau
+  numeric_code: '772'
+Tonga:
+  currencies:
+  - code: TOP
+    name: Tongan paʻanga
+    symbol: T$
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: to
+    iso639_2: ton
+    name: Tonga (Tonga Islands)
+    native_name: faka Tonga
+  flag: https://restcountries.eu/data/ton.svg
+  name: Tonga
+  top_level_domains:
+  - ".to"
+  alpha_2_code: TO
+  alpha_3_code: TON
+  calling_codes:
+  - '676'
+  region: Oceania
+  subregion: Polynesia
+  population: 103252
+  latlng:
+  - -20.0
+  - -175.0
+  area: 747.0
+  timezones:
+  - UTC+13:00
+  native_name: Tonga
+  numeric_code: '776'
+Trinidad and Tobago:
+  currencies:
+  - code: TTD
+    name: Trinidad and Tobago dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/tto.svg
+  name: Trinidad and Tobago
+  top_level_domains:
+  - ".tt"
+  alpha_2_code: TT
+  alpha_3_code: TTO
+  calling_codes:
+  - '1868'
+  region: Americas
+  subregion: Caribbean
+  population: 1349667
+  latlng:
+  - 11.0
+  - -61.0
+  area: 5130.0
+  timezones:
+  - UTC-04:00
+  native_name: Trinidad and Tobago
+  numeric_code: '780'
+Tunisia:
+  currencies:
+  - code: TND
+    name: Tunisian dinar
+    symbol: د.ت
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/tun.svg
+  name: Tunisia
+  top_level_domains:
+  - ".tn"
+  alpha_2_code: TN
+  alpha_3_code: TUN
+  calling_codes:
+  - '216'
+  region: Africa
+  subregion: Northern Africa
+  population: 11154400
+  latlng:
+  - 34.0
+  - 9.0
+  area: 163610.0
+  timezones:
+  - UTC+01:00
+  native_name: تونس
+  numeric_code: '788'
+Turkey:
+  currencies:
+  - code: TRY
+    name: Turkish lira
+  languages:
+  - iso639_1: tr
+    iso639_2: tur
+    name: Turkish
+    native_name: Türkçe
+  flag: https://restcountries.eu/data/tur.svg
+  name: Turkey
+  top_level_domains:
+  - ".tr"
+  alpha_2_code: TR
+  alpha_3_code: TUR
+  calling_codes:
+  - '90'
+  region: Asia
+  subregion: Western Asia
+  population: 78741053
+  latlng:
+  - 39.0
+  - 35.0
+  area: 783562.0
+  timezones:
+  - UTC+03:00
+  native_name: Türkiye
+  numeric_code: '792'
+Turkmenistan:
+  currencies:
+  - code: TMT
+    name: Turkmenistan manat
+    symbol: m
+  languages:
+  - iso639_1: tk
+    iso639_2: tuk
+    name: Turkmen
+    native_name: Türkmen
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/tkm.svg
+  name: Turkmenistan
+  top_level_domains:
+  - ".tm"
+  alpha_2_code: TM
+  alpha_3_code: TKM
+  calling_codes:
+  - '993'
+  region: Asia
+  subregion: Central Asia
+  population: 4751120
+  latlng:
+  - 40.0
+  - 60.0
+  area: 488100.0
+  timezones:
+  - UTC+05:00
+  native_name: Türkmenistan
+  numeric_code: '795'
+Turks and Caicos Islands:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/tca.svg
+  name: Turks and Caicos Islands
+  top_level_domains:
+  - ".tc"
+  alpha_2_code: TC
+  alpha_3_code: TCA
+  calling_codes:
+  - '1649'
+  region: Americas
+  subregion: Caribbean
+  population: 31458
+  latlng:
+  - 21.75
+  - -71.58333333
+  area: 948.0
+  timezones:
+  - UTC-04:00
+  native_name: Turks and Caicos Islands
+  numeric_code: '796'
+Tuvalu:
+  currencies:
+  - code: AUD
+    name: Australian dollar
+    symbol: "$"
+  - code: TVD[G]
+    name: Tuvaluan dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/tuv.svg
+  name: Tuvalu
+  top_level_domains:
+  - ".tv"
+  alpha_2_code: TV
+  alpha_3_code: TUV
+  calling_codes:
+  - '688'
+  region: Oceania
+  subregion: Polynesia
+  population: 10640
+  latlng:
+  - -8.0
+  - 178.0
+  area: 26.0
+  timezones:
+  - UTC+12:00
+  native_name: Tuvalu
+  numeric_code: '798'
+Uganda:
+  currencies:
+  - code: UGX
+    name: Ugandan shilling
+    symbol: Sh
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: sw
+    iso639_2: swa
+    name: Swahili
+    native_name: Kiswahili
+  flag: https://restcountries.eu/data/uga.svg
+  name: Uganda
+  top_level_domains:
+  - ".ug"
+  alpha_2_code: UG
+  alpha_3_code: UGA
+  calling_codes:
+  - '256'
+  region: Africa
+  subregion: Eastern Africa
+  population: 33860700
+  latlng:
+  - 1.0
+  - 32.0
+  area: 241550.0
+  timezones:
+  - UTC+03:00
+  native_name: Uganda
+  numeric_code: '800'
+Ukraine:
+  currencies:
+  - code: UAH
+    name: Ukrainian hryvnia
+    symbol: "₴"
+  languages:
+  - iso639_1: uk
+    iso639_2: ukr
+    name: Ukrainian
+    native_name: Українська
+  flag: https://restcountries.eu/data/ukr.svg
+  name: Ukraine
+  top_level_domains:
+  - ".ua"
+  alpha_2_code: UA
+  alpha_3_code: UKR
+  calling_codes:
+  - '380'
+  region: Europe
+  subregion: Eastern Europe
+  population: 42692393
+  latlng:
+  - 49.0
+  - 32.0
+  area: 603700.0
+  timezones:
+  - UTC+02:00
+  native_name: Україна
+  numeric_code: '804'
+United Arab Emirates:
+  currencies:
+  - code: AED
+    name: United Arab Emirates dirham
+    symbol: د.إ
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/are.svg
+  name: United Arab Emirates
+  top_level_domains:
+  - ".ae"
+  alpha_2_code: AE
+  alpha_3_code: ARE
+  calling_codes:
+  - '971'
+  region: Asia
+  subregion: Western Asia
+  population: 9856000
+  latlng:
+  - 24.0
+  - 54.0
+  area: 83600.0
+  timezones:
+  - UTC+04
+  native_name: دولة الإمارات العربية المتحدة
+  numeric_code: '784'
+United Kingdom:
+  currencies:
+  - code: GBP
+    name: British pound
+    symbol: "£"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/gbr.svg
+  name: United Kingdom
+  top_level_domains:
+  - ".uk"
+  alpha_2_code: GB
+  alpha_3_code: GBR
+  calling_codes:
+  - '44'
+  region: Europe
+  subregion: Northern Europe
+  population: 65110000
+  latlng:
+  - 54.0
+  - -2.0
+  area: 242900.0
+  timezones:
+  - UTC-08:00
+  - UTC-05:00
+  - UTC-04:00
+  - UTC-03:00
+  - UTC-02:00
+  - UTC
+  - UTC+01:00
+  - UTC+02:00
+  - UTC+06:00
+  native_name: United Kingdom
+  numeric_code: '826'
+United States of America:
+  currencies:
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/usa.svg
+  name: United States of America
+  top_level_domains:
+  - ".us"
+  alpha_2_code: US
+  alpha_3_code: USA
+  calling_codes:
+  - '1'
+  region: Americas
+  subregion: Northern America
+  population: 323947000
+  latlng:
+  - 38.0
+  - -97.0
+  area: 9629091.0
+  timezones:
+  - UTC-12:00
+  - UTC-11:00
+  - UTC-10:00
+  - UTC-09:00
+  - UTC-08:00
+  - UTC-07:00
+  - UTC-06:00
+  - UTC-05:00
+  - UTC-04:00
+  - UTC+10:00
+  - UTC+12:00
+  native_name: United States
+  numeric_code: '840'
+Uruguay:
+  currencies:
+  - code: UYU
+    name: Uruguayan peso
+    symbol: "$"
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/ury.svg
+  name: Uruguay
+  top_level_domains:
+  - ".uy"
+  alpha_2_code: UY
+  alpha_3_code: URY
+  calling_codes:
+  - '598'
+  region: Americas
+  subregion: South America
+  population: 3480222
+  latlng:
+  - -33.0
+  - -56.0
+  area: 181034.0
+  timezones:
+  - UTC-03:00
+  native_name: Uruguay
+  numeric_code: '858'
+Uzbekistan:
+  currencies:
+  - code: UZS
+    name: Uzbekistani so'm
+  languages:
+  - iso639_1: uz
+    iso639_2: uzb
+    name: Uzbek
+    native_name: Oʻzbek
+  - iso639_1: ru
+    iso639_2: rus
+    name: Russian
+    native_name: Русский
+  flag: https://restcountries.eu/data/uzb.svg
+  name: Uzbekistan
+  top_level_domains:
+  - ".uz"
+  alpha_2_code: UZ
+  alpha_3_code: UZB
+  calling_codes:
+  - '998'
+  region: Asia
+  subregion: Central Asia
+  population: 31576400
+  latlng:
+  - 41.0
+  - 64.0
+  area: 447400.0
+  timezones:
+  - UTC+05:00
+  native_name: O‘zbekiston
+  numeric_code: '860'
+Vanuatu:
+  currencies:
+  - code: VUV
+    name: Vanuatu vatu
+    symbol: Vt
+  languages:
+  - iso639_1: bi
+    iso639_2: bis
+    name: Bislama
+    native_name: Bislama
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/vut.svg
+  name: Vanuatu
+  top_level_domains:
+  - ".vu"
+  alpha_2_code: VU
+  alpha_3_code: VUT
+  calling_codes:
+  - '678'
+  region: Oceania
+  subregion: Melanesia
+  population: 277500
+  latlng:
+  - -16.0
+  - 167.0
+  area: 12189.0
+  timezones:
+  - UTC+11:00
+  native_name: Vanuatu
+  numeric_code: '548'
+Venezuela:
+  currencies:
+  - code: VEF
+    name: Venezuelan bolívar
+    symbol: Bs F
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/ven.svg
+  name: Venezuela
+  top_level_domains:
+  - ".ve"
+  alpha_2_code: VE
+  alpha_3_code: VEN
+  calling_codes:
+  - '58'
+  region: Americas
+  subregion: South America
+  population: 31028700
+  latlng:
+  - 8.0
+  - -66.0
+  area: 916445.0
+  timezones:
+  - UTC-04:00
+  native_name: Venezuela
+  numeric_code: '862'
+Vietnam:
+  currencies:
+  - code: VND
+    name: Vietnamese đồng
+    symbol: "₫"
+  languages:
+  - iso639_1: vi
+    iso639_2: vie
+    name: Vietnamese
+    native_name: Tiếng Việt
+  flag: https://restcountries.eu/data/vnm.svg
+  name: Vietnam
+  top_level_domains:
+  - ".vn"
+  alpha_2_code: VN
+  alpha_3_code: VNM
+  calling_codes:
+  - '84'
+  region: Asia
+  subregion: South-Eastern Asia
+  population: 92700000
+  latlng:
+  - 16.16666666
+  - 107.83333333
+  area: 331212.0
+  timezones:
+  - UTC+07:00
+  native_name: Việt Nam
+  numeric_code: '704'
+Wallis and Futuna:
+  currencies:
+  - code: XPF
+    name: CFP franc
+    symbol: Fr
+  languages:
+  - iso639_1: fr
+    iso639_2: fra
+    name: French
+    native_name: français
+  flag: https://restcountries.eu/data/wlf.svg
+  name: Wallis and Futuna
+  top_level_domains:
+  - ".wf"
+  alpha_2_code: WF
+  alpha_3_code: WLF
+  calling_codes:
+  - '681'
+  region: Oceania
+  subregion: Polynesia
+  population: 11750
+  latlng:
+  - -13.3
+  - -176.2
+  area: 142.0
+  timezones:
+  - UTC+12:00
+  native_name: Wallis et Futuna
+  numeric_code: '876'
+Western Sahara:
+  currencies:
+  - code: MAD
+    name: Moroccan dirham
+    symbol: د.م.
+  - code: DZD
+    name: Algerian dinar
+    symbol: د.ج
+  languages:
+  - iso639_1: es
+    iso639_2: spa
+    name: Spanish
+    native_name: Español
+  flag: https://restcountries.eu/data/esh.svg
+  name: Western Sahara
+  top_level_domains:
+  - ".eh"
+  alpha_2_code: EH
+  alpha_3_code: ESH
+  calling_codes:
+  - '212'
+  region: Africa
+  subregion: Northern Africa
+  population: 510713
+  latlng:
+  - 24.5
+  - -13.0
+  area: 266000.0
+  timezones:
+  - UTC+00:00
+  native_name: الصحراء الغربية
+  numeric_code: '732'
+Yemen:
+  currencies:
+  - code: YER
+    name: Yemeni rial
+    symbol: "﷼"
+  languages:
+  - iso639_1: ar
+    iso639_2: ara
+    name: Arabic
+    native_name: العربية
+  flag: https://restcountries.eu/data/yem.svg
+  name: Yemen
+  top_level_domains:
+  - ".ye"
+  alpha_2_code: YE
+  alpha_3_code: YEM
+  calling_codes:
+  - '967'
+  region: Asia
+  subregion: Western Asia
+  population: 27478000
+  latlng:
+  - 15.0
+  - 48.0
+  area: 527968.0
+  timezones:
+  - UTC+03:00
+  native_name: اليَمَن
+  numeric_code: '887'
+Zambia:
+  currencies:
+  - code: ZMW
+    name: Zambian kwacha
+    symbol: ZK
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  flag: https://restcountries.eu/data/zmb.svg
+  name: Zambia
+  top_level_domains:
+  - ".zm"
+  alpha_2_code: ZM
+  alpha_3_code: ZMB
+  calling_codes:
+  - '260'
+  region: Africa
+  subregion: Eastern Africa
+  population: 15933883
+  latlng:
+  - -15.0
+  - 30.0
+  area: 752612.0
+  timezones:
+  - UTC+02:00
+  native_name: Zambia
+  numeric_code: '894'
+Zimbabwe:
+  currencies:
+  - code: BWP
+    name: Botswana pula
+    symbol: P
+  - code: GBP
+    name: British pound
+    symbol: "£"
+  - code: CNY
+    name: Chinese yuan
+    symbol: "¥"
+  - code: EUR
+    name: Euro
+    symbol: "€"
+  - code: INR
+    name: Indian rupee
+    symbol: "₹"
+  - code: JPY
+    name: Japanese yen
+    symbol: "¥"
+  - code: ZAR
+    name: South African rand
+    symbol: Rs
+  - code: USD
+    name: United States dollar
+    symbol: "$"
+  - code: "(none)"
+  languages:
+  - iso639_1: en
+    iso639_2: eng
+    name: English
+    native_name: English
+  - iso639_1: sn
+    iso639_2: sna
+    name: Shona
+    native_name: chiShona
+  - iso639_1: nd
+    iso639_2: nde
+    name: Northern Ndebele
+    native_name: isiNdebele
+  flag: https://restcountries.eu/data/zwe.svg
+  name: Zimbabwe
+  top_level_domains:
+  - ".zw"
+  alpha_2_code: ZW
+  alpha_3_code: ZWE
+  calling_codes:
+  - '263'
+  region: Africa
+  subregion: Eastern Africa
+  population: 14240168
+  latlng:
+  - -20.0
+  - 30.0
+  area: 390757.0
+  timezones:
+  - UTC+02:00
+  native_name: Zimbabwe
+  numeric_code: '716'

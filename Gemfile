@@ -1,66 +1,53 @@
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
-  "https://github.com/#{repo_name}.git"
-end
+ruby '2.4.1'
 
-gem 'pg', '~> 0.18' # Database for Active Record
-gem 'rails', '~> 5.1.2'
+# Ruby on Rails framework
+gem 'rails', '~> 5.1.6'
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-# Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-cors'
+# Puma app server
+gem 'puma', '~> 3.7'
 
-# For encoding and decoding JWT tokens
-# https://www.pluralsight.com/guides/ruby-ruby-on-rails/token-based-authentication-with-ruby-on-rails-5-api
-# https://jwt.io/
-gem 'jwt'
+# Postgress database
+gem 'pg'
 
-# For JSON API serialisers
+# For JSON API compliant serialisers
 # https://github.com/Netflix/fast_jsonapi
 gem 'fast_jsonapi'
 
-# For making Rails JSON API compliant
-# http://jsonapi-resources.com/
-gem 'jsonapi-resources'
+# For handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# https://github.com/cyu/rack-cors
+# gem 'rack-cors'
 
-# For dumping database data into a YAML
-# https://github.com/yamldb/yaml_db
+# For dumping database data into a YAML file
+# https://github.com/yamldb/yaml_dbrai
 gem 'yaml_db'
 
 group :development, :test do
-  gem 'awesome_print', require: 'ap' # For coloured printing in byebug and console `ap`
-  gem 'byebug', platforms: %i[mri mingw x64_mingw] # For halting the code and debugging `byebug`
-end
+  # For coloured printing in byebug and console `ap`
+  gem 'awesome_print', require: 'ap'
 
-group :test do
-  gem 'minitest-reporters'
-  gem 'minitest-spec-rails'
-
-  # For running test by line number
-  # https://github.com/qrush/m
-  # TODO: Does not work with spec-rails
-  # gem 'm', '~> 1.5.1'
+  # For halting the code and debugging `byebug`
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
+  # For listening to file changes
   gem 'listen', '>= 3.0.5', '< 3.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'annotate', require: false
+
+  # For deploying code to remote servers
+  gem 'mina', '~> 1.2', require: false
+  gem 'mina-puma', require: false
+
+  # For Ruby syntax formatting
   gem 'rubocop', require: false
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+
+  # For annotating models with schemas
+  gem 'annotate', require: false
 end
 
-group :production do
-  gem 'puma', '~> 3.7'
-end
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 4.0'
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'

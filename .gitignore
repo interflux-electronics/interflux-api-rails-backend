@@ -7,12 +7,20 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
+/shared/log/*
+/shared/pids/*
+/shared/sockets/*
 !/log/.keep
 !/tmp/.keep
+!/shared/log/.keep
+!/shared/pids/.keep
+!/shared/sockets/.keep
 
 .byebug_history
-.DS_Store
-.rbenv-vars
