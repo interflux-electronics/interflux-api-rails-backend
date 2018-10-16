@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
-ruby '2.5.1'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?('/')
-  "https://github.com/#{repo_name}.git"
-end
+ruby '2.4.1'
 
 # Ruby on Rails framework
 gem 'rails', '~> 5.1.6'
@@ -19,7 +15,11 @@ gem 'pg'
 # https://github.com/Netflix/fast_jsonapi
 gem 'fast_jsonapi'
 
-# For dumping database data into a YAML
+# For handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# https://github.com/cyu/rack-cors
+# gem 'rack-cors'
+
+# For dumping database data into a YAML file
 # https://github.com/yamldb/yaml_dbrai
 gem 'yaml_db'
 
@@ -35,6 +35,10 @@ group :development do
   # For listening to file changes
   gem 'listen', '>= 3.0.5', '< 3.2'
 
+  # For deploying code to remote servers
+  gem 'mina', '~> 1.2', require: false
+  gem 'mina-puma', require: false
+
   # For Ruby syntax formatting
   gem 'rubocop', require: false
 
@@ -47,9 +51,3 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'

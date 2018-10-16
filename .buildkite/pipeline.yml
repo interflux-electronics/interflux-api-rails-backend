@@ -1,3 +1,31 @@
 steps:
-  - name: ":rails:"
-    command: "bundle install && rake db:create && rails test"
+  - name: ":package:"
+    env:
+      RAILS_ENV: "test"
+    command:
+      - "bundle install"
+      - "rake db:create"
+      - "rake db:migrate"
+    timeout_in_minutes: 10
+
+  - wait
+
+  - name: ":rubocop:"
+    command:
+      - "rubocop"
+    timeout_in_minutes: 10
+
+  - wait
+
+  - name: ":ruby:"
+    command:
+      - "rails test"
+    timeout_in_minutes: 10
+
+  - wait
+
+  - name: ":rocket:"
+    branches: "production"
+    command:
+      - "mina deploy"
+    timeout_in_minutes: 10

@@ -18,13 +18,58 @@ Build status:
 
 ## Get started
 
+1. Make sure you have `rbenv` for Ruby version control:
 ```
-git clone git@github.com:janwerkhoven/api.interflux.com.git ~/Code/api.interflux.com
+rbenv versions
 ```
+
+2. Clone the project:
 ```
-bundle install;
+git clone git@github.com:janwerkhoven/api.interflux.com.git .
+cd api.interflux.com
+```
+
+3. Install:
+```
+gem install bundler
+rbenv rehash
+bundle install
 rake db:create;
 rake db:migrate;
-env RAILS_ENV=test;
-rake db:migrate
+rails s
+```
+
+4. Code away!
+
+## From feature to deploy flow
+
+1. `git checkout master`
+2. `git pull`
+3. `git checkout -b feature/...`
+4. `git push -u origin feature/...`
+5. `git pull-request -b master -m "One good PR name"`
+6. Open the PR, make all tests pass, merge to `master`.
+7. Create a new PR from `master` to `production`
+8. Name the PR "Release - Meaningful something"
+9. Merge into `production`
+10. After all tests pass in Buildkite, Mina will deploy to the production server.
+
+## Manual deploy to remote
+
+```
+mina deploy
+```
+
+## Manually control the remote Puma
+
+```
+mina puma:stop
+mina puma:start
+```
+
+## Test whether API is up:
+
+Should throw JSON 404 error:
+```
+curl https://api.interflux.com/unknown
 ```
