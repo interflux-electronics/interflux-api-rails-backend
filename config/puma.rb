@@ -13,10 +13,10 @@ threads 0, 5
 bind 'tcp://0.0.0.0:3000'
 bind 'unix://shared/sockets/puma.sock'
 
-pidfile 'shared/pids/puma.pid'
-state_path 'shared/pids/puma.state'
-stdout_redirect 'shared/log/puma.stdout.log', 'shared/log/puma.stderr.log', true
-activate_control_app 'unix://shared/sockets/pumactl.sock', no_token: true
+pidfile 'tmp/pids/puma.pid'
+state_path 'tmp/pids/puma.state'
+stdout_redirect 'log/puma.stdout.log', 'log/puma.stderr.log', true
+activate_control_app 'unix://tmp/sockets/pumactl.sock', no_token: true
 
 daemonize true
 

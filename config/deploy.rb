@@ -1,30 +1,28 @@
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rbenv' # for rbenv support. (https://rbenv.org)
-
-# Basic settings:
-#   domain       - The hostname to SSH to.
-#   deploy_to    - Path to deploy into.
-#   repository   - Git repo to clone from. (needed by mina/git)
-#   branch       - Branch name to deploy. (needed by mina/git)
+require 'mina/puma'
+require 'mina/rbenv'
 
 set :application_name, 'Interflux API'
-set :user, 'jw'
-set :domain, 'api.interflux.com'
-set :deploy_to, '/var/www/api.interflux.com'
-set :repository, 'git@github.com:janwerkhoven/api.interflux.com.git'
-set :branch, 'feature/mina-deploy-pipeline'
 
-# Optional settings:
-#   set :user, 'foobar'          # Username in the server to SSH to.
-#   set :port, '30000'           # SSH port number.
-#   set :forward_agent, true     # SSH forward_agent.
+set :user, 'jw' # Username in the server to SSH to
+set :domain, 'api.interflux.com' # The hostname to SSH to
+set :deploy_to, '/var/www/api.interflux.com' # Path to deploy into
+set :repository, 'git@github.com:janwerkhoven/api.interflux.com.git' # Git repo to clone from
+set :branch, 'feature/mina-deploy-pipeline' # Git branch to deploy
 
 # Shared dirs and files will be symlinked into the app-folder by the 'deploy:link_shared_paths' step.
 # Some plugins already add folders to shared_dirs like `mina/rails` add `public/assets`, `vendor/bundle` and many more
 # run `mina -d` to see all folders and files already included in `shared_dirs` and `shared_files`
-# set :shared_dirs, fetch(:shared_dirs, []).push('public/assets')
-# set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/secrets.yml')
+set :shared_dirs, fetch(:shared_dirs, []).push('public/assets', 'tmp/pids', 'tmp/sockets', 'tmp/cache')
+set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/secrets.yml')
+
+# Puma
+# https://github.com/sandelius/mina-puma
+set :puma_socket, 'shared/tmp/sockets/puma.sock'
+set :puma_pid, 'shared/tmp/pids/puma.pid'
+set :puma_state, 'shared/tmp/sockets/puma.state'
+set :pumactl_socket, 'shared/tmp/sockets/pumactl.sock'
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
@@ -32,36 +30,36 @@ task :remote_environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
   invoke :'rbenv:load'
-
-  # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use', 'ruby-1.9.3-p125@default'
 end
 
 # Put any custom commands you need to run at setup
 # All paths in `shared_dirs` and `shared_paths` will be created on their own.
 task :setup do
+  # Install the right version of Ruby with rbenv, skip if already exists
   command %(rbenv install 2.4.1 --skip-existing)
+
+  # Puma needs a place to store its pid file and socket file.
+  queue! %(mkdir -p "#{deploy_to}/#{shared_path}/tmp/sockets")
+  queue! %(chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp/sockets")
+  queue! %(mkdir -p "#{deploy_to}/#{shared_path}/tmp/pids")
+  queue! %(chmod g+rx,u+rwx "#{deploy_to}/#{shared_path}/tmp/pids")
 end
 
 desc 'Deploys the current version to the server.'
 task :deploy do
-  # uncomment this line to make sure you pushed your local branch to the remote origin
+  # Verify you pushed your local to the remote origin
   invoke :'git:ensure_pushed'
+
+  # All commands to turn an empty folder into a fully set up app
   deploy do
-    # Put things that will set up an empty directory into a fully set-up
-    # instance of your project.
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'rails:db_migrate'
-    # invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
     on :launch do
-      in_path(fetch(:current_path)) do
-        command %(mkdir -p tmp/)
-        command %(touch tmp/restart.txt)
-      end
+      invoke :'puma:phased_restart'
     end
   end
 
