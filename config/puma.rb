@@ -11,12 +11,12 @@ workers 2
 threads 0, 5
 
 bind 'tcp://0.0.0.0:3000'
-bind 'unix://shared/sockets/puma.sock'
+bind 'unix:///var/www/api.interflux.com/shared/sockets/puma.sock'
 
-pidfile 'tmp/pids/puma.pid'
-state_path 'tmp/pids/puma.state'
-stdout_redirect 'log/puma.stdout.log', 'log/puma.stderr.log', true
-activate_control_app 'unix://tmp/sockets/pumactl.sock', no_token: true
+pidfile '/var/www/api.interflux.com/shared/tmp/pids/puma.pid'
+state_path '/var/www/api.interflux.com/shared/tmp/pids/puma.state'
+stdout_redirect '/var/www/api.interflux.com/shared/log/puma.stdout.log', '/var/www/api.interflux.com/shared/log/puma.stderr.log', true
+activate_control_app 'unix:///var/www/api.interflux.com/shared/tmp/sockets/pumactl.sock', no_token: true
 
 daemonize true
 

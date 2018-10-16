@@ -19,10 +19,10 @@ set :shared_dirs, fetch(:shared_dirs, []).push('public/assets', 'tmp/pids', 'tmp
 
 # Puma
 # https://github.com/sandelius/mina-puma
-set :puma_socket, 'shared/tmp/sockets/puma.sock'
-set :puma_pid, 'shared/tmp/pids/puma.pid'
-set :puma_state, 'shared/tmp/sockets/puma.state'
-set :pumactl_socket, 'shared/tmp/sockets/pumactl.sock'
+set :puma_socket, '/var/www/api.interflux.com/shared/tmp/sockets/puma.sock'
+set :puma_pid, '/var/www/api.interflux.com/shared/tmp/pids/puma.pid'
+set :puma_state, '/var/www/api.interflux.com/shared/tmp/sockets/puma.state'
+set :pumactl_socket, '/var/www/api.interflux.com/shared/tmp/sockets/pumactl.sock'
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
