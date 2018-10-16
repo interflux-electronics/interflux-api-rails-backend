@@ -1,5 +1,5 @@
 steps:
-  - name: ":package: Prepare gems and database"
+  - name: ":package:"
     env:
       RAILS_ENV: "test"
     command:
@@ -10,22 +10,22 @@ steps:
 
   - wait
 
-  - name: ":rubocop: Lint Ruby syntax"
+  - name: ":rubocop:"
     command:
       - "rubocop"
     timeout_in_minutes: 10
 
   - wait
 
-  - name: ":ruby: Test Rails API"
+  - name: ":ruby:"
     command:
       - "rails test"
     timeout_in_minutes: 10
 
   - wait
 
-  - name: ":rocket: Deploy to production server"
+  - name: ":rocket:"
+    branches: "production"
     command:
       - "mina deploy"
     timeout_in_minutes: 10
-    branches: "production"
