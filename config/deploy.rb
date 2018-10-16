@@ -59,7 +59,10 @@ task :deploy do
     invoke :'deploy:cleanup'
 
     on :launch do
-      invoke :'puma:restart'
+      comment 'Stopping Puma ...'
+      invoke :'puma:stop'
+      comment 'Starting Puma ...'
+      invoke :'puma:start'
     end
   end
 
