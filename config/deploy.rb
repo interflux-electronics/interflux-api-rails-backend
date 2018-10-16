@@ -9,7 +9,7 @@ set :user, 'jw' # Username in the server to SSH to
 set :domain, 'api.interflux.com' # The hostname to SSH to
 set :deploy_to, '/var/www/api.interflux.com' # Path to deploy into
 set :repository, 'git@github.com:janwerkhoven/api.interflux.com.git' # Git repo to clone from
-set :branch, 'feature/mina-deploy-pipeline' # Git branch to deploy
+set :branch, 'production' # Git branch to deploy
 
 # Shared dirs and files will be symlinked into the app-folder by the 'deploy:link_shared_paths' step.
 # Some plugins already add folders to shared_dirs like `mina/rails` add `public/assets`, `vendor/bundle` and many more

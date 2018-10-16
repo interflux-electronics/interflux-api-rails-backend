@@ -8,7 +8,7 @@ module Errors
   end
 
   def route_not_found
-    render_error(404, 'route-not-found', 'This route does not exist in Rails. Check `config/routes.rb` whether it exists and whether you added the hyphenated path.')
+    render_error(404, 'route-not-found', 'This route does not exist in Rails. Please check `config/routes.rb` whether it exists and whether you added the hyphenated path.')
   end
 
   # Wraps a single error in JSON API format
