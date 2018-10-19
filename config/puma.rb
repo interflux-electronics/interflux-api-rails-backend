@@ -11,7 +11,7 @@ workers 2
 threads 0, 5
 
 bind 'tcp://0.0.0.0:3000'
-bind 'unix:///var/www/api.interflux.com/shared/sockets/puma.sock'
+bind 'unix:///var/www/api.interflux.com/shared/tmp/sockets/puma.sock'
 
 pidfile '/var/www/api.interflux.com/shared/tmp/pids/puma.pid'
 state_path '/var/www/api.interflux.com/shared/tmp/pids/puma.state'
