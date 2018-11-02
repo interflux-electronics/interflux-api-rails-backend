@@ -17,7 +17,7 @@ gem 'fast_jsonapi'
 
 # For handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # https://github.com/cyu/rack-cors
-# gem 'rack-cors'
+gem 'rack-cors', require: 'rack/cors'
 
 # For dumping database data into a YAML file
 # https://github.com/yamldb/yaml_dbrai
