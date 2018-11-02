@@ -47,12 +47,12 @@ module V1
         assert_equal data['id'], @belgium.id
         assert_equal data['attributes'].length, @attributes.length
         assert_equal data['attributes']['name'], 'Belgium'
-        assert_equal data['attributes']['native_name'], 'België'
+        assert_equal data['attributes']['native-name'], 'België'
         assert_equal data['attributes']['region'], 'Europe'
         assert_equal data['attributes']['subregion'], 'Western Europe'
-        assert_equal data['attributes']['alpha_2_code'], 'BE'
-        assert_equal data['attributes']['alpha_3_code'], 'BEL'
-        assert_equal data['attributes']['numeric_code'], '056'
+        assert_equal data['attributes']['alpha-2-code'], 'BE'
+        assert_equal data['attributes']['alpha-3-code'], 'BEL'
+        assert_equal data['attributes']['numeric-code'], '056'
         assert_equal data['attributes']['flag'], 'https://restcountries.eu/data/bel.svg'
         # TODO: assert_equal data['attributes']['latlng'], '50.83333333, 4.0'
         assert_equal data['attributes']['area'], '30528.0'
