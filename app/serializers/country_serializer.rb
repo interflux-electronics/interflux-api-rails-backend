@@ -23,7 +23,7 @@
 #  updated_at        :datetime         not null
 #
 
-class CountrySerializer
+class CountrySerializer < ApplicationSerializer
   include FastJsonapi::ObjectSerializer
 
   attributes :name,
