@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: leads
+#
+#  id         :uuid             not null, primary key
+#  name       :string
+#  company    :string
+#  email      :string
+#  mobile     :string
+#  message    :string
+#  purpose    :string
+#  source     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+one:
+  name: 'Mr Lead McLead Face'
+  company: 'Electronics Manufacturer Inc'
+  email: 'lead@manufacturer.com'
+  mobile: '+61 555 444 333'
+  purpose: 'Request LMPA demo'
+  message: 'Hello Interflux, please send me an LMPA expert.'
+  source: 'https://lmpa.interflux.com/en/request-free-demo'

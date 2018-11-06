@@ -28,8 +28,8 @@ module V1
 
       test 'Public users can fetch all countries' do
         get '/v1/public/countries', headers: public_header
-        data = JSON.parse(@response.body)['data']
         assert_response 200
+        data = JSON.parse(@response.body)['data']
         assert_equal Array, data.class
         assert_equal 248, data.length
         # TODO: For relationships:
@@ -41,8 +41,8 @@ module V1
 
       test 'Public users can fetch a single country by ID' do
         get "/v1/public/countries/#{@belgium.id}", headers: public_header
-        data = JSON.parse(@response.body)['data']
         assert_response 200
+        data = JSON.parse(@response.body)['data']
         assert_equal Hash, data.class
         assert_equal data['id'], @belgium.id
         assert_equal data['attributes'].length, @attributes.length
@@ -64,6 +64,11 @@ module V1
         # TODO: assert_equal data['attributes']['calling_codes'], '...'
         # assert_equal data['relationships']['parent-category']['data']['id'], product_categories('soldering_fluxes').id
         # assert_equal data['relationships'].length, 1
+      end
+
+      test 'Returns 422 for bogus IDs' do
+        get '/v1/public/countries/bogus-uuid', headers: public_header
+        assert_response 422
       end
 
       test 'Public users cannot create countries' do

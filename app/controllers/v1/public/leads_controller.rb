@@ -1,19 +1,19 @@
 module V1
   module Public
-    class CountriesController < ApplicationController
+    class LeadsController < ApplicationController
       include JsonApi
       include Errors
 
       def index
-        user_can_fetch_all
+        forbidden
       end
 
       def show
-        user_can_fetch_one
+        forbidden
       end
 
       def create
-        forbidden
+        user_can_create
       end
 
       def update
@@ -27,15 +27,23 @@ module V1
       private
 
       def resource_klass
-        Country
+        Lead
       end
 
       def serializer_klass
-        CountrySerializer
+        LeadSerializer
       end
 
       def attributes
-        %i[]
+        %i[
+          name
+          company
+          email
+          mobile
+          message
+          purpose
+          source
+        ]
       end
 
       def relationships

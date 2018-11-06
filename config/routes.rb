@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     #
     namespace :public do
       resources :countries
+      resources :leads
     end
     #
     # Admin endpoints
