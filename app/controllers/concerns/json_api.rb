@@ -46,8 +46,8 @@ module JsonApi
   #   json = serializer_klass.new(resources, options).serialized_json
   #   render status: 200, json: json
   # end
-
-  def user_can_fetch_all(resource_klass)
+  #
+  def user_can_fetch_all
     resources = resource_klass.all
     strong_filters&.each do |key, value|
       resources = resources.where("#{key.underscore}": value)
@@ -75,8 +75,8 @@ module JsonApi
   #   json = serializer_klass.new(resource, options).serialized_json
   #   render status: 200, json: json
   # end
-
-  def user_can_fetch_one(resource_klass)
+  #
+  def user_can_fetch_one
     resource = resource_klass.find_by_id(params[:id]) if params[:id]
     resource = resource_klass.find_by_slug(params[:slug]) if params[:slug]
     return resource_not_found if resource.nil?
@@ -85,6 +85,18 @@ module JsonApi
     options[:include] = strong_includes if strong_includes
     json = serializer_klass.new(resource, options).serialized_json
     render status: 200, json: json
+  end
+
+  # Create a resource
+  # POST /namespace/resources, params { foo: bar }
+  def user_can_create
+    resource = resource_klass.new(attributes_and_relationships)
+    if resource.save!
+      json = serializer_klass.new(resource).serialized_json
+      render status: 201, json: json
+    else
+      render status: 422, json: json_errors(resource)
+    end
   end
 
   private
