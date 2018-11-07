@@ -1,4 +1,0 @@
----
-pid: 27750
-control_url: unix://shared/tmp/sockets/pumactl.sock
-control_auth_token: :none
