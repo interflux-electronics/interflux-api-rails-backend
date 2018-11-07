@@ -23,6 +23,7 @@ module V1
           currencies
           top_level_domains
           calling_codes
+          country_code
         ]
       end
 
@@ -50,6 +51,7 @@ module V1
         assert_equal data['attributes']['native-name'], 'België'
         assert_equal data['attributes']['region'], 'Europe'
         assert_equal data['attributes']['subregion'], 'Western Europe'
+        assert_equal data['attributes']['country-code'], 'BE'
         assert_equal data['attributes']['alpha-2-code'], 'BE'
         assert_equal data['attributes']['alpha-3-code'], 'BEL'
         assert_equal data['attributes']['numeric-code'], '056'

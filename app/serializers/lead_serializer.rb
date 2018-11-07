@@ -25,4 +25,6 @@ class LeadSerializer < ApplicationSerializer
              :message,
              :purpose,
              :source
+
+  belongs_to :country
 end

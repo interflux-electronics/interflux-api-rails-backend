@@ -15,4 +15,5 @@
 #
 
 class Lead < ApplicationRecord
+  belongs_to :country
 end

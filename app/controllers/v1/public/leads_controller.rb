@@ -47,7 +47,9 @@ module V1
       end
 
       def relationships
-        %i[]
+        %i[
+          country_id
+        ]
       end
 
       def filters
