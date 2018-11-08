@@ -30,6 +30,11 @@ module ApiInterfluxCom
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
+    # Convert all incoming JSON to snake_case
+    # Convert all outgoing JSON to dasherized
+    # config.middleware.use OliveBranch::Middleware
+    config.middleware.use OliveBranch::Middleware, inflection: 'dash', content_type_check: ->(_content_type) { true }
+
     # Allow public endpoints to be hit from any origin (CORS)
     config.middleware.insert_before 0, Rack::Cors do
       allow do
