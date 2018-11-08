@@ -11,22 +11,27 @@ gem 'puma', '~> 3.7'
 # Postgress database
 gem 'pg'
 
-# For JSON API compliant serialisers
-# https://github.com/Netflix/fast_jsonapi
-gem 'fast_jsonapi'
-
 # For handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # https://github.com/cyu/rack-cors
 gem 'rack-cors', require: 'rack/cors'
+
+# Convert all incoming JSON to snake_case
+# Convert all outgoing JSON to dasherized
+# https://github.com/vigetlabs/olive_branch
+gem 'olive_branch'
+
+# For JSON API compliant serialisers
+# https://github.com/Netflix/fast_jsonapi
+gem 'fast_jsonapi'
 
 # For dumping database data into a YAML file
 # https://github.com/yamldb/yaml_dbrai
 gem 'yaml_db'
 
-group :development, :test do
-  # For coloured printing in byebug and console `ap`
-  gem 'awesome_print', require: 'ap'
+# For coloured printing in byebug and console `ap`
+gem 'awesome_print'
 
+group :development, :test do
   # For halting the code and debugging `byebug`
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
