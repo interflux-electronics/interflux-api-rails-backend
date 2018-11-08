@@ -1,8 +1,9 @@
 # Ignore some folders completely
 AllCops:
   Exclude:
-    - 'bin/**/*'
-    - 'legacy/**/*'
+    - bin/**/*
+    - legacy/**/*
+    - db/schema.rb
 
 # Always attempt to keep all of the things as short as possible
 # However, to pedantically put a fixed number on what is acceptable is just not productive
