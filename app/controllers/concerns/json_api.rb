@@ -132,18 +132,20 @@ module JsonApi
     # The keys are underscored for later use when creating / updating the resource.
     # The values are strong IDs grabbed from the JSON API structured package.
     nested_array = relationships.collect do |key|
-      json_key = key.to_s.chomp('_id').dasherize
+      # json_key = key.to_s.chomp('_id').dasherize
+      # json_key = key.to_s.chomp('_id')
       id = params
            .require(:data)
            .require(:relationships)
-           .require(json_key)
+           .require(key)
            .require(:data)
            .permit(
              :id,
              :type
            )
            .fetch(:id)
-      [key, id]
+      long_key = "#{key}_id"
+      [long_key, id]
     end
     # Then we convert the array into a hash and return it.
     # Example: {:main_category=>"d6461197-e618-5502-95a5-1e171f8f71e9", :sub_category=>"8147cd48-12b6-500e-a001-d80288d644f1"}

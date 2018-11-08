@@ -1,6 +1,6 @@
 # Ignore some folders completely
 AllCops:
-  Excludes:
+  Exclude:
     - bin/**/*
     - legacy/**/*
     - db/schema.rb

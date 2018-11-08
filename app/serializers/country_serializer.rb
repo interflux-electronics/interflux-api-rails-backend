@@ -3,22 +3,22 @@
 # Table name: countries
 #
 #  id                :uuid             not null, primary key
-#  name              :string
-#  native_name       :string
-#  region            :string
-#  subregion         :string
-#  alpha_2_code      :string
-#  alpha_3_code      :string
-#  numeric_code      :string
-#  flag              :string
-#  latlng            :string
+#  name              :text
+#  native_name       :text
+#  region            :text
+#  subregion         :text
+#  alpha_2_code      :text
+#  alpha_3_code      :text
+#  numeric_code      :text
+#  flag              :text
+#  latlng            :text
 #  area              :decimal(, )
 #  population        :decimal(, )
-#  languages         :string
-#  timezones         :string
-#  currencies        :string
-#  top_level_domains :string
-#  calling_codes     :string
+#  languages         :text
+#  timezones         :text
+#  currencies        :text
+#  top_level_domains :text
+#  calling_codes     :text
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
