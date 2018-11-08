@@ -24,7 +24,11 @@ class LeadSerializer < ApplicationSerializer
              :mobile,
              :message,
              :purpose,
-             :source
+             :source,
+             :ip,
+             :ip_region,
+             :ip_city
 
   belongs_to :country
+  belongs_to :ip_country
 end

@@ -43,12 +43,16 @@ module V1
           message
           purpose
           source
+          ip
+          ip_region
+          ip_city
         ]
       end
 
       def relationships
         %i[
-          country_id
+          country
+          ip_country
         ]
       end
 

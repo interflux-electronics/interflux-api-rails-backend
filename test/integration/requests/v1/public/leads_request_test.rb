@@ -6,6 +6,7 @@ module V1
       def setup
         @lead_one = leads('one')
         @belgium = countries('Belgium')
+        @australia = countries('Australia')
       end
 
       test 'Public users can fetch all countries' do
@@ -29,13 +30,22 @@ module V1
               mobile: '+61 424 787 652',
               purpose: 'Request LMPA demo',
               message: 'Hello Interflux, please send me your best LMPA expert.',
-              source: 'https://lmpa.interflux.com/en/request-free-demo'
+              source: 'https://lmpa.interflux.com/en/request-free-demo',
+              ip: '123.123.123.123',
+              'ip-region': 'Victoria',
+              'ip-city': 'Melbourne'
             },
             relationships: {
               'country': {
                 data: {
                   type: 'country',
                   id: @belgium.id
+                }
+              },
+              'ip-country': {
+                data: {
+                  type: 'country',
+                  id: @australia.id
                 }
               }
             }
@@ -55,8 +65,11 @@ module V1
         assert_equal response['attributes']['purpose'], 'Request LMPA demo'
         assert_equal response['attributes']['message'], 'Hello Interflux, please send me your best LMPA expert.'
         assert_equal response['attributes']['source'], 'https://lmpa.interflux.com/en/request-free-demo'
-        assert_equal response['attributes']['source'], 'https://lmpa.interflux.com/en/request-free-demo'
+        assert_equal response['attributes']['ip'], '123.123.123.123'
+        assert_equal response['attributes']['ip-region'], 'Victoria'
+        assert_equal response['attributes']['ip-city'], 'Melbourne'
         assert_equal response['relationships']['country']['data']['id'], @belgium.id
+        assert_equal response['relationships']['ip-country']['data']['id'], @australia.id
         assert_equal new_record.country.id, @belgium.id
         assert_equal new_record.country.name, @belgium.name
       end
