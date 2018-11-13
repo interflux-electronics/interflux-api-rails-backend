@@ -5,7 +5,7 @@ require 'mina/rbenv'
 
 set :application_name, 'Interflux API'
 
-set :user, 'jw' # Username in the server to SSH to
+set :user, 'deploy' # Username in the server to SSH to
 set :domain, 'api.interflux.com' # The hostname to SSH to
 set :deploy_to, '/var/www/api.interflux.com' # Path to deploy into
 set :repository, 'git@github.com:janwerkhoven/api.interflux.com.git' # Git repo to clone from

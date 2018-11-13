@@ -74,6 +74,46 @@ module V1
         assert_equal new_record.country.name, @belgium.name
       end
 
+      test 'Public users can submit empty messages and missing IP meta data' do
+        json = {
+          data: {
+            type: 'products',
+            attributes: {
+              name: nil,
+              company: nil,
+              email: nil,
+              mobile: nil,
+              purpose: 'Request LMPA demo',
+              message: nil,
+              source: 'https://lmpa.interflux.com/en/request-free-demo',
+              ip: nil,
+              'ip-region': nil,
+              'ip-city': nil
+            }
+          }
+        }
+        assert_equal Lead.count, 1
+        post '/v1/public/leads', params: json, headers: public_header
+        assert_response 201
+        assert_equal Lead.count, 2
+        response = JSON.parse(@response.body)['data']
+        refute_empty response['id']
+        assert_equal 11, response['attributes'].count
+        assert_nil response['attributes']['name']
+        assert_nil response['attributes']['company']
+        assert_nil response['attributes']['email']
+        assert_nil response['attributes']['mobile']
+        assert_equal 'Request LMPA demo', response['attributes']['purpose']
+        assert_nil response['attributes']['message']
+        assert_equal 'https://lmpa.interflux.com/en/request-free-demo', response['attributes']['source']
+        assert_nil response['attributes']['ip']
+        assert_nil response['attributes']['ip-region']
+        assert_nil response['attributes']['ip-city']
+        assert_equal 2, response['relationships'].count
+        assert_nil response['relationships']['country']['data']
+        assert_nil response['relationships']['ip-country']['data']
+      end
+
       test 'Public users cannot update countries' do
         put "/v1/public/countries/#{@lead_one.id}", headers: public_header
         assert_response 403
