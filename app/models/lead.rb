@@ -20,6 +20,6 @@
 #
 
 class Lead < ApplicationRecord
-  belongs_to :country
-  belongs_to :ip_country, class_name: 'Country', foreign_key: 'ip_country_id'
+  belongs_to :country, optional: true
+  belongs_to :ip_country, class_name: 'Country', foreign_key: 'ip_country_id', optional: true
 end
