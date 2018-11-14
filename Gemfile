@@ -33,7 +33,7 @@ gem 'awesome_print'
 
 group :development, :test do
   # For halting the code and debugging `byebug`
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug', '~> 10.0'
 end
 
 group :development do
