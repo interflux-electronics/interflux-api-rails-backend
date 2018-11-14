@@ -92,6 +92,7 @@ module JsonApi
   def user_can_create
     resource = resource_klass.new(attributes_and_relationships)
     if resource.save!
+      after_create(resource)
       json = serializer_klass.new(resource).serialized_json
       render status: 201, json: json
     else
@@ -182,5 +183,9 @@ module JsonApi
   def render_response(status, record, serializer)
     json = serializer.new(record).serialized_json
     render status: status, json: json
+  end
+
+  def after_create
+    nil
   end
 end
