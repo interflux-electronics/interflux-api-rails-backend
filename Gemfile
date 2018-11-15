@@ -12,29 +12,22 @@ gem 'puma', '~> 3.7'
 gem 'pg'
 
 # For handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# https://github.com/cyu/rack-cors
 gem 'rack-cors', require: 'rack/cors'
 
-# Convert all incoming JSON to snake_case
-# Convert all outgoing JSON to dasherized
-# https://github.com/vigetlabs/olive_branch
+# For converting all incoming JSON to snake_case and outgoing JSON to dashes
 gem 'olive_branch'
 
 # For JSON API compliant serialisers
-# https://github.com/Netflix/fast_jsonapi
 gem 'fast_jsonapi'
-
-# For dumping database data into a YAML file
-# https://github.com/yamldb/yaml_dbrai
-gem 'yaml_db'
 
 # For coloured printing in byebug and console `ap`
 gem 'awesome_print'
 
-group :development, :test do
-  # For halting the code and debugging `byebug`
-  gem 'byebug', '~> 10.0'
-end
+# For halting the code and debugging `byebug`
+gem 'byebug', '~> 10.0', groups: %i[development test]
+
+# For dumping database data into a YAML file
+gem 'yaml_db'
 
 group :development do
   # For listening to file changes
@@ -56,3 +49,6 @@ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# For mocking and asserting HTTP requests in tests
+# gem 'webmock', '~> 3.4', group: :test
