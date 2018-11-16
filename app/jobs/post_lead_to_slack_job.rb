@@ -11,6 +11,8 @@ class PostLeadToSlackJob < ApplicationJob
 
   private
 
+  attr_reader :lead
+
   def data
     {
       "username": 'Interflux Bot',
@@ -20,20 +22,20 @@ class PostLeadToSlackJob < ApplicationJob
       "attachments": [{
         'text': [
           '*Message*',
-          "#{attempt(@lead.message)}\n",
+          "#{attempt(lead.message)}\n",
           '*Sent by*',
-          "Name: #{@lead.name || '?'}",
-          "Company: #{@lead.company || '?'}",
+          "Name: #{lead.name || '?'}",
+          "Company: #{lead.company || '?'}",
           "Country: #{lead_country_name}",
-          "Mobile: #{attempt(@lead.mobile)}",
-          "Email: #{attempt(@lead.email)}\n",
+          "Mobile: #{attempt(lead.mobile)}",
+          "Email: #{attempt(lead.email)}\n",
           '*Sent from*',
-          "IP: #{attempt(@lead.ip)} (#{attempt(@lead.ip_city)}, #{attempt(@lead.ip_region)}, #{ip_country_name})",
-          "URL: #{attempt(@lead.source)}"
+          "IP: #{attempt(lead.ip)} (#{attempt(lead.ip_city)}, #{attempt(lead.ip_region)}, #{ip_country_name})",
+          "URL: #{attempt(lead.source)}"
         ].join("\n"),
         "color": '#7CD197',
         "mrkdwn_in": ['text'],
-        "ts": @lead.created_at.to_time.to_i
+        "ts": lead.created_at.to_time.to_i
       }]
     }.to_json
   end
@@ -45,14 +47,14 @@ class PostLeadToSlackJob < ApplicationJob
   end
 
   def lead_country_name
-    return '?' if @lead.country.nil?
+    return '?' if lead.country.nil?
 
-    @lead.country.name
+    lead.country.name
   end
 
   def ip_country_name
-    return '?' if @lead.ip_country.nil?
+    return '?' if lead.ip_country.nil?
 
-    @lead.ip_country.name
+    lead.ip_country.name
   end
 end
