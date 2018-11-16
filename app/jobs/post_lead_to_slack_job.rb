@@ -6,7 +6,7 @@ class PostLeadToSlackJob < ApplicationJob
 
   def perform(lead)
     @lead = lead
-    SlackService.new('#website-leads', data).post
+    PostToSlack.new('#website-leads', data).call
   end
 
   private

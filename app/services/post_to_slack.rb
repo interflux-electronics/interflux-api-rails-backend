@@ -18,7 +18,7 @@
 # Manual test:
 # curl -X POST -H 'Content-type: application/json' --data '{"text":"Hello, World!"}' https://hooks.slack.com/services/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
 #
-class SlackService
+class PostToSlack
   require 'net/http'
 
   def initialize(channel, data)
@@ -26,15 +26,15 @@ class SlackService
     @data = data
   end
 
-  def post
-    post_data_to_channel
+  def call
+    post_message_to_channel
   end
 
   private
 
   attr_reader :channel, :data
 
-  def post_data_to_channel
+  def post_message_to_channel
     response = Net::HTTP.post uri, data, headers
 
     print(response) if Rails.env == 'development'
