@@ -45,7 +45,8 @@ class PostToSlack
   end
 
   def url
-    return leads_channel_url if channel == '#website-leads' && Rails.env == 'production'
+    # Temporarily
+    # return leads_channel_url if channel == '#website-leads' && Rails.env == 'production'
 
     dm_jan_url
   end
