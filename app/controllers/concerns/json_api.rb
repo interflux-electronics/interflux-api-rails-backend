@@ -2,7 +2,7 @@ module JsonApi
   extend ActiveSupport::Concern
 
   # Below we make sure all controller actions return a JSON API compliant
-  # 403 forbidden, unless specified otherwise in the relevant controller.
+  # 403 forbidden, unless overwritten by the controller invoking this concern.
 
   def index
     forbidden
@@ -61,7 +61,7 @@ module JsonApi
   # Return a single resource
   # GET /namespace/route/:uuid
   # GET /namespace/route/?slug=:slug
-  # Note: For human and SEO we avoid embedding UUIDs in URLs. Instead we use
+  # Note: For humans and SEO we avoid embedding UUIDs in URLs. Instead we use
   # hyphenated strings referred to as slugs. These slugs are the only bit of
   # information the front-end can send to the API to fetch a resource. Given
   # these are unique in every table, we can use them for for finding resources
@@ -92,6 +92,7 @@ module JsonApi
   def user_can_create
     resource = resource_klass.new(attributes_and_relationships)
     if resource.save!
+      after_create(resource)
       json = serializer_klass.new(resource).serialized_json
       render status: 201, json: json
     else
@@ -127,25 +128,29 @@ module JsonApi
   # end
   # ```
   def strong_relationships
+    # TODO: Clean up this mess
+    params['data']['relationships']
     # First we convert the array into  we convert `relationships` into a nested array like:
     # [[:main_category, "d6461197-e618-5502-95a5-1e171f8f71e9"], [:sub_category, "8147cd48-12b6-500e-a001-d80288d644f1"]]
     # The keys are underscored for later use when creating / updating the resource.
     # The values are strong IDs grabbed from the JSON API structured package.
     nested_array = relationships.collect do |key|
-      # json_key = key.to_s.chomp('_id').dasherize
-      # json_key = key.to_s.chomp('_id')
-      id = params
-           .require(:data)
-           .require(:relationships)
-           .require(key)
-           .require(:data)
-           .permit(
-             :id,
-             :type
-           )
-           .fetch(:id)
-      long_key = "#{key}_id"
-      [long_key, id]
+      db_key = "#{key}_id"
+      id = nil
+      relationship_exists = params['data']['relationships'] && params['data']['relationships'][key]
+      if relationship_exists
+        id = params
+             .require(:data)
+             .require(:relationships)
+             .require(key)
+             .require(:data)
+             .permit(
+               :id,
+               :type
+             )
+             .fetch(:id)
+      end
+      [db_key, id]
     end
     # Then we convert the array into a hash and return it.
     # Example: {:main_category=>"d6461197-e618-5502-95a5-1e171f8f71e9", :sub_category=>"8147cd48-12b6-500e-a001-d80288d644f1"}
@@ -178,5 +183,9 @@ module JsonApi
   def render_response(status, record, serializer)
     json = serializer.new(record).serialized_json
     render status: status, json: json
+  end
+
+  def after_create
+    nil
   end
 end

@@ -63,6 +63,10 @@ module V1
       def includes
         %i[]
       end
+
+      def after_create(lead)
+        PostLeadToSlackJob.perform_later lead
+      end
     end
   end
 end

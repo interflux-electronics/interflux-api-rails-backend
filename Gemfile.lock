@@ -159,7 +159,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   awesome_print
-  byebug
+  byebug (~> 10.0)
   fast_jsonapi
   listen (>= 3.0.5, < 3.2)
   mina (~> 1.2)

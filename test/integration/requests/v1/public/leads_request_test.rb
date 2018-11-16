@@ -3,8 +3,10 @@ require 'test_helper'
 module V1
   module Public
     class LeadsRequestTest < ActionDispatch::IntegrationTest
+      include ActiveJob::TestHelper
+
       def setup
-        @lead_one = leads('one')
+        @lead = leads('complete')
         @belgium = countries('Belgium')
         @australia = countries('Australia')
       end
@@ -15,11 +17,11 @@ module V1
       end
 
       test 'Public users can fetch a single country by ID' do
-        get "/v1/public/leads/#{@lead_one.id}", headers: public_header
+        get "/v1/public/leads/#{@lead.id}", headers: public_header
         assert_response 403
       end
 
-      test 'Public users can create leads' do
+      test 'Public users can create complete leads' do
         json = {
           data: {
             type: 'products',
@@ -28,8 +30,8 @@ module V1
               company: 'Interflux Electronics',
               email: 'j.werkhoven@interflux.com',
               mobile: '+61 424 787 652',
-              purpose: 'Request LMPA demo',
-              message: 'Hello Interflux, please send me your best LMPA expert.',
+              purpose: 'Requesting LMPA demo',
+              message: 'Hello Interflux, please send me your best LMPA expert. We are much interested in soldering with lower temperatures but first need to see your product work on our production line.',
               source: 'https://lmpa.interflux.com/en/request-free-demo',
               ip: '123.123.123.123',
               'ip-region': 'Victoria',
@@ -51,36 +53,84 @@ module V1
             }
           }
         }
-        assert_equal Lead.count, 1
+        assert_equal 2, Lead.count
+        assert_enqueued_jobs 0
+
         post '/v1/public/leads', params: json, headers: public_header
+
         assert_response 201
-        assert_equal Lead.count, 2
+        assert_equal 3, Lead.count
         new_record = Lead.where(name: 'Jan Werkhoven').first
         response = JSON.parse(@response.body)['data']
-        assert_equal response['id'], new_record.id, 'The response includes the ID of the created lead (important)'
-        assert_equal response['attributes']['name'], 'Jan Werkhoven'
-        assert_equal response['attributes']['company'], 'Interflux Electronics'
-        assert_equal response['attributes']['email'], 'j.werkhoven@interflux.com'
-        assert_equal response['attributes']['mobile'], '+61 424 787 652'
-        assert_equal response['attributes']['purpose'], 'Request LMPA demo'
-        assert_equal response['attributes']['message'], 'Hello Interflux, please send me your best LMPA expert.'
-        assert_equal response['attributes']['source'], 'https://lmpa.interflux.com/en/request-free-demo'
-        assert_equal response['attributes']['ip'], '123.123.123.123'
-        assert_equal response['attributes']['ip-region'], 'Victoria'
-        assert_equal response['attributes']['ip-city'], 'Melbourne'
-        assert_equal response['relationships']['country']['data']['id'], @belgium.id
-        assert_equal response['relationships']['ip-country']['data']['id'], @australia.id
-        assert_equal new_record.country.id, @belgium.id
-        assert_equal new_record.country.name, @belgium.name
+        refute_empty response['id']
+        assert_equal 'Jan Werkhoven', response['attributes']['name']
+        assert_equal 'Interflux Electronics', response['attributes']['company']
+        assert_equal 'j.werkhoven@interflux.com', response['attributes']['email']
+        assert_equal '+61 424 787 652', response['attributes']['mobile']
+        assert_equal 'Requesting LMPA demo', response['attributes']['purpose']
+        assert_equal 'Hello Interflux, please send me your best LMPA expert. We are much interested in soldering with lower temperatures but first need to see your product work on our production line.', response['attributes']['message']
+        assert_equal 'https://lmpa.interflux.com/en/request-free-demo', response['attributes']['source']
+        assert_equal '123.123.123.123', response['attributes']['ip']
+        assert_equal 'Victoria', response['attributes']['ip-region']
+        assert_equal 'Melbourne', response['attributes']['ip-city']
+        assert_equal @belgium.id, response['relationships']['country']['data']['id']
+        assert_equal @australia.id, response['relationships']['ip-country']['data']['id']
+        assert_equal @belgium.id, new_record.country.id
+        assert_equal @belgium.name, new_record.country.name
+        assert_enqueued_jobs 1, only: PostLeadToSlackJob
+      end
+
+      test 'Public users can create incomplete leads' do
+        json = {
+          data: {
+            type: 'products',
+            attributes: {
+              name: nil,
+              company: nil,
+              email: nil,
+              mobile: nil,
+              purpose: 'Requesting LMPA demo',
+              message: nil,
+              source: 'https://lmpa.interflux.com/en/request-free-demo',
+              ip: nil,
+              'ip-region': nil,
+              'ip-city': nil
+            }
+          }
+        }
+        assert_equal 2, Lead.count
+        assert_enqueued_jobs 0
+
+        post '/v1/public/leads', params: json, headers: public_header
+
+        assert_response 201
+        assert_equal 3, Lead.count
+        response = JSON.parse(@response.body)['data']
+        refute_empty response['id']
+        assert_equal 11, response['attributes'].count
+        assert_nil response['attributes']['name']
+        assert_nil response['attributes']['company']
+        assert_nil response['attributes']['email']
+        assert_nil response['attributes']['mobile']
+        assert_equal 'Requesting LMPA demo', response['attributes']['purpose']
+        assert_nil response['attributes']['message']
+        assert_equal 'https://lmpa.interflux.com/en/request-free-demo', response['attributes']['source']
+        assert_nil response['attributes']['ip']
+        assert_nil response['attributes']['ip-region']
+        assert_nil response['attributes']['ip-city']
+        assert_equal 2, response['relationships'].count
+        assert_nil response['relationships']['country']['data']
+        assert_nil response['relationships']['ip-country']['data']
+        assert_enqueued_jobs 1, only: PostLeadToSlackJob
       end
 
       test 'Public users cannot update countries' do
-        put "/v1/public/countries/#{@lead_one.id}", headers: public_header
+        put "/v1/public/countries/#{@lead.id}", headers: public_header
         assert_response 403
       end
 
       test 'Public users cannot delete countries' do
-        delete "/v1/public/countries/#{@lead_one.id}", headers: public_header
+        delete "/v1/public/countries/#{@lead.id}", headers: public_header
         assert_response 403
       end
     end

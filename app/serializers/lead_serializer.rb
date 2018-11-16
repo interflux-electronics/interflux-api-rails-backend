@@ -35,5 +35,5 @@ class LeadSerializer < ApplicationSerializer
              :ip_city
 
   belongs_to :country
-  belongs_to :ip_country
+  belongs_to :ip_country, record_type: :country
 end
