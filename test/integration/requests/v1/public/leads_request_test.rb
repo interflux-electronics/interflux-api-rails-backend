@@ -11,7 +11,7 @@ module V1
         @australia = countries('Australia')
       end
 
-      test 'Public users can fetch all countries' do
+      test 'Public users can fetch all leads' do
         get '/v1/public/leads', headers: public_header
         assert_response 403
       end
@@ -124,13 +124,13 @@ module V1
         assert_enqueued_jobs 1, only: PostLeadToSlackJob
       end
 
-      test 'Public users cannot update countries' do
-        put "/v1/public/countries/#{@lead.id}", headers: public_header
+      test 'Public users cannot update leads' do
+        put "/v1/public/leads/#{@lead.id}", headers: public_header
         assert_response 403
       end
 
-      test 'Public users cannot delete countries' do
-        delete "/v1/public/countries/#{@lead.id}", headers: public_header
+      test 'Public users cannot delete leads' do
+        delete "/v1/public/leads/#{@lead.id}", headers: public_header
         assert_response 403
       end
     end
