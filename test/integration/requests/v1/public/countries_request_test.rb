@@ -2,11 +2,63 @@ require 'test_helper'
 
 module V1
   module Public
-    class CountriesRequestTest < ActionDispatch::IntegrationTest
-      def setup
-        @belgium = countries('Belgium')
-        @australia = countries('Australia')
-        @attributes = %i[
+    class CountriesRequestTest < V1::IntegrationTest
+      # Public users should be able to fetch all countries
+      test '1' do
+        assert_can_fetch_all true, 248
+      end
+
+      # Public users should be able to fetch one country by ID
+      test '2' do
+        assert_can_fetch_one_by_id true
+      end
+
+      # Public users should NOT be able to fetch one country by slug
+      test '3' do
+        assert_can_fetch_one_by_slug false
+      end
+
+      # Public users should NOT be able to create countries
+      test '4' do
+        assert_can_create false
+      end
+
+      # Public users should NOT be able to update countries
+      test '5' do
+        assert_can_update false
+      end
+
+      # Public users should NOT be able to delete countries
+      test '6' do
+        assert_can_delete false
+      end
+
+      # Fetching bogus IDs should return 404
+      test '7' do
+        assert_cannot_fetch_bogus_id
+      end
+
+      # Fetching bogus slugs should return 404
+      test '8' do
+        assert_cannot_fetch_bogus_slug
+      end
+
+      private
+
+      def path
+        '/v1/public/countries'
+      end
+
+      def headers
+        public_header
+      end
+
+      def test_fixture
+        countries('Belgium')
+      end
+
+      def expected_attributes
+        %i[
           name
           native_name
           region
@@ -27,65 +79,10 @@ module V1
         ]
       end
 
-      test 'Public users can fetch all countries' do
-        get '/v1/public/countries', headers: public_header
-        assert_response 200
-        data = JSON.parse(@response.body)['data']
-        assert_equal Array, data.class
-        assert_equal 248, data.length
-        # TODO: For relationships:
-        # main_categories = data.find_all { |x| x['relationships']['parent-category']['data'].nil? }
-        # sub_categories = data.find_all { |x| !x['relationships']['parent-category']['data'].nil? }
-        # assert_equal 5, main_categories.length
-        # assert_equal 16, sub_categories.length
-      end
+      def expected_relationships
+        %i[
 
-      test 'Public users can fetch a single country by ID' do
-        get "/v1/public/countries/#{@belgium.id}", headers: public_header
-        assert_response 200
-        data = JSON.parse(@response.body)['data']
-        assert_equal Hash, data.class
-        assert_equal data['id'], @belgium.id
-        assert_equal data['attributes'].length, @attributes.length
-        assert_equal data['attributes']['name'], 'Belgium'
-        assert_equal data['attributes']['native-name'], 'België'
-        assert_equal data['attributes']['region'], 'Europe'
-        assert_equal data['attributes']['subregion'], 'Western Europe'
-        assert_equal data['attributes']['country-code'], 'BE'
-        assert_equal data['attributes']['alpha-2-code'], 'BE'
-        assert_equal data['attributes']['alpha-3-code'], 'BEL'
-        assert_equal data['attributes']['numeric-code'], '056'
-        assert_equal data['attributes']['flag'], 'https://restcountries.eu/data/bel.svg'
-        # TODO: assert_equal data['attributes']['latlng'], '50.83333333, 4.0'
-        assert_equal data['attributes']['area'], '30528.0'
-        assert_equal data['attributes']['population'], '11319511.0'
-        # TODO: assert_equal data['attributes']['languages'], '...'
-        # TODO: assert_equal data['attributes']['timezones'], '...'
-        # TODO: assert_equal data['attributes']['currencies'], '...'
-        # TODO: assert_equal data['attributes']['top_level_domains'], '...'
-        # TODO: assert_equal data['attributes']['calling_codes'], '...'
-        # assert_equal data['relationships']['parent-category']['data']['id'], product_categories('soldering_fluxes').id
-        # assert_equal data['relationships'].length, 1
-      end
-
-      test 'Returns 422 for bogus IDs' do
-        get '/v1/public/countries/bogus-uuid', headers: public_header
-        assert_response 422
-      end
-
-      test 'Public users cannot create countries' do
-        post '/v1/public/countries', headers: public_header
-        assert_response 403
-      end
-
-      test 'Public users cannot update countries' do
-        put "/v1/public/countries/#{@belgium.id}", headers: public_header
-        assert_response 403
-      end
-
-      test 'Public users cannot delete countries' do
-        delete "/v1/public/countries/#{@belgium.id}", headers: public_header
-        assert_response 403
+        ]
       end
     end
   end

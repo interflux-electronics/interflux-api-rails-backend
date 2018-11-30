@@ -11,12 +11,12 @@ module V1
         @australia = countries('Australia')
       end
 
-      test 'Public users can fetch all leads' do
+      test 'Public users cannot fetch all leads' do
         get '/v1/public/leads', headers: public_header
         assert_response 403
       end
 
-      test 'Public users can fetch a single country by ID' do
+      test 'Public users cannot fetch single leads by ID' do
         get "/v1/public/leads/#{@lead.id}", headers: public_header
         assert_response 403
       end

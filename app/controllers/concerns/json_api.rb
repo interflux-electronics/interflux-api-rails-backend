@@ -35,19 +35,11 @@ module JsonApi
   # Return an array of resource
   # GET /namespace/route
   # GET /namespace/?filter={key:value,key:value}
-  # def index
-  #   return show if params[:slug] # Redirect if :slug based
-  #   resources = resource_klass.all
-  #   strong_filters&.each do |key, value|
-  #     resources = resources.where("#{key.underscore}": value)
-  #   end
-  #   options = {}
-  #   options[:include] = strong_includes if strong_includes
-  #   json = serializer_klass.new(resources, options).serialized_json
-  #   render status: 200, json: json
-  # end
-  #
   def user_can_fetch_all
+    # Requests `/?slug=...` should return a single resource just like `/:id` does
+    return show if params[:slug]
+
+    # TODO: Don't use all, allow for always filter
     resources = resource_klass.all
     strong_filters&.each do |key, value|
       resources = resources.where("#{key.underscore}": value)
@@ -76,9 +68,27 @@ module JsonApi
   #   render status: 200, json: json
   # end
   #
-  def user_can_fetch_one
-    resource = resource_klass.find_by_id(params[:id]) if params[:id]
-    resource = resource_klass.find_by_slug(params[:slug]) if params[:slug]
+  def user_can_fetch_one_by_id_or_slug
+    return user_can_fetch_one_by_id if params[:id]
+
+    return user_can_fetch_one_by_slug if params[:slug]
+
+    resource_not_found
+  end
+
+  def user_can_fetch_one_by_id
+    resource = resource_klass.find_by id: params[:id]
+
+    user_can_fetch_one resource
+  end
+
+  def user_can_fetch_one_by_slug
+    resource = resource_klass.find_by slug: params[:slug]
+
+    user_can_fetch_one resource
+  end
+
+  def user_can_fetch_one(resource)
     return resource_not_found if resource.nil?
 
     options = {}

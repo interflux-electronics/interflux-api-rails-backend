@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class UnknownRequestsTest < ActionDispatch::IntegrationTest
+class NotFound404Test < ActionDispatch::IntegrationTest
   test 'GET to unknown index route returns 404' do
     get '/unknown'
     assert_response 404

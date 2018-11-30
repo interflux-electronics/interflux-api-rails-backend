@@ -11,11 +11,16 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
+module V1
+  module Public
+    class ProductSerializer < ApplicationSerializer
+      include FastJsonapi::ObjectSerializer
 
-require 'test_helper'
+      attributes :slug,
+                 :name,
+                 :pitch
 
-class ProductTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+      belongs_to :product_group
+    end
+  end
 end

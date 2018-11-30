@@ -24,4 +24,5 @@
 #
 
 class Country < ApplicationRecord
+  alias_attribute :country_code, :alpha_2_code
 end

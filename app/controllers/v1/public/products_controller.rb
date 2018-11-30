@@ -1,6 +1,6 @@
 module V1
   module Public
-    class CountriesController < ApplicationController
+    class ProductsController < ApplicationController
       include JsonApi
       include Errors
 
@@ -9,7 +9,7 @@ module V1
       end
 
       def show
-        user_can_fetch_one_by_id
+        user_can_fetch_one_by_id_or_slug
       end
 
       def create
@@ -27,11 +27,11 @@ module V1
       private
 
       def resource_klass
-        Country
+        Product
       end
 
       def serializer_klass
-        CountrySerializer
+        V1::Public::ProductSerializer
       end
 
       def attributes

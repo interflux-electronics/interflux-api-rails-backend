@@ -41,7 +41,6 @@ class CountrySerializer < ApplicationSerializer
              :timezones,
              :currencies,
              :top_level_domains,
-             :calling_codes
-
-  attribute :country_code, &:alpha_2_code
+             :calling_codes,
+             :country_code
 end

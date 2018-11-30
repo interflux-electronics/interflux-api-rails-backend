@@ -15,10 +15,15 @@ Rails.application.routes.draw do
     # https://lmpa.interflux.com
     #
     namespace :public do
-      resources :articles
+      resources :products
+      resources :product_groups
+
+      # resources :articles
+      # resources :authors
+      # resources :people
+
       resources :countries
       resources :leads
-      resources :products
     end
     #
     # Admin endpoints
