@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :product_groups
   #
   # Make the API future proof by versioning v1
   namespace :v1 do
@@ -14,8 +15,10 @@ Rails.application.routes.draw do
     # https://lmpa.interflux.com
     #
     namespace :public do
+      resources :articles
       resources :countries
       resources :leads
+      resources :products
     end
     #
     # Admin endpoints
@@ -27,6 +30,7 @@ Rails.application.routes.draw do
     # https://admin.interflux.com
     #
     namespace :admin do
+      # TODO
     end
   end
 

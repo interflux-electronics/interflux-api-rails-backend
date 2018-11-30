@@ -1,0 +1,28 @@
+# == Schema Information
+#
+# Table name: product_related_products
+#
+#  id                 :uuid             not null, primary key
+#  product_id         :uuid
+#  related_product_id :uuid
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product: IF_2005M
+  related_product: OSPI_3311M
+
+two:
+  product: IF_2005M
+  related_product: DP_5600
+
+three:
+  product: IF_2005M
+  related_product: pacific_2009M
+
+four:
+  product: pacific_2009M
+  related_product: IF_2005M

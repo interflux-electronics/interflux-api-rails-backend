@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id         :uuid             not null, primary key
+#  slug       :string
+#  title      :string
+#  tease      :string
+#  author_id  :uuid
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slug: 8-benefits-of-halide-free-fluxes
+  title: 8 benefits of halide-free fluxes
+  tease: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  author: author_jan
+
+two:
+  slug: what-is-a-soldering-flux
+  title: What is a soldering flux?
+  tease: Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  author: author_jan
+
+three:
+  slug: how-to-avoid-warping-of-PCB-boards-when-wave-soldering
+  title: How to avoid warping of PCB boards when wave soldering?
+  tease: Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+  author: author_steven
