@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :product_groups
   #
   # Make the API future proof by versioning v1
   namespace :v1 do
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
     #
     namespace :public do
       resources :products
-      resources :product_groups
+      resources :product_groups, path: '/product-groups'
 
       # resources :articles
       # resources :authors

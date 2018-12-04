@@ -1,6 +1,6 @@
 module V1
   module Public
-    class ProductsController < ApplicationController
+    class ProductGroupsController < ApplicationController
       include JsonApi
       include Errors
 
@@ -27,11 +27,11 @@ module V1
       private
 
       def resource_klass
-        Product
+        ProductGroup
       end
 
       def serializer_klass
-        V1::Public::ProductSerializer
+        V1::Public::ProductGroupSerializer
       end
 
       def attributes
@@ -39,24 +39,15 @@ module V1
       end
 
       def relationships
-        %i[
-          related_products
-          related_articles
-        ]
+        %i[]
       end
 
       def filters
-        %i[
-          main_group_id
-          sub_group_id
-        ]
+        %i[]
       end
 
       def includes
-        %i[
-          related_products
-          related_articles
-        ]
+        %i[]
       end
     end
   end

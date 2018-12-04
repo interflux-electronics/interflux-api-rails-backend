@@ -88,15 +88,15 @@ bin/rails db:drop;
 bin/rails db:create;
 bin/rails db:migrate;
 
-bin/rails db:fixtures:load FIXTURES=persons
-bin/rails db:fixtures:load FIXTURES=authors
-bin/rails db:fixtures:load FIXTURES=articles
+bin/rails db:fixtures:load FIXTURES=persons;
+bin/rails db:fixtures:load FIXTURES=authors;
+bin/rails db:fixtures:load FIXTURES=articles;
 
-bin/rails db:fixtures:load FIXTURES=products
-bin/rails db:fixtures:load FIXTURES=product_groups
-bin/rails db:fixtures:load FIXTURES=product_related_products
-bin/rails db:fixtures:load FIXTURES=product_related_articles
+bin/rails db:fixtures:load FIXTURES=products;
+bin/rails db:fixtures:load FIXTURES=product_groups;
+bin/rails db:fixtures:load FIXTURES=product_related_products;
+bin/rails db:fixtures:load FIXTURES=product_related_articles;
 
-bin/rails db:fixtures:load FIXTURES=countries
-bin/rails db:fixtures:load FIXTURES=leads
+bin/rails db:fixtures:load FIXTURES=countries;
+bin/rails db:fixtures:load FIXTURES=leads;
 ```

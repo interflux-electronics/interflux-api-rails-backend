@@ -2,18 +2,20 @@
 #
 # Table name: products
 #
-#  id               :uuid             not null, primary key
-#  slug             :string
-#  name             :string
-#  pitch            :string
-#  public           :boolean          default(FALSE)
-#  product_group_id :uuid
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
+#  id            :uuid             not null, primary key
+#  slug          :string
+#  name          :string
+#  pitch         :string
+#  public        :boolean          default(FALSE)
+#  main_group_id :uuid
+#  sub_group_id  :uuid
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 
 class Product < ApplicationRecord
-  belongs_to :product_group
+  belongs_to :main_group, class_name: 'ProductGroup', foreign_key: 'main_group_id'
+  belongs_to :sub_group, class_name: 'ProductGroup', foreign_key: 'sub_group_id'
 
   has_many :related_products_association, class_name: 'ProductRelatedProduct'
   has_many :related_products, through: :related_products_association, source: :related_product

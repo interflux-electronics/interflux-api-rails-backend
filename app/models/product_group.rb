@@ -12,9 +12,14 @@
 #
 
 class ProductGroup < ApplicationRecord
-  has_many :product
-
   belongs_to :parent_group, class_name: 'ProductGroup', foreign_key: 'parent_group_id'
+
+  has_many :product_groups
+  has_many :product, through: :product_groups
+  # has_many :sub_products, through: child_groups, class_name: 'Product'
+
+  # has_many :child_groups, class_name: 'ProductGroup'
+  # has_many :sub_products, through: child_groups, class_name: 'Product'
 
   validates :slug, presence: true, uniqueness: true
   validates :name_single, presence: true, uniqueness: true

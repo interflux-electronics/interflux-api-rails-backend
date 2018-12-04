@@ -36,7 +36,6 @@ module JsonApi
   # GET /namespace/route
   # GET /namespace/?filter={key:value,key:value}
   def user_can_fetch_all
-    # Requests `/?slug=...` should return a single resource just like `/:id` does
     return show if params[:slug]
 
     # TODO: Don't use all, allow for always filter
@@ -52,7 +51,7 @@ module JsonApi
 
   # Return a single resource
   # GET /namespace/route/:uuid
-  # GET /namespace/route/?slug=:slug
+  # GET /namespace/route/:slug
   # Note: For humans and SEO we avoid embedding UUIDs in URLs. Instead we use
   # hyphenated strings referred to as slugs. These slugs are the only bit of
   # information the front-end can send to the API to fetch a resource. Given
@@ -69,11 +68,9 @@ module JsonApi
   # end
   #
   def user_can_fetch_one_by_id_or_slug
-    return user_can_fetch_one_by_id if params[:id]
-
     return user_can_fetch_one_by_slug if params[:slug]
 
-    resource_not_found
+    user_can_fetch_one_by_id
   end
 
   def user_can_fetch_one_by_id
@@ -170,7 +167,9 @@ module JsonApi
   def strong_filters
     return unless params[:filter]
 
-    json_keys = filters.collect { |item| item.to_s.dasherize }
+    json_keys = filters.collect(&:to_s)
+    # Before Olive Branch:
+    # json_keys = filters.collect { |item| item.to_s.dasherize }
     params
       .require(:filter)
       .permit(json_keys)
@@ -198,4 +197,12 @@ module JsonApi
   def after_create
     nil
   end
+
+  # def uuid_regex
+  #   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
+  # end
+  #
+  # def valid_uuid?(uuid)
+  #   uuid_regex.match?(uuid.to_s.downcase)
+  # end
 end

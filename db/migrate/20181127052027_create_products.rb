@@ -6,7 +6,8 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :pitch
       t.boolean :public, default: false
 
-      t.uuid :product_group_id
+      t.uuid :main_group_id
+      t.uuid :sub_group_id
 
       t.timestamps
     end
@@ -14,6 +15,7 @@ class CreateProducts < ActiveRecord::Migration[5.1]
     add_index :products, :public
     add_index :products, :slug, unique: true
     add_index :products, :name, unique: true
-    add_index :products, :product_group_id
+    add_index :products, :main_group_id
+    add_index :products, :sub_group_id
   end
 end

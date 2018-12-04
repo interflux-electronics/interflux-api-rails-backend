@@ -126,13 +126,15 @@ ActiveRecord::Schema.define(version: 20181129033602) do
     t.string "name"
     t.string "pitch"
     t.boolean "public", default: false
-    t.uuid "product_group_id"
+    t.uuid "main_group_id"
+    t.uuid "sub_group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["main_group_id"], name: "index_products_on_main_group_id"
     t.index ["name"], name: "index_products_on_name", unique: true
-    t.index ["product_group_id"], name: "index_products_on_product_group_id"
     t.index ["public"], name: "index_products_on_public"
     t.index ["slug"], name: "index_products_on_slug", unique: true
+    t.index ["sub_group_id"], name: "index_products_on_sub_group_id"
   end
 
 end
