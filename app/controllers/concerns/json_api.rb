@@ -1,9 +1,24 @@
 module JsonApi
   extend ActiveSupport::Concern
 
-  # Below we make sure all controller actions return a JSON API compliant
-  # 403 forbidden, unless overwritten by the controller invoking this concern.
-
+  # CRUD
+  #
+  # In order to follow the JSON API specs, unsported request endpoints should
+  # return a 403 forbidden (instead of dropping the request without feedback).
+  #
+  # https://jsonapi.org/format/#crud-creating-responses
+  #
+  # By default all CRUDs are 403 forbidden. The idea is that you overwrite these
+  # per controller with a well defined reusable method. For example:
+  #
+  # def index
+  #   user_can_fetch_all
+  # end
+  #
+  # def show
+  #   user_can_fetch_one_by_id_or_slug
+  # end
+  #
   def index
     forbidden
   end
@@ -32,10 +47,23 @@ module JsonApi
     forbidden
   end
 
-  # Return an array of resource
-  # GET /namespace/route
-  # GET /namespace/?filter={key:value,key:value}
+  private
+
+  # FETCHING MANY RESOURCES
+  #
+  # GET /products
+  # GET /products?filter[foo]=thing
+  # GET /products?filter[foo]=thing&filter[bar]=true
+  #
+  # This method allows all records to be fetched, with or without filters.
+  # Use this method only in the `index`.
+  #
+  # def index
+  #   user_can_fetch_all
+  # end
+  #
   def user_can_fetch_all
+    # Treat each URL that contains `?slug=something` as a `show` request.
     return show if params[:slug]
 
     # TODO: Don't use all, allow for always filter
@@ -49,23 +77,35 @@ module JsonApi
     render status: 200, json: json
   end
 
-  # Return a single resource
-  # GET /namespace/route/:uuid
-  # GET /namespace/route/:slug
-  # Note: For humans and SEO we avoid embedding UUIDs in URLs. Instead we use
-  # hyphenated strings referred to as slugs. These slugs are the only bit of
-  # information the front-end can send to the API to fetch a resource. Given
-  # these are unique in every table, we can use them for for finding resources
-  # just like we would with an :uuid.
+  # FETCHING SINGLE RESOURCES
+  #
+  # GET /products/:uuid
+  # GET /products/?slug=foo
+  #
   # def show
-  #   resource = resource_klass.find_by_id(params[:id]) if params[:id]
-  #   resource = resource_klass.find_by_slug(params[:slug]) if params[:slug]
-  #   return resource_not_found if resource.nil?
-  #   options = {}
-  #   options[:include] = strong_includes if strong_includes
-  #   json = serializer_klass.new(resource, options).serialized_json
-  #   render status: 200, json: json
+  #   user_can_fetch_one_by_id_or_slug
   # end
+  #
+  # def show
+  #   user_can_fetch_one_by_id
+  # end
+  #
+  # What are slugs?
+  # Slugs are strings that act as unique identifiers, just like UUIDs do.
+  # These are often parts of the URL that we send to the API and which map to
+  # one unique resource.
+  #
+  # Person.create({
+  #   name: 'Jan Werkhoven'
+  #   slug: 'jan-werkhoven'
+  # })
+  #
+  # For example:
+  # www.foo.com/people/jan-werkhoven
+  # Would fetch:
+  # GET api.foo.com/people/?slug=jan-werkhoven
+  # Which should return the same as the UUID:
+  # GET api.foo.com/people/797e2b42-f8c8-5712-b6b0-486aeb1bcf94
   #
   def user_can_fetch_one_by_id_or_slug
     return user_can_fetch_one_by_slug if params[:slug]
@@ -94,8 +134,65 @@ module JsonApi
     render status: 200, json: json
   end
 
-  # Create a resource
-  # POST /namespace/resources, params { foo: bar }
+  # INCLUDES
+  #
+  # When fetching a record, to also include its relationships, the JSON API spec
+  # states to include them all keys, comma-separated, in the `include` URI param
+  # like so: GET /articles/123?include=author,author.books
+  #
+  # https://jsonapi.org/format/#fetching-includes
+  #
+  # The method below returns an array of all requested include keys that are
+  # also white listed in the controller under `permitted_includes`.
+  #
+  def strong_includes
+    # The `include` param is optional. Ignore if not present.
+    return unless params[:include]
+
+    # Intersecting both arrays, keeping only the keys that appear in both
+    permitted_includes & requested_includes
+  end
+
+  # Returns array of requested include keys.
+  def requested_includes
+    params[:include]
+      .split(',')
+      .collect { |item| item.underscore.to_sym }
+  end
+
+  # FILTERS
+  #
+  # To fetch all records of a type that match certain criteria, the JSON API
+  # spec stipulates to use the `filter` param, but doesn't add anymore details.
+  #
+  # https://jsonapi.org/format/#fetching-filtering
+  #
+  # This is how Ember would encode the filter query:
+  # GET /products?filter[foo]=thing
+  # GET /products?filter[foo]=thing&filter[bar]=true
+  #
+  # The method below permits only those filter key-value pairs of which the keys
+  # are listed in `permitted_filters` on the controller.
+  #
+  def strong_filters
+    # The `include` param is optional. Ignore if not present.
+    return unless params[:filter]
+
+    keys = permitted_filters.collect(&:to_s)
+    params
+      .require(:filter)
+      .permit(keys)
+      .to_hash
+  end
+
+  # CREATING
+  #
+  # POST /products, params { foo: bar }
+  #
+  # def create
+  #   user_can_create
+  # end
+  #
   def user_can_create
     resource = resource_klass.new(attributes_and_relationships)
     if resource.save!
@@ -107,8 +204,6 @@ module JsonApi
     end
   end
 
-  private
-
   def attributes_and_relationships
     strong_attributes
       .merge(strong_relationships)
@@ -116,26 +211,28 @@ module JsonApi
 
   # Allow only predifined list of attributes that can saved to the resource
   def strong_attributes
-    return {} if attributes.empty?
+    return {} if creatable_attributes.empty?
 
     params
       .require(:data)
       .require(:attributes)
-      .permit(attributes)
+      .permit(creatable_attributes)
   end
 
   # Return a hash of permitted relationship and strong IDs pulled from the params.
   # Usage: Make sure each controller has a similar array:
-  # ```
-  # def relationships
+  #
+  # def creatable_relationships
   #   %i[
   #     main_category
   #     sub_category
   #   ]
   # end
-  # ```
+  #
   def strong_relationships
+    #
     # TODO: Clean up this mess
+    #
     params['data']['relationships']
     # First we convert the array into  we convert `relationships` into a nested array like:
     # [[:main_category, "d6461197-e618-5502-95a5-1e171f8f71e9"], [:sub_category, "8147cd48-12b6-500e-a001-d80288d644f1"]]
@@ -164,45 +261,59 @@ module JsonApi
     Hash[nested_array]
   end
 
-  def strong_filters
-    return unless params[:filter]
+  # UPDATING
+  #
+  # PUT /products/:uuid, params { foo: bar }
+  #
+  # def create
+  #   user_can_update
+  # end
+  #
+  def user_can_update
+    resource = resource_klass.find_by id: params[:id]
 
-    json_keys = filters.collect(&:to_s)
-    # Before Olive Branch:
-    # json_keys = filters.collect { |item| item.to_s.dasherize }
-    params
-      .require(:filter)
-      .permit(json_keys)
-      .to_hash
+    return resource_not_found if resource.nil?
+
+    if resource.update!(attributes_and_relationships)
+      json = serializer_klass.new(resource).serialized_json
+      render status: 204, json: json
+    else
+      render status: 422, json: json_errors(resource)
+    end
   end
 
-  def strong_includes
-    return unless params[:include]
+  # DELETING
+  #
+  # DELETE /products/:uuid
+  #
+  # def create
+  #   user_can_delete
+  # end
+  #
+  def user_can_delete
+    resource = resource_klass.find_by id: params[:id]
 
-    arr = params[:include]
-          .split(',')
-          .collect { |item| item.parameterize.underscore.to_sym }
-    # Intersect both arrays so we only keep the param include keys that are also defined in the controller.
-    includes && arr
+    return resource_not_found if resource.nil?
+
+    # TODO: first destroy everything that's uniquely related to this resource?
+
+    resource.destroy
+
+    head 204
   end
 
-  # Render a JSON API response Netlflix' Fast JSON API Serializers
-  # https://github.com/Netflix/fast_jsonapi
-  # Example: render_response(200, product, Admin::ProductSerializer)
-  def render_response(status, record, serializer)
-    json = serializer.new(record).serialized_json
-    render status: status, json: json
-  end
-
+  # SIDE-EFFECTS
+  #
+  # TODO: Move to conventional approach: https://api.rubyonrails.org/classes/ActiveRecord/Callbacks.html
+  #
+  # To trigger side-effects to occur after succesfully creating a record, add
+  # the `after_create` method to your controller. Example:
+  #
+  # def after_create(lead)
+  #   PostLeadToSlackJob.perform_later lead
+  # end
+  #
   def after_create
     nil
   end
-
-  # def uuid_regex
-  #   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
-  # end
-  #
-  # def valid_uuid?(uuid)
-  #   uuid_regex.match?(uuid.to_s.downcase)
-  # end
 end

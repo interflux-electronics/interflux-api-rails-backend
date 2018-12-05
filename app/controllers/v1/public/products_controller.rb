@@ -34,28 +34,26 @@ module V1
         V1::Public::ProductSerializer
       end
 
-      def attributes
+      def creatable_attributes
         %i[]
       end
 
-      def relationships
-        %i[
-          related_products
-          related_articles
-        ]
+      def creatable_relationships
+        %i[]
       end
 
-      def filters
+      def permitted_filters
         %i[
           main_group_id
           sub_group_id
         ]
       end
 
-      def includes
+      def permitted_includes
         %i[
-          related_products
           related_articles
+          related_products
+          related_products.main_group
         ]
       end
     end

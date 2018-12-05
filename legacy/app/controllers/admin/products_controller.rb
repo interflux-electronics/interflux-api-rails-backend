@@ -32,7 +32,7 @@ module Admin
       Admin::ProductSerializer
     end
 
-    def attributes
+    def creatable_attributes
       %i[
         name
         slug
@@ -42,18 +42,18 @@ module Admin
       ]
     end
 
-    def relationships
+    def creatable_relationships
       %i[
         main_category_id
         sub_category_id
       ]
     end
 
-    def filters
+    def permitted_filters
       %i[]
     end
 
-    def includes
+    def permitted_includes
       %i[]
     end
   end

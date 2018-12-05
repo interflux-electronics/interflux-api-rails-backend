@@ -85,7 +85,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def attributes_and_relationships
+  def creatable_attributes_and_relationships
     strong_attributes
       .merge(strong_relationships)
   end
@@ -102,7 +102,7 @@ class ApplicationController < ActionController::Base
   # Return a hash of permitted relationship and strong IDs pulled from the params.
   # Usage: Make sure each controller has a similar array:
   # ```
-  # def relationships
+  # def creatable_relationships
   #   %i[
   #     main_category
   #     sub_category

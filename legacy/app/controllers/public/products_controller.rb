@@ -35,7 +35,7 @@ module Public
       Public::ProductSerializer
     end
 
-    def attributes
+    def creatable_attributes
       %i[
         name
         slug
@@ -45,21 +45,21 @@ module Public
       ]
     end
 
-    def relationships
+    def creatable_relationships
       %i[
         main_category_id
         sub_category_id
       ]
     end
 
-    def filters
+    def permitted_filters
       %i[
         main_category_id
         sub_category_id
       ]
     end
 
-    def includes
+    def permitted_includes
       %i[
         main_category
         sub_category

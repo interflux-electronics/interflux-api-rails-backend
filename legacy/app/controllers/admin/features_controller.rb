@@ -37,22 +37,22 @@ module Admin
       FeatureSerializer
     end
 
-    def attributes
+    def creatable_attributes
       %i[
         label
         icon
       ]
     end
 
-    def relationships
+    def creatable_relationships
       %i[]
     end
 
-    def filters
+    def permitted_filters
       %i[]
     end
 
-    def includes
+    def permitted_includes
       %i[]
     end
   end

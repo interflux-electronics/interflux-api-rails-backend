@@ -35,25 +35,25 @@ module Public
       ProductUseSerializer
     end
 
-    def attributes
+    def creatable_attributes
       %i[
         slug
         name
       ]
     end
 
-    def relationships
+    def creatable_relationships
       %i[]
     end
 
-    def filters
+    def permitted_filters
       %i[
         product_id
         use_id
       ]
     end
 
-    def includes
+    def permitted_includes
       %i[
         product
         use

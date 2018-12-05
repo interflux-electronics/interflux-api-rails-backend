@@ -37,7 +37,7 @@ module Admin
       ImageSerializer
     end
 
-    def attributes
+    def creatable_attributes
       %i[
         url
         width
@@ -45,15 +45,15 @@ module Admin
       ]
     end
 
-    def relationships
+    def creatable_relationships
       %i[]
     end
 
-    def filters
+    def permitted_filters
       %i[]
     end
 
-    def includes
+    def permitted_includes
       %i[]
     end
   end

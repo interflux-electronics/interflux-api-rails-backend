@@ -43,7 +43,7 @@ module Public
     #   Public::TranslationSerializer
     # end
 
-    # def attributes
+    # def creatable_attributes
     #   %i[
     #     slug
     #     english
@@ -51,19 +51,19 @@ module Public
     #   ]
     # end
     #
-    # def relationships
+    # def creatable_relationships
     #   %i[
     #     language_id
     #   ]
     # end
     #
-    # def filters
+    # def permitted_filters
     #   %i[
     #     language_id
     #   ]
     # end
     #
-    # def includes
+    # def permitted_includes
     #   %i[]
     # end
   end

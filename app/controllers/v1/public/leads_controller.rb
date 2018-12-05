@@ -34,7 +34,7 @@ module V1
         LeadSerializer
       end
 
-      def attributes
+      def creatable_attributes
         %i[
           name
           company
@@ -49,18 +49,18 @@ module V1
         ]
       end
 
-      def relationships
+      def creatable_relationships
         %i[
           country
           ip_country
         ]
       end
 
-      def filters
+      def permitted_filters
         %i[]
       end
 
-      def includes
+      def permitted_includes
         %i[]
       end
 

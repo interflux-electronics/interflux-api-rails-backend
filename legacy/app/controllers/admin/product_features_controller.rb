@@ -37,24 +37,24 @@ module Admin
       ProductFeatureSerializer
     end
 
-    def attributes
+    def creatable_attributes
       %i[]
     end
 
-    def relationships
+    def creatable_relationships
       %i[
         product_id
         feature_id
       ]
     end
 
-    def filters
+    def permitted_filters
       %i[
         product_id
       ]
     end
 
-    def includes
+    def permitted_includes
       %i[
         feature
       ]
