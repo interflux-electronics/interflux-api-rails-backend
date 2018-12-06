@@ -2,7 +2,7 @@ require 'test_helper'
 
 module V1
   module Public
-    class CountriesRequestTest < V1::IntegrationTest
+    class CountryRequestTest < V1::IntegrationTest
       # Public users should be able to fetch all countries
       test '1' do
         assert_can_fetch_all true, 248
@@ -44,6 +44,10 @@ module V1
       end
 
       private
+
+      def klass
+        Country
+      end
 
       def path
         '/v1/public/countries'

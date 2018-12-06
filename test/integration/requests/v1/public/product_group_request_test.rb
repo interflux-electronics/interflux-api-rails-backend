@@ -2,10 +2,10 @@ require 'test_helper'
 
 module V1
   module Public
-    class ProductsRequestTest < V1::IntegrationTest
+    class ProductGroupRequestTest < V1::IntegrationTest
       # Public users should be able to fetch all products
       test '1' do
-        assert_can_fetch_all true, 6
+        assert_can_fetch_all true, 21
       end
 
       # Public users should be able to fetch one product by ID
@@ -45,8 +45,12 @@ module V1
 
       private
 
+      def klass
+        ProductGroup
+      end
+
       def path
-        '/v1/public/products'
+        '/v1/public/product-groups'
       end
 
       def headers
@@ -54,20 +58,20 @@ module V1
       end
 
       def test_fixture
-        products('IF_2005M')
+        product_groups('soldering_fluxes')
       end
 
       def expected_attributes
         %i[
           slug
-          name
-          pitch
+          name_single
+          name_plural
         ]
       end
 
       def expected_relationships
         %i[
-          product_group
+          parent_group
         ]
       end
     end

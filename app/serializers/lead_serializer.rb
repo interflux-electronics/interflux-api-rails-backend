@@ -22,8 +22,7 @@
 class LeadSerializer < ApplicationSerializer
   include FastJsonapi::ObjectSerializer
 
-  attributes :id,
-             :name,
+  attributes :name,
              :company,
              :email,
              :mobile,

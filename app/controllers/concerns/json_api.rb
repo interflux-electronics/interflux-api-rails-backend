@@ -238,7 +238,7 @@ module JsonApi
     # [[:main_category, "d6461197-e618-5502-95a5-1e171f8f71e9"], [:sub_category, "8147cd48-12b6-500e-a001-d80288d644f1"]]
     # The keys are underscored for later use when creating / updating the resource.
     # The values are strong IDs grabbed from the JSON API structured package.
-    nested_array = relationships.collect do |key|
+    nested_array = creatable_relationships.collect do |key|
       db_key = "#{key}_id"
       id = nil
       relationship_exists = params['data']['relationships'] && params['data']['relationships'][key]

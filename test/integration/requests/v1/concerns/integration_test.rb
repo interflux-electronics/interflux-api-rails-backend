@@ -24,6 +24,10 @@ module V1
       assert false, 'Warning: Your test is missing the `def expected_attributes`'
     end
 
+    def create_params
+      {}
+    end
+
     def assert_can_fetch_all(allowed, expected_length)
       get path, headers: headers
 
@@ -50,7 +54,7 @@ module V1
 
     def assert_cannot_fetch_bogus_id
       get "#{path}/bogus-id", headers: public_header
-      assert_response 422
+      assert [403, 422].include?(response.code.to_i)
     end
 
     def assert_can_fetch_one_by_slug(allowed)
@@ -68,21 +72,21 @@ module V1
 
     def assert_cannot_fetch_bogus_slug
       get "#{path}/?slug=bogus-slug", headers: headers
-      assert_response 422
+      assert [403, 422].include?(response.code.to_i)
     end
 
     def assert_json_response
       data = JSON.parse(@response.body)['data']
 
       assert_equal Hash, data.class
-      assert_equal data['id'], test_fixture.id
+      refute_nil data['id']
 
       expected_attributes.each do |attr|
         assert_equal test_fixture[attr].to_s, data['attributes'][attr.to_s.dasherize]
       end
 
       expected_relationships.each do |rel|
-        refute_nil data['relationships'][rel.to_s.dasherize]['data']['id']
+        refute_nil data['relationships'][rel.to_s.dasherize]
       end
 
       assert_equal expected_attributes.length, data['attributes'].length
@@ -90,13 +94,15 @@ module V1
     end
 
     def assert_can_create(allowed)
-      params = {}
+      count_before = klass.count if allowed
 
-      post path, params: params, headers: headers
+      post path, params: create_params, headers: headers
 
       if allowed
         assert_response 201
-        # TODO
+        assert_json_response
+        count_after = klass.count
+        assert_equal count_before + 1, count_after
       else
         assert_response 403
       end
