@@ -100,3 +100,14 @@ bin/rails db:fixtures:load FIXTURES=product_related_articles;
 bin/rails db:fixtures:load FIXTURES=countries;
 bin/rails db:fixtures:load FIXTURES=leads;
 ```
+
+## Create new resource
+
+Tried creating a generator, to no avail:
+https://stackoverflow.com/questions/53586927/rails-5-how-to-create-custom-scaffold-generator
+
+Instead do:
+
+```
+bin/rails g scaffold article
+```

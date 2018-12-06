@@ -11,4 +11,5 @@
 
 class Author < ApplicationRecord
   belongs_to :person
+  has_many :articles
 end

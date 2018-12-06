@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
-  #
   # Make the API future proof by versioning v1
   namespace :v1 do
-    #
     # Public endpoints
     # These endpoints are meant for the public. No sensitive information is ever
     # made available here. Initially these endpoints will be consumed by our
@@ -14,17 +12,13 @@ Rails.application.routes.draw do
     # https://lmpa.interflux.com
     #
     namespace :public do
-      resources :products
-      resources :product_groups, path: '/product-groups'
-
-      # resources :articles
-      # resources :authors
-      # resources :people
-
+      resources :articles
       resources :countries
       resources :leads
+      resources :product_groups, path: '/product-groups'
+      resources :products
     end
-    #
+
     # Admin endpoints
     # These endpoints are meant for internal use by authenticated users such as
     # Interflux employees. These endpoints commonly allow read, create, update
