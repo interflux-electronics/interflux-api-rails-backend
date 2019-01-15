@@ -28,14 +28,15 @@ module V1
       {}
     end
 
-    def assert_can_fetch_all(allowed, expected_length)
+    def assert_can_fetch_all(allowed, expected_amount, total_amount)
       get path, headers: headers
 
       if allowed
         assert_response 200
         data = JSON.parse(@response.body)['data']
         assert_equal Array, data.class
-        assert_equal expected_length, data.length
+        assert_equal expected_amount, data.length, "The JSON response is an array of #{expected_amount} resources"
+        assert_equal total_amount, klass.count, "The database has #{total_amount} records in total"
       else
         assert_response 403
       end
@@ -78,19 +79,21 @@ module V1
     def assert_json_response
       data = JSON.parse(@response.body)['data']
 
-      assert_equal Hash, data.class
-      refute_nil data['id']
+      assert_equal Hash, data.class, 'The response is JSON and has "data" as root key'
+      refute_nil data['id'], 'The JSON response includes an ID'
 
       expected_attributes.each do |attr|
-        assert_equal test_fixture[attr].to_s, data['attributes'][attr.to_s.dasherize]
+        key = attr.to_s.dasherize
+        assert_equal test_fixture[attr].to_s, data['attributes'][key], "The JSON response has the expected attribute key & value: #{key}"
       end
 
       expected_relationships.each do |rel|
-        refute_nil data['relationships'][rel.to_s.dasherize]
+        key = rel.to_s.dasherize
+        refute_nil data['relationships'][key], "The JSON response has the expected relationship key: #{key}"
       end
 
-      assert_equal expected_attributes.length, data['attributes'].length
-      assert_equal expected_relationships.length, data['relationships'].length
+      assert_equal expected_attributes.length, data['attributes'].length, 'The JSON response has the expected amount of attributes'
+      assert_equal expected_relationships.length, data['relationships'].length, 'The JSON response has the expected amount of relationships'
     end
 
     def assert_can_create(allowed)

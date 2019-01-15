@@ -14,8 +14,10 @@ Rails.application.routes.draw do
     namespace :public do
       resources :articles
       resources :countries
+      resources :languages
       resources :leads
       resources :product_groups, path: '/product-groups'
+      resources :product_translations, path: '/product-translations'
       resources :products
     end
 

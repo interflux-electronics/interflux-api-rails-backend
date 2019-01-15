@@ -7,7 +7,7 @@ module V1
 
       # Public users should NOT be able to fetch all leads
       test '1' do
-        assert_can_fetch_all false, 0
+        assert_can_fetch_all false, 0, 0
       end
 
       # Public users should NOT be able to fetch one lead by ID

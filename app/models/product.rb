@@ -25,6 +25,8 @@ class Product < ApplicationRecord
   has_many :related_articles_association, class_name: 'ProductRelatedArticle'
   has_many :related_articles, through: :related_articles_association, source: :article
 
+  has_many :translations, class_name: 'ProductTranslation'
+
   validates :slug, presence: true, uniqueness: true
   validates :name, presence: true, uniqueness: true
 end

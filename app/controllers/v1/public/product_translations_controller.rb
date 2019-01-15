@@ -1,11 +1,11 @@
 module V1
   module Public
-    class ProductsController < ApplicationController
+    class ProductTranslationsController < ApplicationController
       include JsonApi
       include Errors
 
       def index
-        user_can_fetch_all
+        user_can_fetch_all true
       end
 
       def show
@@ -27,11 +27,11 @@ module V1
       private
 
       def resource_klass
-        Product
+        ProductTranslation
       end
 
       def serializer_klass
-        V1::Public::ProductSerializer
+        V1::Public::ProductTranslationSerializer
       end
 
       def creatable_attributes
@@ -43,24 +43,15 @@ module V1
       end
 
       def permitted_filters
-        %i[
-          main_group_id
-          sub_group_id
-        ]
-      end
-
-      def permanent_filters
-        {
-          public: true
-        }
+        %i[]
       end
 
       def permitted_includes
         %i[
-          related_articles
-          related_products
-          related_products.main_group
-          translations
+          product
+          product.related_articles
+          product.related_products
+          product.related_products.main_group
         ]
       end
     end

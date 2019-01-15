@@ -12,6 +12,8 @@ module V1
 
       has_many :related_products, record_type: :product, serializer: :related_products
       has_many :related_articles, record_type: :article, serializer: :related_articles
+
+      has_many :translations, record_type: :product_translation, serializer: :product_translation
     end
   end
 end

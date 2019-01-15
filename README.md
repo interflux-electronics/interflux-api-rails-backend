@@ -94,10 +94,12 @@ bin/rails db:fixtures:load FIXTURES=articles;
 
 bin/rails db:fixtures:load FIXTURES=products;
 bin/rails db:fixtures:load FIXTURES=product_groups;
+bin/rails db:fixtures:load FIXTURES=product_translations;
 bin/rails db:fixtures:load FIXTURES=product_related_products;
 bin/rails db:fixtures:load FIXTURES=product_related_articles;
 
 bin/rails db:fixtures:load FIXTURES=countries;
+bin/rails db:fixtures:load FIXTURES=languages;
 bin/rails db:fixtures:load FIXTURES=leads;
 ```
 

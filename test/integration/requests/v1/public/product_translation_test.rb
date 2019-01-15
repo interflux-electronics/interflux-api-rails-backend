@@ -2,33 +2,33 @@ require 'test_helper'
 
 module V1
   module Public
-    class ProductRequestTest < V1::IntegrationTest
-      # Public users should be able to fetch all products
+    class ProductTranslationRequestTest < V1::IntegrationTest
+      # Public users should NOT be able to fetch all product translations
       test '1' do
-        assert_can_fetch_all true, 5, 6
+        assert_can_fetch_all true, 3, 3
       end
 
-      # Public users should be able to fetch one product by ID
+      # Public users should be able to fetch one product translations by ID
       test '2' do
         assert_can_fetch_one_by_id true
       end
 
-      # Public users should be able to fetch one product by slug
+      # Public users should be able to fetch one product translations by slug
       test '3' do
         assert_can_fetch_one_by_slug true
       end
 
-      # Public users should NOT be able to create products
+      # Public users should NOT be able to create product translations
       test '4' do
         assert_can_create false
       end
 
-      # Public users should NOT be able to update products
+      # Public users should NOT be able to update product translations
       test '5' do
         assert_can_update false
       end
 
-      # Public users should NOT be able to delete products
+      # Public users should NOT be able to delete product translations
       test '6' do
         assert_can_delete false
       end
@@ -46,11 +46,11 @@ module V1
       private
 
       def klass
-        Product
+        ProductTranslation
       end
 
       def path
-        '/v1/public/products'
+        '/v1/public/product-translations'
       end
 
       def headers
@@ -58,7 +58,7 @@ module V1
       end
 
       def test_fixture
-        products('IF_2005M')
+        product_translations('one')
       end
 
       def expected_attributes
@@ -71,11 +71,8 @@ module V1
 
       def expected_relationships
         %i[
-          main_group
-          sub_group
-          related_products
-          related_articles
-          translations
+          product
+          language
         ]
       end
     end

@@ -2,33 +2,33 @@ require 'test_helper'
 
 module V1
   module Public
-    class ProductRequestTest < V1::IntegrationTest
-      # Public users should be able to fetch all products
+    class LanguageRequestTest < V1::IntegrationTest
+      # Public users should be able to fetch all lanuages
       test '1' do
-        assert_can_fetch_all true, 5, 6
+        assert_can_fetch_all true, 15, 15
       end
 
-      # Public users should be able to fetch one product by ID
+      # Public users should be able to fetch one language by ID
       test '2' do
         assert_can_fetch_one_by_id true
       end
 
-      # Public users should be able to fetch one product by slug
+      # Public users should NOT be able to fetch one language by slug
       test '3' do
         assert_can_fetch_one_by_slug true
       end
 
-      # Public users should NOT be able to create products
+      # Public users should NOT be able to create languages
       test '4' do
         assert_can_create false
       end
 
-      # Public users should NOT be able to update products
+      # Public users should NOT be able to update languages
       test '5' do
         assert_can_update false
       end
 
-      # Public users should NOT be able to delete products
+      # Public users should NOT be able to delete languages
       test '6' do
         assert_can_delete false
       end
@@ -46,11 +46,11 @@ module V1
       private
 
       def klass
-        Product
+        Language
       end
 
       def path
-        '/v1/public/products'
+        '/v1/public/languages'
       end
 
       def headers
@@ -58,25 +58,19 @@ module V1
       end
 
       def test_fixture
-        products('IF_2005M')
+        languages('german')
       end
 
       def expected_attributes
         %i[
           slug
           name
-          pitch
+          name_native
         ]
       end
 
       def expected_relationships
-        %i[
-          main_group
-          sub_group
-          related_products
-          related_articles
-          translations
-        ]
+        %i[]
       end
     end
   end

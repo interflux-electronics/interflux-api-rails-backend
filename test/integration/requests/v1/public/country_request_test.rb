@@ -5,7 +5,7 @@ module V1
     class CountryRequestTest < V1::IntegrationTest
       # Public users should be able to fetch all countries
       test '1' do
-        assert_can_fetch_all true, 248
+        assert_can_fetch_all true, 248, 248
       end
 
       # Public users should be able to fetch one country by ID

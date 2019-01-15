@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181129033602) do
+ActiveRecord::Schema.define(version: 20181213025832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(version: 20181129033602) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "slug"
+    t.string "name_english"
+    t.string "name_native"
+    t.boolean "supported"
+    t.index ["slug"], name: "index_languages_on_slug", unique: true
+  end
+
   create_table "leads", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.text "name"
     t.text "company"
@@ -119,6 +127,15 @@ ActiveRecord::Schema.define(version: 20181129033602) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_product_related_products_on_product_id"
     t.index ["related_product_id"], name: "index_product_related_products_on_related_product_id"
+  end
+
+  create_table "product_translations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "slug"
+    t.string "name"
+    t.string "pitch"
+    t.uuid "product_id"
+    t.uuid "language_id"
+    t.index ["slug"], name: "index_product_translations_on_slug", unique: true
   end
 
   create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

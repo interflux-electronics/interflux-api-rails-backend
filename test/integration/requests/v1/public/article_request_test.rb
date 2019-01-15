@@ -5,7 +5,7 @@ module V1
     class ArticleRequestTest < V1::IntegrationTest
       # Public users should be able to fetch all products
       test '1' do
-        assert_can_fetch_all true, 3
+        assert_can_fetch_all true, 3, 3
       end
 
       # Public users should be able to fetch one product by ID

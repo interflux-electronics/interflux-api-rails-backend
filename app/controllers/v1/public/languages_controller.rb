@@ -1,6 +1,6 @@
 module V1
   module Public
-    class ProductsController < ApplicationController
+    class LanguagesController < ApplicationController
       include JsonApi
       include Errors
 
@@ -27,11 +27,11 @@ module V1
       private
 
       def resource_klass
-        Product
+        Language
       end
 
       def serializer_klass
-        V1::Public::ProductSerializer
+        V1::Public::LanguageSerializer
       end
 
       def creatable_attributes
@@ -42,26 +42,18 @@ module V1
         %i[]
       end
 
-      def permitted_filters
-        %i[
-          main_group_id
-          sub_group_id
-        ]
-      end
-
       def permanent_filters
         {
-          public: true
+          supported: true
         }
       end
 
+      def permitted_filters
+        %i[]
+      end
+
       def permitted_includes
-        %i[
-          related_articles
-          related_products
-          related_products.main_group
-          translations
-        ]
+        %i[]
       end
     end
   end

@@ -62,18 +62,31 @@ module JsonApi
   #   user_can_fetch_all
   # end
   #
-  def user_can_fetch_all
+  def user_can_fetch_all(allowed = true)
     # Treat each URL that contains `?slug=something` as a `show` request.
     return show if params[:slug]
 
-    # TODO: Don't use all, allow for always filter
+    return forbidden unless allowed
+
+    # First we gather all of this class.
     resources = resource_klass.all
-    strong_filters&.each do |key, value|
-      resources = resources.where("#{key.underscore}": value)
+
+    # Then we reduce this collection with the permanent and requested filters.
+    filters&.each do |key, value|
+      resources = resources.where("#{key.to_s.underscore}": value)
     end
+
+    # Here we prepare the options we can pass to the serializers.
     options = {}
+
+    # Most importantly, we define which related models to include in the request.
     options[:include] = strong_includes if strong_includes
+
+    # We create a JSON response from the records we collected using the fast and
+    # JSON API compliant Netflux serializers.
     json = serializer_klass.new(resources, options).serialized_json
+
+    # Finally we return the JSON with a 200.
     render status: 200, json: json
   end
 
@@ -174,10 +187,18 @@ module JsonApi
   # The method below permits only those filter key-value pairs of which the keys
   # are listed in `permitted_filters` on the controller.
   #
-  def strong_filters
-    # The `include` param is optional. Ignore if not present.
-    return unless params[:filter]
+  def filters
+    hash = {}
+    hash = hash.merge(permanent_filters) unless permanent_filters.nil?
+    hash = hash.merge(requested_filters) if params[:filter]
+    hash
+  end
 
+  def permanent_filters
+    nil
+  end
+
+  def requested_filters
     keys = permitted_filters.collect(&:to_s)
     params
       .require(:filter)
