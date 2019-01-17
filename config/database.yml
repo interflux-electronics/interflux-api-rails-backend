@@ -12,17 +12,17 @@ default: &default
 
 production:
   <<: *default
-  database: api_interflux_production
-  username: <%= ENV['API_INTERFLUX_DATABASE_USER'] %>
-  password: <%= ENV['API_INTERFLUX_DATABASE_PASSWORD'] %>
+  database: interflux_production
+  username: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
 
 development:
   <<: *default
-  database: api_interflux_development
+  database: interflux_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: api_interflux_test
+  database: interflux_test
