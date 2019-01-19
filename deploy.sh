@@ -7,5 +7,5 @@ echo "----------"
 echo "scp install.sh deploy@server-singapore.interflux.com:/var/www/api.interflux.com"
 scp install.sh deploy@server-singapore.interflux.com:/var/www/api.interflux.com
 echo "----------"
-echo "ssh deploy@server-singapore.interflux.com 'cd /var/www/api.interflux.com/; chmod ug+x install.sh; ./install.sh'"
-ssh deploy@server-singapore.interflux.com 'cd /var/www/api.interflux.com/; chmod ug+x install.sh; ./install.sh'
+echo "ssh deploy@server-singapore.interflux.com 'source ~/.bashrc; /var/www/api.interflux.com/install.sh'"
+ssh deploy@server-singapore.interflux.com '/var/www/api.interflux.com/install.sh'
