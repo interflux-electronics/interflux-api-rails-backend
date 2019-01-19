@@ -1,20 +1,18 @@
 #!/usr/bin/env puma
 
-app_dir = File.expand_path('../../../../', __dir__)
-server_dir = "/var/www/api.interflux.com/server"
+# server_dir = '/var/www/api.interflux.com/server'
 
 environment 'production'
 
 workers 2
 threads 0, 5
 
-bind 'tcp://0.0.0.0:3000'
-bind "unix://#{server_dir}/sockets/puma.sock"
+bind "unix:///var/www/api.interflux.com/server/sockets/puma.sock"
 
-pidfile "#{server_dir}/pids/puma.pid"
-state_path "#{server_dir}/pids/puma.state"
-stdout_redirect "#{server_dir}/log/puma.stdout.log", "#{server_dir}/log/puma.stderr.log", true
-activate_control_app "unix://#{server_dir}/sockets/pumactl.sock", no_token: true
+pidfile "/var/www/api.interflux.com/server/pids/puma.pid"
+state_path "/var/www/api.interflux.com/server/pids/puma.state"
+stdout_redirect "/var/www/api.interflux.com/server/log/puma.stdout.log", "/var/www/api.interflux.com/server/log/puma.stderr.log", true
+activate_control_app "unix:///var/www/api.interflux.com/server/sockets/pumactl.sock", no_token: true
 
 daemonize true
 

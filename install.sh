@@ -54,3 +54,8 @@ echo "----------"
 echo "bin/bundle exec puma -e production"
 bin/bundle exec puma -e production
 echo "----------"
+echo "curl http://0.0.0.0:3000/status"
+curl http://0.0.0.0:3000/status
+echo "----------"
+echo "Deploy successful!"
+echo "----------"
