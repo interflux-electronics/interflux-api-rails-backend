@@ -59,8 +59,8 @@ echo "----------"
 # echo "bin/bundle exec puma -e production"
 # bin/bundle exec puma -e production
 echo "----------"
-echo "ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/production/current"
-ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/production/current
+echo "ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current"
+ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current
 echo "----------"
 echo "Deploy successful!"
 echo "----------"
