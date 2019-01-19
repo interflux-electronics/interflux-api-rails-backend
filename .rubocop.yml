@@ -3,6 +3,9 @@ AllCops:
   Exclude:
     - bin/**/*
     - legacy/**/*
+    - shared/**/*
+    - log/**/*
+    - tmp/**/*
     - db/schema.rb
 
 # Always attempt to keep all of the things as short as possible
