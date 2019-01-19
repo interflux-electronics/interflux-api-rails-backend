@@ -1,6 +1,6 @@
 environment 'production'
 
-directory File.expand_path('../../', __dir__)
+directory File.expand_path('../../../../', __dir__)
 
 # The socket from which to serve the Rails app
 bind 'unix://server/puma.sock'
