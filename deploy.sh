@@ -3,10 +3,11 @@
 set -e
 set -o pipefail
 
-echo "----------"
 branch=$(git rev-parse --abbrev-ref HEAD)
 revision=$(git rev-parse --short HEAD)
+
 echo "----------"
+echo "Deploying:"
 echo $branch
 echo $revision
 echo "----------"

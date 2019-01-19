@@ -7,27 +7,30 @@ set -o pipefail
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+BRANCH=$1
+REVISION=$2
+
 echo "----------"
 echo "User: $USER"
 echo "Host: $HOSTNAME"
 echo "Path: $PWD"
-echo "Branch: $1"
-echo "Revision: $2"
+echo "Branch: $BRANCH"
+echo "Revision: $REVISION"
 echo "----------"
 echo "cd /var/www/api.interflux.com"
 cd /var/www/api.interflux.com
 echo "----------"
-echo "rm -rf ./releases/latest"
-rm -rf ./releases/latest
+echo "rm -rf builds/$BRANCH/$REVISION/*"
+rm -rf builds/$BRANCH/$REVISION/*
 echo "----------"
-echo "git clone -b production --single-branch git@github.com:janwerkhoven/api.interflux.com.git ./releases/latest"
-git clone -b production --single-branch git@github.com:janwerkhoven/api.interflux.com.git ./releases/latest
+echo "git clone -b $BRANCH --single-branch git@github.com:janwerkhoven/api.interflux.com.git builds/$BRANCH/$REVISION"
+git clone -b $BRANCH --single-branch git@github.com:janwerkhoven/api.interflux.com.git builds/$BRANCH/$REVISION
 echo "----------"
-echo "cp .rbenv-vars releases/latest/"
-cp .rbenv-vars releases/latest/
+echo "cp .rbenv-vars builds/$BRANCH/$REVISION"
+cp .rbenv-vars builds/$BRANCH/$REVISION
 echo "----------"
-echo "cd ./releases/latest"
-cd ./releases/latest
+echo "cd builds/$BRANCH/$REVISION"
+cd builds/$BRANCH/$REVISION
 echo "----------"
 echo "rbenv install -s"
 ~/.rbenv/bin/rbenv install --skip-existing
@@ -53,11 +56,11 @@ echo "----------"
 echo "bin/rails db:migrate"
 bin/rails db:migrate
 echo "----------"
-echo "bin/bundle exec puma -e production"
-bin/bundle exec puma -e production
+# echo "bin/bundle exec puma -e production"
+# bin/bundle exec puma -e production
 echo "----------"
-echo "curl http://0.0.0.0:3000/status"
-curl http://0.0.0.0:3000/status
+echo "ln -sf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current"
+ln -sf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current
 echo "----------"
 echo "Deploy successful!"
 echo "----------"
