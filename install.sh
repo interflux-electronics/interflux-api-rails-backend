@@ -15,17 +15,17 @@ echo "----------"
 echo "cd /var/www/api.interflux.com"
 cd /var/www/api.interflux.com
 echo "----------"
-echo "rm -rf ./tmp/deploy"
-rm -rf ./tmp/deploy
+echo "rm -rf ./releases/latest"
+rm -rf ./releases/latest
 echo "----------"
-echo "git clone -b production --single-branch git@github.com:janwerkhoven/api.interflux.com.git ./tmp/deploy"
-git clone -b production --single-branch git@github.com:janwerkhoven/api.interflux.com.git ./tmp/deploy
+echo "git clone -b production --single-branch git@github.com:janwerkhoven/api.interflux.com.git ./releases/latest"
+git clone -b production --single-branch git@github.com:janwerkhoven/api.interflux.com.git ./releases/latest
 echo "----------"
-echo "cp .rbenv-vars tmp/deploy/"
-cp .rbenv-vars tmp/deploy/
+echo "cp .rbenv-vars releases/latest/"
+cp .rbenv-vars releases/latest/
 echo "----------"
-echo "cd ./tmp/deploy"
-cd ./tmp/deploy
+echo "cd ./releases/latest"
+cd ./releases/latest
 echo "----------"
 echo "rbenv install -s"
 ~/.rbenv/bin/rbenv install --skip-existing
@@ -50,4 +50,7 @@ bin/rails db:create
 echo "----------"
 echo "bin/rails db:migrate"
 bin/rails db:migrate
+echo "----------"
+echo "bin/puma -e production"
+bin/bundle exec puma -e production
 echo "----------"

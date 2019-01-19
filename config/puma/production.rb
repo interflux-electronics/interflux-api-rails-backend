@@ -1,13 +1,13 @@
 environment 'production'
 
-directory File.expand_path('../../../../', __dir__)
+# directory File.expand_path('../../../../', __dir__)
 
 # The socket from which to serve the Rails app
-bind 'unix://server/puma.sock'
-pidfile 'server/puma.pid'
-state_path 'server/puma.state'
-stdout_redirect 'server/puma.stdout.log', 'server/puma.stderr.log', true
-activate_control_app 'unix://server/pumactl.sock', no_token: true
+bind 'unix:///var/www/api.interflux/server/puma.sock'
+pidfile '/var/www/api.interflux/server/puma.pid'
+state_path '/var/www/api.interflux/server/puma.state'
+stdout_redirect '/var/www/api.interflux/server/puma.stdout.log', 'server/puma.stderr.log', true
+activate_control_app 'unix:///var/www/api.interflux/server/pumactl.sock', no_token: true
 
 daemonize true
 
