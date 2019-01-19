@@ -11,6 +11,8 @@ echo "----------"
 echo "User: $USER"
 echo "Host: $HOSTNAME"
 echo "Path: $PWD"
+echo "Branch: $1"
+echo "Revision: $2"
 echo "----------"
 echo "cd /var/www/api.interflux.com"
 cd /var/www/api.interflux.com
