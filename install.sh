@@ -20,11 +20,14 @@ echo "----------"
 echo "cd /var/www/api.interflux.com"
 cd /var/www/api.interflux.com
 echo "----------"
-echo "rm -rf builds/$BRANCH/$REVISION/*"
-rm -rf builds/$BRANCH/$REVISION/*
+echo "rm -rf builds/$BRANCH/$REVISION"
+rm -rf builds/$BRANCH/$REVISION
 echo "----------"
-echo "git clone -b $BRANCH --single-branch git@github.com:janwerkhoven/api.interflux.com.git builds/$BRANCH/$REVISION"
-git clone -b $BRANCH --single-branch git@github.com:janwerkhoven/api.interflux.com.git builds/$BRANCH/$REVISION
+echo "mkdir -p builds/$BRANCH/$REVISION"
+mkdir -p builds/$BRANCH/$REVISION
+echo "----------"
+echo "git --git-dir=repo --work-tree=builds/$BRANCH/$REVISION checkout $REVISION -f"
+git --git-dir=repo --work-tree=builds/$BRANCH/$REVISION checkout $REVISION -f
 echo "----------"
 echo "cp .rbenv-vars builds/$BRANCH/$REVISION"
 cp .rbenv-vars builds/$BRANCH/$REVISION
@@ -55,9 +58,6 @@ bin/rails db:create
 echo "----------"
 echo "bin/rails db:migrate"
 bin/rails db:migrate
-echo "----------"
-# echo "bin/bundle exec puma -e production"
-# bin/bundle exec puma -e production
 echo "----------"
 echo "ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current"
 ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current
