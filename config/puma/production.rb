@@ -2,7 +2,7 @@ environment 'production'
 
 # directory File.expand_path('../../../../', __dir__)
 
-directory '/var/www/api.interflux/releases/latest'
+directory '/var/www/api.interflux.com/releases/latest'
 
 # The socket from which to serve the Rails app
 bind 'unix:///var/www/api.interflux/server/puma.sock'

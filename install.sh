@@ -51,6 +51,6 @@ echo "----------"
 echo "bin/rails db:migrate"
 bin/rails db:migrate
 echo "----------"
-echo "bin/puma -e production"
+echo "bin/bundle exec puma -e production"
 bin/bundle exec puma -e production
 echo "----------"
