@@ -2,6 +2,8 @@ environment 'production'
 
 # directory File.expand_path('../../../../', __dir__)
 
+directory '/var/www/api.interflux/releases/latest'
+
 # The socket from which to serve the Rails app
 bind 'unix:///var/www/api.interflux/server/puma.sock'
 pidfile '/var/www/api.interflux/server/puma.pid'
@@ -19,7 +21,12 @@ before_fork do
   ActiveRecord::Base.connection_pool.disconnect! if defined?(ActiveRecord)
 end
 
+on_restart do
+  puts 'On restart...'
+end
+
 on_worker_boot do
+  puts 'On worker boot...'
   ActiveSupport.on_load(:active_record) do
     ActiveRecord::Base.establish_connection
   end
