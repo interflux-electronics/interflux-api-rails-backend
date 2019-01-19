@@ -1,0 +1,4 @@
+---
+pid: 55770
+control_url: unix:///Users/jw/Code/api.interflux.com/server/sockets/pumactl.sock
+control_auth_token: :none

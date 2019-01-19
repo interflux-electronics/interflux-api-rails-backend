@@ -13,10 +13,8 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
-/server/*
 /tmp/*
 !/log/.keep
-!/server/.keep
 !/tmp/.keep
 
 .byebug_history

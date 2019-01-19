@@ -1,0 +1,4 @@
+=== puma startup: 2019-01-19 17:37:15 +1100 ===
+[55770] * Starting control server on unix:///Users/jw/Code/api.interflux.com/server/sockets/pumactl.sock
+[55770] - Worker 0 (pid: 55800) booted, phase: 0
+[55770] - Worker 1 (pid: 55801) booted, phase: 0
