@@ -51,7 +51,7 @@ echo "gem install rails"
 gem install rails
 echo "----------"
 echo "bin/bundle install --binstubs"
-bin/bundle install
+bin/bundle install --binstubs
 echo "----------"
 echo "export RAILS_ENV=production"
 export RAILS_ENV=production
@@ -65,8 +65,8 @@ echo "----------"
 echo "ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current"
 ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current
 echo "----------"
-echo "bin/bundle exec pumactl -F config/puma/production.rb restart"
-bin/bundle exec pumactl -F config/puma/production.rb restart
+echo "bin/pumactl exec pumactl -F config/puma/production.rb restart"
+bin/pumactl -F config/puma/production.rb restart
 echo "----------"
 echo "Deploy successful!"
 echo "----------"
