@@ -34,6 +34,9 @@ Rails.application.routes.draw do
     end
   end
 
-  # Return a 404 for all other routes
+  # Return app meta info for health check.
+  get 'status', to: 'application#status'
+
+  # Return a 404 for all other routes.
   match '*catch', to: 'application#route_not_found', via: :all
 end

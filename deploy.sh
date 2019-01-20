@@ -3,28 +3,16 @@
 set -e
 set -o pipefail
 
-script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-script_filename="$(basename "${BASH_SOURCE[0]}")"
-cd $script_dir
+branch=$(git rev-parse --abbrev-ref HEAD)
+revision=$(git rev-parse --short HEAD)
 
 echo "----------"
-echo "User: $USER"
-echo "Host: $HOSTNAME"
-echo "Path: $PWD"
+echo "Deploying:"
+echo $branch
+echo $revision
 echo "----------"
-echo "Running $script_filename ..."
+echo "scp install.sh deploy@server-singapore.interflux.com:/var/www/api.interflux.com"
+scp install.sh deploy@server-singapore.interflux.com:/var/www/api.interflux.com
 echo "----------"
-echo "git pull"
-git pull
-echo "----------"
-echo "git checkout 'production' -f"
-git checkout 'production' -f
-echo "----------"
-rbenv install
-echo "----------"
-gem install bundler
-echo "----------"
-gem install rails
-echo "----------"
-bundle install
-echo "----------"
+echo 'ssh deploy@server-singapore.interflux.com "cd /var/www/api.interflux.com; ./install.sh $branch $revision; rm ./install.sh"'
+ssh deploy@server-singapore.interflux.com "cd /var/www/api.interflux.com; ./install.sh $branch $revision; rm ./install.sh"
