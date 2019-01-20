@@ -33,11 +33,15 @@ pidfile '/var/www/api.interflux.com/server/pids/puma.pid'
 state_path '/var/www/api.interflux.com/server/pids/puma.state'
 stdout_redirect '/var/www/api.interflux.com/server/log/puma.stdout.log', '/var/www/api.interflux.com/server/log/puma.stderr.log', true
 
+# Which Rails build to serve.
+# Note that this is a symlinked folder pointing at the latest build.
+directory '/var/www/api.interflux.com/builds/current'
+
 # Verifies that all workers have checked in to the master process within the
 # given timeout. If not the worker process will be restarted. This is not a
 # request timeout, it is to protect against a hung or dead process. Setting this
 # value will not protect against slow requests. Default value is 60 seconds.
 worker_timeout 60
 
-# Additional text to display in process listing
-tag 'Puma - Interflux API - Production'
+# A description appended to the Unix process as seen in `ps aux`.
+tag 'Puma Server for Interflux API (production)'
