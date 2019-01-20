@@ -38,6 +38,12 @@ echo "----------"
 echo "cd builds/$BRANCH/$REVISION"
 cd builds/$BRANCH/$REVISION
 echo "----------"
+echo "GIT_BRANCH=$BRANCH >> .rbenv-vars"
+echo "GIT_BRANCH=$BRANCH" >> .rbenv-vars
+echo "----------"
+echo "GIT_REVISION=$REVISION >> .rbenv-vars"
+echo "GIT_REVISION=$REVISION" >> .rbenv-vars
+echo "----------"
 echo "rbenv install -s"
 ~/.rbenv/bin/rbenv install --skip-existing
 echo "----------"
