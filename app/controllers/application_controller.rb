@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
     git_revision = ENV['GIT_REVISION'] || 'not-set'
     json = {
       code: 200,
-      msg: 'This request successfully got passed Nginx, SSL, Rack, Rails and back! Have a beer.',
+      msg: 'This request successfully got passed Nginx, SSL, Rack, Rails and back! Have a cookie.',
       'git-branch': git_branch,
       'git-revision': git_revision
     }
