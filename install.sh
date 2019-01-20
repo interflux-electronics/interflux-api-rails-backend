@@ -65,5 +65,8 @@ echo "----------"
 echo "ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current"
 ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interflux.com/builds/current
 echo "----------"
+echo "bin/bundle exec pumactl -F config/puma/production.rb restart"
+bin/bundle exec pumactl -F config/puma/production.rb restart
+echo "----------"
 echo "Deploy successful!"
 echo "----------"
