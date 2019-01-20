@@ -26,6 +26,9 @@ echo "----------"
 echo "mkdir -p builds/$BRANCH/$REVISION"
 mkdir -p builds/$BRANCH/$REVISION
 echo "----------"
+echo "git --git-dir=repo fetch"
+git --git-dir=repo fetch
+echo "----------"
 echo "git --git-dir=repo --work-tree=builds/$BRANCH/$REVISION checkout $REVISION -f"
 git --git-dir=repo --work-tree=builds/$BRANCH/$REVISION checkout $REVISION -f
 echo "----------"
