@@ -73,8 +73,10 @@ ln -nsf /var/www/api.interflux.com/builds/$BRANCH/$REVISION /var/www/api.interfl
 echo "----------"
 
 if [ -e "/var/www/api.interflux.com/server/sockets/pumactl.sock" ]; then
-  echo "bin/pumactl -F config/puma/production.rb phased-restart"
-  bin/pumactl -F config/puma/production.rb start
+  # echo "bin/pumactl -F config/puma/production.rb phased-restart"
+  # bin/pumactl -F config/puma/production.rb start
+  echo "bin/pumactl -C 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock' -T '12345' phased-restart"
+  bin/pumactl -C 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock' -T '12345' phased-restart
 else
   echo "bin/puma -e production"
   bin/puma -e production
