@@ -50,7 +50,7 @@ echo "----------"
 echo "gem install rails"
 gem install rails
 echo "----------"
-echo "bin/bundle install"
+echo "bin/bundle install --binstubs"
 bin/bundle install
 echo "----------"
 echo "export RAILS_ENV=production"
