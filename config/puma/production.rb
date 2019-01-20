@@ -26,7 +26,7 @@ bind 'unix:///var/www/api.interflux.com/server/sockets/puma.sock'
 
 # Where to store the Puma control socket.
 # This socket allows us to interact with Puma (start, stop, status, ...)
-activate_control_app 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock'
+activate_control_app 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock', auth_token: '12345'
 
 # Where to store Pumag pid, state and logs.
 pidfile '/var/www/api.interflux.com/server/pids/puma.pid'
