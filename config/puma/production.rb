@@ -38,3 +38,6 @@ stdout_redirect '/var/www/api.interflux.com/server/log/puma.stdout.log', '/var/w
 # request timeout, it is to protect against a hung or dead process. Setting this
 # value will not protect against slow requests. Default value is 60 seconds.
 worker_timeout 60
+
+# Additional text to display in process listing
+tag 'Puma - Interflux API - Production'
