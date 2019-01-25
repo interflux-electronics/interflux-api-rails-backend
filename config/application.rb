@@ -43,6 +43,12 @@ module ApiInterfluxCom
                  headers: :any,
                  methods: %i[get post options]
       end
+      allow do
+        origins '*'
+        resource '/v1/admin/*',
+                 headers: :any,
+                 methods: %i[get post options]
+      end
     end
   end
 end
