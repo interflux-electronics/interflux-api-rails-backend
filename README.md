@@ -113,3 +113,22 @@ Instead do:
 ```
 bin/rails g scaffold article
 ```
+
+## Restart Puma
+
+```
+bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
+```
+
+## Access production console
+
+```
+bin/rails console production
+```
+
+## Seed database
+
+```
+export RAILS_ENV=production
+bin/rails db:fixtures:load FIXTURES=articles
+```
