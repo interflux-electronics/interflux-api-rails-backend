@@ -1,5 +1,4 @@
 class <%= @name.classify.singularize %> < ApplicationRecord
-
   # Relate to a model
   # belongs_to :company
   # belongs_to :main_group, class_name: 'ProductGroup', foreign_key: 'main_group_id'
@@ -18,5 +17,4 @@ class <%= @name.classify.singularize %> < ApplicationRecord
   # has_many :inverse_related_products, through: :inverse_related_products_association, source: :product
 
   # validates :name, presence: true, uniqueness: true
-
 end

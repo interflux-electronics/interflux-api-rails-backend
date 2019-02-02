@@ -10,20 +10,21 @@ class CustomScaffoldGenerator < Rails::Generators::NamedBase
 
   source_root File.expand_path('templates', __dir__)
 
-  def create_files
-    puts "---------"
-    puts "Generating scaffold..."
-    puts "---------"
+  def verify_inputs
+    puts '---------'
+    puts 'Generating scaffold...'
+    puts '---------'
     @version = options['version']
     @scope = options['scope']
-    return puts "ERROR: Please supply a version with '--version=v1'" if @version.nil?
-    return puts "ERROR: The version can only be 'v1'" unless ['v1'].include? @version
     puts "Version: #{@version}"
-    return puts "ERROR: Please supply a scope with '--scope=admin'" if @scope.nil?
-    return puts "ERROR: The scope can only be 'Admin' or 'Public'" unless ['Admin', 'Public'].include? @scope.classify
     puts "Scope: #{@scope}"
     puts "Name: #{@name}"
-    puts "---------"
+    return puts "ERROR: Please supply a version with '--version=v1'" if @version.nil?
+    return puts "ERROR: The version can only be 'v1'" unless ['v1'].include? @version
+    return puts "ERROR: Please supply a scope with '--scope=admin'" if @scope.nil?
+    return puts "ERROR: The scope can only be 'Admin' or 'Public'" unless %w[Admin Public].include? @scope.classify
+    return puts 'ERROR: Please only use snake_case for the resource name (e.g.: product_features).' if /[A-Z\- ]/.match(@name).present?
+    puts '---------'
     template 'migration.rb.tt', "db/migrate/#{timestamp}_create_#{name.downcase.pluralize}.rb"
     template 'model.rb.tt', "app/models/#{name.downcase.singularize}.rb"
     template 'controller.rb.tt', "app/controllers/#{@version}/#{@scope}/#{name.downcase.pluralize}_controller.rb"
@@ -37,9 +38,9 @@ class CustomScaffoldGenerator < Rails::Generators::NamedBase
       str << "\n"
       str
     end
-    puts "---------"
-    puts "Success!"
-    puts "---------"
+    puts '---------'
+    puts 'Success!'
+    puts '---------'
   end
 
   private

@@ -1,6 +1,6 @@
-class Create<%= name.pluralize.classify %> < ActiveRecord::Migration[5.1]
+class Create<%= @name.classify.pluralize %> < ActiveRecord::Migration[5.1]
   def change
-    create_table :<%= name.pluralize.downcase %>, id: :uuid do |t|
+    create_table :<%= @name.downcase.pluralize %>, id: :uuid do |t|
       # t.string :slug
       # t.string :name
       # t.boolean :public, default: false

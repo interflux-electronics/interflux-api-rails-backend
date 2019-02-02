@@ -50,3 +50,7 @@ Naming/VariableName:
 Naming/VariableNumber:
   Exclude:
     - test/integration/admin/products_test.rb
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: "[]"

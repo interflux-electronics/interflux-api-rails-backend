@@ -2,7 +2,7 @@ require 'test_helper'
 
 module <%= @version.classify %>
   module <%= @scope.classify %>
-    class <%= @name.classify.singularize %>Test < ApplicationController
+    class <%= @name.classify.singularize %>IntegrationTest < ApplicationController
       # Public users should be able to fetch all <%= @name.humanize.downcase.pluralize %>
       test '1' do
         assert_can_fetch_all true, 5, 6
@@ -62,11 +62,11 @@ module <%= @version.classify %>
       end
 
       def expected_attributes
-        # %i[
-        #   slug
-        #   name
-        #   pitch
-        # ]
+        %i[
+          slug
+          name
+          pitch
+        ]
       end
 
       def expected_relationships
