@@ -30,12 +30,23 @@ Rails.application.routes.draw do
     # https://admin.interflux.com
     #
     namespace :admin do
+      resources :article_tags, path: '/article-tags'
       resources :articles
+      resources :companies
       resources :countries
+      resources :documents
+      resources :images
       resources :languages
       resources :leads
+      resources :people
+      resources :person
+      resources :product_documents, path: '/product-documents'
+      resources :product_features, path: '/product-features'
       resources :product_groups, path: '/product-groups'
-      resources :product_translations, path: '/product-translations'
+      resources :product_images, path: '/product-images'
+      resources :product_related_articles, path: '/product-related-articles'
+      resources :product_related_products, path: '/product-related-products'
+      resources :product_variations, path: '/product-variations'
       resources :products
     end
   end
