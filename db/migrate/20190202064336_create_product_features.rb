@@ -1,18 +1,18 @@
 class CreateProductFeatures < ActiveRecord::Migration[5.1]
   def change
     create_table :product_features, id: :uuid do |t|
-      # t.string :slug
-      # t.string :name
-      # t.boolean :public, default: false
+      t.string :slug
+      t.string :text
+      t.boolean :public, default: false
 
-      # t.uuid :group_id
+      t.uuid :image_id
 
-      # t.timestamps
+      t.timestamps
     end
 
-    # add_index :products, :slug, unique: true
-    # add_index :products, :name, unique: true
-    # add_index :products, :public
-    # add_index :products, :group_id
+    add_index :product_features, :slug, unique: true
+    add_index :product_features, :text, unique: true
+    add_index :product_features, :public
+    add_index :product_features, :image_id
   end
 end

@@ -1,18 +1,13 @@
 class CreateImages < ActiveRecord::Migration[5.1]
   def change
     create_table :images, id: :uuid do |t|
-      # t.string :slug
-      # t.string :name
-      # t.boolean :public, default: false
+      t.string :path
+      t.string :text
+      t.string :sizes
 
-      # t.uuid :group_id
-
-      # t.timestamps
+      t.timestamps
     end
 
-    # add_index :products, :slug, unique: true
-    # add_index :products, :name, unique: true
-    # add_index :products, :public
-    # add_index :products, :group_id
+    add_index :images, :path, unique: true
   end
 end
