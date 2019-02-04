@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: countries
+#
+#  id                :uuid             not null, primary key
+#  name_english      :string
+#  name_native       :string
+#  alpha2_code       :string
+#  alpha3_code       :string
+#  numeric_code      :string
+#  region            :string
+#  subregion         :string
+#  latitude          :decimal(, )
+#  longitude         :decimal(, )
+#  area              :integer
+#  population        :integer
+#  flag_url          :string
+#  currencies        :string
+#  timezones         :string
+#  languages         :string
+#  top_level_domains :string
+#  calling_codes     :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 class Country < ApplicationRecord
   # Relate to a model
   # belongs_to :company

@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: product_related_products
+#
+#  id                 :uuid             not null, primary key
+#  product_id         :uuid
+#  related_product_id :uuid
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
 class ProductRelatedProduct < ApplicationRecord
   # Relate to a model
   # belongs_to :company

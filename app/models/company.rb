@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: companies
+#
+#  id         :uuid             not null, primary key
+#  slug       :string
+#  name       :string
+#  address    :string
+#  email      :string
+#  phone      :string
+#  fax        :string
+#  latitude   :decimal(, )
+#  longitude  :decimal(, )
+#  country_id :uuid
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class Company < ApplicationRecord
   # Relate to a model
   # belongs_to :company

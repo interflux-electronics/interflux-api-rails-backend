@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: product_variations
+#
+#  id          :uuid             not null, primary key
+#  code        :string
+#  description :string
+#  product_id  :uuid
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class ProductVariation < ApplicationRecord
   # Relate to a model
   # belongs_to :company

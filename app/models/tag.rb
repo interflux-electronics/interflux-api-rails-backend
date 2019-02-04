@@ -1,17 +1,15 @@
 # == Schema Information
 #
-# Table name: articles
+# Table name: tags
 #
 #  id         :uuid             not null, primary key
 #  slug       :string
-#  title      :string
-#  public     :boolean          default(FALSE)
-#  person_id  :uuid
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Article < ApplicationRecord
+class Tag < ApplicationRecord
   # Relate to a model
   # belongs_to :company
   # belongs_to :main_group, class_name: 'ProductGroup', foreign_key: 'main_group_id'

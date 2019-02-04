@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: languages
+#
+#  id           :uuid             not null, primary key
+#  name_english :string
+#  name_native  :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Language < ApplicationRecord
   # Relate to a model
   # belongs_to :company

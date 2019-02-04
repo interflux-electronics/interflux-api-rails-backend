@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: product_features
+#
+#  id         :uuid             not null, primary key
+#  slug       :string
+#  text       :string
+#  public     :boolean          default(FALSE)
+#  image_id   :uuid
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class ProductFeature < ApplicationRecord
   # Relate to a model
   # belongs_to :company
