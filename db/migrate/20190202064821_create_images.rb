@@ -9,5 +9,6 @@ class CreateImages < ActiveRecord::Migration[5.1]
     end
 
     add_index :images, :path, unique: true
+    add_index :images, :text, unique: true
   end
 end

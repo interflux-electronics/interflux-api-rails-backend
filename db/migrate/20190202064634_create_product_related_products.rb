@@ -1,18 +1,13 @@
 class CreateProductRelatedProducts < ActiveRecord::Migration[5.1]
   def change
     create_table :product_related_products, id: :uuid do |t|
-      # t.string :slug
-      # t.string :name
-      # t.boolean :public, default: false
+      t.uuid :product_id
+      t.uuid :related_product_id
 
-      # t.uuid :group_id
-
-      # t.timestamps
+      t.timestamps
     end
 
-    # add_index :products, :slug, unique: true
-    # add_index :products, :name, unique: true
-    # add_index :products, :public
-    # add_index :products, :group_id
+    add_index :product_related_products, :product_id
+    add_index :product_related_products, :related_product_id
   end
 end

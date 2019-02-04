@@ -1,18 +1,17 @@
 class CreateArticles < ActiveRecord::Migration[5.1]
   def change
     create_table :articles, id: :uuid do |t|
-      # t.string :slug
-      # t.string :name
-      # t.boolean :public, default: false
+      t.string :slug
+      t.string :title
+      t.boolean :public, default: false
 
-      # t.uuid :group_id
+      t.uuid :person_id
 
-      # t.timestamps
+      t.timestamps
     end
 
-    # add_index :products, :slug, unique: true
-    # add_index :products, :name, unique: true
-    # add_index :products, :public
-    # add_index :products, :group_id
+    add_index :articles, :slug, unique: true
+    add_index :articles, :title, unique: true
+    add_index :articles, :person_id
   end
 end

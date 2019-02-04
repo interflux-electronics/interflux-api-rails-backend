@@ -1,18 +1,20 @@
 class CreatePeople < ActiveRecord::Migration[5.1]
   def change
     create_table :people, id: :uuid do |t|
-      # t.string :slug
-      # t.string :name
-      # t.boolean :public, default: false
+      t.string :slug
+      t.string :name
+      t.string :email
+      t.string :mobile
+      t.string :address
 
-      # t.uuid :group_id
+      t.uuid :country_id
 
-      # t.timestamps
+      t.timestamps
     end
 
-    # add_index :products, :slug, unique: true
-    # add_index :products, :name, unique: true
-    # add_index :products, :public
-    # add_index :products, :group_id
+    add_index :people, :slug, unique: true
+    add_index :people, :name, unique: true
+    add_index :people, :email, unique: true
+    add_index :people, :country_id
   end
 end

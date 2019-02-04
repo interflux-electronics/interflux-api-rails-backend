@@ -10,5 +10,7 @@ class CreateDocuments < ActiveRecord::Migration[5.1]
     end
 
     add_index :documents, :path, unique: true
+    add_index :documents, :name, unique: true
+    add_index :documents, :language_id
   end
 end

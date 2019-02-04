@@ -13,6 +13,6 @@ class CreateProducts < ActiveRecord::Migration[5.1]
     add_index :products, :slug, unique: true
     add_index :products, :name, unique: true
     add_index :products, :public
-    add_index :products, :group_id
+    add_index :products, :product_group_id
   end
 end

@@ -1,7 +1,7 @@
 class CreateProductVariations < ActiveRecord::Migration[5.1]
   def change
     create_table :product_variations, id: :uuid do |t|
-      t.string :reference
+      t.string :code
       t.string :description
 
       t.uuid :product_id
@@ -9,6 +9,6 @@ class CreateProductVariations < ActiveRecord::Migration[5.1]
       t.timestamps
     end
 
-    add_index :products, :reference, unique: true
+    add_index :product_variations, :code, unique: true
   end
 end
