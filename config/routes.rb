@@ -1,3 +1,8 @@
+# TODO: resources :currencies
+# TODO: resources :country_currencies, path: '/country-currencies'
+# TODO: resources :country_languages, path: '/country-languages'
+# TODO: resources :employees
+# TODO: resources :tags
 Rails.application.routes.draw do
   # Make the API future proof by versioning v1
   namespace :v1 do

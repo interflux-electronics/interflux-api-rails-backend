@@ -2,25 +2,24 @@
 #
 # Table name: countries
 #
-#  id                :uuid             not null, primary key
-#  name              :text
-#  native_name       :text
-#  region            :text
-#  subregion         :text
-#  alpha_2_code      :text
-#  alpha_3_code      :text
-#  numeric_code      :text
-#  flag              :text
-#  latlng            :text
-#  area              :decimal(, )
-#  population        :decimal(, )
-#  languages         :text
-#  timezones         :text
-#  currencies        :text
-#  top_level_domains :text
-#  calling_codes     :text
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
+#  id                      :uuid             not null, primary key
+#  name_english            :string
+#  name_native             :string
+#  iso_3161_1_alpha_2_code :string
+#  iso_3161_1_alpha_3_code :string
+#  iso_3161_1_numeric_code :string
+#  region                  :string
+#  subregion               :string
+#  latitude                :decimal(, )
+#  longitude               :decimal(, )
+#  area                    :integer
+#  population              :integer
+#  flag_url                :string
+#  timezones               :string
+#  top_level_domains       :string
+#  calling_codes           :string
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
 #
 
 class CountrySerializer < ApplicationSerializer

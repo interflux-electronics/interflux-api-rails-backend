@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: country_languages
+#
+#  id          :uuid             not null, primary key
+#  country_id  :uuid
+#  language_id :uuid
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+country_language_fixture_1:
+  name: Some Name
+  slug: some-name
+  public: true
+  group: other_thing_fixture_1
+
+country_language_fixture_2:
+  name: Some Name
+  slug: some-name
+  public: true
+  group: other_thing_fixture_1

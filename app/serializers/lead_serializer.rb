@@ -3,20 +3,20 @@
 # Table name: leads
 #
 #  id            :uuid             not null, primary key
-#  name          :text
-#  company       :text
-#  email         :text
-#  mobile        :text
+#  name          :string
+#  company       :string
+#  email         :string
+#  mobile        :string
 #  message       :text
-#  purpose       :text
-#  source        :text
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  purpose       :string
+#  source        :string
+#  ip_region     :string
+#  ip_city       :string
+#  ip            :string
 #  country_id    :uuid
 #  ip_country_id :uuid
-#  ip_region     :text
-#  ip_city       :text
-#  ip            :text
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 
 class LeadSerializer < ApplicationSerializer

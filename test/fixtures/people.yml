@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: people
+#
+#  id         :uuid             not null, primary key
+#  slug       :string
+#  name       :string
+#  email      :string
+#  mobile     :string
+#  address    :string
+#  country_id :uuid
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 person_fixture_1:
   name: Some Name
   slug: some-name

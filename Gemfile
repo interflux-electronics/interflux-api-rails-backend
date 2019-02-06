@@ -26,7 +26,10 @@ gem 'awesome_print'
 # For halting the code and debugging `byebug`
 gem 'byebug', '~> 10.0', groups: %i[development test]
 
-# For dumping database data into a YAML file
+# For seeding the database with modular control and dependencies
+gem 'seedbank'
+
+# For dumping database data into a YAML file (great for maintenance backups)
 gem 'yaml_db'
 
 group :development do
