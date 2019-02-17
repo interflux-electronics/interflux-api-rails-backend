@@ -1,5 +1,7 @@
 # Things to apply to all serializers
 class ApplicationSerializer
+  include FastJsonapi::ObjectSerializer
+
   def self.inherited(klass)
     # Include Fast JSON API on every serializer
     klass.send :include, FastJsonapi::ObjectSerializer

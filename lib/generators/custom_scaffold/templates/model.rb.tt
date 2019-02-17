@@ -17,4 +17,7 @@ class <%= @name.classify.singularize %> < ApplicationRecord
   # has_many :inverse_related_products, through: :inverse_related_products_association, source: :product
 
   # validates :name, presence: true, uniqueness: true
+
+  # If foo `belongs_to :bar`, then the foos table has a bar_id column.
+  # If foo `has_one :bar`, then the bars table has a foo_id column.
 end

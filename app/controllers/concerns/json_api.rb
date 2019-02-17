@@ -12,11 +12,11 @@ module JsonApi
   # per controller with a well defined reusable method. For example:
   #
   # def index
-  #   user_can_fetch_all
+  #   allow_index
   # end
   #
   # def show
-  #   user_can_fetch_one_by_id_or_slug
+  #   allow_show
   # end
   #
   def index
@@ -59,10 +59,10 @@ module JsonApi
   # Use this method only in the `index`.
   #
   # def index
-  #   user_can_fetch_all
+  #   allow_index
   # end
   #
-  def user_can_fetch_all(allowed = true)
+  def allow_index(allowed = true)
     # Treat each URL that contains `?slug=something` as a `show` request.
     return show if params[:slug]
 
@@ -96,7 +96,7 @@ module JsonApi
   # GET /products/?slug=foo
   #
   # def show
-  #   user_can_fetch_one_by_id_or_slug
+  #   allow_show
   # end
   #
   # def show
@@ -120,25 +120,25 @@ module JsonApi
   # Which should return the same as the UUID:
   # GET api.foo.com/people/797e2b42-f8c8-5712-b6b0-486aeb1bcf94
   #
-  def user_can_fetch_one_by_id_or_slug
-    return user_can_fetch_one_by_slug if params[:slug]
+  def allow_show
+    return find_by_slug if params[:slug]
 
-    user_can_fetch_one_by_id
+    find_by_id
   end
 
-  def user_can_fetch_one_by_id
-    resource = resource_klass.find_by id: params[:id]
-
-    user_can_fetch_one resource
-  end
-
-  def user_can_fetch_one_by_slug
+  def find_by_slug
     resource = resource_klass.find_by slug: params[:slug]
 
-    user_can_fetch_one resource
+    fetch_one resource
   end
 
-  def user_can_fetch_one(resource)
+  def find_by_id
+    resource = resource_klass.find_by id: params[:id]
+
+    fetch_one resource
+  end
+
+  def fetch_one(resource)
     return resource_not_found if resource.nil?
 
     options = {}

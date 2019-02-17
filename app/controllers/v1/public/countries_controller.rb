@@ -5,7 +5,7 @@ module V1
       include Errors
 
       def index
-        user_can_fetch_all
+        allow_index
       end
 
       def show
@@ -31,7 +31,7 @@ module V1
       end
 
       def serializer_klass
-        CountrySerializer
+        Public::V1::CountrySerializer
       end
 
       def creatable_attributes

@@ -1,8 +1,3 @@
-# TODO: resources :currencies
-# TODO: resources :country_currencies, path: '/country-currencies'
-# TODO: resources :country_languages, path: '/country-languages'
-# TODO: resources :employees
-# TODO: resources :tags
 Rails.application.routes.draw do
   # Make the API future proof by versioning v1
   namespace :v1 do
@@ -17,13 +12,8 @@ Rails.application.routes.draw do
     # https://lmpa.interflux.com
     #
     namespace :public do
-      resources :articles
       resources :countries
-      resources :languages
       resources :leads
-      resources :product_groups, path: '/product-groups'
-      resources :product_translations, path: '/product-translations'
-      resources :products
     end
 
     # Admin endpoints
@@ -38,21 +28,29 @@ Rails.application.routes.draw do
       resources :article_tags, path: '/article-tags'
       resources :articles
       resources :companies
+      resources :containers
       resources :countries
+      resources :country_currencies, path: '/country-currencies'
+      resources :country_languages, path: '/country-languages'
+      resources :currencies
       resources :documents
+      resources :employees
+      resources :features
       resources :images
       resources :languages
       resources :leads
       resources :people
       resources :person
+      resources :product_complements, path: '/product-complements'
       resources :product_documents, path: '/product-documents'
+      resources :product_families, path: '/product-families'
       resources :product_features, path: '/product-features'
-      resources :product_groups, path: '/product-groups'
       resources :product_images, path: '/product-images'
       resources :product_related_articles, path: '/product-related-articles'
-      resources :product_related_products, path: '/product-related-products'
-      resources :product_variations, path: '/product-variations'
+      resources :product_substitutes, path: '/product-substitutes'
+      resources :product_variants, path: '/product-variants'
       resources :products
+      resources :tags
     end
   end
 

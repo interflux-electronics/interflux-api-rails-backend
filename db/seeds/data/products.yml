@@ -1,0 +1,466 @@
+- slug: DP-5600
+  name: DP 5600
+  public: true
+  family: solder pastes
+
+- slug: DP-5505IC
+  name: DP 5505IC
+  public: true
+  family: solder pastes
+
+- slug: DP-5505
+  name: DP 5505
+  public: true
+  family: solder pastes
+
+- slug: DP-5504
+  name: DP 5504
+  public: false
+  family: solder pastes
+
+- slug: DP-5503
+  name: DP 5503
+  public: false
+  family: solder pastes
+
+- slug: LP-5720
+  name: LP 5720
+  public: true
+  family: solder pastes
+
+- slug: micro-dIFe-7
+  name: µ-dIFe 7
+  public: true
+  family: solder pastes
+
+- slug: IF-9009LT
+  name: IF 9009LT
+  public: true
+  family: solder pastes
+
+- slug: LMPA-Q6
+  name: LMPA™-Q6
+  public: true
+  family: solder pastes
+
+- slug: Q6
+  name: Q6
+  public: true
+  family: solder pastes
+
+- slug: LMPA-Oil
+  name: LMPA™ Oil
+  public: true
+  family: deoxidation oils
+
+- slug: IF-9007
+  name: IF 9007
+  public: true
+  family: solder pastes
+
+- slug: IF-9009lt
+  name: IF 9009lt
+  public: true
+  family: solder pastes
+
+- slug: IF-9010
+  name: IF 9010
+  public: true
+  family: solder pastes
+
+- slug: LMPA-S
+  name: LMPA™-S
+  public: true
+  family: soldering fluxes
+
+- slug: OSPI-3311
+  name: OSPI 3311
+  public: true
+  family: soldering fluxes
+
+- slug: OSPI-3311M
+  name: OSPI 3311M
+  public: true
+  family: soldering fluxes
+
+- slug: IF-2005
+  name: IF 2005
+  public: true
+  family: soldering fluxes
+
+- slug: IF-2005M
+  name: IF 2005M
+  public: true
+  family: soldering fluxes
+
+- slug: IF-2005K
+  name: IF 2005K
+  public: true
+  family: soldering fluxes
+
+- slug: IF-2005C
+  name: IF 2005C
+  public: true
+  family: soldering fluxes
+
+- slug: SelectIF-2040
+  name: SelectIF 2040
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2011F
+  name: PacIFic 2011F
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2009M
+  name: PacIFic 2009M
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2009MLF
+  name: PacIFic 2009MLF
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2009MLF-E
+  name: PacIFic 2009MLF-E
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2010F
+  name: PacIFic 2010F
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2009
+  name: PacIFic 2009
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2008
+  name: PacIFic 2008
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2008plus
+  name: PacIFic 2008plus
+  public: true
+  family: soldering fluxes
+
+- slug: PacIFic-2007
+  name: PacIFic 2007
+  public: true
+  family: soldering fluxes
+
+- slug: IF-3006
+  name: IF 3006
+  public: true
+  family: soldering fluxes
+
+- slug: IF-3006K
+  name: IF 3006K
+  public: true
+  family: soldering fluxes
+
+- slug: AF-4818-PbF
+  name: AF 4818-PbF
+  public: true
+  family: soldering fluxes
+
+- slug: IF-8300
+  name: IF 8300
+  public: true
+  family: soldering fluxes
+
+- slug: IF-8300-4
+  name: IF 8300-4
+  public: true
+  family: soldering fluxes
+
+- slug: IF-8300-6
+  name: IF 8300-6
+  public: true
+  family: soldering fluxes
+
+- slug: IF-7500-HAB
+  name: IF 7500 HAB
+  public: true
+  family: soldering fluxes
+
+- slug: IF-8001
+  name: IF 8001
+  public: true
+  family: soldering fluxes
+
+- slug: IF-6000
+  name: IF 6000
+  public: true
+  family: soldering fluxes
+
+- slug: TerrIFic-RP65
+  name: TerrIFic RP65
+  public: true
+  family: soldering fluxes
+
+- slug: T-2005M
+  name: T 2005M
+  public: true
+  family: soldering fluxes
+
+- slug: FL-5821
+  name: FL 5821
+  public: true
+  family: soldering fluxes
+
+- slug: RA-25010
+  name: RA 25010
+  public: true
+  family: soldering fluxes
+
+- slug: RA-25015
+  name: RA 25015
+  public: true
+  family: soldering fluxes
+
+- slug: RA-25050
+  name: RA 25050
+  public: true
+  family: soldering fluxes
+
+- slug: RA-38053
+  name: RA 38053
+  public: true
+  family: soldering fluxes
+
+- slug: Reagent
+  name: Reagent
+  public: true
+  family: reagents
+
+- slug: ResIF-435L1
+  name: ResIF 435L1
+  public: true
+  family: solder wires
+
+- slug: QF-70
+  name: QF 70
+  public: true
+  family: solder wires
+
+- slug: NH-1
+  name: NH 1
+  public: true
+  family: solder wires
+
+- slug: RosIX-705
+  name: RosIX 705
+  public: true
+  family: solder wires
+
+- slug: Aquasol-4018
+  name: Aquasol 4018
+  public: true
+  family: solder wires
+
+- slug: IF-14
+  name: IF 14
+  public: true
+  family: solder wires
+
+- slug: Flexsol-903
+  name: Flexsol 903
+  public: true
+  family: solder wires
+
+- slug: Bright-1
+  name: Bright 1
+  public: true
+  family: solder wires
+
+- slug: i-Flex-400
+  name: i-Flex 400
+  public: true
+  family: solder wires
+
+- slug: IR3
+  name: IR3
+  public: true
+  family: solder wires
+
+- slug: Laser-25
+  name: Laser 25
+  public: true
+  family: solder wires
+
+- slug: ICSF-Select
+  name: ICSF Select
+  public: true
+  family: spray fluxers
+
+- slug: ICSF-Curve
+  name: ICSF Curve
+  public: true
+  family: spray fluxers
+
+- slug: ICSF-Curve-2
+  name: ICSF Curve 2
+  public: true
+  family: spray fluxers
+
+- slug: ICSF-Curve-2
+  name: ICSF Curve 2
+  public: true
+  family: spray fluxers
+
+- slug: IF-710
+  name: IF 710
+  public: true
+  family: peelable soldermasks
+
+- slug: IF-930
+  name: IF 930
+  public: true
+  continued: true
+  family: nozzle cleaners
+
+- slug: IF-920
+  name: IF 920
+  public: true
+  continued: false
+  family: nozzle cleaners
+
+- slug: Purgel
+  name: Purgel
+  public: true
+  family: conditioning gel for dispensers
+
+- slug: IPA/DI-Wipes
+  name: IPA/DI Wipes
+  public: true
+  family: cleaning wipes
+
+- slug: Stencil-clean-wipes
+  name: Stencil clean wipes
+  public: true
+  family: cleaning wipes
+
+- slug: ISC-8020
+  name: ISC 8020
+  public: true
+  family: stencil cleaning fluids
+
+- slug: IF-910
+  name: IF 910
+  public: true
+  family: deoxidation oils
+
+- slug: Anti-oxidant-pellets
+  name: Anti-oxidant pellets
+  public: true
+  family: anti-oxidant pellets
+
+- slug: Solder-bar
+  name: Solder bar
+  public: true
+  family: solder alloys
+
+- slug: Solder-sticks
+  name: Solder sticks
+  public: true
+  family: solder alloys
+
+- slug: Plain-solder-wire
+  name: Plain solder wire
+  public: true
+  family: solder alloys
+
+- slug: Solder-pellets
+  name: Solder pellets
+  public: true
+  family: solder alloys
+
+- slug: Fluxpen
+  name: Fluxpen
+  public: true
+  family: fluxpens
+
+- slug: Fluxstone
+  name: Fluxstone
+  public: true
+  family: flux stones
+
+- slug: Solder Stones
+  name: Solder stones
+  public: true
+  family: solder stones
+
+- slug: Adhesive-Remover-Wipes
+  name: Adhesive Remover Wipes
+  public: true
+  family: cleaning wipes
+
+- slug: Stencil-Clean-Wipes
+  name: Stencil Clean Wipes
+  public: true
+  family: cleaning wipes
+
+- slug: ISC-300
+  name: ISC 300
+  public: true
+  family: stencil cleaning fluids
+
+- slug: Neutral-Solution
+  name: Neutral Solution
+  public: true
+  family: neutral solutions
+
+- slug: SC01
+  name: SC01
+  public: true
+  family: stencil cleaning fluids
+
+- slug: T-1000
+  name: T 1000
+  public: true
+  family: soldering fluxes
+
+- slug: Tarnex-10
+  name: Tarnex 10
+  public: true
+  family: soldering fluxes
+
+- slug: Tip-Tinner
+  name: Tip Tinner
+  public: true
+  family: tip tinners
+
+- slug: TS15
+  name: TS15
+  public: true
+  family: soldering fluxes
+
+- slug: TS18
+  name: TS18
+  public: true
+  family: soldering fluxes
+
+- slug: TS33
+  name: TS33
+  public: true
+  family: soldering fluxes
+
+- slug: TS33R
+  name: TS33R
+  public: true
+  family: soldering fluxes
+
+- slug: WSF 1100
+  name: WSF 1100
+  public: true
+  family: soldering fluxes
+
+- slug: WSF 7700
+  name: WSF 7700
+  public: true
+  family: soldering fluxes

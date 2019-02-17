@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: product_families
+#
+#  id          :uuid             not null, primary key
+#  slug        :string
+#  code        :string
+#  name_single :string
+#  name_plural :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+product_family_fixture_1:
+  name: Some Name
+  slug: some-name
+  public: true
+  group: other_thing_fixture_1
+
+product_family_fixture_2:
+  name: Some Name
+  slug: some-name
+  public: true
+  group: other_thing_fixture_1

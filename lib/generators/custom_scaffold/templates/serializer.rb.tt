@@ -1,8 +1,6 @@
 module <%= @version.classify %>
   module <%= @scope.classify %>
     class <%= @name.classify.singularize %>Serializer < ApplicationSerializer
-      include FastJsonapi::ObjectSerializer
-
       # attributes :slug,
       #            :name,
       #            :public

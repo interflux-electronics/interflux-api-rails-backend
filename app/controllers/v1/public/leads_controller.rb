@@ -31,7 +31,7 @@ module V1
       end
 
       def serializer_klass
-        LeadSerializer
+        Public::V1::LeadSerializer
       end
 
       def creatable_attributes

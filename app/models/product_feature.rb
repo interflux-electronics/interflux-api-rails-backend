@@ -3,10 +3,8 @@
 # Table name: product_features
 #
 #  id         :uuid             not null, primary key
-#  slug       :string
-#  text       :string
-#  public     :boolean          default(FALSE)
-#  image_id   :uuid
+#  product_id :uuid
+#  feature_id :uuid
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

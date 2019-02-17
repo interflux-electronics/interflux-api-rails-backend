@@ -10,9 +10,9 @@ class Create<%= @name.classify.pluralize %> < ActiveRecord::Migration[5.1]
       # t.timestamps
     end
 
-    # add_index :products, :slug, unique: true
-    # add_index :products, :name, unique: true
-    # add_index :products, :public
-    # add_index :products, :group_id
+    # add_index :<%= @name.downcase.pluralize %>, :slug, unique: true
+    # add_index :<%= @name.downcase.pluralize %>, :name, unique: true
+    # add_index :<%= @name.downcase.pluralize %>, :public
+    # add_index :<%= @name.downcase.pluralize %>, :group_id
   end
 end

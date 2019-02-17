@@ -1,8 +1,6 @@
 module V1
   module Admin
     class ProductDocumentSerializer < ApplicationSerializer
-      include FastJsonapi::ObjectSerializer
-
       # attributes :slug,
       #            :name,
       #            :public

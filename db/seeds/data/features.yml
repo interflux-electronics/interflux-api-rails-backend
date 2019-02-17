@@ -1,0 +1,88 @@
+# interflux.io/products/soldering-fluxes/IF-2005M
+# interflux.io/products/solder-wires/IF-14
+# interflux.io/products/which-are-halide-free
+# interflux.io/products/which-contain-lead
+# interflux.io/products/for-wave-soldering
+# interflux.io/academy/why-lead-is-great-for-soldering-electronics
+# interflux.io/academy/what-is-wave-soldering
+
+- slug: for-wave-soldering
+  text: For wave soldering
+  icon: for-wave
+
+- slug: for-selective-soldering
+  text: For selective soldering
+  icon: for-selective
+
+- slug: for-reflow-soldering
+  text: For reflow soldering
+  icon: for-reflow
+
+- slug: for-pre-tinning
+  text: For pre-tinning
+  icon: for-pre-tinning
+
+- slug: for-spray-fluxing
+  text: For spray fluxing
+  icon: for-spray
+
+- slug: for-foam-fluxing
+  text: For foam fluxing
+  icon: for-foam
+
+- slug: for-rework-and-repair
+  text: For rework & repair
+  icon: for-rework
+
+- slug: for-stencil-printing
+  text: For stencil printing
+  icon: for-stencil
+
+- slug: for-dipping
+  text: For dipping
+  icon: for-dipping
+
+- slug: for-cleaning
+  text: For cleaning
+  icon: cleaning
+
+- slug: which-are-halide-free
+  text: Halide free
+  icon: halide-free
+
+- slug: which-are-alcohol-based
+  text: Alcohol based flux
+  icon: alcohol
+
+- slug: water-based-soldering-flux
+  text: Water based soldering flux
+  icon: water
+  gist: The two reasons why you will want to use water-based soldering fluxes is because they are 1) not flamable and 2) completely halide-free. None-flamable soldering fluxes are easier to transport, require less paperwork, are safer to store and use. Halide-free fluxes are popular because they do not harm the ozon layer.
+
+- slug: low-vov
+  text: Low VOC
+  icon: low-voc
+
+- slug: rosin-based-flux
+  text: Rosin based flux
+  icon: rosin-flux
+
+- slug: long-preheat-resistant
+  text: Long preheat resistant
+  icon: temperature-plus
+
+- slug: contains-rosin
+  text: Contains rosin (colophony)
+  icon: contains-rosin
+
+- slug: no-rosin
+  text: Rosin-free (colophony)
+  icon: no-rosin
+
+- slug: contains-lead
+  text: Contains lead
+  icon: contains-lead
+
+- slug: lead-free
+  text: Lead-free
+  icon: lead-free

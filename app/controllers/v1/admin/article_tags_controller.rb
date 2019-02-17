@@ -2,11 +2,11 @@ module V1
   module Admin
     class ArticleTagsController < ApplicationController
       def index
-        user_can_fetch_all
+        allow_index
       end
 
       def show
-        user_can_fetch_one_by_id_or_slug
+        allow_show
       end
 
       def create
