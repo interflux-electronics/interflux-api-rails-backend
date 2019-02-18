@@ -14,7 +14,7 @@ data = YAML.safe_load(file)
 data.each_with_index do |_feature, i|
   feature = OpenStruct.new(_feature)
 
-  puts "#{i + 1} - #{feature.name_plural}"
+  puts "#{i + 1} - #{feature.text}"
 
   record = Feature.find_by(slug: feature.slug)
 

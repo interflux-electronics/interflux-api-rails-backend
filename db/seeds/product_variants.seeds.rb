@@ -11,107 +11,142 @@ after :product_families,
   puts 'Seeding product variants'
   puts '---------'
 
-  count_before = Product.count
+  count_before = ProductVariant.count
 
-  file = File.read 'db/seeds/data/product_variants.csv'
-  data = CSV.parse(file)
+  file1 = File.read 'db/seeds/data/product_variants.csv'
+  file2 = File.read 'db/seeds/data/products.yml'
 
-  data.each_with_index do |arr, i|
-    code = arr[0]
-    name = arr[1]
+  variants = CSV.parse(file1)
+  products = YAML.safe_load(file2)
 
-    # Correct inconsistent spelling
-    name = name.sub('µ- dIFe', 'µ-dIFe')
-    name = name.sub('Bright1', 'Bright 1')
-    name = name.sub('Delphine ', 'DP ')
-    name = name.sub('DP5600', 'DP 5600')
-    name = name.sub('IF 710/V4', 'IF 710 V4')
-    name = name.sub("IF 9007'", 'IF 9007')
-    name = name.sub('IF14-', 'IF 14-')
-    name = name.sub('IF8300', 'IF 8300')
-    name = name.sub('IF910', 'IF 910')
-    name = name.sub('í-Flex', 'i-Flex')
-    name = name.sub(/^Interflux /, '')
-    name = name.sub('Anti-Oxidant Pellets', 'Anti-oxidant pellets')
-    name = name.sub('NH1', 'NH 1')
-    name = name.gsub(/  /, ' ')
-    name = name.sub('Pacific', 'PacIFic')
-    name = name.sub('Plain Solderwire', 'Plain solder wire')
-    name = name.sub('Solder pellets/Grenaille', 'Solder pellets')
-    name = name.sub('Solder Stones', 'Solder stones')
-    name = name.sub('Solderbar', 'Solder bar')
-    name = name.sub('Solder bar(', 'Solder bar ')
-    name = name.sub('Soldersticks', 'Solder sticks')
-    name = name.sub('TerrIFic RP 65', 'TerrIFic RP65')
+  variants.each_with_index do |variant, i|
+    code = variant[0]
+    name = variant[1]
 
+    byebug if code.nil?
     byebug if name.nil?
 
-    is_flux = name.match?(/Soldering Flux|Gel Flux|Soldering Dip Flux|T 2005M Thinner|T 1000 Conditioner/i)
-    is_paste = name.match?(/Solderpaste|Dip Paste/i)
-    is_wire = name.match?(/Solderwire|Solder wire/i)
-    is_machine = name.match?(/ICSF/i)
-    is_aux = name.match?(/Clean Wipes|Pellets|pellets|De-oxidising gel|De-Oxidation Oil|Fluxpen|Fluxstone|Soldermask|Solder sticks|Tip Tinner|Solder bar|Solder Stones|Stencil Cleaner|Purgel|Adhesive Remover Wipes|Soldersticks|Neutral Solution|LMPA™ Oil|Reagent|IPA\/DI Wipes|Stencil Clean|IPA\/DI Cleaner/i)
+    # Remove double spaces
+    name = name.gsub(/  /, ' ')
 
-    count = [is_flux, is_paste, is_wire, is_machine, is_aux].select { |i| i == true }.count
+    # Normalise the names for consistency
+    replacements = [
+      [/^Interflux /, ''],
+      ['µ- dIFe', 'µ-dIFe'],
+      ['Bright1', 'Bright 1'],
+      ['Delphine ', 'DP '],
+      ['DP5600', 'DP 5600'],
+      ['IF 710/V4', 'IF 710 V4'],
+      ["IF 9007'", 'IF 9007'],
+      ['IF14-', 'IF 14-'],
+      ['IF8300', 'IF 8300'],
+      ['IF910', 'IF 910'],
+      ['í-Flex', 'i-Flex'],
+      ['Anti-Oxidant Pellets', 'Anti-oxidant pellets'],
+      ['NH1', 'NH 1'],
+      ['Pacific', 'PacIFic'],
+      ['Plain Solderwire', 'Plain solder wire'],
+      ['Solder pellets/Grenaille', 'Solder pellets'],
+      ['Solder Stones', 'Solder stones'],
+      ['Solderbar', 'Solder bar'],
+      ['Solder bar(', 'Solder bar '],
+      ['Soldersticks', 'Solder sticks'],
+      ['Solderwire', 'Solder wire'],
+      ['TerrIFic RP 65', 'TerrIFic RP65'],
+      ['(1,6%)', '1,6%'],
+      ['(2,5%)', '2,5%'],
+      ['(2,2%)', '2,2%'],
+      ['(3,5%)', '3,5%'],
+      ['(3%)', '3%'],
+      ['Optimum-spuit 10cc', '(10cc Optimum syringe)'],
+      ['10cc Optimum syr clear wiper', '(10cc Optimum syringe with clear wiper)'],
+      ['-100g spool', ' (100g spool)'],
+      ['HPDE', 'HDPE']
+    ]
+    replacements.each do |arr|
+      name = name.sub(arr[0], arr[1])
+    end
 
-    return byebug if count > 1
+    slug = name.gsub(/ - /,'-').gsub(/ /,'-')
 
-    family = '/// UNKNOWN'
-    family = 'Flux   ' if is_flux
-    family = 'Paste  ' if is_paste
-    family = 'Wire   ' if is_wire
-    family = 'Machine' if is_machine
-    family = 'Aux    ' if is_aux
+    matches = products.select do |product|
+      regex1 = product['regex1']
+      regex2 = product['regex2']
 
-    puts "#{i} | #{family} | #{code} | #{name}"
-
-    family_name = 'Soldering fluxes' if is_flux
-    family_name = 'Solder pastes' if is_paste
-    family_name = 'Solder wires' if is_wire
-    family_name = 'Spray fluxers' if is_machine
-    family_name = 'Auxiliaries' if is_aux
-
-    return byebug if family_name.nil?
-
-    family = ProductFamily.find_by(name_plural: family_name)
-
-    return byebug if family.nil?
-
-    series = ProductSeries.all.where(product_family_id: family.id)
-
-    matches = series.select do |s|
-      search = s.name
-      # It's important to add the space to avoid mismatching:
-      # IF 2005 vs IF 2005C
-      # DP 5505 vs DP 5505IC
-      search += ' ' unless search.start_with?('IF 14')
-      if search.starts_with? 'Q6'
-        name.starts_with? search
+      if regex1.present? && regex2.present?
+        match1 = name.match?(/#{product['regex1']}/i)
+        match2 = name.match?(/#{product['regex2']}/i)
+        match1 && match2
+      elsif regex1.present?
+        name.match?(/#{product['regex1']}/i)
       else
-        name.include? search
+        name.match?(/#{product['name']} /i)
       end
     end
 
-    return byebug if matches.count > 1
-    return byebug if matches.count < 1
+    byebug if matches.count < 1
+    byebug if matches.count > 1
 
-    record = Product.find_by(code: code)
+    product = Product.find_by(slug: matches.first['slug'])
+
+    container_name = name[/\((.*?)\)$/, 1]
+
+    if container_name
+      replacements = [
+        [/syr$/, 'syringe'],
+        ['syr ', 'syringe '],
+        ['all in one', 'all-in-one'],
+        ['All in One', 'all-in-one'],
+        ['spool-6kg', 'spool - 6kg'],
+        ['6kg box-100g spool', '100g spool - 6kg box'],
+        ['jars', 'jar'],
+        [' cc', 'cc'],
+        ['Poly-syringe', 'poly-syringe'],
+        [/cart$/, 'cartridge'],
+        ['syr+red plunger', 'syringe with red plunger'],
+        ['1L HDPE Bottle', '1L HDPE bottle'],
+        ['1L Bottle', '1L HDPE bottle'],
+        ['1L bottle', '1L HDPE bottle'],
+        ['100ml HDPE bottle', '100mL HDPE bottle'],
+        ['500ml', '500mL']
+      ]
+      replacements.each do |arr|
+        container_name = container_name.sub(arr[0], arr[1])
+      end
+
+      container = Container.find_by(name: container_name)
+    end
+
+    byebug if product.nil?
 
     properties = OpenStruct.new(
+      slug: slug,
       code: code,
       name: name,
-      product_series_id: matches[0].id
+      public: true,
+      continued: true,
+      product_id: product.id
     )
 
-    if record.nil?
-      Product.create(properties.to_h)
+    puts "#{i} | #{product.product_family.name_single} | #{product.name} | #{properties.name}"
+
+    if container.nil?
+      puts "////// No container for: #{code} - #{name} //////"
     else
-      record.update(properties.to_h)
+      properties.container_id = container.id
+    end
+
+    record = ProductVariant.find_by(code: code)
+
+    if record.nil?
+      ProductVariant.create!(properties.to_h)
+    else
+      record.update!(properties.to_h)
     end
   end
 
   puts '---------'
-  count_after = Product.count
+  count_after = ProductVariant.count
   difference = count_after - count_before
   puts "Before seeding, the database had #{count_before} products."
   puts "After seeding, the database has #{count_after}."

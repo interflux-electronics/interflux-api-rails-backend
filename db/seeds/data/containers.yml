@@ -2,18 +2,37 @@
 - name: 25L HDPE drum
 - name: 10L HDPE drum
 - name: 1L HDPE bottle
+- name: 500mL HDPE bottle
+- name: 100mL HDPE bottle
 
 - name: 30cc syringe
+- name: 30cc syringe all-in-one
+- name: 30cc Iwashita syringe
+- name: 30cc syringe with red plunger
 - name: 10cc syringe
+- name: 10cc syringe all-in-one
+- name: 10cc poly-syringe
+- name: 10cc Optimum syringe
+- name: 10cc Optimum syringe with clear wiper
 - name: 5cc syringe
+- name: 5cc syringe all-in-one
 
-- name: 500gr jar
-- name: 250gr jar
+- name: 500g jar
+- name: 250g jar
 
 - name: 4kg reel
+- name: 3,5kg green spool
 - name: 1kg spool
-- name: 500gr spool
-- name: 250gr spool
-- name: 100gr spool
+- name: 500g spool
+- name: 500g spool - 6kg box
+- name: 100g spool - 6kg box
+- name: 250g spool
+- name: 100g spool
+- name: 10g spool
 
-- name: 30gr metal can
+- name: 30g metal can
+- name: 1kg cartridge
+- name: 1,2kg cartridge
+
+- name: 20kg box
+- name: 25kg box

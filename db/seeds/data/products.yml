@@ -2,31 +2,43 @@
   name: DP 5600
   public: true
   family: solder pastes
+  regex1: "DP 5600 "
+  regex2: Solderpaste
 
 - slug: DP-5505IC
   name: DP 5505IC
   public: true
   family: solder pastes
+  regex1: "DP 5505IC "
+  regex2: Solderpaste
 
 - slug: DP-5505
   name: DP 5505
   public: true
   family: solder pastes
+  regex1: "DP 5505 "
+  regex2: Solderpaste
 
 - slug: DP-5504
   name: DP 5504
   public: false
   family: solder pastes
+  regex1: "DP 5504 "
+  regex2: Solderpaste
 
 - slug: DP-5503
   name: DP 5503
   public: false
   family: solder pastes
+  regex1: "DP 5503 "
+  regex2: Solderpaste
 
 - slug: LP-5720
   name: LP 5720
   public: true
   family: solder pastes
+  regex1: "LP 5720 "
+  regex2: Solderpaste
 
 - slug: micro-dIFe-7
   name: µ-dIFe 7
@@ -37,16 +49,22 @@
   name: IF 9009LT
   public: true
   family: solder pastes
+  regex1: "IF 9009LT "
+  regex2: Solderpaste
 
 - slug: LMPA-Q6
   name: LMPA™-Q6
   public: true
   family: solder pastes
+  regex1: "LMPA™-Q6 "
+  regex2: Solderpaste
 
 - slug: Q6
   name: Q6
   public: true
   family: solder pastes
+  regex1: "^Q6 "
+  regex2: Solderpaste
 
 - slug: LMPA-Oil
   name: LMPA™ Oil
@@ -57,41 +75,47 @@
   name: IF 9007
   public: true
   family: solder pastes
-
-- slug: IF-9009lt
-  name: IF 9009lt
-  public: true
-  family: solder pastes
+  regex1: "IF 9007 "
+  regex2: Solderpaste
 
 - slug: IF-9010
   name: IF 9010
   public: true
   family: solder pastes
+  regex1: "IF 9010 "
+  regex2: Solderpaste
 
 - slug: LMPA-S
   name: LMPA™-S
   public: true
   family: soldering fluxes
+  regex1: "LMPA™-S "
+  regex2: Soldering Flux
 
 - slug: OSPI-3311
   name: OSPI 3311
   public: true
   family: soldering fluxes
+  regex1: "OSPI 3311 "
 
 - slug: OSPI-3311M
   name: OSPI 3311M
   public: true
   family: soldering fluxes
+  regex1: "OSPI 3311M "
 
 - slug: IF-2005
   name: IF 2005
   public: true
   family: soldering fluxes
+  regex1: "IF 2005 "
 
 - slug: IF-2005M
   name: IF 2005M
   public: true
   family: soldering fluxes
+  regex1: "IF 2005M "
+  regex2: Soldering Flux
 
 - slug: IF-2005K
   name: IF 2005K
@@ -102,6 +126,8 @@
   name: IF 2005C
   public: true
   family: soldering fluxes
+  regex1: "IF 2005C "
+  regex2: Soldering Flux
 
 - slug: SelectIF-2040
   name: SelectIF 2040
@@ -192,16 +218,22 @@
   name: IF 8001
   public: true
   family: soldering fluxes
+  regex1: "IF 8001 "
+  regex2: Soldering Flux
 
 - slug: IF-6000
   name: IF 6000
   public: true
   family: soldering fluxes
+  regex1: "IF 6000 "
+  regex2: Soldering Flux
 
 - slug: TerrIFic-RP65
   name: TerrIFic RP65
   public: true
   family: soldering fluxes
+  regex1: "TerrIFic RP65 "
+  regex2: Soldering Flux
 
 - slug: T-2005M
   name: T 2005M
@@ -227,6 +259,8 @@
   name: RA 25050
   public: true
   family: soldering fluxes
+  regex1: "RA 25050 "
+  regex2: Soldering Flux
 
 - slug: RA-38053
   name: RA 38053
@@ -267,6 +301,8 @@
   name: IF 14
   public: true
   family: solder wires
+  regex1: "^IF 14"
+  regex2: Solder wire
 
 - slug: Flexsol-903
   name: Flexsol 903
@@ -340,6 +376,11 @@
   public: true
   family: cleaning wipes
 
+- slug: IPA/DI-Cleaner
+  name: IPA/DI Cleaner
+  public: true
+  family: cleaning fluids
+
 - slug: Stencil-clean-wipes
   name: Stencil clean wipes
   public: true
@@ -348,7 +389,7 @@
 - slug: ISC-8020
   name: ISC 8020
   public: true
-  family: stencil cleaning fluids
+  family: cleaning fluids
 
 - slug: IF-910
   name: IF 910
@@ -364,6 +405,7 @@
   name: Solder bar
   public: true
   family: solder alloys
+  regex1: "^Solder bar"
 
 - slug: Solder-sticks
   name: Solder sticks
@@ -400,15 +442,10 @@
   public: true
   family: cleaning wipes
 
-- slug: Stencil-Clean-Wipes
-  name: Stencil Clean Wipes
-  public: true
-  family: cleaning wipes
-
 - slug: ISC-300
   name: ISC 300
   public: true
-  family: stencil cleaning fluids
+  family: cleaning fluids
 
 - slug: Neutral-Solution
   name: Neutral Solution
@@ -418,7 +455,7 @@
 - slug: SC01
   name: SC01
   public: true
-  family: stencil cleaning fluids
+  family: cleaning fluids
 
 - slug: T-1000
   name: T 1000

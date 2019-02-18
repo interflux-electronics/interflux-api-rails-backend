@@ -58,9 +58,9 @@
   name_single: conditioning gels for dispensers
   code: CL
 
-- slug: stencil-cleaning-fluids
-  name_plural: stencil cleaning fluids
-  name_single: stencil cleaning fluid
+- slug: cleaning-fluids
+  name_plural: cleaning fluids
+  name_single: cleaning fluid
   code: CL
 
 - slug: cleaning-wipes
