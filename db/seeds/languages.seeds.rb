@@ -24,9 +24,9 @@ data.each_with_index do |hash, i|
       iso_639_2_code: language.iso639_2
     )
     if record.nil?
-      Language.create(properties.to_h)
+      Language.create!(properties.to_h)
     else
-      record.update(properties.to_h)
+      record.update!(properties.to_h)
     end
   end
 end

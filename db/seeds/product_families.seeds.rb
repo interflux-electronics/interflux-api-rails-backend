@@ -26,9 +26,9 @@ data.each_with_index do |_family, i|
   )
 
   if record.nil?
-    ProductFamily.create(properties.to_h)
+    ProductFamily.create!(properties.to_h)
   else
-    record.update(properties.to_h)
+    record.update!(properties.to_h)
   end
 end
 

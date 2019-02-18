@@ -29,9 +29,9 @@ data.each_with_index do |hash, i|
         symbol: currency.symbol
       )
       if record.nil?
-        Currency.create(properties.to_h)
+        Currency.create!(properties.to_h)
       else
-        record.update(properties.to_h)
+        record.update!(properties.to_h)
       end
     end
   end

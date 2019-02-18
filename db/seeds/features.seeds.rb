@@ -26,9 +26,9 @@ data.each_with_index do |_feature, i|
   )
 
   if record.nil?
-    Feature.create(properties.to_h)
+    Feature.create!(properties.to_h)
   else
-    record.update(properties.to_h)
+    record.update!(properties.to_h)
   end
 end
 

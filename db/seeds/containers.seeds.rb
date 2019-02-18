@@ -23,9 +23,9 @@ data.each_with_index do |_container, i|
   )
 
   if record.nil?
-    Container.create(properties.to_h)
+    Container.create!(properties.to_h)
   else
-    record.update(properties.to_h)
+    record.update!(properties.to_h)
   end
 end
 

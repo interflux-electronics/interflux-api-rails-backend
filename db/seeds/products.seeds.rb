@@ -33,9 +33,9 @@ after :product_families do
     record = Product.find_by(slug: product.slug)
 
     if record.nil?
-      Product.create(properties.to_h)
+      Product.create!(properties.to_h)
     else
-      record.update(properties.to_h)
+      record.update!(properties.to_h)
     end
   end
 

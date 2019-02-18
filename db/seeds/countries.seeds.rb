@@ -37,9 +37,9 @@ data.each_with_index do |hash, i|
   )
 
   if record.nil?
-    Country.create(properties.to_h)
+    Country.create!(properties.to_h)
   else
-    record.update(properties.to_h)
+    record.update!(properties.to_h)
   end
 end
 

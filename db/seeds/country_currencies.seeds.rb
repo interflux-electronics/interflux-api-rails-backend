@@ -39,7 +39,7 @@ after :countries, :currencies do
           currency_id: currency_record.id
         )
 
-        CountryCurrency.create(properties.to_h)
+        CountryCurrency.create!(properties.to_h)
       end
     end
   end

@@ -39,7 +39,7 @@ after :countries, :languages do
           language_id: language_record.id
         )
 
-        CountryLanguage.create(properties.to_h)
+        CountryLanguage.create!(properties.to_h)
       end
     end
   end
