@@ -6,6 +6,7 @@
 #  slug       :string
 #  text       :string
 #  icon       :string
+#  gist       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

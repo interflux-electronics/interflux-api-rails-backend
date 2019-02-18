@@ -2,15 +2,15 @@
 #
 # Table name: products
 #
-#  id              :uuid             not null, primary key
-#  slug            :string
-#  code            :string
-#  name            :string
-#  public          :boolean          default(FALSE)
-#  continued       :boolean          default(TRUE)
-#  product_type_id :uuid
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
+#  id                :uuid             not null, primary key
+#  slug              :string
+#  code              :string
+#  name              :string
+#  public            :boolean          default(FALSE)
+#  continued         :boolean          default(TRUE)
+#  product_family_id :uuid
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
 #
 
 class Product < ApplicationRecord
