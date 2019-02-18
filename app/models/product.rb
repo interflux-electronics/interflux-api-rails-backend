@@ -14,9 +14,11 @@
 #
 
 class Product < ApplicationRecord
-  belongs_to :product_type
-  has_one :product_family, through: :product_type
+  belongs_to :product_family
 
   has_many :product_variants
   has_many :containers, through: :product_variants
+
+  alias_attribute :family, :product_family
+  alias_attribute :variants, :product_variants
 end
