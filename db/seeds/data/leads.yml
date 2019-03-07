@@ -1,0 +1,15 @@
+- id: "caa0d7f1-0c30-4f46-bdc7-88b61283c176"
+  name: "Jon Kroc"
+  company: "Tempronics"
+  email: "jkroc@tempronics.com"
+  mobile: "5209792083"
+  message: "We've been having to rework too many defects from our select solder process with Sn995. Chad Suckow of ERSA suggested we investigate LMPA, and it sounds very promising. Our application has significant thermal cycling, so higher melting temps are preferable. Thanks!"
+  purpose: "Request LMPA demo"
+  source: "https://lmpa.interflux.com/en/request-free-demo"
+  created_at: Wed, 06 Mar 2019 19:47:34 UTC +00:00
+  updated_at: Wed, 06 Mar 2019 19:47:34 UTC +00:00
+  country_id: "US"
+  ip_country_id: "US"
+  ip_region: "Arizona"
+  ip_city: "Chandler"
+  ip: "24.255.116.67"
