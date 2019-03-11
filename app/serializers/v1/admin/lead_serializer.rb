@@ -1,17 +1,21 @@
 module V1
   module Admin
     class LeadSerializer < ApplicationSerializer
-      # attributes :slug,
-      #            :name,
-      #            :public
+      attributes :name,
+                 :company,
+                 :email,
+                 :mobile,
+                 :message,
+                 :purpose,
+                 :source,
+                 :ip_region,
+                 :ip_city,
+                 :ip,
+                 :created_at,
+                 :updated_at
 
-      # belongs_to :thing
-      # belongs_to :main_group, record_type: :product_group, serializer: :product_group
-      # belongs_to :sub_group, record_type: :product_group, serializer: :product_group
-
-      # has_many :things
-      # has_many :related_products, record_type: :product, serializer: :related_products
-      # has_many :related_articles, record_type: :article, serializer: :related_articles
+      belongs_to :country
+      belongs_to :ip_country, record_type: :country, serializer: :country
     end
   end
 end
