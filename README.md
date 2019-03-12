@@ -79,23 +79,35 @@ Manual deploy to production (from local):
 ./deploy.sh
 ```
 
-Fire up Puma:
+Control Puma:
 
 ```
+bin/pumactl -F config/puma/production.rb -T '12345' start
+bin/pumactl -F config/puma/production.rb -T '12345' stop
 bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
 ```
 
-Access console:
+Access production console:
 
 ```
 bin/rails console production
 ```
 
-Seed database with fixtures:
+Seed production database with fixtures:
 
 ```
 export RAILS_ENV=production
-bin/rails db:fixtures:load FIXTURES=articles
+bin/rails db:seed
+```
+
+Backup and drop production database:
+
+```
+bin/rails db:data:dump
+bin/pumactl -F config/puma/production.rb -T '12345' stop
+export RAILS_ENV=production;
+export DISABLE_DATABASE_ENVIRONMENT_CHECK=1;
+bin/rails db:drop
 ```
 
 Health check:
