@@ -27,5 +27,5 @@ steps:
   - name: ":rocket:"
     branches: "production"
     command:
-      - "mina deploy"
+      - "./deploy.sh"
     timeout_in_minutes: 10
