@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class ProductSerializer < ApplicationSerializer
+    class ProductSerieSerializer < ApplicationSerializer
       attributes :slug,
                  :code,
                  :name,

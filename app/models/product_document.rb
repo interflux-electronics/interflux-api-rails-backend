@@ -10,6 +10,6 @@
 #
 
 class ProductDocument < ApplicationRecord
-  belongs_to :product
+  belongs_to :product_serie
   belongs_to :document
 end

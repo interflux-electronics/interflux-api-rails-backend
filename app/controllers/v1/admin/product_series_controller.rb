@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class ProductsController < ApplicationController
+    class ProductSeriesController < ApplicationController
       def index
         allow_index
       end
@@ -24,11 +24,11 @@ module V1
       private
 
       def resource_klass
-        Product
+        ProductSerie
       end
 
       def serializer_klass
-        V1::Admin::ProductSerializer
+        V1::Admin::ProductSerieSerializer
       end
 
       def creatable_attributes
@@ -57,14 +57,27 @@ module V1
 
       def permitted_filters
         %[]
+        # %i[
+        #  main_group_id
+        #  sub_group_id
+        # ]
       end
 
       def permanent_filters
         {}
+        # {
+        #   public: true
+        # }
       end
 
       def permitted_includes
         %[]
+        # %i[
+        #   related_articles
+        #   related_products
+        #   related_products.main_group
+        #   translations
+        # ]
       end
 
       # def after_create(lead)

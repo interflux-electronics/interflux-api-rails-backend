@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190214233824) do
+ActiveRecord::Schema.define(version: 20190311234307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -202,30 +202,30 @@ ActiveRecord::Schema.define(version: 20190214233824) do
   end
 
   create_table "product_complementary_products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
+    t.uuid "product_serie_id"
     t.uuid "complement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["complement_id"], name: "index_product_complementary_products_on_complement_id"
-    t.index ["product_id"], name: "index_product_complementary_products_on_product_id"
+    t.index ["product_serie_id"], name: "index_product_complementary_products_on_product_serie_id"
   end
 
   create_table "product_complements", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
+    t.uuid "product_serie_id"
     t.uuid "complement_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["complement_id"], name: "index_product_complements_on_complement_id"
-    t.index ["product_id"], name: "index_product_complements_on_product_id"
+    t.index ["product_serie_id"], name: "index_product_complements_on_product_serie_id"
   end
 
   create_table "product_documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
+    t.uuid "product_serie_id"
     t.uuid "document_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["document_id"], name: "index_product_documents_on_document_id"
-    t.index ["product_id"], name: "index_product_documents_on_product_id"
+    t.index ["product_serie_id"], name: "index_product_documents_on_product_serie_id"
   end
 
   create_table "product_families", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -241,38 +241,55 @@ ActiveRecord::Schema.define(version: 20190214233824) do
   end
 
   create_table "product_features", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
+    t.uuid "product_serie_id"
     t.uuid "feature_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["feature_id"], name: "index_product_features_on_feature_id"
-    t.index ["product_id"], name: "index_product_features_on_product_id"
+    t.index ["product_serie_id"], name: "index_product_features_on_product_serie_id"
   end
 
   create_table "product_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
+    t.uuid "product_serie_id"
     t.uuid "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["image_id"], name: "index_product_images_on_image_id"
-    t.index ["product_id"], name: "index_product_images_on_product_id"
+    t.index ["product_serie_id"], name: "index_product_images_on_product_serie_id"
   end
 
   create_table "product_related_articles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
+    t.uuid "product_serie_id"
     t.uuid "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["article_id"], name: "index_product_related_articles_on_article_id"
-    t.index ["product_id"], name: "index_product_related_articles_on_product_id"
+    t.index ["product_serie_id"], name: "index_product_related_articles_on_product_serie_id"
+  end
+
+  create_table "product_series", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "slug"
+    t.string "code"
+    t.string "name"
+    t.boolean "public", default: false
+    t.boolean "continued", default: true
+    t.uuid "product_family_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_product_series_on_code", unique: true
+    t.index ["continued"], name: "index_product_series_on_continued"
+    t.index ["name"], name: "index_product_series_on_name", unique: true
+    t.index ["product_family_id"], name: "index_product_series_on_product_family_id"
+    t.index ["public"], name: "index_product_series_on_public"
+    t.index ["slug"], name: "index_product_series_on_slug", unique: true
   end
 
   create_table "product_substitutes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
+    t.uuid "product_serie_id"
     t.uuid "substitute_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_substitutes_on_product_id"
+    t.index ["product_serie_id"], name: "index_product_substitutes_on_product_serie_id"
     t.index ["substitute_id"], name: "index_product_substitutes_on_substitute_id"
   end
 
@@ -282,32 +299,15 @@ ActiveRecord::Schema.define(version: 20190214233824) do
     t.string "name"
     t.boolean "public", default: false
     t.boolean "continued", default: true
-    t.uuid "product_id"
+    t.uuid "product_serie_id"
     t.uuid "container_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_product_variants_on_code", unique: true
     t.index ["container_id"], name: "index_product_variants_on_container_id"
     t.index ["name"], name: "index_product_variants_on_name"
-    t.index ["product_id"], name: "index_product_variants_on_product_id"
+    t.index ["product_serie_id"], name: "index_product_variants_on_product_serie_id"
     t.index ["slug"], name: "index_product_variants_on_slug", unique: true
-  end
-
-  create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "slug"
-    t.string "code"
-    t.string "name"
-    t.boolean "public", default: false
-    t.boolean "continued", default: true
-    t.uuid "product_family_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["code"], name: "index_products_on_code", unique: true
-    t.index ["continued"], name: "index_products_on_continued"
-    t.index ["name"], name: "index_products_on_name", unique: true
-    t.index ["product_family_id"], name: "index_products_on_product_family_id"
-    t.index ["public"], name: "index_products_on_public"
-    t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
   create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

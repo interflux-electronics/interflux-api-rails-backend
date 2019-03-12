@@ -3,7 +3,7 @@ require 'byebug'
 require 'ap'
 
 after :product_families,
-      :products,
+      :product_series,
       :features,
       :containers do
 
@@ -14,10 +14,10 @@ after :product_families,
   count_before = ProductVariant.count
 
   file1 = File.read 'db/seeds/data/product_variants.csv'
-  file2 = File.read 'db/seeds/data/products.yml'
+  file2 = File.read 'db/seeds/data/product_series.yml'
 
   variants = CSV.parse(file1)
-  products = YAML.safe_load(file2)
+  series = YAML.safe_load(file2)
 
   variants.each_with_index do |variant, i|
     code = variant[0]
@@ -69,7 +69,7 @@ after :product_families,
 
     slug = name.gsub(/ - /,'-').gsub(/ /,'-')
 
-    matches = products.select do |product|
+    matches = series.select do |product|
       regex1 = product['regex1']
       regex2 = product['regex2']
 
@@ -87,7 +87,7 @@ after :product_families,
     byebug if matches.count < 1
     byebug if matches.count > 1
 
-    product = Product.find_by(slug: matches.first['slug'])
+    serie = ProductSerie.find_by(slug: matches.first['slug'])
 
     container_name = name[/\((.*?)\)$/, 1]
 
@@ -117,7 +117,7 @@ after :product_families,
       container = Container.find_by(name: container_name)
     end
 
-    byebug if product.nil?
+    byebug if serie.nil?
 
     properties = OpenStruct.new(
       slug: slug,
@@ -125,10 +125,10 @@ after :product_families,
       name: name,
       public: true,
       continued: true,
-      product_id: product.id
+      product_serie_id: serie.id
     )
 
-    puts "#{i} | #{product.product_family.name_single} | #{product.name} | #{properties.name}"
+    puts "#{i} | #{serie.product_family.name_single} | #{serie.name} | #{properties.name}"
 
     if container.nil?
       puts "////// No container for: #{code} - #{name} //////"
@@ -148,7 +148,7 @@ after :product_families,
   puts '---------'
   count_after = ProductVariant.count
   difference = count_after - count_before
-  puts "Before seeding, the database had #{count_before} products."
+  puts "Before seeding, the database had #{count_before} product variants."
   puts "After seeding, the database has #{count_after}."
   puts "That's #{difference} new ones."
   puts '---------'
