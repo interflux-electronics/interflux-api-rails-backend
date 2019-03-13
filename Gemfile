@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+# Which version of Ruby to use (keep in sync with .ruby-version)
 ruby '2.4.1'
 
 # Ruby on Rails framework
@@ -20,6 +21,12 @@ gem 'olive_branch'
 # For JSON API compliant serialisers
 gem 'fast_jsonapi'
 
+# For token based authentication, specifically Json Web Token (JWT)
+gem 'jwt'
+
+# For enabling ActiveModel has_secure_password, effectively hiding user passwords from the database
+gem 'bcrypt', '~> 3.1.7'
+
 # For coloured printing in byebug and console `ap`
 gem 'awesome_print'
 
@@ -36,22 +43,9 @@ group :development do
   # For listening to file changes
   gem 'listen', '>= 3.0.5', '< 3.2'
 
-  # For deploying code to remote servers
-  gem 'mina', '~> 1.2', require: false
-  gem 'mina-puma', require: false
-
   # For Ruby syntax formatting
   gem 'rubocop', require: false
 
   # For annotating models with schemas
   gem 'annotate', require: false
 end
-
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# For mocking and asserting HTTP requests in tests
-# gem 'webmock', '~> 3.4', group: :test
