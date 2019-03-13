@@ -19,6 +19,18 @@ module JsonApi
   #   allow_show
   # end
   #
+  # def create
+  #   allow_create
+  # end
+  #
+  # def update
+  #   allow_update
+  # end
+  #
+  # def destroy
+  #   allow_destroy
+  # end
+  #
   def index
     forbidden
   end
@@ -211,10 +223,10 @@ module JsonApi
   # POST /products, params { foo: bar }
   #
   # def create
-  #   user_can_create
+  #   allow_create
   # end
   #
-  def user_can_create
+  def allow_create
     resource = resource_klass.new(attributes_and_relationships)
     if resource.save!
       after_create(resource)
@@ -287,10 +299,10 @@ module JsonApi
   # PUT /products/:uuid, params { foo: bar }
   #
   # def create
-  #   user_can_update
+  #   allow_update
   # end
   #
-  def user_can_update
+  def allow_update
     resource = resource_klass.find_by id: params[:id]
 
     return resource_not_found if resource.nil?
@@ -308,10 +320,10 @@ module JsonApi
   # DELETE /products/:uuid
   #
   # def create
-  #   user_can_delete
+  #   allow_delete
   # end
   #
-  def user_can_delete
+  def allow_delete
     resource = resource_klass.find_by id: params[:id]
 
     return resource_not_found if resource.nil?
@@ -336,5 +348,32 @@ module JsonApi
   #
   def after_create
     nil
+  end
+
+  # ERRORS
+
+  def forbidden
+    render_error(403, 'forbidden', 'This request is forbidden. The resource exists, but no action was assigned in the controller.')
+  end
+
+  def route_not_found
+    render_error(404, 'route-not-found', 'This route does not match any of the routes in `config/routes.rb`. Please check whether it exists and whether it needs an explicit hyphenated path.')
+  end
+
+  def resource_not_found
+    render_error(422, 'resource-not-found', 'No record with this UUID was found in the database.')
+  end
+
+  # Wraps a single error in JSON API format
+  # http://jsonapi.org/format/#errors
+  # Example: render_error(422, 'not-found', 'No product with this ID was found.')
+  def render_error(status, code, detail)
+    render status: status, json: {
+      errors: [{
+        status: status.to_s,
+        code: code,
+        detail: detail
+      }]
+    }
   end
 end

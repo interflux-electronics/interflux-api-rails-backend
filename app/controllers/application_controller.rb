@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::API
   include JsonApi
-  include Errors
 
   def status
     git_branch = ENV['GIT_BRANCH'] || 'not-set'

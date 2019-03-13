@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class DocumentsController < ApplicationController
+    class DocumentsController < V1::Admin::ApplicationController
       def index
         allow_index
       end

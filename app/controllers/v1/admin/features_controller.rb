@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class FeaturesController < ApplicationController
+    class FeaturesController < V1::Admin::ApplicationController
       def index
         allow_index
       end

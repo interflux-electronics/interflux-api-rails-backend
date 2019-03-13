@@ -1,9 +1,6 @@
 module V1
   module Public
-    class LeadsController < ApplicationController
-      include JsonApi
-      include Errors
-
+    class LeadsController < V1::Public::ApplicationController
       def index
         forbidden
       end
@@ -13,7 +10,7 @@ module V1
       end
 
       def create
-        user_can_create
+        allow_create
       end
 
       def update

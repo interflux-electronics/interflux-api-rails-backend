@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class PeopleController < ApplicationController
+    class PeopleController < V1::Admin::ApplicationController
       def index
         allow_index
       end

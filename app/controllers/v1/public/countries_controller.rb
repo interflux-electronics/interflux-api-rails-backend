@@ -1,15 +1,12 @@
 module V1
   module Public
-    class CountriesController < ApplicationController
-      include JsonApi
-      include Errors
-
+    class CountriesController < V1::Public::ApplicationController
       def index
         allow_index
       end
 
       def show
-        user_can_fetch_one_by_id
+        allow_show
       end
 
       def create
