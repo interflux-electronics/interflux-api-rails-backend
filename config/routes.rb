@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   end
 
   # Return app meta info for health check.
-  get 'status', to: 'application#status'
+  get 'sanity-check', to: 'sanity#check'
 
   # Return a 404 for all other routes.
   match '*catch', to: 'application#render_404', via: :all
