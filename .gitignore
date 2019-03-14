@@ -17,4 +17,11 @@
 !/log/.keep
 !/tmp/.keep
 
+# Commands used in byebug
 .byebug_history
+
+# Mac OS
+.DS_Store
+
+# Don't ever commit environment secrets stored in dot env files
+/.env.production
