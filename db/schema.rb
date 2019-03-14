@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190311234307) do
+ActiveRecord::Schema.define(version: 20190313031052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -187,18 +187,10 @@ ActiveRecord::Schema.define(version: 20190311234307) do
   end
 
   create_table "people", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "slug"
-    t.string "name"
-    t.string "email"
-    t.string "mobile"
-    t.string "address"
-    t.uuid "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["country_id"], name: "index_people_on_country_id"
-    t.index ["email"], name: "index_people_on_email", unique: true
-    t.index ["name"], name: "index_people_on_name", unique: true
-    t.index ["slug"], name: "index_people_on_slug", unique: true
+    t.string "first_name"
+    t.string "last_name"
   end
 
   create_table "product_complementary_products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -316,6 +308,15 @@ ActiveRecord::Schema.define(version: 20190311234307) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_tags_on_slug", unique: true
+  end
+
+  create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.uuid "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
 end
