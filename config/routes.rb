@@ -1,4 +1,3 @@
-# TODO: resources :product_series, path: '/product-series'
 Rails.application.routes.draw do
   # Make the API future proof by versioning v1
   namespace :v1 do
@@ -41,7 +40,6 @@ Rails.application.routes.draw do
       resources :languages
       resources :leads
       resources :people
-      resources :person
       resources :product_complements, path: '/product-complements'
       resources :product_documents, path: '/product-documents'
       resources :product_families, path: '/product-families'
@@ -52,6 +50,7 @@ Rails.application.routes.draw do
       resources :product_substitutes, path: '/product-substitutes'
       resources :product_variants, path: '/product-variants'
       resources :tags
+      resources :users
     end
   end
 
