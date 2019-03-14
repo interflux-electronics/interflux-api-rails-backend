@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class CountriesController < V1::Admin::ApplicationController
+    class CountriesController < V1::AdminController
       def index
         allow_index
       end

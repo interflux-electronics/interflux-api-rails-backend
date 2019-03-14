@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class ImagesController < V1::Admin::ApplicationController
+    class ImagesController < V1::AdminController
       def index
         allow_index
       end

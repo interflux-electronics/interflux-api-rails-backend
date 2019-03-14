@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class CompaniesController < V1::Admin::ApplicationController
+    class CompaniesController < V1::AdminController
       def index
         allow_index
       end

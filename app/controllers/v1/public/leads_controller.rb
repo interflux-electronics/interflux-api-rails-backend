@@ -1,6 +1,6 @@
 module V1
   module Public
-    class LeadsController < V1::Public::ApplicationController
+    class LeadsController < V1::PublicController
       def index
         forbidden
       end
