@@ -51,6 +51,8 @@ Rails.application.routes.draw do
       resources :product_variants, path: '/product-variants'
       resources :tags
       resources :users
+
+      post '/auth/login', to: 'authentication#login'
     end
   end
 
