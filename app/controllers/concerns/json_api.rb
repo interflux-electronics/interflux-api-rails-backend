@@ -59,6 +59,10 @@ module JsonApi
     forbidden
   end
 
+  def render_404
+    route_not_found
+  end
+
   private
 
   # FETCHING MANY RESOURCES

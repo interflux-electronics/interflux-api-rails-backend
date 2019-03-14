@@ -58,5 +58,5 @@ Rails.application.routes.draw do
   get 'status', to: 'application#status'
 
   # Return a 404 for all other routes.
-  match '*catch', to: 'application#route_not_found', via: :all
+  match '*catch', to: 'application#render_404', via: :all
 end
