@@ -356,28 +356,56 @@ module JsonApi
 
   # ERRORS
 
-  def forbidden
-    render_error(403, 'forbidden', 'This request is forbidden. The resource exists, but no action was assigned in the controller.')
+  def unauthorized(meta = nil)
+    render_error(
+      401,
+      'unauthorized',
+      'You are not authorized to make this request. Please include a valid token in the Authorization HTTP header.',
+      meta
+    )
   end
 
-  def route_not_found
-    render_error(404, 'route-not-found', 'This route does not match any of the routes in `config/routes.rb`. Please check whether it exists and whether it needs an explicit hyphenated path.')
+  def forbidden(meta = nil)
+    render_error(
+      403,
+      'forbidden',
+      'This request is forbidden. The resource exists, but no action was assigned in the controller.',
+      meta
+    )
   end
 
-  def resource_not_found
-    render_error(422, 'resource-not-found', 'No record with this UUID was found in the database.')
+  def route_not_found(meta = nil)
+    render_error(
+      404,
+      'route-not-found',
+      'This route does not match any of the routes in `config/routes.rb`. Please check whether it exists and whether it needs an explicit hyphenated path.',
+      meta
+    )
+  end
+
+  def resource_not_found(meta = nil)
+    render_error(
+      422,
+      'resource-not-found',
+      'No record with this UUID was found in the database.',
+      meta
+    )
   end
 
   # Wraps a single error in JSON API format
   # http://jsonapi.org/format/#errors
   # Example: render_error(422, 'not-found', 'No product with this ID was found.')
-  def render_error(status, code, detail)
-    render status: status, json: {
+  def render_error(status, code, detail, meta)
+    json = {
       errors: [{
         status: status.to_s,
         code: code,
         detail: detail
       }]
     }
+
+    json['errors']['meta'] = meta unless meta.nil?
+
+    render status: status, json: json
   end
 end
