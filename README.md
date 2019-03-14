@@ -71,6 +71,44 @@ bin/rails db:migrate;
 bin/rails db:seed
 ```
 
+Create user:
+
+```
+bin/rails c
+p = Person.create(first_name:'Jan', last_name:'Werkhoven')
+User.create(email:'j.werkhoven@interflux.com', password: '12345678', person_id: p.id)
+```
+
+Test login:
+
+```
+curl \
+-X POST \
+-H "Content-Type: application/vnd.api+json" \
+-d '{ "email": "j.werkhoven@interflux.com", "password": 12345678 }' \
+http://localhost:3000/v1/admin/auth/login
+```
+
+```
+curl -X POST \
+  -H "Content-Type: application/vnd.api+json" \
+  -H "Authorization: " \
+  -d '{"score": 1337, "playerName": "Sean Plott", "cheatMode": false }' \
+  https://api.parse.com/1/classes/GameScore
+```
+
+Roll back a migration:
+
+```
+bin/rails db:rollback STEP=1
+```
+
+Sanity check:
+
+```
+curl http://localhost:3000/status
+```
+
 ## Production
 
 Manual deploy to production (from local):
