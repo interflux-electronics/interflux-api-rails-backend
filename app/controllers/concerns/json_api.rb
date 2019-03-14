@@ -1,6 +1,10 @@
 module JsonApi
   extend ActiveSupport::Concern
 
+  included do
+    before_action :check_content_type
+  end
+
   # CRUD
   #
   # In order to follow the JSON API specs, unsported request endpoints should
@@ -356,6 +360,10 @@ module JsonApi
 
   # ERRORS
 
+  def check_content_type
+    wrong_content_type unless request.content_type == "application/vnd.api+json"
+  end
+
   def unauthorized(meta = nil)
     render_error(
       401,
@@ -383,6 +391,14 @@ module JsonApi
     )
   end
 
+  def wrong_content_type
+    render_error(
+      415,
+      'unsupported-media-type',
+      'This API follows the JSON API standards and can therefor only accepts request with Content-Type "application/vnd.api+json".'
+    )
+  end
+
   def resource_not_found(meta = nil)
     render_error(
       422,
@@ -395,7 +411,7 @@ module JsonApi
   # Wraps a single error in JSON API format
   # http://jsonapi.org/format/#errors
   # Example: render_error(422, 'not-found', 'No product with this ID was found.')
-  def render_error(status, code, detail, meta)
+  def render_error(status, code, detail, meta = nil)
     json = {
       errors: [{
         status: status.to_s,

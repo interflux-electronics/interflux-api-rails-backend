@@ -1,4 +1,4 @@
-class SanityController < ActionController::API
+class SanityController < ApplicationController
   def check
     json = {
       status: 200,
