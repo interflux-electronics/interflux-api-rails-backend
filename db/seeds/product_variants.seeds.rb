@@ -61,13 +61,13 @@ after :product_families,
       ['Optimum-spuit 10cc', '(10cc Optimum syringe)'],
       ['10cc Optimum syr clear wiper', '(10cc Optimum syringe with clear wiper)'],
       ['-100g spool', ' (100g spool)'],
-      ['HPDE', 'HDPE']
+      %w[HPDE HDPE]
     ]
     replacements.each do |arr|
       name = name.sub(arr[0], arr[1])
     end
 
-    slug = name.gsub(/ - /,'-').gsub(/ /,'-')
+    slug = name.gsub(/ - /, '-').tr(' ', '-')
 
     matches = series.select do |product|
       regex1 = product['regex1']
@@ -99,7 +99,7 @@ after :product_families,
         ['All in One', 'all-in-one'],
         ['spool-6kg', 'spool - 6kg'],
         ['6kg box-100g spool', '100g spool - 6kg box'],
-        ['jars', 'jar'],
+        %w[jars jar],
         [' cc', 'cc'],
         ['Poly-syringe', 'poly-syringe'],
         [/cart$/, 'cartridge'],
@@ -108,7 +108,7 @@ after :product_families,
         ['1L Bottle', '1L HDPE bottle'],
         ['1L bottle', '1L HDPE bottle'],
         ['100ml HDPE bottle', '100mL HDPE bottle'],
-        ['500ml', '500mL']
+        %w[500ml 500mL]
       ]
       replacements.each do |arr|
         container_name = container_name.sub(arr[0], arr[1])
