@@ -52,7 +52,16 @@ Rails.application.routes.draw do
       resources :tags
       resources :users
 
-      post '/auth/login', to: 'authentication#login'
+      # All none-CRUD request regarding authentication:
+      # POST /v1/admin/verify_email { email }
+      # POST /v1/admin/verify_password { email, password }
+      # POST /v1/admin/verify_extend_expiry { token }
+      # POST /v1/admin/verify_logout { token }
+      # post '/login', to: 'authentication#login'
+      post '/auth/verify-email', to: 'authentication#verify_email'
+      post '/auth/verify-password', to: 'authentication#verify_password'
+      # post '/extend_expiry', to: 'authentication#extend_expiry'
+      # post '/logout', to: 'authentication#logout'
     end
   end
 

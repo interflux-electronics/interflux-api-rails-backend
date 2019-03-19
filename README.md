@@ -87,14 +87,14 @@ curl \
 -H "Content-Type: application/vnd.api+json" \
 -d '{ "email": "j.werkhoven@interflux.com", "password": 12345678 }' \
 http://localhost:3000/v1/admin/auth/login
-```
 
-```
-curl -X POST \
-  -H "Content-Type: application/vnd.api+json" \
-  -H "Authorization: " \
-  -d '{"score": 1337, "playerName": "Sean Plott", "cheatMode": false }' \
-  https://api.parse.com/1/classes/GameScore
+set token TOKEN
+
+curl \
+-X GET \
+-H "Content-Type: application/vnd.api+json" \
+-H "Authorization: $token" \
+http://localhost:3000/v1/admin/leads
 ```
 
 Roll back a migration:
@@ -106,7 +106,10 @@ bin/rails db:rollback STEP=1
 Sanity check:
 
 ```
-curl http://localhost:3000/status
+curl \
+-X GET \
+-H "Content-Type: application/vnd.api+json" \
+http://localhost:3000/sanity-check
 ```
 
 ## Production

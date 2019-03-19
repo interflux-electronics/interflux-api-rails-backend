@@ -1,6 +1,12 @@
 class SanityController < ApplicationController
   def check
-    json = {
+    render status: 200, json: payload
+  end
+
+  private
+
+  def payload
+    {
       status: 200,
       code: 'all-good',
       msg: 'This back-end is live and running. This request just successfully got passed Nginx, SSL, Puma, Rack, Rails and back! Have a beer.',
@@ -12,10 +18,7 @@ class SanityController < ApplicationController
         }
       }
     }
-    render status: 200, json: json
   end
-
-  private
 
   def environment
     Rails.env || '?'

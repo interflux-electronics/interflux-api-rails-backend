@@ -365,6 +365,7 @@ module JsonApi
   end
 
   def unauthorized(meta = nil)
+    byebug
     render_error(
       401,
       'unauthorized',

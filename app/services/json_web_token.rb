@@ -20,8 +20,12 @@ class JsonWebToken
   end
 
   def decode
-    decoded = JWT.decode(@data, jwt_secret)[0]
-    HashWithIndifferentAccess.new decoded
+    begin
+      decoded = JWT.decode(@data, jwt_secret)[0]
+      HashWithIndifferentAccess.new decoded
+    rescue JWT::DecodeError => e
+      nil
+    end
   end
 
   private

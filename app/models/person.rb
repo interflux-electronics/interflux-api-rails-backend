@@ -3,19 +3,16 @@
 # Table name: people
 #
 #  id         :uuid             not null, primary key
-#  slug       :string
-#  name       :string
-#  email      :string
-#  mobile     :string
-#  address    :string
-#  country_id :uuid
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  first_name :string
+#  last_name  :string
 #
 
 class Person < ApplicationRecord
+  has_one :user
+
   # Relate to a model
-  # belongs_to :company
   # belongs_to :main_group, class_name: 'ProductGroup', foreign_key: 'main_group_id'
   # belongs_to :sub_group, class_name: 'ProductGroup', foreign_key: 'sub_group_id'
 
@@ -32,4 +29,7 @@ class Person < ApplicationRecord
   # has_many :inverse_related_products, through: :inverse_related_products_association, source: :product
 
   # validates :name, presence: true, uniqueness: true
+
+  # If foo `belongs_to :bar`, then the foos table has a bar_id column.
+  # If foo `has_one :bar`, then the bars table has a foo_id column.
 end
