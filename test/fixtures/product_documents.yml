@@ -2,11 +2,11 @@
 #
 # Table name: product_documents
 #
-#  id          :uuid             not null, primary key
-#  product_id  :uuid
-#  document_id :uuid
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id               :uuid             not null, primary key
+#  product_serie_id :uuid
+#  document_id      :uuid
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 product_document_fixture_1:

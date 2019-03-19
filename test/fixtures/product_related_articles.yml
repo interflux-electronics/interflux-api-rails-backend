@@ -2,11 +2,11 @@
 #
 # Table name: product_related_articles
 #
-#  id         :uuid             not null, primary key
-#  product_id :uuid
-#  article_id :uuid
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id               :uuid             not null, primary key
+#  product_serie_id :uuid
+#  article_id       :uuid
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 product_related_article_fixture_1:

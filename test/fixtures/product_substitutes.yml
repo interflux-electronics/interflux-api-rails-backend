@@ -2,11 +2,11 @@
 #
 # Table name: product_substitutes
 #
-#  id            :uuid             not null, primary key
-#  product_id    :uuid
-#  substitute_id :uuid
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id               :uuid             not null, primary key
+#  product_serie_id :uuid
+#  substitute_id    :uuid
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 product_substitute_fixture_1:

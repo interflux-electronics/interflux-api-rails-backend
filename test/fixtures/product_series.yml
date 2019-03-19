@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: product_series
+#
+#  id                :uuid             not null, primary key
+#  slug              :string
+#  code              :string
+#  name              :string
+#  public            :boolean          default(FALSE)
+#  continued         :boolean          default(TRUE)
+#  product_family_id :uuid
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
 product_serie_fixture_1:
   name: Some Name
   slug: some-name
