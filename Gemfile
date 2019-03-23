@@ -12,7 +12,7 @@ gem 'puma', '~> 3.7'
 # Postgress database
 gem 'pg'
 
-# For handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+# For handling Cross-Origin Resource Sharing (CORS)
 gem 'rack-cors', require: 'rack/cors'
 
 # For loading in environment variables

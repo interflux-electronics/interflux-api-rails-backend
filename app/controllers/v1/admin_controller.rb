@@ -3,7 +3,7 @@
 #
 module V1
   class AdminController < ApplicationController
-    # before_action :authorize_request
+    before_action :authorize_request
 
     private
 
@@ -19,13 +19,11 @@ module V1
       return decode_error if data.nil?
 
       # Error if the token has expired
-      return expiration_error if Time.at(data[:exp]).past?
+      return expiration_error if Time.at(data[:expiry]).past?
 
       # Find the user, error if it cannot be found
       return user_id_error if data[:user_id].nil?
       user = find_user
-
-      byebug
 
       return user_error if user.nil?
 
