@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     namespace :public do
       resources :countries
       resources :leads
+      resources :product_families, path: '/product-families'
     end
 
     # Admin endpoints
