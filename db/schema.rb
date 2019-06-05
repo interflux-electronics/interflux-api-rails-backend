@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190313031052) do
+ActiveRecord::Schema.define(version: 20190604054945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -250,6 +250,15 @@ ActiveRecord::Schema.define(version: 20190313031052) do
     t.index ["product_serie_id"], name: "index_product_images_on_product_serie_id"
   end
 
+  create_table "product_processes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "product_serie_id"
+    t.uuid "soldering_process_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_serie_id"], name: "index_product_processes_on_product_serie_id"
+    t.index ["soldering_process_id"], name: "index_product_processes_on_soldering_process_id"
+  end
+
   create_table "product_related_articles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "product_serie_id"
     t.uuid "article_id"
@@ -300,6 +309,15 @@ ActiveRecord::Schema.define(version: 20190313031052) do
     t.index ["name"], name: "index_product_variants_on_name"
     t.index ["product_serie_id"], name: "index_product_variants_on_product_serie_id"
     t.index ["slug"], name: "index_product_variants_on_slug", unique: true
+  end
+
+  create_table "soldering_processes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_soldering_processes_on_name", unique: true
+    t.index ["slug"], name: "index_soldering_processes_on_slug", unique: true
   end
 
   create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       resources :countries
       resources :leads
       resources :product_families, path: '/product-families'
+      resources :product_processes, path: '/product-processes'
+      resources :soldering_processes, path: '/soldering-processes'
     end
 
     # Admin endpoints

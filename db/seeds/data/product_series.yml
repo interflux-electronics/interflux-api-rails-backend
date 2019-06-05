@@ -33,8 +33,8 @@
   regex1: "DP 5503 "
   regex2: Solderpaste
 
-- slug: LP5720
-  name: LP5720
+- slug: LP-5720
+  name: LP 5720
   public: true
   family: solder pastes
   regex1: "LP5720 "

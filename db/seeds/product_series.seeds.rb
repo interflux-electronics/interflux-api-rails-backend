@@ -2,7 +2,7 @@ require 'yaml'
 require 'byebug'
 require 'ap'
 
-after :product_families do
+after :product_families do  
   count_before = ProductSerie.count
 
   puts '---------'

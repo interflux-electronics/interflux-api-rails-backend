@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: soldering_processes
+#
+#  id         :uuid             not null, primary key
+#  name       :string
+#  slug       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+soldering_process_fixture_1:
+  name: Some Name
+  slug: some-name
+  public: true
+  group: other_thing_fixture_1
+
+soldering_process_fixture_2:
+  name: Some Name
+  slug: some-name
+  public: true
+  group: other_thing_fixture_1
