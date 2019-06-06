@@ -12,5 +12,5 @@
 #
 
 class ProductFamily < ApplicationRecord
-  has_many :product_series
+  has_many :products
 end

@@ -4,11 +4,11 @@
 # Inspired from: https://blog.codeship.com/the-json-api-spec/
 # See also: https://github.com/rails-api/active_model_serializers/issues/1027
 
-api_mime_types = %W(
+api_mime_types = %w[
   application/vnd.api+json
   text/x-json
   application/json
-)
+]
 
 Mime::Type.unregister :json
 Mime::Type.register 'application/vnd.api+json', :json, api_mime_types

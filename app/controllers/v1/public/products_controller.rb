@@ -1,6 +1,6 @@
 module V1
   module Public
-    class ProductFamiliesController < ApplicationController
+    class ProductsController < ApplicationController
       def index
         allow_index
       end
@@ -24,11 +24,11 @@ module V1
       private
 
       def resource_klass
-        ProductFamily
+        Product
       end
 
       def serializer_klass
-        V1::Public::ProductFamilySerializer
+        V1::Public::ProductSerializer
       end
 
       def creatable_attributes
@@ -64,15 +64,14 @@ module V1
       end
 
       def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
+        {
+          public: true
+        }
       end
 
       def permitted_includes
         %i[
-          products
+          product_family
         ]
         # %i[
         #   related_articles

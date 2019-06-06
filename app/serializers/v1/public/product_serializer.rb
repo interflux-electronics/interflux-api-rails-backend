@@ -1,16 +1,12 @@
 module V1
   module Public
-    class ProductFamilySerializer < ApplicationSerializer
+    class ProductSerializer < ApplicationSerializer
       attributes :slug,
-                 :name_single,
-                 :name_plural
+                 :name,
+                 :continued
 
-      # has_many :products, record_type: :product, serializer: :product
-
-      # attributes :slug,
-      #            :name,
-      #            :public
-
+      belongs_to :product_family
+      
       # belongs_to :thing
       # belongs_to :main_group, record_type: :product_group, serializer: :product_group
       # belongs_to :sub_group, record_type: :product_group, serializer: :product_group

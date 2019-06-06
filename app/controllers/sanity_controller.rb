@@ -14,7 +14,7 @@ class SanityController < ApplicationController
         environment: environment,
         git: {
           branch: git_branch,
-          revision: git_revision,
+          revision: git_revision
         }
       }
     }

@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class ProductSeriesController < V1::AdminController
+    class ProductsController < ApplicationController
       def index
         allow_index
       end
@@ -24,11 +24,11 @@ module V1
       private
 
       def resource_klass
-        ProductSerie
+        Product
       end
 
       def serializer_klass
-        V1::Admin::ProductSerieSerializer
+        V1::Admin::ProductSerializer
       end
 
       def creatable_attributes

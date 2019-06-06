@@ -11,5 +11,5 @@
 
 class SolderingProcess < ApplicationRecord
   has_many :product_processes
-  has_many :products, through: :product_processes, source: :product_serie
+  has_many :products, through: :product_processes, source: :product
 end

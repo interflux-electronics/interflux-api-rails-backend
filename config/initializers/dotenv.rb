@@ -1,1 +1,1 @@
-Dotenv.require_keys("JWT_SECRET")
+Dotenv.require_keys('JWT_SECRET')

@@ -361,7 +361,7 @@ module JsonApi
   # ERRORS
 
   def check_content_type
-    wrong_content_type unless request.content_type == "application/vnd.api+json"
+    wrong_content_type unless request.content_type == 'application/vnd.api+json'
   end
 
   def unauthorized(meta = nil)

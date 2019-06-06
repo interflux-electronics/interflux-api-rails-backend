@@ -2,8 +2,7 @@ require 'yaml'
 require 'byebug'
 require 'ap'
 
-after :product_series, :soldering_processes do
-
+after :products, :soldering_processes do
   count_before = ProductProcess.count
 
   puts '---------'
@@ -21,11 +20,11 @@ after :product_series, :soldering_processes do
       puts "#{i + 1}.#{ii + 1} - #{product_name}"
 
       process_record = SolderingProcess.find_by(name: process.name)
-      product_record = ProductSerie.find_by(name: product_name)
-      relation_record = ProductProcess.where(product_serie_id: product_record.id).where(soldering_process_id: process_record.id).first
+      product_record = Product.find_by(name: product_name)
+      relation_record = ProductProcess.where(product_id: product_record.id).where(soldering_process_id: process_record.id).first
 
       properties = OpenStruct.new(
-        product_serie_id: product_record.id,
+        product_id: product_record.id,
         soldering_process_id: process_record.id
       )
 

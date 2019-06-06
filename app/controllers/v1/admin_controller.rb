@@ -23,6 +23,7 @@ module V1
 
       # Find the user, error if it cannot be found
       return user_id_error if data[:user_id].nil?
+
       user = find_user
 
       return user_error if user.nil?

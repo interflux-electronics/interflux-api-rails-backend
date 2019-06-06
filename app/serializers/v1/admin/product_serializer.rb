@@ -1,12 +1,6 @@
 module V1
-  module Public
-    class ProductFamilySerializer < ApplicationSerializer
-      attributes :slug,
-                 :name_single,
-                 :name_plural
-
-      # has_many :products, record_type: :product, serializer: :product
-
+  module Admin
+    class ProductSerializer < ApplicationSerializer
       # attributes :slug,
       #            :name,
       #            :public

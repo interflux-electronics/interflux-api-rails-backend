@@ -4,11 +4,11 @@
 module V1
   module Admin
     class AuthenticationController < ApplicationController
-
       # Login step 1 - verify email
       def verify_email
         user = User.find_by(email: params[:email])
         return 401 if user.nil?
+
         render status: 200
       end
 
@@ -47,19 +47,13 @@ module V1
       # The next time the user opens the app, the user data will be forgotten.
       # Ember then sends up the token and expects back the user record belonging
       # to the token.
-      def get_auth_user
-        #
-      end
+      def get_auth_user; end
 
       # Keep a token alive by extending the expirty (as long as users use the UI)
-      def extend_expiry
-        #
-      end
+      def extend_expiry; end
 
       # Invalidate a token (when users log out)
-      def logout
-        #
-      end
+      def logout; end
 
       # def login
       #   @user = User.find_by_email(login_params[:email])
