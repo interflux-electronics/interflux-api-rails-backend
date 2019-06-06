@@ -2,33 +2,33 @@ require 'test_helper'
 
 module V1
   module Admin
-    class ProductSerieIntegrationTest < ApplicationController
-      # Public users should be able to fetch all product series
+    class ProductIntegrationTest < ApplicationController
+      # Public users should be able to fetch all products
       test '1' do
         assert_can_fetch_all true, 5, 6
       end
 
-      # Public users should be able to fetch one product serie by ID
+      # Public users should be able to fetch one product by ID
       test '2' do
         assert_can_fetch_one_by_id true
       end
 
-      # Public users should be able to fetch one product serie by slug
+      # Public users should be able to fetch one product by slug
       test '3' do
         assert_can_fetch_one_by_slug true
       end
 
-      # Public users should NOT be able to create product series
+      # Public users should NOT be able to create products
       test '4' do
         assert_can_create false
       end
 
-      # Public users should NOT be able to update product series
+      # Public users should NOT be able to update products
       test '5' do
         assert_can_update false
       end
 
-      # Public users should NOT be able to delete product series
+      # Public users should NOT be able to delete products
       test '6' do
         assert_can_delete false
       end
@@ -46,11 +46,11 @@ module V1
       private
 
       def klass
-        ProductSerie
+        Product
       end
 
       def path
-        '/v1/admin/product_series'
+        '/v1/admin/products'
       end
 
       def headers
@@ -58,7 +58,7 @@ module V1
       end
 
       def test_fixture
-        product_series('product_serie_fixture_1')
+        products('product_fixture_1')
       end
 
       def expected_attributes

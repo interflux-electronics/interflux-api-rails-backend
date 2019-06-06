@@ -11,14 +11,14 @@
 #  updated_at  :datetime         not null
 #
 
-product_family_fixture_1:
-  name: Some Name
-  slug: some-name
-  public: true
-  group: other_thing_fixture_1
+soldering_flux:
+  name_single: Soldering flux
+  name_plural: Soldering fluxes
+  slug: soldering-fluxes
+  code: FL
 
-product_family_fixture_2:
-  name: Some Name
-  slug: some-name
-  public: true
-  group: other_thing_fixture_1
+solder_paste:
+  name_single: Solder paste
+  name_plural: Solder pastes
+  slug: solder-pastes
+  code: SP

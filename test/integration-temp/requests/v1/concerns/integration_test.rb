@@ -31,6 +31,8 @@ module V1
     def assert_can_fetch_all(allowed, expected_amount, total_amount)
       get path, headers: headers
 
+      byebug
+
       if allowed
         assert_response 200
         data = JSON.parse(@response.body)['data']

@@ -14,11 +14,16 @@ module ActiveSupport
 
     # Return the HTTP headers a logged in admin would be sending
     # def admin_header
-    #   { 'Authorization': admin_user_token }
+    #   {
+    #     'Authorization': admin_user_token,
+    #     'Content-Type': "application/vnd.api+json"
+    #   }
     # end
 
     def public_header
-      {}
+      {
+        'Content-Type': "application/vnd.api+json"
+      }
     end
   end
 end
