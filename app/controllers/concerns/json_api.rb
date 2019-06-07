@@ -86,9 +86,13 @@ module JsonApi
     # Treat each URL that contains `?slug=something` as a `show` request.
     return show if params[:slug]
 
+    # Return 403 unless explicitely allowed in the controller
     return forbidden unless allowed
 
-    # First we gather all of this class.
+    # Return 403 if unknown filters are used
+    return forbidden_filter if unknown_filter?
+
+    # First we gather all records of the model class.
     resources = resource_klass.all
 
     # Then we reduce this collection with the permanent and requested filters.
@@ -219,11 +223,23 @@ module JsonApi
   end
 
   def requested_filters
-    keys = permitted_filters.collect(&:to_s)
+    permitted = permitted_filters.collect(&:to_s)
+
     params
       .require(:filter)
-      .permit(keys)
+      .permit(permitted)
       .to_hash
+  end
+
+  def unknown_filter?
+    filter = request.params[:filter]
+
+    return false unless filter
+
+    !filter.all? do |key_value|
+      key = key_value[0]
+      permitted_filters.include? key.to_sym
+    end
   end
 
   # CREATING
@@ -379,6 +395,14 @@ module JsonApi
       'forbidden',
       'This request is forbidden. The resource exists, but no action was assigned in the controller.',
       meta
+    )
+  end
+
+  def forbidden_filter
+    render_error(
+      403,
+      'forbidden',
+      "One of the filters params in the URL is not allowed. Please review."
     )
   end
 

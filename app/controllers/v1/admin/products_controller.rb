@@ -56,7 +56,9 @@ module V1
       end
 
       def permitted_filters
-        %[]
+        %[
+          continued
+        ]
         # %i[
         #  main_group_id
         #  sub_group_id

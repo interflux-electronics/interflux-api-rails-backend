@@ -21,13 +21,13 @@ LMPA-Q6:
   public: true
   product_family: solder_paste
 
-# Future product, still being developed, thus not public yet
+# Future product, not public, nor orderable
 LMPA-Q7:
   name: LMPA Q7
   slug: LMPA-Q7
   code: SPLMPAQ7
   public: false
-  continued: true
+  continued: false
   product_family: solder_paste
 
 # Discontinued product

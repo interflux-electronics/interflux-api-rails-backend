@@ -13,47 +13,75 @@ module V1
         # Should be allowed
         assert_response 200
 
+        json = JSON.parse(@response.body)
+
         # Should return 4 out of 5 products (should filter out public=false)
-        data = JSON.parse(@response.body)['data']
-        assert_equal Array, data.class
-        assert_equal 4, data.length
+        assert_equal 4, json['data'].length
       end
 
       test 'can fetch one product by slug' do
+        # curl 'http://localhost:3000/v1/public/products?slug=LMPA-Q6' -H "Content-Type: application/vnd.api+json"
         get '/v1/public/products?slug=LMPA-Q6', headers: @header
 
         # Should be allowed
         assert_response 200
 
-        # Should return 4 out of 5 products (should filter out public=false)
-        data = JSON.parse(@response.body)['data']
+        json = JSON.parse(@response.body)
 
-        # The response is JSON and has "data" as root key
-        assert_equal Hash, data.class
+        # Returns ID for given slug (important)
+        refute_nil json['data']['id']
 
-        # Response includes the ID matching the slug
-        refute_nil data['id']
+        # Returns attributes
+        refute_nil json['data']['attributes']['slug']
+        refute_nil json['data']['attributes']['name']
+        refute_nil json['data']['attributes']['continued']
 
-        # Includes all expected attributes
-        refute_nil data['attributes']['slug']
-        refute_nil data['attributes']['name']
-        refute_nil data['attributes']['continued']
+        # Returns relationships
+        refute_nil json['data']['relationships']['product-family']
 
-        # Includes all expected relationships
-        refute_nil data['relationships']['product-family']
+        # Should not include other records included
+        assert_nil json['includes']
       end
 
-      test 'disallow create' do
+      test 'can include product family' do
+        # curl "http://localhost:3000/v1/public/products?slug=LMPA-Q6&include=product-family" -H "Content-Type: application/vnd.api+json"
+        get '/v1/public/products?slug=LMPA-Q6&include=product-family', headers: @header
+
+        json = JSON.parse(@response.body)
+
+        # Includes extra records
+        refute_nil json['included']
+        assert_equal 1, json['included'].length
+        assert_equal 'Solder paste', json['included'][0]['attributes']['name-single']
+      end
+
+      test 'can filter one' do
+        # curl "http://localhost:3000/v1/public/products?filter%5Bcontinued%5D=true" -H "Content-Type: application/vnd.api+json"
+        get '/v1/public/products?filter[continued]=true', headers: @header
+
+        json = JSON.parse(@response.body)
+
+        # Should return 3 out of 5 products (should filter out continued=false)
+        assert_equal 3, json['data'].length
+      end
+
+      test 'throws 403 if wrong filter' do
+        # curl "http://localhost:3000/v1/public/products?filter%5Bbogus%5D=true" -H "Content-Type: application/vnd.api+json"
+        get '/v1/public/products?filter[bogus]=true', headers: @header
+        assert_response 403
+      end
+
+      test 'do not allow create' do
         post '/v1/public/products', headers: @header
         assert_response 403
       end
 
-      test 'disallow update' do
+      test 'do not allow update' do
         put '/v1/public/products/123', headers: @header
         assert_response 403
       end
 
-      test 'disallow delete' do
+      test 'do not allow delete' do
         delete '/v1/public/products/123', headers: @header
         assert_response 403
       end
