@@ -65,6 +65,16 @@ module V1
         assert_equal 3, json['data'].length
       end
 
+      test 'can filter two things' do
+        # curl "http://localhost:3000/v1/public/products?filter%5Bcontinued%5D=true&filter%5Bname%5D=IF%202005M" -H "Content-Type: application/vnd.api+json"
+        get '/v1/public/products?filter[continued]=true&filter[name]=IF 2005M', headers: @header
+
+        json = JSON.parse(@response.body)
+
+        # Should return 3 out of 5 products (should filter out continued=false)
+        assert_equal 1, json['data'].length
+      end
+
       test 'throws 403 if wrong filter' do
         # curl "http://localhost:3000/v1/public/products?filter%5Bbogus%5D=true" -H "Content-Type: application/vnd.api+json"
         get '/v1/public/products?filter[bogus]=true', headers: @header

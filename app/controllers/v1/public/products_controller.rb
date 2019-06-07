@@ -57,6 +57,7 @@ module V1
 
       def permitted_filters
         %i[
+          name
           continued
         ]
         # %i[
