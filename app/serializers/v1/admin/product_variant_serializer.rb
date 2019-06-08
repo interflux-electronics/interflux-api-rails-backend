@@ -5,7 +5,7 @@ module V1
                  :code,
                  :name,
                  :public,
-                 :continued,
+                 :deprecated,
                  :created_at,
                  :updated_at
 

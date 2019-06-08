@@ -281,8 +281,6 @@ ActiveRecord::Schema.define(version: 20190605053358) do
     t.string "slug"
     t.string "code"
     t.string "name"
-    t.boolean "public", default: false
-    t.boolean "continued", default: true
     t.uuid "product_id"
     t.uuid "container_id"
     t.datetime "created_at", null: false
@@ -299,13 +297,19 @@ ActiveRecord::Schema.define(version: 20190605053358) do
     t.string "code"
     t.string "name"
     t.boolean "public", default: false
-    t.boolean "continued", default: true
+    t.boolean "deprecated", default: false
+    t.boolean "orderable", default: false
+    t.boolean "popular", default: false
+    t.boolean "new", default: false
     t.uuid "product_family_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_products_on_code", unique: true
-    t.index ["continued"], name: "index_products_on_continued"
+    t.index ["deprecated"], name: "index_products_on_deprecated"
     t.index ["name"], name: "index_products_on_name", unique: true
+    t.index ["new"], name: "index_products_on_new"
+    t.index ["orderable"], name: "index_products_on_orderable"
+    t.index ["popular"], name: "index_products_on_popular"
     t.index ["product_family_id"], name: "index_products_on_product_family_id"
     t.index ["public"], name: "index_products_on_public"
     t.index ["slug"], name: "index_products_on_slug", unique: true

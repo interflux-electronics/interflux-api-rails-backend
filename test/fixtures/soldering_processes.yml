@@ -9,14 +9,18 @@
 #  updated_at :datetime         not null
 #
 
-# soldering_process_fixture_1:
-#   name: Some Name
-#   slug: some-name
-#   public: true
-#   group: other_thing_fixture_1
-#
-# soldering_process_fixture_2:
-#   name: Some Name
-#   slug: some-name
-#   public: true
-#   group: other_thing_fixture_1
+wave:
+  name: Wave Soldering
+  slug: wave-soldering
+
+selective:
+  name: Selective Soldering
+  slug: selective-soldering
+
+reflow:
+  name: Reflow Soldering
+  slug: reflow-soldering
+
+rework:
+  name: Rework & Repair
+  slug: rework-and-repair

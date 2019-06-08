@@ -25,8 +25,13 @@ after :product_families do
       slug: product.slug,
       code: product.code,
       name: product.name,
+
       public: product.public,
-      continued: product.continued,
+      deprecated: product.deprecated || false,
+      orderable: product.orderable || true,
+      popular: product.popular || false,
+      new: product.new || false,
+
       product_family_id: family.id
     )
 

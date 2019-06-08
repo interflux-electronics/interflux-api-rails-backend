@@ -71,9 +71,7 @@ module V1
       end
 
       def permitted_includes
-        %i[
-          products
-        ]
+        %i[]
         # %i[
         #   related_articles
         #   related_products

@@ -3,7 +3,7 @@
 # Table name: product_processes
 #
 #  id                   :uuid             not null, primary key
-#  product_serie_id     :uuid
+#  product_id           :uuid
 #  soldering_process_id :uuid
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null

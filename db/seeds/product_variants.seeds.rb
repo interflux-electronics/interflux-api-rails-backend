@@ -123,8 +123,6 @@ after :product_families,
       slug: slug,
       code: code,
       name: name,
-      public: true,
-      continued: true,
       product_id: product.id
     )
 

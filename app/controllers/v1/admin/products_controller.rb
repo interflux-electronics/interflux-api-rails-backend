@@ -57,7 +57,7 @@ module V1
 
       def permitted_filters
         %[
-          continued
+          deprecated
         ]
         # %i[
         #  main_group_id

@@ -168,6 +168,7 @@ module JsonApi
     options = {}
     options[:include] = strong_includes if strong_includes
     json = serializer_klass.new(resource, options).serialized_json
+
     render status: 200, json: json
   end
 

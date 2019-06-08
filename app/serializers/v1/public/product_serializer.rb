@@ -3,10 +3,14 @@ module V1
     class ProductSerializer < ApplicationSerializer
       attributes :slug,
                  :name,
-                 :continued
+                 :public,
+                 :deprecated,
+                 :orderable,
+                 :popular,
+                 :new
 
       belongs_to :product_family
-      
+
       # belongs_to :thing
       # belongs_to :main_group, record_type: :product_group, serializer: :product_group
       # belongs_to :sub_group, record_type: :product_group, serializer: :product_group

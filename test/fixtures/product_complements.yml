@@ -2,11 +2,11 @@
 #
 # Table name: product_complements
 #
-#  id               :uuid             not null, primary key
-#  product_serie_id :uuid
-#  complement_id    :uuid
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
+#  id            :uuid             not null, primary key
+#  product_id    :uuid
+#  complement_id :uuid
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 
 # product_complement_fixture_1:

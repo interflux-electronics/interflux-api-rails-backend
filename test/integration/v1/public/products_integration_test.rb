@@ -16,7 +16,7 @@ module V1
         json = JSON.parse(@response.body)
 
         # Should return 4 out of 5 products (should filter out public=false)
-        assert_equal 4, json['data'].length
+        assert_equal 3, json['data'].length
       end
 
       test 'can fetch one by slug' do
@@ -34,7 +34,10 @@ module V1
         # Returns attributes
         refute_nil json['data']['attributes']['slug']
         refute_nil json['data']['attributes']['name']
-        refute_nil json['data']['attributes']['continued']
+        refute_nil json['data']['attributes']['deprecated']
+        refute_nil json['data']['attributes']['orderable']
+        refute_nil json['data']['attributes']['popular']
+        refute_nil json['data']['attributes']['new']
 
         # Returns relationships
         refute_nil json['data']['relationships']['product-family']
@@ -55,19 +58,19 @@ module V1
         assert_equal 'Solder paste', json['included'][0]['attributes']['name-single']
       end
 
-      test 'can filter by continued' do
-        # curl "http://localhost:3000/v1/public/products?filter%5Bcontinued%5D=true" -H "Content-Type: application/vnd.api+json"
-        get '/v1/public/products?filter[continued]=true', headers: @header
+      test 'can filter by deprecated' do
+        # curl "http://localhost:3000/v1/public/products?filter%5Bdeprecated%5D=true" -H "Content-Type: application/vnd.api+json"
+        get '/v1/public/products?filter[deprecated]=true', headers: @header
 
         json = JSON.parse(@response.body)
 
-        # Should return 3 out of 5 products (should filter out continued=false)
-        assert_equal 3, json['data'].length
+        # Should return 1 out of 5 products (2 are deprecated, but 1 of them is not public)
+        assert_equal 1, json['data'].length
       end
 
-      test 'can filter by continued and name' do
-        # curl "http://localhost:3000/v1/public/products?filter%5Bcontinued%5D=true&filter%5Bname%5D=IF%202005M" -H "Content-Type: application/vnd.api+json"
-        get '/v1/public/products?filter[continued]=true&filter[name]=IF 2005M', headers: @header
+      test 'can filter by deprecated and name' do
+        # curl "http://localhost:3000/v1/public/products?filter%5Bdeprecated%5D=true&filter%5Bname%5D=IF%202005M" -H "Content-Type: application/vnd.api+json"
+        get '/v1/public/products?filter[popular]=true&filter[name]=IF 2005M', headers: @header
 
         json = JSON.parse(@response.body)
 

@@ -1,6 +1,7 @@
 - slug: DP-5600
   name: DP 5600
   public: true
+  popular: true
   family: solder pastes
   regex1: "DP 5600 "
   regex2: Solderpaste
@@ -55,6 +56,7 @@
 - slug: LMPA-Q6
   name: LMPA™-Q6
   public: true
+  popular: true
   family: solder pastes
   regex1: "LMPA™-Q6 "
   regex2: Solderpaste
@@ -107,6 +109,7 @@
 - slug: IF-2005
   name: IF 2005
   public: true
+  popular: true
   family: soldering fluxes
   regex1: "IF 2005 "
 
@@ -141,6 +144,7 @@
 
 - slug: PacIFic-2009M
   name: PacIFic 2009M
+  popular: true
   public: true
   family: soldering fluxes
 
@@ -357,13 +361,11 @@
 - slug: IF-930
   name: IF 930
   public: true
-  continued: true
   family: nozzle cleaners
 
 - slug: IF-920
   name: IF 920
   public: true
-  continued: false
   family: nozzle cleaners
 
 - slug: Purgel
@@ -470,6 +472,7 @@
 - slug: Tip-Tinner
   name: Tip Tinner
   public: true
+  popular: true
   family: tip tinners
 
 - slug: TS15

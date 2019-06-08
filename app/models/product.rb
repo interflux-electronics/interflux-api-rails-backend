@@ -7,7 +7,10 @@
 #  code              :string
 #  name              :string
 #  public            :boolean          default(FALSE)
-#  continued         :boolean          default(TRUE)
+#  deprecated        :boolean          default(FALSE)
+#  orderable         :boolean          default(FALSE)
+#  popular           :boolean          default(FALSE)
+#  new               :boolean          default(FALSE)
 #  product_family_id :uuid
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
