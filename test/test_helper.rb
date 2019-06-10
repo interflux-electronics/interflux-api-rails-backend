@@ -22,7 +22,7 @@ module ActiveSupport
 
     def public_header
       {
-        'Content-Type': "application/vnd.api+json"
+        'Content-Type': 'application/vnd.api+json'
       }
     end
   end

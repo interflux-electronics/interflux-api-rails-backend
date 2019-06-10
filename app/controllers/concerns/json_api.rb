@@ -403,7 +403,7 @@ module JsonApi
     render_error(
       403,
       'forbidden',
-      "One of the filters params in the URL is not allowed. Please review."
+      'One of the filters params in the URL is not allowed. Please review.'
     )
   end
 

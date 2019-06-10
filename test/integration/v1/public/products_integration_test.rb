@@ -50,12 +50,36 @@ module V1
         # curl "http://localhost:3000/v1/public/products?slug=LMPA-Q6&include=product-family" -H "Content-Type: application/vnd.api+json"
         get '/v1/public/products?slug=LMPA-Q6&include=product-family', headers: @header
 
+        # Should be allowed
+        assert_response 200
+
         json = JSON.parse(@response.body)
 
         # Includes extra records
         refute_nil json['included']
         assert_equal 1, json['included'].length
-        assert_equal 'Solder paste', json['included'][0]['attributes']['name-single']
+        assert_equal 'product-family', json['included'][0]['type']
+        assert_equal 'solder paste', json['included'][0]['attributes']['name-single']
+      end
+
+      test 'can include family and images' do
+        # curl "http://localhost:3000/v1/public/products?slug=LMPA-Q6&include=product-family,product-images,product-images.image" -H "Content-Type: application/vnd.api+json"
+        get '/v1/public/products?slug=IF-2005M&include=product-family,product-images,product-images.image', headers: @header
+
+        # Should be allowed
+        assert_response 200
+
+        json = JSON.parse(@response.body)
+
+        # Includes 2 extra records
+        refute_nil json['included']
+        assert_equal 5, json['included'].length
+        assert_equal 'product-family', json['included'][0]['type']
+        assert_equal 'product-image', json['included'][1]['type']
+        assert_equal 'product-image', json['included'][2]['type']
+        assert_equal 'image', json['included'][3]['type']
+        assert_equal 'image', json['included'][4]['type']
+        assert_equal 'webp,jpg', json['included'][4]['attributes']['formats']
       end
 
       test 'can filter by deprecated' do

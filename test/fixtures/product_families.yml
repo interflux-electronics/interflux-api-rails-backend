@@ -12,13 +12,13 @@
 #
 
 soldering_flux:
-  name_single: Soldering flux
-  name_plural: Soldering fluxes
+  name_single: soldering flux
+  name_plural: soldering fluxes
   slug: soldering-fluxes
   code: FL
 
 solder_paste:
-  name_single: Solder paste
-  name_plural: Solder pastes
+  name_single: solder paste
+  name_plural: solder pastes
   slug: solder-pastes
   code: SP

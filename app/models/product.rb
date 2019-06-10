@@ -19,10 +19,16 @@
 class Product < ApplicationRecord
   belongs_to :product_family
 
-  has_many :product_processes
   has_many :product_variants
   has_many :containers, through: :product_variants
+
+  has_many :product_processes
   has_many :soldering_processes, through: :product_processes, source: :soldering_process
+
+  has_many :product_images
+  has_many :images, through: :product_images, source: :image
+
+  has_many :videos, through: :product_videos, source: :video
 
   alias_attribute :family, :product_family
   alias_attribute :variants, :product_variants

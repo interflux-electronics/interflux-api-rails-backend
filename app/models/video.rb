@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: images
+# Table name: videos
 #
 #  id         :uuid             not null, primary key
 #  cdn_path   :string
@@ -8,9 +8,10 @@
 #  formats    :string
 #  tag_long   :string
 #  tag_short  :string
+#  poster_url :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Image < ApplicationRecord
+class Video < ApplicationRecord
 end

@@ -2,7 +2,7 @@
 #
 # module V1
 #   module Public
-#     class ProductProcessIntegrationTest < ApplicationController
+#     class ProductVideoIntegrationTest < ApplicationController
 #
 #     end
 #   end

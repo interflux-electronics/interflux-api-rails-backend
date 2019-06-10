@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190605053358) do
+ActiveRecord::Schema.define(version: 20190610050435) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -145,13 +145,15 @@ ActiveRecord::Schema.define(version: 20190605053358) do
   end
 
   create_table "images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "path"
-    t.string "text"
+    t.string "cdn_path"
     t.string "sizes"
+    t.string "formats"
+    t.string "tag_long"
+    t.string "tag_short"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["path"], name: "index_images_on_path", unique: true
-    t.index ["text"], name: "index_images_on_text", unique: true
+    t.index ["cdn_path"], name: "index_images_on_cdn_path", unique: true
+    t.index ["tag_long"], name: "index_images_on_tag_long", unique: true
   end
 
   create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -292,6 +294,15 @@ ActiveRecord::Schema.define(version: 20190605053358) do
     t.index ["slug"], name: "index_product_variants_on_slug", unique: true
   end
 
+  create_table "product_videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "product_id"
+    t.uuid "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_videos_on_product_id"
+    t.index ["video_id"], name: "index_product_videos_on_video_id"
+  end
+
   create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "slug"
     t.string "code"
@@ -339,6 +350,19 @@ ActiveRecord::Schema.define(version: 20190605053358) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "cdn_path"
+    t.string "sizes"
+    t.string "formats"
+    t.string "tag_long"
+    t.string "tag_short"
+    t.string "poster_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cdn_path"], name: "index_videos_on_cdn_path", unique: true
+    t.index ["tag_long"], name: "index_videos_on_tag_long", unique: true
   end
 
 end

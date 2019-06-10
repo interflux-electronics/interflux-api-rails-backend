@@ -9,7 +9,8 @@ class ApplicationSerializer
     # Dasherise all JSON keys
     klass.send :set_key_transform, :dash
 
-    # Enable 15 minute caching
-    klass.send :cache_options, enabled: true, cache_length: 15.minutes
+    # Enable 15 minute caching if production
+    should_cache = Rails.env.production?
+    klass.send :cache_options, enabled: should_cache, cache_length: 15.minutes
   end
 end

@@ -33,7 +33,7 @@ Pacific_2009M:
   deprecated: true
   product_family: soldering_flux
 
-LMPA-Q6:
+LMPA_Q6:
   name: LMPA Q6
   slug: LMPA-Q6
   code: SPLMPAQ6
@@ -42,7 +42,7 @@ LMPA-Q6:
   product_family: solder_paste
 
 # Future product, not public, nor orderable
-LMPA-Q7:
+LMPA_Q7:
   name: LMPA Q7
   slug: LMPA-Q7
   code: SPLMPAQ7
@@ -51,7 +51,7 @@ LMPA-Q7:
   product_family: solder_paste
 
 # Deprecated product
-LMPA-Q5:
+LMPA_Q5:
   name: LMPA Q5
   slug: LMPA-Q5
   code: SPLMPAQ5
