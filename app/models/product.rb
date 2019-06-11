@@ -22,11 +22,10 @@ class Product < ApplicationRecord
   has_many :containers, through: :product_variants
   has_many :images, through: :product_images, source: :image
   has_many :product_images
-  has_many :product_processes
+  has_many :product_uses
   has_many :product_variants
-  has_many :soldering_processes, through: :product_processes, source: :soldering_process
+  has_many :uses, through: :product_uses, source: :use
 
   alias_attribute :family, :product_family
-  alias_attribute :processes, :soldering_processes
   alias_attribute :variants, :product_variants
 end
