@@ -166,6 +166,7 @@ module JsonApi
     return resource_not_found if resource.nil?
 
     options = {}
+
     options[:include] = strong_includes if strong_includes
     json = serializer_klass.new(resource, options).serialized_json
 

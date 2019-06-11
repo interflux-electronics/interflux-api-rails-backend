@@ -7,6 +7,7 @@ module V1
         @header = public_header
       end
 
+      # curl 'http://localhost:3000/v1/public/products' -H "Content-Type: application/vnd.api+json"
       test 'can fetch all' do
         get '/v1/public/products', headers: @header
 
