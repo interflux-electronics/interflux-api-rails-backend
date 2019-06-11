@@ -1,6 +1,6 @@
 module V1
   module Public
-    class SolderingProcessSerializer < ApplicationSerializer
+    class UseSerializer < ApplicationSerializer
       attributes :slug,
                  :name
     end

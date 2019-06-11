@@ -1,4 +1,3 @@
-# TODO: resources :containers
 Rails.application.routes.draw do
   # Make the API future proof by versioning v1
   namespace :v1 do
@@ -13,17 +12,17 @@ Rails.application.routes.draw do
     # https://lmpa.interflux.com
     #
     namespace :public do
+      resources :containers
       resources :countries
-      resources :images
       resources :images
       resources :leads
       resources :product_families, path: '/product-families'
       resources :product_images, path: '/product-images'
-      resources :product_processes, path: '/product-processes'
+      resources :product_uses, path: '/product-uses'
       resources :product_variants, path: '/product-variants'
       resources :product_videos, path: '/product-videos'
       resources :products
-      resources :soldering_processes, path: '/soldering-processes'
+      resources :uses
       resources :videos
     end
 

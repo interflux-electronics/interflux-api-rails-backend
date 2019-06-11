@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: soldering_processes
+# Table name: uses
 #
 #  id         :uuid             not null, primary key
 #  name       :string
@@ -9,7 +9,7 @@
 #  updated_at :datetime         not null
 #
 
-class SolderingProcess < ApplicationRecord
-  has_many :product_processes
-  has_many :products, through: :product_processes, source: :product
+class Use < ApplicationRecord
+  has_many :product_uses
+  has_many :products, through: :product_uses, source: :product
 end

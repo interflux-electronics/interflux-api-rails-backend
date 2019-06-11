@@ -1,6 +1,6 @@
 module V1
   module Public
-    class SolderingProcessesController < ApplicationController
+    class ProductUsesController < ApplicationController
       def index
         allow_index
       end
@@ -24,11 +24,11 @@ module V1
       private
 
       def resource_klass
-        SolderingProcess
+        ProductUse
       end
 
       def serializer_klass
-        V1::Public::SolderingProcessSerializer
+        V1::Public::ProductUseSerializer
       end
 
       def creatable_attributes

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190611042029) do
+ActiveRecord::Schema.define(version: 20190611113931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -252,15 +252,6 @@ ActiveRecord::Schema.define(version: 20190611042029) do
     t.index ["product_id"], name: "index_product_images_on_product_id"
   end
 
-  create_table "product_processes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
-    t.uuid "soldering_process_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_processes_on_product_id"
-    t.index ["soldering_process_id"], name: "index_product_processes_on_soldering_process_id"
-  end
-
   create_table "product_related_articles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "product_id"
     t.uuid "article_id"
@@ -277,6 +268,15 @@ ActiveRecord::Schema.define(version: 20190611042029) do
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_product_substitutes_on_product_id"
     t.index ["substitute_id"], name: "index_product_substitutes_on_substitute_id"
+  end
+
+  create_table "product_uses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "product_id"
+    t.uuid "use_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_uses_on_product_id"
+    t.index ["use_id"], name: "index_product_uses_on_use_id"
   end
 
   create_table "product_variants", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -324,15 +324,6 @@ ActiveRecord::Schema.define(version: 20190611042029) do
     t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
-  create_table "soldering_processes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
-    t.string "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_soldering_processes_on_name", unique: true
-    t.index ["slug"], name: "index_soldering_processes_on_slug", unique: true
-  end
-
   create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "slug"
     t.string "name"
@@ -348,6 +339,15 @@ ActiveRecord::Schema.define(version: 20190611042029) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+  end
+
+  create_table "uses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_uses_on_name", unique: true
+    t.index ["slug"], name: "index_uses_on_slug", unique: true
   end
 
   create_table "videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

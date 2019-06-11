@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: soldering_processes
+# Table name: uses
 #
 #  id         :uuid             not null, primary key
 #  name       :string
@@ -10,17 +10,17 @@
 #
 
 wave:
-  name: Wave Soldering
+  name: wave Soldering
   slug: wave-soldering
 
 selective:
-  name: Selective Soldering
+  name: selective Soldering
   slug: selective-soldering
 
 reflow:
-  name: Reflow Soldering
+  name: reflow Soldering
   slug: reflow-soldering
 
 rework:
-  name: Rework & Repair
+  name: rework & Repair
   slug: rework-and-repair
