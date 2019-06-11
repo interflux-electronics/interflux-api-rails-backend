@@ -12,12 +12,7 @@ module V1
       belongs_to :product_family
 
       has_many :product_images
-
-      # belongs_to :thing
-      # belongs_to :main_group, record_type: :product_group, serializer: :product_group
-      # belongs_to :sub_group, record_type: :product_group, serializer: :product_group
-
-      # has_many :related_articles, record_type: :article, serializer: :related_articles
+      has_many :product_variants
     end
   end
 end

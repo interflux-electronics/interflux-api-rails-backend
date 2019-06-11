@@ -3,7 +3,6 @@
 # Table name: product_variants
 #
 #  id           :uuid             not null, primary key
-#  slug         :string
 #  code         :string
 #  name         :string
 #  product_id   :uuid
@@ -12,14 +11,26 @@
 #  updated_at   :datetime         not null
 #
 
-# product_variant_fixture_1:
-#   name: Some Name
-#   slug: some-name
-#   public: true
-#   group: other_thing_fixture_1
-#
-# product_variant_fixture_2:
-#   name: Some Name
-#   slug: some-name
-#   public: true
-#   group: other_thing_fixture_1
+product_variant_1:
+  code: FLA2005M200
+  name:
+  product: IF_2005M
+  container: container_1
+
+product_variant_2:
+  code: FLA2005M025
+  name:
+  product: IF_2005M
+  container: container_2
+
+product_variant_3:
+  code: FLA2005M020
+  name:
+  product: IF_2005M
+  container: container_3
+
+product_variant_4:
+  code: FLA2005M001
+  name:
+  product: IF_2005M
+  container: container_4

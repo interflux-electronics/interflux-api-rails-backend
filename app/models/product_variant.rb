@@ -3,7 +3,6 @@
 # Table name: product_variants
 #
 #  id           :uuid             not null, primary key
-#  slug         :string
 #  code         :string
 #  name         :string
 #  product_id   :uuid

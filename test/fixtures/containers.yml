@@ -8,14 +8,14 @@
 #  updated_at :datetime         not null
 #
 
-# container_fixture_1:
-#   name: Some Name
-#   slug: some-name
-#   public: true
-#   group: other_thing_fixture_1
-#
-# container_fixture_2:
-#   name: Some Name
-#   slug: some-name
-#   public: true
-#   group: other_thing_fixture_1
+container_1:
+  name: 200L HDPE drum
+
+container_2:
+  name: 25L HDPE drum
+
+container_3:
+  name: 10L HDPE drum
+
+container_4:
+  name: 1L HDPE bottle

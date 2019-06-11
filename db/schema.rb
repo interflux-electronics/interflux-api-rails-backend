@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190610050435) do
+ActiveRecord::Schema.define(version: 20190611042029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -280,7 +280,6 @@ ActiveRecord::Schema.define(version: 20190610050435) do
   end
 
   create_table "product_variants", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "slug"
     t.string "code"
     t.string "name"
     t.uuid "product_id"
@@ -291,7 +290,6 @@ ActiveRecord::Schema.define(version: 20190610050435) do
     t.index ["container_id"], name: "index_product_variants_on_container_id"
     t.index ["name"], name: "index_product_variants_on_name"
     t.index ["product_id"], name: "index_product_variants_on_product_id"
-    t.index ["slug"], name: "index_product_variants_on_slug", unique: true
   end
 
   create_table "product_videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

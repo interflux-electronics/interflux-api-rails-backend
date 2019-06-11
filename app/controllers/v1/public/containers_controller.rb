@@ -1,6 +1,6 @@
 module V1
   module Public
-    class ProductsController < ApplicationController
+    class ContainersController < ApplicationController
       def index
         allow_index
       end
@@ -24,11 +24,11 @@ module V1
       private
 
       def resource_klass
-        Product
+        Container
       end
 
       def serializer_klass
-        V1::Public::ProductSerializer
+        V1::Public::ContainerSerializer
       end
 
       def creatable_attributes
@@ -56,11 +56,7 @@ module V1
       end
 
       def permitted_filters
-        %i[
-          name
-          deprecated
-          popular
-        ]
+        %[]
         # %i[
         #  main_group_id
         #  sub_group_id
@@ -68,19 +64,14 @@ module V1
       end
 
       def permanent_filters
-        {
-          public: true
-        }
+        {}
+        # {
+        #   public: true
+        # }
       end
 
       def permitted_includes
-        %i[
-          product_family
-          product_images
-          product_images.image
-          product_variants
-          product_variants.container
-        ]
+        %[]
         # %i[
         #   related_articles
         #   related_products

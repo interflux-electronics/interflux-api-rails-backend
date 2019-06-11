@@ -67,8 +67,6 @@ after :product_families,
       name = name.sub(arr[0], arr[1])
     end
 
-    slug = name.gsub(/ - /, '-').tr(' ', '-')
-
     matches = products.select do |product|
       regex1 = product['regex1']
       regex2 = product['regex2']
@@ -120,7 +118,6 @@ after :product_families,
     byebug if product.nil?
 
     properties = OpenStruct.new(
-      slug: slug,
       code: code,
       name: name,
       product_id: product.id
