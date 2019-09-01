@@ -52,3 +52,6 @@ group :development do
   # For annotating models with schemas
   gem 'annotate', require: false
 end
+
+# https://www.skylight.io/
+# gem "skylight"
