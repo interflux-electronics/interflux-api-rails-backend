@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Which version of Ruby to use (keep in sync with .ruby-version)
-ruby '2.4.1'
+ruby '2.6.5'
 
 # Ruby on Rails framework
 gem 'rails', '~> 5.1.6'
