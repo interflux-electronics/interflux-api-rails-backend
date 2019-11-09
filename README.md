@@ -144,6 +144,11 @@ bin/rails db:seed
 Backup and drop production database:
 
 ```
+env RAILS_ENV=production rake db:data:dump
+jw@server-singapore.interflux.com:/var/www/api.interflux.com/builds/feature/authentication/cd977ad/db/data.yml .
+```
+
+```
 bin/rails db:data:dump
 bin/pumactl -F config/puma/production.rb -T '12345' stop
 export RAILS_ENV=production;
