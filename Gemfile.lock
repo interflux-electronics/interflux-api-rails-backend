@@ -176,7 +176,7 @@ DEPENDENCIES
   yaml_db
 
 RUBY VERSION
-   ruby 2.4.1p111
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   2.0.1
+   2.0.2
