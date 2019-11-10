@@ -35,7 +35,7 @@ stdout_redirect '/var/www/api.interflux.com/logs/puma.stdout.log', '/var/www/api
 
 # Which Rails build to serve.
 # Note that this is a symlinked folder pointing at the latest build.
-directory '/var/www/api.interflux.com/builds/current'
+directory '/var/www/api.interflux.com/builds/production/latest'
 
 # Verifies that all workers have checked in to the master process within the
 # given timeout. If not the worker process will be restarted. This is not a
