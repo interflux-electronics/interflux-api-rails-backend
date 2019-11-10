@@ -77,23 +77,20 @@ and echo ----------
 and echo ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and echo ----------
-
-# If first time
+and echo bin/pumactl -F config/puma/production.rb -T '12345' restart
+and bin/pumactl -F config/puma/production.rb -T '12345' restart
+# and echo bin/pumactl -F config/puma/production.rb -T '12345' stop
+# and bin/pumactl -F config/puma/production.rb -T '12345' stop
+# and echo bin/pumactl -F config/puma/production.rb -T '12345' start
+# and bin/pumactl -F config/puma/production.rb -T '12345' start
 # echo "bin/puma -e production"
 # bin/puma -e production
-# echo bin/pumactl -F config/puma/production.rb -T '12345' start
-# bin/pumactl -F config/puma/production.rb -T '12345' start
-and echo Restart the Puma server!
-and echo bin/pumactl -F config/puma/production.rb -T '12345' stop
-and bin/pumactl -F config/puma/production.rb -T '12345' stop
-and echo bin/pumactl -F config/puma/production.rb -T '12345' start
-and bin/pumactl -F config/puma/production.rb -T '12345' start
+
+# Phased restart and normal restart have some issues...
 # and echo bin/pumactl -F config/puma/production.rb -T '12345' restart
 # and bin/pumactl -F config/puma/production.rb -T '12345' restart
 # and echo bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
 # and bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
-# echo "bin/pumactl -C 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock' -T '12345' phased-restart"
-# bin/pumactl -C 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock' -T '12345' phased-restart
 
 and echo ----------
 and echo Sanity check on remote:
