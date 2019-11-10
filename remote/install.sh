@@ -51,3 +51,16 @@ and gem install rails
 and echo ----------
 and echo bin/bundle install
 and bin/bundle install
+and echo ----------
+and echo bin/rails db:environment:set RAILS_ENV=production
+and bin/rails db:environment:set RAILS_ENV=production
+and echo ----------
+and echo bin/rails db:create
+and bin/rails db:create
+and echo ----------
+and echo bin/rails db:migrate
+and bin/rails db:migrate
+and echo ----------
+and echo bin/rails db:seed
+and bin/rails db:seed
+and echo ----------
