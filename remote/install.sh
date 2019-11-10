@@ -84,6 +84,8 @@ and echo ----------
 # echo bin/pumactl -F config/puma/production.rb -T '12345' start
 # bin/pumactl -F config/puma/production.rb -T '12345' start
 and echo Restart the Puma server!
+and echo bin/pumactl -F config/puma/production.rb -T '12345' stop
+and bin/pumactl -F config/puma/production.rb -T '12345' stop
 and echo bin/pumactl -F config/puma/production.rb -T '12345' start
 and bin/pumactl -F config/puma/production.rb -T '12345' start
 # and echo bin/pumactl -F config/puma/production.rb -T '12345' restart
