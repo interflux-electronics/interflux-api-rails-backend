@@ -35,6 +35,9 @@ case master
   and set revision (git rev-parse --short HEAD)
   and echo $revision
   and echo ----------
+  and echo bin/rails test
+  and bin/rails test
+  and echo ----------
   and echo scp remote/install.sh $remote:$path
   and scp remote/install.sh $remote:$path
   and echo ----------
