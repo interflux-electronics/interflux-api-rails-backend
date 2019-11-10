@@ -6,7 +6,9 @@ set path (dirname (status --current-filename))
 set branch $argv[1]
 set revision $argv[2]
 
-echo ==========
+echo ----------
+echo - REMOTE -
+echo ----------
 echo User: $user
 echo Host: $host
 echo Path: $path
@@ -73,4 +75,4 @@ and echo Removing all builds except the latest one
 and echo find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
 and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
 and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec rm -rf {} \;
-and echo ==========
+and echo ----------
