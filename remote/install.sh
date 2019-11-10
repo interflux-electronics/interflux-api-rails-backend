@@ -70,7 +70,7 @@ and echo ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.in
 and ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and echo ----------
 and echo Removing all builds except the latest one
-and echo find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rvf {} \;
-and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rvf {} \;
-and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec rm -rvf {} \;
+and echo find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
+and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
+and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec rm -rf {} \;
 and echo ==========
