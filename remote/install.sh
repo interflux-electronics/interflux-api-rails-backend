@@ -32,9 +32,8 @@ and echo cd builds/$branch/$revision
 and cd builds/$branch/$revision
 and echo ----------
 and echo "GIT_BRANCH=$branch >> .rbenv-vars"
-and echo "GIT_BRANCH=$branch" >> .rbenv-vars
-and echo ----------
 and echo "GIT_REVISION=$revision >> .rbenv-vars"
+and echo "GIT_BRANCH=$branch" >> .rbenv-vars
 and echo "GIT_REVISION=$revision" >> .rbenv-vars
 and echo ----------
 and echo rbenv install -s
@@ -60,7 +59,9 @@ and bin/bundle install
 and echo ----------
 and echo bin/rails db:migrate
 and env RAILS_ENV=production bin/rails db:migrate
+# and echo ----------
+# and echo bin/rails db:seed
+# and env RAILS_ENV=production bin/rails db:seed
 and echo ----------
-and echo bin/rails db:seed
-and env RAILS_ENV=production bin/rails db:seed
-and echo ----------
+and set head (git --git-dir=/var/www/api.interflux.com/repo rev-parse --short HEAD)
+ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
