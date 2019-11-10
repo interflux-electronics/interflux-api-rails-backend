@@ -28,15 +28,26 @@ and echo ----------
 and echo git --git-dir=repo --work-tree=builds/$branch/$revision checkout $revision -f
 and git --git-dir=repo --work-tree=builds/$branch/$revision checkout $revision -f
 and echo ----------
-
-# cp .rbenv-vars builds/$branch/$revision
-
-and echo ----------
 and echo cd builds/$branch/$revision
 and cd builds/$branch/$revision
 and echo ----------
 and echo "GIT_BRANCH=$branch >> .rbenv-vars"
 and echo "GIT_BRANCH=$branch" >> .rbenv-vars
-and echo "----------"
+and echo ----------
 and echo "GIT_REVISION=$revision >> .rbenv-vars"
 and echo "GIT_REVISION=$revision" >> .rbenv-vars
+and echo ----------
+and echo rbenv install -s
+and rbenv install -s
+and echo ----------
+and echo rbenv rehash
+and rbenv rehash
+and echo ----------
+and echo gem install bundler
+and gem install bundler
+and echo ----------
+and echo gem install rails
+and gem install rails
+and echo ----------
+and echo bin/bundle install
+and bin/bundle install
