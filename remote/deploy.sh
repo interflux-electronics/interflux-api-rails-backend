@@ -3,16 +3,6 @@
 set remote "jw@server.interflux.com"
 set path "/var/www/api.interflux.com"
 
-set branch (git rev-parse --abbrev-ref HEAD)
-set revision (git rev-parse --short HEAD)
-
-echo ----------
-echo Deploying:
-echo Branch: $branch
-echo Revision: $revision
-echo Remote: $remote
-echo ----------
-
 switch $branch
 case master
   echo git push
@@ -26,6 +16,14 @@ case master
   and echo ----------
   and echo git push
   and git push
+  and echo ----------
+  and set branch (git rev-parse --abbrev-ref HEAD)
+  and set revision (git rev-parse --short HEAD)
+  and echo ----------
+  and echo Deploying:
+  and echo Branch: $branch
+  and echo Revision: $revision
+  and echo Remote: $remote
   and echo ----------
   and echo scp remote/install.sh $remote:$path
   and scp remote/install.sh $remote:$path
