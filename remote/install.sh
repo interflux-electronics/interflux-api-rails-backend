@@ -6,7 +6,7 @@ set path (dirname (status --current-filename))
 set branch $argv[1]
 set revision $argv[2]
 
-echo ----------
+echo ==========
 echo User: $user
 echo Host: $host
 echo Path: $path
@@ -65,3 +65,8 @@ and env RAILS_ENV=production bin/rails db:migrate
 and echo ----------
 and set head (git --git-dir=/var/www/api.interflux.com/repo rev-parse --short HEAD)
 ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
+and echo ----------
+and echo Removing all builds except the latest one
+and echo find . -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rvf {} \;
+and find . -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rvf {} \;
+and echo ==========
