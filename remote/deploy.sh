@@ -40,9 +40,9 @@ case master
   and echo ----------
   and echo ssh $remote "$path/install.sh $branch $revision"
   and ssh $remote "$path/install.sh $branch $revision"
-  and echo ----------
-  and echo - LOCAL -
-  and echo ----------
+  and echo -----------
+  and echo -- LOCAL --
+  and echo -----------
   and echo git checkout master
   and git checkout master
   and echo ----------
