@@ -39,6 +39,6 @@ case master
   and echo Merge and deploy successful!
   and echo ----------
 case '*'
-  echo Aborting - Only the branch master is deployable.
+  echo Aborting - Only the master branch is deployable.
   echo ----------
 end

@@ -16,20 +16,27 @@ echo ----------
 echo cd $path
 cd $path
 and echo ----------
-# and echo git checkout $branch -f
-# and git checkout $branch -f
-# and echo ----------
-# and echo git pull
-# and git pull
-# and echo ----------
-# and echo nvm install
-# and nvm install
-# and echo ----------
-# and echo yarn install
-# and yarn install
-# and echo ----------
-# and echo yarn build
-# and yarn build
-# and echo ----------
-# and echo Deploy successful!
-# and echo ----------
+and echo rm -rf builds/$branch/$revision
+and rm -rf builds/$branch/$revision
+and echo ----------
+and echo mkdir -p builds/$branch/$revision
+and mkdir -p builds/$branch/$revision
+and echo ----------
+and echo git --git-dir=repo fetch
+and git --git-dir=repo fetch
+and echo ----------
+and echo git --git-dir=repo --work-tree=builds/$branch/$revision checkout $revision -f
+and git --git-dir=repo --work-tree=builds/$branch/$revision checkout $revision -f
+and echo ----------
+
+# cp .rbenv-vars builds/$branch/$revision
+
+and echo ----------
+and echo cd builds/$branch/$revision
+and cd builds/$branch/$revision
+and echo ----------
+and echo "GIT_BRANCH=$branch >> .rbenv-vars"
+and echo "GIT_BRANCH=$branch" >> .rbenv-vars
+and echo "----------"
+and echo "GIT_REVISION=$revision >> .rbenv-vars"
+and echo "GIT_REVISION=$revision" >> .rbenv-vars
