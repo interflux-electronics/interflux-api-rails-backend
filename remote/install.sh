@@ -63,10 +63,15 @@ and env RAILS_ENV=production bin/rails db:migrate
 # and echo bin/rails db:seed
 # and env RAILS_ENV=production bin/rails db:seed
 and echo ----------
+and echo set head (git --git-dir=/var/www/api.interflux.com/repo rev-parse --short HEAD)
 and set head (git --git-dir=/var/www/api.interflux.com/repo rev-parse --short HEAD)
-ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
+and echo ----------
+and echo ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
+and ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and echo ----------
 and echo Removing all builds except the latest one
+and echo cd ..
+and cd ..
 and echo find ./builds/$branch -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rvf {} \;
 and find ./builds/$branch -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rvf {} \;
 and echo ==========
