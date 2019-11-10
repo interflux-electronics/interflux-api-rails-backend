@@ -77,21 +77,11 @@ and echo ----------
 and echo ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and echo ----------
-# and echo bin/pumactl -F config/puma/production.rb -T '12345' restart
-# and bin/pumactl -F config/puma/production.rb -T '12345' restart
+# Note, avoid `phased-restart` and `restart` for they have issues
 and echo bin/pumactl -F config/puma/production.rb -T '12345' stop
 and bin/pumactl -F config/puma/production.rb -T '12345' stop
 and echo bin/pumactl -F config/puma/production.rb -T '12345' start
 and bin/pumactl -F config/puma/production.rb -T '12345' start
-# echo "bin/puma -e production"
-# bin/puma -e production
-
-# Phased restart and normal restart have some issues...
-# and echo bin/pumactl -F config/puma/production.rb -T '12345' restart
-# and bin/pumactl -F config/puma/production.rb -T '12345' restart
-# and echo bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
-# and bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
-
 and echo ----------
 and echo Sanity check on remote:
 and echo curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock http://localhost/sanity-check -H "Content-Type: application/vnd.api+json"
