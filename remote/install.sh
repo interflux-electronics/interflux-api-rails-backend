@@ -52,24 +52,41 @@ and gem install rails
 and echo ----------
 and echo bin/bundle install
 and bin/bundle install
+
+# If first time
 # and echo ----------
 # and echo env RAILS_ENV=production bin/rails db:create
 # and env RAILS_ENV=production bin/rails db:create
 # and echo ----------
 # and echo bin/rails db:environment:set RAILS_ENV=production
 # and bin/rails db:environment:set RAILS_ENV=production
+
 and echo ----------
 and echo bin/rails db:migrate
 and env RAILS_ENV=production bin/rails db:migrate
+
+# If needed
 # and echo ----------
 # and echo bin/rails db:seed
 # and env RAILS_ENV=production bin/rails db:seed
+
 and echo ----------
 and echo set head (git --git-dir=/var/www/api.interflux.com/repo rev-parse --short HEAD)
 and set head (git --git-dir=/var/www/api.interflux.com/repo rev-parse --short HEAD)
 and echo ----------
 and echo ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
+
+# If first time
+echo "bin/puma -e production"
+bin/puma -e production
+
+# echo "bin/pumactl -F config/puma/production.rb -T '12345' phased-restart"
+# bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
+
+# echo "bin/pumactl -C 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock' -T '12345' phased-restart"
+# bin/pumactl -C 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock' -T '12345' phased-restart
+
 and echo ----------
 and echo Removing all builds except the latest one
 and echo find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
