@@ -40,9 +40,9 @@ case master
   and echo ----------
   and echo ssh $remote "$path/install.sh $branch $revision"
   and ssh $remote "$path/install.sh $branch $revision"
-  and echo -----------
-  and echo -- LOCAL --
-  and echo -----------
+  and echo ----------
+  and echo LOCAL ----
+  and echo ----------
   and echo Sanity check on local:
   and echo curl https://api.interflux.com/sanity-check -H "Content-Type: application/vnd.api+json"
   and curl https://api.interflux.com/sanity-check -H "Content-Type: application/vnd.api+json"

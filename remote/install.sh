@@ -6,9 +6,9 @@ set path (dirname (status --current-filename))
 set branch $argv[1]
 set revision $argv[2]
 
-echo ------------
-echo -- REMOTE --
-echo ------------
+echo -----------
+echo REMOTE ----
+echo -----------
 echo User: $user
 echo Host: $host
 echo Path: $path
