@@ -81,13 +81,13 @@ and echo ----------
 # If first time
 # echo "bin/puma -e production"
 # bin/puma -e production
-
+# echo bin/pumactl -F config/puma/production.rb -T '12345' start
+# bin/pumactl -F config/puma/production.rb -T '12345' start
 and echo Restart the Puma server!
-and echo bin/pumactl -F config/puma/production.rb -T '12345' restart
-and bin/pumactl -F config/puma/production.rb -T '12345' restart
+and echo bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
+and bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
 # and echo bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
 # and bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
-
 # echo "bin/pumactl -C 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock' -T '12345' phased-restart"
 # bin/pumactl -C 'unix:///var/www/api.interflux.com/server/sockets/pumactl.sock' -T '12345' phased-restart
 
