@@ -77,12 +77,12 @@ and echo ----------
 and echo ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and ln -nsf /var/www/api.interflux.com/builds/$branch/$head /var/www/api.interflux.com/builds/$branch/latest
 and echo ----------
-and echo bin/pumactl -F config/puma/production.rb -T '12345' restart
-and bin/pumactl -F config/puma/production.rb -T '12345' restart
-# and echo bin/pumactl -F config/puma/production.rb -T '12345' stop
-# and bin/pumactl -F config/puma/production.rb -T '12345' stop
-# and echo bin/pumactl -F config/puma/production.rb -T '12345' start
-# and bin/pumactl -F config/puma/production.rb -T '12345' start
+# and echo bin/pumactl -F config/puma/production.rb -T '12345' restart
+# and bin/pumactl -F config/puma/production.rb -T '12345' restart
+and echo bin/pumactl -F config/puma/production.rb -T '12345' stop
+and bin/pumactl -F config/puma/production.rb -T '12345' stop
+and echo bin/pumactl -F config/puma/production.rb -T '12345' start
+and bin/pumactl -F config/puma/production.rb -T '12345' start
 # echo "bin/puma -e production"
 # bin/puma -e production
 
