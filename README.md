@@ -191,3 +191,24 @@ Test specific test (add line number):
 ```
 bin/rails test test/integration/v1/public/products_integration_test.rb:22
 ```
+
+## Trouble shooting
+
+`PG::ConnectionBad`
+
+Check if Postgress is running.
+
+`EADDRINUSE`
+
+Port 3000 is already taken by another process. This is most likely a rogue Puma
+process that wasn't stopped properly. Find the process ID (pid) by running:
+
+```
+sudo lsof -iTCP -sTCP:LISTEN -P
+```
+
+Then kill the one listening to port 3000:
+
+```
+kill -9 [pid]
+```
