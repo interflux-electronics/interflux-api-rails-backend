@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     # https://lmpa.interflux.com
     #
     namespace :public do
+      resources :articles
       resources :containers
       resources :countries
       resources :images

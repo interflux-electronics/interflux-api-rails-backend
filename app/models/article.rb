@@ -1,16 +1,3 @@
-# == Schema Information
-#
-# Table name: articles
-#
-#  id         :uuid             not null, primary key
-#  slug       :string
-#  title      :string
-#  public     :boolean          default(FALSE)
-#  person_id  :uuid
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class Article < ApplicationRecord
   # Relate to a model
   # belongs_to :company
@@ -30,4 +17,7 @@ class Article < ApplicationRecord
   # has_many :inverse_related_products, through: :inverse_related_products_association, source: :product
 
   # validates :name, presence: true, uniqueness: true
+
+  # If foo `belongs_to :bar`, then the foos table has a bar_id column.
+  # If foo `has_one :bar`, then the bars table has a foo_id column.
 end

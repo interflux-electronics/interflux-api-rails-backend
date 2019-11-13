@@ -1,6 +1,6 @@
 module V1
-  module Admin
-    class ArticlesController < V1::AdminController
+  module Public
+    class ArticlesController < ApplicationController
       def index
         allow_index
       end
@@ -14,11 +14,11 @@ module V1
       end
 
       def update
-        forbidden
+        allow_update
       end
 
       def destroy
-        forbidden
+        allow_delete
       end
 
       private
@@ -28,7 +28,7 @@ module V1
       end
 
       def serializer_klass
-        V1::Admin::ArticleSerializer
+        V1::Public::ArticleSerializer
       end
 
       def creatable_attributes
