@@ -41,13 +41,13 @@ module ApiInterfluxCom
         origins '*'
         resource '/v1/public/*',
                  headers: :any,
-                 methods: %i[get post options]
+                 methods: %i[options get post patch delete]
       end
       allow do
         origins '*'
         resource '/v1/admin/*',
                  headers: :any,
-                 methods: %i[get post options]
+                 methods: %i[options get post patch delete]
       end
     end
   end
