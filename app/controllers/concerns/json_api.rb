@@ -289,14 +289,14 @@ module JsonApi
   # end
   #
   def strong_relationships
-    #
-    # TODO: Clean up this mess
-    #
+    return {} if creatable_relationships.empty?
+
     params['data']['relationships']
     # First we convert the array into  we convert `relationships` into a nested array like:
     # [[:main_category, "d6461197-e618-5502-95a5-1e171f8f71e9"], [:sub_category, "8147cd48-12b6-500e-a001-d80288d644f1"]]
     # The keys are underscored for later use when creating / updating the resource.
     # The values are strong IDs grabbed from the JSON API structured package.
+
     nested_array = creatable_relationships.collect do |key|
       db_key = "#{key}_id"
       id = nil
@@ -372,7 +372,7 @@ module JsonApi
   #   PostLeadToSlackJob.perform_later lead
   # end
   #
-  def after_create
+  def after_create(record)
     nil
   end
 
