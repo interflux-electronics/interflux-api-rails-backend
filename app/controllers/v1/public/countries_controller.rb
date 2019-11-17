@@ -1,6 +1,6 @@
 module V1
   module Public
-    class CountriesController < V1::PublicController
+    class CountriesController < ApplicationController
       def index
         allow_index
       end
@@ -28,7 +28,7 @@ module V1
       end
 
       def serializer_klass
-        Public::V1::CountrySerializer
+        V1::Public::CountrySerializer
       end
 
       def creatable_attributes

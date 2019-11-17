@@ -1,23 +1,23 @@
 module V1
   module Public
     class CountrySerializer < ApplicationSerializer
-      attributes :name,
-                 :native_name,
-                 :region,
-                 :subregion,
+      attributes :name_english,
+                 :name_native,
+                 # :region,
+                 # :subregion,
                  :alpha_2_code,
                  :alpha_3_code,
                  :numeric_code,
-                 :flag,
-                 :latlng,
+                 # :region,
+                 # :subregion,
+                 # :latitude,
+                 # :longitude,
                  :area,
-                 :population,
-                 :languages,
-                 :timezones,
-                 :currencies,
-                 :top_level_domains,
-                 :calling_codes,
-                 :country_code
+                 :population
+                 # :flag_url,
+                 # :timezones,
+                 # :top_level_domains,
+                 # :calling_codes
     end
   end
 end

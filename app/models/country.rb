@@ -23,6 +23,10 @@
 #
 
 class Country < ApplicationRecord
+  alias_attribute :alpha_2_code, :iso_3161_1_alpha_2_code
+  alias_attribute :alpha_3_code, :iso_3161_1_alpha_3_code
+  alias_attribute :numeric_code, :iso_3161_1_numeric_code
+
   # Languages
   has_many :country_languages, class_name: 'CountryLanguage'
   has_many :languages, through: :country_languages, source: :language
