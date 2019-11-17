@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id         :uuid             not null, primary key
+#  slug       :string
+#  title      :string
+#  public     :boolean          default(FALSE)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  body       :text
+#  date       :date
+#
+
 class Article < ApplicationRecord
   # Relate to a model
   # belongs_to :company
