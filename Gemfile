@@ -7,7 +7,7 @@ ruby '2.6.5'
 gem 'rails', '~> 5.1.6'
 
 # Puma app server
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 
 # Postgress database
 gem 'pg'
