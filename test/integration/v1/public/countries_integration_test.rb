@@ -2,7 +2,7 @@ require 'test_helper'
 
 module V1
   module Public
-    class ProductIntegrationTest < ActionDispatch::IntegrationTest
+    class CountriesIntegrationTest < ActionDispatch::IntegrationTest
       def setup
         @header = public_header
       end
