@@ -6,11 +6,18 @@
   regex1: "DP 5600 "
   regex2: Solderpaste
 
-- slug: DP-5505IC
-  name: DP 5505IC
+- slug: DP-5505-AT
+  name: DP 5505 AT
   public: true
   family: solder pastes
-  regex1: "DP 5505IC "
+  regex1: "DP 5505 AT "
+  regex2: Solderpaste
+
+- slug: DP-5505-IC-ed5
+  name: DP 5505 IC ed5
+  public: true
+  family: solder pastes
+  regex1: "DP 5505IC ed.5 "
   regex2: Solderpaste
 
 - slug: DP-5505
@@ -20,15 +27,23 @@
   regex1: "DP 5505 "
   regex2: Solderpaste
 
-- slug: DP-5504
-  name: DP 5504
+- slug: Delphine-5504
+  name: Delphine 5504
   public: false
   family: solder pastes
   regex1: "DP 5504 "
   regex2: Solderpaste
 
-- slug: DP-5503
-  name: DP 5503
+- slug: Delphine-5503
+  name: Delphine 5503
+  public: false
+  family: solder pastes
+  regex1: "DP 5503 "
+  regex2: Solderpaste
+
+# Possible discrepancies below
+- slug: Delphine-5503-2
+  name: Delphine 5503/2
   public: false
   family: solder pastes
   regex1: "DP 5503 "
@@ -46,8 +61,8 @@
   public: true
   family: solder pastes
 
-- slug: IF-9009LT
-  name: IF 9009LT
+- slug: IF-9009lt
+  name: IF 9009lt
   public: true
   family: solder pastes
   regex1: "IF 9009LT "
@@ -115,6 +130,13 @@
 
 - slug: IF-2005M
   name: IF 2005M
+  public: true
+  family: soldering fluxes
+  regex1: "IF 2005M "
+  regex2: Soldering Flux
+
+- slug: IF-2005M-025
+  name: IF 2005M 2.5%
   public: true
   family: soldering fluxes
   regex1: "IF 2005M "
@@ -244,10 +266,11 @@
   public: true
   family: soldering fluxes
 
-- slug: FL-5821
-  name: FL 5821
+- slug: IF-FL5821
+  name: IF FL5821
   public: true
   family: soldering fluxes
+  regex1: FL 5821
 
 - slug: RA-25010
   name: RA 25010
@@ -323,10 +346,11 @@
   public: true
   family: solder wires
 
-- slug: IR3
-  name: IR3
+- slug: IR-3
+  name: IR 3
   public: true
   family: solder wires
+  regex1: IR-3
 
 - slug: Laser-25
   name: Laser 25
@@ -373,18 +397,18 @@
   public: true
   family: conditioning gel for dispensers
 
-- slug: IPA/DI-Wipes
+- slug: IPA-DI-Wipes
   name: IPA/DI Wipes
   public: true
   family: cleaning wipes
 
-- slug: IPA/DI-Cleaner
+- slug: IPA-DI-Cleaner
   name: IPA/DI Cleaner
   public: true
   family: cleaning fluids
 
-- slug: Stencil-clean-wipes
-  name: Stencil clean wipes
+- slug: Stencil-Clean-Wipes
+  name: Stencil Clean Wipes
   public: true
   family: cleaning wipes
 
@@ -398,29 +422,34 @@
   public: true
   family: deoxidation oils
 
-- slug: Anti-oxidant-pellets
-  name: Anti-oxidant pellets
+- slug: Anti-Oxidant-Pellets
+  name: Anti-Oxidant Pellets
   public: true
   family: anti-oxidant pellets
 
-- slug: Solder-bar
-  name: Solder bar
+- slug: Solder-Bars
+  name: Solder Bars
   public: true
   family: solder alloys
   regex1: "^Solder bar"
 
-- slug: Solder-sticks
-  name: Solder sticks
+- slug: Solder-Sticks
+  name: Solder Sticks
   public: true
   family: solder alloys
 
-- slug: Plain-solder-wire
-  name: Plain solder wire
+- slug: Plain-Solder-Wires
+  name: Plain Solder Wires
   public: true
   family: solder alloys
 
-- slug: Solder-pellets
-  name: Solder pellets
+- slug: Solder-Pellets
+  name: Solder Pellets
+  public: true
+  family: solder alloys
+
+- slug: Solder-Rods
+  name: Solder Rods
   public: true
   family: solder alloys
 
@@ -434,8 +463,8 @@
   public: true
   family: flux stones
 
-- slug: Solder Stones
-  name: Solder stones
+- slug: Solder-Stones
+  name: Solder Stones
   public: true
   family: solder stones
 
@@ -454,10 +483,11 @@
   public: true
   family: neutral solutions
 
-- slug: SC01
-  name: SC01
+- slug: SC-01
+  name: SC 01
   public: true
   family: cleaning fluids
+  regex1: SC01
 
 - slug: T-1000
   name: T 1000
@@ -475,32 +505,46 @@
   popular: true
   family: tip tinners
 
-- slug: TS15
-  name: TS15
+- slug: TS-15
+  name: TS 15
   public: true
   family: soldering fluxes
+  regex1: TS15
 
-- slug: TS18
-  name: TS18
+- slug: TS-18
+  name: TS 18
   public: true
   family: soldering fluxes
+  regex1: TS18
 
-- slug: TS33
-  name: TS33
+- slug: TS-33
+  name: TS 33
   public: true
   family: soldering fluxes
+  regex1: TS33
 
-- slug: TS33R
-  name: TS33R
+- slug: TS-33R
+  name: TS 33R
   public: true
   family: soldering fluxes
+  regex1: TS33R
 
-- slug: WSF 1100
+- slug: WSF-1100
   name: WSF 1100
   public: true
   family: soldering fluxes
 
-- slug: WSF 7700
+- slug: WSF-7700
   name: WSF 7700
   public: true
   family: soldering fluxes
+
+- slug: WSP-2006
+  name: WSP 2006
+  public: true
+  family: soldering fluxes
+
+- slug: RTS-1804
+  name: RTS 1804
+  public: true
+  family: solder pastes

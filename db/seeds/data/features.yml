@@ -38,43 +38,108 @@
   text: For cleaning
   icon: cleaning
 
-- slug: which-are-halide-free
+# Why halides are bad
+# https://research.cbc.osu.edu/reel/research-modules/environmental-chemistry/chemistry-221-h221/significance-of-analytes-water/halides/
+# https://link.springer.com/article/10.1007/BF01758592
+# https://en.wikipedia.org/wiki/Halide
+- slug: halide-free
   text: Halide free
   icon: halide-free
+  gist: Halides are harmful to our environmental and can pose health risks. All Interflux products are completely halide-free (0,00%).
+  products:
+    - OSPI 3311M
+    - IF 2005M
+    - IF 2005K
+    - IF 2005C
+    - SelectIF 2040
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - PacIFic 2009MLF-E
+    - PacIFic 2010F
+    - IF 3006
+    - AF 4818-PbF
+    - IF 8300
+    - IF 8300-4
+    - IF 8300-6
+    - IF 7500 HAB
+    - IF 8001
+    - IF 6000
+    - TerrIFic RP65
+    - T 2005M
+    - QF 70
+    - IF 14
+    - LMPA™-Q6
+    - DP 5600
+    - LP 5720
+    - DP 5505
+    - µ-dIFe 7
+    - IF 930
+    - Tip Tinner
 
-- slug: which-are-alcohol-based
-  text: Alcohol based flux
+- slug: alcohol-based
+  text: Alcohol based (VOC)
   icon: alcohol
+  products:
+    - OSPI 3311M
+    - IF 2005M
+    - IF 2005K
+    - IF 3006
+    - T 2005M
 
-- slug: water-based-soldering-flux
-  text: Water based soldering flux
+- slug: water-based
+  text: Water based
   icon: water
   gist: The two reasons why you will want to use water-based soldering fluxes is because they are 1) not flamable and 2) completely halide-free. None-flamable soldering fluxes are easier to transport, require less paperwork, are safer to store and use. Halide-free fluxes are popular because they do not harm the ozon layer.
+  products:
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - PacIFic 2009MLF-E
+    - PacIFic 2010F
 
-- slug: low-vov
-  text: Low VOC
+- slug: low-voc
+  text: Low VOC content
   icon: low-voc
-
-- slug: rosin-based-flux
-  text: Rosin based flux
-  icon: rosin-flux
+  products:
+    - IF 3006
 
 - slug: long-preheat-resistant
   text: Long preheat resistant
   icon: temperature-plus
 
-- slug: contains-rosin
-  text: Contains rosin (colophony)
-  icon: contains-rosin
+- slug: rosin-based
+  text: Rosin based (colophony)
+  icon: rosin-based
+  products:
+    - AF 4818-PbF
+    - Flexsol 903
 
-- slug: no-rosin
+- slug: rosin-free
   text: Rosin-free (colophony)
-  icon: no-rosin
+  icon: rosin-free
+  products:
+    - NH 1
+    - Aquasol 4018
+    - IF 14
 
-- slug: contains-lead
-  text: Contains lead
-  icon: contains-lead
+- slug: lead-based
+  text: Lead-based
+  icon: lead-based
+  products:
+    - RosIX 705
+    - IF 14
 
 - slug: lead-free
   text: Lead-free
   icon: lead-free
+  products:
+    - ResIF 435L1
+    - QF 70
+    - NH 1
+    - RosIX 705
+    - Aquasol 4018
+    - IF 14
+    - Flexsol 903
+    - Bright 1
+    - i-Flex 400
+    - IR3
+    - Laser 25

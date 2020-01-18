@@ -11,8 +11,9 @@ module V1
 
       belongs_to :product_family
 
-      has_many :product_images
-      has_many :product_variants
+      has_many :images
+      has_many :variants
+      has_many :features
     end
   end
 end
