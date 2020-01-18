@@ -15,9 +15,11 @@ Rails.application.routes.draw do
       resources :articles
       resources :containers
       resources :countries
+      resources :features
       resources :images
       resources :leads
       resources :product_families, path: '/product-families'
+      resources :product_features, path: '/product-features'
       resources :product_images, path: '/product-images'
       resources :product_uses, path: '/product-uses'
       resources :product_variants, path: '/product-variants'

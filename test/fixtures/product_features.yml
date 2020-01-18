@@ -14,7 +14,7 @@
 #   slug: some-name
 #   public: true
 #   group: other_thing_fixture_1
-#
+# 
 # product_feature_fixture_2:
 #   name: Some Name
 #   slug: some-name
