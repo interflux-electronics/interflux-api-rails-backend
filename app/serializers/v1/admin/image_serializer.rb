@@ -1,9 +1,9 @@
 module V1
   module Admin
     class ImageSerializer < ApplicationSerializer
-      # attributes :slug,
-      #            :name,
-      #            :public
+      attributes :cdn_path,
+                 :sizes,
+                 :formats
 
       # belongs_to :thing
       # belongs_to :main_group, record_type: :product_group, serializer: :product_group

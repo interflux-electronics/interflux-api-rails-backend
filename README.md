@@ -18,8 +18,35 @@ Build status:
 
 ## Development
 
-Setup:
+Setup on Mac:
 
+```
+brew update
+brew install rbenv ruby-build
+```
+
+Someone suggest to then add `rbenv` to path, but no need...
+
+```
+set --universal fish_user_paths $fish_user_paths ~/.rbenv/shims
+```
+
+Instead:
+
+```
+rbenv init
+```
+
+Suggest to add the following to Fish config:
+
+```
+atom ~/.config/fish/config.fish
+status --is-interactive; and source (rbenv init -|psub)
+```
+```
+brew install postgresql
+brew services start postgresql
+```
 ```
 git clone git@github.com:janwerkhoven/api.interflux.com.git
 cd api.interflux.com

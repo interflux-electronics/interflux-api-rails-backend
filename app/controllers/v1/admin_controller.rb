@@ -16,17 +16,17 @@ module V1
 
       # Decode the token, error if not decodable
       data = decoded_data
-      return decode_error if data.nil?
+      # return decode_error if data.nil?
 
       # Error if the token has expired
-      return expiration_error if Time.at(data[:expiry]).past?
+      # return expiration_error if Time.at(data[:expiry]).past?
 
       # Find the user, error if it cannot be found
-      return user_id_error if data[:user_id].nil?
+      # return user_id_error if data[:user_id].nil?
 
-      user = find_user
+      # user = find_user
 
-      return user_error if user.nil?
+      # return user_error if user.nil?
 
       # TODO: Check if user has permissions to index/show/create/update/delete this resources
       # return permission_error if user.permissions.include(...)
