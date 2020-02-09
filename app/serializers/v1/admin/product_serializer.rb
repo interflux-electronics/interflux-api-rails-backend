@@ -1,9 +1,9 @@
 module V1
   module Admin
     class ProductSerializer < ApplicationSerializer
-      # attributes :slug,
-      #            :name,
-      #            :public
+      attributes :slug,
+                 :name,
+                 :public
 
       # belongs_to :thing
       # belongs_to :main_group, record_type: :product_group, serializer: :product_group

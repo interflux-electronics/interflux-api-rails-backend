@@ -10,15 +10,16 @@ module V1
       end
 
       def create
-        forbidden
+        allow_create
       end
 
       def update
-        forbidden
+        allow_update
       end
 
       def destroy
-        forbidden
+        # TODO allow_destroy if user.can_destroy(:product)
+        allow_destroy
       end
 
       private
