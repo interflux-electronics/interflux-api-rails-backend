@@ -3,13 +3,17 @@ require 'byebug'
 require 'ap'
 
 after :product_families do
-  count_before = Product.count
+  # Until Interflux Admin is operational, the seed files will be the source of
+  # truth and not the production database.
+  Product.delete_all
+
+  before = Product.count
 
   puts '---------'
   puts 'Seeding products'
   puts '---------'
 
-  file = File.read 'db/seeds/data/products.yml'
+  file = File.read 'db/seeds/products.yml'
   data = YAML.safe_load(file)
 
   data.each_with_index do |_product, i|
@@ -21,7 +25,7 @@ after :product_families do
 
     byebug if family.nil?
 
-    properties = OpenStruct.new(
+    props = OpenStruct.new(
       slug: product.slug,
       code: product.code,
       name: product.name,
@@ -38,17 +42,17 @@ after :product_families do
     record = Product.find_by(slug: product.slug)
 
     if record.nil?
-      Product.create!(properties.to_h)
+      Product.create!(props.to_h)
     else
-      record.update!(properties.to_h)
+      record.update!(props.to_h)
     end
   end
 
   puts '---------'
-  count_after = Product.count
-  difference = count_after - count_before
-  puts "Before seeding, the database had #{count_before} products."
-  puts "After seeding, the database has #{count_after}."
+  after = Product.count
+  difference = after - before
+  puts "Before seeding, the database had #{before} products."
+  puts "After seeding, the database has #{after}."
   puts "That's #{difference} new ones."
   puts '---------'
   puts 'Success!'

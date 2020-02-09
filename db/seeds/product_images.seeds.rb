@@ -1,76 +1,67 @@
 require 'byebug'
 require 'ap'
 
-after :products do
-  image_count_before = Image.count
-  relation_count_before = ProductImage.count
-
+after :products, :images do
   puts '---------'
   puts 'Seeding product images'
   puts '---------'
 
-  file = File.read 'db/seeds/product_images.yml'
-  data = YAML.safe_load(file)
+  # The source of truth for images is the CDN, not the database. Therefor we
+  # always delete images before seeding. Note that this will break all relations
+  # to these images.
+  ProductImage.delete_all
 
-  data.each_with_index do |_data, i|
-    _image = OpenStruct.new(_data)
+  before = ProductImage.count
 
-    puts "#{i + 1} - #{_image.cdn_path}"
+  file = File.read 'db/seeds/images.yml'
+  list = YAML.safe_load(file)
 
-    properties = OpenStruct.new(
-      cdn_path: _image.cdn_path,
-      sizes: '2400x2400,2200x2200,2000x2000,1800x1800,1600x1600,1400x1400,1200x1200,1000x1000,800x800,600x600,400x400,200x200,100x100,50x50',
-      formats: 'jpg,webp'
-    )
+  list.each_with_index do |image, i|
+    image = OpenStruct.new(image)
+    image = Image.find_by(cdn_path: image.cdn_path)
 
-    # Some images will not be square, allow overwrite if specified in YML file
-    if _image.sizes.present?
-      properties.sizes = _image.sizes
-    end
+    byebug if image.nil?
 
-    image = Image.find_by(cdn_path: _image.cdn_path)
-
-    if image.nil?
-      image = Image.create!(properties.to_h)
-    else
-      image.update!(properties.to_h)
-    end
-
+    # CDN paths look like this, no domain, no file extension
     # /images/products/IF-2005M/IF-2005M-10L-front
-    slug = _image.cdn_path.split('/')[3]
+    # /images/processes/soldering-defects
+    # /images/logos/interflux-logo
+    # Not all files in the CDN are product images.
+    # Continue only if product image.
+    next unless image.cdn_path.starts_with? '/images/products/'
+
+    slug = image.cdn_path.split('/')[3]
     product = Product.find_by(slug: slug)
 
     if product.nil?
-      puts "     TODO: No product found for slug: #{slug}"
-      puts ""
+      puts '/////'
+      puts "No product found for slug: #{slug}"
+      puts 'Skipping...'
+      puts '/////'
       next
     end
 
-    relation = ProductImage.where(image_id: image.id, product_id: product.id).first
+    puts "#{i + 1} - #{product.slug} - #{image.cdn_path}"
 
-    properties = OpenStruct.new(
+    props = OpenStruct.new(
       product_id: product.id,
       image_id: image.id,
     )
 
-    if relation.nil?
-      ProductImage.create!(properties.to_h)
+    record = ProductImage.where(image_id: image.id, product_id: product.id).first
+
+    if record.nil?
+      ProductImage.create!(props.to_h)
     else
-      relation.update!(properties.to_h)
+      record.update!(props.to_h)
     end
   end
 
   puts '---------'
-  count_after = Image.count
-  difference = count_after - image_count_before
-  puts "Before seeding, the database had #{image_count_before} images."
-  puts "After seeding, the database has #{count_after}."
-  puts "That's #{difference} new ones."
-  puts '---------'
-  count_after = ProductImage.count
-  difference = count_after - relation_count_before
-  puts "Before seeding, the database had #{relation_count_before} product images."
-  puts "After seeding, the database has #{count_after}."
+  after = ProductImage.count
+  difference = after - before
+  puts "Before seeding, the database had #{before} images."
+  puts "After seeding, the database has #{after}."
   puts "That's #{difference} new ones."
   puts '---------'
   puts 'Success!'

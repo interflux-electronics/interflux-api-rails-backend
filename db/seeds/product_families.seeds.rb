@@ -2,13 +2,13 @@ require 'yaml'
 require 'byebug'
 require 'ap'
 
-count_before = ProductFamily.count
+before = ProductFamily.count
 
 puts '---------'
 puts 'Seeding product families'
 puts '---------'
 
-file = File.read 'db/seeds/data/product_families.yml'
+file = File.read 'db/seeds/product_families.yml'
 data = YAML.safe_load(file)
 
 data.each_with_index do |_family, i|
@@ -18,7 +18,7 @@ data.each_with_index do |_family, i|
 
   record = ProductFamily.find_by(slug: family.slug)
 
-  properties = OpenStruct.new(
+  props = OpenStruct.new(
     slug: family.slug,
     code: family.code,
     name_single: family.name_single,
@@ -26,17 +26,17 @@ data.each_with_index do |_family, i|
   )
 
   if record.nil?
-    ProductFamily.create!(properties.to_h)
+    ProductFamily.create!(props.to_h)
   else
-    record.update!(properties.to_h)
+    record.update!(props.to_h)
   end
 end
 
 puts '---------'
-count_after = ProductFamily.count
-difference = count_after - count_before
-puts "Before seeding, the database had #{count_before} product families."
-puts "After seeding, the database has #{count_after}."
+after = ProductFamily.count
+difference = after - before
+puts "Before seeding, the database had #{before} product families."
+puts "After seeding, the database has #{after}."
 puts "That's #{difference} new ones."
 puts '---------'
 puts 'Success!'
