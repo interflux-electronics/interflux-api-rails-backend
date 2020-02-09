@@ -49,6 +49,13 @@
   regex1: "DP 5503 "
   regex2: Solderpaste
 
+- slug: LP-5707
+  name: LP 5707
+  public: true
+  family: solder pastes
+  regex1: "LP5707 "
+  regex2: Solderpaste
+
 - slug: LP-5720
   name: LP 5720
   public: true
@@ -321,6 +328,11 @@
 
 - slug: Aquasol-4018
   name: Aquasol 4018
+  public: true
+  family: solder wires
+
+- slug: IF-1000M
+  name: IF 1000M
   public: true
   family: solder wires
 
