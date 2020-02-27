@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200227082307) do
+ActiveRecord::Schema.define(version: 20200227214203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,12 +157,11 @@ ActiveRecord::Schema.define(version: 20200227082307) do
     t.string "path"
     t.string "sizes"
     t.string "formats"
-    t.string "tag_long"
-    t.string "tag_short"
+    t.string "caption"
+    t.string "alt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["path"], name: "index_images_on_path", unique: true
-    t.index ["tag_long"], name: "index_images_on_tag_long", unique: true
   end
 
   create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
