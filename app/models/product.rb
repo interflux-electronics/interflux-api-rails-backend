@@ -34,4 +34,7 @@ class Product < ApplicationRecord
 
   has_many :product_containers
   has_many :containers, through: :product_containers, source: :container
+
+  has_many :product_documents
+  has_many :documents, through: :product_documents, source: :document
 end

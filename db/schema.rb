@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191111084913) do
+ActiveRecord::Schema.define(version: 20200227082307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -113,14 +113,23 @@ ActiveRecord::Schema.define(version: 20191111084913) do
     t.index ["code"], name: "index_currencies_on_code", unique: true
   end
 
+  create_table "document_categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "slug"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_document_categories_on_name", unique: true
+    t.index ["slug"], name: "index_document_categories_on_slug", unique: true
+  end
+
   create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "path"
     t.string "name"
     t.uuid "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "category_id"
     t.index ["language_id"], name: "index_documents_on_language_id"
-    t.index ["name"], name: "index_documents_on_name", unique: true
     t.index ["path"], name: "index_documents_on_path", unique: true
   end
 
@@ -145,14 +154,14 @@ ActiveRecord::Schema.define(version: 20191111084913) do
   end
 
   create_table "images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "cdn_path"
+    t.string "path"
     t.string "sizes"
     t.string "formats"
     t.string "tag_long"
     t.string "tag_short"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cdn_path"], name: "index_images_on_cdn_path", unique: true
+    t.index ["path"], name: "index_images_on_path", unique: true
     t.index ["tag_long"], name: "index_images_on_tag_long", unique: true
   end
 

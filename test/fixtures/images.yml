@@ -3,7 +3,7 @@
 # Table name: images
 #
 #  id         :uuid             not null, primary key
-#  cdn_path   :string
+#  path       :string
 #  sizes      :string
 #  formats    :string
 #  tag_long   :string

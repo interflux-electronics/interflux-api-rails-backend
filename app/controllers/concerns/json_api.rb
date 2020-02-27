@@ -101,7 +101,9 @@ module JsonApi
     end
 
     # Here we prepare the options we can pass to the serializers.
-    options = {}
+    options = {
+      params: params.as_json
+    }
 
     # Most importantly, we define which related models to include in the request.
     options[:include] = strong_includes if strong_includes
@@ -165,7 +167,9 @@ module JsonApi
   def fetch_one(resource)
     return resource_not_found if resource.nil?
 
-    options = {}
+    options = {
+      params: params.as_json
+    }
 
     options[:include] = strong_includes if strong_includes
     json = serializer_klass.new(resource, options).serialized_json

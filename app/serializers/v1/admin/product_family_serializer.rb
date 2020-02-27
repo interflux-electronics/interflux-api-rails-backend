@@ -4,9 +4,7 @@ module V1
       attributes :slug,
                  :code,
                  :name_single,
-                 :name_plural,
-                 :created_at,
-                 :updated_at
+                 :name_plural
     end
   end
 end

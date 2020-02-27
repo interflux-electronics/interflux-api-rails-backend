@@ -33,7 +33,7 @@ module V1
       end
 
       def creatable_attributes
-        %[]
+        %i[]
         # %i[
         #   name
         #   company
@@ -49,7 +49,7 @@ module V1
       end
 
       def creatable_relationships
-        %[]
+        %i[]
         # %i[
         #  country
         #  ip_country
@@ -57,7 +57,7 @@ module V1
       end
 
       def permitted_filters
-        %[
+        %i[
           deprecated
         ]
         # %i[
@@ -74,7 +74,11 @@ module V1
       end
 
       def permitted_includes
-        %[]
+        %i[
+          documents
+          documents.language
+          product_family
+        ]
         # %i[
         #   related_articles
         #   related_products

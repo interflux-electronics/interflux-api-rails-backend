@@ -1,9 +1,25 @@
+# == Schema Information
+#
+# Table name: languages
+#
+#  id             :uuid             not null, primary key
+#  name_english   :string
+#  name_native    :string
+#  iso_639_1_code :string
+#  iso_639_2_code :string
+#  public         :boolean          default(FALSE)
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
 module V1
   module Admin
     class LanguageSerializer < ApplicationSerializer
-      # attributes :slug,
-      #            :name,
-      #            :public
+      attributes :name_english,
+                 :name_native,
+                 :iso_639_1_code,
+                 :iso_639_2_code,
+                 :public
 
       # belongs_to :thing
       # belongs_to :main_group, record_type: :product_group, serializer: :product_group

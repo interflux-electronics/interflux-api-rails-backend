@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class ProductDocumentsController < V1::AdminController
+    class DocumentCategoriesController < ApplicationController
       def index
         allow_index
       end
@@ -24,11 +24,11 @@ module V1
       private
 
       def resource_klass
-        ProductDocument
+        DocumentCategory
       end
 
       def serializer_klass
-        V1::Admin::ProductDocumentSerializer
+        V1::Admin::DocumentCategorySerializer
       end
 
       def creatable_attributes
@@ -56,9 +56,11 @@ module V1
       end
 
       def permitted_filters
-        %i[
-          product_id
-        ]
+        %[]
+        # %i[
+        #  main_group_id
+        #  sub_group_id
+        # ]
       end
 
       def permanent_filters

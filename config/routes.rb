@@ -47,6 +47,7 @@ Rails.application.routes.draw do
       resources :country_languages, path: '/country-languages'
       resources :currencies
       resources :documents
+      resources :document_categories, path: '/document-categories'
       resources :employees
       resources :features
       resources :images
