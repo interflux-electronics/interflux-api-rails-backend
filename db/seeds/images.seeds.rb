@@ -1,38 +1,51 @@
-require 'byebug'
-require 'ap'
+# TODO: Remove all images from database that aren't in the CDN
 
 puts '---------'
 puts 'Seeding images'
 puts '---------'
 
-# The source of truth for images is the CDN, not the database. Therefor we
-# always delete images before seeding. Note that this will break all relations
-# to these images.
-Image.delete_all
+count_before =  Image.count
 
-before = Image.count
+file = File.read 'db/seeds/data/cdn_files.yml'
+paths = YAML.safe_load(file)
 
-file = File.read 'db/seeds/images.yml'
-list = YAML.safe_load(file)
+arr = []
 
-list.each_with_index do |image, i|
-  image = OpenStruct.new(image)
+paths.each do |path|
+  next unless path.start_with?('images/products/')
+  path = path.split('@')[0]
+  arr.push(path)
+end
 
-  puts "#{i + 1} - #{image.cdn_path}"
+path_bases = arr.uniq
+
+path_bases.each do |path_base|
+  paths_with_same_base = paths.select { |p| p.start_with?(path_base) }
+
+  sizes = []
+  formats = []
+
+  paths_with_same_base.each do |path|
+    split = path.split('@')[1].split('.')
+    sizes.push(split[0])
+    formats.push(split[1])
+  end
+
+  sizes = sizes.uniq.sort_by { |s| -s.split('x').first.to_i } .join(',')
+  formats = formats.uniq.sort.join(',')
 
   props = OpenStruct.new(
-    cdn_path: image.cdn_path,
-    sizes: '2400x2400,2200x2200,2000x2000,1800x1800,1600x1600,1400x1400,1200x1200,1000x1000,800x800,600x600,400x400,200x200,100x100,50x50',
-    formats: 'jpg,webp'
+    path: path_base,
+    sizes: sizes,
+    formats: formats
   )
 
-  # Some images will not be square, allow overwrite if specified in YML file
-  props.sizes = image.sizes if image.sizes.present?
+  puts path_base
+  puts sizes
+  puts formats
+  puts '-------'
 
-  # In case there are SVGs
-  props.formats = image.formats if image.formats.present?
-
-  record = Image.find_by(cdn_path: image.cdn_path)
+  record = Image.find_by(path: path_base)
 
   if record.nil?
     Image.create!(props.to_h)
@@ -41,12 +54,10 @@ list.each_with_index do |image, i|
   end
 end
 
-puts '---------'
-after = Image.count
-difference = after - before
-puts "Before seeding, the database had #{before} images."
-puts "After seeding, the database has #{after}."
-puts "That's #{difference} new ones."
+count_after =  Image.count
+
+puts "Before: #{count_before}"
+puts "After: #{count_after}"
 puts '---------'
 puts 'Success!'
 puts '---------'

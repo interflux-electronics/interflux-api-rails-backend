@@ -15,7 +15,7 @@ data.each_with_index do |hash, i|
   country = OpenStruct.new(hash)
   country.languages.each do |lang|
     language = OpenStruct.new(lang)
-    puts "#{i} - Seeding #{language.name} (#{country.name})"
+    puts "#{i} - #{language.name} (#{country.name})"
     record = Language.find_by(iso_639_1_code: language.iso639_1)
     properties = OpenStruct.new(
       name_english: language.name,
@@ -34,7 +34,7 @@ end
 puts '---------'
 count_after = Language.count
 difference = count_after - count_before
-puts "Before seeding, the database had #{count_before} country currencies."
+puts "Before seeding, the database had #{count_before} languages."
 puts "After seeding, the database has #{count_after}."
 puts "That's #{difference} new ones."
 puts '---------'

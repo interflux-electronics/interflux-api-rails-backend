@@ -8,7 +8,7 @@ puts '---------'
 puts 'Seeding product families'
 puts '---------'
 
-file = File.read 'db/seeds/product_families.yml'
+file = File.read 'db/seeds/data/product_families.yml'
 data = YAML.safe_load(file)
 
 data.each_with_index do |_family, i|

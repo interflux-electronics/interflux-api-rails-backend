@@ -1,0 +1,12 @@
+- name: Declarations
+  slug: declarations
+- name: Certificates
+  slug: certificates
+- name: Guides
+  slug: guides
+- name: Technical Data Sheets (TD)
+  slug: TD
+- name: Safety Data Sheets (SDS)
+  slug: SDS
+- name: REACH
+  slug: REACH

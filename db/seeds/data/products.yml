@@ -13,11 +13,11 @@
   regex1: "DP 5505 AT "
   regex2: Solderpaste
 
-- slug: DP-5505-IC-ed5
-  name: DP 5505 IC ed5
+- slug: DP-5505-IC
+  name: DP 5505 IC
   public: true
   family: solder pastes
-  regex1: "DP 5505IC ed.5 "
+  regex1: "DP 5505IC"
   regex2: Solderpaste
 
 - slug: DP-5505
@@ -29,6 +29,13 @@
 
 - slug: Delphine-5504
   name: Delphine 5504
+  public: false
+  family: solder pastes
+  regex1: "DP 5504 "
+  regex2: Solderpaste
+
+- slug: Delphine-5504HT
+  name: Delphine 5504HT
   public: false
   family: solder pastes
   regex1: "DP 5504 "
@@ -68,8 +75,8 @@
   public: true
   family: solder pastes
 
-- slug: IF-9009lt
-  name: IF 9009lt
+- slug: IF-9009LT
+  name: IF 9009LT
   public: true
   family: solder pastes
   regex1: "IF 9009LT "
@@ -560,3 +567,23 @@
   name: RTS 1804
   public: true
   family: solder pastes
+
+- slug: NX-9900
+  name: NX 9900
+  public: false
+  family: solder pastes
+
+- slug: IF-Airknife
+  name: IF Airknife
+  public: false
+  family: air knives
+
+- slug: Glass-Plate
+  name: Glass Plate
+  public: false
+  family: tools
+
+- slug: IF-R88
+  name: IF R88
+  public: false
+  family: solder wires

@@ -13,7 +13,7 @@ after :product_families do
   puts 'Seeding products'
   puts '---------'
 
-  file = File.read 'db/seeds/products.yml'
+  file = File.read 'db/seeds/data/products.yml'
   data = YAML.safe_load(file)
 
   data.each_with_index do |_product, i|

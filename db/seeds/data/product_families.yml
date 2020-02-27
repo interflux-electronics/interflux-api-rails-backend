@@ -97,3 +97,13 @@
   name_plural: neutral solutions
   name_single: neutral solution
   code: _
+
+- slug: air-knives
+  name_plural: air knives
+  name_single: air knive
+  code: _
+
+- slug: tools
+  name_plural: tools
+  name_single: tool
+  code: _
