@@ -3,10 +3,6 @@ require 'byebug'
 require 'ap'
 
 after :product_families do
-  # Until Interflux Admin is operational, the seed files will be the source of
-  # truth and not the production database.
-  Product.delete_all
-
   before = Product.count
 
   puts '---------'
