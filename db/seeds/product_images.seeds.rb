@@ -18,6 +18,14 @@ after :images, :products do
       image_id: image.id,
     )
 
+    record = ProductImage.find_by(product_id: product.id, image_id: image.id)
+
+    if record.nil?
+      ProductImage.create!(props.to_h)
+    else
+      record.update!(props.to_h)
+    end
+
     alt = "#{product.family.name_single} #{product.name}"
     suffix = image.path.split('/').last.split(product.slug).last
     suffix = suffix.gsub('-', ' ').strip if suffix.present?
