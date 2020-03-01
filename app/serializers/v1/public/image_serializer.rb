@@ -1,11 +1,11 @@
 module V1
   module Public
     class ImageSerializer < ApplicationSerializer
-      attributes :cdn_path,
+      attributes :path,
                  :sizes,
                  :formats,
-                 :tag_long,
-                 :tag_short
+                 :alt,
+                 :caption
     end
   end
 end

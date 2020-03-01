@@ -75,6 +75,7 @@ module V1
 
       def permitted_includes
         %i[
+          images
           documents
           documents.language
           product_family
