@@ -587,3 +587,8 @@
   name: IF R88
   public: false
   family: solder wires
+
+- slug: IF-9057
+  name: IF 9057
+  public: true
+  family: solder wires
