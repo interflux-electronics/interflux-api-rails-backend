@@ -1,4 +1,4 @@
-# TODO: Remove all documents from database that aren't in the CDN 
+# TODO: Remove all documents from database that aren't in the CDN
 
 after :document_categories, :languages do
   puts '---------'

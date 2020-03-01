@@ -1,4 +1,4 @@
-after :images do
+after :images, :products do
   puts '---------'
   puts 'Seeding product images'
   puts '---------'
