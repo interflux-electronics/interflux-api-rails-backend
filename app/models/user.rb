@@ -13,7 +13,7 @@
 class User < ApplicationRecord
   has_secure_password
 
-  belongs_to :person
+  belongs_to :person, optional: true
 
   # https://github.com/carrierwaveuploader/carrierwave
   # mount_uploader :avatar, AvatarUploader
