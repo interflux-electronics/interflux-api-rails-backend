@@ -16,14 +16,14 @@ data.each_with_index do |hash, i|
 
   puts "#{i} - Seeding #{country.name}"
 
-  record = Country.find_by(iso_3161_1_alpha_2_code: country.alpha_2_code)
+  record = Country.find_by(two_letter_code: country.alpha_2_code)
 
   properties = OpenStruct.new(
     name_english: country.name,
     name_native: country.native_name,
-    iso_3161_1_alpha_2_code: country.alpha_2_code,
-    iso_3161_1_alpha_3_code: country.alpha_3_code,
-    iso_3161_1_numeric_code: country.numeric_code,
+    two_letter_code: country.alpha_2_code,
+    three_letter_code: country.alpha_3_code,
+    numeric_code: country.numeric_code,
     region: country.region,
     subregion: country.subregion,
     latitude: country.latlng[0] || -1,

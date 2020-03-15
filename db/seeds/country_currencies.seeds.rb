@@ -28,7 +28,7 @@ after :countries, :currencies do
         puts currency.to_json
         puts '//////'
       else
-        country_record = Country.find_by(iso_3161_1_alpha_2_code: country.alpha_2_code)
+        country_record = Country.find_by(two_letter_code: country.alpha_2_code)
         currency_record = Currency.find_by(code: currency.code)
 
         byebug if country_record.nil?

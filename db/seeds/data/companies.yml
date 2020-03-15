@@ -1,0 +1,820 @@
+- business_name: INTERFLUX® China, Bejing
+  legal_name: Beijing Jingying No Clean Flux Co., Ltd.
+  address: Room 306, Building 19, No.172 Beiyuan Road, Chaoyang District, Beijing
+  country: China
+  phone: +86 10848 51581
+  fax: +86 10848 51581
+  emails:
+    - jysolder@vip.sina.com
+  latitude: 718
+  longitude: 227
+  markets:
+    - China
+    - Hong Kong
+    - Macau
+  members:
+    - chinese_name: 刘万华
+      first_name: Wan Hua
+      last_name: Liu
+      male: true
+
+- business_name: INTERFLUX® China, Shangai
+  legal_name: Beijing Jingying No Clean Flux Co., Ltd.
+  address: Room 302, Building 1, No.221 Caobao Road, Xuhui District, Shanghai
+  country: China
+  phone: +86-21-546.40.134
+  fax: +86-21-648.20.276
+  emails:
+    - bijyncfsh@online.sh.cn
+  latitude: 737
+  longitude: 255
+  markets:
+    - China
+    - Hong Kong
+    - Macau
+  members:
+    - chinese_name: 沙群
+      first_name: Sha Hua
+      last_name: Qun
+      male: false
+
+- business_name: INTERFLUX® China, Shenzhen
+  legal_name: Beijing Jingying No Clean Flux Co., Ltd. Shenzhen Branch
+  address: 2A4 Fuqiao 3rd Industrial Park Fuyong Bao’an District, 518103 Shenzhen
+  country: China
+  phone: +86-75-529.929.766
+  fax: +86-75-529.929.133
+  emails:
+    - haosen@interflux.com.cn
+  latitude: 723
+  longitude: 275
+  markets:
+    - China
+    - Hong Kong
+    - Macau
+  members:
+    - chinese_name: 郝培丰
+      first_name: Haosen
+      last_name:
+      male:
+
+- business_name: INTERFLUX® China, Suzhou
+  legal_name:
+  address: Room 314, Building 27, 200 Renmin Road, Canglang District, 215007 Suzhou City
+  country: China
+  phone: +86-512-65127887
+  fax: +86-512-65127007
+  emails:
+    - yangjun@interflux.com.cn
+  latitude: 732
+  longitude: 254
+  markets:
+    - China
+    - Hong Kong
+    - Macau
+  members:
+    - chinese_name:
+      first_name: Xu
+      last_name: Haizhou
+      male: true
+
+- business_name: INTERFLUX® Denmark
+  legal_name: INTERFLUX® Denmark ApS
+  address: Stenbro Allé 8, 6650 Brørup
+  country: Denmark
+  phone: +45 7538 3922
+  fax: +45 7538 3924
+  emails:
+    - interflux@interflux.dk
+  website: https://www.interflux.dk/
+  latitude: 458
+  longitude: 193
+  markets:
+    - Denmark
+  members:
+    - first_name: Leif
+      last_name: Fenger
+      male: true
+
+- business_name: INTERFLUX® Estonia
+  legal_name: INTERFLUX® Eesti Ltd.
+  address: Piiri 5C, 76610 Keila
+  country: Estonia
+  phone: +37 2657 6747
+  fax: +37 2657 6747
+  emails:
+    - office@interflux.ee
+  website: https://www.interflux.ee
+  latitude: 489
+  longitude: 180
+  markets:
+    - Estonia
+  members:
+    - first_name: Andres
+      last_name: Leedo
+      male: true
+    - first_name: Bengt
+      last_name: Lammasniemi
+      male: true
+
+- business_name: INTERFLUX® Hungary
+  legal_name: INTERFLUX® Electronikai Kft
+  address: Hunyadi tér 14 2/20, 6640 Csongrád
+  country: Hungary
+  phone: +36 203 335 333
+  fax: +36 203 395 021
+  emails:
+    - info@interflux.hu
+  website:
+  latitude: 484
+  longitude: 216
+  markets:
+    - Hungary
+  members:
+    - first_name: András
+      last_name: Börcsök
+      male: true
+
+- business_name: INTERFLUX® France
+  legal_name:
+  address: ZA Des Bruyères, 5, Rue Pavlov - Batiment n° 3, 78190 Trappes
+  country: France
+  phone: +33 134 825 386
+  fax: +33 134 825 338
+  emails:
+  website: https://www.interfluxfrance.com
+  latitude: 442
+  longitude: 212
+  markets:
+    - France
+  members:
+    - first_name: Daniel
+      last_name: Laprade
+      male: true
+      email: d.laprade@interfluxfrance.com
+
+- business_name: INTERFLUX® Poland
+  legal_name:
+  address: Ul. Gersona 26, 03-307 Warszawa
+  country: Poland
+  phone: +48 228 284 868
+  fax: +48 228 265 988
+  emails:
+    - vsd@interflux.pl
+  website: https://www.interflux.pl
+  latitude: 485
+  longitude: 200
+  markets:
+    - Poland
+  members:
+    - name: Mr. Stéphane Ciechanowski
+
+- business_name: INTERFLUX® Singapore
+  legal_name: INTERFLUX® Singapore Pte Ltd
+  address: 2 Kallang Pudding Road, \#04-12 Mactech Building, 349307 Singapore
+  country: Singapore
+  phone: +65 6848 7818
+  fax:
+  emails:
+    - ask@interflux.com.sg
+  website:
+  latitude: 699
+  longitude: 331
+  markets:
+    - Singapore
+    - Thailand
+    - India
+    - Indonesia
+    - Laos
+    - Cambodia
+    - Vietnam
+  members:
+    - name: Mr. Wim Van Riet
+
+- business_name: INTERFLUX® Sweden
+  legal_name: INTERFLUX® Skandinavia AB
+  address: Finntorpsvägen 6, 611 45 Nyköping
+  country: Sweden
+  phone: +46 1559 8140
+  fax: +46 1559 8147
+  emails:
+    - office@interflux.se
+  website: https://www.interflux.se
+  latitude: 473
+  longitude: 182
+  markets:
+    - Sweden
+    - Norway
+    - Finland
+  members:
+    - name: Mr. Anders Alkjaer
+
+- business_name: INTERFLUX® Norway
+  legal_name: INTERFLUX® Skandinavia Norge AS
+  address: Tiurvegen 3, 2070 Raholt
+  country: Norway
+  phone: +47 6395 1300
+  fax: +47 6395 1301
+  emails:
+  website: https://www.interflux.no
+  latitude: 460
+  longitude: 175
+  markets:
+    - France
+  members:
+    - name: Mr. Tore Cato Paulsberg
+      email: tore@interflux.no
+
+- business_name: AAT Aston
+  legal_name: AAT Aston GmbH
+  address: Konradstrasse 7, 90429 Nürnberg
+  country: Germany
+  phone: +49-911-326.62.25
+  fax: +49-911-326.62.99
+  emails:
+  website: https://aston.de/
+  latitude: 459
+  longitude: 209
+  markets:
+    - Germany
+  members:
+    - name: Ms. Dana Girstl
+      email: dana.girstl@aston.de
+
+- business_name: AB Electronic Devices
+  legal_name: AB Electronic Devices S.L.
+  address: Pol. Ind. El Arroyo, C/ El Arroyo Nave - D-1, 28864 Ajalvir
+  country: Spain
+  phone: +34-918.844.818
+  fax: +34-918.844.255
+  emails:
+  website:
+  latitude: 428
+  longitude: 235
+  markets:
+    - Portugal
+    - Spain
+  members:
+    - name: Mr. Carlos Martínez
+      email: carlos@ab-electronic.com
+
+- business_name: Advance Tech Services
+  legal_name:
+  address: 709-710, GD-ITL Towers, B-8, Netaji Subhash Place, Pitampura, Ring Road, New Delhi 110 034
+  country: India
+  phone: +91-11-47.00.20.24 to 27
+  fax: +91-11-47.00.20.29
+  website: https://www.advancetech.co.in/
+  latitude: 628
+  longitude: 264
+  markets:
+    - India
+  members:
+    - name: Ajay Gupta
+      email: ajay@advancetech.co.in
+
+- business_name: Cast
+  legal_name: Cast Co. d.o.o
+  address: Vrbljene 45, SL - 1292 Ig.
+  country: Slovenia
+  phone: +386-1-286.39.36
+  fax: +386-1-286.39.37
+  emails:
+  website:
+  latitude: 469
+  longitude: 219
+  markets:
+    - Slovenia
+    - Croatia
+  members:
+    - name: Mr. Janez Dolenc
+      email: janez.dolenc-1@siol.net
+
+- business_name: Comet Electronics
+  legal_name: Comet Electronics d.o.o.
+  address: Tsar Samuil Str. 16, 1000 Sofia
+  country: Bulgaria
+  phone: +359-2-915.58.55
+  fax: +359-2-954.03.84
+  emails:
+    - office@comet.bg
+  website: https://www.comet.bg/
+  latitude: 493
+  longitude: 228
+  markets:
+    - Bulgaria
+  members:
+    - name: Mrs. Jana Alipieva
+
+- business_name: Comet Electronics
+  legal_name: Comet Electronics d.o.o.
+  address: Bulevar Arsenija Carnojevica 17, Beograd 11070
+  country: Serbia
+  phone: +381-11-213.41.80
+  fax: +381-11-311.39.42
+  emails:
+  website: https://www.comet.bg/
+  latitude: 483
+  longitude: 222
+  markets:
+    - Serbia
+  members:
+    - name: Mr. Igor Kruljevic
+      email: igor.kruljevic@comet.rs
+
+- business_name: Comet Electronics
+  legal_name: COMET Electronics SRL
+  address: Str. Sfanta Treime Nr. 47, Sector 2, 023727 Bucuresti
+  country: Romania
+  phone: +40-21-243.20.90
+  fax: +40-21-243.40.90
+  emails:
+    - office@comet.srl.ro
+  website: https://comet.srl.ro/
+  latitude: 497
+  longitude: 220
+  markets:
+    - Romania
+  members:
+    - name: Mr. Ciprian Varga
+
+- business_name: Edstachem
+  legal_name: Edstachem (M) SDN BHD
+  address: 2nd floor, Thien Son Building, No. 5 Nguyen Gia Thieu, Ward 6, Dist. 3, HCMC
+  country: Vietnam
+  phone: +84-8-3 9307 348
+  fax: +84-8-3 9307 349
+  emails:
+  website: http://www.edstachem.com/
+  latitude: 705
+  longitude: 305
+  markets:
+    - Vietnam
+  members:
+    - name: Edward Ng Keng Fei
+      email: edward_ng@edstachem.com
+
+- business_name: Eirotec Engineering
+  legal_name: Eirotec Engineering Ltd.
+  address:
+  country: Ireland
+  phone: +353 (0)87 249 9804
+  fax:
+  emails:
+  website: http://eirotec.ie/
+  latitude: 418
+  longitude: 195
+  markets:
+    - Ireland
+  members:
+    - name: Mr Dermot Lynch
+      email: dermot@eirotec.ie
+
+- business_name: Ekval Oy
+  legal_name:
+  address: Järvihaantie 1, 01800 Klaukkala
+  country: Finland
+  phone: +358-9-879.35.84
+  fax: +358-9-879.38.44
+  emails:
+  website: https://ekval.fi/
+  latitude: 487
+  longitude: 172
+  markets:
+    - Finland
+  members:
+    - name: Mr. Pekka Saastamoinen
+      email: pekka.saastamoinen@ekval.fi
+
+- business_name: Elso Philips Service
+  legal_name: Elso Philips Service, s.r.o.
+  address: Kladenska 3, 160 00 Praha 6
+  country: Czech Republic
+  phone: +420 235 350 353
+  fax: +420 235 354 986
+  emails:
+    - smt.service@elso-group.cz
+  website: http://elso-group.cz/
+  latitude: 471
+  longitude: 207
+  markets:
+    - Czech Republic
+    - Slovakia
+  members:
+    - name: Mr. Pavel Kureš
+
+- business_name: EPM International
+  legal_name:
+  address: Zone franche exportation TFZ, Tanger
+  country: Tunisia
+  phone: +212.6.66.94.50.68
+  fax:
+  emails:
+  website:
+  latitude: 459
+  longitude: 246
+  markets:
+    - Morocco
+    - Tunisia
+  members:
+    - name: Mrs. Sophie Morvant
+      phone: +212 537 666 432
+      email: sophie.morvant@epminternational.com
+    - name: Mr. Ayoub Dalhoumi
+      phone: +212 666 945 068
+      email: ayoub.dalhoumi@epminternational.com
+
+- business_name: Etama UAB
+  legal_name:
+  address: 13 Girininku Street, 47164 Kaunas
+  country: Lithuania
+  phone: +370-37.385.242
+  fax: +370-37.385.242
+  emails:
+    - info@etama.lt
+    - sales@etama.lt
+  latitude: 486
+  longitude: 189
+  markets:
+    - Lithuania
+  members:
+    - name: Mr Mindaugas Palisaitis
+
+- business_name: Industrial Technologies
+  legal_name:
+  address: PO Box 39340, Wellington Mail Centre, 59 Marsden Street, Lower Hutt 5045
+  country: New Zealand
+  phone: +61 292 457 917
+  fax: +61 456 934 65
+  website: https://industrialtechnologies.co.nz/
+  latitude: 853
+  longitude: 426
+  markets:
+    - New Zealand
+  members:
+    - name: Mr Lewis Woodward, Managing Director
+      email: lewis@industrialtechnologies.co.nz
+
+- business_name: Hadi Nirou Gostar
+  legal_name: Hadi Nirou Gostar Co.
+  address: Mirzaye Shirazi blvd, Shiraz
+  country: Iran
+  phone: +98 917 711 1644
+  fax: +98 711 623 1647
+  latitude: 567
+  longitude: 261
+  markets:
+    - Iran
+  members:
+    - name: Mr. SMJ Hadavi
+      email: jhadavi@gmail.com
+
+- business_name: Industrievertretung Bräunlich
+  legal_name: Industrievertretung Bräunlich GmbH
+  address: Am Heideberg 26, D-06886 Lutherstadt Wittenberg
+  country: Germany
+  phone: +49 3491/6181-30
+  fax: +49 3491/6181-18
+  website: https://www.ersa-shop.com/
+  latitude: 458
+  longitude: 205
+  markets:
+    - Germany
+  members:
+    - name: Stefan Sterner
+      email: sts@braeunlich-gmbh.com
+
+- business_name: Interscan
+  legal_name:
+  address: Sattar Villa - B 32 / 1-C-1, Block 6, P.E.C.H.S., Karachi, 75400
+  country: Pakistan
+  phone: +92-21-34532-131-33
+  fax: +92-21-34532-858
+  emails:
+    - info@interscan.org
+  website: http://interscan.org/
+  latitude: 600
+  longitude: 272
+  markets:
+    - Pakistan
+  members:
+    - name: Mr. Tauqeer Ahmed
+
+- business_name: JOIN Enterprise
+  legal_name: JOIN Enterprise Co., Ltd
+  address: \#501,7, Hakdong-ro 33-gil (Irum B/D, Nanhyun-dong), Gangnam-gu, Seoul, Korea 06052
+  country: South Korea
+  phone: +82-2-563-3831
+  fax: +82-2-563-3834
+  emails:
+    - thjung@joinent.com
+  latitude: 746
+  longitude: 236
+  markets:
+    - South Korea
+  members:
+    - name: Mr Tae Hyung Jung
+
+- business_name: JRPV Semicon Supplies
+  legal_name: JRPV Semicon Supplies, INC
+  address: Unit A & B Bartolazo Building, San Jose Streets corner Manabat, Barangay 2, Carmona, Cavite
+  country: Philippines
+  phone: +63 2 400 77 92
+  fax: +63 46 482 05 97
+  latitude: 739
+  longitude: 297
+  markets:
+    - Philippines
+  members:
+    - name: Ms. Julie Pios
+      email: julie@jrpvsemicon.com
+
+- business_name: Kurtz Ersa
+  legal_name:
+  address: Leonhard-Karl-Str. 24, 97877 Wertheim
+  country: Germany
+  phone: +49-9342-800.260
+  fax: +49-9342-800.132
+  latitude: 454
+  longitude: 207
+  markets:
+    - Germany
+  members:
+    - name: Mr. Meinrad Eckert
+      email: meinrad.eckert@kurtzersa.de
+
+- business_name: Kurtz Ersa North America
+  legal_name:
+  address: 1779 Pilgrim Road, Plymouth, WI 53073
+  country: United States of America
+  phone: +1-920-892.92.45
+  fax: +1-920-893.15.62
+  latitude: 233
+  longitude: 219
+  markets:
+    - United States of America
+  members:
+    - name: Mrs. Pam Gnacinski
+      email: pam.gnacinski@kurtzersa.com
+
+- business_name: MCS Technology
+  legal_name: MCS Technology Ltd.
+  address: 12F., No.130, Lane 210, Sec.1, Jhuangjing Road, Taoyuan City, Taoyuan County 330
+  country: Taiwan
+  phone: +886 970 060092
+  website: http://sigmatekcorp.com/
+  latitude: 736
+  longitude: 274
+  markets:
+    - Taiwan
+    - China
+  members:
+    - name: Mr. Derrel Hsieh / 謝東菱
+      email: derrel.hsieh@sigmatekcorp.com
+
+- business_name: Mega Fong Taiwan Branch
+  legal_name: Mega Fong Ltd. Taiwan Branch
+  address: 2F, No.45, Lane 210, Sec. 1, Zhuang-Jing Road, Taoyuan City, Taoyuan County, 33044
+  country: Taiwan
+  phone: +886 3 357 3575
+  latitude: 738
+  longitude: 272
+  markets:
+    - Taiwan
+    - China
+
+- business_name: Mteq
+  legal_name:
+  address: Av. Santa Margarita 4950, Int.Cenote 151, Col. Valle Esmeralda, C.P. 45136 Zapopan, Jal
+  country: Mexico
+  phone: +52 33 3627 0600
+  markets:
+    - Mexico
+    - Costa Rica
+  members:
+    - name: Erik Deschuyffeleer
+      email: ed@mteq.com.mx
+
+- business_name: Oritech
+  legal_name: Oritech Pty Ltd
+  address: 33 Production Drive, Alfredton, VIC, 3355
+  country: Australia
+  phone: 1800 444 344
+  fax: +613 5334 2322
+  emails:
+  website: https://oritech.com.au
+  latitude: 785
+  longitude: 431
+  markets:
+    - Australia
+  members:
+    - name: Mr Roy Kingon
+      email: roy@oritech.com.au
+      phone: +61 438 010 510
+
+- business_name: Packtronic
+  legal_name: Packtronic Srl
+  address: Via Leonardo da Vinci, 58, Loc. ex Superiore, 23879 - Verderio (Lc)
+  country: Italy
+  phone: +39/39/9281194-5
+  fax: +39/39/9281196
+  emails:
+    - info@packtronic.it
+  website: https://www.packtronic.it
+  latitude: 462
+  longitude: 222
+  markets:
+    - Italy
+  members:
+    - name: Simone Fiorucci
+
+- business_name: Polyscience
+  legal_name: Polyscience AG
+  address: Riedstrasse 13, 6330 Cham
+  country: Switzerland
+  phone: +41-41-748.80.30
+  fax: +41-41-748.80.39
+  emails:
+    - info@polyscience.ch
+  website: https://www.polyscience.ch/
+  latitude: 454
+  longitude: 215
+  markets:
+    - Switzerland
+  members:
+    - name: Mr. Bruno Schnider
+
+- business_name: PT. Citra Baru Perkasa
+  legal_name:
+  address: Jl. Raya Kebayoran Lama 23/O, Jakarta Barat 11560
+  country: Indonesia
+  phone: +62-2153.02.34.0
+  fax: +62-2153.32.92.1
+  emails:
+    - sales@citrabaruperkasa.co.id
+  website:
+  latitude: 705
+  longitude: 347
+  markets:
+    - Indonesia
+  members:
+    - name: Mr. Bambang H. Djayaputra
+
+- business_name: SEA Company
+  legal_name:
+  address: Building 2, 13-B, Krakovskaya Str., 02094 Kyiv
+  country: Ukraine
+  phone: +380.44.291 00 41
+  fax: +380.44.291 00 28
+  emails:
+    - info@sea.com.ua
+  latitude: 503
+  longitude: 203
+  markets:
+    - Ukraine
+  members:
+    - name: Mr. Andrey Deriugin
+
+- business_name: Smans
+  legal_name:
+  address: Bremheidelaan 8, 2300 Turnhout
+  country: Belgium
+  phone: +32 (0) 14 42 44 01
+  emails:
+    - info@smans.com
+  website:
+  latitude: 448
+  longitude: 203
+  markets:
+    - Belgium
+    - Netherlands
+    - Luxembourg
+
+- business_name: Stepan
+  legal_name: Stepan GmbH
+  address: Münichreiterstrasse 7, 1130 Wien
+  country: Austria
+  phone: +43 (1) 877 94 88-20
+  fax: +43 (664) 443 54 04
+  emails:
+  website: https://www.stepan.at/
+  latitude: 471
+  longitude: 213
+  markets:
+    - Austria
+  members:
+    - name: Mr. Stefan Kessler
+      email: s.kessler@stepan.at
+
+- business_name: Techno
+  legal_name:
+  address: 40, Utkina St., Moscow 105275
+  country: Russia
+  phone: +7-495 772 2518
+  fax: +7-495 735 4428
+  emails:
+  website: http://techno.ru/
+  latitude: 519
+  longitude: 183
+  markets:
+    - Russia
+  members:
+    - name: Mr. Yurii Gerasimov
+      email: ywg@techno.ru
+
+- business_name: Temple4
+  legal_name: Temple4 Ltd
+  address: Unit 19 Buriton Business Park, Petersfield, Hampshire, GU32 3NJ
+  country: United Kingdom
+  phone: +44 (0)1730 888499
+  fax: +44 (0)1730 606643
+  emails:
+    - info@temple4.com
+  website: https://www.temple4.co.uk
+  latitude: 432
+  longitude: 205
+  markets:
+    - United Kingdom
+  members:
+    - name: Nick Hirst
+    - name: Katy Green
+
+- business_name: Testerion
+  legal_name: Testerion Pty. Ltd.
+  address: 467 Felstead Road, North Riding 2162
+  country: South Africa
+  phone: +27-11-704.30.20
+  fax: +27-11-462.94.61
+  emails:
+    - info@testerion.co.za
+  website: http://testerion.co.za/
+  latitude: 504
+  longitude: 393
+  markets:
+    - South Africa
+  members:
+    - name: Mr. Peter Vichos
+
+- business_name: V.L.K. Techno Trade
+  legal_name: V.L.K. Techno Trade CO., LTD.
+  address: 36/7 Zentro port, Moo 13, Bungkumploy Sub-District, Lam Luk Ka District, Pathumthani 12150
+  country: Thailand
+  phone: +66 2 15002 47 to 51
+  fax: +66 2 150 0252
+  emails:
+    - sales@vlk.th.com
+  website:
+  latitude: 689
+  longitude: 301
+  markets:
+    - Thailand
+  members:
+    - name: Mr.Pattanapong O.
+
+- business_name: Westek Systems
+  legal_name: Westek Systems SDN BHD
+  address: 92A, Jln Putra Permai 10/2A, Putra Heights, 47650 Subang Jaya, Selangor
+  country: Malaysia
+  phone: +603 5103 5057
+  fax: +603 5192 1325
+  emails:
+    - westeksystems@unifi.my
+  website:
+  latitude: 692
+  longitude: 324
+  markets:
+    - Malaysia
+  members:
+    - name: Mr. Vincent Chen
+
+- business_name: YMH Teknoloji
+  legal_name:
+  address: Avni Dilligil Sk., Köroğlu İş Merkezi, No:6/7, Mecidiyeköy, Şişli, 34394 İstanbul
+  country: Turkey
+  phone: +90-212-347.10.23
+  fax: +90-212-347.10.33
+  emails:
+  website: http://ymh-teknoloji.com/
+  latitude: 505
+  longitude: 230
+  markets:
+    - Turkey
+  members:
+    - name: Mr. Halil Erdoğan
+      email: halil.erdogan@ymh-teknoloji.com
+
+- business_name: INTERFLUX® Electronics
+  legal_name: INTERFLUX® Electronics NV
+  address: Eddastraat 51, 9042 Gent
+  country: Belgium
+  phone: +32 9251 4959
+  fax: +32 9250 9636
+  emails:
+    - info@interflux.com
+  website: https://www.interflux.com
+  latitude: 446
+  longitude: 203
+  markets:
+    - World
+  members:
+    - name: Mr. Daniel Werkhoven

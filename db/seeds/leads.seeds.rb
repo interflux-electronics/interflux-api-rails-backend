@@ -27,8 +27,8 @@ after :countries do
       message: lead.message,
       purpose: lead.purpose,
       source: lead.source,
-      country_id: Country.where(iso_3161_1_alpha_2_code: lead.country_id).first.id,
-      ip_country_id: Country.where(iso_3161_1_alpha_2_code: lead.ip_country_id).first.id,
+      country_id: Country.where(two_letter_code: lead.country_id).first.id,
+      ip_country_id: Country.where(two_letter_code: lead.ip_country_id).first.id,
       ip_region: lead.ip_region,
       ip_city: lead.ip_city,
       ip: lead.ip

@@ -3825,7 +3825,8 @@
       "native_name": "ພາສາລາວ"
     }],
     "flag": "https://restcountries.eu/data/lao.svg",
-    "name": "Lao People's Democratic Republic",
+    "official_name": "Lao People's Democratic Republic",
+    "name": "Laos",
     "top_level_domains": [".la"],
     "alpha_2_code": "LA",
     "alpha_3_code": "LAO",
@@ -4108,7 +4109,8 @@
       }
     ],
     "flag": "https://restcountries.eu/data/mac.svg",
-    "name": "Macao",
+    "official_name": "Macao",
+    "name": "Macau",
     "top_level_domains": [".mo"],
     "alpha_2_code": "MO",
     "alpha_3_code": "MAC",
