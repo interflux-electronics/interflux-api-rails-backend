@@ -1,11 +1,18 @@
 module V1
   module Admin
     class CompanySerializer < ApplicationSerializer
-      # attributes :slug,
-      #            :name,
-      #            :public
+      attributes :business_name,
+                 :legal_name,
+                 :address,
+                 :phone,
+                 :fax,
+                 :emails,
+                 :website,
+                 :latitude,
+                 :longitude,
+                 :fax
 
-      # belongs_to :thing
+      belongs_to :country
       # belongs_to :main_group, record_type: :product_group, serializer: :product_group
       # belongs_to :sub_group, record_type: :product_group, serializer: :product_group
 

@@ -27,6 +27,7 @@ after :countries do
       latitude: company.latitude,
       longitude: company.longitude,
       emails: emails,
+      website: company.website,
       country_id: country.id
     )
 

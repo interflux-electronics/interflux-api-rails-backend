@@ -71,13 +71,11 @@ module V1
       end
 
       def permitted_includes
-        %[]
-        # %i[
-        #   related_articles
-        #   related_products
-        #   related_products.main_group
-        #   translations
-        # ]
+        %i[
+          markets
+          members
+          members.person
+        ]
       end
 
       # def after_create(lead)

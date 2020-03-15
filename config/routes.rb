@@ -44,7 +44,7 @@ Rails.application.routes.draw do
       # resources :company_members, path: '/company-members'
       # resources :company_markets, path: '/company-markets'
       # resources :containers
-      # resources :countries
+      resources :countries
       # resources :country_currencies, path: '/country-currencies'
       # resources :country_languages, path: '/country-languages'
       # resources :currencies
