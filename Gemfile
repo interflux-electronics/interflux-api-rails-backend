@@ -53,5 +53,10 @@ group :development do
   gem 'annotate', require: false
 end
 
+group :test do
+  # For testing (out-of-the-box with Rails 5)
+  gem 'minitest'
+end
+
 # https://www.skylight.io/
 # gem "skylight"
