@@ -1,8 +1,10 @@
-[
-  {
-    "currencies": [{ "code": "AFN", "name": "Afghan afghani", "symbol": "؋" }],
-    "languages": [
-      {
+[{
+    "currencies": [{
+      "code": "AFN",
+      "name": "Afghan afghani",
+      "symbol": "؋"
+    }],
+    "languages": [{
         "iso639_1": "ps",
         "iso639_2": "pus",
         "name": "Pashto",
@@ -37,15 +39,17 @@
     "numeric_code": "004"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "sv",
-        "iso639_2": "swe",
-        "name": "Swedish",
-        "native_name": "svenska"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "sv",
+      "iso639_2": "swe",
+      "name": "Swedish",
+      "native_name": "svenska"
+    }],
     "flag": "https://restcountries.eu/data/ala.svg",
     "name": "Åland Islands",
     "top_level_domains": [".ax"],
@@ -62,15 +66,17 @@
     "numeric_code": "248"
   },
   {
-    "currencies": [{ "code": "ALL", "name": "Albanian lek", "symbol": "L" }],
-    "languages": [
-      {
-        "iso639_1": "sq",
-        "iso639_2": "sqi",
-        "name": "Albanian",
-        "native_name": "Shqip"
-      }
-    ],
+    "currencies": [{
+      "code": "ALL",
+      "name": "Albanian lek",
+      "symbol": "L"
+    }],
+    "languages": [{
+      "iso639_1": "sq",
+      "iso639_2": "sqi",
+      "name": "Albanian",
+      "native_name": "Shqip"
+    }],
     "flag": "https://restcountries.eu/data/alb.svg",
     "name": "Albania",
     "top_level_domains": [".al"],
@@ -87,17 +93,17 @@
     "numeric_code": "008"
   },
   {
-    "currencies": [
-      { "code": "DZD", "name": "Algerian dinar", "symbol": "د.ج" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "DZD",
+      "name": "Algerian dinar",
+      "symbol": "د.ج"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/dza.svg",
     "name": "Algeria",
     "top_level_domains": [".dz"],
@@ -114,11 +120,12 @@
     "numeric_code": "012"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United State Dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "USD",
+      "name": "United State Dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -147,15 +154,17 @@
     "numeric_code": "016"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "ca",
-        "iso639_2": "cat",
-        "name": "Catalan",
-        "native_name": "català"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "ca",
+      "iso639_2": "cat",
+      "name": "Catalan",
+      "native_name": "català"
+    }],
     "flag": "https://restcountries.eu/data/and.svg",
     "name": "Andorra",
     "top_level_domains": [".ad"],
@@ -172,15 +181,17 @@
     "numeric_code": "020"
   },
   {
-    "currencies": [{ "code": "AOA", "name": "Angolan kwanza", "symbol": "Kz" }],
-    "languages": [
-      {
-        "iso639_1": "pt",
-        "iso639_2": "por",
-        "name": "Portuguese",
-        "native_name": "Português"
-      }
-    ],
+    "currencies": [{
+      "code": "AOA",
+      "name": "Angolan kwanza",
+      "symbol": "Kz"
+    }],
+    "languages": [{
+      "iso639_1": "pt",
+      "iso639_2": "por",
+      "name": "Portuguese",
+      "native_name": "Português"
+    }],
     "flag": "https://restcountries.eu/data/ago.svg",
     "name": "Angola",
     "top_level_domains": [".ao"],
@@ -197,17 +208,17 @@
     "numeric_code": "024"
   },
   {
-    "currencies": [
-      { "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "XCD",
+      "name": "East Caribbean dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/aia.svg",
     "name": "Anguilla",
     "top_level_domains": [".ai"],
@@ -224,12 +235,18 @@
     "numeric_code": "660"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" },
-      { "code": "GBP", "name": "British pound", "symbol": "£" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "AUD",
+        "name": "Australian dollar",
+        "symbol": "$"
+      },
       {
+        "code": "GBP",
+        "name": "British pound",
+        "symbol": "£"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -267,17 +284,17 @@
     "numeric_code": "010"
   },
   {
-    "currencies": [
-      { "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "XCD",
+      "name": "East Caribbean dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/atg.svg",
     "name": "Antigua and Barbuda",
     "top_level_domains": [".ag"],
@@ -294,9 +311,12 @@
     "numeric_code": "028"
   },
   {
-    "currencies": [{ "code": "ARS", "name": "Argentine peso", "symbol": "$" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "ARS",
+      "name": "Argentine peso",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "es",
         "iso639_2": "spa",
         "name": "Spanish",
@@ -325,9 +345,11 @@
     "numeric_code": "032"
   },
   {
-    "currencies": [{ "code": "AMD", "name": "Armenian dram" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "AMD",
+      "name": "Armenian dram"
+    }],
+    "languages": [{
         "iso639_1": "hy",
         "iso639_2": "hye",
         "name": "Armenian",
@@ -356,9 +378,12 @@
     "numeric_code": "051"
   },
   {
-    "currencies": [{ "code": "AWG", "name": "Aruban florin", "symbol": "ƒ" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "AWG",
+      "name": "Aruban florin",
+      "symbol": "ƒ"
+    }],
+    "languages": [{
         "iso639_1": "nl",
         "iso639_2": "nld",
         "name": "Dutch",
@@ -387,17 +412,17 @@
     "numeric_code": "533"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "AUD",
+      "name": "Australian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/aus.svg",
     "name": "Australia",
     "top_level_domains": [".au"],
@@ -423,15 +448,17 @@
     "numeric_code": "036"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "de",
-        "iso639_2": "deu",
-        "name": "German",
-        "native_name": "Deutsch"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "de",
+      "iso639_2": "deu",
+      "name": "German",
+      "native_name": "Deutsch"
+    }],
     "flag": "https://restcountries.eu/data/aut.svg",
     "name": "Austria",
     "top_level_domains": [".at"],
@@ -448,15 +475,16 @@
     "numeric_code": "040"
   },
   {
-    "currencies": [{ "code": "AZN", "name": "Azerbaijani manat" }],
-    "languages": [
-      {
-        "iso639_1": "az",
-        "iso639_2": "aze",
-        "name": "Azerbaijani",
-        "native_name": "azərbaycan dili"
-      }
-    ],
+    "currencies": [{
+      "code": "AZN",
+      "name": "Azerbaijani manat"
+    }],
+    "languages": [{
+      "iso639_1": "az",
+      "iso639_2": "aze",
+      "name": "Azerbaijani",
+      "native_name": "azərbaycan dili"
+    }],
     "flag": "https://restcountries.eu/data/aze.svg",
     "name": "Azerbaijan",
     "top_level_domains": [".az"],
@@ -473,15 +501,17 @@
     "numeric_code": "031"
   },
   {
-    "currencies": [{ "code": "BSD", "name": "Bahamian dollar", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "BSD",
+      "name": "Bahamian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/bhs.svg",
     "name": "Bahamas",
     "top_level_domains": [".bs"],
@@ -498,17 +528,17 @@
     "numeric_code": "044"
   },
   {
-    "currencies": [
-      { "code": "BHD", "name": "Bahraini dinar", "symbol": ".د.ب" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "BHD",
+      "name": "Bahraini dinar",
+      "symbol": ".د.ب"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/bhr.svg",
     "name": "Bahrain",
     "top_level_domains": [".bh"],
@@ -525,17 +555,17 @@
     "numeric_code": "048"
   },
   {
-    "currencies": [
-      { "code": "BDT", "name": "Bangladeshi taka", "symbol": "৳" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "bn",
-        "iso639_2": "ben",
-        "name": "Bengali",
-        "native_name": "বাংলা"
-      }
-    ],
+    "currencies": [{
+      "code": "BDT",
+      "name": "Bangladeshi taka",
+      "symbol": "৳"
+    }],
+    "languages": [{
+      "iso639_1": "bn",
+      "iso639_2": "ben",
+      "name": "Bengali",
+      "native_name": "বাংলা"
+    }],
     "flag": "https://restcountries.eu/data/bgd.svg",
     "name": "Bangladesh",
     "top_level_domains": [".bd"],
@@ -552,17 +582,17 @@
     "numeric_code": "050"
   },
   {
-    "currencies": [
-      { "code": "BBD", "name": "Barbadian dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "BBD",
+      "name": "Barbadian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/brb.svg",
     "name": "Barbados",
     "top_level_domains": [".bb"],
@@ -579,12 +609,18 @@
     "numeric_code": "052"
   },
   {
-    "currencies": [
-      { "code": "BYN", "name": "New Belarusian ruble", "symbol": "Br" },
-      { "code": "BYR", "name": "Old Belarusian ruble", "symbol": "Br" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "BYN",
+        "name": "New Belarusian ruble",
+        "symbol": "Br"
+      },
       {
+        "code": "BYR",
+        "name": "Old Belarusian ruble",
+        "symbol": "Br"
+      }
+    ],
+    "languages": [{
         "iso639_1": "be",
         "iso639_2": "bel",
         "name": "Belarusian",
@@ -613,9 +649,12 @@
     "numeric_code": "112"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "nl",
         "iso639_2": "nld",
         "name": "Dutch",
@@ -650,9 +689,12 @@
     "numeric_code": "056"
   },
   {
-    "currencies": [{ "code": "BZD", "name": "Belize dollar", "symbol": "$" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "BZD",
+      "name": "Belize dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -681,17 +723,17 @@
     "numeric_code": "084"
   },
   {
-    "currencies": [
-      { "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/ben.svg",
     "name": "Benin",
     "top_level_domains": [".bj"],
@@ -708,17 +750,17 @@
     "numeric_code": "204"
   },
   {
-    "currencies": [
-      { "code": "BMD", "name": "Bermudian dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "BMD",
+      "name": "Bermudian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/bmu.svg",
     "name": "Bermuda",
     "top_level_domains": [".bm"],
@@ -735,18 +777,23 @@
     "numeric_code": "060"
   },
   {
-    "currencies": [
-      { "code": "BTN", "name": "Bhutanese ngultrum", "symbol": "Nu." },
-      { "code": "INR", "name": "Indian rupee", "symbol": "₹" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "BTN",
+        "name": "Bhutanese ngultrum",
+        "symbol": "Nu."
+      },
       {
-        "iso639_1": "dz",
-        "iso639_2": "dzo",
-        "name": "Dzongkha",
-        "native_name": "རྫོང་ཁ"
+        "code": "INR",
+        "name": "Indian rupee",
+        "symbol": "₹"
       }
     ],
+    "languages": [{
+      "iso639_1": "dz",
+      "iso639_2": "dzo",
+      "name": "Dzongkha",
+      "native_name": "རྫོང་ཁ"
+    }],
     "flag": "https://restcountries.eu/data/btn.svg",
     "name": "Bhutan",
     "top_level_domains": [".bt"],
@@ -763,11 +810,12 @@
     "numeric_code": "064"
   },
   {
-    "currencies": [
-      { "code": "BOB", "name": "Bolivian boliviano", "symbol": "Bs." }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "BOB",
+      "name": "Bolivian boliviano",
+      "symbol": "Bs."
+    }],
+    "languages": [{
         "iso639_1": "es",
         "iso639_2": "spa",
         "name": "Spanish",
@@ -802,17 +850,17 @@
     "numeric_code": "068"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "nl",
-        "iso639_2": "nld",
-        "name": "Dutch",
-        "native_name": "Nederlands"
-      }
-    ],
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "nl",
+      "iso639_2": "nld",
+      "name": "Dutch",
+      "native_name": "Nederlands"
+    }],
     "flag": "https://restcountries.eu/data/bes.svg",
     "name": "Bonaire, Sint Eustatius and Saba",
     "top_level_domains": [".an", ".nl"],
@@ -829,11 +877,11 @@
     "numeric_code": "535"
   },
   {
-    "currencies": [
-      { "code": "BAM", "name": "Bosnia and Herzegovina convertible mark" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "BAM",
+      "name": "Bosnia and Herzegovina convertible mark"
+    }],
+    "languages": [{
         "iso639_1": "bs",
         "iso639_2": "bos",
         "name": "Bosnian",
@@ -868,9 +916,12 @@
     "numeric_code": "070"
   },
   {
-    "currencies": [{ "code": "BWP", "name": "Botswana pula", "symbol": "P" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "BWP",
+      "name": "Botswana pula",
+      "symbol": "P"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -899,11 +950,12 @@
     "numeric_code": "072"
   },
   {
-    "currencies": [
-      { "code": "NOK", "name": "Norwegian krone", "symbol": "kr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "NOK",
+      "name": "Norwegian krone",
+      "symbol": "kr"
+    }],
+    "languages": [{
         "iso639_1": "no",
         "iso639_2": "nor",
         "name": "Norwegian",
@@ -938,15 +990,17 @@
     "numeric_code": "074"
   },
   {
-    "currencies": [{ "code": "BRL", "name": "Brazilian real", "symbol": "R$" }],
-    "languages": [
-      {
-        "iso639_1": "pt",
-        "iso639_2": "por",
-        "name": "Portuguese",
-        "native_name": "Português"
-      }
-    ],
+    "currencies": [{
+      "code": "BRL",
+      "name": "Brazilian real",
+      "symbol": "R$"
+    }],
+    "languages": [{
+      "iso639_1": "pt",
+      "iso639_2": "por",
+      "name": "Portuguese",
+      "native_name": "Português"
+    }],
     "flag": "https://restcountries.eu/data/bra.svg",
     "name": "Brazil",
     "top_level_domains": [".br"],
@@ -963,17 +1017,17 @@
     "numeric_code": "076"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/iot.svg",
     "name": "British Indian Ocean Territory",
     "top_level_domains": [".io"],
@@ -990,17 +1044,17 @@
     "numeric_code": "086"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States Dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "USD",
+      "name": "United States Dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/umi.svg",
     "name": "United States Minor Outlying Islands",
     "top_level_domains": [".us"],
@@ -1016,18 +1070,22 @@
     "numeric_code": "581"
   },
   {
-    "currencies": [
-      { "name": "[D]", "symbol": "$" },
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "name": "[D]",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/vgb.svg",
     "name": "Virgin Islands (British)",
     "top_level_domains": [".vg"],
@@ -1044,17 +1102,17 @@
     "numeric_code": "092"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/vir.svg",
     "name": "Virgin Islands (U.S.)",
     "top_level_domains": [".vi"],
@@ -1071,18 +1129,23 @@
     "numeric_code": "850"
   },
   {
-    "currencies": [
-      { "code": "BND", "name": "Brunei dollar", "symbol": "$" },
-      { "code": "SGD", "name": "Singapore dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "BND",
+        "name": "Brunei dollar",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "ms",
-        "iso639_2": "msa",
-        "name": "Malay",
-        "native_name": "bahasa Melayu"
+        "code": "SGD",
+        "name": "Singapore dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "ms",
+      "iso639_2": "msa",
+      "name": "Malay",
+      "native_name": "bahasa Melayu"
+    }],
     "flag": "https://restcountries.eu/data/brn.svg",
     "name": "Brunei Darussalam",
     "top_level_domains": [".bn"],
@@ -1099,15 +1162,17 @@
     "numeric_code": "096"
   },
   {
-    "currencies": [{ "code": "BGN", "name": "Bulgarian lev", "symbol": "лв" }],
-    "languages": [
-      {
-        "iso639_1": "bg",
-        "iso639_2": "bul",
-        "name": "Bulgarian",
-        "native_name": "български език"
-      }
-    ],
+    "currencies": [{
+      "code": "BGN",
+      "name": "Bulgarian lev",
+      "symbol": "лв"
+    }],
+    "languages": [{
+      "iso639_1": "bg",
+      "iso639_2": "bul",
+      "name": "Bulgarian",
+      "native_name": "български език"
+    }],
     "flag": "https://restcountries.eu/data/bgr.svg",
     "name": "Bulgaria",
     "top_level_domains": [".bg"],
@@ -1124,11 +1189,12 @@
     "numeric_code": "100"
   },
   {
-    "currencies": [
-      { "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -1157,11 +1223,12 @@
     "numeric_code": "854"
   },
   {
-    "currencies": [
-      { "code": "BIF", "name": "Burundian franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "BIF",
+      "name": "Burundian franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -1190,18 +1257,23 @@
     "numeric_code": "108"
   },
   {
-    "currencies": [
-      { "code": "KHR", "name": "Cambodian riel", "symbol": "៛" },
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "KHR",
+        "name": "Cambodian riel",
+        "symbol": "៛"
+      },
       {
-        "iso639_1": "km",
-        "iso639_2": "khm",
-        "name": "Khmer",
-        "native_name": "ខ្មែរ"
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "km",
+      "iso639_2": "khm",
+      "name": "Khmer",
+      "native_name": "ខ្មែរ"
+    }],
     "flag": "https://restcountries.eu/data/khm.svg",
     "name": "Cambodia",
     "top_level_domains": [".kh"],
@@ -1218,11 +1290,12 @@
     "numeric_code": "116"
   },
   {
-    "currencies": [
-      { "code": "XAF", "name": "Central African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "XAF",
+      "name": "Central African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -1251,9 +1324,12 @@
     "numeric_code": "120"
   },
   {
-    "currencies": [{ "code": "CAD", "name": "Canadian dollar", "symbol": "$" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "CAD",
+      "name": "Canadian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -1289,17 +1365,17 @@
     "numeric_code": "124"
   },
   {
-    "currencies": [
-      { "code": "CVE", "name": "Cape Verdean escudo", "symbol": "Esc" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "pt",
-        "iso639_2": "por",
-        "name": "Portuguese",
-        "native_name": "Português"
-      }
-    ],
+    "currencies": [{
+      "code": "CVE",
+      "name": "Cape Verdean escudo",
+      "symbol": "Esc"
+    }],
+    "languages": [{
+      "iso639_1": "pt",
+      "iso639_2": "por",
+      "name": "Portuguese",
+      "native_name": "Português"
+    }],
     "flag": "https://restcountries.eu/data/cpv.svg",
     "name": "Cabo Verde",
     "top_level_domains": [".cv"],
@@ -1316,17 +1392,17 @@
     "numeric_code": "132"
   },
   {
-    "currencies": [
-      { "code": "KYD", "name": "Cayman Islands dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "KYD",
+      "name": "Cayman Islands dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/cym.svg",
     "name": "Cayman Islands",
     "top_level_domains": [".ky"],
@@ -1343,11 +1419,12 @@
     "numeric_code": "136"
   },
   {
-    "currencies": [
-      { "code": "XAF", "name": "Central African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "XAF",
+      "name": "Central African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -1376,11 +1453,12 @@
     "numeric_code": "140"
   },
   {
-    "currencies": [
-      { "code": "XAF", "name": "Central African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "XAF",
+      "name": "Central African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -1409,15 +1487,17 @@
     "numeric_code": "148"
   },
   {
-    "currencies": [{ "code": "CLP", "name": "Chilean peso", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "CLP",
+      "name": "Chilean peso",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/chl.svg",
     "name": "Chile",
     "top_level_domains": [".cl"],
@@ -1434,15 +1514,17 @@
     "numeric_code": "152"
   },
   {
-    "currencies": [{ "code": "CNY", "name": "Chinese yuan", "symbol": "¥" }],
-    "languages": [
-      {
-        "iso639_1": "zh",
-        "iso639_2": "zho",
-        "name": "Chinese",
-        "native_name": "中文 (Zhōngwén)"
-      }
-    ],
+    "currencies": [{
+      "code": "CNY",
+      "name": "Chinese yuan",
+      "symbol": "¥"
+    }],
+    "languages": [{
+      "iso639_1": "zh",
+      "iso639_2": "zho",
+      "name": "Chinese",
+      "native_name": "中文 (Zhōngwén)"
+    }],
     "flag": "https://restcountries.eu/data/chn.svg",
     "name": "China",
     "top_level_domains": [".cn"],
@@ -1459,17 +1541,17 @@
     "numeric_code": "156"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "AUD",
+      "name": "Australian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/cxr.svg",
     "name": "Christmas Island",
     "top_level_domains": [".cx"],
@@ -1486,17 +1568,17 @@
     "numeric_code": "162"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "AUD",
+      "name": "Australian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/cck.svg",
     "name": "Cocos (Keeling) Islands",
     "top_level_domains": [".cc"],
@@ -1513,15 +1595,17 @@
     "numeric_code": "166"
   },
   {
-    "currencies": [{ "code": "COP", "name": "Colombian peso", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "COP",
+      "name": "Colombian peso",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/col.svg",
     "name": "Colombia",
     "top_level_domains": [".co"],
@@ -1538,9 +1622,12 @@
     "numeric_code": "170"
   },
   {
-    "currencies": [{ "code": "KMF", "name": "Comorian franc", "symbol": "Fr" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "KMF",
+      "name": "Comorian franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "ar",
         "iso639_2": "ara",
         "name": "Arabic",
@@ -1569,11 +1656,12 @@
     "numeric_code": "174"
   },
   {
-    "currencies": [
-      { "code": "XAF", "name": "Central African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "XAF",
+      "name": "Central African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -1602,11 +1690,12 @@
     "numeric_code": "178"
   },
   {
-    "currencies": [
-      { "code": "CDF", "name": "Congolese franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "CDF",
+      "name": "Congolese franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -1653,18 +1742,23 @@
     "numeric_code": "180"
   },
   {
-    "currencies": [
-      { "code": "NZD", "name": "New Zealand dollar", "symbol": "$" },
-      { "code": "CKD", "name": "Cook Islands dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "NZD",
+        "name": "New Zealand dollar",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "code": "CKD",
+        "name": "Cook Islands dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/cok.svg",
     "name": "Cook Islands",
     "top_level_domains": [".ck"],
@@ -1681,17 +1775,17 @@
     "numeric_code": "184"
   },
   {
-    "currencies": [
-      { "code": "CRC", "name": "Costa Rican colón", "symbol": "₡" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "CRC",
+      "name": "Costa Rican colón",
+      "symbol": "₡"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/cri.svg",
     "name": "Costa Rica",
     "top_level_domains": [".cr"],
@@ -1708,15 +1802,17 @@
     "numeric_code": "188"
   },
   {
-    "currencies": [{ "code": "HRK", "name": "Croatian kuna", "symbol": "kn" }],
-    "languages": [
-      {
-        "iso639_1": "hr",
-        "iso639_2": "hrv",
-        "name": "Croatian",
-        "native_name": "hrvatski jezik"
-      }
-    ],
+    "currencies": [{
+      "code": "HRK",
+      "name": "Croatian kuna",
+      "symbol": "kn"
+    }],
+    "languages": [{
+      "iso639_1": "hr",
+      "iso639_2": "hrv",
+      "name": "Croatian",
+      "native_name": "hrvatski jezik"
+    }],
     "flag": "https://restcountries.eu/data/hrv.svg",
     "name": "Croatia",
     "top_level_domains": [".hr"],
@@ -1733,18 +1829,23 @@
     "numeric_code": "191"
   },
   {
-    "currencies": [
-      { "code": "CUC", "name": "Cuban convertible peso", "symbol": "$" },
-      { "code": "CUP", "name": "Cuban peso", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "CUC",
+        "name": "Cuban convertible peso",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
+        "code": "CUP",
+        "name": "Cuban peso",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/cub.svg",
     "name": "Cuba",
     "top_level_domains": [".cu"],
@@ -1761,11 +1862,12 @@
     "numeric_code": "192"
   },
   {
-    "currencies": [
-      { "code": "ANG", "name": "Netherlands Antillean guilder", "symbol": "ƒ" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "ANG",
+      "name": "Netherlands Antillean guilder",
+      "symbol": "ƒ"
+    }],
+    "languages": [{
         "iso639_1": "nl",
         "iso639_2": "nld",
         "name": "Dutch",
@@ -1800,9 +1902,12 @@
     "numeric_code": "531"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "el",
         "iso639_2": "ell",
         "name": "Greek (modern)",
@@ -1837,9 +1942,12 @@
     "numeric_code": "196"
   },
   {
-    "currencies": [{ "code": "CZK", "name": "Czech koruna", "symbol": "Kč" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "CZK",
+      "name": "Czech koruna",
+      "symbol": "Kč"
+    }],
+    "languages": [{
         "iso639_1": "cs",
         "iso639_2": "ces",
         "name": "Czech",
@@ -1868,15 +1976,17 @@
     "numeric_code": "203"
   },
   {
-    "currencies": [{ "code": "DKK", "name": "Danish krone", "symbol": "kr" }],
-    "languages": [
-      {
-        "iso639_1": "da",
-        "iso639_2": "dan",
-        "name": "Danish",
-        "native_name": "dansk"
-      }
-    ],
+    "currencies": [{
+      "code": "DKK",
+      "name": "Danish krone",
+      "symbol": "kr"
+    }],
+    "languages": [{
+      "iso639_1": "da",
+      "iso639_2": "dan",
+      "name": "Danish",
+      "native_name": "dansk"
+    }],
     "flag": "https://restcountries.eu/data/dnk.svg",
     "name": "Denmark",
     "top_level_domains": [".dk"],
@@ -1893,11 +2003,12 @@
     "numeric_code": "208"
   },
   {
-    "currencies": [
-      { "code": "DJF", "name": "Djiboutian franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "DJF",
+      "name": "Djiboutian franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -1926,17 +2037,17 @@
     "numeric_code": "262"
   },
   {
-    "currencies": [
-      { "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "XCD",
+      "name": "East Caribbean dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/dma.svg",
     "name": "Dominica",
     "top_level_domains": [".dm"],
@@ -1953,15 +2064,17 @@
     "numeric_code": "212"
   },
   {
-    "currencies": [{ "code": "DOP", "name": "Dominican peso", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "DOP",
+      "name": "Dominican peso",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/dom.svg",
     "name": "Dominican Republic",
     "top_level_domains": [".do"],
@@ -1978,17 +2091,17 @@
     "numeric_code": "214"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/ecu.svg",
     "name": "Ecuador",
     "top_level_domains": [".ec"],
@@ -2005,15 +2118,17 @@
     "numeric_code": "218"
   },
   {
-    "currencies": [{ "code": "EGP", "name": "Egyptian pound", "symbol": "£" }],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "EGP",
+      "name": "Egyptian pound",
+      "symbol": "£"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/egy.svg",
     "name": "Egypt",
     "top_level_domains": [".eg"],
@@ -2030,17 +2145,17 @@
     "numeric_code": "818"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/slv.svg",
     "name": "El Salvador",
     "top_level_domains": [".sv"],
@@ -2057,11 +2172,12 @@
     "numeric_code": "222"
   },
   {
-    "currencies": [
-      { "code": "XAF", "name": "Central African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "XAF",
+      "name": "Central African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "es",
         "iso639_2": "spa",
         "name": "Spanish",
@@ -2090,11 +2206,12 @@
     "numeric_code": "226"
   },
   {
-    "currencies": [
-      { "code": "ERN", "name": "Eritrean nakfa", "symbol": "Nfk" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "ERN",
+      "name": "Eritrean nakfa",
+      "symbol": "Nfk"
+    }],
+    "languages": [{
         "iso639_1": "ti",
         "iso639_2": "tir",
         "name": "Tigrinya",
@@ -2129,15 +2246,17 @@
     "numeric_code": "232"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "et",
-        "iso639_2": "est",
-        "name": "Estonian",
-        "native_name": "eesti"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "et",
+      "iso639_2": "est",
+      "name": "Estonian",
+      "native_name": "eesti"
+    }],
     "flag": "https://restcountries.eu/data/est.svg",
     "name": "Estonia",
     "top_level_domains": [".ee"],
@@ -2154,15 +2273,17 @@
     "numeric_code": "233"
   },
   {
-    "currencies": [{ "code": "ETB", "name": "Ethiopian birr", "symbol": "Br" }],
-    "languages": [
-      {
-        "iso639_1": "am",
-        "iso639_2": "amh",
-        "name": "Amharic",
-        "native_name": "አማርኛ"
-      }
-    ],
+    "currencies": [{
+      "code": "ETB",
+      "name": "Ethiopian birr",
+      "symbol": "Br"
+    }],
+    "languages": [{
+      "iso639_1": "am",
+      "iso639_2": "amh",
+      "name": "Amharic",
+      "native_name": "አማርኛ"
+    }],
     "flag": "https://restcountries.eu/data/eth.svg",
     "name": "Ethiopia",
     "top_level_domains": [".et"],
@@ -2179,17 +2300,17 @@
     "numeric_code": "231"
   },
   {
-    "currencies": [
-      { "code": "FKP", "name": "Falkland Islands pound", "symbol": "£" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "FKP",
+      "name": "Falkland Islands pound",
+      "symbol": "£"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/flk.svg",
     "name": "Falkland Islands (Malvinas)",
     "top_level_domains": [".fk"],
@@ -2206,18 +2327,23 @@
     "numeric_code": "238"
   },
   {
-    "currencies": [
-      { "code": "DKK", "name": "Danish krone", "symbol": "kr" },
-      { "code": "(none)", "name": "Faroese króna", "symbol": "kr" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "DKK",
+        "name": "Danish krone",
+        "symbol": "kr"
+      },
       {
-        "iso639_1": "fo",
-        "iso639_2": "fao",
-        "name": "Faroese",
-        "native_name": "føroyskt"
+        "code": "(none)",
+        "name": "Faroese króna",
+        "symbol": "kr"
       }
     ],
+    "languages": [{
+      "iso639_1": "fo",
+      "iso639_2": "fao",
+      "name": "Faroese",
+      "native_name": "føroyskt"
+    }],
     "flag": "https://restcountries.eu/data/fro.svg",
     "name": "Faroe Islands",
     "top_level_domains": [".fo"],
@@ -2234,9 +2360,12 @@
     "numeric_code": "234"
   },
   {
-    "currencies": [{ "code": "FJD", "name": "Fijian dollar", "symbol": "$" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "FJD",
+      "name": "Fijian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -2277,9 +2406,12 @@
     "numeric_code": "242"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "fi",
         "iso639_2": "fin",
         "name": "Finnish",
@@ -2308,15 +2440,17 @@
     "numeric_code": "246"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/fra.svg",
     "name": "France",
     "top_level_domains": [".fr"],
@@ -2346,15 +2480,17 @@
     "numeric_code": "250"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/guf.svg",
     "name": "French Guiana",
     "top_level_domains": [".gf"],
@@ -2370,15 +2506,17 @@
     "numeric_code": "254"
   },
   {
-    "currencies": [{ "code": "XPF", "name": "CFP franc", "symbol": "Fr" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XPF",
+      "name": "CFP franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/pyf.svg",
     "name": "French Polynesia",
     "top_level_domains": [".pf"],
@@ -2395,15 +2533,17 @@
     "numeric_code": "258"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/atf.svg",
     "name": "French Southern Territories",
     "top_level_domains": [".tf"],
@@ -2420,17 +2560,17 @@
     "numeric_code": "260"
   },
   {
-    "currencies": [
-      { "code": "XAF", "name": "Central African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XAF",
+      "name": "Central African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/gab.svg",
     "name": "Gabon",
     "top_level_domains": [".ga"],
@@ -2447,15 +2587,17 @@
     "numeric_code": "266"
   },
   {
-    "currencies": [{ "code": "GMD", "name": "Gambian dalasi", "symbol": "D" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "GMD",
+      "name": "Gambian dalasi",
+      "symbol": "D"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/gmb.svg",
     "name": "Gambia",
     "top_level_domains": [".gm"],
@@ -2472,15 +2614,17 @@
     "numeric_code": "270"
   },
   {
-    "currencies": [{ "code": "GEL", "name": "Georgian Lari", "symbol": "ლ" }],
-    "languages": [
-      {
-        "iso639_1": "ka",
-        "iso639_2": "kat",
-        "name": "Georgian",
-        "native_name": "ქართული"
-      }
-    ],
+    "currencies": [{
+      "code": "GEL",
+      "name": "Georgian Lari",
+      "symbol": "ლ"
+    }],
+    "languages": [{
+      "iso639_1": "ka",
+      "iso639_2": "kat",
+      "name": "Georgian",
+      "native_name": "ქართული"
+    }],
     "flag": "https://restcountries.eu/data/geo.svg",
     "name": "Georgia",
     "top_level_domains": [".ge"],
@@ -2497,15 +2641,17 @@
     "numeric_code": "268"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "de",
-        "iso639_2": "deu",
-        "name": "German",
-        "native_name": "Deutsch"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "de",
+      "iso639_2": "deu",
+      "name": "German",
+      "native_name": "Deutsch"
+    }],
     "flag": "https://restcountries.eu/data/deu.svg",
     "name": "Germany",
     "top_level_domains": [".de"],
@@ -2522,15 +2668,17 @@
     "numeric_code": "276"
   },
   {
-    "currencies": [{ "code": "GHS", "name": "Ghanaian cedi", "symbol": "₵" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "GHS",
+      "name": "Ghanaian cedi",
+      "symbol": "₵"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/gha.svg",
     "name": "Ghana",
     "top_level_domains": [".gh"],
@@ -2547,15 +2695,17 @@
     "numeric_code": "288"
   },
   {
-    "currencies": [{ "code": "GIP", "name": "Gibraltar pound", "symbol": "£" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "GIP",
+      "name": "Gibraltar pound",
+      "symbol": "£"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/gib.svg",
     "name": "Gibraltar",
     "top_level_domains": [".gi"],
@@ -2572,15 +2722,17 @@
     "numeric_code": "292"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "el",
-        "iso639_2": "ell",
-        "name": "Greek (modern)",
-        "native_name": "ελληνικά"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "el",
+      "iso639_2": "ell",
+      "name": "Greek (modern)",
+      "native_name": "ελληνικά"
+    }],
     "flag": "https://restcountries.eu/data/grc.svg",
     "name": "Greece",
     "top_level_domains": [".gr"],
@@ -2597,15 +2749,17 @@
     "numeric_code": "300"
   },
   {
-    "currencies": [{ "code": "DKK", "name": "Danish krone", "symbol": "kr" }],
-    "languages": [
-      {
-        "iso639_1": "kl",
-        "iso639_2": "kal",
-        "name": "Kalaallisut",
-        "native_name": "kalaallisut"
-      }
-    ],
+    "currencies": [{
+      "code": "DKK",
+      "name": "Danish krone",
+      "symbol": "kr"
+    }],
+    "languages": [{
+      "iso639_1": "kl",
+      "iso639_2": "kal",
+      "name": "Kalaallisut",
+      "native_name": "kalaallisut"
+    }],
     "flag": "https://restcountries.eu/data/grl.svg",
     "name": "Greenland",
     "top_level_domains": [".gl"],
@@ -2622,17 +2776,17 @@
     "numeric_code": "304"
   },
   {
-    "currencies": [
-      { "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "XCD",
+      "name": "East Caribbean dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/grd.svg",
     "name": "Grenada",
     "top_level_domains": [".gd"],
@@ -2649,15 +2803,17 @@
     "numeric_code": "308"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/glp.svg",
     "name": "Guadeloupe",
     "top_level_domains": [".gp"],
@@ -2673,11 +2829,12 @@
     "numeric_code": "312"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -2712,17 +2869,17 @@
     "numeric_code": "316"
   },
   {
-    "currencies": [
-      { "code": "GTQ", "name": "Guatemalan quetzal", "symbol": "Q" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "GTQ",
+      "name": "Guatemalan quetzal",
+      "symbol": "Q"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/gtm.svg",
     "name": "Guatemala",
     "top_level_domains": [".gt"],
@@ -2739,12 +2896,18 @@
     "numeric_code": "320"
   },
   {
-    "currencies": [
-      { "code": "GBP", "name": "British pound", "symbol": "£" },
-      { "code": "(none)", "name": "Guernsey pound", "symbol": "£" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "GBP",
+        "name": "British pound",
+        "symbol": "£"
+      },
       {
+        "code": "(none)",
+        "name": "Guernsey pound",
+        "symbol": "£"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -2773,9 +2936,12 @@
     "numeric_code": "831"
   },
   {
-    "currencies": [{ "code": "GNF", "name": "Guinean franc", "symbol": "Fr" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "GNF",
+      "name": "Guinean franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -2804,17 +2970,17 @@
     "numeric_code": "324"
   },
   {
-    "currencies": [
-      { "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "pt",
-        "iso639_2": "por",
-        "name": "Portuguese",
-        "native_name": "Português"
-      }
-    ],
+    "currencies": [{
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "pt",
+      "iso639_2": "por",
+      "name": "Portuguese",
+      "native_name": "Português"
+    }],
     "flag": "https://restcountries.eu/data/gnb.svg",
     "name": "Guinea-Bissau",
     "top_level_domains": [".gw"],
@@ -2831,15 +2997,17 @@
     "numeric_code": "624"
   },
   {
-    "currencies": [{ "code": "GYD", "name": "Guyanese dollar", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "GYD",
+      "name": "Guyanese dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/guy.svg",
     "name": "Guyana",
     "top_level_domains": [".gy"],
@@ -2856,9 +3024,12 @@
     "numeric_code": "328"
   },
   {
-    "currencies": [{ "code": "HTG", "name": "Haitian gourde", "symbol": "G" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "HTG",
+      "name": "Haitian gourde",
+      "symbol": "G"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -2887,17 +3058,17 @@
     "numeric_code": "332"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "AUD",
+      "name": "Australian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/hmd.svg",
     "name": "Heard Island and McDonald Islands",
     "top_level_domains": [".hm", ".aq"],
@@ -2914,9 +3085,12 @@
     "numeric_code": "334"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "la",
         "iso639_2": "lat",
         "name": "Latin",
@@ -2957,17 +3131,17 @@
     "numeric_code": "336"
   },
   {
-    "currencies": [
-      { "code": "HNL", "name": "Honduran lempira", "symbol": "L" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "HNL",
+      "name": "Honduran lempira",
+      "symbol": "L"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/hnd.svg",
     "name": "Honduras",
     "top_level_domains": [".hn"],
@@ -2984,11 +3158,12 @@
     "numeric_code": "340"
   },
   {
-    "currencies": [
-      { "code": "HKD", "name": "Hong Kong dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "HKD",
+      "name": "Hong Kong dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -3017,17 +3192,17 @@
     "numeric_code": "344"
   },
   {
-    "currencies": [
-      { "code": "HUF", "name": "Hungarian forint", "symbol": "Ft" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "hu",
-        "iso639_2": "hun",
-        "name": "Hungarian",
-        "native_name": "magyar"
-      }
-    ],
+    "currencies": [{
+      "code": "HUF",
+      "name": "Hungarian forint",
+      "symbol": "Ft"
+    }],
+    "languages": [{
+      "iso639_1": "hu",
+      "iso639_2": "hun",
+      "name": "Hungarian",
+      "native_name": "magyar"
+    }],
     "flag": "https://restcountries.eu/data/hun.svg",
     "name": "Hungary",
     "top_level_domains": [".hu"],
@@ -3044,17 +3219,17 @@
     "numeric_code": "348"
   },
   {
-    "currencies": [
-      { "code": "ISK", "name": "Icelandic króna", "symbol": "kr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "is",
-        "iso639_2": "isl",
-        "name": "Icelandic",
-        "native_name": "Íslenska"
-      }
-    ],
+    "currencies": [{
+      "code": "ISK",
+      "name": "Icelandic króna",
+      "symbol": "kr"
+    }],
+    "languages": [{
+      "iso639_1": "is",
+      "iso639_2": "isl",
+      "name": "Icelandic",
+      "native_name": "Íslenska"
+    }],
     "flag": "https://restcountries.eu/data/isl.svg",
     "name": "Iceland",
     "top_level_domains": [".is"],
@@ -3071,9 +3246,12 @@
     "numeric_code": "352"
   },
   {
-    "currencies": [{ "code": "INR", "name": "Indian rupee", "symbol": "₹" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "INR",
+      "name": "Indian rupee",
+      "symbol": "₹"
+    }],
+    "languages": [{
         "iso639_1": "hi",
         "iso639_2": "hin",
         "name": "Hindi",
@@ -3102,17 +3280,17 @@
     "numeric_code": "356"
   },
   {
-    "currencies": [
-      { "code": "IDR", "name": "Indonesian rupiah", "symbol": "Rp" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "id",
-        "iso639_2": "ind",
-        "name": "Indonesian",
-        "native_name": "Bahasa Indonesia"
-      }
-    ],
+    "currencies": [{
+      "code": "IDR",
+      "name": "Indonesian rupiah",
+      "symbol": "Rp"
+    }],
+    "languages": [{
+      "iso639_1": "id",
+      "iso639_2": "ind",
+      "name": "Indonesian",
+      "native_name": "Bahasa Indonesia"
+    }],
     "flag": "https://restcountries.eu/data/idn.svg",
     "name": "Indonesia",
     "top_level_domains": [".id"],
@@ -3129,17 +3307,17 @@
     "numeric_code": "360"
   },
   {
-    "currencies": [
-      { "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/civ.svg",
     "name": "Côte d'Ivoire",
     "top_level_domains": [".ci"],
@@ -3156,15 +3334,17 @@
     "numeric_code": "384"
   },
   {
-    "currencies": [{ "code": "IRR", "name": "Iranian rial", "symbol": "﷼" }],
-    "languages": [
-      {
-        "iso639_1": "fa",
-        "iso639_2": "fas",
-        "name": "Persian (Farsi)",
-        "native_name": "فارسی"
-      }
-    ],
+    "currencies": [{
+      "code": "IRR",
+      "name": "Iranian rial",
+      "symbol": "﷼"
+    }],
+    "languages": [{
+      "iso639_1": "fa",
+      "iso639_2": "fas",
+      "name": "Persian (Farsi)",
+      "native_name": "فارسی"
+    }],
     "flag": "https://restcountries.eu/data/irn.svg",
     "name": "Iran (Islamic Republic of)",
     "top_level_domains": [".ir"],
@@ -3181,9 +3361,12 @@
     "numeric_code": "364"
   },
   {
-    "currencies": [{ "code": "IQD", "name": "Iraqi dinar", "symbol": "ع.د" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "IQD",
+      "name": "Iraqi dinar",
+      "symbol": "ع.د"
+    }],
+    "languages": [{
         "iso639_1": "ar",
         "iso639_2": "ara",
         "name": "Arabic",
@@ -3212,9 +3395,12 @@
     "numeric_code": "368"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "ga",
         "iso639_2": "gle",
         "name": "Irish",
@@ -3243,12 +3429,18 @@
     "numeric_code": "372"
   },
   {
-    "currencies": [
-      { "code": "GBP", "name": "British pound", "symbol": "£" },
-      { "code": "IMP[G]", "name": "Manx pound", "symbol": "£" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "GBP",
+        "name": "British pound",
+        "symbol": "£"
+      },
       {
+        "code": "IMP[G]",
+        "name": "Manx pound",
+        "symbol": "£"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -3277,11 +3469,12 @@
     "numeric_code": "833"
   },
   {
-    "currencies": [
-      { "code": "ILS", "name": "Israeli new shekel", "symbol": "₪" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "ILS",
+      "name": "Israeli new shekel",
+      "symbol": "₪"
+    }],
+    "languages": [{
         "iso639_1": "he",
         "iso639_2": "heb",
         "name": "Hebrew (modern)",
@@ -3310,15 +3503,17 @@
     "numeric_code": "376"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "it",
-        "iso639_2": "ita",
-        "name": "Italian",
-        "native_name": "Italiano"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "it",
+      "iso639_2": "ita",
+      "name": "Italian",
+      "native_name": "Italiano"
+    }],
     "flag": "https://restcountries.eu/data/ita.svg",
     "name": "Italy",
     "top_level_domains": [".it"],
@@ -3335,15 +3530,17 @@
     "numeric_code": "380"
   },
   {
-    "currencies": [{ "code": "JMD", "name": "Jamaican dollar", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "JMD",
+      "name": "Jamaican dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/jam.svg",
     "name": "Jamaica",
     "top_level_domains": [".jm"],
@@ -3360,15 +3557,17 @@
     "numeric_code": "388"
   },
   {
-    "currencies": [{ "code": "JPY", "name": "Japanese yen", "symbol": "¥" }],
-    "languages": [
-      {
-        "iso639_1": "ja",
-        "iso639_2": "jpn",
-        "name": "Japanese",
-        "native_name": "日本語 (にほんご)"
-      }
-    ],
+    "currencies": [{
+      "code": "JPY",
+      "name": "Japanese yen",
+      "symbol": "¥"
+    }],
+    "languages": [{
+      "iso639_1": "ja",
+      "iso639_2": "jpn",
+      "name": "Japanese",
+      "native_name": "日本語 (にほんご)"
+    }],
     "flag": "https://restcountries.eu/data/jpn.svg",
     "name": "Japan",
     "top_level_domains": [".jp"],
@@ -3385,12 +3584,18 @@
     "numeric_code": "392"
   },
   {
-    "currencies": [
-      { "code": "GBP", "name": "British pound", "symbol": "£" },
-      { "code": "JEP[G]", "name": "Jersey pound", "symbol": "£" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "GBP",
+        "name": "British pound",
+        "symbol": "£"
+      },
       {
+        "code": "JEP[G]",
+        "name": "Jersey pound",
+        "symbol": "£"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -3419,17 +3624,17 @@
     "numeric_code": "832"
   },
   {
-    "currencies": [
-      { "code": "JOD", "name": "Jordanian dinar", "symbol": "د.ا" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "JOD",
+      "name": "Jordanian dinar",
+      "symbol": "د.ا"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/jor.svg",
     "name": "Jordan",
     "top_level_domains": [".jo"],
@@ -3446,9 +3651,11 @@
     "numeric_code": "400"
   },
   {
-    "currencies": [{ "code": "KZT", "name": "Kazakhstani tenge" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "KZT",
+      "name": "Kazakhstani tenge"
+    }],
+    "languages": [{
         "iso639_1": "kk",
         "iso639_2": "kaz",
         "name": "Kazakh",
@@ -3477,11 +3684,12 @@
     "numeric_code": "398"
   },
   {
-    "currencies": [
-      { "code": "KES", "name": "Kenyan shilling", "symbol": "Sh" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "KES",
+      "name": "Kenyan shilling",
+      "symbol": "Sh"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -3510,18 +3718,23 @@
     "numeric_code": "404"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" },
-      { "code": "(none)", "name": "Kiribati dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "AUD",
+        "name": "Australian dollar",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "code": "(none)",
+        "name": "Kiribati dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/kir.svg",
     "name": "Kiribati",
     "top_level_domains": [".ki"],
@@ -3538,15 +3751,17 @@
     "numeric_code": "296"
   },
   {
-    "currencies": [{ "code": "KWD", "name": "Kuwaiti dinar", "symbol": "د.ك" }],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "KWD",
+      "name": "Kuwaiti dinar",
+      "symbol": "د.ك"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/kwt.svg",
     "name": "Kuwait",
     "top_level_domains": [".kw"],
@@ -3563,9 +3778,12 @@
     "numeric_code": "414"
   },
   {
-    "currencies": [{ "code": "KGS", "name": "Kyrgyzstani som", "symbol": "с" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "KGS",
+      "name": "Kyrgyzstani som",
+      "symbol": "с"
+    }],
+    "languages": [{
         "iso639_1": "ky",
         "iso639_2": "kir",
         "name": "Kyrgyz",
@@ -3594,15 +3812,17 @@
     "numeric_code": "417"
   },
   {
-    "currencies": [{ "code": "LAK", "name": "Lao kip", "symbol": "₭" }],
-    "languages": [
-      {
-        "iso639_1": "lo",
-        "iso639_2": "lao",
-        "name": "Lao",
-        "native_name": "ພາສາລາວ"
-      }
-    ],
+    "currencies": [{
+      "code": "LAK",
+      "name": "Lao kip",
+      "symbol": "₭"
+    }],
+    "languages": [{
+      "iso639_1": "lo",
+      "iso639_2": "lao",
+      "name": "Lao",
+      "native_name": "ພາສາລາວ"
+    }],
     "flag": "https://restcountries.eu/data/lao.svg",
     "name": "Lao People's Democratic Republic",
     "top_level_domains": [".la"],
@@ -3619,15 +3839,17 @@
     "numeric_code": "418"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "lv",
-        "iso639_2": "lav",
-        "name": "Latvian",
-        "native_name": "latviešu valoda"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "lv",
+      "iso639_2": "lav",
+      "name": "Latvian",
+      "native_name": "latviešu valoda"
+    }],
     "flag": "https://restcountries.eu/data/lva.svg",
     "name": "Latvia",
     "top_level_domains": [".lv"],
@@ -3644,11 +3866,12 @@
     "numeric_code": "428"
   },
   {
-    "currencies": [
-      { "code": "LBP", "name": "Lebanese pound", "symbol": "ل.ل" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "LBP",
+      "name": "Lebanese pound",
+      "symbol": "ل.ل"
+    }],
+    "languages": [{
         "iso639_1": "ar",
         "iso639_2": "ara",
         "name": "Arabic",
@@ -3677,12 +3900,18 @@
     "numeric_code": "422"
   },
   {
-    "currencies": [
-      { "code": "LSL", "name": "Lesotho loti", "symbol": "L" },
-      { "code": "ZAR", "name": "South African rand", "symbol": "R" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "LSL",
+        "name": "Lesotho loti",
+        "symbol": "L"
+      },
       {
+        "code": "ZAR",
+        "name": "South African rand",
+        "symbol": "R"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -3711,15 +3940,17 @@
     "numeric_code": "426"
   },
   {
-    "currencies": [{ "code": "LRD", "name": "Liberian dollar", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "LRD",
+      "name": "Liberian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/lbr.svg",
     "name": "Liberia",
     "top_level_domains": [".lr"],
@@ -3736,15 +3967,17 @@
     "numeric_code": "430"
   },
   {
-    "currencies": [{ "code": "LYD", "name": "Libyan dinar", "symbol": "ل.د" }],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "LYD",
+      "name": "Libyan dinar",
+      "symbol": "ل.د"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/lby.svg",
     "name": "Libya",
     "top_level_domains": [".ly"],
@@ -3761,15 +3994,17 @@
     "numeric_code": "434"
   },
   {
-    "currencies": [{ "code": "CHF", "name": "Swiss franc", "symbol": "Fr" }],
-    "languages": [
-      {
-        "iso639_1": "de",
-        "iso639_2": "deu",
-        "name": "German",
-        "native_name": "Deutsch"
-      }
-    ],
+    "currencies": [{
+      "code": "CHF",
+      "name": "Swiss franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "de",
+      "iso639_2": "deu",
+      "name": "German",
+      "native_name": "Deutsch"
+    }],
     "flag": "https://restcountries.eu/data/lie.svg",
     "name": "Liechtenstein",
     "top_level_domains": [".li"],
@@ -3786,15 +4021,17 @@
     "numeric_code": "438"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "lt",
-        "iso639_2": "lit",
-        "name": "Lithuanian",
-        "native_name": "lietuvių kalba"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "lt",
+      "iso639_2": "lit",
+      "name": "Lithuanian",
+      "native_name": "lietuvių kalba"
+    }],
     "flag": "https://restcountries.eu/data/ltu.svg",
     "name": "Lithuania",
     "top_level_domains": [".lt"],
@@ -3811,9 +4048,12 @@
     "numeric_code": "440"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -3848,9 +4088,12 @@
     "numeric_code": "442"
   },
   {
-    "currencies": [{ "code": "MOP", "name": "Macanese pataca", "symbol": "P" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "MOP",
+      "name": "Macanese pataca",
+      "symbol": "P"
+    }],
+    "languages": [{
         "iso639_1": "zh",
         "iso639_2": "zho",
         "name": "Chinese",
@@ -3879,17 +4122,17 @@
     "numeric_code": "446"
   },
   {
-    "currencies": [
-      { "code": "MKD", "name": "Macedonian denar", "symbol": "ден" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "mk",
-        "iso639_2": "mkd",
-        "name": "Macedonian",
-        "native_name": "македонски јазик"
-      }
-    ],
+    "currencies": [{
+      "code": "MKD",
+      "name": "Macedonian denar",
+      "symbol": "ден"
+    }],
+    "languages": [{
+      "iso639_1": "mk",
+      "iso639_2": "mkd",
+      "name": "Macedonian",
+      "native_name": "македонски јазик"
+    }],
     "flag": "https://restcountries.eu/data/mkd.svg",
     "name": "Macedonia (the former Yugoslav Republic of)",
     "top_level_domains": [".mk"],
@@ -3906,11 +4149,12 @@
     "numeric_code": "807"
   },
   {
-    "currencies": [
-      { "code": "MGA", "name": "Malagasy ariary", "symbol": "Ar" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "MGA",
+      "name": "Malagasy ariary",
+      "symbol": "Ar"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -3939,11 +4183,12 @@
     "numeric_code": "450"
   },
   {
-    "currencies": [
-      { "code": "MWK", "name": "Malawian kwacha", "symbol": "MK" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "MWK",
+      "name": "Malawian kwacha",
+      "symbol": "MK"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -3972,12 +4217,16 @@
     "numeric_code": "454"
   },
   {
-    "currencies": [
-      { "code": "MYR", "name": "Malaysian ringgit", "symbol": "RM" }
-    ],
-    "languages": [
-      { "iso639_2": "zsm", "name": "Malaysian", "native_name": "بهاس مليسيا" }
-    ],
+    "currencies": [{
+      "code": "MYR",
+      "name": "Malaysian ringgit",
+      "symbol": "RM"
+    }],
+    "languages": [{
+      "iso639_2": "zsm",
+      "name": "Malaysian",
+      "native_name": "بهاس مليسيا"
+    }],
     "flag": "https://restcountries.eu/data/mys.svg",
     "name": "Malaysia",
     "top_level_domains": [".my"],
@@ -3994,17 +4243,17 @@
     "numeric_code": "458"
   },
   {
-    "currencies": [
-      { "code": "MVR", "name": "Maldivian rufiyaa", "symbol": ".ރ" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "dv",
-        "iso639_2": "div",
-        "name": "Divehi",
-        "native_name": "ދިވެހި"
-      }
-    ],
+    "currencies": [{
+      "code": "MVR",
+      "name": "Maldivian rufiyaa",
+      "symbol": ".ރ"
+    }],
+    "languages": [{
+      "iso639_1": "dv",
+      "iso639_2": "div",
+      "name": "Divehi",
+      "native_name": "ދިވެހި"
+    }],
     "flag": "https://restcountries.eu/data/mdv.svg",
     "name": "Maldives",
     "top_level_domains": [".mv"],
@@ -4021,17 +4270,17 @@
     "numeric_code": "462"
   },
   {
-    "currencies": [
-      { "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/mli.svg",
     "name": "Mali",
     "top_level_domains": [".ml"],
@@ -4048,9 +4297,12 @@
     "numeric_code": "466"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "mt",
         "iso639_2": "mlt",
         "name": "Maltese",
@@ -4079,11 +4331,12 @@
     "numeric_code": "470"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -4112,15 +4365,17 @@
     "numeric_code": "584"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/mtq.svg",
     "name": "Martinique",
     "top_level_domains": [".mq"],
@@ -4136,17 +4391,17 @@
     "numeric_code": "474"
   },
   {
-    "currencies": [
-      { "code": "MRO", "name": "Mauritanian ouguiya", "symbol": "UM" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "MRO",
+      "name": "Mauritanian ouguiya",
+      "symbol": "UM"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/mrt.svg",
     "name": "Mauritania",
     "top_level_domains": [".mr"],
@@ -4163,15 +4418,17 @@
     "numeric_code": "478"
   },
   {
-    "currencies": [{ "code": "MUR", "name": "Mauritian rupee", "symbol": "₨" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "MUR",
+      "name": "Mauritian rupee",
+      "symbol": "₨"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/mus.svg",
     "name": "Mauritius",
     "top_level_domains": [".mu"],
@@ -4188,15 +4445,17 @@
     "numeric_code": "480"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/myt.svg",
     "name": "Mayotte",
     "top_level_domains": [".yt"],
@@ -4212,15 +4471,17 @@
     "numeric_code": "175"
   },
   {
-    "currencies": [{ "code": "MXN", "name": "Mexican peso", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "MXN",
+      "name": "Mexican peso",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/mex.svg",
     "name": "Mexico",
     "top_level_domains": [".mx"],
@@ -4237,18 +4498,22 @@
     "numeric_code": "484"
   },
   {
-    "currencies": [
-      { "name": "[D]", "symbol": "$" },
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "name": "[D]",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/fsm.svg",
     "name": "Micronesia (Federated States of)",
     "top_level_domains": [".fm"],
@@ -4265,15 +4530,17 @@
     "numeric_code": "583"
   },
   {
-    "currencies": [{ "code": "MDL", "name": "Moldovan leu", "symbol": "L" }],
-    "languages": [
-      {
-        "iso639_1": "ro",
-        "iso639_2": "ron",
-        "name": "Romanian",
-        "native_name": "Română"
-      }
-    ],
+    "currencies": [{
+      "code": "MDL",
+      "name": "Moldovan leu",
+      "symbol": "L"
+    }],
+    "languages": [{
+      "iso639_1": "ro",
+      "iso639_2": "ron",
+      "name": "Romanian",
+      "native_name": "Română"
+    }],
     "flag": "https://restcountries.eu/data/mda.svg",
     "name": "Moldova (Republic of)",
     "top_level_domains": [".md"],
@@ -4290,15 +4557,17 @@
     "numeric_code": "498"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/mco.svg",
     "name": "Monaco",
     "top_level_domains": [".mc"],
@@ -4315,17 +4584,17 @@
     "numeric_code": "492"
   },
   {
-    "currencies": [
-      { "code": "MNT", "name": "Mongolian tögrög", "symbol": "₮" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "mn",
-        "iso639_2": "mon",
-        "name": "Mongolian",
-        "native_name": "Монгол хэл"
-      }
-    ],
+    "currencies": [{
+      "code": "MNT",
+      "name": "Mongolian tögrög",
+      "symbol": "₮"
+    }],
+    "languages": [{
+      "iso639_1": "mn",
+      "iso639_2": "mon",
+      "name": "Mongolian",
+      "native_name": "Монгол хэл"
+    }],
     "flag": "https://restcountries.eu/data/mng.svg",
     "name": "Mongolia",
     "top_level_domains": [".mn"],
@@ -4342,9 +4611,12 @@
     "numeric_code": "496"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "sr",
         "iso639_2": "srp",
         "name": "Serbian",
@@ -4385,17 +4657,17 @@
     "numeric_code": "499"
   },
   {
-    "currencies": [
-      { "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "XCD",
+      "name": "East Caribbean dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/msr.svg",
     "name": "Montserrat",
     "top_level_domains": [".ms"],
@@ -4412,17 +4684,17 @@
     "numeric_code": "500"
   },
   {
-    "currencies": [
-      { "code": "MAD", "name": "Moroccan dirham", "symbol": "د.م." }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "MAD",
+      "name": "Moroccan dirham",
+      "symbol": "د.م."
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/mar.svg",
     "name": "Morocco",
     "top_level_domains": [".ma"],
@@ -4439,17 +4711,17 @@
     "numeric_code": "504"
   },
   {
-    "currencies": [
-      { "code": "MZN", "name": "Mozambican metical", "symbol": "MT" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "pt",
-        "iso639_2": "por",
-        "name": "Portuguese",
-        "native_name": "Português"
-      }
-    ],
+    "currencies": [{
+      "code": "MZN",
+      "name": "Mozambican metical",
+      "symbol": "MT"
+    }],
+    "languages": [{
+      "iso639_1": "pt",
+      "iso639_2": "por",
+      "name": "Portuguese",
+      "native_name": "Português"
+    }],
     "flag": "https://restcountries.eu/data/moz.svg",
     "name": "Mozambique",
     "top_level_domains": [".mz"],
@@ -4466,15 +4738,17 @@
     "numeric_code": "508"
   },
   {
-    "currencies": [{ "code": "MMK", "name": "Burmese kyat", "symbol": "Ks" }],
-    "languages": [
-      {
-        "iso639_1": "my",
-        "iso639_2": "mya",
-        "name": "Burmese",
-        "native_name": "ဗမာစာ"
-      }
-    ],
+    "currencies": [{
+      "code": "MMK",
+      "name": "Burmese kyat",
+      "symbol": "Ks"
+    }],
+    "languages": [{
+      "iso639_1": "my",
+      "iso639_2": "mya",
+      "name": "Burmese",
+      "native_name": "ဗမာစာ"
+    }],
     "flag": "https://restcountries.eu/data/mmr.svg",
     "name": "Myanmar",
     "top_level_domains": [".mm"],
@@ -4491,12 +4765,18 @@
     "numeric_code": "104"
   },
   {
-    "currencies": [
-      { "code": "NAD", "name": "Namibian dollar", "symbol": "$" },
-      { "code": "ZAR", "name": "South African rand", "symbol": "R" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "NAD",
+        "name": "Namibian dollar",
+        "symbol": "$"
+      },
       {
+        "code": "ZAR",
+        "name": "South African rand",
+        "symbol": "R"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -4525,12 +4805,17 @@
     "numeric_code": "516"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" },
-      { "code": "(none)", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "AUD",
+        "name": "Australian dollar",
+        "symbol": "$"
+      },
       {
+        "code": "(none)",
+        "symbol": "$"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -4559,15 +4844,17 @@
     "numeric_code": "520"
   },
   {
-    "currencies": [{ "code": "NPR", "name": "Nepalese rupee", "symbol": "₨" }],
-    "languages": [
-      {
-        "iso639_1": "ne",
-        "iso639_2": "nep",
-        "name": "Nepali",
-        "native_name": "नेपाली"
-      }
-    ],
+    "currencies": [{
+      "code": "NPR",
+      "name": "Nepalese rupee",
+      "symbol": "₨"
+    }],
+    "languages": [{
+      "iso639_1": "ne",
+      "iso639_2": "nep",
+      "name": "Nepali",
+      "native_name": "नेपाली"
+    }],
     "flag": "https://restcountries.eu/data/npl.svg",
     "name": "Nepal",
     "top_level_domains": [".np"],
@@ -4584,15 +4871,17 @@
     "numeric_code": "524"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "nl",
-        "iso639_2": "nld",
-        "name": "Dutch",
-        "native_name": "Nederlands"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "nl",
+      "iso639_2": "nld",
+      "name": "Dutch",
+      "native_name": "Nederlands"
+    }],
     "flag": "https://restcountries.eu/data/nld.svg",
     "name": "Netherlands",
     "top_level_domains": [".nl"],
@@ -4609,15 +4898,17 @@
     "numeric_code": "528"
   },
   {
-    "currencies": [{ "code": "XPF", "name": "CFP franc", "symbol": "Fr" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XPF",
+      "name": "CFP franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/ncl.svg",
     "name": "New Caledonia",
     "top_level_domains": [".nc"],
@@ -4634,11 +4925,12 @@
     "numeric_code": "540"
   },
   {
-    "currencies": [
-      { "code": "NZD", "name": "New Zealand dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "NZD",
+      "name": "New Zealand dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -4673,17 +4965,17 @@
     "numeric_code": "554"
   },
   {
-    "currencies": [
-      { "code": "NIO", "name": "Nicaraguan córdoba", "symbol": "C$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "NIO",
+      "name": "Nicaraguan córdoba",
+      "symbol": "C$"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/nic.svg",
     "name": "Nicaragua",
     "top_level_domains": [".ni"],
@@ -4700,17 +4992,17 @@
     "numeric_code": "558"
   },
   {
-    "currencies": [
-      { "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/ner.svg",
     "name": "Niger",
     "top_level_domains": [".ne"],
@@ -4727,15 +5019,17 @@
     "numeric_code": "562"
   },
   {
-    "currencies": [{ "code": "NGN", "name": "Nigerian naira", "symbol": "₦" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "NGN",
+      "name": "Nigerian naira",
+      "symbol": "₦"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/nga.svg",
     "name": "Nigeria",
     "top_level_domains": [".ng"],
@@ -4752,18 +5046,23 @@
     "numeric_code": "566"
   },
   {
-    "currencies": [
-      { "code": "NZD", "name": "New Zealand dollar", "symbol": "$" },
-      { "code": "(none)", "name": "Niue dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "NZD",
+        "name": "New Zealand dollar",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "code": "(none)",
+        "name": "Niue dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/niu.svg",
     "name": "Niue",
     "top_level_domains": [".nu"],
@@ -4780,17 +5079,17 @@
     "numeric_code": "570"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "AUD",
+      "name": "Australian dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/nfk.svg",
     "name": "Norfolk Island",
     "top_level_domains": [".nf"],
@@ -4807,17 +5106,17 @@
     "numeric_code": "574"
   },
   {
-    "currencies": [
-      { "code": "KPW", "name": "North Korean won", "symbol": "₩" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ko",
-        "iso639_2": "kor",
-        "name": "Korean",
-        "native_name": "한국어"
-      }
-    ],
+    "currencies": [{
+      "code": "KPW",
+      "name": "North Korean won",
+      "symbol": "₩"
+    }],
+    "languages": [{
+      "iso639_1": "ko",
+      "iso639_2": "kor",
+      "name": "Korean",
+      "native_name": "한국어"
+    }],
     "flag": "https://restcountries.eu/data/prk.svg",
     "name": "Korea (Democratic People's Republic of)",
     "top_level_domains": [".kp"],
@@ -4834,11 +5133,12 @@
     "numeric_code": "408"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -4867,11 +5167,12 @@
     "numeric_code": "580"
   },
   {
-    "currencies": [
-      { "code": "NOK", "name": "Norwegian krone", "symbol": "kr" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "NOK",
+      "name": "Norwegian krone",
+      "symbol": "kr"
+    }],
+    "languages": [{
         "iso639_1": "no",
         "iso639_2": "nor",
         "name": "Norwegian",
@@ -4906,15 +5207,17 @@
     "numeric_code": "578"
   },
   {
-    "currencies": [{ "code": "OMR", "name": "Omani rial", "symbol": "ر.ع." }],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "OMR",
+      "name": "Omani rial",
+      "symbol": "ر.ع."
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/omn.svg",
     "name": "Oman",
     "top_level_domains": [".om"],
@@ -4931,9 +5234,12 @@
     "numeric_code": "512"
   },
   {
-    "currencies": [{ "code": "PKR", "name": "Pakistani rupee", "symbol": "₨" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "PKR",
+      "name": "Pakistani rupee",
+      "symbol": "₨"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -4962,18 +5268,23 @@
     "numeric_code": "586"
   },
   {
-    "currencies": [
-      { "code": "(none)", "name": "[E]", "symbol": "$" },
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "(none)",
+        "name": "[E]",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/plw.svg",
     "name": "Palau",
     "top_level_domains": [".pw"],
@@ -4990,17 +5301,17 @@
     "numeric_code": "585"
   },
   {
-    "currencies": [
-      { "code": "ILS", "name": "Israeli new sheqel", "symbol": "₪" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "ILS",
+      "name": "Israeli new sheqel",
+      "symbol": "₪"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/pse.svg",
     "name": "Palestine, State of",
     "top_level_domains": [".ps"],
@@ -5016,18 +5327,23 @@
     "numeric_code": "275"
   },
   {
-    "currencies": [
-      { "code": "PAB", "name": "Panamanian balboa", "symbol": "B/." },
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "PAB",
+        "name": "Panamanian balboa",
+        "symbol": "B/."
+      },
       {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/pan.svg",
     "name": "Panama",
     "top_level_domains": [".pa"],
@@ -5044,17 +5360,17 @@
     "numeric_code": "591"
   },
   {
-    "currencies": [
-      { "code": "PGK", "name": "Papua New Guinean kina", "symbol": "K" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "PGK",
+      "name": "Papua New Guinean kina",
+      "symbol": "K"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/png.svg",
     "name": "Papua New Guinea",
     "top_level_domains": [".pg"],
@@ -5071,11 +5387,12 @@
     "numeric_code": "598"
   },
   {
-    "currencies": [
-      { "code": "PYG", "name": "Paraguayan guaraní", "symbol": "₲" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "PYG",
+      "name": "Paraguayan guaraní",
+      "symbol": "₲"
+    }],
+    "languages": [{
         "iso639_1": "es",
         "iso639_2": "spa",
         "name": "Spanish",
@@ -5104,15 +5421,17 @@
     "numeric_code": "600"
   },
   {
-    "currencies": [{ "code": "PEN", "name": "Peruvian sol", "symbol": "S/." }],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "PEN",
+      "name": "Peruvian sol",
+      "symbol": "S/."
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/per.svg",
     "name": "Peru",
     "top_level_domains": [".pe"],
@@ -5129,15 +5448,17 @@
     "numeric_code": "604"
   },
   {
-    "currencies": [{ "code": "PHP", "name": "Philippine peso", "symbol": "₱" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "PHP",
+      "name": "Philippine peso",
+      "symbol": "₱"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/phl.svg",
     "name": "Philippines",
     "top_level_domains": [".ph"],
@@ -5154,18 +5475,22 @@
     "numeric_code": "608"
   },
   {
-    "currencies": [
-      { "code": "NZD", "name": "New Zealand dollar", "symbol": "$" },
-      { "name": "Pitcairn Islands dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "NZD",
+        "name": "New Zealand dollar",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "name": "Pitcairn Islands dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/pcn.svg",
     "name": "Pitcairn",
     "top_level_domains": [".pn"],
@@ -5182,15 +5507,17 @@
     "numeric_code": "612"
   },
   {
-    "currencies": [{ "code": "PLN", "name": "Polish złoty", "symbol": "zł" }],
-    "languages": [
-      {
-        "iso639_1": "pl",
-        "iso639_2": "pol",
-        "name": "Polish",
-        "native_name": "język polski"
-      }
-    ],
+    "currencies": [{
+      "code": "PLN",
+      "name": "Polish złoty",
+      "symbol": "zł"
+    }],
+    "languages": [{
+      "iso639_1": "pl",
+      "iso639_2": "pol",
+      "name": "Polish",
+      "native_name": "język polski"
+    }],
     "flag": "https://restcountries.eu/data/pol.svg",
     "name": "Poland",
     "top_level_domains": [".pl"],
@@ -5207,15 +5534,17 @@
     "numeric_code": "616"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "pt",
-        "iso639_2": "por",
-        "name": "Portuguese",
-        "native_name": "Português"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "pt",
+      "iso639_2": "por",
+      "name": "Portuguese",
+      "native_name": "Português"
+    }],
     "flag": "https://restcountries.eu/data/prt.svg",
     "name": "Portugal",
     "top_level_domains": [".pt"],
@@ -5232,11 +5561,12 @@
     "numeric_code": "620"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
         "iso639_1": "es",
         "iso639_2": "spa",
         "name": "Spanish",
@@ -5265,15 +5595,17 @@
     "numeric_code": "630"
   },
   {
-    "currencies": [{ "code": "QAR", "name": "Qatari riyal", "symbol": "ر.ق" }],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "QAR",
+      "name": "Qatari riyal",
+      "symbol": "ر.ق"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/qat.svg",
     "name": "Qatar",
     "top_level_domains": [".qa"],
@@ -5290,9 +5622,12 @@
     "numeric_code": "634"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "sq",
         "iso639_2": "sqi",
         "name": "Albanian",
@@ -5320,15 +5655,17 @@
     "native_name": "Republika e Kosovës"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/reu.svg",
     "name": "Réunion",
     "top_level_domains": [".re"],
@@ -5344,15 +5681,17 @@
     "numeric_code": "638"
   },
   {
-    "currencies": [{ "code": "RON", "name": "Romanian leu", "symbol": "lei" }],
-    "languages": [
-      {
-        "iso639_1": "ro",
-        "iso639_2": "ron",
-        "name": "Romanian",
-        "native_name": "Română"
-      }
-    ],
+    "currencies": [{
+      "code": "RON",
+      "name": "Romanian leu",
+      "symbol": "lei"
+    }],
+    "languages": [{
+      "iso639_1": "ro",
+      "iso639_2": "ron",
+      "name": "Romanian",
+      "native_name": "Română"
+    }],
     "flag": "https://restcountries.eu/data/rou.svg",
     "name": "Romania",
     "top_level_domains": [".ro"],
@@ -5369,15 +5708,17 @@
     "numeric_code": "642"
   },
   {
-    "currencies": [{ "code": "RUB", "name": "Russian ruble", "symbol": "₽" }],
-    "languages": [
-      {
-        "iso639_1": "ru",
-        "iso639_2": "rus",
-        "name": "Russian",
-        "native_name": "Русский"
-      }
-    ],
+    "currencies": [{
+      "code": "RUB",
+      "name": "Russian ruble",
+      "symbol": "₽"
+    }],
+    "languages": [{
+      "iso639_1": "ru",
+      "iso639_2": "rus",
+      "name": "Russian",
+      "native_name": "Русский"
+    }],
     "flag": "https://restcountries.eu/data/rus.svg",
     "name": "Russian Federation",
     "top_level_domains": [".ru"],
@@ -5404,9 +5745,12 @@
     "numeric_code": "643"
   },
   {
-    "currencies": [{ "code": "RWF", "name": "Rwandan franc", "symbol": "Fr" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "RWF",
+      "name": "Rwandan franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "rw",
         "iso639_2": "kin",
         "name": "Kinyarwanda",
@@ -5441,15 +5785,17 @@
     "numeric_code": "646"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/blm.svg",
     "name": "Saint Barthélemy",
     "top_level_domains": [".bl"],
@@ -5466,17 +5812,17 @@
     "numeric_code": "652"
   },
   {
-    "currencies": [
-      { "code": "SHP", "name": "Saint Helena pound", "symbol": "£" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "SHP",
+      "name": "Saint Helena pound",
+      "symbol": "£"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/shn.svg",
     "name": "Saint Helena, Ascension and Tristan da Cunha",
     "top_level_domains": [".sh"],
@@ -5492,17 +5838,17 @@
     "numeric_code": "654"
   },
   {
-    "currencies": [
-      { "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "XCD",
+      "name": "East Caribbean dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/kna.svg",
     "name": "Saint Kitts and Nevis",
     "top_level_domains": [".kn"],
@@ -5519,17 +5865,17 @@
     "numeric_code": "659"
   },
   {
-    "currencies": [
-      { "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "XCD",
+      "name": "East Caribbean dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/lca.svg",
     "name": "Saint Lucia",
     "top_level_domains": [".lc"],
@@ -5546,9 +5892,12 @@
     "numeric_code": "662"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -5583,15 +5932,17 @@
     "numeric_code": "663"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/spm.svg",
     "name": "Saint Pierre and Miquelon",
     "top_level_domains": [".pm"],
@@ -5608,17 +5959,17 @@
     "numeric_code": "666"
   },
   {
-    "currencies": [
-      { "code": "XCD", "name": "East Caribbean dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "XCD",
+      "name": "East Caribbean dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/vct.svg",
     "name": "Saint Vincent and the Grenadines",
     "top_level_domains": [".vc"],
@@ -5635,9 +5986,12 @@
     "numeric_code": "670"
   },
   {
-    "currencies": [{ "code": "WST", "name": "Samoan tālā", "symbol": "T" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "WST",
+      "name": "Samoan tālā",
+      "symbol": "T"
+    }],
+    "languages": [{
         "iso639_1": "sm",
         "iso639_2": "smo",
         "name": "Samoan",
@@ -5666,15 +6020,17 @@
     "numeric_code": "882"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "it",
-        "iso639_2": "ita",
-        "name": "Italian",
-        "native_name": "Italiano"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "it",
+      "iso639_2": "ita",
+      "name": "Italian",
+      "native_name": "Italiano"
+    }],
     "flag": "https://restcountries.eu/data/smr.svg",
     "name": "San Marino",
     "top_level_domains": [".sm"],
@@ -5691,17 +6047,17 @@
     "numeric_code": "674"
   },
   {
-    "currencies": [
-      { "code": "STD", "name": "São Tomé and Príncipe dobra", "symbol": "Db" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "pt",
-        "iso639_2": "por",
-        "name": "Portuguese",
-        "native_name": "Português"
-      }
-    ],
+    "currencies": [{
+      "code": "STD",
+      "name": "São Tomé and Príncipe dobra",
+      "symbol": "Db"
+    }],
+    "languages": [{
+      "iso639_1": "pt",
+      "iso639_2": "por",
+      "name": "Portuguese",
+      "native_name": "Português"
+    }],
     "flag": "https://restcountries.eu/data/stp.svg",
     "name": "Sao Tome and Principe",
     "top_level_domains": [".st"],
@@ -5718,15 +6074,17 @@
     "numeric_code": "678"
   },
   {
-    "currencies": [{ "code": "SAR", "name": "Saudi riyal", "symbol": "ر.س" }],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "SAR",
+      "name": "Saudi riyal",
+      "symbol": "ر.س"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/sau.svg",
     "name": "Saudi Arabia",
     "top_level_domains": [".sa"],
@@ -5743,17 +6101,17 @@
     "numeric_code": "682"
   },
   {
-    "currencies": [
-      { "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/sen.svg",
     "name": "Senegal",
     "top_level_domains": [".sn"],
@@ -5770,17 +6128,17 @@
     "numeric_code": "686"
   },
   {
-    "currencies": [
-      { "code": "RSD", "name": "Serbian dinar", "symbol": "дин." }
-    ],
-    "languages": [
-      {
-        "iso639_1": "sr",
-        "iso639_2": "srp",
-        "name": "Serbian",
-        "native_name": "српски језик"
-      }
-    ],
+    "currencies": [{
+      "code": "RSD",
+      "name": "Serbian dinar",
+      "symbol": "дин."
+    }],
+    "languages": [{
+      "iso639_1": "sr",
+      "iso639_2": "srp",
+      "name": "Serbian",
+      "native_name": "српски језик"
+    }],
     "flag": "https://restcountries.eu/data/srb.svg",
     "name": "Serbia",
     "top_level_domains": [".rs"],
@@ -5797,11 +6155,12 @@
     "numeric_code": "688"
   },
   {
-    "currencies": [
-      { "code": "SCR", "name": "Seychellois rupee", "symbol": "₨" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "SCR",
+      "name": "Seychellois rupee",
+      "symbol": "₨"
+    }],
+    "languages": [{
         "iso639_1": "fr",
         "iso639_2": "fra",
         "name": "French",
@@ -5830,17 +6189,17 @@
     "numeric_code": "690"
   },
   {
-    "currencies": [
-      { "code": "SLL", "name": "Sierra Leonean leone", "symbol": "Le" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "SLL",
+      "name": "Sierra Leonean leone",
+      "symbol": "Le"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/sle.svg",
     "name": "Sierra Leone",
     "top_level_domains": [".sl"],
@@ -5857,12 +6216,18 @@
     "numeric_code": "694"
   },
   {
-    "currencies": [
-      { "code": "BND", "name": "Brunei dollar", "symbol": "$" },
-      { "code": "SGD", "name": "Singapore dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "BND",
+        "name": "Brunei dollar",
+        "symbol": "$"
+      },
       {
+        "code": "SGD",
+        "name": "Singapore dollar",
+        "symbol": "$"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -5903,11 +6268,12 @@
     "numeric_code": "702"
   },
   {
-    "currencies": [
-      { "code": "ANG", "name": "Netherlands Antillean guilder", "symbol": "ƒ" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "ANG",
+      "name": "Netherlands Antillean guilder",
+      "symbol": "ƒ"
+    }],
+    "languages": [{
         "iso639_1": "nl",
         "iso639_2": "nld",
         "name": "Dutch",
@@ -5936,15 +6302,17 @@
     "numeric_code": "534"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "sk",
-        "iso639_2": "slk",
-        "name": "Slovak",
-        "native_name": "slovenčina"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "sk",
+      "iso639_2": "slk",
+      "name": "Slovak",
+      "native_name": "slovenčina"
+    }],
     "flag": "https://restcountries.eu/data/svk.svg",
     "name": "Slovakia",
     "top_level_domains": [".sk"],
@@ -5961,15 +6329,17 @@
     "numeric_code": "703"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "sl",
-        "iso639_2": "slv",
-        "name": "Slovene",
-        "native_name": "slovenski jezik"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "sl",
+      "iso639_2": "slv",
+      "name": "Slovene",
+      "native_name": "slovenski jezik"
+    }],
     "flag": "https://restcountries.eu/data/svn.svg",
     "name": "Slovenia",
     "top_level_domains": [".si"],
@@ -5986,17 +6356,17 @@
     "numeric_code": "705"
   },
   {
-    "currencies": [
-      { "code": "SBD", "name": "Solomon Islands dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "SBD",
+      "name": "Solomon Islands dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/slb.svg",
     "name": "Solomon Islands",
     "top_level_domains": [".sb"],
@@ -6013,11 +6383,12 @@
     "numeric_code": "090"
   },
   {
-    "currencies": [
-      { "code": "SOS", "name": "Somali shilling", "symbol": "Sh" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "SOS",
+      "name": "Somali shilling",
+      "symbol": "Sh"
+    }],
+    "languages": [{
         "iso639_1": "so",
         "iso639_2": "som",
         "name": "Somali",
@@ -6046,11 +6417,12 @@
     "numeric_code": "706"
   },
   {
-    "currencies": [
-      { "code": "ZAR", "name": "South African rand", "symbol": "R" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "ZAR",
+      "name": "South African rand",
+      "symbol": "R"
+    }],
+    "languages": [{
         "iso639_1": "af",
         "iso639_2": "afr",
         "name": "Afrikaans",
@@ -6127,18 +6499,22 @@
     "numeric_code": "710"
   },
   {
-    "currencies": [
-      { "code": "GBP", "name": "British pound", "symbol": "£" },
-      { "code": "(none)", "symbol": "£" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "GBP",
+        "name": "British pound",
+        "symbol": "£"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "code": "(none)",
+        "symbol": "£"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/sgs.svg",
     "name": "South Georgia and the South Sandwich Islands",
     "top_level_domains": [".gs"],
@@ -6154,17 +6530,17 @@
     "numeric_code": "239"
   },
   {
-    "currencies": [
-      { "code": "KRW", "name": "South Korean won", "symbol": "₩" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ko",
-        "iso639_2": "kor",
-        "name": "Korean",
-        "native_name": "한국어"
-      }
-    ],
+    "currencies": [{
+      "code": "KRW",
+      "name": "South Korean won",
+      "symbol": "₩"
+    }],
+    "languages": [{
+      "iso639_1": "ko",
+      "iso639_2": "kor",
+      "name": "Korean",
+      "native_name": "한국어"
+    }],
     "flag": "https://restcountries.eu/data/kor.svg",
     "name": "Korea (Republic of)",
     "top_level_domains": [".kr"],
@@ -6181,17 +6557,17 @@
     "numeric_code": "410"
   },
   {
-    "currencies": [
-      { "code": "SSP", "name": "South Sudanese pound", "symbol": "£" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "SSP",
+      "name": "South Sudanese pound",
+      "symbol": "£"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/ssd.svg",
     "name": "South Sudan",
     "top_level_domains": [".ss"],
@@ -6208,15 +6584,17 @@
     "numeric_code": "728"
   },
   {
-    "currencies": [{ "code": "EUR", "name": "Euro", "symbol": "€" }],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "EUR",
+      "name": "Euro",
+      "symbol": "€"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/esp.svg",
     "name": "Spain",
     "top_level_domains": [".es"],
@@ -6233,11 +6611,12 @@
     "numeric_code": "724"
   },
   {
-    "currencies": [
-      { "code": "LKR", "name": "Sri Lankan rupee", "symbol": "Rs" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "LKR",
+      "name": "Sri Lankan rupee",
+      "symbol": "Rs"
+    }],
+    "languages": [{
         "iso639_1": "si",
         "iso639_2": "sin",
         "name": "Sinhalese",
@@ -6266,11 +6645,12 @@
     "numeric_code": "144"
   },
   {
-    "currencies": [
-      { "code": "SDG", "name": "Sudanese pound", "symbol": "ج.س." }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "SDG",
+      "name": "Sudanese pound",
+      "symbol": "ج.س."
+    }],
+    "languages": [{
         "iso639_1": "ar",
         "iso639_2": "ara",
         "name": "Arabic",
@@ -6299,17 +6679,17 @@
     "numeric_code": "729"
   },
   {
-    "currencies": [
-      { "code": "SRD", "name": "Surinamese dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "nl",
-        "iso639_2": "nld",
-        "name": "Dutch",
-        "native_name": "Nederlands"
-      }
-    ],
+    "currencies": [{
+      "code": "SRD",
+      "name": "Surinamese dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "nl",
+      "iso639_2": "nld",
+      "name": "Dutch",
+      "native_name": "Nederlands"
+    }],
     "flag": "https://restcountries.eu/data/sur.svg",
     "name": "Suriname",
     "top_level_domains": [".sr"],
@@ -6326,17 +6706,17 @@
     "numeric_code": "740"
   },
   {
-    "currencies": [
-      { "code": "NOK", "name": "Norwegian krone", "symbol": "kr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "no",
-        "iso639_2": "nor",
-        "name": "Norwegian",
-        "native_name": "Norsk"
-      }
-    ],
+    "currencies": [{
+      "code": "NOK",
+      "name": "Norwegian krone",
+      "symbol": "kr"
+    }],
+    "languages": [{
+      "iso639_1": "no",
+      "iso639_2": "nor",
+      "name": "Norwegian",
+      "native_name": "Norsk"
+    }],
     "flag": "https://restcountries.eu/data/sjm.svg",
     "name": "Svalbard and Jan Mayen",
     "top_level_domains": [".sj"],
@@ -6352,9 +6732,12 @@
     "numeric_code": "744"
   },
   {
-    "currencies": [{ "code": "SZL", "name": "Swazi lilangeni", "symbol": "L" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "SZL",
+      "name": "Swazi lilangeni",
+      "symbol": "L"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -6383,15 +6766,17 @@
     "numeric_code": "748"
   },
   {
-    "currencies": [{ "code": "SEK", "name": "Swedish krona", "symbol": "kr" }],
-    "languages": [
-      {
-        "iso639_1": "sv",
-        "iso639_2": "swe",
-        "name": "Swedish",
-        "native_name": "svenska"
-      }
-    ],
+    "currencies": [{
+      "code": "SEK",
+      "name": "Swedish krona",
+      "symbol": "kr"
+    }],
+    "languages": [{
+      "iso639_1": "sv",
+      "iso639_2": "swe",
+      "name": "Swedish",
+      "native_name": "svenska"
+    }],
     "flag": "https://restcountries.eu/data/swe.svg",
     "name": "Sweden",
     "top_level_domains": [".se"],
@@ -6408,9 +6793,12 @@
     "numeric_code": "752"
   },
   {
-    "currencies": [{ "code": "CHF", "name": "Swiss franc", "symbol": "Fr" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "CHF",
+      "name": "Swiss franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
         "iso639_1": "de",
         "iso639_2": "deu",
         "name": "German",
@@ -6445,15 +6833,17 @@
     "numeric_code": "756"
   },
   {
-    "currencies": [{ "code": "SYP", "name": "Syrian pound", "symbol": "£" }],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "SYP",
+      "name": "Syrian pound",
+      "symbol": "£"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/syr.svg",
     "name": "Syrian Arab Republic",
     "top_level_domains": [".sy"],
@@ -6470,17 +6860,17 @@
     "numeric_code": "760"
   },
   {
-    "currencies": [
-      { "code": "TWD", "name": "New Taiwan dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "zh",
-        "iso639_2": "zho",
-        "name": "Chinese",
-        "native_name": "中文 (Zhōngwén)"
-      }
-    ],
+    "currencies": [{
+      "code": "TWD",
+      "name": "New Taiwan dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "zh",
+      "iso639_2": "zho",
+      "name": "Chinese",
+      "native_name": "中文 (Zhōngwén)"
+    }],
     "flag": "https://restcountries.eu/data/twn.svg",
     "name": "Taiwan",
     "top_level_domains": [".tw"],
@@ -6497,11 +6887,12 @@
     "numeric_code": "158"
   },
   {
-    "currencies": [
-      { "code": "TJS", "name": "Tajikistani somoni", "symbol": "ЅМ" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "TJS",
+      "name": "Tajikistani somoni",
+      "symbol": "ЅМ"
+    }],
+    "languages": [{
         "iso639_1": "tg",
         "iso639_2": "tgk",
         "name": "Tajik",
@@ -6530,11 +6921,12 @@
     "numeric_code": "762"
   },
   {
-    "currencies": [
-      { "code": "TZS", "name": "Tanzanian shilling", "symbol": "Sh" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "TZS",
+      "name": "Tanzanian shilling",
+      "symbol": "Sh"
+    }],
+    "languages": [{
         "iso639_1": "sw",
         "iso639_2": "swa",
         "name": "Swahili",
@@ -6563,15 +6955,17 @@
     "numeric_code": "834"
   },
   {
-    "currencies": [{ "code": "THB", "name": "Thai baht", "symbol": "฿" }],
-    "languages": [
-      {
-        "iso639_1": "th",
-        "iso639_2": "tha",
-        "name": "Thai",
-        "native_name": "ไทย"
-      }
-    ],
+    "currencies": [{
+      "code": "THB",
+      "name": "Thai baht",
+      "symbol": "฿"
+    }],
+    "languages": [{
+      "iso639_1": "th",
+      "iso639_2": "tha",
+      "name": "Thai",
+      "native_name": "ไทย"
+    }],
     "flag": "https://restcountries.eu/data/tha.svg",
     "name": "Thailand",
     "top_level_domains": [".th"],
@@ -6588,18 +6982,19 @@
     "numeric_code": "764"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" },
+    "currencies": [{
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$"
+      },
       {}
     ],
-    "languages": [
-      {
-        "iso639_1": "pt",
-        "iso639_2": "por",
-        "name": "Portuguese",
-        "native_name": "Português"
-      }
-    ],
+    "languages": [{
+      "iso639_1": "pt",
+      "iso639_2": "por",
+      "name": "Portuguese",
+      "native_name": "Português"
+    }],
     "flag": "https://restcountries.eu/data/tls.svg",
     "name": "Timor-Leste",
     "top_level_domains": [".tl"],
@@ -6616,17 +7011,17 @@
     "numeric_code": "626"
   },
   {
-    "currencies": [
-      { "code": "XOF", "name": "West African CFA franc", "symbol": "Fr" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XOF",
+      "name": "West African CFA franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/tgo.svg",
     "name": "Togo",
     "top_level_domains": [".tg"],
@@ -6643,17 +7038,17 @@
     "numeric_code": "768"
   },
   {
-    "currencies": [
-      { "code": "NZD", "name": "New Zealand dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "NZD",
+      "name": "New Zealand dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/tkl.svg",
     "name": "Tokelau",
     "top_level_domains": [".tk"],
@@ -6670,9 +7065,12 @@
     "numeric_code": "772"
   },
   {
-    "currencies": [{ "code": "TOP", "name": "Tongan paʻanga", "symbol": "T$" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "TOP",
+      "name": "Tongan paʻanga",
+      "symbol": "T$"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -6701,17 +7099,17 @@
     "numeric_code": "776"
   },
   {
-    "currencies": [
-      { "code": "TTD", "name": "Trinidad and Tobago dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "TTD",
+      "name": "Trinidad and Tobago dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/tto.svg",
     "name": "Trinidad and Tobago",
     "top_level_domains": [".tt"],
@@ -6728,17 +7126,17 @@
     "numeric_code": "780"
   },
   {
-    "currencies": [
-      { "code": "TND", "name": "Tunisian dinar", "symbol": "د.ت" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "TND",
+      "name": "Tunisian dinar",
+      "symbol": "د.ت"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/tun.svg",
     "name": "Tunisia",
     "top_level_domains": [".tn"],
@@ -6755,15 +7153,16 @@
     "numeric_code": "788"
   },
   {
-    "currencies": [{ "code": "TRY", "name": "Turkish lira" }],
-    "languages": [
-      {
-        "iso639_1": "tr",
-        "iso639_2": "tur",
-        "name": "Turkish",
-        "native_name": "Türkçe"
-      }
-    ],
+    "currencies": [{
+      "code": "TRY",
+      "name": "Turkish lira"
+    }],
+    "languages": [{
+      "iso639_1": "tr",
+      "iso639_2": "tur",
+      "name": "Turkish",
+      "native_name": "Türkçe"
+    }],
     "flag": "https://restcountries.eu/data/tur.svg",
     "name": "Turkey",
     "top_level_domains": [".tr"],
@@ -6780,11 +7179,12 @@
     "numeric_code": "792"
   },
   {
-    "currencies": [
-      { "code": "TMT", "name": "Turkmenistan manat", "symbol": "m" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "TMT",
+      "name": "Turkmenistan manat",
+      "symbol": "m"
+    }],
+    "languages": [{
         "iso639_1": "tk",
         "iso639_2": "tuk",
         "name": "Turkmen",
@@ -6813,17 +7213,17 @@
     "numeric_code": "795"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/tca.svg",
     "name": "Turks and Caicos Islands",
     "top_level_domains": [".tc"],
@@ -6840,18 +7240,23 @@
     "numeric_code": "796"
   },
   {
-    "currencies": [
-      { "code": "AUD", "name": "Australian dollar", "symbol": "$" },
-      { "code": "TVD[G]", "name": "Tuvaluan dollar", "symbol": "$" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "AUD",
+        "name": "Australian dollar",
+        "symbol": "$"
+      },
       {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
+        "code": "TVD[G]",
+        "name": "Tuvaluan dollar",
+        "symbol": "$"
       }
     ],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/tuv.svg",
     "name": "Tuvalu",
     "top_level_domains": [".tv"],
@@ -6868,11 +7273,12 @@
     "numeric_code": "798"
   },
   {
-    "currencies": [
-      { "code": "UGX", "name": "Ugandan shilling", "symbol": "Sh" }
-    ],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "UGX",
+      "name": "Ugandan shilling",
+      "symbol": "Sh"
+    }],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
@@ -6901,17 +7307,17 @@
     "numeric_code": "800"
   },
   {
-    "currencies": [
-      { "code": "UAH", "name": "Ukrainian hryvnia", "symbol": "₴" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "uk",
-        "iso639_2": "ukr",
-        "name": "Ukrainian",
-        "native_name": "Українська"
-      }
-    ],
+    "currencies": [{
+      "code": "UAH",
+      "name": "Ukrainian hryvnia",
+      "symbol": "₴"
+    }],
+    "languages": [{
+      "iso639_1": "uk",
+      "iso639_2": "ukr",
+      "name": "Ukrainian",
+      "native_name": "Українська"
+    }],
     "flag": "https://restcountries.eu/data/ukr.svg",
     "name": "Ukraine",
     "top_level_domains": [".ua"],
@@ -6928,17 +7334,17 @@
     "numeric_code": "804"
   },
   {
-    "currencies": [
-      { "code": "AED", "name": "United Arab Emirates dirham", "symbol": "د.إ" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "AED",
+      "name": "United Arab Emirates dirham",
+      "symbol": "د.إ"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/are.svg",
     "name": "United Arab Emirates",
     "top_level_domains": [".ae"],
@@ -6955,15 +7361,17 @@
     "numeric_code": "784"
   },
   {
-    "currencies": [{ "code": "GBP", "name": "British pound", "symbol": "£" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "GBP",
+      "name": "British pound",
+      "symbol": "£"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/gbr.svg",
     "name": "United Kingdom of Great Britain and Northern Ireland",
     "top_level_domains": [".uk"],
@@ -6990,17 +7398,17 @@
     "numeric_code": "826"
   },
   {
-    "currencies": [
-      { "code": "USD", "name": "United States dollar", "symbol": "$" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "USD",
+      "name": "United States dollar",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/usa.svg",
     "name": "United States of America",
     "top_level_domains": [".us"],
@@ -7029,15 +7437,17 @@
     "numeric_code": "840"
   },
   {
-    "currencies": [{ "code": "UYU", "name": "Uruguayan peso", "symbol": "$" }],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "UYU",
+      "name": "Uruguayan peso",
+      "symbol": "$"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/ury.svg",
     "name": "Uruguay",
     "top_level_domains": [".uy"],
@@ -7054,9 +7464,11 @@
     "numeric_code": "858"
   },
   {
-    "currencies": [{ "code": "UZS", "name": "Uzbekistani so'm" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "UZS",
+      "name": "Uzbekistani so'm"
+    }],
+    "languages": [{
         "iso639_1": "uz",
         "iso639_2": "uzb",
         "name": "Uzbek",
@@ -7085,9 +7497,12 @@
     "numeric_code": "860"
   },
   {
-    "currencies": [{ "code": "VUV", "name": "Vanuatu vatu", "symbol": "Vt" }],
-    "languages": [
-      {
+    "currencies": [{
+      "code": "VUV",
+      "name": "Vanuatu vatu",
+      "symbol": "Vt"
+    }],
+    "languages": [{
         "iso639_1": "bi",
         "iso639_2": "bis",
         "name": "Bislama",
@@ -7122,17 +7537,17 @@
     "numeric_code": "548"
   },
   {
-    "currencies": [
-      { "code": "VEF", "name": "Venezuelan bolívar", "symbol": "Bs F" }
-    ],
-    "languages": [
-      {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
-      }
-    ],
+    "currencies": [{
+      "code": "VEF",
+      "name": "Venezuelan bolívar",
+      "symbol": "Bs F"
+    }],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/ven.svg",
     "name": "Venezuela (Bolivarian Republic of)",
     "top_level_domains": [".ve"],
@@ -7149,15 +7564,17 @@
     "numeric_code": "862"
   },
   {
-    "currencies": [{ "code": "VND", "name": "Vietnamese đồng", "symbol": "₫" }],
-    "languages": [
-      {
-        "iso639_1": "vi",
-        "iso639_2": "vie",
-        "name": "Vietnamese",
-        "native_name": "Tiếng Việt"
-      }
-    ],
+    "currencies": [{
+      "code": "VND",
+      "name": "Vietnamese đồng",
+      "symbol": "₫"
+    }],
+    "languages": [{
+      "iso639_1": "vi",
+      "iso639_2": "vie",
+      "name": "Vietnamese",
+      "native_name": "Tiếng Việt"
+    }],
     "flag": "https://restcountries.eu/data/vnm.svg",
     "name": "Viet Nam",
     "top_level_domains": [".vn"],
@@ -7174,15 +7591,17 @@
     "numeric_code": "704"
   },
   {
-    "currencies": [{ "code": "XPF", "name": "CFP franc", "symbol": "Fr" }],
-    "languages": [
-      {
-        "iso639_1": "fr",
-        "iso639_2": "fra",
-        "name": "French",
-        "native_name": "français"
-      }
-    ],
+    "currencies": [{
+      "code": "XPF",
+      "name": "CFP franc",
+      "symbol": "Fr"
+    }],
+    "languages": [{
+      "iso639_1": "fr",
+      "iso639_2": "fra",
+      "name": "French",
+      "native_name": "français"
+    }],
     "flag": "https://restcountries.eu/data/wlf.svg",
     "name": "Wallis and Futuna",
     "top_level_domains": [".wf"],
@@ -7199,18 +7618,23 @@
     "numeric_code": "876"
   },
   {
-    "currencies": [
-      { "code": "MAD", "name": "Moroccan dirham", "symbol": "د.م." },
-      { "code": "DZD", "name": "Algerian dinar", "symbol": "د.ج" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "MAD",
+        "name": "Moroccan dirham",
+        "symbol": "د.م."
+      },
       {
-        "iso639_1": "es",
-        "iso639_2": "spa",
-        "name": "Spanish",
-        "native_name": "Español"
+        "code": "DZD",
+        "name": "Algerian dinar",
+        "symbol": "د.ج"
       }
     ],
+    "languages": [{
+      "iso639_1": "es",
+      "iso639_2": "spa",
+      "name": "Spanish",
+      "native_name": "Español"
+    }],
     "flag": "https://restcountries.eu/data/esh.svg",
     "name": "Western Sahara",
     "top_level_domains": [".eh"],
@@ -7227,15 +7651,17 @@
     "numeric_code": "732"
   },
   {
-    "currencies": [{ "code": "YER", "name": "Yemeni rial", "symbol": "﷼" }],
-    "languages": [
-      {
-        "iso639_1": "ar",
-        "iso639_2": "ara",
-        "name": "Arabic",
-        "native_name": "العربية"
-      }
-    ],
+    "currencies": [{
+      "code": "YER",
+      "name": "Yemeni rial",
+      "symbol": "﷼"
+    }],
+    "languages": [{
+      "iso639_1": "ar",
+      "iso639_2": "ara",
+      "name": "Arabic",
+      "native_name": "العربية"
+    }],
     "flag": "https://restcountries.eu/data/yem.svg",
     "name": "Yemen",
     "top_level_domains": [".ye"],
@@ -7252,15 +7678,17 @@
     "numeric_code": "887"
   },
   {
-    "currencies": [{ "code": "ZMW", "name": "Zambian kwacha", "symbol": "ZK" }],
-    "languages": [
-      {
-        "iso639_1": "en",
-        "iso639_2": "eng",
-        "name": "English",
-        "native_name": "English"
-      }
-    ],
+    "currencies": [{
+      "code": "ZMW",
+      "name": "Zambian kwacha",
+      "symbol": "ZK"
+    }],
+    "languages": [{
+      "iso639_1": "en",
+      "iso639_2": "eng",
+      "name": "English",
+      "native_name": "English"
+    }],
     "flag": "https://restcountries.eu/data/zmb.svg",
     "name": "Zambia",
     "top_level_domains": [".zm"],
@@ -7277,19 +7705,51 @@
     "numeric_code": "894"
   },
   {
-    "currencies": [
-      { "code": "BWP", "name": "Botswana pula", "symbol": "P" },
-      { "code": "GBP", "name": "British pound", "symbol": "£" },
-      { "code": "CNY", "name": "Chinese yuan", "symbol": "¥" },
-      { "code": "EUR", "name": "Euro", "symbol": "€" },
-      { "code": "INR", "name": "Indian rupee", "symbol": "₹" },
-      { "code": "JPY", "name": "Japanese yen", "symbol": "¥" },
-      { "code": "ZAR", "name": "South African rand", "symbol": "Rs" },
-      { "code": "USD", "name": "United States dollar", "symbol": "$" },
-      { "code": "(none)" }
-    ],
-    "languages": [
+    "currencies": [{
+        "code": "BWP",
+        "name": "Botswana pula",
+        "symbol": "P"
+      },
       {
+        "code": "GBP",
+        "name": "British pound",
+        "symbol": "£"
+      },
+      {
+        "code": "CNY",
+        "name": "Chinese yuan",
+        "symbol": "¥"
+      },
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€"
+      },
+      {
+        "code": "INR",
+        "name": "Indian rupee",
+        "symbol": "₹"
+      },
+      {
+        "code": "JPY",
+        "name": "Japanese yen",
+        "symbol": "¥"
+      },
+      {
+        "code": "ZAR",
+        "name": "South African rand",
+        "symbol": "Rs"
+      },
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$"
+      },
+      {
+        "code": "(none)"
+      }
+    ],
+    "languages": [{
         "iso639_1": "en",
         "iso639_2": "eng",
         "name": "English",
