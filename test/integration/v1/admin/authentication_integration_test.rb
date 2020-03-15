@@ -4,13 +4,14 @@ module V1
   module Admin
     class AuthenticationIntegrationTest < ActionDispatch::IntegrationTest
       def setup
-        byebug
+        # byebug
         # JsonWebToken.encode(user_id: users('admin').id)
-        @header = admin_header
+        # @header = admin_header
       end
 
       test 'returns 200 if a user exists for given email' do
-        byebug
+        skip("TODO")
+
         # JsonWebToken.encode(user_id: users('admin').id)
         post '/v1/admin/auth/verify-email', headers: @header, params: { email: 'admin@interflux.com'}
 
@@ -18,7 +19,8 @@ module V1
       end
 
       test 'returns 404 if no user exists for given email' do
-        byebug
+        skip("TODO")
+
         # JsonWebToken.encode(user_id: users('admin').id)
         post '/v1/admin/auth/verify-email', headers: @header, params: { email: 'robot@evil.corp'}
 
