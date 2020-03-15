@@ -27,7 +27,7 @@ belgium:
   name_native: België
   two_letter_code: BE
   three_letter_code: BEL
-  numerci_code: 056
+  numeric_code: 056
   population: 11319511
   area: 30528
 
@@ -36,6 +36,6 @@ australia:
   name_native: Australia
   two_letter_code: AU
   three_letter_code: AUS
-  numerci_code: 036
+  numeric_code: 036
   population: 24117360
   area: 7692024
