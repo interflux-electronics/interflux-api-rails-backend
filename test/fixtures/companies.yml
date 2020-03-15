@@ -2,18 +2,20 @@
 #
 # Table name: companies
 #
-#  id         :uuid             not null, primary key
-#  slug       :string
-#  name       :string
-#  address    :string
-#  email      :string
-#  phone      :string
-#  fax        :string
-#  latitude   :decimal(, )
-#  longitude  :decimal(, )
-#  country_id :uuid
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id            :uuid             not null, primary key
+#  slug          :string
+#  business_name :string
+#  address       :string
+#  emails        :string
+#  phone         :string
+#  fax           :string
+#  latitude      :decimal(, )
+#  longitude     :decimal(, )
+#  country_id    :uuid
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  legal_name    :string
+#  website       :string
 #
 
 # company_fixture_1:

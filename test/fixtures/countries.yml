@@ -2,40 +2,40 @@
 #
 # Table name: countries
 #
-#  id                      :uuid             not null, primary key
-#  name_english            :string
-#  name_native             :string
-#  iso_3161_1_alpha_2_code :string
-#  iso_3161_1_alpha_3_code :string
-#  iso_3161_1_numeric_code :string
-#  region                  :string
-#  subregion               :string
-#  latitude                :decimal(, )
-#  longitude               :decimal(, )
-#  area                    :integer
-#  population              :integer
-#  flag_url                :string
-#  timezones               :string
-#  top_level_domains       :string
-#  calling_codes           :string
-#  created_at              :datetime         not null
-#  updated_at              :datetime         not null
+#  id                :uuid             not null, primary key
+#  name_english      :string
+#  name_native       :string
+#  two_letter_code   :string
+#  three_letter_code :string
+#  numeric_code      :string
+#  region            :string
+#  subregion         :string
+#  latitude          :decimal(, )
+#  longitude         :decimal(, )
+#  area              :integer
+#  population        :integer
+#  flag_url          :string
+#  timezones         :string
+#  top_level_domains :string
+#  calling_codes     :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
 #
 
 belgium:
   name_english: Belgium
   name_native: België
-  iso_3161_1_alpha_2_code: BE
-  iso_3161_1_alpha_3_code: BEL
-  iso_3161_1_numeric_code: 056
+  two_letter_code: BE
+  three_letter_code: BEL
+  numerci_code: 056
   population: 11319511
   area: 30528
 
 australia:
   name_english: Australia
   name_native: Australia
-  iso_3161_1_alpha_2_code: AU
-  iso_3161_1_alpha_3_code: AUS
-  iso_3161_1_numeric_code: 036
+  two_letter_code: AU
+  three_letter_code: AUS
+  numerci_code: 036
   population: 24117360
   area: 7692024

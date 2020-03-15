@@ -2,7 +2,7 @@
 # 
 # module V1
 #   module Admin
-#     class DocumentCategoryIntegrationTest < ApplicationController
+#     class CompanyMemberIntegrationTest < ApplicationController
 # 
 #     end
 #   end

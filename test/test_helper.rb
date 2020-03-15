@@ -8,17 +8,17 @@ module ActiveSupport
     fixtures :all
 
     # Generate a valid JWT token for an admin user
-    # def admin_user_token
-    #   JsonWebToken.encode(user_id: users('admin_user').id)
-    # end
+    def admin_auth_token
+      JsonWebToken.encode(user_id: users('admin').id)
+    end
 
     # Return the HTTP headers a logged in admin would be sending
-    # def admin_header
-    #   {
-    #     'Authorization': admin_user_token,
-    #     'Content-Type': "application/vnd.api+json"
-    #   }
-    # end
+    def admin_header
+      {
+        'Authorization': admin_auth_token,
+        'Content-Type': "application/vnd.api+json"
+      }
+    end
 
     def public_header
       {

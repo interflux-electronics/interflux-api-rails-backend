@@ -6,8 +6,8 @@
 #  path       :string
 #  sizes      :string
 #  formats    :string
-#  tag_long   :string
-#  tag_short  :string
+#  caption    :string
+#  alt        :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -16,19 +16,19 @@ image_1:
   path: "/images/products/soldering-flux-IF-2005M-25L-drum-front-right-top"
   sizes: "2000x2000,1800x1800,1600x1600,1400x1400,1200x1200,1000x1000,800x800,600x600,500x500,400x400,300x300,200x200,100x100"
   formats: "webp,jpg"
-  tag_long: soldering flux IF 2005M 25L drum front right top
-  tag_short: 25L drum front right top
+  alt: soldering flux IF 2005M 25L drum front right top
+  caption: 25L drum front right top
 
 image_2:
   path: "/images/products/soldering-flux-IF-2005M-1L-bottle-front-top"
   sizes: "2000x2000,1800x1800,1600x1600,1400x1400,1200x1200,1000x1000,800x800,600x600,500x500,400x400,300x300,200x200,100x100"
   formats: "webp,jpg"
-  tag_long: soldering flux IF 2005M 1L bottle front top
-  tag_short: 1L bottle
+  alt: soldering flux IF 2005M 1L bottle front top
+  caption: 1L bottle
 
 image_3:
   path: "/images/products/solder-paste-LMPA-Q6-front-top"
   sizes: "2000x2000,1800x1800,1600x1600,1400x1400,1200x1200,1000x1000,800x800,600x600,500x500,400x400,300x300,200x200,100x100"
   formats: "webp,jpg"
-  tag_long: solder paste LMPA Q6 500gr jar front top
-  tag_short: 500gr jar
+  alt: solder paste LMPA Q6 500gr jar front top
+  caption: 500gr jar
