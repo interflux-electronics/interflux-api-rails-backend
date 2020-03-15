@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200227214203) do
+ActiveRecord::Schema.define(version: 20200315045952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20200227214203) do
 
   create_table "companies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "slug"
-    t.string "name"
+    t.string "business_name"
     t.string "address"
-    t.string "email"
+    t.string "emails"
     t.string "phone"
     t.string "fax"
     t.decimal "latitude"
@@ -49,9 +49,36 @@ ActiveRecord::Schema.define(version: 20200227214203) do
     t.uuid "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "legal_name"
+    t.string "website"
+    t.index ["business_name"], name: "index_companies_on_business_name", unique: true
     t.index ["country_id"], name: "index_companies_on_country_id"
-    t.index ["name"], name: "index_companies_on_name", unique: true
     t.index ["slug"], name: "index_companies_on_slug", unique: true
+  end
+
+  create_table "company_markets", force: :cascade do |t|
+    t.uuid "company_id"
+    t.uuid "country_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_markets_on_company_id"
+    t.index ["country_id"], name: "index_company_markets_on_country_id"
+  end
+
+  create_table "company_members", force: :cascade do |t|
+    t.uuid "company_id"
+    t.uuid "person_id"
+    t.string "title"
+    t.string "email"
+    t.string "phone"
+    t.boolean "public"
+    t.boolean "public_title"
+    t.boolean "public_email"
+    t.boolean "public_phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_company_members_on_company_id"
+    t.index ["person_id"], name: "index_company_members_on_person_id"
   end
 
   create_table "containers", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -64,9 +91,9 @@ ActiveRecord::Schema.define(version: 20200227214203) do
   create_table "countries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name_english"
     t.string "name_native"
-    t.string "iso_3161_1_alpha_2_code"
-    t.string "iso_3161_1_alpha_3_code"
-    t.string "iso_3161_1_numeric_code"
+    t.string "two_letter_code"
+    t.string "three_letter_code"
+    t.string "numeric_code"
     t.string "region"
     t.string "subregion"
     t.decimal "latitude"
@@ -79,11 +106,11 @@ ActiveRecord::Schema.define(version: 20200227214203) do
     t.string "calling_codes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["iso_3161_1_alpha_2_code"], name: "index_countries_on_iso_3161_1_alpha_2_code", unique: true
-    t.index ["iso_3161_1_alpha_3_code"], name: "index_countries_on_iso_3161_1_alpha_3_code", unique: true
-    t.index ["iso_3161_1_numeric_code"], name: "index_countries_on_iso_3161_1_numeric_code", unique: true
     t.index ["name_english"], name: "index_countries_on_name_english", unique: true
     t.index ["name_native"], name: "index_countries_on_name_native", unique: true
+    t.index ["numeric_code"], name: "index_countries_on_numeric_code", unique: true
+    t.index ["three_letter_code"], name: "index_countries_on_three_letter_code", unique: true
+    t.index ["two_letter_code"], name: "index_countries_on_two_letter_code", unique: true
   end
 
   create_table "country_currencies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -201,6 +228,10 @@ ActiveRecord::Schema.define(version: 20200227214203) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.string "chinese_name"
+    t.string "email"
+    t.string "phone"
+    t.boolean "male"
   end
 
   create_table "product_complementary_products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
