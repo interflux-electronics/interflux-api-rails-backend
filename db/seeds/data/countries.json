@@ -3346,7 +3346,8 @@
       "native_name": "فارسی"
     }],
     "flag": "https://restcountries.eu/data/irn.svg",
-    "name": "Iran (Islamic Republic of)",
+    "official_name": "Iran (Islamic Republic of)",
+    "name": "Iran",
     "top_level_domains": [".ir"],
     "alpha_2_code": "IR",
     "alpha_3_code": "IRN",
@@ -5118,7 +5119,8 @@
       "native_name": "한국어"
     }],
     "flag": "https://restcountries.eu/data/prk.svg",
-    "name": "Korea (Democratic People's Republic of)",
+    "official_name": "Korea (Democratic People's Republic of)",
+    "name": "North Korea",
     "top_level_domains": [".kp"],
     "alpha_2_code": "KP",
     "alpha_3_code": "PRK",
@@ -5720,7 +5722,8 @@
       "native_name": "Русский"
     }],
     "flag": "https://restcountries.eu/data/rus.svg",
-    "name": "Russian Federation",
+    "official_name": "Russian Federation",
+    "name": "Russia",
     "top_level_domains": [".ru"],
     "alpha_2_code": "RU",
     "alpha_3_code": "RUS",
@@ -6542,7 +6545,8 @@
       "native_name": "한국어"
     }],
     "flag": "https://restcountries.eu/data/kor.svg",
-    "name": "Korea (Republic of)",
+    "official_name": "Korea (Republic of)",
+    "name": "South Korea",
     "top_level_domains": [".kr"],
     "alpha_2_code": "KR",
     "alpha_3_code": "KOR",
@@ -7373,7 +7377,8 @@
       "native_name": "English"
     }],
     "flag": "https://restcountries.eu/data/gbr.svg",
-    "name": "United Kingdom of Great Britain and Northern Ireland",
+    "official_name": "United Kingdom of Great Britain and Northern Ireland",
+    "name": "United Kingdom",
     "top_level_domains": [".uk"],
     "alpha_2_code": "GB",
     "alpha_3_code": "GBR",
@@ -7576,7 +7581,8 @@
       "native_name": "Tiếng Việt"
     }],
     "flag": "https://restcountries.eu/data/vnm.svg",
-    "name": "Viet Nam",
+    "official_name": "Viet Nam",
+    "name": "Vietnam",
     "top_level_domains": [".vn"],
     "alpha_2_code": "VN",
     "alpha_3_code": "VNM",
