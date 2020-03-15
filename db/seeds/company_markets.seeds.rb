@@ -1,6 +1,6 @@
 after :countries, :companies do
   puts '---------'
-  puts 'Seeding companies'
+  puts 'Seeding company markets'
   puts '---------'
 
   count_before = CompanyMarket.count

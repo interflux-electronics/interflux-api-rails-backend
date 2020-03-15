@@ -167,7 +167,9 @@
   markets:
     - Poland
   members:
-    - name: Mr. Stéphane Ciechanowski
+    - first_name: Stéphane
+      last_name: Ciechanowski
+      male: true
 
 - business_name: INTERFLUX® Singapore
   legal_name: INTERFLUX® Singapore Pte Ltd
@@ -189,7 +191,9 @@
     - Cambodia
     - Vietnam
   members:
-    - name: Mr. Wim Van Riet
+    - first_name: Wim
+      last_name: Van Riet
+      male: true
 
 - business_name: INTERFLUX® Sweden
   legal_name: INTERFLUX® Skandinavia AB
@@ -207,7 +211,9 @@
     - Norway
     - Finland
   members:
-    - name: Mr. Anders Alkjaer
+    - first_name: Anders
+      last_name: Alkjaer
+      male: true
 
 - business_name: INTERFLUX® Norway
   legal_name: INTERFLUX® Skandinavia Norge AS
@@ -222,8 +228,10 @@
   markets:
     - France
   members:
-    - name: Mr. Tore Cato Paulsberg
+    - first_name: Tore
+      last_name: Cato Paulsberg
       email: tore@interflux.no
+      male: true
 
 - business_name: AAT Aston
   legal_name: AAT Aston GmbH
@@ -238,8 +246,10 @@
   markets:
     - Germany
   members:
-    - name: Ms. Dana Girstl
+    - first_name: Dana
+      last_name: Girstl
       email: dana.girstl@aston.de
+      male: false
 
 - business_name: AB Electronic Devices
   legal_name: AB Electronic Devices S.L.
@@ -255,8 +265,10 @@
     - Portugal
     - Spain
   members:
-    - name: Mr. Carlos Martínez
+    - first_name: Carlos
+      last_name: Martínez
       email: carlos@ab-electronic.com
+      male: true
 
 - business_name: Advance Tech Services
   legal_name:
@@ -270,8 +282,10 @@
   markets:
     - India
   members:
-    - name: Ajay Gupta
+    - first_name: Ajay
+      last_name: Gupta
       email: ajay@advancetech.co.in
+      male: true
 
 - business_name: Cast
   legal_name: Cast Co. d.o.o
@@ -287,8 +301,10 @@
     - Slovenia
     - Croatia
   members:
-    - name: Mr. Janez Dolenc
+    - first_name: Janez
+      last_name: Dolenc
       email: janez.dolenc-1@siol.net
+      male: true
 
 - business_name: Comet Electronics
   legal_name: Comet Electronics d.o.o.
@@ -304,7 +320,9 @@
   markets:
     - Bulgaria
   members:
-    - name: Mrs. Jana Alipieva
+    - first_name: Jana
+      last_name: Alipieva
+      male: false
 
 - business_name: Comet Electronics
   legal_name: Comet Electronics d.o.o.
@@ -319,8 +337,10 @@
   markets:
     - Serbia
   members:
-    - name: Mr. Igor Kruljevic
+    - first_name: Igor
+      last_name: Kruljevic
       email: igor.kruljevic@comet.rs
+      male: true
 
 - business_name: Comet Electronics
   legal_name: COMET Electronics SRL
@@ -336,7 +356,9 @@
   markets:
     - Romania
   members:
-    - name: Mr. Ciprian Varga
+    - first_name: Ciprian
+      last_name: Varga
+      male: true
 
 - business_name: Edstachem
   legal_name: Edstachem (M) SDN BHD
@@ -351,8 +373,10 @@
   markets:
     - Vietnam
   members:
-    - name: Edward Ng Keng Fei
+    - first_name: Edward
+      last_name: Ng Keng Fei
       email: edward_ng@edstachem.com
+      male: true
 
 - business_name: Eirotec Engineering
   legal_name: Eirotec Engineering Ltd.
@@ -367,8 +391,10 @@
   markets:
     - Ireland
   members:
-    - name: Mr Dermot Lynch
+    - first_name: Dermot
+      last_name: Lynch
       email: dermot@eirotec.ie
+      male: true
 
 - business_name: Ekval Oy
   legal_name:
@@ -383,8 +409,10 @@
   markets:
     - Finland
   members:
-    - name: Mr. Pekka Saastamoinen
+    - first_name: Pekka
+      last_name: Saastamoinen
       email: pekka.saastamoinen@ekval.fi
+      male: true
 
 - business_name: Elso Philips Service
   legal_name: Elso Philips Service, s.r.o.
@@ -401,7 +429,9 @@
     - Czech Republic
     - Slovakia
   members:
-    - name: Mr. Pavel Kureš
+    - first_name: Pavel
+      last_name: Kureš
+      male: true
 
 - business_name: EPM International
   legal_name:
@@ -417,12 +447,16 @@
     - Morocco
     - Tunisia
   members:
-    - name: Mrs. Sophie Morvant
+    - first_name: Sophie
+      last_name: Morvant
       phone: +212 537 666 432
       email: sophie.morvant@epminternational.com
-    - name: Mr. Ayoub Dalhoumi
+      male: false
+    - first_name: Ayoub
+      last_name: Dalhoumi
       phone: +212 666 945 068
       email: ayoub.dalhoumi@epminternational.com
+      male: true
 
 - business_name: Etama UAB
   legal_name:
@@ -438,7 +472,9 @@
   markets:
     - Lithuania
   members:
-    - name: Mr Mindaugas Palisaitis
+    - first_name: Mindaugas
+      last_name: Palisaitis
+      male: true
 
 - business_name: Industrial Technologies
   legal_name:
@@ -452,8 +488,11 @@
   markets:
     - New Zealand
   members:
-    - name: Mr Lewis Woodward, Managing Director
+    - title: Managing Director
+      first_name: Lewis
+      last_name: Woodward
       email: lewis@industrialtechnologies.co.nz
+      male: true
 
 - business_name: Hadi Nirou Gostar
   legal_name: Hadi Nirou Gostar Co.
@@ -466,8 +505,10 @@
   markets:
     - Iran
   members:
-    - name: Mr. SMJ Hadavi
+    - first_name: SMJ
+      last_name: Hadavi
       email: jhadavi@gmail.com
+      male: true
 
 - business_name: Industrievertretung Bräunlich
   legal_name: Industrievertretung Bräunlich GmbH
@@ -481,8 +522,10 @@
   markets:
     - Germany
   members:
-    - name: Stefan Sterner
+    - first_name: Stefan
+      last_name: Sterner
       email: sts@braeunlich-gmbh.com
+      male: true
 
 - business_name: Interscan
   legal_name:
@@ -498,7 +541,9 @@
   markets:
     - Pakistan
   members:
-    - name: Mr. Tauqeer Ahmed
+    - first_name: Tauqeer
+      last_name: Ahmed
+      male: true
 
 - business_name: JOIN Enterprise
   legal_name: JOIN Enterprise Co., Ltd
@@ -513,7 +558,9 @@
   markets:
     - South Korea
   members:
-    - name: Mr Tae Hyung Jung
+    - first_name: Tae
+      last_name: Hyung Jung
+      male: true
 
 - business_name: JRPV Semicon Supplies
   legal_name: JRPV Semicon Supplies, INC
@@ -526,8 +573,10 @@
   markets:
     - Philippines
   members:
-    - name: Ms. Julie Pios
+    - first_name: Julie
+      last_name: Pios
       email: julie@jrpvsemicon.com
+      male: false
 
 - business_name: Kurtz Ersa
   legal_name:
@@ -540,8 +589,10 @@
   markets:
     - Germany
   members:
-    - name: Mr. Meinrad Eckert
+    - first_name: Meinrad
+      last_name: Eckert
       email: meinrad.eckert@kurtzersa.de
+      male: true
 
 - business_name: Kurtz Ersa North America
   legal_name:
@@ -554,8 +605,10 @@
   markets:
     - United States of America
   members:
-    - name: Mrs. Pam Gnacinski
+    - first_name: Pam
+      last_name: Gnacinski
       email: pam.gnacinski@kurtzersa.com
+      male: false
 
 - business_name: MCS Technology
   legal_name: MCS Technology Ltd.
@@ -569,8 +622,11 @@
     - Taiwan
     - China
   members:
-    - name: Mr. Derrel Hsieh / 謝東菱
+    - first_name: Derrel
+      last_name: Hsieh
+      chinese_name: 謝東菱
       email: derrel.hsieh@sigmatekcorp.com
+      male: true
 
 - business_name: Mega Fong Taiwan Branch
   legal_name: Mega Fong Ltd. Taiwan Branch
@@ -592,8 +648,10 @@
     - Mexico
     - Costa Rica
   members:
-    - name: Erik Deschuyffeleer
+    - first_name: Erik
+      last_name: Deschuyffeleer
       email: ed@mteq.com.mx
+      male: true
 
 - business_name: Oritech
   legal_name: Oritech Pty Ltd
@@ -608,9 +666,11 @@
   markets:
     - Australia
   members:
-    - name: Mr Roy Kingon
+    - first_name: Roy
+      last_name: Kingon
       email: roy@oritech.com.au
       phone: +61 438 010 510
+      male: true
 
 - business_name: Packtronic
   legal_name: Packtronic Srl
@@ -626,7 +686,9 @@
   markets:
     - Italy
   members:
-    - name: Simone Fiorucci
+    - first_name: Simone
+      last_name: Fiorucci
+      male: false
 
 - business_name: Polyscience
   legal_name: Polyscience AG
@@ -642,7 +704,9 @@
   markets:
     - Switzerland
   members:
-    - name: Mr. Bruno Schnider
+    - first_name: Bruno
+      last_name: Schnider
+      male: true
 
 - business_name: PT. Citra Baru Perkasa
   legal_name:
@@ -658,7 +722,9 @@
   markets:
     - Indonesia
   members:
-    - name: Mr. Bambang H. Djayaputra
+    - first_name: Bambang
+      last_name: H. Djayaputra
+      male: true
 
 - business_name: SEA Company
   legal_name:
@@ -673,7 +739,9 @@
   markets:
     - Ukraine
   members:
-    - name: Mr. Andrey Deriugin
+    - first_name: Andrey
+      last_name: Deriugin
+      male: true
 
 - business_name: Smans
   legal_name:
@@ -703,8 +771,10 @@
   markets:
     - Austria
   members:
-    - name: Mr. Stefan Kessler
+    - first_name: Stefan
+      last_name: Kessler
       email: s.kessler@stepan.at
+      male: true
 
 - business_name: Techno
   legal_name:
@@ -719,8 +789,10 @@
   markets:
     - Russia
   members:
-    - name: Mr. Yurii Gerasimov
+    - first_name: Yurii
+      last_name: Gerasimov
       email: ywg@techno.ru
+      male: true
 
 - business_name: Temple4
   legal_name: Temple4 Ltd
@@ -736,8 +808,12 @@
   markets:
     - United Kingdom
   members:
-    - name: Nick Hirst
-    - name: Katy Green
+    - first_name: Nick
+      last_name: Hirst
+      male: true
+    - first_name: Katy
+      last_name: Green
+      male: false
 
 - business_name: Testerion
   legal_name: Testerion Pty. Ltd.
@@ -753,7 +829,9 @@
   markets:
     - South Africa
   members:
-    - name: Mr. Peter Vichos
+    - first_name: Peter
+      last_name: Vichos
+      male: true
 
 - business_name: V.L.K. Techno Trade
   legal_name: V.L.K. Techno Trade CO., LTD.
@@ -769,7 +847,9 @@
   markets:
     - Thailand
   members:
-    - name: Mr.Pattanapong O.
+    - first_name: Pattanapong
+      last_name: O.
+      male: true
 
 - business_name: Westek Systems
   legal_name: Westek Systems SDN BHD
@@ -785,7 +865,9 @@
   markets:
     - Malaysia
   members:
-    - name: Mr. Vincent Chen
+    - first_name: Vincent
+      last_name: Chen
+      male: true
 
 - business_name: YMH Teknoloji
   legal_name:
@@ -800,8 +882,10 @@
   markets:
     - Turkey
   members:
-    - name: Mr. Halil Erdoğan
+    - first_name: Halil
+      last_name: Erdoğan
       email: halil.erdogan@ymh-teknoloji.com
+      male: true
 
 - business_name: INTERFLUX® Electronics
   legal_name: INTERFLUX® Electronics NV
@@ -817,4 +901,6 @@
   markets:
     - World
   members:
-    - name: Mr. Daniel Werkhoven
+    - first_name: Daniel
+      last_name: Werkhoven
+      male: true

@@ -23,4 +23,9 @@ class Company < ApplicationRecord
 
   has_many :company_markets
   has_many :markets, through: :company_markets, source: :country
+
+  has_many :company_members
+  has_many :people, through: :company_members, source: :person
+
+  alias_attribute :members, :company_members
 end
