@@ -54,7 +54,7 @@ Rails.application.routes.draw do
       # resources :features
       resources :images
       resources :languages
-      # resources :leads
+      resources :leads
       resources :people
       # resources :product_complements, path: '/product-complements'
       resources :product_documents, path: '/product-documents'
