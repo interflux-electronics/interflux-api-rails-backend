@@ -16,12 +16,12 @@ data.each_with_index do |hash, i|
   country.languages.each do |lang|
     language = OpenStruct.new(lang)
     puts "#{i} - #{language.name} (#{country.name})"
-    record = Language.find_by(iso_639_1_code: language.iso639_1)
+    record = Language.find_by(two_letter_code: language.iso639_1)
     properties = OpenStruct.new(
       name_english: language.name,
       name_native: language.native_name,
-      iso_639_1_code: language.iso639_1,
-      iso_639_2_code: language.iso639_2
+      two_letter_code: language.iso639_1,
+      three_letter_code: language.iso639_2
     )
     if record.nil?
       Language.create!(properties.to_h)

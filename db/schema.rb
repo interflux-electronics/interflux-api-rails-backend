@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200315053430) do
+ActiveRecord::Schema.define(version: 20200316050404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -191,14 +191,14 @@ ActiveRecord::Schema.define(version: 20200315053430) do
   create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name_english"
     t.string "name_native"
-    t.string "iso_639_1_code"
-    t.string "iso_639_2_code"
+    t.string "two_letter_code"
+    t.string "three_letter_code"
     t.boolean "public", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["iso_639_1_code"], name: "index_languages_on_iso_639_1_code", unique: true
-    t.index ["iso_639_2_code"], name: "index_languages_on_iso_639_2_code", unique: true
     t.index ["public"], name: "index_languages_on_public"
+    t.index ["three_letter_code"], name: "index_languages_on_three_letter_code", unique: true
+    t.index ["two_letter_code"], name: "index_languages_on_two_letter_code", unique: true
   end
 
   create_table "leads", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

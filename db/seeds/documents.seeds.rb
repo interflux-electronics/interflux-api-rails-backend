@@ -15,7 +15,7 @@ after :document_categories, :languages do
     next unless path.start_with?('documents/')
 
     language = path.split('-').last.split('.').first.downcase
-    language = Language.find_by(iso_639_1_code: language)
+    language = Language.find_by(two_letter_code: language)
 
     category = path.split('/').second
     category = 'TD' if category == 'series'

@@ -5,8 +5,8 @@
 #  id             :uuid             not null, primary key
 #  name_english   :string
 #  name_native    :string
-#  iso_639_1_code :string
-#  iso_639_2_code :string
+#  two_letter_code :string
+#  three_letter_code :string
 #  public         :boolean          default(FALSE)
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
@@ -17,8 +17,8 @@ module V1
     class LanguageSerializer < ApplicationSerializer
       attributes :name_english,
                  :name_native,
-                 :iso_639_1_code,
-                 :iso_639_2_code,
+                 :two_letter_code,
+                 :three_letter_code,
                  :public
 
       # belongs_to :thing
