@@ -2,18 +2,20 @@ module V1
   module Admin
     class UsersController < V1::AdminController
       def index
-        return forbidden unless params[:token]
-
-        id = JsonWebToken.new(params[:token]).decode[:user_id]
-        user = User.find(id)
-        return forbidden if user.nil?
-
-        json = UserSerializer.new(user).serialized_json
-        render status: 200, json: json
+        forbidden
       end
 
       def show
-        forbidden
+        return forbidden unless params[:id] == 'auth-user'
+
+        token = JsonWebToken.new(auth_header).decode
+        user = User.find(token[:user_id])
+
+        return forbidden if user.nil?
+
+        json = V1::Admin::UserSerializer.new(user).serialized_json
+
+        render status: 200, json: json
       end
 
       def create

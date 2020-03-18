@@ -68,17 +68,8 @@ Rails.application.routes.draw do
       # resources :tags
       resources :users
 
-      # All none-CRUD request regarding authentication:
-      # POST /v1/admin/verify_email { email }
-      # POST /v1/admin/verify_password { email, password }
-      # POST /v1/admin/get_auth_user { token }
-      # POST /v1/admin/verify_extend_expiry { token }
-      # POST /v1/admin/verify_logout { token }
-      post '/auth/verify-email', to: 'authentication#verify_email'
-      post '/auth/verify-password', to: 'authentication#verify_password'
-      # get '/auth/user', to: 'authentication#get_auth_user'
-      # post '/extend_expiry', to: 'authentication#extend_expiry'
-      # post '/logout', to: 'authentication#logout'
+      # Non-CRUD requests
+      post '/auth-token', to: 'authentication#token'
     end
   end
 
