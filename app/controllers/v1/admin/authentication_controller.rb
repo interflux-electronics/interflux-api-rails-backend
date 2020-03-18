@@ -5,17 +5,18 @@ module V1
   module Admin
     class AuthenticationController < ApplicationController
       def token
-        return 401 unless email && password
+        return missing_email unless email
+        return missing_password unless password
 
         user = User.find_by(email: email)
 
-        return 401 if user.nil?
+        return wrong_email if user.nil?
 
-        user = user.authenticate(password)
+        auth_user = user.authenticate(password)
 
-        return 401 if user.nil?
+        return wrong_password unless auth_user
 
-        payload = { user_id: user.id }
+        payload = { user_id: auth_user.id }
         expiry = Time.now + 24.hours.to_i # TODO: test 24.hours.from_now
         token = JsonWebToken.new(payload, expiry).encode
         json = {
@@ -36,6 +37,38 @@ module V1
 
       def password
         params.permit(:password)[:password]
+      end
+
+      def missing_email
+        render_error(
+          401,
+          'missing-email',
+          'The request payload is missing the param "email".'
+        )
+      end
+
+      def missing_password
+        render_error(
+          401,
+          'missing-password',
+          'The request payload is missing the param "password".'
+        )
+      end
+
+      def wrong_email
+        render_error(
+          401,
+          'wrong-email',
+          'No user was exists for that email.'
+        )
+      end
+
+      def wrong_password
+        render_error(
+          401,
+          'wrong-password',
+          'Incorrect password.'
+        )
       end
     end
   end
