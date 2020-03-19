@@ -2,6 +2,7 @@ namespace :user do
   desc "Here we store common tasks for managing users so superadmin doesn't have to do them in console"
 
   # Usage:
+  # export RAILS_ENV=production
   # bin/rails user:create email=foo@bar password=1234 first_name=John last_name=Doe
   task :create => :environment do
     puts "Creating user"
@@ -49,6 +50,7 @@ namespace :user do
   end
 
   # Usage:
+  # export RAILS_ENV=production
   # bin/rails user:delete email=foo@bar
   task :delete => :environment do
     puts "Deleting user"
