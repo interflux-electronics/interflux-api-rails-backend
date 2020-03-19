@@ -13,9 +13,7 @@ module V1
 
         return forbidden if user.nil?
 
-        json = V1::Admin::UserSerializer.new(user).serialized_json
-
-        render status: 200, json: json
+        fetch_one(user)
       end
 
       def create
@@ -80,13 +78,9 @@ module V1
       end
 
       def permitted_includes
-        %[]
-        # %i[
-        #   related_articles
-        #   related_products
-        #   related_products.main_group
-        #   translations
-        # ]
+        %i[
+          person
+        ]
       end
 
       # def after_create(lead)
