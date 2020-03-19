@@ -17,12 +17,12 @@ module V1
         return wrong_password unless auth_user
 
         payload = { user_id: auth_user.id }
-        expiry = Time.now + 24.hours.to_i # TODO: test 24.hours.from_now
-        token = JsonWebToken.new(payload, expiry).encode
+        expiry = 24.hours.from_now.utc
+        token = JsonWebToken.new(payload, expiry.to_i).encode
         json = {
           auth: {
             token: token,
-            expiry: expiry.strftime('%m-%d-%Y %H:%M')
+            expiry: expiry.strftime('%Y-%m-%d %H:%M:%S %Z'),
           }
         }
 
