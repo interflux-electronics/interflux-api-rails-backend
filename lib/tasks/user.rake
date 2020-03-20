@@ -68,4 +68,29 @@ namespace :user do
       puts "User deleted"
     end
   end
+
+  # Usage:
+  # export RAILS_ENV=production
+  # bin/rails user:password email=foo@bar email=12345
+  task :password => :environment do
+    puts "Updating password"
+
+    abort "Abort, missing email" unless ENV['email']
+    abort "Abort, missing password" unless ENV['password']
+
+    user = User.find_by(
+      email: ENV['email']
+    )
+
+    props = OpenStruct.new(
+      password: ENV['password']
+    )
+
+    if user.nil?
+      puts "No user found"
+    else
+      user.update!(props.to_h)
+      puts "User password updated"
+    end
+  end
 end
