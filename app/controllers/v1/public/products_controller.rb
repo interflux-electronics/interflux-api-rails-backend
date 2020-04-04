@@ -75,11 +75,10 @@ module V1
 
       def permitted_includes
         %i[
+          images
+          documents
+          documents.language
           product_family
-          product_images
-          product_images.image
-          product_variants
-          product_variants.container
         ]
         # %i[
         #   related_articles

@@ -1,19 +1,12 @@
 module V1
-  module Admin
-    class UsersController < V1::AdminController
+  module Public
+    class LanguagesController < ApplicationController
       def index
-        forbidden
+        allow_index
       end
 
       def show
-        return forbidden unless params[:id] == 'auth-user'
-
-        token = JsonWebToken.new(auth_header).decode
-        user = User.find(token[:user_id])
-
-        return forbidden if user.nil?
-
-        serve_one(user)
+        allow_show
       end
 
       def create
@@ -31,11 +24,11 @@ module V1
       private
 
       def resource_klass
-        User
+        Language
       end
 
       def serializer_klass
-        V1::Admin::UserSerializer
+        V1::Admin::LanguageSerializer
       end
 
       def creatable_attributes
@@ -78,9 +71,13 @@ module V1
       end
 
       def permitted_includes
-        %i[
-          person
-        ]
+        %[]
+        # %i[
+        #   related_articles
+        #   related_products
+        #   related_products.main_group
+        #   translations
+        # ]
       end
 
       # def after_create(lead)

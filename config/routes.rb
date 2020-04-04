@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :countries
       resources :features
       resources :images
+      resources :languages
       resources :leads
       resources :product_families, path: '/product-families'
       resources :product_features, path: '/product-features'
