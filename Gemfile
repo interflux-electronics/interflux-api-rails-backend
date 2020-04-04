@@ -47,7 +47,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
 
   # For Ruby syntax formatting
-  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
 
   # For annotating models with schemas
   gem 'annotate', require: false

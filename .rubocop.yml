@@ -1,56 +1,69 @@
 # Ignore some folders completely
 AllCops:
   Exclude:
+    - .buildkite/**/*
     - bin/**/*
-    - legacy/**/*
     - shared/**/*
     - log/**/*
+    - public/**/*
+    - remote/**/*
     - tmp/**/*
     - db/schema.rb
 
-# Always attempt to keep all of the things as short as possible
-# However, to pedantically put a fixed number on what is acceptable is just not productive
-Metrics/LineLength:
+# Yes, keep lines shorter than 80 characters.
+# Yes, keep names short and succinct.
+# But, no need to zealous about it.
+Layout/LineLength:
   Enabled: false
-Metrics/MethodLength:
-  Enabled: false
-Metrics/ModuleLength:
-  Enabled: false
-Metrics/BlockLength:
-  Enabled: false
-Metrics/ClassLength:
-  Enabled: false
-Metrics/AbcSize:
+# Metrics/MethodLength:
+#   Enabled: false
+# Metrics/ModuleLength:
+#   Enabled: false
+# Metrics/BlockLength:
+#   Enabled: false
+# Metrics/ClassLength:
+#   Enabled: false
+# Metrics/AbcSize:
+#   Enabled: false
+
+# Personally, I'd rather read status: 200 than status: :ok ¯\_(ツ)_/¯
+Rails/HttpStatus:
   Enabled: false
 
-# Forcing ASCII is outdated and restricts comments to English only
-# Many international teams write comments in their native tongue and need non-English characters (e.g. Chinese)
-# Also UTF-8 is widely supported today, forget ASCII
-AsciiComments:
+# Forcing ASCII is restricts comments to English only. Many international teams
+# write comments in their native languages (e.g. Chinese, French, ...) and are
+# not helped by this rule. UTF-8 is widely supported today. Let's forget ASCII.
+Style/AsciiComments:
   Enabled: false
 
 # Forcing top-level class documentation comments seems like a good idea,
 # but it's tidious and against the idea of "convention over configuration".
-# When someone finds `class CreateProducts < ActiveRecord::Migration[5.1]` in
-# `db/migration` they well know it's a migration. No need to comment.
-# Same applies to models, controllers, resources and so on.
-Documentation:
+# For example when you read `class ProductsController` all Rails developers know
+# what that is and how it works. It's conventional and baked in, no need to
+# force comments on such a class.
+Style/Documentation:
   Enabled: false
 
-# This is default behaviour since Rails 3, rendering this cop way outdated.
+# Frozen string literals are default behaviour since Rails 3.
+# There is no use case for this outdated cop?
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-# Ignore just this files
-Naming/VariableName:
-  Exclude:
-    - test/integration/admin/products_test.rb
-
-# Ignore just this files
-Naming/VariableNumber:
-  Exclude:
-    - test/integration/admin/products_test.rb
-
+# Has been causing bugs, temporarily disabling.
 Style/PercentLiteralDelimiters:
-  PreferredDelimiters:
-    default: "[]"
+  Enabled: false
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
