@@ -9706,6 +9706,8 @@
 - images/containers/solder-wire-without-label-500g-green@600x600.webp
 - images/flags.png
 - images/bg.jpg
+- 500.html
+- 404.html
 - videos/LMPA-Q-30mms-poster.webp
 - videos/LMPA-Q-30mms-540p.mp4
 - videos/LMPA-Q-30mms-360p.mp4
@@ -9793,6 +9795,9 @@
 - documents/products/IF-14/TD-IF-14-06-09-14-FR.pdf
 - documents/products/IF-14/TD-IF-14-06-09-14-EN.pdf
 - documents/products/PacIFic-2009M/TD-PacIFic-2009M-DE.pdf
+- documents/products/PacIFic-2009M/TD-PacIFic-2009M-v2-EN.pdf
+- documents/products/PacIFic-2009M/TD-PacIFic-2009M-v2-FR.pdf
+- documents/products/PacIFic-2009M/TD-PacIFic-2009M-v2-DE.pdf
 - documents/products/PacIFic-2009M/TD-PacIFic-2009M-EN.pdf
 - documents/products/PacIFic-2009M/TD-PacIFic-2009M-FR.pdf
 - documents/products/i-Flex-400/TD-i-Flex-400-SnPb-DE.pdf
