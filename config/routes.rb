@@ -8,26 +8,29 @@ Rails.application.routes.draw do
     # such as scrapers and bots, to read from them.
     #
     # Used by:
+    # https://app.interflux.com
     # https://www.interflux.com
     # https://lmpa.interflux.com
     #
     namespace :public do
       resources :articles
-      resources :containers
-      resources :countries
-      resources :features
-      resources :images
+      # resources :containers
+      # resources :countries
+      resources :documents
+      resources :document_categories, path: '/document-categories'
+      # resources :features
+      # resources :images
       resources :languages
       resources :leads
       resources :product_families, path: '/product-families'
-      resources :product_features, path: '/product-features'
-      resources :product_images, path: '/product-images'
-      resources :product_uses, path: '/product-uses'
-      resources :product_variants, path: '/product-variants'
-      resources :product_videos, path: '/product-videos'
+      # resources :product_features, path: '/product-features'
+      # resources :product_images, path: '/product-images'
+      # resources :product_uses, path: '/product-uses'
+      # resources :product_variants, path: '/product-variants'
+      # resources :product_videos, path: '/product-videos'
       resources :products
-      resources :uses
-      resources :videos
+      # resources :uses
+      # resources :videos
     end
 
     # Admin endpoints

@@ -1,6 +1,6 @@
 module V1
   module Public
-    class LanguagesController < ApplicationController
+    class DocumentsController < ApplicationController
       def index
         allow_index
       end
@@ -24,11 +24,11 @@ module V1
       private
 
       def resource_klass
-        Language
+        Document
       end
 
       def serializer_klass
-        V1::Public::LanguageSerializer
+        V1::Public::DocumentSerializer
       end
 
       def creatable_attributes
