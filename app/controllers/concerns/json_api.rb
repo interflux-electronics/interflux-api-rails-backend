@@ -1,3 +1,5 @@
+# This module centralises all logic needed to adhere to the JSON API spec.
+# https://jsonapi.org/
 module JsonApi
   extend ActiveSupport::Concern
 
@@ -126,7 +128,7 @@ module JsonApi
   # end
   #
   # def show
-  #   user_can_fetch_one_by_id
+  #   user_can_serve_one_by_id
   # end
   #
   # What are slugs?
@@ -147,34 +149,38 @@ module JsonApi
   # GET api.foo.com/people/797e2b42-f8c8-5712-b6b0-486aeb1bcf94
   #
   def allow_show
-    return find_by_slug if params[:slug]
+    return find_by_id if uuid? params[:id]
 
-    find_by_id
-  end
-
-  def find_by_slug
-    resource = resource_klass.find_by slug: params[:slug]
-
-    fetch_one resource
+    find_by_slug
   end
 
   def find_by_id
-    resource = resource_klass.find_by id: params[:id]
+    record = resource_klass.find_by id: params[:id]
 
-    fetch_one resource
+    serve_one record
   end
 
-  def fetch_one(resource)
-    return resource_not_found if resource.nil?
+  def find_by_slug
+    record = resource_klass.find_by slug: params[:id]
+
+    serve_one record
+  end
+
+  def serve_one(record)
+    return resource_not_found if record.nil?
 
     options = {
       params: params.as_json
     }
 
     options[:include] = strong_includes if strong_includes
-    json = serializer_klass.new(resource, options).serialized_json
+    json = serializer_klass.new(record, options).serialized_json
 
     render status: 200, json: json
+  end
+
+  def uuid?(string)
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.match(string)
   end
 
   # INCLUDES
