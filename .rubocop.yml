@@ -53,17 +53,14 @@ Style/FrozenStringLiteralComment:
 Style/PercentLiteralDelimiters:
   Enabled: false
 
+# Because warning asked to add these...
 Lint/RaiseException:
   Enabled: true
-
 Lint/StructNewOverride:
   Enabled: true
-
 Style/HashEachMethods:
   Enabled: true
-
 Style/HashTransformKeys:
   Enabled: true
-
 Style/HashTransformValues:
   Enabled: true
