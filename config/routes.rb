@@ -14,8 +14,9 @@ Rails.application.routes.draw do
     #
     namespace :public do
       resources :articles
+      resources :companies
       # resources :containers
-      # resources :countries
+      resources :countries
       resources :documents
       resources :document_categories, path: '/document-categories'
       # resources :features
