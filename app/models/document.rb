@@ -13,5 +13,8 @@
 
 class Document < ApplicationRecord
   belongs_to :language
-  belongs_to :category, class_name: 'DocumentCategory', foreign_key: 'category_id'
+  # belongs_to :category, class_name: 'DocumentCategory', foreign_key: 'category_id'
+
+  belongs_to :document_category
+  alias_attribute :category, :document_category
 end

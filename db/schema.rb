@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200316050404) do
+ActiveRecord::Schema.define(version: 20200406040434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,7 +152,7 @@ ActiveRecord::Schema.define(version: 20200316050404) do
     t.uuid "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.uuid "category_id"
+    t.uuid "document_category_id"
     t.index ["language_id"], name: "index_documents_on_language_id"
     t.index ["path"], name: "index_documents_on_path", unique: true
   end
