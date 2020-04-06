@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200406040434) do
+ActiveRecord::Schema.define(version: 20200406123355) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "pgcrypto"
+
+  create_table "article_categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_article_categories_on_name", unique: true
+    t.index ["slug"], name: "index_article_categories_on_slug", unique: true
+  end
 
   create_table "article_tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "article_id"
@@ -33,6 +42,7 @@ ActiveRecord::Schema.define(version: 20200406040434) do
     t.datetime "updated_at", null: false
     t.text "body"
     t.date "date"
+    t.uuid "article_category_id"
     t.index ["slug"], name: "index_articles_on_slug", unique: true
     t.index ["title"], name: "index_articles_on_title", unique: true
   end

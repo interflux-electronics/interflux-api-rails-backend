@@ -1,11 +1,44 @@
-- slug: LMPA-startup-at-Flextronics
-  title: LMPA start-up at Flextronics
+- title: What is wave soldering?
+  slug: what-is-wave-soldering
   body: Cardigan microdosing quis yr man bun paleo. Fam pariatur affogato you probably haven't heard of them. Chia retro authentic twee jean shorts raclette brunch, meditation taiyaki keytar migas.
+  category: knowledge-base
 
-- slug: LMPA-start-up-at-Zentech
-  title: LMPA start-up at Zentech
+- title: 7 signs electronics are soldered too hot
+  slug: 7-signs-electronics are soldered too hot
   body: Elit air plant sartorial adipisicing shoreditch mlkshk street art consectetur letterpress raclette stumptown. Laborum everyday carry unicorn, affogato kinfolk microdosing cliche try-hard hella quis lorem flexitarian irure bitters.
+  category: knowledge-base
 
-- slug: LMPA-BGA-experiment
-  title: LMPA BGA experiment
+- title: Why it's important to switch to halide free soldering fluxes
+  slug: why-its-important-to-switch-to-halide-free-soldering-fluxes
   body: Drinking vinegar keytar lumbersexual, health goth tofu godard venmo four loko typewriter la croix street art bicycle rights squid. Tbh keffiyeh activated charcoal thundercats. Tumeric copper mug raclette scenester gastropub organic.
+  category: knowledge-base
+
+- title: Comparative analysis of soldering alloys (SnPb, SnArCu, SnBi, LMPA)
+  slug: Quantitive-comparison-of-soldering alloys
+  body: Cardigan microdosing quis yr man bun paleo. Fam pariatur affogato you probably haven't heard of them. Chia retro authentic twee jean shorts raclette brunch, meditation taiyaki keytar migas.
+  category: research
+
+- title: Quantitive comparison of defect rates in reflow processes
+  slug: quantitive-comparison-of-defect-rates-in-reflow-processes
+  body: Elit air plant sartorial adipisicing shoreditch mlkshk street art consectetur letterpress raclette stumptown. Laborum everyday carry unicorn, affogato kinfolk microdosing cliche try-hard hella quis lorem flexitarian irure bitters.
+  category: research
+
+- title: Study on how the wetting angle of electronics relates to shock resilience
+  slug: study-on-how-the-wetting-angle-of-electronics-relates-to-shock-resilience
+  body: Drinking vinegar keytar lumbersexual, health goth tofu godard venmo four loko typewriter la croix street art bicycle rights squid. Tbh keffiyeh activated charcoal thundercats. Tumeric copper mug raclette scenester gastropub organic.
+  category: research
+
+- title: LMPA start-up at Flextronics
+  slug: LMPA-startup-at-Flextronics
+  body: Cardigan microdosing quis yr man bun paleo. Fam pariatur affogato you probably haven't heard of them. Chia retro authentic twee jean shorts raclette brunch, meditation taiyaki keytar migas.
+  category: case-studies
+
+- title: LMPA start-up at Zentech
+  slug: LMPA-start-up-at-Zentech
+  body: Elit air plant sartorial adipisicing shoreditch mlkshk street art consectetur letterpress raclette stumptown. Laborum everyday carry unicorn, affogato kinfolk microdosing cliche try-hard hella quis lorem flexitarian irure bitters.
+  category: case-studies
+
+- title: Proof of concept that LMPA BGA micro balls are possible
+  slug: proof-of-concept-that-LMPA-BGA-micro-balls-are-possible
+  body: Drinking vinegar keytar lumbersexual, health goth tofu godard venmo four loko typewriter la croix street art bicycle rights squid. Tbh keffiyeh activated charcoal thundercats. Tumeric copper mug raclette scenester gastropub organic.
+  category: case-studies
