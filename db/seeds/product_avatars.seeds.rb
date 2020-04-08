@@ -1,4 +1,4 @@
-# after :product_images do
+after :product_images do
   puts '---------'
   puts 'Linking product avatars'
   puts '---------'
@@ -16,4 +16,4 @@
   puts 'Success!'
   puts '---------'
   puts ' '
-# end
+end
