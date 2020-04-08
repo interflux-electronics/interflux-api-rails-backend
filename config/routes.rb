@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       resources :countries
       resources :documents
       resources :document_categories, path: '/document-categories'
+      resources :images
       resources :languages
       resources :leads
       resources :product_families, path: '/product-families'

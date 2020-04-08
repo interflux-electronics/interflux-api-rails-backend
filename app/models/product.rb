@@ -14,11 +14,15 @@
 #  product_family_id :uuid
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  image_id          :uuid
 #
 
 class Product < ApplicationRecord
   belongs_to :product_family
   alias_attribute :family, :product_family
+
+  belongs_to :image
+  alias_attribute :avatar, :image
 
   has_many :product_features
   has_many :features, through: :product_features, source: :feature
