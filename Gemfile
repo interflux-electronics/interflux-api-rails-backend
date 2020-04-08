@@ -42,6 +42,9 @@ gem 'seedbank'
 # For dumping database data into a YAML file (great for maintenance backups)
 gem 'yaml_db'
 
+# For logging activity to skylight.io
+gem "skylight"
+
 group :development do
   # For listening to file changes
   gem 'listen', '>= 3.0.5', '< 3.2'
@@ -57,6 +60,3 @@ group :test do
   # For testing (out-of-the-box with Rails 5)
   gem 'minitest'
 end
-
-# https://www.skylight.io/
-# gem "skylight"
