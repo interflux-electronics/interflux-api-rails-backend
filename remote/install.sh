@@ -64,6 +64,9 @@ and bin/bundle install
 and echo ----------
 and echo bin/rails db:migrate
 and env RAILS_ENV=production bin/rails db:migrate
+and echo ----------
+and echo env RAILS_ENV=production bin/rails db:seed:truth
+and env RAILS_ENV=productionbin/rails db:seed:truth
 
 # If needed
 # and echo ----------
