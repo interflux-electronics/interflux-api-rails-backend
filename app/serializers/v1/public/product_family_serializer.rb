@@ -3,7 +3,8 @@ module V1
     class ProductFamilySerializer < ApplicationSerializer
       attributes :slug,
                  :name_single,
-                 :name_plural
+                 :name_plural,
+                 :order
     end
   end
 end

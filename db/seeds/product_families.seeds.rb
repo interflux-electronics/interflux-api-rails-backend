@@ -22,7 +22,9 @@ data.each_with_index do |_family, i|
     slug: family.slug,
     code: family.code,
     name_single: family.name_single,
-    name_plural: family.name_plural
+    name_plural: family.name_plural,
+    public: family.public.nil? ? true : family.public,
+    order: family.order
   )
 
   if record.nil?

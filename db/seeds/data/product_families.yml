@@ -2,21 +2,31 @@
   name_plural: soldering fluxes
   name_single: soldering flux
   code: FL
+  order: 1
 
 - slug: solder-pastes
   code: SP
   name_plural: solder pastes
   name_single: solder paste
+  order: 2
 
 - slug: solder-wires
   code: SW
   name_plural: solder wires
   name_single: solder wire
+  order: 3
 
-- slug: spray-fluxers
-  code: SF
-  name_plural: spray fluxers
-  name_single: spray fluxer
+- slug: solder-alloys
+  name_plural: solder alloys
+  name_single: solder alloy
+  code: SB
+  order: 4
+
+- slug: fluxing-systems
+  code: _
+  name_plural: fluxing systems
+  name_single: fluxing system
+  order: 5
 
 - slug: peelable-solder-masks
   name_plural: peelable solder masks
@@ -26,12 +36,13 @@
 - slug: nozzle-cleaners
   name_plural: nozzle cleaners
   name_single: nozzle cleaner
-  code: _
+  code: RP
 
 - slug: deoxidation-gels
   name_plural: deoxidation gels
   name_single: deoxidation gel
   code: RP
+  public: false
 
 - slug: deoxidation-oils
   name_plural: deoxidation oils
@@ -48,30 +59,20 @@
   name_single: anti-oxidant pellets
   code: AOPELLET
 
-- slug: solder-alloys
-  name_plural: solder alloys
-  name_single: solder alloy
-  code: SB
-
 - slug: conditioning-gels-for-dispensers
-  name_plural: conditioning gel for dispensers
-  name_single: conditioning gels for dispensers
+  name_plural: conditioning gels
+  name_single: conditioning gel
   code: CL
 
 - slug: cleaning-fluids
-  name_plural: cleaning fluids
-  name_single: cleaning fluid
+  name_plural: cleaning liquids
+  name_single: cleaning liquid
   code: CL
 
 - slug: cleaning-wipes
   name_plural: cleaning wipes
   name_single: cleaning wipes
   code: CL
-
-- slug: solder-stones
-  name_plural: solder stones
-  name_single: solder stones
-  code: _
 
 - slug: flux-stones
   name_plural: flux stones
@@ -81,11 +82,6 @@
 - slug: reagent
   name_plural: reagents
   name_single: reagent
-  code: _
-
-- slug: peelable-soldermasks
-  name_plural: peelable soldermasks
-  name_single: peelable soldermask
   code: _
 
 - slug: fluxpens
@@ -102,8 +98,10 @@
   name_plural: air knives
   name_single: air knive
   code: _
+  public: false
 
 - slug: tools
   name_plural: tools
   name_single: tool
   code: _
+  public: false

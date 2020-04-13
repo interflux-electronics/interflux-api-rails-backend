@@ -56,7 +56,6 @@ module V1
       end
 
       def permitted_filters
-        %[]
         # %i[
         #  main_group_id
         #  sub_group_id
@@ -64,10 +63,9 @@ module V1
       end
 
       def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
+        {
+          public: true
+        }
       end
 
       def permitted_includes

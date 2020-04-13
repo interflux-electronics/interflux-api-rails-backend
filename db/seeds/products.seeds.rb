@@ -3,6 +3,8 @@ require 'byebug'
 require 'ap'
 
 after :product_families do
+  Product.delete_all
+
   before = Product.count
 
   puts '---------'

@@ -379,27 +379,27 @@
 - slug: ICSF-Select
   name: ICSF Select
   public: true
-  family: spray fluxers
+  family: fluxing systems
 
 - slug: ICSF-Curve
   name: ICSF Curve
   public: true
-  family: spray fluxers
+  family: fluxing systems
 
 - slug: ICSF-Curve-2
   name: ICSF Curve 2
   public: true
-  family: spray fluxers
+  family: fluxing systems
 
 - slug: ICSF-Curve-2
   name: ICSF Curve 2
   public: true
-  family: spray fluxers
+  family: fluxing systems
 
 - slug: IF-710
   name: IF 710
   public: true
-  family: peelable soldermasks
+  family: peelable solder masks
 
 - slug: IF-930
   name: IF 930
@@ -414,7 +414,7 @@
 - slug: Purgel
   name: Purgel
   public: true
-  family: conditioning gel for dispensers
+  family: conditioning gels
 
 - slug: IPA-DI-Wipes
   name: IPA/DI Wipes
@@ -424,7 +424,7 @@
 - slug: IPA-DI-Cleaner
   name: IPA/DI Cleaner
   public: true
-  family: cleaning fluids
+  family: cleaning liquids
 
 - slug: Stencil-Clean-Wipes
   name: Stencil Clean Wipes
@@ -434,7 +434,7 @@
 - slug: ISC-8020
   name: ISC 8020
   public: true
-  family: cleaning fluids
+  family: cleaning liquids
 
 - slug: IF-910
   name: IF 910
@@ -451,11 +451,6 @@
   public: true
   family: solder alloys
   regex1: "^Solder bar"
-
-- slug: Solder-Sticks
-  name: Solder Sticks
-  public: true
-  family: solder alloys
 
 - slug: Plain-Solder-Wires
   name: Plain Solder Wires
@@ -485,7 +480,7 @@
 - slug: Solder-Stones
   name: Solder Stones
   public: true
-  family: solder stones
+  family: solder alloys
 
 - slug: Adhesive-Remover-Wipes
   name: Adhesive Remover Wipes
@@ -495,7 +490,7 @@
 - slug: ISC-300
   name: ISC 300
   public: true
-  family: cleaning fluids
+  family: cleaning liquids
 
 - slug: Neutral-Solution
   name: Neutral Solution
@@ -505,7 +500,7 @@
 - slug: SC-01
   name: SC 01
   public: true
-  family: cleaning fluids
+  family: cleaning liquids
   regex1: SC01
 
 - slug: T-1000
