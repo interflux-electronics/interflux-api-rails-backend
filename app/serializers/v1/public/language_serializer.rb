@@ -17,17 +17,7 @@ module V1
     class LanguageSerializer < ApplicationSerializer
       attributes :name_english,
                  :name_native,
-                 :two_letter_code,
-                 :three_letter_code,
-                 :public
-
-      # belongs_to :thing
-      # belongs_to :main_group, record_type: :product_group, serializer: :product_group
-      # belongs_to :sub_group, record_type: :product_group, serializer: :product_group
-
-      # has_many :things
-      # has_many :related_products, record_type: :product, serializer: :related_products
-      # has_many :related_articles, record_type: :article, serializer: :related_articles
+                 :two_letter_code
     end
   end
 end

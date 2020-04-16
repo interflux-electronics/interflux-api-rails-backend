@@ -64,10 +64,9 @@ module V1
       end
 
       def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
+        {
+          public: true
+        }
       end
 
       def permitted_includes

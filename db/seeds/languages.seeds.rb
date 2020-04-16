@@ -17,11 +17,15 @@ data.each_with_index do |hash, i|
     language = OpenStruct.new(lang)
     puts "#{i} - #{language.name} (#{country.name})"
     record = Language.find_by(two_letter_code: language.iso639_1)
+
+    public = ['en', 'fr', 'de', 'ja', 'es'].include?(language.iso639_1)
+
     properties = OpenStruct.new(
       name_english: language.name,
       name_native: language.native_name,
       two_letter_code: language.iso639_1,
-      three_letter_code: language.iso639_2
+      three_letter_code: language.iso639_2,
+      public: public
     )
     if record.nil?
       Language.create!(properties.to_h)
