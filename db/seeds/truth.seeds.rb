@@ -9,12 +9,20 @@ Product.delete_all
 ProductFamily.delete_all
 ProductImage.delete_all
 Image.delete_all
+ProductDocument.delete_all
+Document.delete_all
 
-# product avatars triggers:
-# products
-# product families
-# product images
-after :product_avatars do
+# product avatars
+# triggers product images
+# triggers products and images
+# triggers product families
+#
+# product_documents
+# triggers documents and products
+# triggers document_categories, languages, products
+# triggers products families
+#
+after :product_avatars, :product_documents do
   puts '---------'
   puts 'Done seeding local sources of truth'
   puts '---------'
