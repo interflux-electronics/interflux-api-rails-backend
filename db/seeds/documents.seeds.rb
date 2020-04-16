@@ -31,7 +31,7 @@ after :document_categories, :languages do
       path: path,
       name: name,
       language_id: language.id,
-      category_id: category.id,
+      document_category_id: category.id,
     )
 
     document = Document.find_by(path: path)
