@@ -20,7 +20,7 @@ end
 path_bases = arr.uniq
 
 path_bases.each do |path_base|
-  paths_with_same_base = paths.select { |p| p.start_with?(path_base) }
+  paths_with_same_base = paths.select { |p| p.start_with? "#{path_base}@" }
 
   sizes = []
   formats = []
