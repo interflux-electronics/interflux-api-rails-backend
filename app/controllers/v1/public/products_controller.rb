@@ -80,6 +80,7 @@ module V1
           documents
           documents.language
           product_family
+          features
         ]
         # %i[
         #   related_articles
