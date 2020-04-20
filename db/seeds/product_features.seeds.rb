@@ -21,7 +21,11 @@ after :products, :features do
         puts "#{i + 1}.#{ii + 1} - #{product_name}"
 
         feature_record = Feature.find_by(slug: feature.slug)
+        byebug if feature_record.nil?
+
         product_record = Product.find_by(name: product_name)
+        byebug if product_record.nil?
+
         relation_record = ProductFeature.where(product_id: product_record.id).where(feature_id: feature_record.id).first
 
         properties = OpenStruct.new(
