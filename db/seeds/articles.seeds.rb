@@ -1,6 +1,4 @@
 after :article_categories do
-  Article.delete_all
-
   count_before = Article.count
 
   puts '---------'

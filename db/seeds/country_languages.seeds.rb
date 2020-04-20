@@ -9,7 +9,6 @@ after :countries, :languages do
   puts 'Seeding country languages'
   puts '---------'
   puts 'Deleting all existing relationships'
-  CountryLanguage.delete_all
   puts '---------'
 
   file = File.read 'db/seeds/data/countries.json'

@@ -9,7 +9,6 @@ after :countries, :currencies do
   puts 'Seeding country currencies'
   puts '---------'
   puts 'Deleting all existing relationships'
-  CountryCurrency.delete_all
   puts '---------'
 
   file = File.read 'db/seeds/data/countries.json'
