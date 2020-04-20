@@ -1,50 +1,192 @@
-- slug: for-wave-soldering
-  text: For wave soldering
-  icon: for-wave
+# PROCESSES
 
-- slug: for-selective-soldering
-  text: For selective soldering
-  icon: for-selective
+- slug: wave-soldering
+  icon: wave-soldering
+  text: wave soldering
+  category: "process"
+  products:
+    - OSPI 3311M
+    - IF 2005M
+    - IF 2005K
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - PacIFic 2009MLF-E
+    - PacIFic 2010F
+    - IF 3006
+    - AF 4818-PbF
+    - T 2005M
+    - IF 710
+    - IF 910
+    - Anti-Oxidant Pellets
+    - Solder Bars
+    - Solder Pellets
+    - IPA/DI Wipes
+    - ICSF Curve
+    - ICSF Curve 2
+    - ICSF Select
 
-- slug: for-reflow-soldering
-  text: For reflow soldering
-  icon: for-reflow
+- slug: selective-soldering
+  text: selective soldering
+  icon: selective-soldering
+  category: "process"
+  products:
+    - SelectIF 2040
+    - IF 2005C
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - IF 3006
+    - ICSF Select
+    - IF 930
+    - Anti-Oxidant Pellets
+    - Solder Bars
+    - Solder Pellets
+    - Plain Solder Wires
 
-- slug: for-pre-tinning
-  text: For pre-tinning
-  icon: for-pre-tinning
+- slug: rework-and-repair
+  text: reflow soldering
+  icon: rework-and-repair
+  category: "process"
+  products:
+    - LMPA™-Q6
+    - DP 5600
+    - LP 5720
+    - DP 5505
+    - µ-dIFe 7
+    - IF 9009LT
+    - Purgel
+    - IPA/DI Wipes
+    - Stencil Clean Wipes
+    - ISC 8020
 
-- slug: for-spray-fluxing
-  text: For spray fluxing
-  icon: for-spray
+- slug: rework-and-repair
+  text: rework & repair
+  icon: rework-and-repair
+  category: "process"
+  products:
+    - IF 8300
+    - IF 7500 HAB
+    - IF 8001
+    - IF 6000
+    - TerrIFic RP65
+    - µ-dIFe 7
+    - QF 70
+    - NH 1
+    - RosIX 705
+    - Aquasol 4018
+    - IF 14
+    - Flexsol 903
+    - Tip Tinner
+    - Purgel
+    - Solder Pellets
+    - IPA/DI Wipes
+    - QF 70
 
-- slug: for-foam-fluxing
-  text: For foam fluxing
-  icon: for-foam
+- slug: spray-fluxing
+  text: spray fluxing
+  icon: spray-fluxing
+  category: "process"
+  products:
+    - ICSF Curve
+    - ICSF Curve 2
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - PacIFic 2009MLF-E
+    - PacIFic 2010F
 
-- slug: for-rework-and-repair
-  text: For rework & repair
-  icon: for-rework
+- slug: foam-fluxing
+  text: foam fluxing
+  icon: foam-fluxing
+  category: "process"
+  products:
+    - PacIFic 2010F
 
-- slug: for-stencil-printing
-  text: For stencil printing
-  icon: for-stencil
+- slug: jet-fluxing
+  text: jet fluxing
+  icon: jet-fluxing
+  category: "process"
+  products:
+    - ICSF Select
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - PacIFic 2009MLF-E
+    - PacIFic 2010F
 
-- slug: for-dipping
-  text: For dipping
-  icon: for-dipping
+- slug: solder-paste-jetting
+  text: solder paste jetting
+  icon: solder-paste-jetting
+  category: "process"
+  products:
+    - ICSF Select
+    - LMPA™-Q6
 
-- slug: for-cleaning
-  text: For cleaning
+- slug: pre-tinning
+  text: pre-tinning
+  category: "process"
+  products:
+    - IF 2005C
+    - PacIFic 2009M
+    - IF 3006
+    - IF 910
+    - Anti-Oxidant Pellets
+    - Solder Bars
+    - Solder Pellets
+    - Plain Solder Wires
+    - PacIFic 2009M
+
+- slug: dipping
+  text: dipping
+  icon: dipping
+  category: "process"
+  products:
+    - Solder Pellets
+    - Plain Solder Wires
+    - Solder Bars
+    - IF 910
+    - µ-dIFe 7
+
+- slug: dispensing
+  text: dispensing
+  icon: dispensing
+  category: "process"
+  products:
+    - Purgel
+    - IF 9009LT
+    - DP 5505
+    - DP 5600
+
+- slug: stencil-printing
+  text: stencil printing
+  icon: stencil-printing
+  category: "process"
+  products:
+    - ISC 8020
+    - Stencil Clean Wipes
+    - IF 9009LT
+    - DP 5505
+    - LP 5720
+    - DP 5600
+    - LMPA™-Q6
+
+- slug: cleaning
+  text: cleaning
   icon: cleaning
+  category: "process"
+  products:
+    - IPA/DI Wipes
 
-# Why halides are bad
-# https://research.cbc.osu.edu/reel/research-modules/environmental-chemistry/chemistry-221-h221/significance-of-analytes-water/halides/
-# https://link.springer.com/article/10.1007/BF01758592
-# https://en.wikipedia.org/wiki/Halide
+- slug: vapor-phase-soldering
+  text: vapor phase soldering
+  icon: vapor-phase-soldering
+  category: "process"
+  products:
+    - NH 1
+
+# QUALITIES
+
 - slug: halide-free
   text: Halide free
-  icon: halide-free
+  icon: leaves
+  category: "quality"
   gist: Halides are harmful to our environmental and can pose health risks. All Interflux products are completely halide-free (0,00%).
   products:
     - OSPI 3311M
@@ -79,6 +221,7 @@
 - slug: alcohol-based
   text: Alcohol based (VOC)
   icon: alcohol
+  category: "quality"
   products:
     - OSPI 3311M
     - IF 2005M
@@ -89,6 +232,7 @@
 - slug: water-based
   text: Water based
   icon: water
+  category: "quality"
   gist: The two reasons why you will want to use water-based soldering fluxes is because they are 1) not flamable and 2) completely halide-free. None-flamable soldering fluxes are easier to transport, require less paperwork, are safer to store and use. Halide-free fluxes are popular because they do not harm the ozon layer.
   products:
     - PacIFic 2009M
@@ -99,16 +243,19 @@
 - slug: low-voc
   text: Low VOC content
   icon: low-voc
+  category: "quality"
   products:
     - IF 3006
 
 - slug: long-preheat-resistant
   text: Long preheat resistant
   icon: temperature-plus
+  category: "quality"
 
 - slug: rosin-based
   text: Rosin based (colophony)
   icon: rosin-based
+  category: "quality"
   products:
     - AF 4818-PbF
     - Flexsol 903
@@ -116,6 +263,7 @@
 - slug: rosin-free
   text: Rosin-free (colophony)
   icon: rosin-free
+  category: "quality"
   products:
     - NH 1
     - Aquasol 4018
@@ -124,6 +272,7 @@
 - slug: lead-based
   text: Lead-based
   icon: lead-based
+  category: "quality"
   products:
     - RosIX 705
     - IF 14
@@ -131,6 +280,7 @@
 - slug: lead-free
   text: Lead-free
   icon: lead-free
+  category: "quality"
   products:
     - ResIF 435L1
     - QF 70

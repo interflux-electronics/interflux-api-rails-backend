@@ -4,7 +4,8 @@ module V1
       attributes :slug,
                  :text,
                  :icon,
-                 :gist
+                 :gist,
+                 :category
     end
   end
 end

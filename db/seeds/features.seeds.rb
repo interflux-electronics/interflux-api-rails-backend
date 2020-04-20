@@ -21,8 +21,9 @@ data.each_with_index do |_feature, i|
   properties = OpenStruct.new(
     slug: feature.slug,
     text: feature.text,
-    icon: feature.water,
-    gist: feature.gist
+    icon: feature.icon,
+    gist: feature.gist,
+    category: feature.category
   )
 
   if record.nil?
