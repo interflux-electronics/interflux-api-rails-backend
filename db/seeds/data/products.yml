@@ -537,54 +537,55 @@
 - slug: IF-8300
   name: IF 8300
   family: soldering fluxes
+  label: tacky gel flux
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® IF 8300 is a no-clean, halide-free tacky gel flux suitable for reballing and BGA rework.
   processes:
+    - rework
+    - reflow
+    - dispensing
+    - stencil
+    - dipping
   qualities:
+    - Suitable for reballing and BGA rework
+    - halide-free
+    - low residue
+    - For SnPb and lead-free processes
   properties:
-
-- slug: IF-8300-4
-  name: IF 8300-4
-  family: soldering fluxes
-  public: true
-  orderable: true
-  featured: true
-  popular: false
-  new: false
-  pitch:
-  processes:
-  qualities:
-  properties:
-
-- slug: IF-8300-6
-  name: IF 8300-6
-  family: soldering fluxes
-  public: true
-  orderable: true
-  featured: true
-  popular: false
-  new: false
-  pitch:
-  processes:
-  qualities:
-  properties:
+    - "Compliance: RE L0 to EN and IPC standards"
+    - "Halide content: 0,00%"
+    - "Available viscosities: 210 kcps, 70 kcps, 25 kcps"
 
 - slug: IF-7500-HAB
   name: IF 7500 HAB
   family: soldering fluxes
+  label: tacky gel flux
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® IF 7500HAB is a no-clean, halide-free tacky gel flux with increased process window. Suitable for reballing and BGA rework.
   processes:
+    - rework
+    - reflow
+    - dispensing
+    - stencil-printing
+    - dipping
   qualities:
+    - Suitable for reballing and BGA rework
+    - halide-free
+    - Long profile resistant
+    - High deoxidation power
+    - Contains rosin
   properties:
+    - "Compliance: RO M0 to EN and IPC standards"
+    - "Halide content: 0,00%"
+    - "Viscosity: 200 kcps"
 
 - slug: IF-8001
   name: IF 8001
@@ -596,10 +597,21 @@
   new: false
   regex1: "IF 8001 "
   regex2: Soldering Flux
-  pitch:
+  pitch: Interflux® IF 8001 is a solvent based, no-clean soldering flux with **low residue** formation for selective fluxing applications.
   processes:
+    - rework
+    - selective
   qualities:
+    - alcohol-based
+    - halide-free
+    - low-residue
+    - Compatible with both SnPb and lead-free alloys
+    - Available in fluxpens
   properties:
+    - "Compliance: RE L0 to EN and IPC standards"
+    - "Halide content: 0,00%"
+    - "Main field of use: hand soldering."
+    - "Other fields of use: automated soldering, stamp soldering, etc..."
 
 - slug: IF-6000
   name: IF 6000
@@ -611,10 +623,23 @@
   new: false
   regex1: "IF 6000 "
   regex2: Soldering Flux
-  pitch:
+  pitch: "Interflux® IF 6000 is a rosin containing, no-clean soldering flux with **increased process window** for selective fluxing applications."
   processes:
+    - rework
+    - selective
   qualities:
+    - alcohol-based
+    - halide-free
+    - contains-rosin
+    - High deoxidation power
+    - Long preheat resistant
+    - Compatible with both SnPb and lead-free alloys
+    - Available in fluxpens
   properties:
+    - "Compliance: RO L0 to EN and IPC standards"
+    - "Halide content: 0,00%"
+    - "Main field of use: hand soldering"
+    - "Other fields of use: automated soldering, stamp soldering, BGA rework, wafer bumping, etc..."
 
 - slug: TerrIFic-RP65
   name: TerrIFic RP65
@@ -626,22 +651,39 @@
   new: false
   regex1: "TerrIFic RP65 "
   regex2: Soldering Flux
-  pitch:
+  pitch: "TerrIFic RP65 is a water based, no-clean soldering flux for selective fluxing applications."
   processes:
+    - rework
+    - hand
   qualities:
+    - water-based
+    - halide-free
+    - Long preheat resistant
+    - For SnPb and lead-free processes
+    - Compatible with both SnPb and lead-free alloys
+    - Available in flux-pens
   properties:
+    - "Compliance: OR L0 to EN and IPC standards"
+    - "Halide content: 0,00%"
+    - "Main field of use: hand soldering."
+    - "Other fields of use: automated soldering, stamp soldering, etc..."
 
 - slug: T-2005M
   name: T 2005M
   family: soldering fluxes
+  label: flux thinner
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® T 2005M is the thinner / conditioner for the IF 2005-series fluxes. Ideal for foam fluxing or other open flux processes.
   processes:
+    - For foam fluxing
+    - For the IF 2005-series soldering fluxes
   qualities:
+    - alcohol-based
+    - halide-free
   properties:
 
 - slug: IF-FL5821
