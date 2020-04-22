@@ -270,7 +270,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "OSPI 3311 "
@@ -286,19 +286,28 @@
   orderable: true
   featured: true
   popular: false
-  new: false
+  new: true
   regex1: "OSPI 3311M "
-  pitch:
+  pitch: Interflux® OSPI 3311M is an alcohol based no-clean flux for soldering OSP finished boards that have passed one or more reflow cycles.
   processes:
+    - wave
+    - reflow
+    - For soldering OSP
   qualities:
+    - alcohol
+    - halide-free
+    - High deoxidation power
+    - For lead-free and SnPb processes
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Halide content: 0,00%"
 
 - slug: IF-2005
   name: IF 2005
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "IF 2005 "
@@ -317,17 +326,30 @@
   new: false
   regex1: "IF 2005M "
   regex2: Soldering Flux
-  pitch:
+  pitch: Interflux® IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**
   processes:
+    - foam
+    - spray
+    - jet
+    - wave
   qualities:
+    - alcohol-based
+    - halide-free
+    - High compatibility with conformal coating
+    - No-residue ™
+    - SnPb and lead-free compatible
   properties:
+    - "Compliance: OR L0 to EN and IPC standards"
+    - "Compliance: QPL-listed, approved to MIL-F-14256F"
+    - "Solid content: 1,85% ±0,15"
+    - "Halide content: 0,00%"
 
 - slug: IF-2005M-025
   name: IF 2005M 2.5%
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "IF 2005M "
@@ -345,10 +367,22 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® IF 2005K with 2,5% of solids is a resin- and rosin-free, no-clean flux. It can be used when the soldering process needs more activation than IF 2005M provides.
   processes:
+    - wave
+    - spray
+    - jet
+    - foam
   qualities:
+    - alcohol-based
+    - halide-free
+    - High compatibility with conformal coating
+    - Low residue
+    - SnPb and lead-free compatible
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Solid content: 2,5% ±0,3"
+    - "Halide content: 0,00%"
 
 - slug: IF-2005C
   name: IF 2005C
@@ -360,23 +394,49 @@
   new: false
   regex1: "IF 2005C "
   regex2: Soldering Flux
-  pitch:
+  pitch: Interflux® IF 2005C with **3,3% of solids** is a resin- and rosin-free, no-clean flux. It can be used when the soldering process needs **more activation** than IF 2005M or IF 2005K provide.
   processes:
+    - selective
+    - spray
+    - jet
+    - foam
   qualities:
+    - alcohol-based
+    - halide-free
+    - High deoxidation power
+    - Long preheat resistant
+    - High compatibility with conformal coating
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Solid content: 3,3% ± 0,3"
+    - "Halide content: 0,00%"
 
 - slug: SelectIF-2040
   name: SelectIF 2040
   family: soldering fluxes
+  label: water based soldering flux
   public: true
   orderable: true
   featured: true
   popular: false
-  new: false
-  pitch:
+  new: true
+  pitch: Interflux® SelectIF 2040 is a water based no-clean **selective soldering flux** with a wide process window and low residue formation.
   processes:
+    - selective
   qualities:
+    - water-based
+    - VOC-free
+    - halide-free
+    - Withstands high process temperatures and long process times.
+    - High deoxidation power
+    - High temperature resistant
+    - High compatibility with conformal coating
+    - Low residue
+    - For SnPb and lead-free processes
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Solid content: 6,5% ±0,2"
+    - "Halide content: 0,00%"
 
 - slug: PacIFic-2011F
   name: PacIFic 2011F
@@ -399,10 +459,24 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® PacIFic 2009M is a water based no-clean flux mainly used for **wave and selective** soldering.
   processes:
+    - wave
+    - selective
+    - pre-tinning
+    - spray
+    - jet
   qualities:
+    - water-based
+    - VOC-free
+    - halide-free
+    - Low residue
+    - High compatibility with conformal coating
+    - Compatible with both SnPb and lead-free
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Solid content: 3,7% ±0,15"
+    - "Halide content: 0,00%"
 
 - slug: PacIFic-2009MLF
   name: PacIFic 2009MLF
@@ -412,43 +486,81 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: PacIFic 2009MLF is a water based no-clean soldering flux developed to **minimize micro solder ball formation**.
   processes:
+    - wave
+    - selective
+    - spray
   qualities:
+    - Anti solder ball formation
+    - water-based
+    - VOC-free
+    - halide-free
+    - For SnPb and lead-free processes
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Solid content: 3,6% ±0,2"
+    - "Halide content: 0,00%"
 
 - slug: PacIFic-2009MLF-E
   name: PacIFic 2009MLF-E
   family: soldering fluxes
+  label: water-based soldering flux
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: PacIFic 2009MLF-E is a water based no-clean flux which combines **low residue** levels with **reduced micro solder ball** formation.
   processes:
+    - wave
+    - spray
+    - jet
   qualities:
+    - water-based
+    - VOC-free
+    - halide-free
+    - reduced-residue
+    - Reduced solder ball formation
+    - SnPb-lead-free-compatible
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Solid content: 3,6% ±0,25"
+    - "Halide content: 0,00%"
 
 - slug: PacIFic-2010F
   name: PacIFic 2010F
   family: soldering fluxes
+  label: water-based soldering flux
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: "PacIFic 2010F is a water based no-clean flux for foam fluxing applications."
   processes:
+    - foam
+    - wave
+    - spray
+    - jet
   qualities:
+    - water-based
+    - VOC-free
+    - halide-free
+    - High compatibility with conformal coating
+    - low residue
+    - Compatible with SnPb and lead-free
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Solid content: 2,5% ±0,15"
+    - "Halide content: 0,00%"
 
 - slug: PacIFic-2009
   name: PacIFic 2009
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -461,7 +573,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -474,7 +586,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -487,7 +599,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -498,15 +610,26 @@
 - slug: IF-3006
   name: IF 3006
   family: soldering fluxes
+  label: Low VOC soldering flux
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® IF 3006 is a resin- and rosin free, no-clean soldering flux with a **reduced VOC** content.
   processes:
+    - wave
+    - selective
+    - pre-tinning
   qualities:
+    - Low VOC
+    - halide-free
+    - High compatibility with conformal coating
+    - for both SnPb and lead-free processes
   properties:
+    - "Compliance: OR L0 according to EN and IPC standards"
+    - "Solid content: 3,2% ±0,4"
+    - "Halide content: 0,00%"
 
 - slug: IF-3006K
   name: IF 3006K
@@ -524,15 +647,28 @@
 - slug: AF-4818-PbF
   name: AF 4818-PbF
   family: soldering fluxes
+  label: rosin-based soldering flux
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: "Interflux® AF 4818 PbF is a solvent based, rosin containing, no-clean soldering flux with increased solid content and a large process window."
   processes:
+    - wave
+    - spray
+    - jet
   qualities:
+    - Contains rosin
+    - Alcohol based
+    - halide-free
+    - High deoxidation power
+    - Long preheat resistant
+    - Compatible with both SnPb and lead-free processes
   properties:
+    - "Compliance: RO L0 to EN and IPC standards"
+    - "Solid content: 5%"
+    - "Halide content: 0,00%"
 
 - slug: IF-8300
   name: IF 8300
