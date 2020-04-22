@@ -1,589 +1,1424 @@
 - slug: DP-5600
   name: DP 5600
-  public: true
-  popular: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "DP 5600 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: DP-5505-AT
   name: DP 5505 AT
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "DP 5505 AT "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: DP-5505-IC
   name: DP 5505 IC
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "DP 5505IC"
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: DP-5505
   name: DP 5505
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "DP 5505 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Delphine-5504
   name: Delphine 5504
-  public: false
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "DP 5504 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Delphine-5504HT
   name: Delphine 5504HT
-  public: false
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "DP 5504 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Delphine-5503
   name: Delphine 5503
-  public: false
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "DP 5503 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 # Possible discrepancies below
 - slug: Delphine-5503-2
   name: Delphine 5503/2
-  public: false
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "DP 5503 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: LP-5707
   name: LP 5707
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "LP5707 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: LP-5720
   name: LP 5720
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "LP5720 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: micro-dIFe-7
   name: µ-dIFe 7
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-9009LT
   name: IF 9009LT
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 9009LT "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: LMPA-Q6
   name: LMPA™-Q6
-  public: true
-  popular: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "LMPA™-Q6 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Q6
   name: Q6
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "^Q6 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: LMPA-Oil
   name: LMPA™ Oil
-  public: true
   family: deoxidation oils
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-9007
   name: IF 9007
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 9007 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-9010
   name: IF 9010
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 9010 "
   regex2: Solderpaste
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: LMPA-S
   name: LMPA™-S
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "LMPA™-S "
   regex2: Soldering Flux
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: OSPI-3311
   name: OSPI 3311
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "OSPI 3311 "
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: OSPI-3311M
   name: OSPI 3311M
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "OSPI 3311M "
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-2005
   name: IF 2005
-  public: true
-  popular: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 2005 "
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-2005M
   name: IF 2005M
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 2005M "
   regex2: Soldering Flux
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-2005M-025
   name: IF 2005M 2.5%
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 2005M "
   regex2: Soldering Flux
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-2005K
   name: IF 2005K
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-2005C
   name: IF 2005C
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 2005C "
   regex2: Soldering Flux
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: SelectIF-2040
   name: SelectIF 2040
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2011F
   name: PacIFic 2011F
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2009M
   name: PacIFic 2009M
-  popular: true
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2009MLF
   name: PacIFic 2009MLF
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2009MLF-E
   name: PacIFic 2009MLF-E
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2010F
   name: PacIFic 2010F
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2009
   name: PacIFic 2009
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2008
   name: PacIFic 2008
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2008plus
   name: PacIFic 2008plus
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: PacIFic-2007
   name: PacIFic 2007
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-3006
   name: IF 3006
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-3006K
   name: IF 3006K
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: AF-4818-PbF
   name: AF 4818-PbF
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-8300
   name: IF 8300
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-8300-4
   name: IF 8300-4
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-8300-6
   name: IF 8300-6
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-7500-HAB
   name: IF 7500 HAB
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-8001
   name: IF 8001
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 8001 "
   regex2: Soldering Flux
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-6000
   name: IF 6000
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "IF 6000 "
   regex2: Soldering Flux
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: TerrIFic-RP65
   name: TerrIFic RP65
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "TerrIFic RP65 "
   regex2: Soldering Flux
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: T-2005M
   name: T 2005M
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-FL5821
   name: IF FL5821
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: FL 5821
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: RA-25010
   name: RA 25010
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: RA-25015
   name: RA 25015
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: RA-25050
   name: RA 25050
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "RA 25050 "
   regex2: Soldering Flux
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: RA-38053
   name: RA 38053
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Reagent
   name: Reagent
-  public: true
   family: reagents
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: ResIF-435L1
   name: ResIF 435L1
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: QF-70
   name: QF 70
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: NH-1
   name: NH 1
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: RosIX-705
   name: RosIX 705
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Aquasol-4018
   name: Aquasol 4018
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-1000M
   name: IF 1000M
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-14
   name: IF 14
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "^IF 14"
   regex2: Solder wire
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Flexsol-903
   name: Flexsol 903
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Bright-1
   name: Bright 1
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: i-Flex-400
   name: i-Flex 400
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IR-3
   name: IR 3
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: IR-3
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Laser-25
   name: Laser 25
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: ICSF-Select
   name: ICSF Select
-  public: true
   family: fluxing systems
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: ICSF-Curve
   name: ICSF Curve
-  public: true
   family: fluxing systems
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: ICSF-Curve-2
   name: ICSF Curve 2
-  public: true
   family: fluxing systems
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: ICSF-Curve-2
   name: ICSF Curve 2
-  public: true
   family: fluxing systems
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-710
   name: IF 710
-  public: true
   family: peelable solder masks
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-930
   name: IF 930
-  public: true
   family: nozzle cleaners
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-920
   name: IF 920
-  public: true
   family: nozzle cleaners
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Purgel
   name: Purgel
-  public: true
   family: conditioning gels
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IPA-DI-Wipes
   name: IPA/DI Wipes
-  public: true
   family: cleaning wipes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IPA-DI-Cleaner
   name: IPA/DI Cleaner
-  public: true
   family: cleaning liquids
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Stencil-Clean-Wipes
   name: Stencil Clean Wipes
-  public: true
   family: cleaning wipes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: ISC-8020
   name: ISC 8020
-  public: true
   family: cleaning liquids
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-910
   name: IF 910
-  public: true
   family: deoxidation oils
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Anti-Oxidant-Pellets
   name: Anti-Oxidant Pellets
-  public: true
   family: anti-oxidant pellets
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Solder-Bars
   name: Solder Bars
-  public: true
   family: solder alloys
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: "^Solder bar"
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Plain-Solder-Wires
   name: Plain Solder Wires
-  public: true
   family: solder alloys
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Solder-Pellets
   name: Solder Pellets
-  public: true
   family: solder alloys
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Solder-Rods
   name: Solder Rods
-  public: true
   family: solder alloys
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Fluxpen
   name: Fluxpen
-  public: true
   family: fluxpens
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Fluxstone
   name: Fluxstone
-  public: true
   family: flux stones
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Solder-Stones
   name: Solder Stones
-  public: true
   family: solder alloys
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Adhesive-Remover-Wipes
   name: Adhesive Remover Wipes
-  public: true
   family: cleaning wipes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: ISC-300
   name: ISC 300
-  public: true
   family: cleaning liquids
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Neutral-Solution
   name: Neutral Solution
-  public: true
   family: neutral solutions
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: SC-01
   name: SC 01
-  public: true
   family: cleaning liquids
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: SC01
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: T-1000
   name: T 1000
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Tarnex-10
   name: Tarnex 10
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Tip-Tinner
   name: Tip Tinner
-  public: true
-  popular: true
   family: tip tinners
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: TS-15
   name: TS 15
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: TS15
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: TS-18
   name: TS 18
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: TS18
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: TS-33
   name: TS 33
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: TS33
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: TS-33R
   name: TS 33R
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
   regex1: TS33R
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: WSF-1100
   name: WSF 1100
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: WSF-7700
   name: WSF 7700
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: WSP-2006
   name: WSP 2006
-  public: true
   family: soldering fluxes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: RTS-1804
   name: RTS 1804
-  public: true
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: NX-9900
   name: NX 9900
-  public: false
   family: solder pastes
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-Airknife
   name: IF Airknife
-  public: false
   family: air knives
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: Glass-Plate
   name: Glass Plate
-  public: false
   family: tools
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-R88
   name: IF R88
-  public: false
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
 
 - slug: IF-9057
   name: IF 9057
-  public: true
   family: solder wires
+  public: true
+  orderable: true
+  featured: true
+  popular: false
+  new: false
+  pitch:
+  processes:
+  qualities:
+  properties:
