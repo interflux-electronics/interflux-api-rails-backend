@@ -17,6 +17,7 @@
     - absolutely halide-free
     - low melting temperature
     - low voiding
+    - No clean solder paste
   properties:
     - "Alloy: Sn42Bi57Ag1"
     - "Melting point: 139°C ~ 282°F"
@@ -217,6 +218,7 @@
     - ideal for degraded and difficult to solder surfaces
     - Increased activity
     - available in both SnPb and lead-based alloys
+    - No clean solder paste
   properties:
     - "Compliance: RE L1 to EN and IPC standards"
 
@@ -1185,10 +1187,23 @@
   orderable: true
   featured: true
   popular: false
-  new: false
-  pitch:
+  new: true
+  pitch: The Revolutionary Selective Jet Fluxer is designed to control the amount of flux for each solder joint without losing the ability to maintain the required cycle time demanded by wave soldering processes. The Jet technology used replaces completely the need of spray technology. As a result, the ICSF-Select offers a Total Flux Process control needed for today’s more demanding and complicated soldering requirements, especially lead-free processes. The ability to program points, lines, multi-lines, areas allows the engineer to decide how much flux/pressure is required for certain solder joints up to complete areas. This capability opens up the process window without risking excess of flux residues. Thanks to the XY-movement speed up to 1,500 mm/s, the cycle time will be up to the standard required for wave soldering mass production.
   processes:
+    - wave
+    - jet
+    - spray
   qualities:
+    - Standalone machine
+    - For alcohol-based fluxes
+    - For water fluxes
+    - For rosin fluxes
+    - Environmental friendly
+    - Up to 95% less flux usage
+    - Less maintenance chemicals
+    - Longer life of PCB carriers/pallets
+    - Tremendous reduction in flux fumes going into the exhaust/environment
+    - Solderability Performance
   properties:
 
 - slug: ICSF-Curve
@@ -1196,12 +1211,25 @@
   family: fluxing systems
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
-  pitch:
+  pitch: The InterSpray Curve series are designed to retrofit all existing soldering machines with a reliable spray fluxer which offers excellent results.
   processes:
+    - wave
+    - spray
+    - jet
   qualities:
+    - Retrofits into existing machine
+    - For alcohol-based fluxes
+    - For water fluxes
+    - For rosin fluxes
+    - Venturi, clog-free spray nozzle
+    - Touch screen programming
+    - Clean, ergonomic design
+    - Special flux pump
+    - Encoder calibration function
+    - Low level flux alarm
   properties:
 
 - slug: ICSF-Curve-2
@@ -1212,22 +1240,23 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: The InterSpray Curve 2 double nozzle series are designed to **use 2 different types of fluxes** in 1 reliable spray fluxer system.
   processes:
+    - wave
+    - spray
+    - jet
   qualities:
-  properties:
-
-- slug: ICSF-Curve-2
-  name: ICSF Curve 2
-  family: fluxing systems
-  public: true
-  orderable: true
-  featured: true
-  popular: false
-  new: false
-  pitch:
-  processes:
-  qualities:
+    - Retrofits into existing machine
+    - For alcohol-based fluxes
+    - For water fluxes
+    - For rosin fluxes
+    - Double Venturi, clog-free spray nozzle
+    - Touch screen programming
+    - 2 Flux supply modules
+    - Clean, ergonomic design
+    - Special flux pump
+    - Encoder calibration function
+    - Low level flux alarm
   properties:
 
 - slug: IF-710
