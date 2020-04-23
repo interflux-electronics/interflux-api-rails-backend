@@ -1,6 +1,6 @@
 - slug: DP-5600
   name: DP 5600
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: true
@@ -26,7 +26,7 @@
 
 - slug: DP-5505-AT
   name: DP 5505 AT
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -41,7 +41,7 @@
 
 - slug: DP-5505-IC
   name: DP 5505 IC
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -56,7 +56,7 @@
 
 - slug: DP-5505
   name: DP 5505
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: true
@@ -84,7 +84,7 @@
 
 - slug: Delphine-5504
   name: Delphine 5504
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -99,7 +99,7 @@
 
 - slug: Delphine-5504HT
   name: Delphine 5504HT
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -114,7 +114,7 @@
 
 - slug: Delphine-5503
   name: Delphine 5503
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -130,7 +130,7 @@
 # Possible discrepancies below
 - slug: Delphine-5503-2
   name: Delphine 5503/2
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -145,7 +145,7 @@
 
 - slug: LP-5707
   name: LP 5707
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -160,7 +160,7 @@
 
 - slug: LP-5720
   name: LP 5720
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -175,7 +175,7 @@
 
 - slug: micro-dIFe-7
   name: µ-dIFe 7
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: true
@@ -200,7 +200,7 @@
 
 - slug: IF-9009LT
   name: IF 9009LT
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: true
@@ -224,7 +224,7 @@
 
 - slug: LMPA-Q6
   name: LMPA™-Q6
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: true
@@ -252,7 +252,7 @@
 
 - slug: Q6
   name: Q6
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -281,7 +281,7 @@
 
 - slug: IF-9007
   name: IF 9007
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -296,7 +296,7 @@
 
 - slug: IF-9010
   name: IF 9010
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -311,7 +311,7 @@
 
 - slug: LMPA-S
   name: LMPA™-S
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -326,7 +326,7 @@
 
 - slug: OSPI-3311
   name: OSPI 3311
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -340,7 +340,7 @@
 
 - slug: OSPI-3311M
   name: OSPI 3311M
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -363,7 +363,7 @@
 
 - slug: IF-2005
   name: IF 2005
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -377,7 +377,7 @@
 
 - slug: IF-2005M
   name: IF 2005M
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -405,7 +405,7 @@
 
 - slug: IF-2005M-025
   name: IF 2005M 2.5%
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -420,7 +420,7 @@
 
 - slug: IF-2005K
   name: IF 2005K
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -445,7 +445,7 @@
 
 - slug: IF-2005C
   name: IF 2005C
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -472,7 +472,7 @@
 
 - slug: SelectIF-2040
   name: SelectIF 2040
-  family: soldering fluxes
+  family: soldering-fluxes
   label: water based soldering flux
   public: true
   orderable: true
@@ -499,7 +499,7 @@
 
 - slug: PacIFic-2011F
   name: PacIFic 2011F
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -512,7 +512,7 @@
 
 - slug: PacIFic-2009M
   name: PacIFic 2009M
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -539,7 +539,7 @@
 
 - slug: PacIFic-2009MLF
   name: PacIFic 2009MLF
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -563,7 +563,7 @@
 
 - slug: PacIFic-2009MLF-E
   name: PacIFic 2009MLF-E
-  family: soldering fluxes
+  family: soldering-fluxes
   label: water-based soldering flux
   public: true
   orderable: true
@@ -589,7 +589,7 @@
 
 - slug: PacIFic-2010F
   name: PacIFic 2010F
-  family: soldering fluxes
+  family: soldering-fluxes
   label: water-based soldering flux
   public: true
   orderable: true
@@ -616,7 +616,7 @@
 
 - slug: PacIFic-2009
   name: PacIFic 2009
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -629,7 +629,7 @@
 
 - slug: PacIFic-2008
   name: PacIFic 2008
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -642,7 +642,7 @@
 
 - slug: PacIFic-2008plus
   name: PacIFic 2008plus
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -655,7 +655,7 @@
 
 - slug: PacIFic-2007
   name: PacIFic 2007
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -668,7 +668,7 @@
 
 - slug: IF-3006
   name: IF 3006
-  family: soldering fluxes
+  family: soldering-fluxes
   label: Low VOC soldering flux
   public: true
   orderable: true
@@ -692,7 +692,7 @@
 
 - slug: IF-3006K
   name: IF 3006K
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -705,7 +705,7 @@
 
 - slug: AF-4818-PbF
   name: AF 4818-PbF
-  family: soldering fluxes
+  family: soldering-fluxes
   label: rosin-based soldering flux
   public: true
   orderable: true
@@ -731,7 +731,7 @@
 
 - slug: IF-8300
   name: IF 8300
-  family: soldering fluxes
+  family: soldering-fluxes
   label: tacky gel flux
   public: true
   orderable: true
@@ -757,7 +757,7 @@
 
 - slug: IF-7500-HAB
   name: IF 7500 HAB
-  family: soldering fluxes
+  family: soldering-fluxes
   label: tacky gel flux
   public: true
   orderable: true
@@ -784,7 +784,7 @@
 
 - slug: IF-8001
   name: IF 8001
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -810,7 +810,7 @@
 
 - slug: IF-6000
   name: IF 6000
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -838,7 +838,7 @@
 
 - slug: TerrIFic-RP65
   name: TerrIFic RP65
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: true
@@ -865,7 +865,7 @@
 
 - slug: T-2005M
   name: T 2005M
-  family: soldering fluxes
+  family: soldering-fluxes
   label: flux thinner
   public: true
   orderable: true
@@ -883,7 +883,7 @@
 
 - slug: IF-FL5821
   name: IF FL5821
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -897,7 +897,7 @@
 
 - slug: RA-25010
   name: RA 25010
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -910,7 +910,7 @@
 
 - slug: RA-25015
   name: RA 25015
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -923,7 +923,7 @@
 
 - slug: RA-25050
   name: RA 25050
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -938,7 +938,7 @@
 
 - slug: RA-38053
   name: RA 38053
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -951,7 +951,8 @@
 
 - slug: Reagent
   name: Reagent
-  family: reagents
+  family: auxiliaries
+  label: reagent
   public: true
   orderable: true
   featured: false
@@ -964,7 +965,7 @@
 
 - slug: ResIF-435L1
   name: ResIF 435L1
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: false
@@ -977,7 +978,7 @@
 
 - slug: QF-70
   name: QF 70
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: true
@@ -998,7 +999,7 @@
 
 - slug: NH-1
   name: NH 1
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: true
@@ -1020,7 +1021,7 @@
 
 - slug: RosIX-705
   name: RosIX 705
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: true
@@ -1041,7 +1042,7 @@
 
 - slug: Aquasol-4018
   name: Aquasol 4018
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: true
@@ -1063,7 +1064,7 @@
 
 - slug: IF-1000M
   name: IF 1000M
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: false
@@ -1076,7 +1077,7 @@
 
 - slug: IF-14
   name: IF 14
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: true
@@ -1100,7 +1101,7 @@
 
 - slug: Flexsol-903
   name: Flexsol 903
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: true
@@ -1120,7 +1121,7 @@
 
 - slug: Bright-1
   name: Bright 1
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: false
@@ -1133,7 +1134,7 @@
 
 - slug: i-Flex-400
   name: i-Flex 400
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: false
@@ -1146,7 +1147,7 @@
 
 - slug: IR-3
   name: IR 3
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: false
@@ -1170,7 +1171,7 @@
 
 - slug: Laser-25
   name: Laser 25
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: false
@@ -1183,7 +1184,7 @@
 
 - slug: ICSF-Select
   name: ICSF Select
-  family: fluxing systems
+  family: fluxing-systems
   public: true
   orderable: true
   featured: true
@@ -1209,7 +1210,7 @@
 
 - slug: ICSF-Curve
   name: ICSF Curve
-  family: fluxing systems
+  family: fluxing-systems
   public: true
   orderable: true
   featured: false
@@ -1235,7 +1236,7 @@
 
 - slug: ICSF-Curve-2
   name: ICSF Curve 2
-  family: fluxing systems
+  family: fluxing-systems
   public: true
   orderable: true
   featured: true
@@ -1303,7 +1304,8 @@
 
 - slug: IF-920
   name: IF 920
-  family: nozzle cleaners
+  family: auxiliaries
+  label: nozzle cleaners
   public: true
   orderable: true
   featured: false
@@ -1354,7 +1356,8 @@
 
 - slug: IPA-DI-Cleaner
   name: IPA/DI Cleaner
-  family: cleaning liquids
+  family: auxiliaries
+  label: cleaning liquid
   public: true
   orderable: true
   featured: true
@@ -1444,7 +1447,7 @@
 
 - slug: Solder-Bars
   name: Solder Bars
-  family: solder alloys
+  family: solder-alloys
   public: true
   orderable: true
   featured: true
@@ -1463,7 +1466,7 @@
 
 - slug: Plain-Solder-Wires
   name: Plain Solder Wires
-  family: solder alloys
+  family: solder-alloys
   public: true
   orderable: true
   featured: true
@@ -1482,7 +1485,7 @@
 
 - slug: Solder-Pellets
   name: Solder Pellets
-  family: solder alloys
+  family: solder-alloys
   public: true
   orderable: true
   featured: true
@@ -1501,7 +1504,7 @@
 
 - slug: Solder-Rods
   name: Solder Rods
-  family: solder alloys
+  family: solder-alloys
   public: true
   orderable: true
   featured: true
@@ -1515,7 +1518,7 @@
 - slug: Flux-Pen
   name: Flux Pen
   family: auxiliaries
-  family: flux pen
+  label: flux pen
   public: true
   orderable: true
   featured: true
@@ -1543,7 +1546,7 @@
 
 - slug: Solder-Stones
   name: Solder Stones
-  family: solder alloys
+  family: solder-alloys
   public: true
   orderable: true
   featured: true
@@ -1556,7 +1559,8 @@
 
 - slug: Adhesive-Remover-Wipes
   name: Adhesive Remover Wipes
-  family: cleaning wipes
+  family: auxiliaries
+  label: cleaning wipes
   public: true
   orderable: true
   featured: true
@@ -1569,7 +1573,8 @@
 
 - slug: ISC-300
   name: ISC 300
-  family: cleaning liquids
+  family: auxiliaries
+  label: cleaning liquids
   public: true
   orderable: true
   featured: true
@@ -1582,7 +1587,8 @@
 
 - slug: Neutral-Solution
   name: Neutral Solution
-  family: neutral solutions
+  family: auxiliaries
+  label: neutral solutions
   public: true
   orderable: true
   featured: true
@@ -1595,7 +1601,8 @@
 
 - slug: SC-01
   name: SC 01
-  family: cleaning liquids
+  family: auxiliaries
+  label: cleaning liquid
   public: true
   orderable: true
   featured: true
@@ -1609,7 +1616,7 @@
 
 - slug: T-1000
   name: T 1000
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1622,7 +1629,7 @@
 
 - slug: Tarnex-10
   name: Tarnex 10
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1635,7 +1642,8 @@
 
 - slug: Tip-Tinner
   name: Tip Tinner
-  family: tip tinners
+  family: auxiliaries
+  label: tip tinner
   public: true
   orderable: true
   featured: true
@@ -1655,7 +1663,7 @@
 
 - slug: TS-15
   name: TS 15
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1669,7 +1677,7 @@
 
 - slug: TS-18
   name: TS 18
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1683,7 +1691,7 @@
 
 - slug: TS-33
   name: TS 33
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1697,7 +1705,7 @@
 
 - slug: TS-33R
   name: TS 33R
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1711,7 +1719,7 @@
 
 - slug: WSF-1100
   name: WSF 1100
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1724,7 +1732,7 @@
 
 - slug: WSF-7700
   name: WSF 7700
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1737,7 +1745,7 @@
 
 - slug: WSP-2006
   name: WSP 2006
-  family: soldering fluxes
+  family: soldering-fluxes
   public: true
   orderable: true
   featured: false
@@ -1750,7 +1758,7 @@
 
 - slug: RTS-1804
   name: RTS 1804
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -1763,7 +1771,7 @@
 
 - slug: NX-9900
   name: NX 9900
-  family: solder pastes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -1776,7 +1784,8 @@
 
 - slug: IF-Airknife
   name: IF Airknife
-  family: air knives
+  family: auxiliaries
+  label: air knive
   public: true
   orderable: true
   featured: false
@@ -1789,7 +1798,8 @@
 
 - slug: Glass-Plate
   name: Glass Plate
-  family: tools
+  family: auxiliaries
+  label: measuring tool
   public: true
   orderable: true
   featured: false
@@ -1802,7 +1812,7 @@
 
 - slug: IF-R88
   name: IF R88
-  family: solder wires
+  family: solder-wires
   public: true
   orderable: true
   featured: false
@@ -1815,7 +1825,7 @@
 
 - slug: IF-9057
   name: IF 9057
-  family: solder paste
+  family: solder-pastes
   public: true
   orderable: true
   featured: true

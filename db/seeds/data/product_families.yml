@@ -28,80 +28,86 @@
   name_single: fluxing system
   order: 5
 
-- slug: peelable-solder-masks
-  name_plural: peelable solder masks
-  name_single: peelable solder mask
-  code: PRA
-
-- slug: nozzle-cleaners
-  name_plural: nozzle cleaners
-  name_single: nozzle cleaner
-  code: RP
-
-- slug: deoxidation-gels
-  name_plural: deoxidation gels
-  name_single: deoxidation gel
-  code: RP
-  public: false
-
-- slug: deoxidation-oils
-  name_plural: deoxidation oils
-  name_single: deoxidation oil
-  code: OIL
-
-- slug: tip-tinner
-  name_plural: tip tinners
-  name_single: tip tinner
-  code: MTTIPTIN
-
-- slug: anti-oxidant-pellets
-  name_plural: anti-oxidant pellets
-  name_single: anti-oxidant pellets
-  code: AOPELLET
-
-- slug: conditioning-gels-for-dispensers
-  name_plural: conditioning gels
-  name_single: conditioning gel
-  code: CL
-
-- slug: cleaning-fluids
-  name_plural: cleaning liquids
-  name_single: cleaning liquid
-  code: CL
-
-- slug: cleaning-wipes
-  name_plural: cleaning wipes
-  name_single: cleaning wipes
-  code: CL
-
-- slug: flux-stones
-  name_plural: flux stones
-  name_single: flux stones
+- slug: auxiliaries
   code: _
+  name_plural: auxiliaries
+  name_single: auxiliary
+  order: 6
+#
+# - slug: peelable-solder-masks
+#   name_plural: peelable solder masks
+#   name_single: peelable solder mask
+#   code: PRA
 
-- slug: reagent
-  name_plural: reagents
-  name_single: reagent
-  code: _
+# - slug: nozzle-cleaners
+#   name_plural: nozzle cleaners
+#   name_single: nozzle cleaner
+#   code: RP
 
-- slug: fluxpens
-  name_plural: fluxpens
-  name_single: fluxpen
-  code: _
+# - slug: deoxidation-gels
+#   name_plural: deoxidation gels
+#   name_single: deoxidation gel
+#   code: RP
+#   public: false
 
-- slug: neutral-solution
-  name_plural: neutral solutions
-  name_single: neutral solution
-  code: _
+# - slug: deoxidation-oils
+#   name_plural: deoxidation oils
+#   name_single: deoxidation oil
+#   code: OIL
 
-- slug: air-knives
-  name_plural: air knives
-  name_single: air knive
-  code: _
-  public: false
+# - slug: tip-tinner
+#   name_plural: tip tinners
+#   name_single: tip tinner
+#   code: MTTIPTIN
 
-- slug: tools
-  name_plural: tools
-  name_single: tool
-  code: _
-  public: false
+# - slug: anti-oxidant-pellets
+#   name_plural: anti-oxidant pellets
+#   name_single: anti-oxidant pellets
+#   code: AOPELLET
+
+# - slug: conditioning-gels-for-dispensers
+#   name_plural: conditioning gels
+#   name_single: conditioning gel
+#   code: CL
+
+# - slug: cleaning-fluids
+#   name_plural: cleaning liquids
+#   name_single: cleaning liquid
+#   code: CL
+
+# - slug: cleaning-wipes
+#   name_plural: cleaning wipes
+#   name_single: cleaning wipes
+#   code: CL
+
+# - slug: flux-stones
+#   name_plural: flux stones
+#   name_single: flux stones
+#   code: _
+
+# - slug: reagent
+#   name_plural: reagents
+#   name_single: reagent
+#   code: _
+
+# - slug: fluxpens
+#   name_plural: fluxpens
+#   name_single: fluxpen
+#   code: _
+
+# - slug: neutral-solution
+#   name_plural: neutral solutions
+#   name_single: neutral solution
+#   code: _
+
+# - slug: air-knives
+#   name_plural: air knives
+#   name_single: air knive
+#   code: _
+#   public: false
+
+# - slug: tools
+#   name_plural: tools
+#   name_single: tool
+#   code: _
+#   public: false

@@ -17,18 +17,21 @@ after :product_families do
 
     puts "#{i + 1} - #{product.name}"
 
-    family = ProductFamily.find_by(name_plural: product.family)
+    family = ProductFamily.find_by(slug: product.family)
 
     byebug if family.nil?
 
     props = OpenStruct.new(
       slug: product.slug,
-      code: product.code,
       name: product.name,
+      label: product.label,
+      pitch: product.pitch,
+      properties: product.properties,
+      # code: product.code,
 
       public: product.public,
-      deprecated: product.deprecated || false,
       orderable: product.orderable || true,
+      featured: product.featured || false,
       popular: product.popular || false,
       new: product.new || false,
 

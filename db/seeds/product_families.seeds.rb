@@ -20,7 +20,7 @@ data.each_with_index do |_family, i|
 
   props = OpenStruct.new(
     slug: family.slug,
-    code: family.code,
+    # code: family.code,
     name_single: family.name_single,
     name_plural: family.name_plural,
     public: family.public.nil? ? true : family.public,

@@ -2,19 +2,19 @@
 #
 # Table name: products
 #
-#  id                :uuid             not null, primary key
-#  slug              :string
-#  code              :string
+#  slug              :string           not null, primary key
 #  name              :string
+#  product_family_id :string
+#  label             :string
+#  pitch             :text
+#  properties        :text
 #  public            :boolean          default(FALSE)
-#  deprecated        :boolean          default(FALSE)
 #  orderable         :boolean          default(FALSE)
+#  featured          :boolean          default(FALSE)
 #  popular           :boolean          default(FALSE)
 #  new               :boolean          default(FALSE)
-#  product_family_id :uuid
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  image_id          :uuid
 #
 
 IF_2005M:

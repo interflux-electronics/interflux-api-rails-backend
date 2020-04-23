@@ -2,15 +2,13 @@
 #
 # Table name: product_families
 #
-#  id          :uuid             not null, primary key
-#  slug        :string
-#  code        :string
+#  slug        :string           not null, primary key
 #  name_single :string
 #  name_plural :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
 #  public      :boolean          default(FALSE)
 #  order       :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 soldering_flux:
