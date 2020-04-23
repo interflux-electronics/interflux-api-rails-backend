@@ -267,7 +267,8 @@
 
 - slug: LMPA-Oil
   name: LMPA™ Oil
-  family: deoxidation oils
+  family: auxiliaries
+  label: deoxidation oil
   public: true
   orderable: true
   featured: true
@@ -694,7 +695,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -885,7 +886,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: FL 5821
@@ -899,7 +900,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -912,7 +913,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -925,7 +926,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "RA 25050 "
@@ -940,7 +941,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -953,7 +954,7 @@
   family: reagents
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1065,7 +1066,7 @@
   family: solder wires
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1261,28 +1262,43 @@
 
 - slug: IF-710
   name: IF 710
-  family: peelable solder masks
+  family: auxiliaries
+  label: peelable solder masks
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® IF 710 PSM is a natural latex based, fast curing peelable solder mask. To shield areas on a PCB from flux and solder wave contact.
   processes:
+    - wave
   qualities:
+    - Fast drying, easily peelable
+    - Does not easily break while peeling
+    - Heat resistant
+    - For SnPb(Ag) processes
+    - For lead-free processes
+    - RoHS compliant
   properties:
+    - "Note: May give a discolouration of Cu when applied on naked Cu or Cu-OSP."
 
 - slug: IF-930
   name: IF 930
-  family: nozzle cleaners
+  family: auxiliaries
+  label: nozzle cleaner
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® IF 930 cleans and de-oxidizes wettable nozzles of selective soldering systems. Replaces IF-920.
   processes:
+    - selective
   qualities:
+    - Safe and easy one-step cleaning
+    - For SnPb(Ag) processes
+    - For lead-free processes
+    - halide-free
   properties:
 
 - slug: IF-920
@@ -1290,39 +1306,51 @@
   family: nozzle cleaners
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
   processes:
   qualities:
   properties:
+  replaced_by: IF-930
 
 - slug: Purgel
   name: Purgel
-  family: conditioning gels
+  family: auxiliaries
+  label: dispenser conditioning gel
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® Purgel is a neutral cleaner/conditioner for pumps and valves of dispensing systems. For preserving dispensing system parts when not in use.
   processes:
+    - rework
+    - dispensing
   qualities:
+    - Helps preserves dispensing system parts when not in use
+    - Approved for MYDATA MY 500
   properties:
 
 - slug: IPA-DI-Wipes
   name: IPA/DI Wipes
-  family: cleaning wipes
+  family: auxiliaries
+  label: general cleaning wipes
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® pre-saturated IPA/DI wipes in flip-top tubs and refill bags for **general cleaning** of surfaces.
   processes:
+    - for general cleaning
   qualities:
+    - lint-free, non woven fabric
+    - ESD-safe
   properties:
+    - "size: 15 x 21cm per wipe"
+    - "quantity: 100 wipes per roll"
 
 - slug: IPA-DI-Cleaner
   name: IPA/DI Cleaner
@@ -1339,55 +1367,80 @@
 
 - slug: Stencil-Clean-Wipes
   name: Stencil Clean Wipes
-  family: cleaning wipes
+  family: auxiliaries
+  label: stencil cleaning wipes
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® pre-saturated stencil clean wipes in flip-top tubs and refill bags for the removal of **solder paste** and non cured **SMT adhesive** from stencils and tools.
   processes:
+    - for stencil cleaning
   qualities:
+    - lint-free, non-woven fabric
+    - Alcohol-based
+    - ESD-safe
   properties:
+    - "size: 15 x 21cm per wipe"
+    - "quantity: 100 wipes per roll"
 
 - slug: ISC-8020
   name: ISC 8020
-  family: cleaning liquids
+  family: auxiliaries
+  label: stencil cleaning fluid
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® ISC 8020 is a stencil cleaning fluid for stencil printers. For the removal of solder paste and uncured SMT adhesives.
   processes:
+    - For stencil printing
   qualities:
+    - Alcohol-based
   properties:
 
 - slug: IF-910
   name: IF 910
-  family: deoxidation oils
+  family: auxiliaries
+  label: deoxidation oil
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® IF 910 de-oxidation oil separates oxides from good solder in a solder bath. Reduces solder consumption.
   processes:
+    - for solder bath treatment
+    - wave
+    - pre-tinning
+    - dipping
   qualities:
+    - Reduces solder consumption.
+    - For SnPb(Ag) alloys
+    - For lead-free alloys
   properties:
 
 - slug: Anti-Oxidant-Pellets
   name: Anti-Oxidant Pellets
-  family: anti-oxidant pellets
+  family: auxiliaries
+  label: anti-oxidant pellets
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® Anti-oxidant pellets minimize the formation of oxides on lead-free and SnPb(Ag) solder baths. Used as an addition in the solder bath.
   processes:
+    - for solder bath treatment
+    - wave
+    - pre-tinning
   qualities:
+    - For SnPb(Ag) alloys (blue label)
+    - For lead-free alloys (green label)
   properties:
+    - "Note: Anti-oxidant pellets are not recommended under closed inert atmospheres, nor for Ni-doped solder alloys."
 
 - slug: Solder-Bars
   name: Solder Bars
@@ -1398,9 +1451,14 @@
   popular: false
   new: false
   regex1: "^Solder bar"
-  pitch:
+  pitch: Interflux® Solder Bars are made from high purity, low oxidation metals in SnPb(Ag) and lead-free alloys.
   processes:
+    - wave
+    - selective
+    - pre-tinning
+    - dip
   qualities:
+    - Available in lead-free and SnPb alloys
   properties:
 
 - slug: Plain-Solder-Wires
@@ -1411,10 +1469,16 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® plain solder wire for automatic solder feeding on selective soldering systems in lead-free and SnPb(Ag) alloys.
   processes:
+    - selective
+    - pre-tinning
+    - dip soldering
   qualities:
+    - Available in lead-free and SnPb alloys
   properties:
+    - "Wire diameter: 2mm or 3mm"
+    - "Spools: 1kg or 4kg (125mm x 125mm)"
 
 - slug: Solder-Pellets
   name: Solder Pellets
@@ -1424,10 +1488,16 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® Solder Pellets are small pieces of solder for easy solder bath filling in lead-free and SnPb(Ag) alloys.
   processes:
+    - wave
+    - selective
+    - rework
+    - pre-tinning
+    - dipping
   qualities:
-  properties:
+    - Available in lead-free and SnPb alloys
+  properties: "Size: ≈ 1cm x 1cm"
 
 - slug: Solder-Rods
   name: Solder Rods
@@ -1442,9 +1512,10 @@
   qualities:
   properties:
 
-- slug: Fluxpen
-  name: Fluxpen
-  family: fluxpens
+- slug: Flux-Pen
+  name: Flux Pen
+  family: auxiliaries
+  family: flux pen
   public: true
   orderable: true
   featured: true
@@ -1457,14 +1528,16 @@
 
 - slug: Fluxstone
   name: Fluxstone
-  family: flux stones
+  family: auxiliaries
+  label: flux stones
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
   processes:
+    - for foam
   qualities:
   properties:
 
@@ -1568,9 +1641,16 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® Tip Tinner cleans and retins tips of soldering irons.
   processes:
+    - rework
   qualities:
+    - Increases tip life substantially
+    - non abrasive
+    - For SnPb(Ag) processes
+    - For lead-free processes
+    - halide-free
+    - colophony free
   properties:
 
 - slug: TS-15
