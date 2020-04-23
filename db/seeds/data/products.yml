@@ -443,7 +443,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -908,7 +908,7 @@
   family: solder wires
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -923,11 +923,19 @@
   orderable: true
   featured: true
   popular: false
-  new: false
-  pitch:
+  new: true
+  pitch: Interflux® QF 70 is an absolutely halide-free, rosin based no-clean solder wire with fast wetting for fast soldering operations in lead-free alloys. QF 70 can be used in both hand soldering and auto-mated soldering processes.
   processes:
+    - For hand soldering
+    - For robot soldering
   qualities:
+    - Increased wetting speed
+    - Transparent residue
+    - Halide-free
+    - Lead-free
   properties:
+    - "Compliance: RO L0 to IPC and EN standards"
+    - "Halide content: 0,00%"
 
 - slug: NH-1
   name: NH 1
@@ -936,11 +944,20 @@
   orderable: true
   featured: true
   popular: false
-  new: false
-  pitch:
+  new: true
+  pitch: "Interflux® NH 1 is a no-clean colophony free activated solder wire that gives fast and repeatable soldering results on a wide range of surfaces including brass, in lead-free alloys. NH 1 can be used in both hand soldering and auto-mated soldering processes."
   processes:
+    - For laser soldering
+    - For hand soldering
   qualities:
+    - Increased wetting ability, increased wetting speed
+    - Low spattering
+    - Colophony free
+    - Low transparent residue
+    - High repeatability
+    - Lead-free
   properties:
+    - "Compliance: RE L1 to IPC and EN standards"
 
 - slug: RosIX-705
   name: RosIX 705
@@ -949,11 +966,19 @@
   orderable: true
   featured: true
   popular: false
-  new: false
-  pitch:
+  new: true
+  pitch: Interflux® RosIX 705 SnPb(Ag) is an **activated rosin based**, no-clean solder wire with increased wetting ability on surfaces that are difficult to solder in SnPb(Ag) alloys. RosIX 705 SnPb(Ag) can be used on surfaces that are difficult to solder, e.g. OSP, Ni, Zn, brass, German silver,... as well as on degraded and oxidized surfaces.
   processes:
+    - Robot soldering
   qualities:
+    - Increased wetting ability
+    - Non disturbing smell
+    - High repeatability
+    - Smooth transparent residue
+    - Suitable for robot soldering
+    - Available in both lead-based and lead-free alloys
   properties:
+    - "Compliance: RO L1 to EN and IPC standards."
 
 - slug: Aquasol-4018
   name: Aquasol 4018
@@ -963,10 +988,19 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® Aquasol 4018 is a high activity solder wire with **water soluble residues** in lead-free alloys. Very good wetting ability on surfaces with poor solderabilty. Residues must be cleaned.
   processes:
+    - rework
   qualities:
+    - Very good wetting ability on surfaces with poor solderabilty
+    - Water soluble solder wire
+    - Lead-free solder wire
+    - Absolutely colophony free
+    - High activity
   properties:
+    - "Cleaning: Residues must be cleaned. You can do so with DI water at 35°C-45°C (95°F— 114°F)."
+    - "Compliance: OR H1 to EN and IPC standards"
+    - "Flux content: 2,5%"
 
 - slug: IF-1000M
   name: IF 1000M
@@ -991,10 +1025,19 @@
   new: false
   regex1: "^IF 14"
   regex2: Solder wire
-  pitch:
+  pitch: Interflux® IF 14 series are colophony free, absolutely halide-free, no-clean solder wires with **easily removable residues** in SnPb(Ag) and lead-free alloys.
   processes:
+    - rework
   qualities:
+    - Brushable residue
+    - Available in both lead and lead-free alloys
+    - halide-free
+    - Absolutely colophony free
+    - Low residue
   properties:
+    - "Compliance: RE L0 to EN and IPC standards"
+    - "Flux content lead-free: 0,6%, 0,9%, 1,0% and 1,4%"
+    - "Flux content SnPb(Ag): 1,6% and 2,2%"
 
 - slug: Flexsol-903
   name: Flexsol 903
@@ -1004,17 +1047,24 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® Flexsol 903 is an absolutely halide-free, no-clean solder wire with **reduced spattering** properties in lead-free alloys.
   processes:
+    - rework
   qualities:
+    - Low spattering
+    - lead-free
+    - Colophony containing
+    - Halide-free
   properties:
+    - "Flux content: 2,2% and 3,5%"
+    - "Compliance: RO L0 to EN and IPC standards"
 
 - slug: Bright-1
   name: Bright 1
   family: solder wires
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1027,7 +1077,7 @@
   family: solder wires
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1040,21 +1090,31 @@
   family: solder wires
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: IR-3
-  pitch:
+  pitch: Interflux® IR 3 is an absolutely halide-free, lead-free, no-clean solder wire that has been developed for **robot soldering**. It provides low spattering, fast wetting, low soldering tip contamination and low residue. IR 3 can also be used for hand soldering with the same advantages.
   processes:
+    - For robot soldering
+    - For hand soldering
   qualities:
+    - Perfect for robot soldering
+    - Low spattering
+    - Fast wetting
+    - Low soldering tip contamination
+    - Low residue
+    - Absolutely halogen free
+    - Lead-free
   properties:
+    - "Compliance: ROL0 to EN and IPC standards"
 
 - slug: Laser-25
   name: Laser 25
   family: solder wires
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1394,7 +1454,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1407,7 +1467,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1433,7 +1493,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: TS15
@@ -1447,7 +1507,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: TS18
@@ -1461,7 +1521,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: TS33
@@ -1475,7 +1535,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: TS33R
@@ -1489,7 +1549,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1502,7 +1562,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1515,7 +1575,7 @@
   family: soldering fluxes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1554,7 +1614,7 @@
   family: air knives
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1567,7 +1627,7 @@
   family: tools
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1580,7 +1640,7 @@
   family: solder wires
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1593,7 +1653,7 @@
   family: solder wires
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
