@@ -4,21 +4,31 @@
   public: true
   orderable: true
   featured: true
-  popular: false
+  popular: true
   new: false
   regex1: "DP 5600 "
   regex2: Solderpaste
-  pitch:
+  pitch: Interflux® DP 5600 is a no-clean solder paste for low temperature SnBi(Ag) alloys.
   processes:
+    - reflow soldering
+    - for stencil printing
+    - for dispensing
   qualities:
+    - absolutely halide-free
+    - low melting temperature
+    - low voiding
   properties:
+    - "Alloy: Sn42Bi57Ag1"
+    - "Melting point: 139°C ~ 282°F"
+    - "Halide content: 0,00%"
+    - "Compliance: RO L0 to EN and IPC standards"
 
 - slug: DP-5505-AT
   name: DP 5505 AT
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "DP 5505 AT "
@@ -33,7 +43,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "DP 5505IC"
@@ -49,21 +59,34 @@
   public: true
   orderable: true
   featured: true
-  popular: false
+  popular: true
   new: false
   regex1: "DP 5505 "
   regex2: Solderpaste
-  pitch:
+  pitch: Interflux® DP 5505 is our general purpose, high stability, no-clean solder paste in SnPb(Ag) and lead-free alloys.
   processes:
+    - reflow
+    - stencil printing
+    - dispensing
   qualities:
+    - halide-free
+    - available in both lead-based and lead-free alloys
+    - Low voiding
+    - High printing speeds
+    - Suitable for Pin-in-Paste
+    - Reduced head-in-pillow defect
+    - No clean solder paste
   properties:
+    - "Compliance: RO L0 to EN and IPC standards"
+    - "Halide content: 0,00%"
+  replaced_by: IF-9057
 
 - slug: Delphine-5504
   name: Delphine 5504
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "DP 5504 "
@@ -78,7 +101,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "DP 5504 "
@@ -93,7 +116,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "DP 5503 "
@@ -109,7 +132,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "DP 5503 "
@@ -124,7 +147,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "LP5707 "
@@ -139,7 +162,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "LP5720 "
@@ -157,10 +180,22 @@
   featured: true
   popular: false
   new: false
-  pitch:
+  pitch: Interflux® µ-dIFe 7 is a no-clean, lead-free solder paste for **dipping applications**
   processes:
+    - dipping
+    - reflow
+    - rework
   qualities:
+    - Repeatable and selective paste volume
+    - Fast and easy application
+    - Reduced risk of bridging on μ-BGAs
+    - Suitable for the ERSA Dip&Print Station
+    - For Ball Grid Arrays, J-lead and Gull Wing ICs
+    - halide-free
+    - no clean solder paste
   properties:
+    - "Compliance: RO L0 to EN and IPC standards"
+    - "Halide content: 0,00%"
 
 - slug: IF-9009LT
   name: IF 9009LT
@@ -172,10 +207,18 @@
   new: false
   regex1: "IF 9009LT "
   regex2: Solderpaste
-  pitch:
+  pitch: Interflux® IF 9009LT is a no-clean solder paste with **increased activity** in SnPb(Ag) and lead-free alloys.
   processes:
+    - for reflow
+    - for dispensing
+    - for stencil printing
+    - for dispensing
   qualities:
+    - ideal for degraded and difficult to solder surfaces
+    - Increased activity
+    - available in both SnPb and lead-based alloys
   properties:
+    - "Compliance: RE L1 to EN and IPC standards"
 
 - slug: LMPA-Q6
   name: LMPA™-Q6
@@ -184,20 +227,33 @@
   orderable: true
   featured: true
   popular: false
-  new: false
+  new: true
   regex1: "LMPA™-Q6 "
   regex2: Solderpaste
-  pitch:
+  pitch: Interflux® LMPA™-Q6 is a no-clean solder paste with the high reliability LMPA™-Q low melting point alloy. LMPA™ -Q6 solder paste has improved printing stability, stencil life and more transparent residue compared to DP 5600.
   processes:
+    - reflow soldering
+    - for stencil printing
+    - for dispensing
   qualities:
+    - Enhanced low melting point solder paste
+    - High stability on the stencil
+    - Absolutely halide-free
+    - Smooth, clear and transparent residue
+    - Low voiding
+    - Reduced cost of production
+    - Increased mechanical reliability
+    - No clean solder paste
   properties:
+    - "Compliance: RO L0 to IPC and EN standards"
+    - "Halide content: 0,00%"
 
 - slug: Q6
   name: Q6
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "^Q6 "
@@ -225,7 +281,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "IF 9007 "
@@ -240,7 +296,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   regex1: "IF 9010 "
@@ -1588,7 +1644,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1601,7 +1657,7 @@
   family: solder pastes
   public: true
   orderable: true
-  featured: true
+  featured: false
   popular: false
   new: false
   pitch:
@@ -1650,13 +1706,21 @@
 
 - slug: IF-9057
   name: IF 9057
-  family: solder wires
+  family: solder paste
   public: true
   orderable: true
-  featured: false
+  featured: true
   popular: false
-  new: false
-  pitch:
+  new: true
+  pitch: Interflux® IF 9057 is a no-clean solder paste with **optimized printing stability** and transparent residue after reflow, in lead-free and SnPb(Ag) alloys. <br/>IF 9057 is the successor of DP 5505.
   processes:
   qualities:
+    - High stability on the stencil
+    - Absolutely halide-free
+    - For SnPb(Ag) alloys
+    - For Lead-free alloys
+    - Transparent post reflow residue
+    - No clean solder paste
   properties:
+    - "Compliance: RO L0 to IPC and EN standards"
+    - "Halide content: 0,00%"
