@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200420123112) do
+ActiveRecord::Schema.define(version: 20200423075818) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -156,15 +156,12 @@ ActiveRecord::Schema.define(version: 20200420123112) do
     t.index ["slug"], name: "index_document_categories_on_slug", unique: true
   end
 
-  create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "path"
+  create_table "documents", primary_key: "path", id: :string, force: :cascade do |t|
     t.string "name"
     t.uuid "language_id"
+    t.uuid "document_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.uuid "document_category_id"
-    t.index ["language_id"], name: "index_documents_on_language_id"
-    t.index ["path"], name: "index_documents_on_path", unique: true
   end
 
   create_table "employees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -176,27 +173,22 @@ ActiveRecord::Schema.define(version: 20200420123112) do
     t.index ["person_id"], name: "index_employees_on_person_id"
   end
 
-  create_table "features", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "slug"
+  create_table "features", primary_key: "slug", id: :string, force: :cascade do |t|
     t.string "text"
     t.string "icon"
-    t.text "gist"
+    t.string "gist"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "category"
-    t.index ["slug"], name: "index_features_on_slug", unique: true
-    t.index ["text"], name: "index_features_on_text", unique: true
   end
 
-  create_table "images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "path"
+  create_table "images", primary_key: "path", id: :string, force: :cascade do |t|
     t.string "sizes"
     t.string "formats"
     t.string "caption"
     t.string "alt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["path"], name: "index_images_on_path", unique: true
   end
 
   create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -261,44 +253,33 @@ ActiveRecord::Schema.define(version: 20200420123112) do
   end
 
   create_table "product_documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
-    t.uuid "document_id"
+    t.string "product_id"
+    t.string "document_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["document_id"], name: "index_product_documents_on_document_id"
-    t.index ["product_id"], name: "index_product_documents_on_product_id"
   end
 
-  create_table "product_families", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "slug"
-    t.string "code"
+  create_table "product_families", primary_key: "slug", id: :string, force: :cascade do |t|
     t.string "name_single"
     t.string "name_plural"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.boolean "public", default: false
     t.integer "order"
-    t.index ["name_plural"], name: "index_product_families_on_name_plural", unique: true
-    t.index ["name_single"], name: "index_product_families_on_name_single", unique: true
-    t.index ["slug"], name: "index_product_families_on_slug", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "product_features", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
-    t.uuid "feature_id"
+    t.string "product_id"
+    t.string "feature_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["feature_id"], name: "index_product_features_on_feature_id"
-    t.index ["product_id"], name: "index_product_features_on_product_id"
   end
 
   create_table "product_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
-    t.uuid "image_id"
+    t.string "product_id"
+    t.string "image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["image_id"], name: "index_product_images_on_image_id"
-    t.index ["product_id"], name: "index_product_images_on_product_id"
   end
 
   create_table "product_related_articles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -319,28 +300,6 @@ ActiveRecord::Schema.define(version: 20200420123112) do
     t.index ["substitute_id"], name: "index_product_substitutes_on_substitute_id"
   end
 
-  create_table "product_uses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
-    t.uuid "use_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_uses_on_product_id"
-    t.index ["use_id"], name: "index_product_uses_on_use_id"
-  end
-
-  create_table "product_variants", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "code"
-    t.string "name"
-    t.uuid "product_id"
-    t.uuid "container_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["code"], name: "index_product_variants_on_code", unique: true
-    t.index ["container_id"], name: "index_product_variants_on_container_id"
-    t.index ["name"], name: "index_product_variants_on_name"
-    t.index ["product_id"], name: "index_product_variants_on_product_id"
-  end
-
   create_table "product_videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "product_id"
     t.uuid "video_id"
@@ -350,28 +309,19 @@ ActiveRecord::Schema.define(version: 20200420123112) do
     t.index ["video_id"], name: "index_product_videos_on_video_id"
   end
 
-  create_table "products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "slug"
-    t.string "code"
+  create_table "products", primary_key: "slug", id: :string, force: :cascade do |t|
     t.string "name"
+    t.string "product_family_id"
+    t.string "label"
+    t.text "pitch"
+    t.text "properties"
     t.boolean "public", default: false
-    t.boolean "deprecated", default: false
     t.boolean "orderable", default: false
+    t.boolean "featured", default: false
     t.boolean "popular", default: false
     t.boolean "new", default: false
-    t.uuid "product_family_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.uuid "image_id"
-    t.index ["code"], name: "index_products_on_code", unique: true
-    t.index ["deprecated"], name: "index_products_on_deprecated"
-    t.index ["name"], name: "index_products_on_name", unique: true
-    t.index ["new"], name: "index_products_on_new"
-    t.index ["orderable"], name: "index_products_on_orderable"
-    t.index ["popular"], name: "index_products_on_popular"
-    t.index ["product_family_id"], name: "index_products_on_product_family_id"
-    t.index ["public"], name: "index_products_on_public"
-    t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
   create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -389,15 +339,6 @@ ActiveRecord::Schema.define(version: 20200420123112) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
-  end
-
-  create_table "uses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "name"
-    t.string "slug"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["name"], name: "index_uses_on_name", unique: true
-    t.index ["slug"], name: "index_uses_on_slug", unique: true
   end
 
   create_table "videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
