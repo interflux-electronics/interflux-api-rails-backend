@@ -1,7 +1,3 @@
-require 'yaml'
-require 'byebug'
-require 'ap'
-
 before = ProductFamily.count
 
 puts '---------'

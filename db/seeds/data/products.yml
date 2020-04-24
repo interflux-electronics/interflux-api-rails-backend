@@ -10,14 +10,14 @@
   regex2: Solderpaste
   pitch: Interflux® DP 5600 is a no-clean solder paste for low temperature SnBi(Ag) alloys.
   processes:
-    - reflow soldering
-    - for stencil printing
-    - for dispensing
+    - reflow-soldering
+    - stencil-printing
+    - dispensing
   qualities:
-    - absolutely halide-free
-    - low melting temperature
-    - low voiding
-    - No clean solder paste
+    - halide-free
+    - low-melting-point
+    - low-voiding
+    - no-clean
   properties:
     - "Alloy: Sn42Bi57Ag1"
     - "Melting point: 139°C ~ 282°F"
@@ -66,17 +66,17 @@
   regex2: Solderpaste
   pitch: Interflux® DP 5505 is our general purpose, high stability, no-clean solder paste in SnPb(Ag) and lead-free alloys.
   processes:
-    - reflow
+    - reflow-soldering
     - stencil printing
     - dispensing
   qualities:
     - halide-free
     - available in both lead-based and lead-free alloys
-    - Low voiding
+    - low-voiding
     - High printing speeds
     - Suitable for Pin-in-Paste
     - Reduced head-in-pillow defect
-    - No clean solder paste
+    - no-clean
   properties:
     - "Compliance: RO L0 to EN and IPC standards"
     - "Halide content: 0,00%"
@@ -184,8 +184,8 @@
   pitch: Interflux® µ-dIFe 7 is a no-clean, lead-free solder paste for **dipping applications**
   processes:
     - dipping
-    - reflow
-    - rework
+    - reflow-soldering
+    - rework-and-repair
   qualities:
     - Repeatable and selective paste volume
     - Fast and easy application
@@ -193,7 +193,7 @@
     - Suitable for the ERSA Dip&Print Station
     - For Ball Grid Arrays, J-lead and Gull Wing ICs
     - halide-free
-    - no clean solder paste
+    - no-clean
   properties:
     - "Compliance: RO L0 to EN and IPC standards"
     - "Halide content: 0,00%"
@@ -210,15 +210,14 @@
   regex2: Solderpaste
   pitch: Interflux® IF 9009LT is a no-clean solder paste with **increased activity** in SnPb(Ag) and lead-free alloys.
   processes:
-    - for reflow
-    - for dispensing
-    - for stencil printing
-    - for dispensing
+    - reflow-soldering
+    - dispensing
+    - stencil-printing
   qualities:
     - ideal for degraded and difficult to solder surfaces
     - Increased activity
     - available in both SnPb and lead-based alloys
-    - No clean solder paste
+    - no-clean
   properties:
     - "Compliance: RE L1 to EN and IPC standards"
 
@@ -234,18 +233,18 @@
   regex2: Solderpaste
   pitch: Interflux® LMPA™-Q6 is a no-clean solder paste with the high reliability LMPA™-Q low melting point alloy. LMPA™ -Q6 solder paste has improved printing stability, stencil life and more transparent residue compared to DP 5600.
   processes:
-    - reflow soldering
-    - for stencil printing
-    - for dispensing
+    - reflow-soldering
+    - stencil-printing
+    - dispensing
   qualities:
     - Enhanced low melting point solder paste
     - High stability on the stencil
-    - Absolutely halide-free
+    - halide-free
     - Smooth, clear and transparent residue
-    - Low voiding
+    - low-voiding
     - Reduced cost of production
     - Increased mechanical reliability
-    - No clean solder paste
+    - no-clean
   properties:
     - "Compliance: RO L0 to IPC and EN standards"
     - "Halide content: 0,00%"
@@ -350,7 +349,7 @@
   pitch: Interflux® OSPI 3311M is an alcohol based no-clean flux for soldering OSP finished boards that have passed one or more reflow cycles.
   processes:
     - wave
-    - reflow
+    - reflow-soldering
     - For soldering OSP
   qualities:
     - alcohol
@@ -740,8 +739,8 @@
   new: false
   pitch: Interflux® IF 8300 is a no-clean, halide-free tacky gel flux suitable for reballing and BGA rework.
   processes:
-    - rework
-    - reflow
+    - rework-and-repair
+    - reflow-soldering
     - dispensing
     - stencil
     - dipping
@@ -766,8 +765,8 @@
   new: false
   pitch: Interflux® IF 7500HAB is a no-clean, halide-free tacky gel flux with increased process window. Suitable for reballing and BGA rework.
   processes:
-    - rework
-    - reflow
+    - rework-and-repair
+    - reflow-soldering
     - dispensing
     - stencil-printing
     - dipping
@@ -794,7 +793,7 @@
   regex2: Soldering Flux
   pitch: Interflux® IF 8001 is a solvent based, no-clean soldering flux with **low residue** formation for selective fluxing applications.
   processes:
-    - rework
+    - rework-and-repair
     - selective
   qualities:
     - alcohol-based
@@ -820,7 +819,7 @@
   regex2: Soldering Flux
   pitch: "Interflux® IF 6000 is a rosin containing, no-clean soldering flux with **increased process window** for selective fluxing applications."
   processes:
-    - rework
+    - rework-and-repair
     - selective
   qualities:
     - alcohol-based
@@ -848,7 +847,7 @@
   regex2: Soldering Flux
   pitch: "TerrIFic RP65 is a water based, no-clean soldering flux for selective fluxing applications."
   processes:
-    - rework
+    - rework-and-repair
     - hand
   qualities:
     - water-based
@@ -1050,7 +1049,7 @@
   new: false
   pitch: Interflux® Aquasol 4018 is a high activity solder wire with **water soluble residues** in lead-free alloys. Very good wetting ability on surfaces with poor solderabilty. Residues must be cleaned.
   processes:
-    - rework
+    - rework-and-repair
   qualities:
     - Very good wetting ability on surfaces with poor solderabilty
     - Water soluble solder wire
@@ -1087,7 +1086,7 @@
   regex2: Solder wire
   pitch: Interflux® IF 14 series are colophony free, absolutely halide-free, no-clean solder wires with **easily removable residues** in SnPb(Ag) and lead-free alloys.
   processes:
-    - rework
+    - rework-and-repair
   qualities:
     - Brushable residue
     - Available in both lead and lead-free alloys
@@ -1109,7 +1108,7 @@
   new: false
   pitch: Interflux® Flexsol 903 is an absolutely halide-free, no-clean solder wire with **reduced spattering** properties in lead-free alloys.
   processes:
-    - rework
+    - rework-and-repair
   qualities:
     - Low spattering
     - lead-free
@@ -1328,7 +1327,7 @@
   new: false
   pitch: Interflux® Purgel is a neutral cleaner/conditioner for pumps and valves of dispensing systems. For preserving dispensing system parts when not in use.
   processes:
-    - rework
+    - rework-and-repair
     - dispensing
   qualities:
     - Helps preserves dispensing system parts when not in use
@@ -1399,7 +1398,7 @@
   new: false
   pitch: Interflux® ISC 8020 is a stencil cleaning fluid for stencil printers. For the removal of solder paste and uncured SMT adhesives.
   processes:
-    - For stencil printing
+    - stencil-printing
   qualities:
     - Alcohol-based
   properties:
@@ -1495,7 +1494,7 @@
   processes:
     - wave
     - selective
-    - rework
+    - rework-and-repair
     - pre-tinning
     - dipping
   qualities:
@@ -1651,7 +1650,7 @@
   new: false
   pitch: Interflux® Tip Tinner cleans and retins tips of soldering irons.
   processes:
-    - rework
+    - rework-and-repair
   qualities:
     - Increases tip life substantially
     - non abrasive
@@ -1835,11 +1834,11 @@
   processes:
   qualities:
     - High stability on the stencil
-    - Absolutely halide-free
+    - halide-free
     - For SnPb(Ag) alloys
     - For Lead-free alloys
     - Transparent post reflow residue
-    - No clean solder paste
+    - no-clean
   properties:
     - "Compliance: RO L0 to IPC and EN standards"
     - "Halide content: 0,00%"
