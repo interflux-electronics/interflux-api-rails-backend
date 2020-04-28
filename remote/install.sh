@@ -67,12 +67,6 @@ and env RAILS_ENV=production bin/rails db:migrate
 and echo ----------
 and echo env RAILS_ENV=production bin/rails db:seed:truth
 and env RAILS_ENV=production bin/rails db:seed:truth
-
-# If needed
-# and echo ----------
-# and echo bin/rails db:seed
-# and env RAILS_ENV=production bin/rails db:seed
-
 and echo ----------
 and echo set head (git --git-dir=/var/www/api.interflux.com/repo rev-parse --short HEAD)
 and set head (git --git-dir=/var/www/api.interflux.com/repo rev-parse --short HEAD)
