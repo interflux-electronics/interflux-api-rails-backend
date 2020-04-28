@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200423075818) do
+ActiveRecord::Schema.define(version: 20200428132241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,10 +95,9 @@ ActiveRecord::Schema.define(version: 20200423075818) do
     t.index ["name"], name: "index_containers_on_name", unique: true
   end
 
-  create_table "countries", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "countries", primary_key: "two_letter_code", id: :string, force: :cascade do |t|
     t.string "name_english"
     t.string "name_native"
-    t.string "two_letter_code"
     t.string "three_letter_code"
     t.string "numeric_code"
     t.string "region"
@@ -113,11 +112,6 @@ ActiveRecord::Schema.define(version: 20200423075818) do
     t.string "calling_codes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name_english"], name: "index_countries_on_name_english", unique: true
-    t.index ["name_native"], name: "index_countries_on_name_native", unique: true
-    t.index ["numeric_code"], name: "index_countries_on_numeric_code", unique: true
-    t.index ["three_letter_code"], name: "index_countries_on_three_letter_code", unique: true
-    t.index ["two_letter_code"], name: "index_countries_on_two_letter_code", unique: true
   end
 
   create_table "country_currencies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -138,13 +132,11 @@ ActiveRecord::Schema.define(version: 20200423075818) do
     t.index ["language_id"], name: "index_country_languages_on_language_id"
   end
 
-  create_table "currencies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "code"
+  create_table "currencies", primary_key: "code", id: :string, force: :cascade do |t|
     t.string "name"
     t.string "symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["code"], name: "index_currencies_on_code", unique: true
   end
 
   create_table "document_categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -191,17 +183,13 @@ ActiveRecord::Schema.define(version: 20200423075818) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+  create_table "languages", primary_key: "two_letter_code", id: :string, force: :cascade do |t|
     t.string "name_english"
     t.string "name_native"
-    t.string "two_letter_code"
     t.string "three_letter_code"
     t.boolean "public", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["public"], name: "index_languages_on_public"
-    t.index ["three_letter_code"], name: "index_languages_on_three_letter_code", unique: true
-    t.index ["two_letter_code"], name: "index_languages_on_two_letter_code", unique: true
   end
 
   create_table "leads", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

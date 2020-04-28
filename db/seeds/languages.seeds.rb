@@ -27,6 +27,9 @@ data.each_with_index do |hash, i|
       three_letter_code: language.iso639_2,
       public: public
     )
+
+    byebug if language.iso639_1.nil?
+
     if record.nil?
       Language.create!(properties.to_h)
     else
