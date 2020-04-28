@@ -2,8 +2,7 @@
 #
 # Table name: images
 #
-#  id         :uuid             not null, primary key
-#  path       :string
+#  path       :string           not null, primary key
 #  sizes      :string
 #  formats    :string
 #  caption    :string

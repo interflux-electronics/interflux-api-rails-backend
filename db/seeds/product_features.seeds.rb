@@ -18,33 +18,49 @@ after :products, :features do
     product_record = Product.find(product.slug)
     byebug if product_record.nil?
 
-    if product.qualities
-      puts "#{spaces}   Qualities:"
-      product.qualities.each do |quality|
-        puts "#{spaces}   - #{quality}"
+    if product.processes
+      puts "#{spaces}   Processes:"
+      product.processes.each do |process_slug|
+        puts "#{spaces}   - #{process_slug}"
 
-        feature = OpenStruct.new
-        feature.slug = quality
-        feature.category = 'quality'
-
-        feature_record = Feature.where(category: feature.category).find(feature.slug)
-
+        feature_record = Feature.where(category: 'process').find(process_slug)
         byebug if feature_record.nil?
+
+        properties = OpenStruct.new(
+          product_id: product_record.id,
+          feature_id: feature_record.id
+        )
+
+        relation_record = ProductFeature.where(product_id: product_record.id).where(feature_id: feature_record.id).first
+
+        if relation_record.nil?
+          ProductFeature.create!(properties.to_h)
+        else
+          relation_record.update!(properties.to_h)
+        end
       end
     end
 
-    if product.processes
-      puts "#{spaces}   Processes:"
-      product.processes.each do |process|
-        puts "#{spaces}   - #{process}"
+    if product.qualities
+      puts "#{spaces}   Qualities:"
+      product.qualities.each do |quality_slug|
+        puts "#{spaces}   - #{quality_slug}"
 
-        feature = OpenStruct.new
-        feature.slug = process
-        feature.category = 'process'
+        feature_record = Feature.find_by(slug: quality_slug, category: 'quality')
+        next if feature_record.nil?
 
-        feature_record = Feature.where(category: feature.category).find(feature.slug)
+        properties = OpenStruct.new(
+          product_id: product_record.id,
+          feature_id: feature_record.id
+        )
 
-        byebug if feature_record.nil?
+        relation_record = ProductFeature.where(product_id: product_record.id).where(feature_id: feature_record.id).first
+
+        if relation_record.nil?
+          ProductFeature.create!(properties.to_h)
+        else
+          relation_record.update!(properties.to_h)
+        end
       end
     end
 

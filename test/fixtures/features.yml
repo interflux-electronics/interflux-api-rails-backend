@@ -2,14 +2,13 @@
 #
 # Table name: features
 #
-#  id         :uuid             not null, primary key
-#  slug       :string
+#  slug       :string           not null, primary key
 #  text       :string
 #  icon       :string
-#  gist       :text
+#  gist       :string
+#  category   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  category   :string
 #
 
 # feature_fixture_1:

@@ -45,9 +45,9 @@
   icon: pre-tinning
   category: "process"
 
-- slug: dipping
-  text: dipping
-  icon: dipping
+- slug: dip-soldering
+  text: dip soldering
+  icon: dip-soldering
   category: "process"
 
 - slug: dispensing
@@ -63,6 +63,36 @@
 - slug: vapor-phase-soldering
   text: vapor phase soldering
   icon: vapor-phase-soldering
+  category: "process"
+
+- slug: OSP-soldering
+  text: OSP soldering
+  icon: osp-soldering
+  category: "process"
+
+- slug: hand-soldering
+  text: hand soldering
+  icon: hand-soldering
+  category: "process"
+
+- slug: robot-soldering
+  text: robot soldering
+  icon: robot-soldering
+  category: "process"
+
+- slug: laser-soldering
+  text: laser soldering
+  icon: laser-soldering
+  category: "process"
+
+- slug: general-cleaning
+  text: general cleaning
+  icon: general-cleaning
+  category: "process"
+
+- slug: solder-bath-conditioning
+  text: solder bath conditioning
+  icon: solder-bath-conditioning
   category: "process"
 
 # - slug: cleaning
@@ -142,3 +172,13 @@
   icon: lead-and-lead-free
   category: "quality"
   gist: "For those that use the same machines to for lead-based and lead-free manufacturing, it's important that their solder fluxes and solder pastes are compatible with all alloys."
+
+- slug: available-in-lead-based-alloys
+  text: Available in lead-based alloys
+  icon: lead
+  category: "quality"
+
+- slug: available-in-lead-free-alloys
+  text: Available in lead-free alloys
+  icon: lead-free
+  category: "quality"

@@ -67,11 +67,12 @@
   pitch: Interflux® DP 5505 is our general purpose, high stability, no-clean solder paste in SnPb(Ag) and lead-free alloys.
   processes:
     - reflow-soldering
-    - stencil printing
+    - stencil-printing
     - dispensing
   qualities:
     - halide-free
-    - available in both lead-based and lead-free alloys
+    - available-in-lead-free-alloys
+    - available-in-lead-based-alloys
     - low-voiding
     - High printing speeds
     - Suitable for Pin-in-Paste
@@ -183,7 +184,7 @@
   new: false
   pitch: Interflux® µ-dIFe 7 is a no-clean, lead-free solder paste for **dipping applications**
   processes:
-    - dipping
+    - dip-soldering
     - reflow-soldering
     - rework-and-repair
   qualities:
@@ -216,7 +217,8 @@
   qualities:
     - ideal for degraded and difficult to solder surfaces
     - Increased activity
-    - available in both SnPb and lead-based alloys
+    - available-in-lead-free-alloys
+    - available-in-lead-based-alloys
     - no-clean
   properties:
     - "Compliance: RE L1 to EN and IPC standards"
@@ -348,14 +350,14 @@
   regex1: "OSPI 3311M "
   pitch: Interflux® OSPI 3311M is an alcohol based no-clean flux for soldering OSP finished boards that have passed one or more reflow cycles.
   processes:
-    - wave
+    - OSP-soldering
+    - wave-soldering
     - reflow-soldering
-    - For soldering OSP
   qualities:
     - alcohol
     - halide-free
     - High deoxidation power
-    - For lead-free and SnPb processes
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: OR L0 according to EN and IPC standards"
     - "Halide content: 0,00%"
@@ -386,16 +388,16 @@
   regex2: Soldering Flux
   pitch: Interflux® IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**
   processes:
-    - foam
-    - spray
-    - jet
-    - wave
+    - foam-fluxing
+    - spray-fluxing
+    - jet-fluxing
+    - wave-soldering
   qualities:
     - alcohol-based
     - halide-free
     - High compatibility with conformal coating
     - No-residue ™
-    - SnPb and lead-free compatible
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: OR L0 to EN and IPC standards"
     - "Compliance: QPL-listed, approved to MIL-F-14256F"
@@ -427,16 +429,16 @@
   new: false
   pitch: Interflux® IF 2005K with 2,5% of solids is a resin- and rosin-free, no-clean flux. It can be used when the soldering process needs more activation than IF 2005M provides.
   processes:
-    - wave
-    - spray
-    - jet
-    - foam
+    - wave-soldering
+    - spray-fluxing
+    - jet-fluxing
+    - foam-fluxing
   qualities:
     - alcohol-based
     - halide-free
     - High compatibility with conformal coating
     - Low residue
-    - SnPb and lead-free compatible
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: OR L0 according to EN and IPC standards"
     - "Solid content: 2,5% ±0,3"
@@ -454,10 +456,10 @@
   regex2: Soldering Flux
   pitch: Interflux® IF 2005C with **3,3% of solids** is a resin- and rosin-free, no-clean flux. It can be used when the soldering process needs **more activation** than IF 2005M or IF 2005K provide.
   processes:
-    - selective
-    - spray
-    - jet
-    - foam
+    - selective-soldering
+    - spray-fluxing
+    - jet-fluxing
+    - foam-fluxing
   qualities:
     - alcohol-based
     - halide-free
@@ -480,7 +482,7 @@
   new: true
   pitch: Interflux® SelectIF 2040 is a water based no-clean **selective soldering flux** with a wide process window and low residue formation.
   processes:
-    - selective
+    - selective-soldering
   qualities:
     - water-based
     - VOC-free
@@ -490,7 +492,7 @@
     - High temperature resistant
     - High compatibility with conformal coating
     - Low residue
-    - For SnPb and lead-free processes
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: OR L0 according to EN and IPC standards"
     - "Solid content: 6,5% ±0,2"
@@ -519,18 +521,18 @@
   new: false
   pitch: Interflux® PacIFic 2009M is a water based no-clean flux mainly used for **wave and selective** soldering.
   processes:
-    - wave
-    - selective
+    - wave-soldering
+    - selective-soldering
     - pre-tinning
-    - spray
-    - jet
+    - spray-fluxing
+    - jet-fluxing
   qualities:
     - water-based
     - VOC-free
     - halide-free
     - Low residue
     - High compatibility with conformal coating
-    - Compatible with both SnPb and lead-free
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: OR L0 according to EN and IPC standards"
     - "Solid content: 3,7% ±0,15"
@@ -546,15 +548,15 @@
   new: false
   pitch: PacIFic 2009MLF is a water based no-clean soldering flux developed to **minimize micro solder ball formation**.
   processes:
-    - wave
-    - selective
-    - spray
+    - wave-soldering
+    - selective-soldering
+    - spray-fluxing
   qualities:
     - Anti solder ball formation
     - water-based
     - VOC-free
     - halide-free
-    - For SnPb and lead-free processes
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: OR L0 according to EN and IPC standards"
     - "Solid content: 3,6% ±0,2"
@@ -571,9 +573,9 @@
   new: false
   pitch: PacIFic 2009MLF-E is a water based no-clean flux which combines **low residue** levels with **reduced micro solder ball** formation.
   processes:
-    - wave
-    - spray
-    - jet
+    - wave-soldering
+    - spray-fluxing
+    - jet-fluxing
   qualities:
     - water-based
     - VOC-free
@@ -597,17 +599,17 @@
   new: false
   pitch: "PacIFic 2010F is a water based no-clean flux for foam fluxing applications."
   processes:
-    - foam
-    - wave
-    - spray
-    - jet
+    - foam-fluxing
+    - wave-soldering
+    - spray-fluxing
+    - jet-fluxing
   qualities:
     - water-based
     - VOC-free
     - halide-free
     - High compatibility with conformal coating
     - low residue
-    - Compatible with SnPb and lead-free
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: OR L0 according to EN and IPC standards"
     - "Solid content: 2,5% ±0,15"
@@ -676,14 +678,14 @@
   new: false
   pitch: Interflux® IF 3006 is a resin- and rosin free, no-clean soldering flux with a **reduced VOC** content.
   processes:
-    - wave
-    - selective
+    - wave-soldering
+    - selective-soldering
     - pre-tinning
   qualities:
     - Low VOC
     - halide-free
     - High compatibility with conformal coating
-    - for both SnPb and lead-free processes
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: OR L0 according to EN and IPC standards"
     - "Solid content: 3,2% ±0,4"
@@ -713,16 +715,16 @@
   new: false
   pitch: "Interflux® AF 4818 PbF is a solvent based, rosin containing, no-clean soldering flux with increased solid content and a large process window."
   processes:
-    - wave
-    - spray
-    - jet
+    - wave-soldering
+    - spray-fluxing
+    - jet-fluxing
   qualities:
     - Contains rosin
     - Alcohol based
     - halide-free
     - High deoxidation power
     - Long preheat resistant
-    - Compatible with both SnPb and lead-free processes
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: RO L0 to EN and IPC standards"
     - "Solid content: 5%"
@@ -742,13 +744,13 @@
     - rework-and-repair
     - reflow-soldering
     - dispensing
-    - stencil
-    - dipping
+    - stencil-printing
+    - dip-soldering
   qualities:
     - Suitable for reballing and BGA rework
     - halide-free
     - low residue
-    - For SnPb and lead-free processes
+    - for-lead-and-lead-free-processes
   properties:
     - "Compliance: RE L0 to EN and IPC standards"
     - "Halide content: 0,00%"
@@ -769,7 +771,7 @@
     - reflow-soldering
     - dispensing
     - stencil-printing
-    - dipping
+    - dip-soldering
   qualities:
     - Suitable for reballing and BGA rework
     - halide-free
@@ -794,12 +796,12 @@
   pitch: Interflux® IF 8001 is a solvent based, no-clean soldering flux with **low residue** formation for selective fluxing applications.
   processes:
     - rework-and-repair
-    - selective
+    - selective-soldering
   qualities:
     - alcohol-based
     - halide-free
     - low-residue
-    - Compatible with both SnPb and lead-free alloys
+    - for-lead-and-lead-free-processes
     - Available in fluxpens
   properties:
     - "Compliance: RE L0 to EN and IPC standards"
@@ -820,14 +822,14 @@
   pitch: "Interflux® IF 6000 is a rosin containing, no-clean soldering flux with **increased process window** for selective fluxing applications."
   processes:
     - rework-and-repair
-    - selective
+    - selective-soldering
   qualities:
     - alcohol-based
     - halide-free
     - contains-rosin
     - High deoxidation power
     - Long preheat resistant
-    - Compatible with both SnPb and lead-free alloys
+    - for-lead-and-lead-free-processes
     - Available in fluxpens
   properties:
     - "Compliance: RO L0 to EN and IPC standards"
@@ -847,14 +849,13 @@
   regex2: Soldering Flux
   pitch: "TerrIFic RP65 is a water based, no-clean soldering flux for selective fluxing applications."
   processes:
+    - hand-soldering
     - rework-and-repair
-    - hand
   qualities:
     - water-based
     - halide-free
     - Long preheat resistant
-    - For SnPb and lead-free processes
-    - Compatible with both SnPb and lead-free alloys
+    - for-lead-and-lead-free-processes
     - Available in flux-pens
   properties:
     - "Compliance: OR L0 to EN and IPC standards"
@@ -873,12 +874,13 @@
   new: false
   pitch: Interflux® T 2005M is the thinner / conditioner for the IF 2005-series fluxes. Ideal for foam fluxing or other open flux processes.
   processes:
-    - For foam fluxing
-    - For the IF 2005-series soldering fluxes
+    - foam-fluxing
   qualities:
     - alcohol-based
     - halide-free
   properties:
+  extra:
+    - For the IF 2005-series soldering fluxes
 
 - slug: IF-FL5821
   name: IF FL5821
@@ -985,8 +987,8 @@
   new: true
   pitch: Interflux® QF 70 is an absolutely halide-free, rosin based no-clean solder wire with fast wetting for fast soldering operations in lead-free alloys. QF 70 can be used in both hand soldering and auto-mated soldering processes.
   processes:
-    - For hand soldering
-    - For robot soldering
+    - hand-soldering
+    - robot-soldering
   qualities:
     - Increased wetting speed
     - Transparent residue
@@ -1006,8 +1008,8 @@
   new: true
   pitch: "Interflux® NH 1 is a no-clean colophony free activated solder wire that gives fast and repeatable soldering results on a wide range of surfaces including brass, in lead-free alloys. NH 1 can be used in both hand soldering and auto-mated soldering processes."
   processes:
-    - For laser soldering
-    - For hand soldering
+    - laser-soldering
+    - hand-soldering
   qualities:
     - Increased wetting ability, increased wetting speed
     - Low spattering
@@ -1028,14 +1030,15 @@
   new: true
   pitch: Interflux® RosIX 705 SnPb(Ag) is an **activated rosin based**, no-clean solder wire with increased wetting ability on surfaces that are difficult to solder in SnPb(Ag) alloys. RosIX 705 SnPb(Ag) can be used on surfaces that are difficult to solder, e.g. OSP, Ni, Zn, brass, German silver,... as well as on degraded and oxidized surfaces.
   processes:
-    - Robot soldering
+    - robot-soldering
   qualities:
     - Increased wetting ability
     - Non disturbing smell
     - High repeatability
     - Smooth transparent residue
     - Suitable for robot soldering
-    - Available in both lead-based and lead-free alloys
+    - available-in-lead-free-alloys
+    - available-in-lead-based-alloys
   properties:
     - "Compliance: RO L1 to EN and IPC standards."
 
@@ -1089,7 +1092,8 @@
     - rework-and-repair
   qualities:
     - Brushable residue
-    - Available in both lead and lead-free alloys
+    - available-in-lead-free-alloys
+    - available-in-lead-based-alloys
     - halide-free
     - Absolutely colophony free
     - Low residue
@@ -1155,8 +1159,8 @@
   regex1: IR-3
   pitch: Interflux® IR 3 is an absolutely halide-free, lead-free, no-clean solder wire that has been developed for **robot soldering**. It provides low spattering, fast wetting, low soldering tip contamination and low residue. IR 3 can also be used for hand soldering with the same advantages.
   processes:
-    - For robot soldering
-    - For hand soldering
+    - robot-soldering
+    - hand-soldering
   qualities:
     - Perfect for robot soldering
     - Low spattering
@@ -1191,9 +1195,9 @@
   new: true
   pitch: The Revolutionary Selective Jet Fluxer is designed to control the amount of flux for each solder joint without losing the ability to maintain the required cycle time demanded by wave soldering processes. The Jet technology used replaces completely the need of spray technology. As a result, the ICSF-Select offers a Total Flux Process control needed for today’s more demanding and complicated soldering requirements, especially lead-free processes. The ability to program points, lines, multi-lines, areas allows the engineer to decide how much flux/pressure is required for certain solder joints up to complete areas. This capability opens up the process window without risking excess of flux residues. Thanks to the XY-movement speed up to 1,500 mm/s, the cycle time will be up to the standard required for wave soldering mass production.
   processes:
-    - wave
-    - jet
-    - spray
+    - wave-soldering
+    - jet-fluxing
+    - spray-fluxing
   qualities:
     - Standalone machine
     - For alcohol-based fluxes
@@ -1217,9 +1221,9 @@
   new: false
   pitch: The InterSpray Curve series are designed to retrofit all existing soldering machines with a reliable spray fluxer which offers excellent results.
   processes:
-    - wave
-    - spray
-    - jet
+    - wave-soldering
+    - spray-fluxing
+    - jet-fluxing
   qualities:
     - Retrofits into existing machine
     - For alcohol-based fluxes
@@ -1243,9 +1247,9 @@
   new: false
   pitch: The InterSpray Curve 2 double nozzle series are designed to **use 2 different types of fluxes** in 1 reliable spray fluxer system.
   processes:
-    - wave
-    - spray
-    - jet
+    - wave-soldering
+    - spray-fluxing
+    - jet-fluxing
   qualities:
     - Retrofits into existing machine
     - For alcohol-based fluxes
@@ -1271,13 +1275,12 @@
   new: false
   pitch: Interflux® IF 710 PSM is a natural latex based, fast curing peelable solder mask. To shield areas on a PCB from flux and solder wave contact.
   processes:
-    - wave
+    - wave-soldering
   qualities:
     - Fast drying, easily peelable
     - Does not easily break while peeling
     - Heat resistant
-    - For SnPb(Ag) processes
-    - For lead-free processes
+    - for-lead-and-lead-free-processes
     - RoHS compliant
   properties:
     - "Note: May give a discolouration of Cu when applied on naked Cu or Cu-OSP."
@@ -1293,11 +1296,10 @@
   new: false
   pitch: Interflux® IF 930 cleans and de-oxidizes wettable nozzles of selective soldering systems. Replaces IF-920.
   processes:
-    - selective
+    - selective-soldering
   qualities:
     - Safe and easy one-step cleaning
-    - For SnPb(Ag) processes
-    - For lead-free processes
+    - for-lead-and-lead-free-processes
     - halide-free
   properties:
 
@@ -1345,7 +1347,7 @@
   new: false
   pitch: Interflux® pre-saturated IPA/DI wipes in flip-top tubs and refill bags for **general cleaning** of surfaces.
   processes:
-    - for general cleaning
+    - general-cleaning
   qualities:
     - lint-free, non woven fabric
     - ESD-safe
@@ -1378,7 +1380,7 @@
   new: false
   pitch: Interflux® pre-saturated stencil clean wipes in flip-top tubs and refill bags for the removal of **solder paste** and non cured **SMT adhesive** from stencils and tools.
   processes:
-    - for stencil cleaning
+    - stencil-printing
   qualities:
     - lint-free, non-woven fabric
     - Alcohol-based
@@ -1390,13 +1392,13 @@
 - slug: ISC-8020
   name: ISC 8020
   family: auxiliaries
-  label: stencil cleaning fluid
+  label: stencil cleaning liquid
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch: Interflux® ISC 8020 is a stencil cleaning fluid for stencil printers. For the removal of solder paste and uncured SMT adhesives.
+  pitch: Interflux® ISC 8020 is a stencil cleaning liquid for stencil printers. For the removal of solder paste and uncured SMT adhesives.
   processes:
     - stencil-printing
   qualities:
@@ -1414,20 +1416,19 @@
   new: false
   pitch: Interflux® IF 910 de-oxidation oil separates oxides from good solder in a solder bath. Reduces solder consumption.
   processes:
-    - for solder bath treatment
-    - wave
+    - solder-bath-conditioning
+    - wave-soldering
     - pre-tinning
-    - dipping
+    - dip-soldering
   qualities:
     - Reduces solder consumption.
-    - For SnPb(Ag) alloys
-    - For lead-free alloys
+    - for-lead-and-lead-free-processes
   properties:
 
 - slug: Anti-Oxidant-Pellets
   name: Anti-Oxidant Pellets
   family: auxiliaries
-  label: anti-oxidant pellets
+  label: deoxidation pellets
   public: true
   orderable: true
   featured: true
@@ -1435,12 +1436,11 @@
   new: false
   pitch: Interflux® Anti-oxidant pellets minimize the formation of oxides on lead-free and SnPb(Ag) solder baths. Used as an addition in the solder bath.
   processes:
-    - for solder bath treatment
-    - wave
+    - solder-bath-conditioning
+    - wave-soldering
     - pre-tinning
   qualities:
-    - For SnPb(Ag) alloys (blue label)
-    - For lead-free alloys (green label)
+    - for-lead-and-lead-free-processes
   properties:
     - "Note: Anti-oxidant pellets are not recommended under closed inert atmospheres, nor for Ni-doped solder alloys."
 
@@ -1455,12 +1455,13 @@
   regex1: "^Solder bar"
   pitch: Interflux® Solder Bars are made from high purity, low oxidation metals in SnPb(Ag) and lead-free alloys.
   processes:
-    - wave
-    - selective
+    - wave-soldering
+    - selective-soldering
     - pre-tinning
-    - dip
+    - dip-soldering
   qualities:
-    - Available in lead-free and SnPb alloys
+    - available-in-lead-free-alloys
+    - available-in-lead-based-alloys
   properties:
 
 - slug: Plain-Solder-Wires
@@ -1473,11 +1474,12 @@
   new: false
   pitch: Interflux® plain solder wire for automatic solder feeding on selective soldering systems in lead-free and SnPb(Ag) alloys.
   processes:
-    - selective
+    - selective-soldering
     - pre-tinning
-    - dip soldering
+    - dip-soldering
   qualities:
-    - Available in lead-free and SnPb alloys
+    - available-in-lead-free-alloys
+    - available-in-lead-based-alloys
   properties:
     - "Wire diameter: 2mm or 3mm"
     - "Spools: 1kg or 4kg (125mm x 125mm)"
@@ -1492,13 +1494,14 @@
   new: false
   pitch: Interflux® Solder Pellets are small pieces of solder for easy solder bath filling in lead-free and SnPb(Ag) alloys.
   processes:
-    - wave
-    - selective
+    - wave-soldering
+    - selective-soldering
     - rework-and-repair
     - pre-tinning
-    - dipping
+    - dip-soldering
   qualities:
-    - Available in lead-free and SnPb alloys
+    - available-in-lead-free-alloys
+    - available-in-lead-based-alloys
   properties: "Size: ≈ 1cm x 1cm"
 
 - slug: Solder-Rods
@@ -1528,10 +1531,10 @@
   qualities:
   properties:
 
-- slug: Fluxstone
-  name: Fluxstone
+- slug: Foam-Flux-Stone
+  name: Foam Flux Stone
   family: auxiliaries
-  label: flux stones
+  label: foam flux stone
   public: true
   orderable: true
   featured: false
@@ -1539,7 +1542,7 @@
   new: false
   pitch:
   processes:
-    - for foam
+    - foam-fluxing
   qualities:
   properties:
 
@@ -1573,7 +1576,7 @@
 - slug: ISC-300
   name: ISC 300
   family: auxiliaries
-  label: cleaning liquids
+  label: cleaning liquid
   public: true
   orderable: true
   featured: true
@@ -1642,7 +1645,7 @@
 - slug: Tip-Tinner
   name: Tip Tinner
   family: auxiliaries
-  label: tip tinner
+  label: solder iron tip tinner
   public: true
   orderable: true
   featured: true
@@ -1654,8 +1657,7 @@
   qualities:
     - Increases tip life substantially
     - non abrasive
-    - For SnPb(Ag) processes
-    - For lead-free processes
+    - for-lead-and-lead-free-processes
     - halide-free
     - colophony free
   properties:
@@ -1744,7 +1746,7 @@
 
 - slug: WSP-2006
   name: WSP 2006
-  family: soldering-fluxes
+  family: solder-pastes
   public: true
   orderable: true
   featured: false
@@ -1835,8 +1837,7 @@
   qualities:
     - High stability on the stencil
     - halide-free
-    - For SnPb(Ag) alloys
-    - For Lead-free alloys
+    - for-lead-and-lead-free-processes
     - Transparent post reflow residue
     - no-clean
   properties:
