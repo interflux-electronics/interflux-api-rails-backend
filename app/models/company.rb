@@ -11,7 +11,7 @@
 #  fax           :string
 #  latitude      :decimal(, )
 #  longitude     :decimal(, )
-#  country_id    :uuid
+#  country_id    :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  legal_name    :string

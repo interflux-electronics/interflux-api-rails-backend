@@ -21,6 +21,7 @@ ArticleCategory.delete_all
 Country.delete_all
 Language.delete_all
 Currency.delete_all
+Company.delete_all
 
 # product avatars
 # triggers product images
@@ -35,7 +36,7 @@ Currency.delete_all
 # product_features
 # triggers features and products
 #
-after :product_avatars, :product_documents, :product_features, :articles, :countries, :languages, :currencies do
+after :product_avatars, :product_documents, :product_features, :articles, :countries, :languages, :currencies, :companies do
   puts '---------'
   puts 'Done seeding local sources of truth'
   puts '---------'
