@@ -30,9 +30,6 @@ class Product < ApplicationRecord
   has_many :product_images
   has_many :images, through: :product_images, source: :image
 
-  has_many :product_uses
-  has_many :uses, through: :product_uses, source: :use
-
   has_many :product_variants
   has_many :variants, through: :product_variants, source: :product
 
