@@ -1,9 +1,14 @@
 module V1
   module Public
     class ProductSerializer < ApplicationSerializer
-      attributes :slug,
-                 :name,
-                 :public
+      attributes :name,
+                 :label,
+                 :pitch,
+                 :public,
+                 :orderable,
+                 :featured,
+                 :popular,
+                 :new
 
       belongs_to :product_family
       belongs_to :image
