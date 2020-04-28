@@ -13,6 +13,7 @@ class RecreateProductsAndRelated < ActiveRecord::Migration[5.1]
     create_table :products, id: :string, primary_key: 'slug' do |t|
       t.string :name
       t.string :product_family_id
+      t.string :image_id
       t.string :label
       t.text :pitch
       t.text :properties
