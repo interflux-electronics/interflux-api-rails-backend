@@ -1,5 +1,3 @@
-# TODO: Remove all documents from database that aren't in the CDN
-
 after :document_categories, :languages do
   puts '---------'
   puts 'Seeding documents'
@@ -15,7 +13,7 @@ after :document_categories, :languages do
     next unless path.start_with?('documents/')
 
     language = path.split('-').last.split('.').first.downcase
-    language = Language.find_by(two_letter_code: language)
+    language = Language.find(language)
 
     category = path.split('/').second
     category = 'TD' if category == 'series'

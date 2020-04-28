@@ -2,8 +2,7 @@
 #
 # Table name: currencies
 #
-#  id         :uuid             not null, primary key
-#  code       :string
+#  code       :string           not null, primary key
 #  name       :string
 #  symbol     :string
 #  created_at :datetime         not null

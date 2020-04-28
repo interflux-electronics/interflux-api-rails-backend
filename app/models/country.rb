@@ -2,10 +2,9 @@
 #
 # Table name: countries
 #
-#  id                :uuid             not null, primary key
+#  two_letter_code   :string           not null, primary key
 #  name_english      :string
 #  name_native       :string
-#  two_letter_code   :string
 #  three_letter_code :string
 #  numeric_code      :string
 #  region            :string

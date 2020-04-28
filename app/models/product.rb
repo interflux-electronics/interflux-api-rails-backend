@@ -5,6 +5,7 @@
 #  slug              :string           not null, primary key
 #  name              :string
 #  product_family_id :string
+#  image_id          :string
 #  label             :string
 #  pitch             :text
 #  properties        :text
