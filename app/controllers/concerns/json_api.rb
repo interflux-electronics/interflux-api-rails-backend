@@ -1,3 +1,6 @@
+# TODO: Tackle N+1 queries by enabling .include()
+# https://medium.com/@codenode/10-tips-for-eager-loading-to-avoid-n-1-queries-in-rails-2bad54456a3f
+
 # This module centralises all logic needed to adhere to the JSON API spec.
 # https://jsonapi.org/
 module JsonApi

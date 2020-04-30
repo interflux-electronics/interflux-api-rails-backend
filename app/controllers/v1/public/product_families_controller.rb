@@ -72,6 +72,7 @@ module V1
         %i[
           products
           products.image
+          products.features
         ]
       end
 
