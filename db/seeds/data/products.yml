@@ -337,6 +337,7 @@
   pitch:
   processes:
   qualities:
+    - alcohol-based
   properties:
 
 - slug: OSPI-3311M
@@ -354,7 +355,7 @@
     - wave-soldering
     - reflow-soldering
   qualities:
-    - alcohol
+    - alcohol-based
     - halide-free
     - High deoxidation power
     - for-lead-and-lead-free-processes
@@ -373,7 +374,12 @@
   regex1: "IF 2005 "
   pitch:
   processes:
+    - wave-soldering
+    - foam-fluxing
+    - spray-fluxing
+    - jet-fluxing
   qualities:
+    - alcohol-based
   properties:
 
 - slug: IF-2005M
@@ -388,10 +394,10 @@
   regex2: Soldering Flux
   pitch: Interflux® IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**
   processes:
+    - wave-soldering
     - foam-fluxing
     - spray-fluxing
     - jet-fluxing
-    - wave-soldering
   qualities:
     - alcohol-based
     - halide-free
@@ -416,7 +422,12 @@
   regex2: Soldering Flux
   pitch:
   processes:
+    - wave-soldering
+    - foam-fluxing
+    - spray-fluxing
+    - jet-fluxing
   qualities:
+    - alcohol-based
   properties:
 
 - slug: IF-2005K
@@ -509,6 +520,7 @@
   pitch:
   processes:
   qualities:
+    - water-based
   properties:
 
 - slug: PacIFic-2009M
@@ -626,6 +638,7 @@
   pitch:
   processes:
   qualities:
+    - water-based
   properties:
 
 - slug: PacIFic-2008
@@ -639,6 +652,7 @@
   pitch:
   processes:
   qualities:
+    - water-based
   properties:
 
 - slug: PacIFic-2008plus
@@ -652,6 +666,7 @@
   pitch:
   processes:
   qualities:
+    - water-based
   properties:
 
 - slug: PacIFic-2007
@@ -665,6 +680,7 @@
   pitch:
   processes:
   qualities:
+    - water-based
   properties:
 
 - slug: IF-3006
