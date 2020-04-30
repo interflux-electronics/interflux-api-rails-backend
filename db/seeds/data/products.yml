@@ -71,8 +71,8 @@
     - dispensing
   qualities:
     - halide-free
-    - available-in-lead-free-alloys
-    - available-in-lead-based-alloys
+    - lead-free-alloys
+    - lead-based-alloys
     - low-voiding
     - High printing speeds
     - Suitable for Pin-in-Paste
@@ -217,8 +217,8 @@
   qualities:
     - ideal for degraded and difficult to solder surfaces
     - Increased activity
-    - available-in-lead-free-alloys
-    - available-in-lead-based-alloys
+    - lead-free-alloys
+    - lead-based-alloys
     - no-clean
   properties:
     - "Compliance: RE L1 to EN and IPC standards"
@@ -719,8 +719,8 @@
     - spray-fluxing
     - jet-fluxing
   qualities:
-    - Contains rosin
-    - Alcohol based
+    - rosin-based
+    - alcohol-based
     - halide-free
     - High deoxidation power
     - Long preheat resistant
@@ -777,7 +777,7 @@
     - halide-free
     - Long profile resistant
     - High deoxidation power
-    - Contains rosin
+    - rosin-based
   properties:
     - "Compliance: RO M0 to EN and IPC standards"
     - "Halide content: 0,00%"
@@ -826,7 +826,7 @@
   qualities:
     - alcohol-based
     - halide-free
-    - contains-rosin
+    - rosin-based
     - High deoxidation power
     - Long preheat resistant
     - for-lead-and-lead-free-processes
@@ -1037,8 +1037,8 @@
     - High repeatability
     - Smooth transparent residue
     - Suitable for robot soldering
-    - available-in-lead-free-alloys
-    - available-in-lead-based-alloys
+    - lead-free-alloys
+    - lead-based-alloys
   properties:
     - "Compliance: RO L1 to EN and IPC standards."
 
@@ -1092,8 +1092,8 @@
     - rework-and-repair
   qualities:
     - Brushable residue
-    - available-in-lead-free-alloys
-    - available-in-lead-based-alloys
+    - lead-free-alloys
+    - lead-based-alloys
     - halide-free
     - Absolutely colophony free
     - Low residue
@@ -1188,6 +1188,7 @@
 - slug: ICSF-Select
   name: ICSF Select
   family: fluxing-systems
+  label: stand-alone fluxing system
   public: true
   orderable: true
   featured: true
@@ -1199,7 +1200,7 @@
     - jet-fluxing
     - spray-fluxing
   qualities:
-    - Standalone machine
+    - stand-alone-system
     - For alcohol-based fluxes
     - For water fluxes
     - For rosin fluxes
@@ -1214,9 +1215,10 @@
 - slug: ICSF-Curve
   name: ICSF Curve
   family: fluxing-systems
+  label: retrofit fluxing system
   public: true
   orderable: true
-  featured: false
+  featured: true
   popular: false
   new: false
   pitch: The InterSpray Curve series are designed to retrofit all existing soldering machines with a reliable spray fluxer which offers excellent results.
@@ -1225,7 +1227,7 @@
     - spray-fluxing
     - jet-fluxing
   qualities:
-    - Retrofits into existing machine
+    - retrofit-system
     - For alcohol-based fluxes
     - For water fluxes
     - For rosin fluxes
@@ -1240,6 +1242,7 @@
 - slug: ICSF-Curve-2
   name: ICSF Curve 2
   family: fluxing-systems
+  label: retrofit fluxing system
   public: true
   orderable: true
   featured: true
@@ -1251,7 +1254,7 @@
     - spray-fluxing
     - jet-fluxing
   qualities:
-    - Retrofits into existing machine
+    - retrofit-system
     - For alcohol-based fluxes
     - For water fluxes
     - For rosin fluxes
@@ -1460,8 +1463,8 @@
     - pre-tinning
     - dip-soldering
   qualities:
-    - available-in-lead-free-alloys
-    - available-in-lead-based-alloys
+    - lead-free-alloys
+    - lead-based-alloys
   properties:
 
 - slug: Plain-Solder-Wires
@@ -1478,8 +1481,8 @@
     - pre-tinning
     - dip-soldering
   qualities:
-    - available-in-lead-free-alloys
-    - available-in-lead-based-alloys
+    - lead-free-alloys
+    - lead-based-alloys
   properties:
     - "Wire diameter: 2mm or 3mm"
     - "Spools: 1kg or 4kg (125mm x 125mm)"
@@ -1500,8 +1503,8 @@
     - pre-tinning
     - dip-soldering
   qualities:
-    - available-in-lead-free-alloys
-    - available-in-lead-based-alloys
+    - lead-free-alloys
+    - lead-based-alloys
   properties: "Size: ≈ 1cm x 1cm"
 
 - slug: Solder-Rods
@@ -1519,7 +1522,7 @@
 
 - slug: Flux-Pen
   name: Flux Pen
-  family: auxiliaries
+  family: soldering-fluxes
   label: flux pen
   public: true
   orderable: true

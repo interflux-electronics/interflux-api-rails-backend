@@ -117,7 +117,7 @@
   text: Water based
   icon: water
   category: "quality"
-  gist: The two reasons why you will want to use water-based soldering fluxes is because they are 1) not flamable and 2) completely halide-free. None-flamable soldering fluxes are easier to transport, require less paperwork, are safer to store and use. Halide-free fluxes are popular because they do not harm the ozon layer.
+  gist: Water-based soldering fluxes are popular because they VOC-free and non-flamable, which makes them considerably easier to transport, store and handle. It's also worth noting that because the boiling point is higher than alcohol-based soldering fluxes, there is no unwanted room temperature evaporation and a pre-heat intensive temperature profile is recommended.
 
 - slug: low-voc
   text: Low VOC content
@@ -129,10 +129,10 @@
   icon: temperature-plus
   category: "quality"
 
-# - slug: rosin-based
-#   text: Rosin based (colophony)
-#   icon: rosin-based
-#   category: "quality"
+- slug: rosin-based
+  text: Rosin based (colophony)
+  icon: rosin-based
+  category: "quality"
 #
 # - slug: rosin-free
 #   text: Rosin-free (colophony)
@@ -173,12 +173,22 @@
   category: "quality"
   gist: "For those that use the same machines to for lead-based and lead-free manufacturing, it's important that their solder fluxes and solder pastes are compatible with all alloys."
 
-- slug: available-in-lead-based-alloys
+- slug: lead-based-alloys
   text: Available in lead-based alloys
   icon: lead
   category: "quality"
 
-- slug: available-in-lead-free-alloys
+- slug: lead-free-alloys
   text: Available in lead-free alloys
   icon: lead-free
+  category: "quality"
+
+- slug: stand-alone-system
+  text: Stand-alone fluxing system
+  icon: jet-fluxing
+  category: "quality"
+
+- slug: retrofit-system
+  text: Retrofits into most fluxing systems
+  icon: spray-fluxing
   category: "quality"
