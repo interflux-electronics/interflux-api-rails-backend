@@ -1053,6 +1053,7 @@
   pitch: Interflux® Aquasol 4018 is a high activity solder wire with **water soluble residues** in lead-free alloys. Very good wetting ability on surfaces with poor solderabilty. Residues must be cleaned.
   processes:
     - rework-and-repair
+    - hand-soldering
   qualities:
     - Very good wetting ability on surfaces with poor solderabilty
     - Water soluble solder wire
@@ -1090,6 +1091,7 @@
   pitch: Interflux® IF 14 series are colophony free, absolutely halide-free, no-clean solder wires with **easily removable residues** in SnPb(Ag) and lead-free alloys.
   processes:
     - rework-and-repair
+    - hand-soldering
   qualities:
     - Brushable residue
     - lead-free-alloys
@@ -1113,6 +1115,7 @@
   pitch: Interflux® Flexsol 903 is an absolutely halide-free, no-clean solder wire with **reduced spattering** properties in lead-free alloys.
   processes:
     - rework-and-repair
+    - hand-soldering
   qualities:
     - Low spattering
     - lead-free
