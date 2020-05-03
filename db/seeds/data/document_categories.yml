@@ -1,12 +1,30 @@
-- name: Declarations
-  slug: declarations
 - name: Certificates
   slug: certificates
+  gist: Quality standards Interflux attained.
+  icon: file-certificate
+  order: 1
+- name: Declarations
+  slug: declarations
+  gist: Statements made by Interflux.
+  icon: file-contract
+  order: 2
 - name: Guides
   slug: guides
-- name: Technical Data Sheets (TD)
+  gist: Presentations and guides to help you improve your soldering processes.
+  icon: clipboard-list-check
+  order: 3
+- name: Technical Data (TD)
   slug: TD
+  gist: All technical data for each of our products.
+  icon: clipboard-list
+  order: 6
 - name: Safety Data Sheets (SDS)
   slug: SDS
+  gist: All safety related data for each of our products.
+  icon: file-medical
+  order: 4
 - name: REACH
   slug: REACH
+  gist: REACH is a European government body which regulates health and safety, to which Interflux complies.
+  icon: file-check
+  order: 5

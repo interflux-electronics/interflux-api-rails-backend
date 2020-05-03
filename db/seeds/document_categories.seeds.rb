@@ -18,7 +18,10 @@ list.each_with_index do |_item, i|
 
   props = OpenStruct.new(
     name: item.name,
-    slug: item.slug
+    slug: item.slug,
+    gist: item.gist,
+    icon: item.icon,
+    order: item.order
   )
 
   record = DocumentCategory.find_by(slug: item.slug)

@@ -2,7 +2,10 @@ module V1
   module Public
     class DocumentCategorySerializer < ApplicationSerializer
       attributes :slug,
-                 :name
+                 :name,
+                 :gist,
+                 :icon,
+                 :order
     end
   end
 end
