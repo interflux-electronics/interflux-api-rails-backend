@@ -18,7 +18,7 @@ after :document_categories, :languages do
     category = path.split('/').second
     category = 'TD' if category == 'series'
     category = 'TD' if category == 'products'
-    category = DocumentCategory.find_by(slug: category)
+    category = DocumentCategory.find(category)
 
     name = path.split('/').last.split('.').first[0...-3].gsub("-", " ")
 
@@ -29,10 +29,12 @@ after :document_categories, :languages do
       path: path,
       name: name,
       language_id: language.id,
-      document_category_id: category.id,
+      document_category_id: category.slug,
     )
 
     document = Document.find_by(path: path)
+
+    puts "#{i} | #{category.slug} | #{language.name_english} | #{path}"
 
     if document.nil?
       Document.create!(props.to_h)
@@ -40,7 +42,6 @@ after :document_categories, :languages do
       document.update!(props.to_h)
     end
 
-    puts "#{i} | #{category.name} | #{language.name_english} | #{path}"
   end
 
   puts '---------'

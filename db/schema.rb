@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200503012113) do
+ActiveRecord::Schema.define(version: 20200504004736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -139,22 +139,19 @@ ActiveRecord::Schema.define(version: 20200503012113) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "document_categories", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "slug"
+  create_table "document_categories", primary_key: "slug", id: :string, force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "gist"
     t.string "icon"
     t.integer "order"
-    t.index ["name"], name: "index_document_categories_on_name", unique: true
-    t.index ["slug"], name: "index_document_categories_on_slug", unique: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "documents", primary_key: "path", id: :string, force: :cascade do |t|
     t.string "name"
     t.string "language_id"
-    t.uuid "document_category_id"
+    t.string "document_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -2,14 +2,13 @@
 #
 # Table name: document_categories
 #
-#  id         :uuid             not null, primary key
-#  slug       :string
-#  name       :string
 #  created_at :datetime         not null
-#  updated_at :datetime         not null
 #  gist       :string
 #  icon       :string
+#  name       :string
 #  order      :integer
+#  slug       :string           not null, primary key
+#  updated_at :datetime         not null
 #
 
 class DocumentCategory < ApplicationRecord

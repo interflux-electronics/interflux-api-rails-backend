@@ -19,7 +19,7 @@
   icon: file-check
   order: 3
 - name: REACH
-  slug: REACH
+  slug: reach
   gist: Health and safety regulation compliance documents.
   icon: file-medical
   order: 5
