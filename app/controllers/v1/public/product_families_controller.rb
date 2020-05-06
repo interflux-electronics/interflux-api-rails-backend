@@ -31,37 +31,6 @@ module V1
         V1::Public::ProductFamilySerializer
       end
 
-      def creatable_attributes
-        %[]
-        # %i[
-        #   name
-        #   company
-        #   email
-        #   mobile
-        #   message
-        #   purpose
-        #   source
-        #   ip
-        #   ip_region
-        #   ip_city
-        # ]
-      end
-
-      def creatable_relationships
-        %[]
-        # %i[
-        #  country
-        #  ip_country
-        # ]
-      end
-
-      def permitted_filters
-        # %i[
-        #  main_group_id
-        #  sub_group_id
-        # ]
-      end
-
       def permanent_filters
         {
           public: true
@@ -75,10 +44,6 @@ module V1
           products.features
         ]
       end
-
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
     end
   end
 end
