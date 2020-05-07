@@ -1,0 +1,81 @@
+# PROCESSES
+
+- slug: wave-soldering
+  text: wave soldering
+  order: 1
+
+- slug: selective-soldering
+  text: selective soldering
+  order: 2
+
+- slug: reflow-soldering
+  text: reflow soldering
+  order: 3
+
+- slug: stencil-printing
+  text: stencil printing
+  order: 4
+
+- slug: rework-and-repair
+  icon: rework-and-repair
+  order: 5
+
+- slug: vapor-phase-soldering
+  text: vapor phase soldering
+  order: 6
+
+- slug: OSP-soldering
+  text: OSP soldering
+  order: 7
+
+- slug: pre-tinning
+  text: pre-tinning
+  order: 8
+
+- slug: spray-fluxing
+  text: spray fluxing
+  order: 9
+
+- slug: foam-fluxing
+  text: foam fluxing
+  order: 10
+
+- slug: jet-fluxing
+  text: jet fluxing
+  order: 11
+
+- slug: solder-paste-jetting
+  text: solder paste jetting
+  order: 12
+
+- slug: hand-soldering
+  text: hand soldering
+  order: 13
+
+- slug: robot-soldering
+  text: robot soldering
+  order: 14
+
+- slug: laser-soldering
+  text: laser soldering
+  order: 15
+
+- slug: dip-soldering
+  text: dip soldering
+  order: 16
+
+- slug: dispensing
+  text: dispensing
+  order: 17
+
+- slug: solder-bath-conditioning
+  text: solder bath conditioning
+  order: 18
+
+- slug: general-cleaning
+  text: general cleaning
+  order: 19
+# - slug: cleaning
+#   text: cleaning
+#   icon: cleaning
+#   category: "process"

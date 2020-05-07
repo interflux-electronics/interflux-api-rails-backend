@@ -4,96 +4,115 @@
   text: wave soldering
   icon: wave-soldering
   category: "process"
+  order: 1
 
 - slug: selective-soldering
   text: selective soldering
   icon: selective-soldering
   category: "process"
+  order: 2
 
 - slug: reflow-soldering
   text: reflow soldering
   icon: reflow-soldering
   category: "process"
-
-- slug: rework-and-repair
-  icon: rework-and-repair
-  text: rework & repair
-  category: "process"
-
-- slug: spray-fluxing
-  text: spray fluxing
-  icon: spray-fluxing
-  category: "process"
-
-- slug: foam-fluxing
-  text: foam fluxing
-  icon: foam-fluxing
-  category: "process"
-
-- slug: jet-fluxing
-  text: jet fluxing
-  icon: jet-fluxing
-  category: "process"
-
-- slug: solder-paste-jetting
-  text: solder paste jetting
-  icon: solder-paste-jetting
-  category: "process"
-
-- slug: pre-tinning
-  text: pre-tinning
-  icon: pre-tinning
-  category: "process"
-
-- slug: dip-soldering
-  text: dip soldering
-  icon: dip-soldering
-  category: "process"
-
-- slug: dispensing
-  text: dispensing
-  icon: dispensing
-  category: "process"
+  order: 3
 
 - slug: stencil-printing
   text: stencil printing
   icon: stencil-printing
   category: "process"
+  order: 4
+
+- slug: rework-and-repair
+  icon: rework-and-repair
+  text: rework & repair
+  category: "process"
+  order: 5
 
 - slug: vapor-phase-soldering
   text: vapor phase soldering
   icon: vapor-phase-soldering
   category: "process"
+  order: 6
 
 - slug: OSP-soldering
   text: OSP soldering
   icon: osp-soldering
   category: "process"
+  order: 7
+
+- slug: pre-tinning
+  text: pre-tinning
+  icon: pre-tinning
+  category: "process"
+  order: 8
+
+- slug: spray-fluxing
+  text: spray fluxing
+  icon: spray-fluxing
+  category: "process"
+  order: 9
+
+- slug: foam-fluxing
+  text: foam fluxing
+  icon: foam-fluxing
+  category: "process"
+  order: 10
+
+- slug: jet-fluxing
+  text: jet fluxing
+  icon: jet-fluxing
+  category: "process"
+  order: 11
+
+- slug: solder-paste-jetting
+  text: solder paste jetting
+  icon: solder-paste-jetting
+  category: "process"
+  order: 12
 
 - slug: hand-soldering
   text: hand soldering
   icon: hand-soldering
   category: "process"
+  order: 13
 
 - slug: robot-soldering
   text: robot soldering
   icon: robot-soldering
   category: "process"
+  order: 14
 
 - slug: laser-soldering
   text: laser soldering
   icon: laser-soldering
   category: "process"
+  order: 15
 
-- slug: general-cleaning
-  text: general cleaning
-  icon: general-cleaning
+- slug: dip-soldering
+  text: dip soldering
+  icon: dip-soldering
   category: "process"
+  order: 16
+
+- slug: dispensing
+  text: dispensing
+  icon: dispensing
+  category: "process"
+  order: 17
 
 - slug: solder-bath-conditioning
   text: solder bath conditioning
   icon: solder-bath-conditioning
   category: "process"
+  order: 18
+
+- slug: general-cleaning
+  text: general cleaning
+  icon: general-cleaning
+  category: "process"
+  order: 19
 
 # - slug: cleaning
 #   text: cleaning

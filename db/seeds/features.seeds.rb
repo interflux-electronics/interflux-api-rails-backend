@@ -22,6 +22,7 @@ data.each_with_index do |_feature, i|
     slug: feature.slug,
     text: feature.text,
     icon: feature.icon,
+    order: feature.order,
     gist: feature.gist,
     category: feature.category
   )
