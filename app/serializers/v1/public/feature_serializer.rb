@@ -5,7 +5,8 @@ module V1
                  :text,
                  :icon,
                  :gist,
-                 :category
+                 :category,
+                 :has_page
 
       has_many :products, if: Proc.new { |record, params|
         params && params['include'] && params['include'].split(',').include?('products')

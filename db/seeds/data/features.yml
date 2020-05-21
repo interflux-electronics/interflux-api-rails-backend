@@ -5,119 +5,133 @@
   icon: wave-soldering
   category: "process"
   order: 1
+  has_page: true
 
 - slug: selective-soldering
   text: selective soldering
   icon: selective-soldering
   category: "process"
   order: 2
+  has_page: true
 
 - slug: reflow-soldering
   text: reflow soldering
   icon: reflow-soldering
   category: "process"
   order: 3
+  has_page: true
 
 - slug: stencil-printing
   text: stencil printing
   icon: stencil-printing
   category: "process"
   order: 4
-
-- slug: rework-and-repair
-  icon: rework-and-repair
-  text: rework & repair
-  category: "process"
-  order: 5
-
-- slug: vapor-phase-soldering
-  text: vapor phase soldering
-  icon: vapor-phase-soldering
-  category: "process"
-  order: 6
-
-- slug: OSP-soldering
-  text: OSP soldering
-  icon: osp-soldering
-  category: "process"
-  order: 7
+  has_page: true
 
 - slug: pre-tinning
   text: pre-tinning
   icon: pre-tinning
   category: "process"
   order: 8
+  has_page: true
+
+- slug: rework-and-repair
+  icon: rework-and-repair
+  text: rework & repair
+  category: "process"
+  order: 5
+  has_page: true
+
+- slug: OSP-soldering
+  text: OSP soldering
+  icon: osp-soldering
+  category: "process"
+  order: 7
+  has_page: true
 
 - slug: spray-fluxing
   text: spray fluxing
   icon: spray-fluxing
   category: "process"
   order: 9
+  has_page: true
 
 - slug: foam-fluxing
   text: foam fluxing
   icon: foam-fluxing
   category: "process"
   order: 10
+  has_page: true
 
 - slug: jet-fluxing
   text: jet fluxing
   icon: jet-fluxing
   category: "process"
   order: 11
+  has_page: true
 
 - slug: solder-paste-jetting
   text: solder paste jetting
   icon: solder-paste-jetting
   category: "process"
   order: 12
+  has_page: true
 
 - slug: hand-soldering
   text: hand soldering
   icon: hand-soldering
   category: "process"
   order: 13
+  has_page: false
+
+- slug: vapor-phase-soldering
+  text: vapor phase soldering
+  icon: vapor-phase-soldering
+  category: "process"
+  order: 6
+  has_page: false
 
 - slug: robot-soldering
   text: robot soldering
   icon: robot-soldering
   category: "process"
   order: 14
+  has_page: true
 
 - slug: laser-soldering
   text: laser soldering
   icon: laser-soldering
   category: "process"
   order: 15
+  has_page: false
 
 - slug: dip-soldering
   text: dip soldering
   icon: dip-soldering
   category: "process"
   order: 16
+  has_page: true
 
 - slug: dispensing
   text: dispensing
   icon: dispensing
   category: "process"
   order: 17
+  has_page: false
 
 - slug: solder-bath-conditioning
   text: solder bath conditioning
   icon: solder-bath-conditioning
   category: "process"
   order: 18
+  has_page: false
 
 - slug: general-cleaning
   text: general cleaning
   icon: general-cleaning
   category: "process"
   order: 19
-
-# - slug: cleaning
-#   text: cleaning
-#   icon: cleaning
-#   category: "process"
+  has_page: false
 
 # QUALITIES
 

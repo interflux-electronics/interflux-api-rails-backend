@@ -23,7 +23,8 @@ data.each_with_index do |_feature, i|
     text: feature.text,
     icon: feature.icon,
     gist: feature.gist,
-    category: feature.category
+    category: feature.category,
+    has_page: feature.has_page
   )
 
   if record.nil?

@@ -9,6 +9,7 @@
 #  category   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  has_page   :boolean
 #
 
 class Feature < ApplicationRecord

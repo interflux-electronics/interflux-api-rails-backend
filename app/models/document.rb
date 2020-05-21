@@ -5,7 +5,7 @@
 #  path                 :string           not null, primary key
 #  name                 :string
 #  language_id          :string
-#  document_category_id :uuid
+#  document_category_id :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #
