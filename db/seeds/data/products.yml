@@ -1208,6 +1208,7 @@
   name: ICSF Select
   family: fluxing-systems
   label: stand-alone fluxing system
+  avatar: images/products/ICSF-Select/ICSF-Select-1
   public: true
   orderable: true
   featured: true
@@ -1235,39 +1236,13 @@
   name: ICSF Curve
   family: fluxing-systems
   label: retrofit fluxing system
+  avatar: images/products/ICSF-Curve/ICSF-Curve-1
   public: true
   orderable: true
   featured: true
   popular: false
   new: false
-  pitch: The InterSpray Curve series are designed to retrofit all existing soldering machines with a reliable spray fluxer which offers excellent results.
-  processes:
-    - wave-soldering
-    - spray-fluxing
-    - jet-fluxing
-  qualities:
-    - retrofit-system
-    - For alcohol-based fluxes
-    - For water fluxes
-    - For rosin fluxes
-    - Venturi, clog-free spray nozzle
-    - Touch screen programming
-    - Clean, ergonomic design
-    - Special flux pump
-    - Encoder calibration function
-    - Low level flux alarm
-  properties:
-
-- slug: ICSF-Curve-2
-  name: ICSF Curve 2
-  family: fluxing-systems
-  label: retrofit fluxing system
-  public: true
-  orderable: true
-  featured: true
-  popular: false
-  new: false
-  pitch: The InterSpray Curve 2 double nozzle series are designed to **use 2 different types of fluxes** in 1 reliable spray fluxer system.
+  pitch: The InterSpray Curve series are designed to retrofit all existing soldering machines with a reliable spray fluxer which offers excellent results. The InterSpray Curve 2 double nozzle series are designed to **use 2 different types of fluxes** in 1 reliable spray fluxer system.
   processes:
     - wave-soldering
     - spray-fluxing
