@@ -25,6 +25,7 @@ after :product_families do
       slug: product.slug,
       name: product.name,
       label: product.label,
+      image_id: product.avatar,
       pitch: product.pitch,
       properties: product.properties,
       # code: product.code,

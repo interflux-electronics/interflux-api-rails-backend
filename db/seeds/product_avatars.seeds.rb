@@ -4,6 +4,7 @@ after :product_images do
   puts '---------'
 
   Product.all.each do |product|
+    next if product.avatar.present?
     next if product.images.empty?
     image = product.images.shuffle.first
     byebug if image.nil?
