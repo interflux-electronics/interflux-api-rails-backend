@@ -1,3 +1,38 @@
+- business_name: INTERFLUX® Electronics
+  legal_name: INTERFLUX® Electronics NV
+  address: Eddastraat 51, 9042 Gent
+  country: Belgium
+  phone: +32 9251 4959
+  fax: +32 9250 9636
+  emails:
+    - info@interflux.com
+  website: https://www.interflux.com
+  latitude: 51.118718
+  longitude: 3.792622
+  markets:
+    - World
+  members:
+    - first_name: Daniel
+      last_name: Werkhoven
+      male: true
+
+- business_name: INTERFLUX® Australia
+  legal_name: INTERFLUX® Australia Pty Ltd
+  address: 1 Wilks St, Caulfield North
+  country: Australia
+  emails:
+    - j.werkhoven@interflux.com
+  website: https://www.interflux.com
+  latitude: -37.862728
+  longitude: 145.014561
+  markets:
+    - Australia
+    - New Zealand
+  members:
+    - first_name: Jan
+      last_name: Werkhoven
+      male: true
+
 - business_name: INTERFLUX® China, Bejing
   legal_name: Beijing Jingying No Clean Flux Co., Ltd.
   address: Room 306, Building 19, No.172 Beiyuan Road, Chaoyang District, Beijing
@@ -6,8 +41,8 @@
   fax: +86 10848 51581
   emails:
     - jysolder@vip.sina.com
-  latitude: 718
-  longitude: 227
+  latitude: 39.994355
+  longitude: 116.4170393
   markets:
     - China
     - Hong Kong
@@ -26,8 +61,8 @@
   fax: +86-21-648.20.276
   emails:
     - bijyncfsh@online.sh.cn
-  latitude: 737
-  longitude: 255
+  latitude: 31.165788
+  longitude: 121.415829
   markets:
     - China
     - Hong Kong
@@ -46,8 +81,8 @@
   fax: +86-75-529.929.133
   emails:
     - haosen@interflux.com.cn
-  latitude: 723
-  longitude: 275
+  latitude: 22.671180
+  longitude: 113.822861
   markets:
     - China
     - Hong Kong
@@ -66,8 +101,8 @@
   fax: +86-512-65127007
   emails:
     - yangjun@interflux.com.cn
-  latitude: 732
-  longitude: 254
+  latitude: 31.283742
+  longitude: 120.625578
   markets:
     - China
     - Hong Kong
@@ -87,8 +122,8 @@
   emails:
     - interflux@interflux.dk
   website: https://www.interflux.dk/
-  latitude: 458
-  longitude: 193
+  latitude: 55.501713
+  longitude: 9.023978
   markets:
     - Denmark
   members:
@@ -105,8 +140,8 @@
   emails:
     - office@interflux.ee
   website: https://www.interflux.ee
-  latitude: 489
-  longitude: 180
+  latitude: 59.312858
+  longitude: 24.418144
   markets:
     - Estonia
   members:
@@ -126,8 +161,8 @@
   emails:
     - info@interflux.hu
   website:
-  latitude: 484
-  longitude: 216
+  latitude: 46.706702
+  longitude: 20.147648
   markets:
     - Hungary
   members:
@@ -143,8 +178,8 @@
   fax: +33 134 825 338
   emails:
   website: https://www.interfluxfrance.com
-  latitude: 442
-  longitude: 212
+  latitude: 48.785068
+  longitude: 1.974491
   markets:
     - France
   members:
@@ -162,8 +197,8 @@
   emails:
     - vsd@interflux.pl
   website: https://www.interflux.pl
-  latitude: 485
-  longitude: 200
+  latitude: 52.279302
+  longitude: 21.013316
   markets:
     - Poland
   members:
@@ -173,15 +208,15 @@
 
 - business_name: INTERFLUX® Singapore
   legal_name: INTERFLUX® Singapore Pte Ltd
-  address: 2 Kallang Pudding Road, \#04-12 Mactech Building, 349307 Singapore
+  address: 2 Kallang Pudding Road, 04-12 Mactech Building, 349307 Singapore
   country: Singapore
   phone: +65 6848 7818
   fax:
   emails:
     - ask@interflux.com.sg
   website:
-  latitude: 699
-  longitude: 331
+  latitude: 1.330214
+  longitude: 103.876350
   markets:
     - Singapore
     - Thailand
@@ -204,8 +239,8 @@
   emails:
     - office@interflux.se
   website: https://www.interflux.se
-  latitude: 473
-  longitude: 182
+  latitude: 58.720325
+  longitude: 17.024198
   markets:
     - Sweden
     - Norway
@@ -223,8 +258,8 @@
   fax: +47 6395 1301
   emails:
   website: https://www.interflux.no
-  latitude: 460
-  longitude: 175
+  latitude: 60.269582
+  longitude: 11.198617
   markets:
     - France
   members:
@@ -241,8 +276,8 @@
   fax: +49-911-326.62.99
   emails:
   website: https://aston.de/
-  latitude: 459
-  longitude: 209
+  latitude: 49.461296
+  longitude: 11.020401
   markets:
     - Germany
   members:
@@ -259,8 +294,8 @@
   fax: +34-918.844.255
   emails:
   website:
-  latitude: 428
-  longitude: 235
+  latitude: 40.512080
+  longitude: -3.479384
   markets:
     - Portugal
     - Spain
@@ -277,8 +312,8 @@
   phone: +91-11-47.00.20.24 to 27
   fax: +91-11-47.00.20.29
   website: https://www.advancetech.co.in/
-  latitude: 628
-  longitude: 264
+  latitude: 28.691973
+  longitude: 77.152391
   markets:
     - India
   members:
@@ -295,8 +330,8 @@
   fax: +386-1-286.39.37
   emails:
   website:
-  latitude: 469
-  longitude: 219
+  latitude: 45.950410
+  longitude: 14.490549
   markets:
     - Slovenia
     - Croatia
@@ -315,8 +350,8 @@
   emails:
     - office@comet.bg
   website: https://www.comet.bg/
-  latitude: 493
-  longitude: 228
+  latitude: 42.691663
+  longitude: 23.316150
   markets:
     - Bulgaria
   members:
@@ -332,8 +367,8 @@
   fax: +381-11-311.39.42
   emails:
   website: https://www.comet.bg/
-  latitude: 483
-  longitude: 222
+  latitude: 44.806813
+  longitude: 20.430758
   markets:
     - Serbia
   members:
@@ -351,8 +386,8 @@
   emails:
     - office@comet.srl.ro
   website: https://comet.srl.ro/
-  latitude: 497
-  longitude: 220
+  latitude: 44.459672
+  longitude: 26.118973
   markets:
     - Romania
   members:
@@ -368,8 +403,8 @@
   fax: +84-8-3 9307 349
   emails:
   website: http://www.edstachem.com/
-  latitude: 705
-  longitude: 305
+  latitude: 10.779514
+  longitude: 106.688955
   markets:
     - Vietnam
   members:
@@ -386,8 +421,8 @@
   fax:
   emails:
   website: http://eirotec.ie/
-  latitude: 418
-  longitude: 195
+  latitude: 53.349552
+  longitude: -6.261328
   markets:
     - Ireland
   members:
@@ -404,8 +439,8 @@
   fax: +358-9-879.38.44
   emails:
   website: https://ekval.fi/
-  latitude: 487
-  longitude: 172
+  latitude: 60.393913
+  longitude: 24.734510
   markets:
     - Finland
   members:
@@ -423,8 +458,8 @@
   emails:
     - smt.service@elso-group.cz
   website: http://elso-group.cz/
-  latitude: 471
-  longitude: 207
+  latitude: 50.098659
+  longitude: 14.368691
   markets:
     - Czech Republic
     - Slovakia
@@ -441,8 +476,8 @@
   fax:
   emails:
   website:
-  latitude: 459
-  longitude: 246
+  latitude: 35.715610
+  longitude: -5.909109
   markets:
     - Morocco
     - Tunisia
@@ -467,8 +502,8 @@
   emails:
     - info@etama.lt
     - sales@etama.lt
-  latitude: 486
-  longitude: 189
+  latitude: 54.922631
+  longitude: 23.805401
   markets:
     - Lithuania
   members:
@@ -483,8 +518,8 @@
   phone: +61 292 457 917
   fax: +61 456 934 65
   website: https://industrialtechnologies.co.nz/
-  latitude: 853
-  longitude: 426
+  latitude: -41.211442
+  longitude: 174.897120
   markets:
     - New Zealand
   members:
@@ -500,8 +535,8 @@
   country: Iran
   phone: +98 917 711 1644
   fax: +98 711 623 1647
-  latitude: 567
-  longitude: 261
+  latitude: 29.694817
+  longitude: 52.466119
   markets:
     - Iran
   members:
@@ -517,8 +552,8 @@
   phone: +49 3491/6181-30
   fax: +49 3491/6181-18
   website: https://www.ersa-shop.com/
-  latitude: 458
-  longitude: 205
+  latitude: 51.886738
+  longitude: 12.565158
   markets:
     - Germany
   members:
@@ -536,8 +571,8 @@
   emails:
     - info@interscan.org
   website: http://interscan.org/
-  latitude: 600
-  longitude: 272
+  latitude: 24.865252
+  longitude: 67.074352
   markets:
     - Pakistan
   members:
@@ -553,8 +588,8 @@
   fax: +82-2-563-3834
   emails:
     - thjung@joinent.com
-  latitude: 746
-  longitude: 236
+  latitude: 37.516159
+  longitude: 127.032366
   markets:
     - South Korea
   members:
@@ -568,8 +603,8 @@
   country: Philippines
   phone: +63 2 400 77 92
   fax: +63 46 482 05 97
-  latitude: 739
-  longitude: 297
+  latitude: 14.308983
+  longitude: 121.039243
   markets:
     - Philippines
   members:
@@ -584,8 +619,8 @@
   country: Germany
   phone: +49-9342-800.260
   fax: +49-9342-800.132
-  latitude: 454
-  longitude: 207
+  latitude: 49.785230
+  longitude: 9.493367
   markets:
     - Germany
   members:
@@ -600,8 +635,8 @@
   country: United States of America
   phone: +1-920-892.92.45
   fax: +1-920-893.15.62
-  latitude: 233
-  longitude: 219
+  latitude: 43.726408
+  longitude: -87.943586
   markets:
     - United States of America
   members:
@@ -616,8 +651,8 @@
   country: Taiwan
   phone: +886 970 060092
   website: http://sigmatekcorp.com/
-  latitude: 736
-  longitude: 274
+  latitude: 24.966962
+  longitude: 121.257096
   markets:
     - Taiwan
     - China
@@ -633,8 +668,8 @@
   address: 2F, No.45, Lane 210, Sec. 1, Zhuang-Jing Road, Taoyuan City, Taoyuan County, 33044
   country: Taiwan
   phone: +886 3 357 3575
-  latitude: 738
-  longitude: 272
+  latitude: 24.966962
+  longitude: 121.257096
   markets:
     - Taiwan
     - China
@@ -644,6 +679,8 @@
   address: Av. Santa Margarita 4950, Int.Cenote 151, Col. Valle Esmeralda, C.P. 45136 Zapopan, Jal
   country: Mexico
   phone: +52 33 3627 0600
+  latitude: 20.728115
+  longitude: -103.426613
   markets:
     - Mexico
     - Costa Rica
@@ -661,8 +698,8 @@
   fax: +613 5334 2322
   emails:
   website: https://oritech.com.au
-  latitude: 785
-  longitude: 431
+  latitude: -37.5441551
+  longitude: 143.7932688
   markets:
     - Australia
   members:
@@ -681,8 +718,8 @@
   emails:
     - info@packtronic.it
   website: https://www.packtronic.it
-  latitude: 462
-  longitude: 222
+  latitude: 45.671441
+  longitude: 9.426662
   markets:
     - Italy
   members:
@@ -699,8 +736,8 @@
   emails:
     - info@polyscience.ch
   website: https://www.polyscience.ch/
-  latitude: 454
-  longitude: 215
+  latitude: 47.189138
+  longitude: 8.477558
   markets:
     - Switzerland
   members:
@@ -717,8 +754,8 @@
   emails:
     - sales@citrabaruperkasa.co.id
   website:
-  latitude: 705
-  longitude: 347
+  latitude: -6.143832
+  longitude: 106.698364
   markets:
     - Indonesia
   members:
@@ -734,8 +771,8 @@
   fax: +380.44.291 00 28
   emails:
     - info@sea.com.ua
-  latitude: 503
-  longitude: 203
+  latitude: 50.449545
+  longitude: 30.517851
   markets:
     - Ukraine
   members:
@@ -751,8 +788,8 @@
   emails:
     - info@smans.com
   website:
-  latitude: 448
-  longitude: 203
+  latitude: 51.293417
+  longitude: 4.920434
   markets:
     - Belgium
     - Netherlands
@@ -766,8 +803,8 @@
   fax: +43 (664) 443 54 04
   emails:
   website: https://www.stepan.at/
-  latitude: 471
-  longitude: 213
+  latitude: 48.180894
+  longitude: 16.283753
   markets:
     - Austria
   members:
@@ -784,8 +821,8 @@
   fax: +7-495 735 4428
   emails:
   website: http://techno.ru/
-  latitude: 519
-  longitude: 183
+  latitude: 55.747914
+  longitude: 37.610035
   markets:
     - Russia
   members:
@@ -803,8 +840,8 @@
   emails:
     - info@temple4.com
   website: https://www.temple4.co.uk
-  latitude: 432
-  longitude: 205
+  latitude: 50.987587
+  longitude: -0.956649
   markets:
     - United Kingdom
   members:
@@ -824,8 +861,8 @@
   emails:
     - info@testerion.co.za
   website: http://testerion.co.za/
-  latitude: 504
-  longitude: 393
+  latitude: -26.040638
+  longitude: 27.945614
   markets:
     - South Africa
   members:
@@ -842,8 +879,8 @@
   emails:
     - sales@vlk.th.com
   website:
-  latitude: 689
-  longitude: 301
+  latitude: 13.953515
+  longitude: 100.715654
   markets:
     - Thailand
   members:
@@ -860,8 +897,8 @@
   emails:
     - westeksystems@unifi.my
   website:
-  latitude: 692
-  longitude: 324
+  latitude: 2.989897
+  longitude: 101.570911
   markets:
     - Malaysia
   members:
@@ -877,30 +914,12 @@
   fax: +90-212-347.10.33
   emails:
   website: http://ymh-teknoloji.com/
-  latitude: 505
-  longitude: 230
+  latitude: 41.068219
+  longitude: 29.001795
   markets:
     - Turkey
   members:
     - first_name: Halil
       last_name: Erdoğan
       email: halil.erdogan@ymh-teknoloji.com
-      male: true
-
-- business_name: INTERFLUX® Electronics
-  legal_name: INTERFLUX® Electronics NV
-  address: Eddastraat 51, 9042 Gent
-  country: Belgium
-  phone: +32 9251 4959
-  fax: +32 9250 9636
-  emails:
-    - info@interflux.com
-  website: https://www.interflux.com
-  latitude: 446
-  longitude: 203
-  markets:
-    - World
-  members:
-    - first_name: Daniel
-      last_name: Werkhoven
       male: true
