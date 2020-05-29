@@ -1,11 +1,6 @@
-- name: Technical Data (TD)
-  slug: TD
-  gist: Learn the technical details of our products.
-  icon: clipboard-list
-  order: 4
 - name: Certificates
   slug: certificates
-  gist: Quality standards we have proudly lived upto for decades.
+  gist: Quality standards Interflux has been living upto for decades.
   icon: file-certificate
   order: 1
 - name: Declarations
@@ -16,15 +11,20 @@
 - name: Guides
   slug: guides
   gist: Learn about soldering processes and to get the most out of our products.
-  icon: file-check
+  icon: clipboard-list-check
   order: 3
-- name: REACH
-  slug: reach
-  gist: Health and safety regulation compliance documents.
+- name: Technical Data (TD)
+  slug: TD
+  gist: Learn the technical details of our products.
+  icon: clipboard-list
+  order: 4
+- name: Safety Data Sheets (SDS)
+  slug: SDS
+  gist: Learn to use our products in a safe manner.
   icon: file-medical
   order: 5
-# - name: Safety Data Sheets (SDS)
-#   slug: SDS
-#   gist: Learn to use our products in a safe manner.
-#   icon: file-medical
-#   order: 4
+- name: REACH
+  slug: REACH
+  gist: Health and safety regulation compliance documents.
+  icon: file-check
+  order: 6
