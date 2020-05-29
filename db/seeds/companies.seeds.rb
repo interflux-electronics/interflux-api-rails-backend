@@ -11,7 +11,7 @@ after :countries do
   data.each_with_index do |company, i|
     company = OpenStruct.new(company)
 
-    puts "#{i + 1} - #{company.business_name}"
+    puts "#{i + 1} - #{company.business_name} - #{company.public}"
 
     emails = company.emails.join(',') if company.emails.present?
     country = Country.find_by(name_english: company.country)
@@ -28,7 +28,8 @@ after :countries do
       longitude: company.longitude,
       emails: emails,
       website: company.website,
-      country_id: country.id
+      country_id: country.id,
+      public: !company.hidden
     )
 
     record = Company.find_by(business_name: company.business_name)

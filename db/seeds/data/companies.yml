@@ -1,3 +1,9 @@
+- business_name: Hidden Company
+  country: Greenland
+  latitude: 64.014355
+  longitude: -45.874166
+  hidden: true
+
 - business_name: INTERFLUX® Electronics
   legal_name: INTERFLUX® Electronics NV
   address: Eddastraat 51, 9042 Gent

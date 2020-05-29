@@ -16,6 +16,7 @@
 #  updated_at    :datetime         not null
 #  legal_name    :string
 #  website       :string
+#  public        :boolean
 #
 
 class Company < ApplicationRecord

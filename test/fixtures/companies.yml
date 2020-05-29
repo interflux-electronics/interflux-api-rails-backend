@@ -16,6 +16,7 @@
 #  updated_at    :datetime         not null
 #  legal_name    :string
 #  website       :string
+#  public        :boolean
 #
 
 # company_fixture_1:
