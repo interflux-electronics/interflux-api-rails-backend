@@ -16,6 +16,7 @@
 #  new               :boolean          default(FALSE)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  avatar            :string
 #
 
 class Product < ApplicationRecord

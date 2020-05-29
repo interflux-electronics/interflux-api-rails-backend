@@ -313,6 +313,7 @@ ActiveRecord::Schema.define(version: 20200529114837) do
     t.boolean "new", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
   end
 
   create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
