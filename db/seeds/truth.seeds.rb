@@ -8,6 +8,7 @@ puts '---------'
 Product.delete_all
 Image.delete_all
 Document.delete_all
+DocumentCategory.delete_all
 Feature.delete_all
 
 ProductFamily.delete_all
