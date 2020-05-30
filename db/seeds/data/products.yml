@@ -1,6 +1,7 @@
 - slug: DP-5600
   name: DP 5600
   family: solder-pastes
+  avatar: images/products/DP-5600/DP-5600-solder-pastes-SnBiAg-syringes
   public: true
   orderable: true
   featured: true
@@ -226,6 +227,7 @@
 - slug: LMPA-Q6
   name: LMPA™-Q6
   family: solder-pastes
+  avatar: images/products/LMPA-Q6/LMPA-Q6-500g
   public: true
   orderable: true
   featured: true
@@ -239,6 +241,7 @@
     - stencil-printing
     - dispensing
   qualities:
+    - low-melting-point
     - Enhanced low melting point solder paste
     - High stability on the stencil
     - halide-free
@@ -385,6 +388,7 @@
 - slug: IF-2005M
   name: IF 2005M
   family: soldering-fluxes
+  avatar: images/products/IF-2005M-10L-angle
   public: true
   orderable: true
   featured: true
