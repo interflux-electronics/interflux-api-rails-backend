@@ -10,7 +10,8 @@ module V1
                  :website,
                  :latitude,
                  :longitude,
-                 :fax
+                 :fax,
+                 :public
 
       belongs_to :country
       # belongs_to :main_group, record_type: :product_group, serializer: :product_group
