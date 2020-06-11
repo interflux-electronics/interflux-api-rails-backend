@@ -1,26 +1,33 @@
 module V1
   module Admin
     class ProductSerializer < ApplicationSerializer
-      attributes :slug,
-                 :name,
-                 :public
+      attributes :name,
+                 :label,
+                 :pitch,
+                 :public,
+                 :orderable,
+                 :featured,
+                 :popular,
+                 :new
 
       belongs_to :product_family
+      belongs_to :image
+
+      # belongs_to :image, if: Proc.new { |record, params|
+      #   params && params['include'] && ( params['include'].split(',').include?('image') || params['include'].split(',').include?('products.image') )
+      # }
 
       has_many :documents, if: Proc.new { |record, params|
         params && params['include'] && params['include'].split(',').include?('documents')
       }
 
       has_many :images, if: Proc.new { |record, params|
-        params && params['include'] && params['include'].split(',').include?('images')
+        params && params['include'] && ( params['include'].split(',').include?('images') )
       }
 
-      # belongs_to :thing
-      # belongs_to :main_group, record_type: :product_group, serializer: :product_group
-      # belongs_to :sub_group, record_type: :product_group, serializer: :product_group
-
-      # has_many :related_products, record_type: :product, serializer: :related_products
-      # has_many :related_articles, record_type: :article, serializer: :related_articles
+      has_many :features, if: Proc.new { |record, params|
+        params && params['include'] && ( params['include'].split(',').include?('features') || params['include'].split(',').include?('products.features') )
+      }
     end
   end
 end

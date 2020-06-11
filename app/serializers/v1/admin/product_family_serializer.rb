@@ -2,9 +2,9 @@ module V1
   module Admin
     class ProductFamilySerializer < ApplicationSerializer
       attributes :slug,
-                 :code,
                  :name_single,
-                 :name_plural
+                 :name_plural,
+                 :order
     end
   end
 end

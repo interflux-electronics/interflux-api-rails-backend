@@ -18,8 +18,7 @@ module V1
       end
 
       def destroy
-        # TODO allow_destroy if user.can_destroy(:product)
-        allow_destroy
+        forbidden
       end
 
       private
@@ -32,65 +31,16 @@ module V1
         V1::Admin::ProductSerializer
       end
 
-      def creatable_attributes
-        %i[]
-        # %i[
-        #   name
-        #   company
-        #   email
-        #   mobile
-        #   message
-        #   purpose
-        #   source
-        #   ip
-        #   ip_region
-        #   ip_city
-        # ]
-      end
-
-      def creatable_relationships
-        %i[]
-        # %i[
-        #  country
-        #  ip_country
-        # ]
-      end
-
-      def permitted_filters
-        %i[
-          deprecated
-        ]
-        # %i[
-        #  main_group_id
-        #  sub_group_id
-        # ]
-      end
-
-      def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
-      end
-
       def permitted_includes
         %i[
+          image
           images
           documents
           documents.language
           product_family
+          features
         ]
-        # %i[
-        #   related_articles
-        #   related_products
-        #   related_products.main_group
-        #   translations
-        # ]
       end
-
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
     end
   end
 end
