@@ -10,6 +10,7 @@ Rails.application.configure do
   # Note: default value is false, but gave me issues:
   # https://makandracards.com/makandra/528-fixing-a-copy-of-klass-has-been-removed-from-the-module-tree-but-is-still-active
   # https://stackoverflow.com/questions/29636334/a-copy-of-xxx-has-been-removed-from-the-module-tree-but-is-still-active
+  # config.eager_load = false
   config.eager_load = true
 
   # Show full error reports.
