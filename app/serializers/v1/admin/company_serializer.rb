@@ -11,7 +11,8 @@ module V1
                  :latitude,
                  :longitude,
                  :fax,
-                 :public
+                 :public,
+                 :order
 
       belongs_to :country
       # belongs_to :main_group, record_type: :product_group, serializer: :product_group

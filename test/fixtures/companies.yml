@@ -17,6 +17,7 @@
 #  legal_name    :string
 #  website       :string
 #  public        :boolean
+#  order         :integer
 #
 
 # company_fixture_1:

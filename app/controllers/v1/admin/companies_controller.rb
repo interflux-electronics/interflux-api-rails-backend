@@ -38,12 +38,12 @@ module V1
           emails
           fax
           latitude
-          
           longitude
           phone
           public
           slug
           website
+          order
         ]
       end
 
