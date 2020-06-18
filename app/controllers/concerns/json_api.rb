@@ -286,6 +286,10 @@ module JsonApi
     hash
   end
 
+  def permitted_filters
+    nil
+  end
+
   def permanent_filters
     nil
   end
