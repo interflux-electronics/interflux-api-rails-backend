@@ -1,4 +1,3 @@
-# ---------
 
 # MAC
 
@@ -38,5 +37,3 @@ sudo lsof -iTCP -sTCP:LISTEN -P
 # Then kill the one listening to port 3000
 
 kill -9 [pid]
-
-# ---------

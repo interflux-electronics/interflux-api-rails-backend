@@ -1,4 +1,3 @@
-# ---------
 
 # SETUP LOCAL (MAC)
 
@@ -112,5 +111,3 @@ curl \
 -X GET \
 -H "Content-Type: application/vnd.api+json" \
 http://localhost:3000/sanity-check
-
-# ---------
