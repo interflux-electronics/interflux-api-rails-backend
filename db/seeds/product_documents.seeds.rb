@@ -26,6 +26,9 @@ after :documents, :products do
       record.update!(props.to_h)
     end
 
+    document.name = "TD #{product.name}"
+    document.save!
+
     puts "#{i} | #{product.slug} | #{document.path}"
   end
 
