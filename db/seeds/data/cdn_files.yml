@@ -11637,6 +11637,8 @@
 - images/legacy/homepage-images-1.jpg
 - images/legacy/homepage-images-2.jpg
 - images/interflux-electronics-logo@2x.png
+- images/TODO/proces foto laser solderen MTA bewerkt.jpg
+- images/TODO/proces foto laser solderen MTA bewerkt.psd
 - images/icons/dispensing.svg
 - images/icons/soldering-flux.svg
 - images/icons/clipboard-list.png
@@ -11772,6 +11774,7 @@
 - videos/LMPA-Q-30mms-poster.webp
 - videos/LMPA-Q-30mms-540p.mp4
 - videos/LMPA-Q-30mms-360p.mp4
+- videos/TODO/0402_VERSAPRINT_2_ULTRA_EN.mp4
 - videos/LMPA-Q-30mms.mp4
 - documents/series/Solder-Alloys/TD-Lead-free-alloys-DE.pdf
 - documents/series/Solder-Alloys/TD-SnPbAg-alloys-EN.pdf
@@ -11801,15 +11804,20 @@
 - documents/products/DP-5505/TD-DP-5505-SnPbAg-EN.pdf
 - documents/products/DP-5505/TD-DP-5505-DE.pdf
 - documents/products/DP-5505/Presenting-DP-5505-Properties-FR.pdf
+- documents/products/Aquasol-4018/TD-Aquasol-4018-SnPb-DE.pdf
 - documents/products/Aquasol-4018/TD-Aquasol-4018-DE.pdf
 - documents/products/Aquasol-4018/TD-Aquasol-4018-FR.pdf
 - documents/products/Aquasol-4018/TD-Aquasol-4018-EN.pdf
+- documents/products/Aquasol-4018/TD-Aquasol-4018-SnPb-FR.pdf
+- documents/products/Aquasol-4018/TD-Aquasol-4018-SnPb-EN.pdf
 - documents/products/PacIFic-2010F/TD-PacIFic-2010F-EN.pdf
 - documents/products/PacIFic-2010F/TD-PacIFic-2010F-FR.pdf
 - documents/products/PacIFic-2010F/TD-PacIFic-2010F-DE.pdf
 - documents/products/ISC-8020/TD-ISC-8020-DE.pdf
 - documents/products/ISC-8020/TD-ISC-8020-EN.pdf
+- documents/products/ISC-8020/TD-ISC-8020-FR.pdf
 - documents/products/NH-1/TD-NH-1-EN.pdf
+- documents/products/NH-1/TD-NH-1-FR.pdf
 - documents/products/NH-1/TD-NH-1-DE.pdf
 - documents/products/IF-9057/TD-IF-9057-FR.pdf
 - documents/products/IF-9057/TD-IF-9057-SnPbAg-DE.pdf
@@ -11899,6 +11907,7 @@
 - documents/products/IF-9009LT/TD-IF-9009LT-EN.pdf
 - documents/products/IF-9009LT/TD-IF-9009LT-FR.pdf
 - documents/products/IF-9009LT/TD-IF-9009LT-DE.pdf
+- documents/products/QF-70/TD-QF-70-FR.pdf
 - documents/products/QF-70/TD-QF-70-EN.pdf
 - documents/products/QF-70/TD-QF-70-DE.pdf
 - documents/products/TerrIFic-RP65/TD-TerrIFic-RP65-DE.pdf
@@ -11977,13 +11986,14 @@
 - documents/products/IF-710/TD-IF-710-DE.pdf
 - documents/certificates/IQNet-certificate-EN.pdf
 - documents/certificates/ISO-9001-2015-certificate-until-2022-EN.pdf
+- documents/declarations/RoHS-SVHC-compliance-certificate-v25-2017-08-08-EN.pdf
+- documents/declarations/RoHS-SVHC-compliance-certificate-v30-2020-01-16-EN.pdf
 - documents/declarations/Conflict-materials-EN.pdf
 - documents/declarations/Conflict-materials-FR.pdf
 - documents/guides/Kolb-Interflux-cleaning-compatibility-EN.pdf
 - documents/guides/reliability2012-EN.pdf
 - documents/guides/Manual-soldering-guide-EN.pdf
 - documents/guides/Conformal-coatings-on-flux-residue-EN.pdf
-- documents/guides/RoHS-SVHC-compliance-certificate-v-25-0-08-08-2017-EN.pdf
 - documents/guides/Zuverlassigkeit2013-EN.pdf
 - documents/guides/Zestron-Cleaning-solder-paste-guide-EN.pdf
 - documents/guides/Technical-info-sheet-IF-2005-series-white-residues-EN.pdf
