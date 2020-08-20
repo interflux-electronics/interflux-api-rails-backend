@@ -27,6 +27,7 @@ after :documents, :products do
     end
 
     document.name = "TD #{product.name}"
+    document.name = document.name + " SnPb(Ag)" if document.path.include? "SnPbAg"
     document.save!
 
     puts "#{i} | #{product.slug} | #{document.path}"
