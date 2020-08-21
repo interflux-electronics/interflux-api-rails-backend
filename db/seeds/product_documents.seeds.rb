@@ -26,8 +26,8 @@ after :documents, :products do
       record.update!(props.to_h)
     end
 
-    document.name = "TD #{product.name}"
-    document.name = document.name + " SnPb(Ag)" if document.path.include? "SnPbAg"
+    document.name = document.path.split("/").last.gsub("-", " ").chomp('.pdf').chomp(' FR').chomp(' EN').chomp(' DE')
+    document.name = document.name.sub(product.name.gsub("-", " "), product.name)
     document.save!
 
     puts "#{i} | #{product.slug} | #{document.path}"
