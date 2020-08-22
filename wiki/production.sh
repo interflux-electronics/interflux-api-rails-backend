@@ -44,3 +44,19 @@ bin/rails db:drop
 # HEALHT CHECK
 
 curl https://api.interflux.com/sanity-check -H "Content-Type: application/vnd.api+json"
+
+# ---------
+
+# USERS
+
+# First set the production environment flag
+export RAILS_ENV=production
+
+# Create user
+bin/rails user:create email=foo@bar password=1234 first_name=John last_name=Doe
+
+# Update password
+bin/rails user:password email=foo@bar email=12345
+
+# Delete user
+bin/rails user:delete email=foo@bar
