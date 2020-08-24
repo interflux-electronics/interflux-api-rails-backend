@@ -83,12 +83,6 @@ bin/rails db:seed
 
 bin/rails db:rollback STEP=1
 
-# Create authenticated user
-
-bin/rails c
-p = Person.create(first_name:'Jan', last_name:'Werkhoven')
-User.create(email:'j.werkhoven@interflux.com', password: '12345678', person_id: p.id)
-
 # Test user login
 
 curl \
