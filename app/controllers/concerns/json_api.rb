@@ -154,8 +154,16 @@ module JsonApi
     resources = resource_klass.all
 
     # Then we reduce this collection with the permanent and requested filters.
+    # We could remove all unwanted characters to avoid injection.
+    # value.gsub!(/[^0-9A-Za-z]/, '')
     filters&.each do |key, value|
-      resources = resources.where("#{key.to_s.underscore}": value)
+      # If the query does not contain a "*", then do an exat search.
+      resources = resources.where("#{key}": value) if value.exclude? '*'
+
+      # If the query contains a "*" then do a fuzzy search.
+      # We use Postrgress match operators to search:
+      # https://www.postgresql.org/docs/9.6/functions-matching.html#FUNCTIONS-POSIX-TABLE
+      resources = resources.where("#{key} ~* ?", value.gsub!('*', '')) if value.include? "*"
     end
 
     # Here we prepare the options we can pass to the serializers.
@@ -275,6 +283,12 @@ module JsonApi
   # This is how Ember would encode the filter query:
   # GET /products?filter[foo]=thing
   # GET /products?filter[foo]=thing&filter[bar]=true
+  #
+  # On the front-end, when using Ember with JSON API serializers:
+  #
+  # this.store.query('product', {
+  #   filter: { foo: 'thing', bar: true }
+  # });
   #
   # The method below permits only those filter key-value pairs of which the keys
   # are listed in `permitted_filters` on the controller.
