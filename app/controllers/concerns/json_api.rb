@@ -157,7 +157,7 @@ module JsonApi
     # We could remove all unwanted characters to avoid injection.
     # value.gsub!(/[^0-9A-Za-z]/, '')
     filters&.each do |key, value|
-      # If the query does not contain a "*", then do an exat search.
+      # If the query does not contain a "*", then do an exact search.
       resources = resources.where("#{key}": value) if value.exclude? '*'
 
       # If the query contains a "*" then do a fuzzy search.
@@ -354,6 +354,10 @@ module JsonApi
 
   # Allow only predifined list of attributes that can saved to the resource
   def strong_attributes
+    # In case only relationships are being updated, no attributes are included in the request
+    return {} if params['attributes'].nil?
+
+    # When no attributes are marked as updatable
     return {} if creatable_attributes.empty?
 
     params
