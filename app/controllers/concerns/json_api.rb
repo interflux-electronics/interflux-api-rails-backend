@@ -355,7 +355,7 @@ module JsonApi
   # Allow only predifined list of attributes that can saved to the resource
   def strong_attributes
     # In case only relationships are being updated, no attributes are included in the request
-    return {} if params['attributes'].nil?
+    return {} if params[:data][:attributes].nil?
 
     # When no attributes are marked as updatable
     return {} if creatable_attributes.empty?
@@ -420,6 +420,7 @@ module JsonApi
     resource = resource_klass.find_by id: params[:id]
 
     return resource_not_found if resource.nil?
+    return forbidden_attribute if forbidden_attributes.any?
 
     if resource.update!(attributes_and_relationships)
       json = serializer_klass.new(resource).serialized_json
@@ -427,6 +428,11 @@ module JsonApi
     else
       render status: 422, json: json_errors(resource)
     end
+  end
+
+  def forbidden_attributes
+    return nil if params[:data][:attributes].nil? 
+    params[:data][:attributes].keys.reject { |attr| creatable_attributes.include? attr.to_sym }
   end
 
   # DELETING
@@ -491,8 +497,16 @@ module JsonApi
   def forbidden_filter
     render_error(
       403,
-      'forbidden',
+      'forbidden-filter',
       'One of the filters params in the URL is not allowed. Please review.'
+    )
+  end
+
+  def forbidden_attribute()
+    render_error(
+      403,
+      'forbidden-attribute',
+      "The following attributes are forbidden: #{forbidden_attributes.join(', ')}. Please include them in the API controller or remove them from the request payload."
     )
   end
 
