@@ -37,3 +37,9 @@ sudo lsof -iTCP -sTCP:LISTEN -P
 # Then kill the one listening to port 3000
 
 kill -9 [pid]
+
+# PG::ConnectionBad (could not connect to server: Connection refused
+# Is the server running on host "localhost" (::1) and accepting
+# TCP/IP connections on port 5432?
+
+rm /usr/local/var/postgres/postmaster.pid
