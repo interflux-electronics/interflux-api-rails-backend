@@ -35,6 +35,7 @@ module V1
         %i[
           address
           business_name
+          legal_name
           emails
           fax
           latitude
