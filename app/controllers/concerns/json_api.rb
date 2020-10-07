@@ -431,7 +431,7 @@ module JsonApi
   end
 
   def forbidden_attributes
-    return nil if params[:data][:attributes].nil? 
+    return [] if params[:data][:attributes].nil? 
     params[:data][:attributes].keys.reject { |attr| creatable_attributes.include? attr.to_sym }
   end
 
