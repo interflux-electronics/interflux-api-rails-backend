@@ -9,7 +9,7 @@
 # https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248
 #
 class JsonWebToken
-  def initialize(data, expiry = 24.hours.from_now)
+  def initialize(data, expiry = 90.days.from_now)
     @data = data
     @expiry = expiry
   end
