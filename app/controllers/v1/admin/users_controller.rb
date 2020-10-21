@@ -13,7 +13,9 @@ module V1
 
         return forbidden if user.nil?
 
-        serve_one(user)
+        json = serializer_klass.new(user).serialized_json
+
+        render status: 200, json: json
       end
 
       def create

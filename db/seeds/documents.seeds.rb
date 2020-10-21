@@ -1,47 +1,44 @@
-after :document_categories, :languages do
+after :cdn_files, :document_categories do
   puts '---------'
   puts 'Seeding documents'
   puts '---------'
 
-  file = File.read 'db/seeds/data/cdn_files.yml'
-  paths = YAML.safe_load(file)
+  Document.delete_all;
 
-  languages = Language.all
-
-  paths.each_with_index do |path, i|
+  CdnFile.all.each_with_index do |file, i|
     # Skip all CDN paths that aren't documents
-    next unless path.start_with?('documents/')
+    next unless file.path.start_with?('documents/')
 
-    language = path.split('-').last.split('.').first.downcase
-    language = Language.find(language)
-
-    category = path.split('/').second
+    category = file.path.split('/').second
     category = 'TD' if category == 'series'
     category = 'TD' if category == 'products'
     category = DocumentCategory.find(category)
 
-    name = path.split('/').last.split('.').first[0...-3].gsub("-", " ")
+    name = file.path.split('/').last.split('.').first[0...-3].gsub("-", " ")
+    shared_path = file.path[0...-7]
 
-    byebug if language.nil?
     byebug if category.nil?
 
     props = OpenStruct.new(
-      path: path,
+      path: shared_path,
       name: name,
-      language_id: language.id,
       document_category_id: category.slug,
     )
 
-    document = Document.find_by(path: path)
+    document = Document.find_by(path: shared_path)
 
-    puts "#{i} | #{category.slug} | #{language.name_english} | #{path}"
+    puts "#{i} | #{category.slug} | #{shared_path}"
 
     if document.nil?
-      Document.create!(props.to_h)
+      document = Document.create!(props.to_h)
     else
       document.update!(props.to_h)
     end
 
+    byebug if document.nil?
+
+    file.document_id = document.id
+    file.save!
   end
 
   puts '---------'

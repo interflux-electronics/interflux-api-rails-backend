@@ -41,6 +41,27 @@ module V1
           features
         ]
       end
+
+      def creatable_attributes
+        %i[
+          slug
+          name
+          label
+          pitch
+          properties
+          public
+          orderable
+          featured
+          popular
+          new
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          image
+        ]
+      end
     end
   end
 end

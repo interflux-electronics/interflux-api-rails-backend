@@ -212,25 +212,29 @@ module JsonApi
   # Which should return the same as the UUID:
   # GET api.foo.com/people/797e2b42-f8c8-5712-b6b0-486aeb1bcf94
   #
+  # def allow_show
+  #   return find_by_id if uuid? params[:id]
+  #
+  #   find_by_slug
+  # end
+
+  # def find_by_id
+  #   record = resource_klass.find_by id: params[:id]
+  #
+  #   serve_one record
+  # end
+
+  # def find_by_slug
+  #   record = resource_klass.find_by slug: params[:id]
+  #
+  #   serve_one record
+  # end
+
+  # def uuid?(string)
+  #   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.match(string)
+  # end
+
   def allow_show
-    return find_by_id if uuid? params[:id]
-
-    find_by_slug
-  end
-
-  def find_by_id
-    record = resource_klass.find_by id: params[:id]
-
-    serve_one record
-  end
-
-  def find_by_slug
-    record = resource_klass.find_by slug: params[:id]
-
-    serve_one record
-  end
-
-  def serve_one(record)
     return resource_not_found if record.nil?
 
     options = {
@@ -243,8 +247,20 @@ module JsonApi
     render status: 200, json: json
   end
 
-  def uuid?(string)
-    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.match(string)
+  # The primary key is not always "id", sometimes it's "slug" or "path".
+  # resource = resource_klass.find_by "#{primary_key}": params[:id]
+  # resource = resource_klass.find_by id: params[:id]
+  #
+  def primary_key
+    resource_klass.primary_key
+  end
+
+  # Returns the record param ID
+  # Get /products/IF-2005M
+  # Would yield ID "IF-2005M" and the primary key on products has the key "slug", not "id"
+  #
+  def record
+    resource_klass.find_by "#{primary_key}": params[:id]
   end
 
   # INCLUDES
@@ -379,7 +395,7 @@ module JsonApi
   def strong_relationships
     return {} if creatable_relationships.empty?
 
-    params['data']['relationships']
+    # params['data']['relationships']
     # First we convert the array into  we convert `relationships` into a nested array like:
     # [[:main_category, "d6461197-e618-5502-95a5-1e171f8f71e9"], [:sub_category, "8147cd48-12b6-500e-a001-d80288d644f1"]]
     # The keys are underscored for later use when creating / updating the resource.
@@ -417,21 +433,19 @@ module JsonApi
   # end
   #
   def allow_update
-    resource = resource_klass.find_by id: params[:id]
-
-    return resource_not_found if resource.nil?
+    return resource_not_found if record.nil?
     return forbidden_attribute if forbidden_attributes.any?
 
-    if resource.update!(attributes_and_relationships)
-      json = serializer_klass.new(resource).serialized_json
+    if record.update!(attributes_and_relationships)
+      json = serializer_klass.new(record).serialized_json
       render status: 204, json: json
     else
-      render status: 422, json: json_errors(resource)
+      render status: 422, json: json_errors(record)
     end
   end
 
   def forbidden_attributes
-    return [] if params[:data][:attributes].nil? 
+    return [] if params[:data][:attributes].nil?
     params[:data][:attributes].keys.reject { |attr| creatable_attributes.include? attr.to_sym }
   end
 

@@ -12,4 +12,7 @@
 #
 
 class Image < ApplicationRecord
+  has_many :products
+  # has_many :product_images
+  # has_many :images, through: :product_images, source: :image
 end

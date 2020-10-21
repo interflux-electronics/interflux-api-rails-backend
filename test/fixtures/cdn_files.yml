@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: cdn_files
+#
+#  id          :uuid             not null, primary key
+#  path        :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  image_id    :string
+#  document_id :string
+#
+
+# cdn_file_fixture_1:
+#   name: Some Name
+#   slug: some-name
+#   public: true
+#   group: other_thing_fixture_1
+# 
+# cdn_file_fixture_2:
+#   name: Some Name
+#   slug: some-name
+#   public: true
+#   group: other_thing_fixture_1

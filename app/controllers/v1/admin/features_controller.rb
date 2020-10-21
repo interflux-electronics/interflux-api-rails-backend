@@ -41,6 +41,7 @@ module V1
         %i[
           products
           products.image
+          products.product_family
         ]
       end
     end

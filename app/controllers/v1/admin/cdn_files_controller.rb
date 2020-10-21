@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class ImagesController < V1::AdminController
+    class CdnFilesController < ApplicationController
       def index
         allow_index
       end
@@ -10,11 +10,11 @@ module V1
       end
 
       def create
-        allow_create
+        forbidden
       end
 
       def update
-        allow_update
+        forbidden
       end
 
       def destroy
@@ -24,15 +24,15 @@ module V1
       private
 
       def resource_klass
-        Image
+        CdnFile
       end
 
       def serializer_klass
-        V1::Admin::ImageSerializer
+        V1::Admin::CdnFileSerializer
       end
 
       def creatable_attributes
-        %i[]
+        %[]
         # %i[
         #   name
         #   company
@@ -48,7 +48,7 @@ module V1
       end
 
       def creatable_relationships
-        %i[]
+        %[]
         # %i[
         #  country
         #  ip_country
@@ -56,7 +56,7 @@ module V1
       end
 
       def permitted_filters
-        %i[]
+        %[]
         # %i[
         #  main_group_id
         #  sub_group_id
@@ -71,9 +71,13 @@ module V1
       end
 
       def permitted_includes
-        %i[
-          products
-        ]
+        %[]
+        # %i[
+        #   related_articles
+        #   related_products
+        #   related_products.main_group
+        #   translations
+        # ]
       end
 
       # def after_create(lead)

@@ -19,6 +19,10 @@ module V1
 
       belongs_to :language
       belongs_to :document_category
+
+      has_many :products, if: Proc.new { |record, params|
+        params && params['include'] && params['include'].split(',').include?('products')
+      }
     end
   end
 end

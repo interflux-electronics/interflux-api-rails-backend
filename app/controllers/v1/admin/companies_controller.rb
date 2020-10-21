@@ -31,6 +31,12 @@ module V1
         V1::Admin::CompanySerializer
       end
 
+      def permitted_includes
+        %i[
+          country
+        ]
+      end
+
       def creatable_attributes
         %i[
           address

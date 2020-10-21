@@ -36,12 +36,13 @@ Rails.application.routes.draw do
     # https://admin.interflux.com
     #
     namespace :admin do
-      resources :articles
       resources :article_categories, path: '/article-categories'
+      resources :articles
+      resources :cdn_files, path: '/cdn-files'
       resources :companies
       resources :countries
-      resources :documents
       resources :document_categories, path: '/document-categories'
+      resources :documents
       resources :features
       resources :images
       resources :languages
@@ -52,6 +53,7 @@ Rails.application.routes.draw do
       resources :product_images, path: '/product-images'
       resources :products, path: '/products'
       resources :users
+
 
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'
