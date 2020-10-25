@@ -181,6 +181,7 @@ DEPENDENCIES
   puma (~> 3.12)
   rack-cors
   rails (~> 5.1.6)
+  rubocop
   rubocop-rails
   seedbank
   skylight

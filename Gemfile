@@ -43,14 +43,15 @@ gem 'seedbank'
 gem 'yaml_db'
 
 # For logging activity to skylight.io
-gem "skylight"
+gem 'skylight'
 
 group :development do
   # For listening to file changes
   gem 'listen', '>= 3.0.5', '< 3.2'
 
   # For Ruby syntax formatting
-  gem 'rubocop-rails', require: false
+  gem 'rubocop', require: false
+  gem 'rubocop-rails'
 
   # For annotating models with schemas
   gem 'annotate', require: false
