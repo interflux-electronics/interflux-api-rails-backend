@@ -163,7 +163,7 @@ module JsonApi
       # If the query contains a "*" then do a fuzzy search.
       # We use Postrgress match operators to search:
       # https://www.postgresql.org/docs/9.6/functions-matching.html#FUNCTIONS-POSIX-TABLE
-      resources = resources.where("#{key} ~* ?", value.gsub!('*', '')) if value.include? "*"
+      resources = resources.where("#{key} ~* ?", value.gsub!('*', '')) if value.include? '*'
     end
 
     # Here we prepare the options we can pass to the serializers.
@@ -316,14 +316,6 @@ module JsonApi
     hash
   end
 
-  def permitted_filters
-    nil
-  end
-
-  def permanent_filters
-    nil
-  end
-
   def requested_filters
     permitted = permitted_filters.collect(&:to_s)
 
@@ -393,6 +385,10 @@ module JsonApi
   # end
   #
   def strong_relationships
+    # In case only attributes are being updated, no relationships are included in the request
+    return {} if params[:data][:relationships].nil?
+
+    # When no relationships are marked as updatable
     return {} if creatable_relationships.empty?
 
     # params['data']['relationships']
@@ -400,6 +396,8 @@ module JsonApi
     # [[:main_category, "d6461197-e618-5502-95a5-1e171f8f71e9"], [:sub_category, "8147cd48-12b6-500e-a001-d80288d644f1"]]
     # The keys are underscored for later use when creating / updating the resource.
     # The values are strong IDs grabbed from the JSON API structured package.
+
+    # TODO: all permitted relationships are being updated with nil if only one relationship is being asked for update
 
     nested_array = creatable_relationships.collect do |key|
       db_key = "#{key}_id"
@@ -434,6 +432,7 @@ module JsonApi
   #
   def allow_update
     return resource_not_found if record.nil?
+    return nothing_to_update if attributes_and_relationships.empty?
     return forbidden_attribute if forbidden_attributes.any?
 
     if record.update!(attributes_and_relationships)
@@ -446,6 +445,7 @@ module JsonApi
 
   def forbidden_attributes
     return [] if params[:data][:attributes].nil?
+
     params[:data][:attributes].keys.reject { |attr| creatable_attributes.include? attr.to_sym }
   end
 
@@ -480,7 +480,7 @@ module JsonApi
   #   PostLeadToSlackJob.perform_later lead
   # end
   #
-  def after_create(record)
+  def after_create
     nil
   end
 
@@ -516,11 +516,19 @@ module JsonApi
     )
   end
 
-  def forbidden_attribute()
+  def forbidden_attribute
     render_error(
       403,
       'forbidden-attribute',
       "The following attributes are forbidden: #{forbidden_attributes.join(', ')}. Please include them in the API controller or remove them from the request payload."
+    )
+  end
+
+  def nothing_to_update
+    render_error(
+      400,
+      'nothing-to-update',
+      'The payload is empty and thus there is nothing to update. To resolve: add attributes or relationships to the request payload.'
     )
   end
 

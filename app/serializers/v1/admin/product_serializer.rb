@@ -17,16 +17,20 @@ module V1
       #   params && params['include'] && ( params['include'].split(',').include?('image') || params['include'].split(',').include?('products.image') )
       # }
 
-      has_many :documents, if: Proc.new { |record, params|
+      has_many :documents, if: proc { |_record, params|
         params && params['include'] && params['include'].split(',').include?('documents')
       }
 
-      has_many :images, if: Proc.new { |record, params|
-        params && params['include'] && ( params['include'].split(',').include?('images') )
+      has_many :images, if: proc { |_record, params|
+        params && params['include'] && (params['include'].split(',').include?('images'))
       }
 
-      has_many :features, if: Proc.new { |record, params|
-        params && params['include'] && ( params['include'].split(',').include?('features') || params['include'].split(',').include?('products.features') )
+      has_many :product_images, if: proc { |_record, params|
+        params && params['include'] && (params['include'].split(',').include?('product_images'))
+      }
+
+      has_many :features, if: proc { |_record, params|
+        params && params['include'] && (params['include'].split(',').include?('features') || params['include'].split(',').include?('products.features') )
       }
     end
   end

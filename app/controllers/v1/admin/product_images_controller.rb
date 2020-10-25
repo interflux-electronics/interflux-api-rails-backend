@@ -10,15 +10,15 @@ module V1
       end
 
       def create
-        forbidden
+        allow_create
       end
 
       def update
-        forbidden
+        allow_update
       end
 
       def destroy
-        forbidden
+        allow_delete
       end
 
       private
@@ -32,57 +32,18 @@ module V1
       end
 
       def creatable_attributes
-        %[]
-        # %i[
-        #   name
-        #   company
-        #   email
-        #   mobile
-        #   message
-        #   purpose
-        #   source
-        #   ip
-        #   ip_region
-        #   ip_city
-        # ]
+        %i[
+          rank
+          public
+        ]
       end
 
       def creatable_relationships
-        %[]
-        # %i[
-        #  country
-        #  ip_country
-        # ]
+        %i[
+          product
+          image
+        ]
       end
-
-      def permitted_filters
-        %[]
-        # %i[
-        #  main_group_id
-        #  sub_group_id
-        # ]
-      end
-
-      def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
-      end
-
-      def permitted_includes
-        %[]
-        # %i[
-        #   related_articles
-        #   related_products
-        #   related_products.main_group
-        #   translations
-        # ]
-      end
-
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
     end
   end
 end

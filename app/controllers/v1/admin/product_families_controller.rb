@@ -38,6 +38,21 @@ module V1
           products.features
         ]
       end
+
+      def permitted_filters
+        %i[
+          name_single
+          name_plural
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          name_single
+          name_plural
+          order
+        ]
+      end
     end
   end
 end

@@ -3,9 +3,6 @@ after :documents, :products do
   puts 'Seeding product documents'
   puts '---------'
 
-  # file = File.read 'db/seeds/data/cdn_files.yml'
-  # paths = YAML.safe_load(file)
-
   Document.all.each_with_index do |document, i|
     next unless document.path.start_with?('documents/products/')
 

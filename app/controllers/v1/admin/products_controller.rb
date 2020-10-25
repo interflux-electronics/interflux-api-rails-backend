@@ -37,6 +37,8 @@ module V1
           images
           documents
           documents.language
+          product_images
+          product_images.image
           product_family
           features
         ]

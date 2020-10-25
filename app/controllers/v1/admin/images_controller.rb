@@ -31,54 +31,17 @@ module V1
         V1::Admin::ImageSerializer
       end
 
-      def creatable_attributes
-        %i[]
-        # %i[
-        #   name
-        #   company
-        #   email
-        #   mobile
-        #   message
-        #   purpose
-        #   source
-        #   ip
-        #   ip_region
-        #   ip_city
-        # ]
-      end
-
-      def creatable_relationships
-        %i[]
-        # %i[
-        #  country
-        #  ip_country
-        # ]
-      end
-
-      def permitted_filters
-        %i[]
-        # %i[
-        #  main_group_id
-        #  sub_group_id
-        # ]
-      end
-
-      def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
-      end
-
       def permitted_includes
         %i[
           products
         ]
       end
 
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
+      def permitted_filters
+        %i[
+          alt
+        ]
+      end
     end
   end
 end
