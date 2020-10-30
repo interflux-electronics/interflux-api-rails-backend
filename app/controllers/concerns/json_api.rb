@@ -151,7 +151,7 @@ module JsonApi
     return forbidden_filter if unknown_filter?
 
     # First we gather all records of the model class.
-    resources = resource_klass.all
+    resources = model_class.all
 
     # Then we reduce this collection with the permanent and requested filters.
     # We could remove all unwanted characters to avoid injection.
@@ -176,7 +176,7 @@ module JsonApi
 
     # We create a JSON response from the records we collected using the fast and
     # JSON API compliant Netflux serializers.
-    json = serializer_klass.new(resources, options).serialized_json
+    json = serializer_class.new(resources, options).serialized_json
 
     # Finally we return the JSON with a 200.
     render status: 200, json: json
@@ -219,13 +219,13 @@ module JsonApi
   # end
 
   # def find_by_id
-  #   record = resource_klass.find_by id: params[:id]
+  #   record = model_class.find_by id: params[:id]
   #
   #   serve_one record
   # end
 
   # def find_by_slug
-  #   record = resource_klass.find_by slug: params[:id]
+  #   record = model_class.find_by slug: params[:id]
   #
   #   serve_one record
   # end
@@ -235,24 +235,25 @@ module JsonApi
   # end
 
   def allow_show
-    return resource_not_found if record.nil?
+    return record_not_found if record.nil?
+    return error_forbidden_includes if forbidden_includes.any?
 
     options = {
       params: params.as_json
     }
 
     options[:include] = strong_includes if strong_includes
-    json = serializer_klass.new(record, options).serialized_json
+    json = serializer_class.new(record, options).serialized_json
 
     render status: 200, json: json
   end
 
   # The primary key is not always "id", sometimes it's "slug" or "path".
-  # resource = resource_klass.find_by "#{primary_key}": params[:id]
-  # resource = resource_klass.find_by id: params[:id]
+  # resource = model_class.find_by "#{primary_key}": params[:id]
+  # resource = model_class.find_by id: params[:id]
   #
   def primary_key
-    resource_klass.primary_key
+    model_class.primary_key
   end
 
   # Returns the record param ID
@@ -260,7 +261,7 @@ module JsonApi
   # Would yield ID "IF-2005M" and the primary key on products has the key "slug", not "id"
   #
   def record
-    resource_klass.find_by "#{primary_key}": params[:id]
+    model_class.find_by "#{primary_key}": params[:id]
   end
 
   # INCLUDES
@@ -284,9 +285,15 @@ module JsonApi
 
   # Returns array of requested include keys.
   def requested_includes
+    return [] unless params[:include]
+
     params[:include]
       .split(',')
       .collect { |item| item.underscore.to_sym }
+  end
+
+  def forbidden_includes
+    requested_includes.reject { |x| permitted_includes.include? x }
   end
 
   # FILTERS
@@ -345,10 +352,10 @@ module JsonApi
   # end
   #
   def allow_create
-    resource = resource_klass.new(attributes_and_relationships)
+    resource = model_class.new(attributes_and_relationships)
     if resource.save!
-      after_create(resource)
-      json = serializer_klass.new(resource).serialized_json
+      after_create
+      json = serializer_class.new(resource).serialized_json
       render status: 201, json: json
     else
       render status: 422, json: json_errors(resource)
@@ -431,12 +438,12 @@ module JsonApi
   # end
   #
   def allow_update
-    return resource_not_found if record.nil?
+    return record_not_found if record.nil?
     return nothing_to_update if attributes_and_relationships.empty?
     return forbidden_attribute if forbidden_attributes.any?
 
     if record.update!(attributes_and_relationships)
-      json = serializer_klass.new(record).serialized_json
+      json = serializer_class.new(record).serialized_json
       render status: 204, json: json
     else
       render status: 422, json: json_errors(record)
@@ -453,14 +460,14 @@ module JsonApi
   #
   # DELETE /products/:uuid
   #
-  # def create
-  #   allow_delete
+  # def destroy
+  #   allow_destroy
   # end
   #
-  def allow_delete
-    resource = resource_klass.find_by id: params[:id]
+  def allow_destroy
+    resource = model_class.find_by id: params[:id]
 
-    return resource_not_found if resource.nil?
+    return record_not_found if resource.nil?
 
     # TODO: first destroy everything that's uniquely related to this resource?
 
@@ -484,11 +491,13 @@ module JsonApi
     nil
   end
 
-  # ERRORS
+  # VALIDATION
 
   def check_content_type
     wrong_content_type unless request.content_type == 'application/vnd.api+json'
   end
+
+  # ERRORS
 
   def unauthorized(meta = nil)
     render_error(
@@ -505,6 +514,14 @@ module JsonApi
       'forbidden',
       'This request is forbidden. The resource exists, but no action was assigned in the controller.',
       meta
+    )
+  end
+
+  def error_forbidden_includes
+    render_error(
+      403,
+      'forbidden-includes',
+      "The following includes are forbidden: #{forbidden_includes.join(', ')}. Please include them in the API controller or remove them from the request URL."
     )
   end
 
@@ -549,11 +566,11 @@ module JsonApi
     )
   end
 
-  def resource_not_found(meta = nil)
+  def record_not_found(meta = nil)
     render_error(
       422,
-      'resource-not-found',
-      'No record with this UUID was found in the database.',
+      'record-not-found',
+      'No record was found with the given ID.',
       meta
     )
   end

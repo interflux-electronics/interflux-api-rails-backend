@@ -23,11 +23,11 @@ module <%= @version.classify %>
 
       private
 
-      def resource_klass
+      def model_class
         <%= @name.classify.singularize %>
       end
 
-      def serializer_klass
+      def serializer_class
         <%= @version.classify %>::<%= @scope.classify %>::<%= @name.classify.singularize %>Serializer
       end
 

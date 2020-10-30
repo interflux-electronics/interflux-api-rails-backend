@@ -23,11 +23,11 @@ module V1
 
       private
 
-      def resource_klass
+      def model_class
         CompanyMarket
       end
 
-      def serializer_klass
+      def serializer_class
         V1::Admin::CompanyMarketSerializer
       end
 

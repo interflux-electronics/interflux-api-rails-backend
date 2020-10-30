@@ -50,10 +50,10 @@ Rails.application.routes.draw do
       resources :people
       resources :product_documents, path: '/product-documents'
       resources :product_families, path: '/product-families'
+      resources :product_features, path: '/product-features'
       resources :product_images, path: '/product-images'
       resources :products, path: '/products'
       resources :users
-
 
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'

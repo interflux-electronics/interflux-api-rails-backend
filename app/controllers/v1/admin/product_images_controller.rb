@@ -18,16 +18,16 @@ module V1
       end
 
       def destroy
-        allow_delete
+        allow_destroy
       end
 
       private
 
-      def resource_klass
+      def model_class
         ProductImage
       end
 
-      def serializer_klass
+      def serializer_class
         V1::Admin::ProductImageSerializer
       end
 

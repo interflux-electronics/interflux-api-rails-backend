@@ -10,79 +10,33 @@ module V1
       end
 
       def create
-        forbidden
+        allow_create
       end
 
       def update
-        forbidden
+        allow_update
       end
 
       def destroy
-        forbidden
+        allow_destroy
       end
 
       private
 
-      def resource_klass
+      def model_class
         ProductFeature
       end
 
-      def serializer_klass
+      def serializer_class
         V1::Admin::ProductFeatureSerializer
       end
 
-      def creatable_attributes
-        %[]
-        # %i[
-        #   name
-        #   company
-        #   email
-        #   mobile
-        #   message
-        #   purpose
-        #   source
-        #   ip
-        #   ip_region
-        #   ip_city
-        # ]
-      end
-
       def creatable_relationships
-        %[]
-        # %i[
-        #  country
-        #  ip_country
-        # ]
+        %i[
+          product
+          feature
+        ]
       end
-
-      def permitted_filters
-        %[]
-        # %i[
-        #  main_group_id
-        #  sub_group_id
-        # ]
-      end
-
-      def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
-      end
-
-      def permitted_includes
-        %[]
-        # %i[
-        #   related_articles
-        #   related_products
-        #   related_products.main_group
-        #   translations
-        # ]
-      end
-
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
     end
   end
 end

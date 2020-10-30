@@ -11,6 +11,10 @@ module V1
       has_many :products, if: Proc.new { |record, params|
         params && params['include'] && params['include'].split(',').include?('products')
       }
+
+      has_many :product_features, if: Proc.new { |record, params|
+        params && params['include'] && params['include'].split(',').include?('product_features')
+      }
     end
   end
 end

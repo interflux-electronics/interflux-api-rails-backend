@@ -13,7 +13,7 @@ module V1
 
         return forbidden if user.nil?
 
-        json = serializer_klass.new(user).serialized_json
+        json = serializer_class.new(user).serialized_json
 
         render status: 200, json: json
       end
@@ -32,11 +32,11 @@ module V1
 
       private
 
-      def resource_klass
+      def model_class
         User
       end
 
-      def serializer_klass
+      def serializer_class
         V1::Admin::UserSerializer
       end
 
