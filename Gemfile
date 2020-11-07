@@ -23,6 +23,7 @@ gem 'olive_branch'
 
 # For JSON API compliant serialisers
 gem 'fast_jsonapi'
+# TODO gem 'jsonapi-serializer'
 
 # For token based authentication, specifically Json Web Token (JWT)
 gem 'jwt'
