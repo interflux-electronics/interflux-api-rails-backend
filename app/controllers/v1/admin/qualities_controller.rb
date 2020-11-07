@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class ProductFeaturesController < V1::AdminController
+    class QualitiesController < ApplicationController
       def index
         allow_index
       end
@@ -18,23 +18,25 @@ module V1
       end
 
       def destroy
-        allow_destroy
+        forbidden
       end
 
       private
 
       def model_class
-        ProductFeature
+        Quality
       end
 
       def serializer_class
-        V1::Admin::ProductFeatureSerializer
+        V1::Admin::QualitySerializer
       end
 
-      def creatable_relationships
+      def permitted_includes
         %i[
-          product
-          feature
+          products
+          products.image
+          products.product_family
+          product_qualities
         ]
       end
     end

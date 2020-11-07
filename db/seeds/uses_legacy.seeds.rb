@@ -11,24 +11,22 @@ puts '---------'
 file = File.read 'db/seeds/data/uses.yml'
 data = YAML.safe_load(file)
 
-data.each_with_index do |u, i|
-  use = OpenStruct.new(u)
+data.each_with_index do |_use, i|
+  use = OpenStruct.new(_use)
 
-  puts "#{i + 1} - #{use.text}"
+  puts "#{i + 1} - #{use.name}"
 
-  record = Use.find_by(slug: use.slug)
+  use_record = Use.find_by(slug: use.slug)
 
-  properties = OpenStruct.new(
+  use_properties = OpenStruct.new(
     slug: use.slug,
-    text: use.text,
-    icon: use.icon,
-    gist: use.gist
+    name: use.name
   )
 
-  if record.nil?
-    Use.create!(properties.to_h)
+  if use_record.nil?
+    use_record = Use.create!(use_properties.to_h)
   else
-    record.update!(properties.to_h)
+    use_record.update!(use_properties.to_h)
   end
 end
 

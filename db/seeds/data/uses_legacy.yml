@@ -1,0 +1,153 @@
+- slug: wave-soldering
+  name: wave soldering
+  products:
+    - OSPI 3311M
+    - IF 2005M
+    - IF 2005K
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - PacIFic 2009MLF-E
+    - PacIFic 2010F
+    - IF 3006
+    - AF 4818-PbF
+    - T 2005M
+    - IF 710
+    - IF 910
+    - Anti-oxidant pellets
+    - Solder bar
+    - Solder pellets
+    - IPA/DI Wipes
+    - ICSF Curve
+    - ICSF Curve 2
+    - ICSF Select
+
+- slug: selective-soldering
+  name: selective soldering
+  products:
+    - SelectIF 2040
+    - IF 2005C
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - IF 3006
+    - ICSF Select
+    - IF 930
+    - Anti-oxidant pellets
+    - Solder bar
+    - Solder pellets
+    - Plain solder wire
+
+- slug: reflow-soldering
+  name: reflow soldering
+  products:
+    - LMPA™-Q6
+    - DP 5600
+    - LP 5720
+    - DP 5505
+    - µ-dIFe 7
+    - IF 9009LT
+    - Purgel
+    - IPA/DI Wipes
+    - Stencil clean wipes
+    - ISC 8020
+
+- slug: rework-and-repair
+  name: rework & repair
+  products:
+    - IF 8300
+    - IF 7500 HAB
+    - IF 8001
+    - IF 6000
+    - TerrIFic RP65
+    - µ-dIFe 7
+    - QF 70
+    - NH 1
+    - RosIX 705
+    - Aquasol 4018
+    - IF 14
+    - Flexsol 903
+    - Tip Tinner
+    - Purgel
+    - Solder pellets
+    - IPA/DI Wipes
+    - QF 70
+
+- slug: spray-fluxing
+  name: spray fluxing
+  products:
+    - ICSF Curve
+    - ICSF Curve 2
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - PacIFic 2009MLF-E
+    - PacIFic 2010F
+
+- slug: foam-fluxing
+  name: foam fluxing
+  products:
+    - PacIFic 2010F
+
+- slug: jet-fluxing
+  name: jet fluxing
+  products:
+    - ICSF Select
+    - PacIFic 2009M
+    - PacIFic 2009MLF
+    - PacIFic 2009MLF-E
+    - PacIFic 2010F
+
+- slug: solder-paste-jetting
+  name: solder paste jetting
+  products:
+    - ICSF Select
+    - LMPA™-Q6
+
+- slug: pre-tinning
+  name: pre-tinning
+  products:
+    - IF 2005C
+    - PacIFic 2009M
+    - IF 3006
+    - IF 910
+    - Anti-oxidant pellets
+    - Solder bar
+    - Solder pellets
+    - Plain solder wire
+    - PacIFic 2009M
+
+- slug: dipping
+  name: dipping
+  products:
+    - Solder pellets
+    - Plain solder wire
+    - Solder bar
+    - IF 910
+    - µ-dIFe 7
+
+- slug: dispensing
+  name: dispensing
+  products:
+    - Purgel
+    - IF 9009LT
+    - DP 5505
+    - DP 5600
+
+- slug: stencil-printing
+  name: stencil printing
+  products:
+    - ISC 8020
+    - Stencil clean wipes
+    - IF 9009LT
+    - DP 5505
+    - LP 5720
+    - DP 5600
+    - LMPA™-Q6
+
+- slug: cleaning
+  name: cleaning
+  products:
+    - IPA/DI Wipes
+
+- slug: vapor-phase-soldering
+  name: vapor phase soldering
+  products:
+    - NH 1

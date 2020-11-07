@@ -26,8 +26,11 @@ class Product < ApplicationRecord
   belongs_to :image, optional: true
   alias_attribute :avatar, :image
 
-  has_many :product_features
-  has_many :features, through: :product_features, source: :feature
+  has_many :product_qualities
+  has_many :qualities, through: :product_qualities, source: :quality
+
+  has_many :product_uses
+  has_many :uses, through: :product_uses, source: :use
 
   has_many :product_images
   has_many :images, through: :product_images, source: :image

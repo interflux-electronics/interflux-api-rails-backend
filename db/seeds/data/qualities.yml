@@ -1,0 +1,369 @@
+- slug: halide-free
+  text: Halide free
+  icon: leaves
+  gist: Halides are harmful to our environmental and can pose health risks. All Interflux products are completely halide-free (0,00%).
+
+- slug: alcohol-based
+  text: Alcohol based (VOC)
+  icon: alcohol
+
+- slug: water-based
+  text: Water based
+  icon: water
+  gist: Water-based soldering fluxes are popular because they VOC-free and non-flamable, which makes them considerably easier to transport, store and handle. It's also worth noting that because the boiling point is higher than alcohol-based soldering fluxes, there is no unwanted room temperature evaporation and a pre-heat intensive temperature profile is recommended.
+
+- slug: low-VOC
+  text: Low VOC content
+  icon: low-voc
+
+- slug: VOC-free
+  text: VOC-free
+  icon:
+
+- slug: long-preheat-resistant
+  text: Long preheat resistant
+  icon: temperature-plus
+
+- slug: rosin-based
+  text: Rosin based (colophony)
+  icon: rosin-based
+
+- slug: rosin-free
+  text: Rosin-free (colophony)
+  icon: rosin-free
+
+- slug: lead-based
+  text: Lead-based
+  icon: lead-based
+
+- slug: lead-free
+  text: Lead-free
+  icon: lead-free
+
+- slug: low-melting-point
+  text: Low melting point
+  icon: low-temperature
+  gist: "Soldering electronics at lower temperatures reduced the risks like damaging sensitive components and warping the circuits boards. It also helps you reduce energy costs."
+
+- slug: low-voiding
+  text: Low voiding (below 10%)
+  icon: low-voiding
+  gist: "Voids are bubbles of air in solder alloys that get trapped between electronic component and their circuit board. They are typically found underneath components with big flat surfaces like BGAs, often taking up 50 to 20% of the surface. Use Xrays to spot them. The're bad becasue the reduce the mechanical strength of the solder joint as well conductivity. Low voiding means we keep those bubbles to a minimum, below 10%"
+
+- slug: no-clean
+  text: No Clean™ - no post cleaning needed
+  icon: no-clean
+  gist: "No Clean™ is a hallmark quality label of Interflux for solder pastes which leave little to no residue on the circuits boards. No post-cleaning is required, greatly decreasing your cost per unit, reduce risk of defects and increase production speed."
+
+- slug: for-lead-and-lead-free-processes
+  text: for both SnPb and lead-free processes
+  icon: lead-and-lead-free
+  gist: "For those that use the same machines to for lead-based and lead-free manufacturing, it's important that their solder fluxes and solder pastes are compatible with all alloys."
+
+- slug: lead-based-alloys
+  text: Available in lead-based alloys
+  icon: lead
+
+- slug: lead-free-alloys
+  text: Available in lead-free alloys
+  icon: lead-free
+
+- slug: high-printing-speeds
+  text: High printing speeds
+  icon:
+
+- slug: suitable-for-Pin-in-Paste-PIP
+  text: Suitable for Pin-in-Paste (PIP)
+  icon:
+
+- slug: reduced-head-in-pillow-defect
+  text: Reduced head-in-pillow defect
+  icon:
+
+- slug: repeatable-and-selective-paste-volume
+  text: Repeatable and selective paste volume
+  icon:
+
+- slug: fast-and-easy-application
+  text: Fast and easy application
+  icon:
+
+- slug: reduced-risk-of-bridging-on-micro-BGAs
+  text: Reduced risk of bridging on μ-BGAs
+  icon:
+
+- slug: suitable-for-the-ERSA-Dip-and-Print-Station
+  text: Suitable for the ERSA Dip&Print Station
+  icon:
+
+- slug: for-ball-grid-arrays-J-lead-and-gull-wing-ICs
+  text: For Ball Grid Arrays, J-lead and Gull Wing ICs
+  icon:
+
+- slug: ideal-for-degraded-and-difficult-to-solder-surfaces
+  text: ideal for degraded and difficult to solder surfaces
+  icon:
+
+- slug: increased-activity
+  text: Increased activity
+  icon:
+
+- slug: enhanced-low-melting-point-solder-paste
+  text: Enhanced low melting point solder paste
+  icon:
+
+- slug: high-stability-on-the-stencil
+  text: High stability on the stencil
+  icon:
+
+- slug: smooth-clear-and-transparent-residue
+  text: Smooth, clear and transparent residue
+  icon:
+
+- slug: reduced-cost-of-production
+  text: Reduced cost of production
+  icon:
+
+- slug: increased-mechanical-reliability
+  text: Increased mechanical reliability
+  icon:
+
+- slug: high-deoxidation-power
+  text: High deoxidation power
+  icon:
+
+- slug: high-compatibility-with-conformal-coating
+  text: High compatibility with conformal coating
+  icon:
+
+- slug: no-residue
+  text: No-residue ™
+  icon:
+
+- slug: low-residue
+  text: Low residue
+  icon:
+
+- slug: withstands-high-process-temperatures-and-long-process-times
+  text: Withstands high process temperatures and long process times.
+  icon:
+
+- slug: high-temperature-resistant
+  text: High temperature resistant
+  icon:
+
+- slug: anti-solder-ball-formation
+  text: Anti solder ball formation
+  icon:
+
+- slug: reduced-solder-ball-formation
+  text: Reduced solder ball formation
+  icon:
+
+- slug: suitable-for-reballing-and-BGA-rework
+  text: Suitable for reballing and BGA rework
+  icon:
+
+- slug: available-in-fluxpens
+  text: Available in fluxpens
+  icon:
+
+- slug: increased-wetting-speed
+  text: Increased wetting speed
+  icon:
+
+- slug: transparent-residue
+  text: Transparent residue
+  icon:
+
+- slug: increased-wetting-ability
+  text: Increased wetting ability
+  icon:
+
+- slug: colophony-free
+  text: Colophony-free
+  icon:
+
+- slug: low-spattering
+  text: Low spattering
+  icon:
+
+- slug: low-transparent-residue
+  text: Low transparent residue
+  icon:
+
+- slug: high-repeatability
+  text: High repeatability
+  icon:
+
+- slug: smooth-transparent-residue
+  text: Smooth transparent residue
+  icon:
+
+- slug: suitable-for-robot-soldering
+  text: Suitable for robot soldering
+  icon:
+
+- slug: perfect-for-robot-soldering
+  text: Perfect for robot soldering
+  icon:
+
+- slug: non-disturbing-smell
+  text: Non disturbing smell
+  icon:
+
+- slug: absolutely-colophony-free
+  text: Absolutely colophony free
+  icon:
+
+- slug: water-soluble-solder-wire
+  text: Water soluble solder wire
+  icon:
+
+- slug: very-good-wetting-ability-on-surfaces-with-poor-solderabilty
+  text: Very good wetting ability on surfaces with poor solderabilty
+  icon:
+
+- slug: high-activity
+  text: High activity
+  icon:
+
+- slug: brushable-residue
+  text: Brushable residue
+  icon:
+
+- slug: low-soldering-tip-contamination
+  text: Low soldering tip contamination
+  icon:
+
+- slug: absolutely-halogen-free
+  text: Absolutely halogen free
+  icon:
+
+- slug: high-stability-on-the-stencil
+  text: High stability on the stencil
+  icon:
+
+- slug: transparent-post-reflow-residue
+  text: Transparent post reflow residue
+  icon:
+
+- slug: increases-tip-life-substantially
+  text: Increases tip life substantially
+  icon:
+
+- slug: non-abrasive
+  text: non abrasive
+  icon:
+
+- slug: reduces-solder-consumption
+  text: Reduces solder consumption
+  icon:
+
+- slug: ESD-safe
+  text: ESD-safe
+  icon:
+
+- slug: lint-free-non-woven-fabric
+  text: Lint-free, non-woven fabric
+  icon:
+
+- slug: approved-for-MYDATA-MY-500
+  text: Approved for MYDATA MY 500
+  icon:
+
+- slug: helps-preserves-dispensing-system-parts-when-not-in-use
+  text: Helps preserves dispensing system parts when not in use
+  icon:
+
+- slug: safe-and-easy-one-step-cleaning
+  text: Safe and easy one-step cleaning
+  icon:
+
+- slug: fast-drying-easily-peelable
+  text: Fast drying, easily peelable
+  icon:
+
+- slug: does-not-easily-break-while-peeling
+  text: Does not easily break while peeling
+  icon:
+
+- slug: heat-resistant
+  text: Heat resistant
+  icon:
+
+- slug: RoHS-compliant
+  text: RoHS compliant
+  icon:
+
+- slug: stand-alone-system
+  text: Stand-alone fluxing system
+  icon: jet-fluxing
+
+- slug: retrofit-system
+  text: Retrofits into most fluxing systems
+  icon: spray-fluxing
+
+- slug: for-alcohol-based-fluxes
+  text: For alcohol-based fluxes
+  icon:
+
+- slug: for-water-fluxes
+  text: For water fluxes
+  icon:
+
+- slug: for-rosin-fluxes
+  text: For rosin fluxes
+  icon:
+
+- slug: environmental-friendly
+  text: Environmental friendly
+  icon:
+
+- slug: up-to-95-less-flux-usage
+  text: Up to 95% less flux usage
+  icon:
+
+- slug: less-maintenance-chemicals
+  text: Less maintenance chemicals
+  icon:
+
+- slug: longer-life-of-PCB-carriers-pallets
+  text: Longer life of PCB carriers/pallets
+  icon:
+
+- slug: tremendous-reduction-in-flux-fumes-going-into-the-exhaust-environment
+  text: Tremendous reduction in flux fumes going into the exhaust/environment
+  icon:
+
+- slug: solderability-Performance
+  text: Solderability Performance
+  icon:
+
+- slug: double-venturi-clog-free-spray-nozzle
+  text: Double Venturi, clog-free spray nozzle
+  icon:
+
+- slug: touch-screen-programming
+  text: Touch screen programming
+  icon:
+
+- slug: 2-flux-supply-modules
+  text: 2 Flux supply modules
+  icon:
+
+- slug: clean-ergonomi-design
+  text: Clean, ergonomic design
+  icon:
+
+- slug: special-flux-pump
+  text: Special flux pump
+  icon:
+
+- slug: encoder-calibration-function
+  text: Encoder calibration function
+  icon:
+
+- slug: low-level-flux-alarm
+  text: Low level flux alarm
+  icon:

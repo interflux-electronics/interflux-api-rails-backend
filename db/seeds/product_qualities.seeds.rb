@@ -1,8 +1,8 @@
-after :products, :uses do
-  count_before = ProductUse.count
+after :products, :qualities do
+  count_before = ProductQuality.count
 
   puts '---------'
-  puts 'Seeding product uses'
+  puts 'Seeding product qualities'
   puts '---------'
 
   file = File.read 'db/seeds/data/products.yml'
@@ -18,26 +18,26 @@ after :products, :uses do
     product_record = Product.find(product.slug)
     byebug if product_record.nil?
 
-    next if product.uses.nil?
+    next if product.qualities.nil?
 
     puts "#{spaces}   Qualities:"
 
-    product.uses.each do |slug|
+    product.qualities.each do |slug|
       puts "#{spaces}   - #{slug}"
 
-      use = Use.find(slug)
+      quality = Quality.find(slug)
 
-      next if use.nil?
+      next if quality.nil?
 
       properties = OpenStruct.new(
         product_id: product_record.id,
-        use_id: use.id
+        quality_id: quality.id
       )
 
-      relation_record = ProductUse.where(product_id: product_record.id).where(use_id: use.id).first
+      relation_record = ProductQuality.where(product_id: product_record.id).where(quality_id: quality.id).first
 
       if relation_record.nil?
-        ProductUse.create!(properties.to_h)
+        ProductQuality.create!(properties.to_h)
       else
         relation_record.update!(properties.to_h)
       end
@@ -45,9 +45,9 @@ after :products, :uses do
   end
 
   puts '---------'
-  count_after = ProductUse.count
+  count_after = ProductQuality.count
   difference = count_after - count_before
-  puts "Before seeding, the database had #{count_before} product uses."
+  puts "Before seeding, the database had #{count_before} product qualities."
   puts "After seeding, the database has #{count_after}."
   puts "That's #{difference} new ones."
   puts '---------'
