@@ -439,8 +439,9 @@ module JsonApiController
   #
   def allow_update
     return record_not_found if record.nil?
-    return nothing_to_update if attributes_and_relationships.empty?
     return forbidden_attribute if forbidden_attributes.any?
+    return forbidden_relationship if forbidden_relationships.any?
+    return nothing_to_update if attributes_and_relationships.empty?
 
     if record.update!(attributes_and_relationships)
       json = serializer_class.new(record).serialized_json
@@ -454,6 +455,12 @@ module JsonApiController
     return [] if params[:data][:attributes].nil?
 
     params[:data][:attributes].keys.reject { |attr| creatable_attributes.include? attr.to_sym }
+  end
+
+  def forbidden_relationships
+    return [] if params[:data][:relationships].nil?
+
+    params[:data][:relationships].keys.reject { |attr| creatable_relationships.include? attr.to_sym }
   end
 
   # DELETING
@@ -538,6 +545,14 @@ module JsonApiController
       403,
       'forbidden-attribute',
       "The following attributes are forbidden: #{forbidden_attributes.join(', ')}. Please include them in the API controller or remove them from the request payload."
+    )
+  end
+
+  def forbidden_relationship
+    render_error(
+      403,
+      'forbidden-relationship',
+      "The following relationships are forbidden: #{forbidden_relationships.join(', ')}. Please include them in the API controller or remove them from the request payload."
     )
   end
 
