@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: product_uses
+#
+#  id         :uuid             not null, primary key
+#  product_id :string
+#  use_id     :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # product_use_fixture_1:
 #   name: Some Name
 #   slug: some-name

@@ -31,9 +31,29 @@ module V1
         V1::Admin::DocumentSerializer
       end
 
+      def permitted_filters
+        %i[
+          name
+        ]
+      end
+
       def permitted_includes
         %i[
           products
+          product_documents
+          cdn_files
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          name
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          document_category
         ]
       end
     end

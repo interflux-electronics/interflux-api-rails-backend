@@ -14,6 +14,8 @@ module V1
       belongs_to :image
 
       has_many :documents, if: requested?('documents')
+      has_many :qualities, if: requested?('qualities')
+      has_many :uses, if: requested?('uses')
       has_many :images, if: requested?('images')
       has_many :product_images, if: requested?('product_images')
       has_many :product_documents, if: requested?('product_documents')

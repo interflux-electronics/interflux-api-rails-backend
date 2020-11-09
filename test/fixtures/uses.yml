@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: uses
+#
+#  slug       :string           not null, primary key
+#  text       :string
+#  icon       :string
+#  gist       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 # use_fixture_1:
 #   name: Some Name
 #   slug: some-name

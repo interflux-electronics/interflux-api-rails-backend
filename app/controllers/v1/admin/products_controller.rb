@@ -72,6 +72,7 @@ module V1
       def creatable_relationships
         %i[
           image
+          product_family
         ]
       end
     end

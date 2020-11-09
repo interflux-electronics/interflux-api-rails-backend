@@ -31,12 +31,33 @@ module V1
         V1::Admin::QualitySerializer
       end
 
+      def permitted_filters
+        %i[
+          text
+        ]
+      end
+
       def permitted_includes
         %i[
           products
           products.image
           products.product_family
           product_qualities
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          slug
+          text
+          icon
+          gist
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          product_quality
         ]
       end
     end

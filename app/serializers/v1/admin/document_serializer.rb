@@ -17,12 +17,11 @@ module V1
       attributes :path,
                  :name
 
-      belongs_to :language
       belongs_to :document_category
 
-      has_many :products, if: Proc.new { |record, params|
-        params && params['include'] && params['include'].split(',').include?('products')
-      }
+      has_many :products, if: requested?('products')
+      has_many :product_documents, if: requested?('product_documents')
+      has_many :cdn_files, if: requested?('cdn_files')
     end
   end
 end

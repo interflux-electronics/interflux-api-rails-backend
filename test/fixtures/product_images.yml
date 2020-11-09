@@ -7,6 +7,8 @@
 #  image_id   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  rank       :integer
+#  public     :boolean
 #
 
 product_image_1:
