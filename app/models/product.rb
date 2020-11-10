@@ -20,7 +20,7 @@
 #
 
 class Product < ApplicationRecord
-  belongs_to :product_family
+  belongs_to :product_family, optional: true
   alias_attribute :family, :product_family
 
   belongs_to :image, optional: true
