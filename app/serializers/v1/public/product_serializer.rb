@@ -25,9 +25,9 @@ module V1
         params && params['include'] && ( params['include'].split(',').include?('images') )
       }
 
-      has_many :features, if: Proc.new { |record, params|
-        params && params['include'] && ( params['include'].split(',').include?('features') || params['include'].split(',').include?('products.features') )
-      }
+      # has_many :features, if: Proc.new { |record, params|
+      #   params && params['include'] && ( params['include'].split(',').include?('features') || params['include'].split(',').include?('products.features') )
+      # }
     end
   end
 end
