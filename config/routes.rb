@@ -55,9 +55,10 @@ Rails.application.routes.draw do
       resources :product_images, path: '/product-images'
       resources :products, path: '/products'
       resources :users
-
       resources :product_uses, path: '/product-uses'
       resources :product_qualities, path: '/product-qualities'
+      resources :company_members, path: '/company-members'
+      resources :company_markets, path: '/company-markets'
       resources :qualities
       resources :uses
 

@@ -14,7 +14,7 @@ module V1
       end
 
       def update
-        forbidden
+        allow_update
       end
 
       def destroy
@@ -31,58 +31,12 @@ module V1
         V1::Admin::PersonSerializer
       end
 
-      def creatable_attributes
-        %[]
-        # %i[
-        #   name
-        #   company
-        #   email
-        #   mobile
-        #   message
-        #   purpose
-        #   source
-        #   ip
-        #   ip_region
-        #   ip_city
-        # ]
-      end
-
-      def creatable_relationships
-        %[]
-        # %i[
-        #  country
-        #  ip_country
-        # ]
-      end
-
       def permitted_filters
-        %[]
-        # %i[
-        #  main_group_id
-        #  sub_group_id
-        # ]
+        %i[
+          first_name
+          last_name
+        ]
       end
-
-      def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
-      end
-
-      def permitted_includes
-        %[]
-        # %i[
-        #   related_articles
-        #   related_products
-        #   related_products.main_group
-        #   translations
-        # ]
-      end
-
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
     end
   end
 end

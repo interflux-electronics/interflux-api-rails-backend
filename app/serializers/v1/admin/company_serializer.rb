@@ -15,12 +15,10 @@ module V1
                  :order
 
       belongs_to :country
-      # belongs_to :main_group, record_type: :product_group, serializer: :product_group
-      # belongs_to :sub_group, record_type: :product_group, serializer: :product_group
 
-      # has_many :things
-      # has_many :related_products, record_type: :product, serializer: :related_products
-      # has_many :related_articles, record_type: :article, serializer: :related_articles
+      has_many :people, if: requested?('people')
+      has_many :company_members, if: requested?('company_members')
+      has_many :company_markets, if: requested?('company_markets')
     end
   end
 end

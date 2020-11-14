@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201106052152) do
+ActiveRecord::Schema.define(version: 20201110184302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,13 +76,11 @@ ActiveRecord::Schema.define(version: 20201106052152) do
     t.index ["slug"], name: "index_companies_on_slug", unique: true
   end
 
-  create_table "company_markets", force: :cascade do |t|
+  create_table "company_markets", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "company_id"
-    t.uuid "country_id"
+    t.string "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_company_markets_on_company_id"
-    t.index ["country_id"], name: "index_company_markets_on_country_id"
   end
 
   create_table "company_members", force: :cascade do |t|

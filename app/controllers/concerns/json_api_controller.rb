@@ -148,7 +148,7 @@ module JsonApiController
     return forbidden unless allowed
 
     # Return 403 if unknown filters are used
-    return forbidden_filter if unknown_filter?
+    return error_forbidden_filters if forbidden_filters.any?
 
     # First we gather all records of the model class.
     resources = model_class.all
@@ -332,15 +332,15 @@ module JsonApiController
       .to_hash
   end
 
-  def unknown_filter?
-    filter = request.params[:filter]
+  # Returns array of requested filter keys.
+  def requested_filter_keys
+    return [] unless params[:filter]
 
-    return false unless filter
+    JSON.parse(params[:filter].to_json).map { |k, _v| k.to_sym }
+  end
 
-    !filter.all? do |key_value|
-      key = key_value[0]
-      permitted_filters.include? key.to_sym
-    end
+  def forbidden_filters
+    requested_filter_keys.reject { |x| permitted_filters.include? x }
   end
 
   # CREATING
@@ -500,8 +500,11 @@ module JsonApiController
 
   # VALIDATION
 
+  # Check for the JSON API Content Type header. Throw 415 error if not present.
+  # Firefox has a known bug where they append "; charset=UTF-8" to the end, which breaks.
+  # https://josef.codes/firefox-adds-charset-utf-8-when-doing-post-requests-with-ajax/
   def check_content_type
-    wrong_content_type unless request.content_type == 'application/vnd.api+json'
+    wrong_content_type unless request.content_type.split(';').first == 'application/vnd.api+json'
   end
 
   # ERRORS
@@ -532,13 +535,21 @@ module JsonApiController
     )
   end
 
-  def forbidden_filter
+  def error_forbidden_filters
     render_error(
       403,
-      'forbidden-filter',
-      'One of the filters params in the URL is not allowed. Please review.'
+      'forbidden-filters',
+      "The following includes are forbidden: #{forbidden_filters.join(', ')}. Please include them in the API controller or remove them from the request URL."
     )
   end
+
+  # def forbidden_filter
+  #   render_error(
+  #     403,
+  #     'forbidden-filter',
+  #     'One of the filters params in the URL is not allowed. Please review.'
+  #   )
+  # end
 
   def forbidden_attribute
     render_error(

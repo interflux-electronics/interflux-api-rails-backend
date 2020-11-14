@@ -34,6 +34,10 @@ module V1
       def permitted_includes
         %i[
           country
+          people
+          markets
+          company_members
+          company_markets
         ]
       end
 
@@ -56,7 +60,7 @@ module V1
 
       def creatable_relationships
         %i[
-         country
+          country
         ]
       end
     end

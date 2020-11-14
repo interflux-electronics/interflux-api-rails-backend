@@ -3,6 +3,8 @@ after :countries, :companies do
   puts 'Seeding company markets'
   puts '---------'
 
+  CompanyMarket.delete_all
+
   count_before = CompanyMarket.count
 
   file = File.read 'db/seeds/data/companies.yml'
@@ -10,13 +12,16 @@ after :countries, :companies do
 
   data.each do |company_data|
     company_data = OpenStruct.new(company_data)
+
+    next if company_data.markets.nil?
+
     company_record = Company.find_by(business_name: company_data.business_name)
 
     puts company_data.business_name
 
     byebug if company_record.nil?
 
-    company_data.markets = Country.all.map{|c| c[:name_english]} if company_data.markets.first === 'World'
+    company_data.markets = Country.all.map{|c| c[:name_english]} if company_data.markets.first == 'World'
 
     company_data.markets.each do |market|
       puts "- #{market}"

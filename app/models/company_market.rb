@@ -2,9 +2,9 @@
 #
 # Table name: company_markets
 #
-#  id         :bigint(8)        not null, primary key
+#  id         :uuid             not null, primary key
 #  company_id :uuid
-#  country_id :uuid
+#  country_id :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
