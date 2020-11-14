@@ -22,7 +22,7 @@ class JsonWebToken
   def decode
     decoded = JWT.decode(@data, jwt_secret)[0]
     HashWithIndifferentAccess.new decoded
-  rescue JWT::DecodeError => e
+  rescue JWT::DecodeError => _e
     nil
   end
 
