@@ -6,16 +6,17 @@ module V1
       end
 
       def show
-        return forbidden unless params[:id] == 'auth-user'
-
         token = JsonWebToken.new(auth_header).decode
         user = User.find(token[:user_id])
 
+        # Exit, if no user is found for the UUID hidden within the encrypted token.
         return forbidden if user.nil?
 
-        json = serializer_class.new(user).serialized_json
+        # Exit, if the requested UUID doesn't match the UUID inside of the token.
+        return forbidden if params[:id] != token[:user_id]
 
-        render status: 200, json: json
+        # If both tests pass, use the standard JSON approach of serving data.
+        allow_show
       end
 
       def create
@@ -40,54 +41,11 @@ module V1
         V1::Admin::UserSerializer
       end
 
-      def creatable_attributes
-        %[]
-        # %i[
-        #   name
-        #   company
-        #   email
-        #   mobile
-        #   message
-        #   purpose
-        #   source
-        #   ip
-        #   ip_region
-        #   ip_city
-        # ]
-      end
-
-      def creatable_relationships
-        %[]
-        # %i[
-        #  country
-        #  ip_country
-        # ]
-      end
-
-      def permitted_filters
-        %[]
-        # %i[
-        #  main_group_id
-        #  sub_group_id
-        # ]
-      end
-
-      def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
-      end
-
       def permitted_includes
         %i[
           person
         ]
       end
-
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
     end
   end
 end

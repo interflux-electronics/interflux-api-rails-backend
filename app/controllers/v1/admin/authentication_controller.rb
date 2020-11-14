@@ -23,6 +23,7 @@ module V1
           auth: {
             token: token,
             expiry: expiry.strftime('%Y-%m-%d %H:%M:%S %Z'),
+            uuid: auth_user.id
           }
         }
 
