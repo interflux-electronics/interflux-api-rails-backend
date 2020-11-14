@@ -543,14 +543,6 @@ module JsonApiController
     )
   end
 
-  # def forbidden_filter
-  #   render_error(
-  #     403,
-  #     'forbidden-filter',
-  #     'One of the filters params in the URL is not allowed. Please review.'
-  #   )
-  # end
-
   def forbidden_attribute
     render_error(
       403,

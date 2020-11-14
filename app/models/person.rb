@@ -15,4 +15,7 @@
 
 class Person < ApplicationRecord
   has_one :user
+
+  has_many :company_members
+  has_many :companies, through: :company_members, source: :company
 end

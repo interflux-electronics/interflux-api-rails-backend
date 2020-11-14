@@ -3,6 +3,9 @@ after :companies do
   puts 'Seeding company members & people'
   puts '---------'
 
+  CompanyMember.delete_all
+  Person.delete_all
+
   count_before_member = CompanyMember.count
   count_before_person = Person.count
 

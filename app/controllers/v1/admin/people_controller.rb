@@ -34,7 +34,23 @@ module V1
       def permitted_filters
         %i[
           first_name
+        ]
+      end
+
+      def permitted_includes
+        %i[
+          company_members
+          companies
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          first_name
           last_name
+          chinese_name
+          phone
+          email
         ]
       end
     end

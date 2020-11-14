@@ -31,6 +31,12 @@ module V1
         V1::Admin::CompanySerializer
       end
 
+      def permitted_filters
+        %i[
+          business_name
+        ]
+      end
+
       def permitted_includes
         %i[
           country
