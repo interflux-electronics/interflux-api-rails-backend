@@ -34,12 +34,28 @@ module V1
       def permitted_includes
         %i[
           products
+          product_images
+          company
+          cdn_files
         ]
       end
 
       def permitted_filters
         %i[
           alt
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          alt
+          caption
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          company
         ]
       end
     end

@@ -1,64 +1,48 @@
-# TODO: Remove all images from database that aren't in the CDN
+after :cdn_files do
+  puts '---------'
+  puts 'Seeding images'
+  puts '---------'
 
-puts '---------'
-puts 'Seeding images'
-puts '---------'
+  Image.delete_all
 
-count_before =  Image.count
+  cdn_files = CdnFile.all
 
-file = File.read 'db/seeds/data/cdn_files.yml'
-paths = YAML.safe_load(file)
+  cdn_files.each do |file|
+    # Skip all CDN paths that aren't these 4 type of images
+    next unless [
+      'images/products/',
+      'images/processes/',
+      'images/logos/',
+      'images/icons/'
+    ].any? { |x| file.path.start_with?(x) }
 
-arr = []
+    shared_path = file.path.split('@').first
 
-paths.each do |path|
-  next unless path.start_with?('images/products/')
-  path = path.split('@')[0]
-  arr.push(path)
-end
+    image = Image.find_by(path: shared_path)
 
-path_bases = arr.uniq
+    puts "SKIP #{file path}"  if image.present?
+    next if image.present?
 
-path_bases.each do |path_base|
-  paths_with_same_base = paths.select { |p| p.start_with? "#{path_base}@" }
+    subset = cdn_files.filter { |x| x.path.start_with?(shared_path) }
 
-  sizes = []
-  formats = []
+    props = OpenStruct.new(
+      path: shared_path,
+      alt: shared_path.split('/').last.gsub('-', ' '),
+      variations: subset.map { |x| x.path.split('@').last } .sort_by { |x| x.split('x').first.to_i } .join(',')
+    )
 
-  paths_with_same_base.each do |path|
-    split = path.split('@')[1].split('.')
-    sizes.push(split[0])
-    formats.push(split[1])
+    image = Image.create!(props.to_h)
+
+    puts "DONE #{file path}"  if image.present?
+
+    subset.each do |cdn_file|
+      cdn_file.image_id = image.id
+      cdn_file.save!
+    end
   end
 
-  sizes = sizes.uniq.sort_by { |s| -s.split('x').first.to_i } .join(',')
-  formats = formats.uniq.sort.join(',')
-
-  props = OpenStruct.new(
-    path: path_base,
-    sizes: sizes,
-    formats: formats
-  )
-
-  puts path_base
-  puts sizes
-  puts formats
-  puts '-------'
-
-  record = Image.find_by(path: path_base)
-
-  if record.nil?
-    Image.create!(props.to_h)
-  else
-    record.update!(props.to_h)
-  end
+  puts '---------'
+  puts 'Success!'
+  puts '---------'
+  puts ' '
 end
-
-count_after =  Image.count
-
-puts "Before: #{count_before}"
-puts "After: #{count_after}"
-puts '---------'
-puts 'Success!'
-puts '---------'
-puts ' '

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201110184302) do
+ActiveRecord::Schema.define(version: 20201115044651) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -197,6 +197,8 @@ ActiveRecord::Schema.define(version: 20201110184302) do
     t.string "alt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "company_id"
+    t.string "variations"
   end
 
   create_table "languages", primary_key: "two_letter_code", id: :string, force: :cascade do |t|
