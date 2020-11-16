@@ -2,10 +2,9 @@ module V1
   module Admin
     class ImageSerializer < ApplicationSerializer
       attributes :path,
-                 :sizes,
-                 :formats,
                  :alt,
-                 :caption
+                 :caption,
+                 :variations
 
       belongs_to :company
 

@@ -2,6 +2,8 @@ puts '---------'
 puts 'Seeding files'
 puts '---------'
 
+CdnFile.delete_all
+
 file = File.read 'db/seeds/data/cdn_files.yml'
 paths = YAML.safe_load(file)
 

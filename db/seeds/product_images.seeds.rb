@@ -16,6 +16,8 @@ after :images, :products do
     props = OpenStruct.new(
       product_id: product.id,
       image_id: image.id,
+      public: true,
+      rank: 999
     )
 
     record = ProductImage.find_by(product_id: product.id, image_id: image.id)
@@ -25,22 +27,6 @@ after :images, :products do
     else
       record.update!(props.to_h)
     end
-
-    alt = "#{product.family.name_single} #{product.name}"
-    suffix = image.path.split('/').last.split(product.slug).last
-    suffix = suffix.gsub('-', ' ').strip if suffix.present?
-    alt += " #{suffix}" if suffix.present?
-    caption = suffix
-
-    image.alt = alt
-    image.caption = caption
-    image.save
-
-    puts product.slug
-    puts image.path
-    puts alt
-    puts caption
-    puts '---------'
   end
 
   count_after = ProductImage.count
