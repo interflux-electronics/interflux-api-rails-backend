@@ -24,7 +24,7 @@ cdn_files.each do |file|
     next
   end
 
-  subset = cdn_files.filter { |x| x.path.start_with?(shared_path) }
+  subset = cdn_files.filter { |x| x.path.start_with?("#{shared_path}@") }
 
   props = OpenStruct.new(
     path: shared_path,
