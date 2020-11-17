@@ -2,8 +2,6 @@ puts '---------'
 puts 'Seeding images'
 puts '---------'
 
-# Image.delete_all
-
 cdn_files = CdnFile.all
 
 cdn_files.each do |file|
