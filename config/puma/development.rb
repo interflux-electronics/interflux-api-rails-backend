@@ -10,3 +10,6 @@ tag 'Puma Server for Interflux API (development)'
 # https://github.com/rails/rails/issues/33209
 workers 1
 threads 1, 1
+
+# Timeout after 10 minutes
+worker_timeout 600
