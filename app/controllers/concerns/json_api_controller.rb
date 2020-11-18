@@ -158,12 +158,12 @@ module JsonApiController
     # value.gsub!(/[^0-9A-Za-z]/, '')
     filters&.each do |key, value|
       # If the query does not contain a "*", then do an exact search.
-      resources = resources.where("#{key}": value) if value.exclude? '*'
+      resources = resources.where("#{key}": value) if value.to_s.exclude? '*'
 
       # If the query contains a "*" then do a fuzzy search.
       # We use Postrgress match operators to search:
       # https://www.postgresql.org/docs/9.6/functions-matching.html#FUNCTIONS-POSIX-TABLE
-      resources = resources.where("#{key} ~* ?", value.gsub!('*', '')) if value.include? '*'
+      resources = resources.where("#{key} ~* ?", value.gsub!('*', '')) if value.to_s.include? '*'
     end
 
     # Here we prepare the options we can pass to the serializers.
