@@ -368,6 +368,18 @@ module JsonApiController
   end
 
   # Allow only predifined list of attributes that can saved to the resource
+  #
+  # Typical attribute payload:
+  # {
+  #   "data": {
+  #     "id": "IF-2005M",
+  #     "attributes": {
+  #       "label": "a"
+  #     },
+  #     "type": "products"
+  #   }
+  # }
+  #
   def strong_attributes
     # In case only relationships are being updated, no attributes are included in the request
     return {} if params[:data][:attributes].nil?
@@ -391,42 +403,41 @@ module JsonApiController
   #   ]
   # end
   #
+  # Typical relationships:
+  # {
+  #   "data": {
+  #     "id": "IF-2005M",
+  #     "relationships": {
+  #       "product-family": {
+  #         "data": {
+  #           "type": "product-families",
+  #           "id": "soldering-fluxes"
+  #         }
+  #       }
+  #     },
+  #     "type": "products"
+  #   }
+  # }
   def strong_relationships
+    relationships = params[:data][:relationships]
+
     # In case only attributes are being updated, no relationships are included in the request
-    return {} if params[:data][:relationships].nil?
+    return {} if relationships.nil?
 
     # When no relationships are marked as updatable
     return {} if creatable_relationships.empty?
 
-    # params['data']['relationships']
-    # First we convert the array into  we convert `relationships` into a nested array like:
-    # [[:main_category, "d6461197-e618-5502-95a5-1e171f8f71e9"], [:sub_category, "8147cd48-12b6-500e-a001-d80288d644f1"]]
-    # The keys are underscored for later use when creating / updating the resource.
-    # The values are strong IDs grabbed from the JSON API structured package.
+    # First we permit the all creatable relationships.
+    # { product: { data: [:id, :type] }, product_family: { data: [:id, :type] } }
+    expected_json = {}
+    creatable_relationships.each { |x| expected_json[x] = { data: %i[id type] } }
+    params.require(:data).require(:relationships).permit(expected_json)
 
-    # TODO: all permitted relationships are being updated with nil if only one relationship is being asked for update
-
-    nested_array = creatable_relationships.collect do |key|
-      db_key = "#{key}_id"
-      id = nil
-      relationship_exists = params['data']['relationships'] && params['data']['relationships'][key]
-      if relationship_exists
-        id = params
-             .require(:data)
-             .require(:relationships)
-             .require(key)
-             .require(:data)
-             .permit(
-               :id,
-               :type
-             )
-             .fetch(:id)
-      end
-      [db_key, id]
-    end
-    # Then we convert the array into a hash and return it.
-    # Example: {:main_category=>"d6461197-e618-5502-95a5-1e171f8f71e9", :sub_category=>"8147cd48-12b6-500e-a001-d80288d644f1"}
-    Hash[nested_array]
+    # Secondly we create the hash we need to update the database
+    # { "product_id": "IF-2005M", "family_id": "soldering-fluxes" }
+    hash = {}
+    relationships.keys.each { |x| hash["#{x}_id"] = relationships[x][:data][:id] }
+    hash
   end
 
   # UPDATING
