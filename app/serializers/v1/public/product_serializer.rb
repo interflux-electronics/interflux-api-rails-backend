@@ -13,21 +13,14 @@ module V1
       belongs_to :product_family
       belongs_to :image
 
-      # belongs_to :image, if: Proc.new { |record, params|
-      #   params && params['include'] && ( params['include'].split(',').include?('image') || params['include'].split(',').include?('products.image') )
-      # }
-
-      has_many :documents, if: Proc.new { |record, params|
-        params && params['include'] && params['include'].split(',').include?('documents')
-      }
-
-      has_many :images, if: Proc.new { |record, params|
-        params && params['include'] && ( params['include'].split(',').include?('images') )
-      }
-
-      # has_many :features, if: Proc.new { |record, params|
-      #   params && params['include'] && ( params['include'].split(',').include?('features') || params['include'].split(',').include?('products.features') )
-      # }
+      has_many :documents, if: requested?('documents')
+      has_many :qualities, if: requested?('qualities')
+      has_many :uses, if: requested?('uses')
+      has_many :images, if: requested?('images')
+      has_many :product_images, if: requested?('product_images')
+      has_many :product_documents, if: requested?('product_documents')
+      has_many :product_uses, if: requested?('product_uses')
+      has_many :product_qualities, if: requested?('product_qualities')
     end
   end
 end

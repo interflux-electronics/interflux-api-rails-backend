@@ -22,6 +22,7 @@
 class Product < ApplicationRecord
   belongs_to :product_family, optional: true
   alias_attribute :family, :product_family
+  accepts_nested_attributes_for :product_family
 
   belongs_to :image, optional: true
   alias_attribute :avatar, :image

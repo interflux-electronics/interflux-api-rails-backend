@@ -51,8 +51,14 @@ module V1
           images
           documents
           documents.language
+          qualities
+          uses
+          product_images.image
           product_family
-          features
+          product_images
+          product_documents
+          product_qualities
+          product_uses
         ]
       end
     end
