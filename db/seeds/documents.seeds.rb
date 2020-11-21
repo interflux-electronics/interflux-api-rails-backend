@@ -2,7 +2,9 @@ puts '---------'
 puts 'Seeding documents'
 puts '---------'
 
-CdnFile.all.each_with_index do |file, i|
+cdn_files = CdnFile.all
+
+cdn_files.each_with_index do |file, i|
   # Skip all CDN paths that aren't documents
   next unless file.path.start_with?('documents/')
 
@@ -16,10 +18,13 @@ CdnFile.all.each_with_index do |file, i|
 
   byebug if category.nil?
 
+  variations = cdn_files.filter { |x| x.path.starts_with? shared_path } .map { |x| x.path.split('-').last } .join(',')
+
   props = OpenStruct.new(
     path: shared_path,
     name: name,
     document_category_id: category.slug,
+    variations: variations
   )
 
   document = Document.find_by(path: shared_path)

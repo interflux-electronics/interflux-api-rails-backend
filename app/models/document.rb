@@ -8,6 +8,7 @@
 #  document_category_id :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
+#  variations           :string
 #
 
 class Document < ApplicationRecord
