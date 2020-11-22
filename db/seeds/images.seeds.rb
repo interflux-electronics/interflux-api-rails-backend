@@ -15,7 +15,8 @@ cdn_files.each do |file|
 
   puts file.path
 
-  shared_path = file.path.split('@').first
+  # shared_path = file.path.split('@').first
+  shared_path = if file.path.include? '@' then file.path.split('@').first else file.path.split('.').first end
 
   image = Image.find_by(path: shared_path)
 
@@ -24,12 +25,16 @@ cdn_files.each do |file|
     next
   end
 
-  subset = cdn_files.filter { |x| x.path.start_with?("#{shared_path}@") }
+  subset = cdn_files.filter { |x| x.path.start_with?("#{shared_path}@") } if file.path.include? '@'
+  subset = cdn_files.filter { |x| x.path.start_with?("#{shared_path}.") } if file.path.exclude? '@'
+
+  variations = subset.map { |x| "@#{x.path.split('@').last}" } .sort_by { |x| x.split('x').first.to_i } .join(',') if file.path.include? '@'
+  variations = subset.map { |x| ".#{x.path.split('.').last}" } .join(',') if file.path.exclude? '@'
 
   props = OpenStruct.new(
     path: shared_path,
     alt: shared_path.split('/').last.gsub('-', ' '),
-    variations: subset.map { |x| x.path.split('@').last } .sort_by { |x| x.split('x').first.to_i } .join(',')
+    variations: variations
   )
 
   image = Image.create!(props.to_h)
