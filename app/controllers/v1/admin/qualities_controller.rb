@@ -39,6 +39,7 @@ module V1
 
       def permitted_includes
         %i[
+          image
           products
           products.image
           products.product_family
@@ -57,6 +58,7 @@ module V1
 
       def creatable_relationships
         %i[
+          image
           product_quality
         ]
       end

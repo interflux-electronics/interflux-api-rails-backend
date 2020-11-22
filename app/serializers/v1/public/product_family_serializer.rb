@@ -6,7 +6,7 @@ module V1
                  :name_plural,
                  :order
 
-      has_many :documents, if: requested?('products')
+      has_many :products, if: requested?('products')
     end
   end
 end
