@@ -26,7 +26,7 @@ class Quality < ApplicationRecord
   # Instead we serve the string atrribute "icon".
   # Therefor, each time the relation is saved, als update the attribute.
   def update_icon
-    path = "#{image.path}.svg"
-    update_column(:icon, path)
+    icon = image.present? ? "#{image.path}.svg" : nil
+    update_column(:icon, icon)
   end
 end

@@ -10,6 +10,7 @@ puts '---------'
 
 file = File.read 'db/seeds/data/qualities.yml'
 data = YAML.safe_load(file)
+images = Image.all
 
 data.each_with_index do |q, i|
   quality = OpenStruct.new(q)
@@ -17,12 +18,14 @@ data.each_with_index do |q, i|
   puts "#{i + 1} - #{quality.text}"
 
   record = Quality.find_by(slug: quality.slug)
+  image = images.filter { |x| x.path.ends_with? quality.icon } .first if quality.icon.present?
+  image_id = image.present? ? image.id : nil
 
   properties = OpenStruct.new(
     slug: quality.slug,
     text: quality.text,
-    icon: quality.icon,
-    gist: quality.gist
+    gist: quality.gist,
+    image_id: image_id
   )
 
   if record.nil?
