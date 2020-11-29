@@ -41,7 +41,7 @@ bin/rails db:drop
 
 # ---------
 
-# HEALHT CHECK
+# HEALTH CHECK
 
 curl https://api.interflux.com/sanity-check -H "Content-Type: application/vnd.api+json"
 
