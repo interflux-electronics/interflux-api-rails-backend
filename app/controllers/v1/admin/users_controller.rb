@@ -6,16 +6,9 @@ module V1
       end
 
       def show
-        token = JsonWebToken.new(auth_header).decode
-        user = User.find(token[:user_id])
+        # Exit, if the user ID in the auth token does not match the one being retrieved
+        return no_user_match if params[:id] != auth_user.id
 
-        # Exit, if no user is found for the UUID hidden within the encrypted token.
-        return forbidden if user.nil?
-
-        # Exit, if the requested UUID doesn't match the UUID inside of the token.
-        return forbidden if params[:id] != token[:user_id]
-
-        # If both tests pass, use the standard JSON approach of serving data.
         allow_show
       end
 
@@ -24,7 +17,10 @@ module V1
       end
 
       def update
-        forbidden
+        # Exit, if the user ID in the auth token does not match the one being edited
+        return no_user_match if params[:data][:id] != auth_user.id
+
+        allow_update
       end
 
       def destroy
@@ -45,6 +41,28 @@ module V1
         %i[
           person
         ]
+      end
+
+      def creatable_attributes
+        %i[
+          email
+          password
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          person
+        ]
+      end
+
+      def no_user_match
+        render_error(
+          401,
+          'unauthorized',
+          'Your auth token does not match the user you are editing / retrieving. How naughty!',
+          meta
+        )
       end
     end
   end

@@ -117,7 +117,7 @@ export RAILS_ENV=development
 bin/rails user:create email=foo@bar password=1234 first_name=John last_name=Doe
 
 # Update password
-bin/rails user:password email=foo@bar email=12345
+bin/rails user:password email=foo@bar password=12345
 
 # Delete user
 bin/rails user:delete email=foo@bar

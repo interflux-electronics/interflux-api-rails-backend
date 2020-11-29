@@ -17,7 +17,7 @@ module V1
         return wrong_password unless auth_user
 
         payload = { user_id: auth_user.id }
-        expiry = 24.hours.from_now.utc
+        expiry = 30.days.from_now.utc
         token = JsonWebToken.new(payload, expiry.to_i).encode
         json = {
           auth: {
