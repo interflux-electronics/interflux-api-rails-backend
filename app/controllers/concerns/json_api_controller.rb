@@ -435,8 +435,9 @@ module JsonApiController
 
     # Secondly we create the hash we need to update the database
     # { "product_id": "IF-2005M", "family_id": "soldering-fluxes" }
+    # Gotcha: the data payload will be nil when removing a relationship
     hash = {}
-    relationships.keys.each { |x| hash["#{x}_id"] = relationships[x][:data][:id] }
+    relationships.keys.each { |x| hash["#{x}_id"] = relationships[x][:data] ? relationships[x][:data][:id] : nil }
     hash
   end
 
