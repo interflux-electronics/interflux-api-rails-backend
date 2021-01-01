@@ -67,7 +67,7 @@ module V1
         skip("TODO: includes become optional in the payload")
 
         # curl "http://localhost:3000/v1/public/products?slug=LMPA-Q6&include=product-family,product-images,product-images.image" -H "Content-Type: application/vnd.api+json"
-        get '/v1/public/products?slug=IF-2005M&include=product-family,product-images,product-images.image,product-variants,product-variants.container', headers: @header
+        get '/v1/public/products?slug=IF-2005M&include=product-family,product-images,product-images.image', headers: @header
 
         # Should be allowed
         assert_response 200
@@ -77,21 +77,21 @@ module V1
         # Includes 2 extra records
         refute_nil json['included']
 
-        assert_equal 13, json['included'].length
+        assert_equal 5, json['included'].length
         assert_equal 'product-family', json['included'][0]['type']
         assert_equal 'product-image', json['included'][1]['type']
         assert_equal 'product-image', json['included'][2]['type']
         assert_equal 'image', json['included'][3]['type']
         assert_equal 'image', json['included'][4]['type']
         assert_equal 'webp,jpg', json['included'][4]['attributes']['formats']
-        assert_equal 'product-variant', json['included'][5]['type']
-        assert_equal 'product-variant', json['included'][6]['type']
-        assert_equal 'product-variant', json['included'][7]['type']
-        assert_equal 'product-variant', json['included'][8]['type']
-        assert_equal 'container', json['included'][9]['type']
-        assert_equal 'container', json['included'][10]['type']
-        assert_equal 'container', json['included'][11]['type']
-        assert_equal 'container', json['included'][12]['type']
+        # assert_equal 'product-variant', json['included'][5]['type']
+        # assert_equal 'product-variant', json['included'][6]['type']
+        # assert_equal 'product-variant', json['included'][7]['type']
+        # assert_equal 'product-variant', json['included'][8]['type']
+        # assert_equal 'container', json['included'][9]['type']
+        # assert_equal 'container', json['included'][10]['type']
+        # assert_equal 'container', json['included'][11]['type']
+        # assert_equal 'container', json['included'][12]['type']
       end
 
       test 'can filter by deprecated' do

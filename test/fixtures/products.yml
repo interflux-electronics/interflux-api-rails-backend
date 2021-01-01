@@ -16,48 +16,37 @@
 #  new               :boolean          default(FALSE)
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
-#  avatar            :string
 #
 
 IF_2005M:
   name: IF 2005M
   slug: IF-2005M
-  code: FL2005M
   public: true
-  deprecated: false
   popular: true
   product_family: soldering_flux
 
 Pacific_2009M:
   name: PacIFic 2009M
   slug: PacIFic-2009M
-  code: WF2009M
   public: true
-  deprecated: true
   product_family: soldering_flux
 
 LMPA_Q6:
   name: LMPA Q6
   slug: LMPA-Q6
-  code: SPLMPAQ6
   public: true
-  deprecated: false
   product_family: solder_paste
 
 # Future product, not public, nor orderable
 LMPA_Q7:
   name: LMPA Q7
   slug: LMPA-Q7
-  code: SPLMPAQ7
   public: false
-  deprecated: false
   product_family: solder_paste
 
 # Deprecated product
 LMPA_Q5:
   name: LMPA Q5
   slug: LMPA-Q5
-  code: SPLMPAQ5
   public: false
-  deprecated: true
   product_family: solder_paste

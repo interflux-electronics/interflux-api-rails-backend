@@ -7,6 +7,7 @@ module V1
                  :order
 
       has_many :products, if: requested?('products')
+      has_many :images, if: requested?('images')
     end
   end
 end

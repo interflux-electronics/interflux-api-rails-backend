@@ -8,7 +8,7 @@
 #  gist       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  image_id   :uuid
+#  image_id   :string
 #
 
 class Use < ApplicationRecord
@@ -16,6 +16,9 @@ class Use < ApplicationRecord
 
   has_many :product_uses, dependent: :destroy
   has_many :products, through: :product_uses, source: :product
+
+  has_many :use_images, dependent: :destroy
+  has_many :images, through: :use_images, source: :image
 
   after_save :update_icon, on: %i[create update]
 

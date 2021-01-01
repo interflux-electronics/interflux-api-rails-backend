@@ -13,4 +13,7 @@
 
 class ProductFamily < ApplicationRecord
   has_many :products
+
+  has_many :product_family_images
+  has_many :images, through: :product_family_images, source: :image
 end

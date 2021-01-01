@@ -15,10 +15,10 @@ soldering_flux:
   name_single: soldering flux
   name_plural: soldering fluxes
   slug: soldering-fluxes
-  code: FL
+  # code: FL
 
 solder_paste:
   name_single: solder paste
   name_plural: solder pastes
   slug: solder-pastes
-  code: SP
+  # code: SP

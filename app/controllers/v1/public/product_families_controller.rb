@@ -42,6 +42,7 @@ module V1
           products
           products.image
           products.features
+          images
         ]
       end
     end

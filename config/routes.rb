@@ -1,4 +1,3 @@
-
 Rails.application.routes.draw do
   # Make the API future proof by versioning v1
   namespace :v1 do
@@ -52,6 +51,7 @@ Rails.application.routes.draw do
       resources :people
       resources :product_documents, path: '/product-documents'
       resources :product_families, path: '/product-families'
+      resources :product_family_images, path: '/product-family-images'
       resources :product_features, path: '/product-features'
       resources :product_images, path: '/product-images'
       resources :products, path: '/products'
@@ -62,6 +62,7 @@ Rails.application.routes.draw do
       resources :company_markets, path: '/company-markets'
       resources :qualities
       resources :uses
+      resources :use_images, path: '/use-images'
 
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'

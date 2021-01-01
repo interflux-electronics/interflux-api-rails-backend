@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: product_family_images
+#
+#  id                :uuid             not null, primary key
+#  product_family_id :uuid
+#  image_id          :uuid
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+
+# product_family_image_fixture_1:
+#   name: Some Name
+#   slug: some-name
+#   public: true
+#   group: other_thing_fixture_1
+# 
+# product_family_image_fixture_2:
+#   name: Some Name
+#   slug: some-name
+#   public: true
+#   group: other_thing_fixture_1

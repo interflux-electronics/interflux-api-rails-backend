@@ -8,7 +8,7 @@
 #  gist       :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  image_id   :uuid
+#  image_id   :string
 #
 
 # use_fixture_1:
