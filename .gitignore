@@ -25,3 +25,6 @@
 
 # Don't ever commit environment secrets stored in dot env files
 /.env.production
+
+# Database backups are ephemeral and data sensitive, never commit
+db/backups/
