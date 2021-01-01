@@ -9,6 +9,7 @@
 #  order       :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  gist        :string
 #
 
 class ProductFamily < ApplicationRecord

@@ -3,8 +3,8 @@
 # Table name: use_images
 #
 #  id         :uuid             not null, primary key
-#  use_id     :uuid
-#  image_id   :uuid
+#  use_id     :string
+#  image_id   :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

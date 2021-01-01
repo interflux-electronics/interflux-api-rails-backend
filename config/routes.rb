@@ -13,12 +13,12 @@ Rails.application.routes.draw do
     # https://lmpa.interflux.com
     #
     namespace :public do
-      resources :articles
       resources :article_categories, path: '/article-categories'
+      resources :articles
       resources :companies
       resources :countries
-      resources :documents
       resources :document_categories, path: '/document-categories'
+      resources :documents
       resources :features
       resources :images
       resources :languages
@@ -41,6 +41,8 @@ Rails.application.routes.draw do
       resources :articles
       resources :cdn_files, path: '/cdn-files'
       resources :companies
+      resources :company_markets, path: '/company-markets'
+      resources :company_members, path: '/company-members'
       resources :countries
       resources :document_categories, path: '/document-categories'
       resources :documents
@@ -54,15 +56,13 @@ Rails.application.routes.draw do
       resources :product_family_images, path: '/product-family-images'
       resources :product_features, path: '/product-features'
       resources :product_images, path: '/product-images'
-      resources :products, path: '/products'
-      resources :users
-      resources :product_uses, path: '/product-uses'
       resources :product_qualities, path: '/product-qualities'
-      resources :company_members, path: '/company-members'
-      resources :company_markets, path: '/company-markets'
+      resources :product_uses, path: '/product-uses'
+      resources :products, path: '/products'
       resources :qualities
-      resources :uses
       resources :use_images, path: '/use-images'
+      resources :users
+      resources :uses
 
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'

@@ -51,6 +51,7 @@ module V1
         %i[
           name_single
           name_plural
+          gist
           order
         ]
       end

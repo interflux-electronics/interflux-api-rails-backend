@@ -4,6 +4,7 @@ module V1
       attributes :slug,
                  :name_single,
                  :name_plural,
+                 :gist,
                  :order
 
       has_many :products, if: requested?('products')
