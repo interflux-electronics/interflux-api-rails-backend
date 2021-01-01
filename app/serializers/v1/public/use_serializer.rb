@@ -6,6 +6,8 @@ module V1
                  :icon,
                  :gist
 
+      belongs_to :image
+
       has_many :products, if: requested?('products')
       has_many :product_uses, if: requested?('product_uses')
     end

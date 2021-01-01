@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       resources :leads
       resources :product_families, path: '/product-families'
       resources :products
+      resources :uses
     end
 
     # Admin endpoints

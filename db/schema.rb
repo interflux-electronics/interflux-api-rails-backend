@@ -156,13 +156,6 @@ ActiveRecord::Schema.define(version: 20201122031145) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "document_files", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "document_id"
-    t.uuid "cdn_file_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "documents", primary_key: "path", id: :string, force: :cascade do |t|
     t.string "name"
     t.string "language_id"
@@ -346,7 +339,6 @@ ActiveRecord::Schema.define(version: 20201122031145) do
     t.boolean "new", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "avatar"
   end
 
   create_table "qualities", primary_key: "slug", id: :string, force: :cascade do |t|
