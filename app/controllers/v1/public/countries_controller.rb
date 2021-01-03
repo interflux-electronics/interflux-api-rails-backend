@@ -30,22 +30,6 @@ module V1
       def serializer_class
         V1::Public::CountrySerializer
       end
-
-      def creatable_attributes
-        %i[]
-      end
-
-      def creatable_relationships
-        %i[]
-      end
-
-      def permitted_filters
-        %i[]
-      end
-
-      def permitted_includes
-        %i[]
-      end
     end
   end
 end

@@ -36,6 +36,12 @@ module V1
           cdn_files
         ]
       end
+
+      def permanent_filters
+        {
+          public: true
+        }
+      end
     end
   end
 end

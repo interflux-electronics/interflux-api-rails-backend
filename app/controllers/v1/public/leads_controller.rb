@@ -53,14 +53,6 @@ module V1
         ]
       end
 
-      def permitted_filters
-        %i[]
-      end
-
-      def permitted_includes
-        %i[]
-      end
-
       def after_create(lead)
         PostLeadToSlackJob.perform_later lead
       end

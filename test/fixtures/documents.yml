@@ -9,6 +9,7 @@
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  variations           :string
+#  public               :boolean          default(FALSE)
 #
 
 # document_fixture_1:

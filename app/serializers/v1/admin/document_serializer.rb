@@ -3,7 +3,8 @@ module V1
     class DocumentSerializer < ApplicationSerializer
       attributes :path,
                  :name,
-                 :variations
+                 :variations,
+                 :public
 
       belongs_to :document_category
 

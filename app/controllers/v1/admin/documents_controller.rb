@@ -48,6 +48,7 @@ module V1
       def creatable_attributes
         %i[
           name
+          public
         ]
       end
 
