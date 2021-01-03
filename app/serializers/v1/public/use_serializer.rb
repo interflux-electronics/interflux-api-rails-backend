@@ -4,7 +4,8 @@ module V1
       attributes :slug,
                  :text,
                  :icon,
-                 :gist
+                 :gist,
+                 :rank
 
       belongs_to :image
 

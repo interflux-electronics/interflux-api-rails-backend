@@ -54,6 +54,7 @@ module V1
           text
           icon
           gist
+          rank
         ]
       end
 
