@@ -34,11 +34,15 @@ module V1
       def permitted_includes
         %i[
           image
-          products
-          products.image
-          products.product_family
-          product_uses
           images
+          product_uses
+          products
+          products.product_family
+          products.image
+          products.uses
+          products.qualities
+          products.product_uses
+          products.product_qualities
         ]
       end
     end

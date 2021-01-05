@@ -24,7 +24,10 @@ Rails.application.routes.draw do
       resources :languages
       resources :leads
       resources :product_families, path: '/product-families'
+      resources :product_qualities, path: '/product-qualities'
+      resources :product_uses, path: '/product-uses'
       resources :products
+      resources :qualities
       resources :uses
     end
 
