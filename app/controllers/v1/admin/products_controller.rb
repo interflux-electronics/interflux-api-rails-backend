@@ -60,12 +60,7 @@ module V1
           name
           label
           pitch
-          properties
-          public
-          orderable
-          featured
-          popular
-          new
+          status
         ]
       end
 
@@ -73,6 +68,7 @@ module V1
         %i[
           image
           product_family
+          superior_product
         ]
       end
     end
