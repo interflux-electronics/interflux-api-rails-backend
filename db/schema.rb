@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210107081113) do
+ActiveRecord::Schema.define(version: 20210117094524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -233,6 +233,7 @@ ActiveRecord::Schema.define(version: 20210107081113) do
     t.string "email"
     t.string "phone"
     t.boolean "male"
+    t.string "full_name"
   end
 
   create_table "product_complementary_products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

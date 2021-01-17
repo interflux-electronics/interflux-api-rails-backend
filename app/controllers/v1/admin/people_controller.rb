@@ -33,7 +33,7 @@ module V1
 
       def permitted_filters
         %i[
-          first_name
+          full_name
         ]
       end
 

@@ -4,6 +4,7 @@ module V1
       attributes :first_name,
                  :last_name,
                  :chinese_name,
+                 :full_name,
                  :email,
                  :phone
 

@@ -31,6 +31,15 @@ module V1
         V1::Admin::CompanyMemberSerializer
       end
 
+      def creatable_attributes
+        %i[
+          title
+          email
+          phone
+          public
+        ]
+      end
+
       def creatable_relationships
         %i[
           company

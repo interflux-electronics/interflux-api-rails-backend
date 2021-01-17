@@ -11,6 +11,7 @@
 #  email        :string
 #  phone        :string
 #  male         :boolean
+#  full_name    :string
 #
 
 # person_fixture_1:
