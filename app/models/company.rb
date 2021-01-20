@@ -30,4 +30,6 @@ class Company < ApplicationRecord
   has_many :people, through: :company_members, source: :person
 
   alias_attribute :members, :people
+
+  has_many :public_members, -> { where(public: true) }, class_name: 'CompanyMember'
 end

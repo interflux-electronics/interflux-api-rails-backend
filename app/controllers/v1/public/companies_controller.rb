@@ -36,6 +36,13 @@ module V1
           public: true
         }
       end
+
+      def permitted_includes
+        %i[
+          public_members
+          public_members.person
+        ]
+      end
     end
   end
 end
