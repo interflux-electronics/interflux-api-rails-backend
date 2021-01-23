@@ -52,7 +52,10 @@ module V1
           address
           business_name
           legal_name
-          emails
+          email_general
+          email_orders
+          email_support
+          email_accounting
           fax
           latitude
           longitude
