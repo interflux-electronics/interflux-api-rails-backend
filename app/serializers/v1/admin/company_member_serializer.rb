@@ -4,7 +4,10 @@ module V1
       attributes :title,
                  :email,
                  :phone,
-                 :public
+                 :public,
+                 :public_title,
+                 :public_email,
+                 :public_phone
 
       belongs_to :company
       belongs_to :person

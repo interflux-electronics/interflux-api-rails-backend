@@ -37,6 +37,9 @@ module V1
           email
           phone
           public
+          public_title
+          public_email
+          public_phone
         ]
       end
 
