@@ -1,6 +1,6 @@
 # Things to apply to all serializers
 class ApplicationSerializer
-  include FastJsonapi::ObjectSerializer
+  include JSONAPI::Serializer
   include JsonApiSerializer
 
   def self.inherited(subclass)
@@ -11,8 +11,9 @@ class ApplicationSerializer
     subclass.send :set_key_transform, :dash
 
     # Enable 15 minute caching if production
-    should_cache = Rails.env.production?
-    subclass.send :cache_options, enabled: should_cache, cache_length: 15.minutes
+    # TODO: only cache if in production
+    # should_cache = Rails.env.production?
+    subclass.send :cache_options, store: Rails.cache, namespace: 'jsonapi-serializer', expires_in: 15.minutes
 
     # subclass.define_method :is_included? do |params, model_name|
     #   byebug

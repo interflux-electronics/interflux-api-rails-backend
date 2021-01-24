@@ -176,7 +176,7 @@ module JsonApiController
 
     # We create a JSON response from the records we collected using the fast and
     # JSON API compliant Netflux serializers.
-    json = serializer_class.new(resources, options).serialized_json
+    json = serializer_class.new(resources, options).serializable_hash.to_json
 
     # Finally we return the JSON with a 200.
     render status: 200, json: json
@@ -243,7 +243,7 @@ module JsonApiController
     }
 
     options[:include] = strong_includes if strong_includes
-    json = serializer_class.new(record, options).serialized_json
+    json = serializer_class.new(record, options).serializable_hash.to_json
 
     render status: 200, json: json
   end
@@ -355,7 +355,7 @@ module JsonApiController
     resource = model_class.new(attributes_and_relationships)
     if resource.save!
       after_create
-      json = serializer_class.new(resource).serialized_json
+      json = serializer_class.new(resource).serializable_hash.to_json
       render status: 201, json: json
     else
       render status: 422, json: json_errors(resource)
@@ -456,7 +456,7 @@ module JsonApiController
     return nothing_to_update if attributes_and_relationships.empty?
 
     if record.update!(attributes_and_relationships)
-      json = serializer_class.new(record).serialized_json
+      json = serializer_class.new(record).serializable_hash.to_json
       render status: 204, json: json
     else
       render status: 422, json: json_errors(record)

@@ -40,10 +40,10 @@ module V1
       def permitted_includes
         %i[
           country
-          people
-          markets
           company_members
           company_markets
+          company_members.person
+          company_markets.country
         ]
       end
 

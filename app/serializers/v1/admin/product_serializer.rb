@@ -8,7 +8,7 @@ module V1
 
       belongs_to :image
       belongs_to :product_family
-      belongs_to :superior_product, record_type: :product
+      belongs_to :superior_product, serializer: :product
 
       has_many :uses, if: requested?('uses')
       has_many :product_uses, if: requested?('product_uses')

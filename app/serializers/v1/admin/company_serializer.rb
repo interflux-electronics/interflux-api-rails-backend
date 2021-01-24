@@ -20,6 +20,7 @@ module V1
       belongs_to :country
 
       has_many :people, if: requested?('people')
+      has_many :markets, if: requested?('markets')
       has_many :company_members, if: requested?('company_members')
       has_many :company_markets, if: requested?('company_markets')
     end
