@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       resources :products
       resources :qualities
       resources :uses
+      resources :webinars
     end
 
     # Admin endpoints
@@ -66,6 +67,7 @@ Rails.application.routes.draw do
       resources :use_images, path: '/use-images'
       resources :users
       resources :uses
+      resources :webinars
 
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'

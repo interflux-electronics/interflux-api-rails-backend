@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210123115323) do
+ActiveRecord::Schema.define(version: 20210126054955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -416,6 +416,18 @@ ActiveRecord::Schema.define(version: 20210123115323) do
     t.datetime "updated_at", null: false
     t.index ["cdn_path"], name: "index_videos_on_cdn_path", unique: true
     t.index ["tag_long"], name: "index_videos_on_tag_long", unique: true
+  end
+
+  create_table "webinars", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "topic"
+    t.string "blurb"
+    t.string "url"
+    t.bigint "start_time"
+    t.integer "duration"
+    t.boolean "public", default: false
+    t.uuid "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
