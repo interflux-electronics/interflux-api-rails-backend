@@ -1,27 +1,21 @@
 # == Schema Information
 #
-# Table name: webinars
+# Table name: webinar_invitees
 #
 #  id         :uuid             not null, primary key
-#  title      :string
-#  topic      :string
-#  audience   :string
-#  url        :string
-#  public     :boolean          default(FALSE)
-#  start_time :bigint(8)
-#  duration   :integer
+#  webinar_id :uuid
 #  person_id  :uuid
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-# webinar_fixture_1:
+# webinar_invitee_fixture_1:
 #   name: Some Name
 #   slug: some-name
 #   public: true
 #   group: other_thing_fixture_1
 # 
-# webinar_fixture_2:
+# webinar_invitee_fixture_2:
 #   name: Some Name
 #   slug: some-name
 #   public: true

@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class WebinarsController < ApplicationController
+    class WebinarInviteesController < ApplicationController
       def index
         allow_index
       end
@@ -24,35 +24,16 @@ module V1
       private
 
       def model_class
-        Webinar
+        WebinarInvitee
       end
 
       def serializer_class
-        V1::Admin::WebinarSerializer
-      end
-
-      def permitted_includes
-        %i[
-          person
-          webinar_invitees
-          webinar_invitees.person
-        ]
-      end
-
-      def creatable_attributes
-        %i[
-          title
-          topic
-          audience
-          url
-          start_time
-          duration
-          public
-        ]
+        V1::Admin::WebinarInviteeSerializer
       end
 
       def creatable_relationships
         %i[
+          webinar
           person
         ]
       end

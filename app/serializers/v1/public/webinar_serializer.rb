@@ -1,5 +1,5 @@
 module V1
-  module Admin
+  module Public
     class WebinarSerializer < ApplicationSerializer
       attributes :title,
                  :topic,
@@ -8,10 +8,6 @@ module V1
                  :start_time,
                  :duration,
                  :public
-
-      belongs_to :person
-
-      has_many :webinar_invitees, if: requested?('webinar_invitees')
     end
   end
 end

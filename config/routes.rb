@@ -68,6 +68,7 @@ Rails.application.routes.draw do
       resources :users
       resources :uses
       resources :webinars
+      resources :webinar_invitees, path: '/webinar-invitees'
 
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'
