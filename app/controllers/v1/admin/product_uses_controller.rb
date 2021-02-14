@@ -37,6 +37,13 @@ module V1
           use
         ]
       end
+
+      def creatable_attributes
+        %i[
+          rank_among_uses
+          rank_among_products
+        ]
+      end
     end
   end
 end

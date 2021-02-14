@@ -37,6 +37,13 @@ module V1
           quality
         ]
       end
+
+      def creatable_attributes
+        %i[
+          rank_among_qualities
+          rank_among_products
+        ]
+      end
     end
   end
 end
