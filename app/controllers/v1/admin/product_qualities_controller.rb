@@ -40,8 +40,8 @@ module V1
 
       def creatable_attributes
         %i[
-          rank_among_qualities
           rank_among_products
+          rank_among_qualities
         ]
       end
     end

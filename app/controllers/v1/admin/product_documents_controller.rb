@@ -33,8 +33,15 @@ module V1
 
       def creatable_relationships
         %i[
-          document
           product
+          document
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          rank_among_products
+          rank_among_documents
         ]
       end
     end

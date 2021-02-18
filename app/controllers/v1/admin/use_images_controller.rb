@@ -37,6 +37,13 @@ module V1
           image
         ]
       end
+
+      def creatable_attributes
+        %i[
+          rank_among_uses
+          rank_among_images
+        ]
+      end
     end
   end
 end
