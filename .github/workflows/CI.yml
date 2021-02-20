@@ -14,9 +14,9 @@ jobs:
       postgres:
         image: postgres:11
         env:
-          POSTGRES_USER: interflux
+          POSTGRES_USER: bot
           POSTGRES_DB: interflux_test
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: password
         ports: ["5432:5432"]
 
     steps:
@@ -29,8 +29,8 @@ jobs:
         env:
           RAILS_ENV: test
           PG_HOST: localhost
-          PG_USER: postgres
-          PG_DATABASE: postgres
+          PG_USER: bot
+          PG_DATABASE: interflux_test
           PG_PASSWORD: password
         run: bin/rails db:setup
       # - run: gem install bundler
