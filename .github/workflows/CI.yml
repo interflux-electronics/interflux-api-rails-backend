@@ -35,10 +35,11 @@ jobs:
         run: |
           bin/rails db:create
           bin/rails db:schema:load
+          bin/rails test --verbose
       # - run: gem install bundler
       # - run: gem install rails
       # - run: bin/bundle install --jobs 4 --retry 3
       # - run: bin/rails db:environment:set RAILS_ENV=test
       # - run: bin/rails db:create
       # - run: bin/rails db:migrate
-      - run: bin/rails test --verbose
+      # - run: bin/rails test --verbose
