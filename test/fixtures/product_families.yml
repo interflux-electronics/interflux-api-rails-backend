@@ -16,10 +16,16 @@ soldering_flux:
   name_single: soldering flux
   name_plural: soldering fluxes
   slug: soldering-fluxes
-  # code: FL
+  public: true
 
 solder_paste:
   name_single: solder paste
   name_plural: solder pastes
   slug: solder-pastes
-  # code: SP
+  public: true
+
+hidden_family:
+  name_single: hidden family
+  name_plural: hidden family
+  slug: hidden-family
+  public: false

@@ -21,35 +21,44 @@
 #  rank_among_family   :integer
 #
 
+LMPA_Q6:
+  name: LMPA Q6
+  slug: LMPA-Q6
+  public: true
+  product_family: solder_paste
+  status: 'new'
+
 IF_2005M:
   name: IF 2005M
   slug: IF-2005M
   public: true
-  popular: true
   product_family: soldering_flux
+  status: 'popular'
 
 Pacific_2009M:
   name: PacIFic 2009M
   slug: PacIFic-2009M
   public: true
   product_family: soldering_flux
+  status: 'recommended'
 
-LMPA_Q6:
-  name: LMPA Q6
-  slug: LMPA-Q6
+LMPA_Q5:
+  name: LMPA Q5
+  slug: LMPA-Q5
   public: true
   product_family: solder_paste
+  status: 'discontinued'
 
-# Future product, not public, nor orderable
+LMPA_Q4:
+  name: LMPA Q4
+  slug: LMPA-Q4
+  public: true
+  product_family: solder_paste
+  status: 'outdated'
+
 LMPA_Q7:
   name: LMPA Q7
   slug: LMPA-Q7
   public: false
   product_family: solder_paste
-
-# Deprecated product
-LMPA_Q5:
-  name: LMPA Q5
-  slug: LMPA-Q5
-  public: false
-  product_family: solder_paste
+  status: 'offline'
