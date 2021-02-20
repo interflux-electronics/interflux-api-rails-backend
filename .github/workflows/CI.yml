@@ -25,6 +25,14 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+      - name: Setup test database
+        env:
+          RAILS_ENV: test
+          PG_HOST: localhost
+          PG_USER: postgres
+          PG_DATABASE: postgres
+          PG_PASSWORD: password
+        run: bin/rails db:setup
       # - run: gem install bundler
       # - run: gem install rails
       # - run: bin/bundle install --jobs 4 --retry 3
@@ -32,39 +40,3 @@ jobs:
       # - run: bin/rails db:create
       # - run: bin/rails db:migrate
       - run: bin/rails test --verbose
-
-# jobs:
-#   test:
-#     name: Test
-#     runs-on: ubuntu-latest
-#
-#     services:
-#       db:
-#         image: postgres:11
-#         ports: ['5432:5432']
-#         options: >-
-#           --health-cmd pg_isready
-#           --health-interval 10s
-#           --health-timeout 5s
-#           --health-retries 5
-#
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: Set up Ruby 2.6.5
-#         uses: actions/setup-ruby@v1
-#         with:
-#           ruby-version: '2.6.5'
-#       - name: Build and test
-#         env:
-#           PGHOST: 127.0.0.1
-#           PGUSER: postgres
-#           RAILS_ENV: test
-#         steps:
-#           - run: sudo apt-get -yqq install libpq-dev
-#           - run: gem install bundler
-#           - run: gem install rails
-#           - run: bin/bundle install --jobs 4 --retry 3
-#           - run: bin/rails db:environment:set RAILS_ENV=test
-#           - run: bin/rails db:create
-#           - run: bin/rails db:migrate
-#           - run: bin/rails test --verbose

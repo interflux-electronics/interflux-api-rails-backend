@@ -25,4 +25,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: interflux_test
+  database: <%= ENV.fetch('PG_DATABASE', 'interflux_test') %>
+  host:     <%= ENV.fetch('PG_HOST', 'localhost') %>
+  port:     <%= ENV.fetch('PG_PORT', 5432) %>
+  username: <%= ENV.fetch('PG_USER', nil) %>
+  password: <%= ENV.fetch('PG_PASSWORD', nil) %>
