@@ -32,7 +32,8 @@ jobs:
           PG_USER: bot
           PG_DATABASE: interflux_test
           PG_PASSWORD: password
-        run: bin/rails db:setup
+        run: bin/rails db:create
+        run: bin/rails db:schema:load
       # - run: gem install bundler
       # - run: gem install rails
       # - run: bin/bundle install --jobs 4 --retry 3
