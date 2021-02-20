@@ -50,4 +50,6 @@ class Product < ApplicationRecord
   # TODO: review
   has_many :product_containers
   has_many :containers, through: :product_containers, source: :container
+
+  validates :status, inclusion: { in: %w[new popular recommended outdated discontinued offline] }
 end
