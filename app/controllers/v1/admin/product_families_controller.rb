@@ -37,6 +37,7 @@ module V1
           products.image
           products.features
           product_family_images
+          product_family_images.image
         ]
       end
 
