@@ -61,6 +61,7 @@ module V1
           label
           pitch
           status
+          rank_among_family
         ]
       end
 

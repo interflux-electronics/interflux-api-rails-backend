@@ -18,6 +18,7 @@
 #  updated_at          :datetime         not null
 #  status              :string           default("offline")
 #  superior_product_id :string
+#  rank_among_family   :integer
 #
 
 class Product < ApplicationRecord
