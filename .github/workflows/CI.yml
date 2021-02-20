@@ -16,7 +16,7 @@ jobs:
         env:
           POSTGRES_USER: interflux
           POSTGRES_DB: interflux_test
-          POSTGRES_PASSWORD: ""
+          POSTGRES_PASSWORD: postgres
         ports: ["5432:5432"]
 
     steps:
