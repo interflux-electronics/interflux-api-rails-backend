@@ -19,9 +19,48 @@ echo "----------"
 echo "cd /var/www/$domain"
 cd /var/www/$domain
 echo "----------"
-# TODO
+(
+  set -x;
+  rm -rf builds/$branch/$revision
+)
 echo "----------"
-# ( set -x; git pull )
+(
+  set -x;
+  mkdir -p builds/$branch/$revision
+)
+echo "----------"
+(
+  set -x;
+  git --git-dir=repo fetch
+)
+echo "----------"
+(
+  set -x;
+  git --git-dir=repo --work-tree=builds/$branch/$revision checkout $revision -f
+)
+echo "----------"
+echo "cd builds/$branch/$revision"
+cd builds/$branch/$revision
+echo "----------"
+(
+  set -x;
+  echo "GIT_BRANCH=$branch" >> .rbenv-vars
+  echo "GIT_REVISION=$revision" >> .rbenv-vars
+)
+echo "----------"
+(
+  set -x;
+  rbenv install -s
+  rbenv rehash
+  gem install bundler
+  gem install rails
+  bin/bundle install
+)
+echo "----------"
+(
+  set -x;
+  bin/rails db:migrate
+)
 echo "----------"
 echo "Deploy successful!"
 echo "----------"
