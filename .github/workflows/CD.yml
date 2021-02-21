@@ -38,11 +38,15 @@ jobs:
     # needs: test
     env:
       PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      URL: bot@server.interflux.com
       DOMAIN: api.interflux.com
       BRANCH: production
-      URL: bot@server.interflux.com
+      ROOT: /var/www/api.interflux.com
     steps:
       - uses: actions/checkout@v2
+      - run: echo "REVISION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+      - run: echo "BUILD="builds/$BRANCH/$REVISION/"" >> $GITHUB_ENV
+
       - run: mkdir ~/.ssh
       - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
       - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
@@ -50,9 +54,13 @@ jobs:
       - run: chmod 0755 ~/.ssh/
       - run: chmod 600 ~/.ssh/$URL
       - run: chmod 644 ~/.ssh/known_hosts
-      - run: echo "REVISION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-      - run: scp remote/deploy-remote.sh $URL:~/
-      - run: ssh $URL "~/deploy-remote.sh $DOMAIN $BRANCH $REVISION; rm -f ~/deploy-remote.sh"
+
+      - run: ssh $URL "cd $ROOT; rm -rf builds/$BRANCH/$REVISION/; mkdir builds/$BRANCH/$REVISION/"
+      - run: ssh $URL "cd $ROOT; git --git-dir=repo fetch; git --git-dir=repo --work-tree=builds/$BRANCH/$REVISION checkout $REVISION -f"
+      - run: ssh $URL "cd $ROOT/$BUILD; echo \"GIT_BRANCH=$BRANCH\" >> .rbenv-vars; echo \"GIT_REVISION=$REVISION\" >> .rbenv-vars"
+
+      # - run: scp remote/deploy-remote.sh $URL:~/
+      # - run: ssh $URL "~/deploy-remote.sh $DOMAIN $BRANCH $REVISION; rm -f ~/deploy-remote.sh"
 
       # - run: remote/deploy.sh
       # - run: ssh $URL "cd /var/www/$DOMAIN/builds/production/$REVISION/; ls -la; bin/rails db:migrate"
