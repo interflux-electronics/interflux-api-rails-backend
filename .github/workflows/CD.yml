@@ -40,7 +40,7 @@ jobs:
       PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
       DOMAIN: api.interflux.com
       BRANCH: production
-      URL: bot@server.interflux.om
+      URL: bot@server.interflux.com
     steps:
       - uses: actions/checkout@v2
       - run: mkdir ~/.ssh
