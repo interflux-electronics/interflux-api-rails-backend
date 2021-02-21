@@ -23,6 +23,11 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+#
+# ENV.fetch will first check if this environment variable is set, otherwise use given default.
+# We use this so the Github CI/CD work flows can overwrite these settings.
+# Github requires Postgres to set a password, though locally we don't want to.
+#
 test:
   <<: *default
   database: <%= ENV.fetch('PG_DATABASE', 'interflux_test') %>
