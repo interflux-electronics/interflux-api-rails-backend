@@ -61,6 +61,8 @@ jobs:
       - run: ssh $URL "cd $ROOT/$BUILD; rbenv install -s"
       - run: ssh $URL "cd $ROOT/$BUILD; bin/bundle install"
       - run: ssh $URL "cd $ROOT/$BUILD; bin/rails db:migrate"
+        env:
+          RAILS_ENV: production
 
       # - run: scp remote/deploy-remote.sh $URL:~/
       # - run: ssh $URL "~/deploy-remote.sh $DOMAIN $BRANCH $REVISION; rm -f ~/deploy-remote.sh"
