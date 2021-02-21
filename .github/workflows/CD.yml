@@ -73,7 +73,7 @@ jobs:
       # We conciously avoid Puma's "phased-restart" and "restart" because they have issues
       - run: ssh $URL "cd $ROOT/$BUILD; bin/pumactl -F config/puma/production.rb -T '12345' stop; bin/pumactl -F config/puma/production.rb -T '12345' start"
 
-      - run: curl https://api.interflux.com/sanity-check -H "Content-Type: application/vnd.api+json"
+      - run: "curl https://api.interflux.com/sanity-check -H 'Content-Type: application/vnd.api+json'"
 
 # echo "Sanity check on remote"
 # (
