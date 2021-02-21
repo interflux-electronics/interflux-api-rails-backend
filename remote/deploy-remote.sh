@@ -46,9 +46,11 @@ echo "----------"
 #   gem install rails
 # )
 echo "----------"
+echo "Install gems"
 ( set -x; bin/bundle install )
 echo "----------"
-( set -x; bin/rails db:migrate )
+echo "Migrate"
+bin/rails db:migrate
 # echo "----------"
 # (
 #   set -x;
