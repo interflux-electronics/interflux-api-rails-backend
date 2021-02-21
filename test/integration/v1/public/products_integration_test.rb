@@ -16,8 +16,8 @@ module V1
 
         json = JSON.parse(@response.body)
 
-        # Should return 4 out of 5 products (should filter out public=false)
-        assert_equal 6, json['data'].length
+        # Should return 5 out of 6 products (should filter out public=false)
+        assert_equal 5, json['data'].length
       end
 
       test 'can fetch one by slug' do
