@@ -38,21 +38,24 @@ jobs:
     # needs: test
     env:
       PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-      URL: bot@server.interflux.com
       DOMAIN: api.interflux.com
+      BRANCH: production
+      URL: bot@server.interflux.om
     steps:
       - uses: actions/checkout@v2
       - run: mkdir ~/.ssh
-      - run: 'echo "$PRIVATE_KEY" > ~/.ssh/bot@server.interflux.com'
-      - run: 'echo "IdentityFile ~/.ssh/bot@server.interflux.com" > ~/.ssh/config'
+      - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
+      - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
       - run: ssh-keyscan -H server.interflux.com > ~/.ssh/known_hosts
       - run: chmod 0755 ~/.ssh/
-      - run: chmod 600 ~/.ssh/bot@server.interflux.com
+      - run: chmod 600 ~/.ssh/$URL
       - run: chmod 644 ~/.ssh/known_hosts
-      - run: remote/deploy.sh
+      - run: echo "REVISION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+      - run: scp remote/deploy-remote.sh $URL:~/
+      - run: ssh $URL "~/deploy-remote.sh $DOMAIN $BRANCH $REVISION; rm -f ~/deploy-remote.sh"
 
-      - run: echo "REVISION=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-      - run: ssh $URL "cd /var/www/$DOMAIN/builds/production/$REVISION; ls -la; bin/rails db:migrate"
+      # - run: remote/deploy.sh
+      # - run: ssh $URL "cd /var/www/$DOMAIN/builds/production/$REVISION/; ls -la; bin/rails db:migrate"
       # - run: ssh -i ~/.ssh/$USER@$DOMAIN $USER@$DOMAIN "cd /var/www/$DOMAIN; bin/rails db:migrate"
       # - name: Sanity check
       #   run: 'curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock http://localhost/sanity-check -H "Content-Type: application/vnd.api+json"'
