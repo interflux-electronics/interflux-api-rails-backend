@@ -58,6 +58,9 @@ jobs:
       - run: ssh $URL "cd $ROOT; rm -rf builds/$BRANCH/$REVISION/; mkdir builds/$BRANCH/$REVISION/"
       - run: ssh $URL "cd $ROOT; git --git-dir=repo fetch; git --git-dir=repo --work-tree=builds/$BRANCH/$REVISION checkout $REVISION -f"
       - run: ssh $URL "cd $ROOT/$BUILD; echo \"GIT_BRANCH=$BRANCH\" >> .rbenv-vars; echo \"GIT_REVISION=$REVISION\" >> .rbenv-vars"
+      - run: ssh $URL "cd $ROOT/$BUILD; rbenv install -s"
+      - run: ssh $URL "cd $ROOT/$BUILD; bin/bundle install"
+      - run: ssh $URL "cd $ROOT/$BUILD; bin/rails db:migrate"
 
       # - run: scp remote/deploy-remote.sh $URL:~/
       # - run: ssh $URL "~/deploy-remote.sh $DOMAIN $BRANCH $REVISION; rm -f ~/deploy-remote.sh"
