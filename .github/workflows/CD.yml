@@ -63,35 +63,39 @@ jobs:
       # Set all SSH file permissions
       - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
 
+      # Prepare the build directory
       - run: ssh $URL "cd $ROOT; rm -rf builds/$BRANCH/$REVISION/; mkdir builds/$BRANCH/$REVISION/"
+
+      # Pull in the latest changes from Git and deploy the latest production into the new directory.
       - run: ssh $URL "cd $ROOT; git --git-dir=repo fetch; git --git-dir=repo --work-tree=builds/$BRANCH/$REVISION checkout $REVISION -f"
+
+      # Set up variables for rbenv to port into Rails
       - run: ssh $URL "cd $ROOT/$BUILD; echo \"GIT_BRANCH=$BRANCH\" >> .rbenv-vars; echo \"GIT_REVISION=$REVISION\" >> .rbenv-vars"
+
+      # Install Ruby
       - run: ssh $URL "cd $ROOT/$BUILD; rbenv install -s"
+
+      # Install gems
       - run: ssh $URL "cd $ROOT/$BUILD; bin/bundle install"
+
+      # Migrate the database
       - run: ssh $URL "cd $ROOT/$BUILD; export RAILS_ENV=production; bin/rails db:migrate --verbose"
+
+      # Create a symbolic link.
       - run: ssh $URL "ln -nsf $ROOT/builds/$BRANCH/$REVISION $ROOT/builds/$BRANCH/latest"
 
-      # Restart the Puma app server. On restart Puma will follow the symbolic link we just made
-      # and will use the newly deployed code to spin up concurrent Rails app servers.
+      # Restart the Puma app server.
+      # From this moment onwards Puma will serve the Rails app we just deployed and no longer the old one.
       # We conciously avoid Puma's "phased-restart" and "restart" because these have issues.
       - run: ssh $URL "cd $ROOT/$BUILD; bin/pumactl -F config/puma/production.rb -T '12345' stop; bin/pumactl -F config/puma/production.rb -T '12345' start"
-
-      # The infamous sanity check.
-      # If all went well then our Rails app should be return status 200 and the latest Git revision.
-      - run: "curl https://api.interflux.com/sanity-check -H 'Content-Type: application/vnd.api+json'"
 
       # Clean up time! Remove all builds except the one that was just deployed.
       # The find command behaves a bit different in Fish, compared to Bash:
       # https://unix.stackexchange.com/questions/301225/find-exec-not-working-in-fish
       - run: ssh $URL "cd $ROOT/; find builds/production/ -type d -mindepth 1 -maxdepth 1 -not -name $REVISION -exec rm -rf '{}' +"
 
-# echo "Sanity check on remote"
-# (
-#   set -x;
-#   curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock http://localhost/sanity-check -H "Content-Type: application/vnd.api+json" | jq
-# )
+      # The infamous sanity check.
+      # If all went well then our Rails app should be return status 200 and the latest Git revision.
+      - run: "curl https://api.interflux.com/sanity-check -H 'Content-Type: application/vnd.api+json'"
 
-# and echo Removing all builds except the latest one
-# and echo find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
-# and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
-# and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec rm -rf {} \;
+      # TODO: Interpret the JSON and check for 200 and Git revision.
