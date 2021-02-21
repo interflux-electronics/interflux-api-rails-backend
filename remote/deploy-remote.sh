@@ -52,8 +52,20 @@ echo "----------"
   set -x;
   rbenv install -s
   rbenv rehash
+)
+echo "----------"
+(
+  set -x;
   gem install bundler
+)
+echo "----------"
+(
+  set -x;
   gem install rails
+)
+echo "----------"
+(
+  set -x;
   bin/bundle install
 )
 echo "----------"
