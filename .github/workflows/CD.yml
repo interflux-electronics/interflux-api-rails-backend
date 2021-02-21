@@ -42,11 +42,11 @@ jobs:
         env:
           PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
         run: |
-          mkdir ~/.ssh
-          'echo "$PRIVATE_KEY" > ~/.ssh/bot@server.interflux.com'
-          ssh-keyscan -H server.interflux.com > ~/.ssh/known_hosts
-          chmod 0755 ~/.ssh/
-          chmod 600 ~/.ssh/bot@server.interflux.com
+          mkdir ~/.ssh;
+          'echo "$PRIVATE_KEY" > ~/.ssh/bot@server.interflux.com';
+          ssh-keyscan -H server.interflux.com > ~/.ssh/known_hosts;
+          chmod 0755 ~/.ssh/;
+          chmod 600 ~/.ssh/bot@server.interflux.com;
           chmod 644 ~/.ssh/known_hosts
       - name: Deploy to remote
         run: remote/deploy.sh
