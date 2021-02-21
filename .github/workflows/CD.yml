@@ -50,7 +50,11 @@ jobs:
       - run: chmod 600 ~/.ssh/bot@server.interflux.com
       - run: chmod 644 ~/.ssh/known_hosts
       - run: remote/deploy.sh
-      - run: ssh $USER@$DOMAIN "cd /var/www/$DOMAIN; bin/rails db:migrate"
+
+      - run: branch=$(git rev-parse --abbrev-ref HEAD)
+      - run: revision=$(git rev-parse --short HEAD)
+
+      - run: ssh $USER@$DOMAIN "cd /var/www/$DOMAIN/builds/production/$revision; bin/rails db:migrate"
       # - run: ssh -i ~/.ssh/$USER@$DOMAIN $USER@$DOMAIN "cd /var/www/$DOMAIN; bin/rails db:migrate"
       # - name: Sanity check
       #   run: 'curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock http://localhost/sanity-check -H "Content-Type: application/vnd.api+json"'
