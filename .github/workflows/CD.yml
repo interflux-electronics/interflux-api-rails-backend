@@ -60,12 +60,24 @@ jobs:
       - run: ssh $URL "cd $ROOT/$BUILD; echo \"GIT_BRANCH=$BRANCH\" >> .rbenv-vars; echo \"GIT_REVISION=$REVISION\" >> .rbenv-vars"
       - run: ssh $URL "cd $ROOT/$BUILD; rbenv install -s"
       - run: ssh $URL "cd $ROOT/$BUILD; bin/bundle install"
-      - run: ssh $URL "cd $ROOT/$BUILD; export RAILS_ENV=production; bin/rails db:migrate"
+      - run: ssh $URL "cd $ROOT/$BUILD; export RAILS_ENV=production; bin/rails db:migrate --verbose"
+      - run: ssh $URL "ln -nsf $ROOT/builds/$BRANCH/$REVISION $ROOT/builds/$BRANCH/latest"
 
-      # - run: scp remote/deploy-remote.sh $URL:~/
-      # - run: ssh $URL "~/deploy-remote.sh $DOMAIN $BRANCH $REVISION; rm -f ~/deploy-remote.sh"
+#   bin/pumactl -F config/puma/production.rb -T '12345' stop
+#   bin/pumactl -F config/puma/production.rb -T '12345' start
 
-      # - run: remote/deploy.sh
+# echo "Sanity check on remote"
+# (
+#   set -x;
+#   curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock http://localhost/sanity-check -H "Content-Type: application/vnd.api+json" | jq
+# )
+
+# and echo Removing all builds except the latest one
+# and echo find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
+# and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec echo rm -rf {} \;
+# and find ../ -mindepth 1 -maxdepth 1 -type d -not -name $revision -exec rm -rf {} \;
+
+
       # - run: ssh $URL "cd /var/www/$DOMAIN/builds/production/$REVISION/; ls -la; bin/rails db:migrate"
       # - run: ssh -i ~/.ssh/$USER@$DOMAIN $USER@$DOMAIN "cd /var/www/$DOMAIN; bin/rails db:migrate"
       # - name: Sanity check
