@@ -10,6 +10,7 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+
     services:
       postgres:
         image: postgres:11
@@ -18,19 +19,19 @@ jobs:
           POSTGRES_USER: bot
           POSTGRES_DB: interflux_test
           POSTGRES_PASSWORD: password
+
     env:
       RAILS_ENV: test
       PG_HOST: localhost
       PG_USER: bot
       PG_DATABASE: interflux_test
       PG_PASSWORD: password
+
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-      - name: Setup test database
-        run: |
-          bin/rails db:create
-          bin/rails db:schema:load
-          bin/rails test --verbose
+      - run: bin/rails db:create
+      - run: bin/rails db:schema:load
+      - run: bin/rails test --verbose
