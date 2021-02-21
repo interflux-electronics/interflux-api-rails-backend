@@ -19,7 +19,7 @@ echo "----------"
 echo "cd /var/www/$domain"
 cd /var/www/$domain
 echo "----------"
-echo "Preparing builds/$branch/$revision ..."
+echo "Preparing directory builds/$branch/$revision"
 rm -rf builds/$branch/$revision
 mkdir -p builds/$branch/$revision
 echo "----------"
@@ -37,7 +37,7 @@ echo "GIT_BRANCH=$branch" >> .rbenv-vars
 echo "GIT_REVISION=$revision" >> .rbenv-vars
 echo "----------"
 echo "Installing Ruby ..."
-rbenv install
+rbenv install -s
 echo "----------"
 echo "Rehashing with rbenv ..."
 rbenv rehash
