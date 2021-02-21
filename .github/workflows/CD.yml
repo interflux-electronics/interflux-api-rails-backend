@@ -38,8 +38,8 @@ jobs:
     # needs: test
     env:
       PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
-      USER: bot
-      DOMAIN: server.interflux.com
+      USER: 'bot'
+      DOMAIN: 'server.interflux.com'
     steps:
       - uses: actions/checkout@v2
       - run: mkdir ~/.ssh
