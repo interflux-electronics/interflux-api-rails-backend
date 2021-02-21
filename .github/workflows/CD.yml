@@ -47,10 +47,19 @@ jobs:
       - run: echo "REVISION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
       - run: echo "BUILD="builds/$BRANCH/$REVISION/"" >> $GITHUB_ENV
 
+      # Create SSH folder
       - run: mkdir ~/.ssh
+
+      # Add the private key of the restricted bot user on the remote server
       - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
+
+      # Configure SSH to always use the custom key, so we don't have to do ssh -i
       - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
+
+      # Add the remote server to trusted hosts
       - run: ssh-keyscan -H server.interflux.com > ~/.ssh/known_hosts
+
+
       - run: chmod 0755 ~/.ssh/
       - run: chmod 600 ~/.ssh/$URL
       - run: chmod 644 ~/.ssh/known_hosts
@@ -63,8 +72,10 @@ jobs:
       - run: ssh $URL "cd $ROOT/$BUILD; export RAILS_ENV=production; bin/rails db:migrate --verbose"
       - run: ssh $URL "ln -nsf $ROOT/builds/$BRANCH/$REVISION $ROOT/builds/$BRANCH/latest"
 
-#   bin/pumactl -F config/puma/production.rb -T '12345' stop
-#   bin/pumactl -F config/puma/production.rb -T '12345' start
+      # We conciously avoid Puma's "phased-restart" and "restart" because they have issues
+      - run: ssh $URL "cd $ROOT/$BUILD; bin/pumactl -F config/puma/production.rb -T '12345' stop; bin/pumactl -F config/puma/production.rb -T '12345' start"
+
+      - run: curl https://api.interflux.com/sanity-check -H "Content-Type: application/vnd.api+json"
 
 # echo "Sanity check on remote"
 # (
