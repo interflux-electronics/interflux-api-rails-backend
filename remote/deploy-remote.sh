@@ -19,37 +19,37 @@ echo "----------"
 echo "cd /var/www/$domain"
 cd /var/www/$domain
 echo "----------"
-( set -x; rm -rf builds/$branch/$revision )
+echo "Preparing builds/$branch/$revision ..."
+rm -rf builds/$branch/$revision
+mkdir -p builds/$branch/$revision
 echo "----------"
-( set -x; mkdir -p builds/$branch/$revision )
+echo "Pulling latest code from Github ..."
+git --git-dir=repo fetch
 echo "----------"
-( set -x; git --git-dir=repo fetch )
-echo "----------"
+echo "Checking out latest production code in builds/$branch/$revision ..."
 ( set -x; git --git-dir=repo --work-tree=builds/$branch/$revision checkout $revision -f )
 echo "----------"
-echo "cd builds/$branch/$revision"
+echo "Moving into directory ..."
 cd builds/$branch/$revision
 echo "----------"
-( set -x; echo "GIT_BRANCH=$branch" >> .rbenv-vars; echo "GIT_REVISION=$revision" >> .rbenv-vars )
+echo "Setting rbenv variables ..."
+echo "GIT_BRANCH=$branch" >> .rbenv-vars
+echo "GIT_REVISION=$revision" >> .rbenv-vars
 echo "----------"
-( set -x; rbenv install -s)
+echo "Installing Ruby ..."
+rbenv install
 echo "----------"
-( set -x; rbenv rehash )
+echo "Rehashing with rbenv ..."
+rbenv rehash
 echo "----------"
-# (
-#   set -x;
-#   gem install bundler
-# )
-echo "----------"
-# (
-#   set -x;
-#   gem install rails
-# )
-echo "----------"
-echo "Install gems"
+# gem install bundler
+# echo "----------"
+# gem install rails
+# echo "----------"
+echo "Install gems with Bundler ..."
 ( set -x; bin/bundle install )
 echo "----------"
-echo "Migrate"
+echo "Migrating database"
 bin/rails db:migrate
 # echo "----------"
 # (
