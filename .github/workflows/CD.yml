@@ -38,6 +38,8 @@ jobs:
     # needs: test
     env:
       PRIVATE_KEY: ${{secrets.PRIVATE_KEY}}
+      USER: bot
+      DOMAIN: server.interflux.com
     steps:
       - uses: actions/checkout@v2
       - run: mkdir ~/.ssh
@@ -47,5 +49,6 @@ jobs:
       - run: chmod 600 ~/.ssh/bot@server.interflux.com
       - run: chmod 644 ~/.ssh/known_hosts
       - run: remote/deploy.sh
+      - run: ssh -i ~/.ssh/$USER@$DOMAIN $USER@$DOMAIN "cd /var/www/$DOMAIN; bin/rails db:migrate"
       # - name: Sanity check
       #   run: 'curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock http://localhost/sanity-check -H "Content-Type: application/vnd.api+json"'
