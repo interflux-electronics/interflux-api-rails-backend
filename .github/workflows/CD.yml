@@ -38,8 +38,8 @@ jobs:
     # needs: test
     env:
       PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
-      DOMAIN: server.interflux.com
-      URL: bot@server.interflux.com
+      DOMAIN: api.interflux.com
+      URL: bot@api.interflux.com
     steps:
       - uses: actions/checkout@v2
       - run: echo "REVISION=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
