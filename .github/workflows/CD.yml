@@ -51,4 +51,4 @@ jobs:
       - name: Deploy to remote
         run: remote/deploy.sh
       - name: Sanity check
-        run: curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock http://localhost/sanity-check -H "Content-Type: application/vnd.api+json"
+        run: 'curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock http://localhost/sanity-check -H "Content-Type: application/vnd.api+json"'
