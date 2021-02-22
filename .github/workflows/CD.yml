@@ -99,10 +99,9 @@ jobs:
       # The infamous sanity check.
       # If all went well then our Rails app should be return status 200 and the latest Git revision.
       - run: "echo \"JSON=$(curl --silent https://api.interflux.com/sanity-check -H 'Content-Type: application/vnd.api+json')\" >> $GITHUB_ENV"
-      - run: 'echo "STATUS=$(echo "$JSON" | jq .status)" >> $GITHUB_ENV'
-      - run: 'echo "API_REVISION=$(echo "$JSON" | jq .build.git.revision)" >> $GITHUB_ENV'
       - run: 'echo "$JSON" | jq .'
-      - run: 'echo "$JSON" | jq .build.git.revision'
+      - run: 'echo "STATUS=$(echo "$JSON" | jq .status)" >> $GITHUB_ENV'
+      - run: 'echo "API_REVISION=$(echo "$JSON" | jq -r .build.git.revision)" >> $GITHUB_ENV'
       - name: 'Sanity check: PASS'
         if: env.API_REVISION == env.REVISION && env.STATUS == 200
         run: exit 0
