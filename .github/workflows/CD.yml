@@ -103,7 +103,9 @@ jobs:
       - run: 'echo "API_REVISION=$(echo "$JSON" | jq .build.git.revision)" >> $GITHUB_ENV'
       - run: 'echo "$JSON" | jq .'
       - run: 'echo "$JSON" | jq .build.git.revision'
-      - run: exit 1
+      - name: 'Sanity check: PASS'
         if: env.API_REVISION == env.REVISION && env.STATUS == 200
-      - run: exit 0
+        run: exit 0
+      - name: 'Sanity check: FAIL'
+        run: exit -1
         if: env.API_REVISION != env.REVISION || env.STATUS != 200
