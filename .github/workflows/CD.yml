@@ -98,8 +98,10 @@ jobs:
       # If all went well then our Rails app should be return status 200 and the latest Git revision.
       # - run: "curl --silent https://api.interflux.com/sanity-check -H 'Content-Type: application/vnd.api+json' | jq ."
 
-      - run: "echo \"JSON=$(curl --silent https://api.interflux.com/sanity-check -H 'Content-Type: application/vnd.api+json')\" >> $GITHUB_ENV"
-      - run: echo $JSON | jq ."
+      - run: 'echo "JSON=$(curl --silent https://api.interflux.com/sanity-check -H \'Content-Type: application/vnd.api+json\')" >> $GITHUB_ENV'
+      - run: 'echo "$JSON | jq ."'
+      - run: 'echo "$JSON | jq .build.git.revision"'
+      - run: 'if test (jq .build.git.revision) = $REVISION echo "PASS" else echo "FAIL" end'
 
 
       # TODO: Interpret the JSON and check for 200 and Git revision.
