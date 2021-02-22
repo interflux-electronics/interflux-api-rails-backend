@@ -1,7 +1,8 @@
 module V1
   module Public
     class ProductQualitySerializer < ApplicationSerializer
-      # attributes :rank
+      attributes :rank_among_products,
+                 :rank_among_qualities
 
       belongs_to :product
       belongs_to :quality
