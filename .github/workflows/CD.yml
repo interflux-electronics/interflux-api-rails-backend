@@ -101,9 +101,10 @@ jobs:
       # - run: "curl --silent https://api.interflux.com/sanity-check -H 'Content-Type: application/vnd.api+json' | jq ."
 
       - run: 'echo "JSON=$(curl --silent https://api.interflux.com/sanity-check -H \"Content-Type: application/vnd.api+json\")" >> $GITHUB_ENV'
-      - run: 'echo "$JSON | jq ."'
-      - run: 'echo "$JSON | jq .build.git.revision"'
-      - run: 'if test (jq .build.git.revision) = $REVISION echo "PASS" else echo "FAIL" end'
+      - run: 'echo "$JSON" | jq .'
+      - run: 'echo "$JSON" | jq .build.git.revision'
+      - run: 'echo "API_REVISION=$(echo "$JSON" | jq .build.git.revision)" >> $GITHUB_ENV'
+      - run: 'if test API_REVISION = $REVISION echo "PASS" else echo "FAIL" end'
 
 
       # TODO: Interpret the JSON and check for 200 and Git revision.
