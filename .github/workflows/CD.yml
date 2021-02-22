@@ -106,4 +106,4 @@ jobs:
       - run: exit 1
         if: env.API_REVISION == env.REVISION && env.STATUS == 200
       - run: exit 0
-        if: env.API_REVISION !== env.REVISION || env.STATUS !== 200
+        if: env.API_REVISION != env.REVISION || env.STATUS != 200
