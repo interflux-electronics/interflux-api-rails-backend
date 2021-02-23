@@ -11,7 +11,7 @@ module V1
 
       has_many :products, if: requested?('products')
       has_many :product_uses, if: requested?('product_uses')
-      has_many :images, if: requested?('images')
+      has_many :use_images, if: requested?('use_images')
     end
   end
 end

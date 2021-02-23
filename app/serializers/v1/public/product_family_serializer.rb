@@ -8,7 +8,7 @@ module V1
                  :order
 
       has_many :products, if: requested?('products')
-      has_many :images, if: requested?('images')
+      has_many :product_family_images, if: requested?('product_family_images')
     end
   end
 end
