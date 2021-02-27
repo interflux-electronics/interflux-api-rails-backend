@@ -52,4 +52,15 @@ class Product < ApplicationRecord
   has_many :containers, through: :product_containers, source: :container
 
   validates :status, inclusion: { in: %w[new popular recommended outdated discontinued offline] }
+
+  after_save :update_public, on: %i[create update]
+
+  private
+
+  # Whenever a product is given the status "offline", set the public boolean to false so it is hidden
+  # from all our public facing websites.
+  def update_public
+    bool = status != 'offline'
+    update_column(:public, bool)
+  end
 end

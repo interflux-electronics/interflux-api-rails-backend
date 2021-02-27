@@ -4,7 +4,8 @@ module V1
       attributes :name,
                  :label,
                  :pitch,
-                 :status
+                 :status,
+                 :rank_among_family
 
       belongs_to :image
       belongs_to :product_family
