@@ -310,6 +310,7 @@ ActiveRecord::Schema.define(version: 20210220064858) do
     t.string "quality_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rank"
     t.integer "rank_among_products"
     t.integer "rank_among_qualities"
   end
