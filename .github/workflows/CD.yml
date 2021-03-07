@@ -81,6 +81,9 @@ jobs:
       # Install Ruby
       - run: ssh $URL "cd $ROOT/$BUILD; rbenv install -s"
 
+      # Install Bundler
+      - run: ssh $URL "cd $ROOT/$BUILD; gem install bundler:2.2.13"
+
       # Install gems
       - run: ssh $URL "cd $ROOT/$BUILD; bin/bundle install"
 
