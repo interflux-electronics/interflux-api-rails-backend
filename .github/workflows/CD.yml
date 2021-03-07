@@ -87,8 +87,8 @@ jobs:
       # Migrate the database
       - run: ssh $URL "cd $ROOT/$BUILD; export RAILS_ENV=production; bin/rails db:migrate --verbose"
 
-      # Create a symbolic link.
-      - run: ssh $URL "ln -nsf $ROOT/builds/$BRANCH/$REVISION $ROOT/builds/$BRANCH/latest"
+      # Create a symbolic links.
+      - run: ssh $URL "ln -nsf $ROOT/builds/$BRANCH/$REVISION $ROOT/builds/$BRANCH/latest; ln -nsf $ROOT/db/production-$TIMESTAMP $ROOT/db/before-last-deploy"
 
       # Restart the Puma app server.
       # From this moment onwards Puma will serve the Rails app we just deployed and no longer the old one.
