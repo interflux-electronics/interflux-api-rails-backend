@@ -49,6 +49,7 @@ jobs:
       - run: sudo apt-get install jq
       - run: echo "REVISION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
       - run: echo "BUILD="builds/$BRANCH/$REVISION/"" >> $GITHUB_ENV
+      - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
 
       # Create directory for SSH
       - run: mkdir ~/.ssh
@@ -64,6 +65,9 @@ jobs:
 
       # Set all SSH file permissions
       - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
+
+      # Backup the database
+      - run: ssh $URL "cd $ROOT/builds/production/latest; export RAILS_ENV=production; bin/rails db:data:dump_dir dir=$TIMESTAMP; mv db/$TIMESTAMP/ /var/www/api.interflux.com/db/production-$TIMESTAMP/"
 
       # Prepare the build directory
       - run: ssh $URL "cd $ROOT; rm -rf builds/$BRANCH/$REVISION/; mkdir builds/$BRANCH/$REVISION/"

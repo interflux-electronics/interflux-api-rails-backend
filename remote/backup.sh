@@ -5,7 +5,7 @@ set -o pipefail
 
 user=jw
 server=server.interflux.com
-timestamp=$(date +"%Y-%m-%d-%H%M")
+timestamp="$(date -u +"%Y-%m-%d-%H%M%S")-UTC"
 
 echo "----------"
 echo "Backing up Interflux database"
