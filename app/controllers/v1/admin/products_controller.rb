@@ -59,9 +59,17 @@ module V1
           slug
           name
           label
-          pitch
           status
+          pitch
+          summary
+          properties
+          instructions
           rank_among_family
+          complies_with_iso
+          complies_with_rohs
+          complies_with_iec
+          complies_with_ipc
+          test_results
         ]
       end
 

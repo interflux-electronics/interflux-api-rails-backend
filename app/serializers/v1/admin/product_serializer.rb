@@ -3,9 +3,17 @@ module V1
     class ProductSerializer < ApplicationSerializer
       attributes :name,
                  :label,
-                 :pitch,
                  :status,
-                 :rank_among_family
+                 :pitch,
+                 :summary,
+                 :properties,
+                 :instructions,
+                 :rank_among_family,
+                 :complies_with_iso,
+                 :complies_with_rohs,
+                 :complies_with_iec,
+                 :complies_with_ipc,
+                 :test_results
 
       belongs_to :image
       belongs_to :product_family

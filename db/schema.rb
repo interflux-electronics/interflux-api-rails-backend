@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210220064858) do
+ActiveRecord::Schema.define(version: 20210328062150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -368,6 +368,13 @@ ActiveRecord::Schema.define(version: 20210220064858) do
     t.string "status", default: "offline"
     t.string "superior_product_id"
     t.integer "rank_among_family"
+    t.string "summary"
+    t.string "instructions"
+    t.boolean "complies_with_iso"
+    t.boolean "complies_with_rohs"
+    t.boolean "complies_with_iec"
+    t.boolean "complies_with_ipc"
+    t.string "test_results"
   end
 
   create_table "qualities", primary_key: "slug", id: :string, force: :cascade do |t|
