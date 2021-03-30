@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 # Which version of Ruby to use (keep in sync with .ruby-version)
-ruby '2.6.6'
+ruby '3.0.0'
 
 # Ruby on Rails framework
-gem 'rails', '~> 5.1.6'
+gem 'rails'
 
 # Puma app server
-gem 'puma', '~> 3.12'
+gem 'puma'
 
 # Postgress database
 gem 'pg'
@@ -28,13 +28,13 @@ gem 'jsonapi-serializer'
 gem 'jwt'
 
 # For enabling ActiveModel has_secure_password, effectively hiding user passwords from the database
-gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 
 # For coloured printing in byebug and console `ap`
 gem 'awesome_print'
 
 # For halting the code and debugging `byebug`
-gem 'byebug', '~> 10.0', groups: %i[development test]
+gem 'byebug', groups: %i[development test]
 
 # For seeding the database with modular control and dependencies
 gem 'seedbank'
@@ -43,11 +43,11 @@ gem 'seedbank'
 gem 'yaml_db'
 
 # For logging activity to skylight.io
-gem 'skylight'
+gem 'skylight', groups: %i[production]
 
 group :development do
   # For listening to file changes
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen'
 
   # For Ruby syntax formatting
   gem 'rubocop', require: false
