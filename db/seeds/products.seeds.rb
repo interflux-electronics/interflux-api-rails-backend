@@ -31,10 +31,10 @@ after :product_families do
       # code: product.code,
 
       public: product.public,
-      orderable: product.orderable || true,
-      featured: product.featured || false,
-      popular: product.popular || false,
-      new: product.new || false,
+      # orderable: product.orderable || true,
+      # featured: product.featured || false,
+      # popular: product.popular || false,
+      # new: product.new || false,
 
       product_family_id: family.id
     )
