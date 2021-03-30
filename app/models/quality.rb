@@ -17,7 +17,7 @@ class Quality < ApplicationRecord
   has_many :product_qualities, dependent: :destroy
   has_many :products, through: :product_qualities, source: :product
 
-  after_save :update_icon, on: %i[create update]
+  after_save :update_icon
 
   private
 

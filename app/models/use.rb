@@ -21,7 +21,7 @@ class Use < ApplicationRecord
   has_many :use_images, dependent: :destroy
   has_many :images, through: :use_images, source: :image
 
-  after_save :update_icon, on: %i[create update]
+  after_save :update_icon
 
   private
 

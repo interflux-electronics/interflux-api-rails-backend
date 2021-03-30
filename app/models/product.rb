@@ -53,7 +53,7 @@ class Product < ApplicationRecord
 
   validates :status, inclusion: { in: %w[new popular recommended outdated discontinued offline] }
 
-  after_save :update_public, on: %i[create update]
+  after_save :update_public
 
   private
 
