@@ -1,3 +1,4 @@
+---
 require: rubocop-rails
 
 # Ignore some folders completely
