@@ -5,7 +5,10 @@ module V1
                  :name_single,
                  :name_plural,
                  :gist,
-                 :order
+                 :the_full_monty,
+                 :rank
+
+      belongs_to :product_family
 
       has_many :products, if: requested?('products')
       has_many :product_family_images, if: requested?('product_family_images')

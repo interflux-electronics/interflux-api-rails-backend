@@ -50,10 +50,20 @@ module V1
 
       def creatable_attributes
         %i[
+          id
+          slug
           name_single
           name_plural
           gist
-          order
+          the_full_monty
+          rank
+          public
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          product_family
         ]
       end
     end

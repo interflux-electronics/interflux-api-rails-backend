@@ -13,7 +13,7 @@
 #
 
 class ProductFamily < ApplicationRecord
-  has_many :products
+  belongs_to :product_family, optional: true
 
   has_many :product_family_images
   has_many :images, through: :product_family_images, source: :image

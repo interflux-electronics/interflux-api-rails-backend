@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_024243) do
+ActiveRecord::Schema.define(version: 2021_04_02_043328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -274,10 +274,12 @@ ActiveRecord::Schema.define(version: 2021_03_30_024243) do
     t.string "name_single"
     t.string "name_plural"
     t.boolean "public", default: false
-    t.integer "order"
+    t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gist"
+    t.string "the_full_monty"
+    t.string "product_family_id"
   end
 
   create_table "product_family_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
