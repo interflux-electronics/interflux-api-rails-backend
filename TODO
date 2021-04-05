@@ -5,3 +5,6 @@
 
 
 Difference hand, robot and laser soldering for solder wires.
+
+
+Product.all.each { |p| p.update(properties: p.properties.present? ? ( p.properties.starts_with?("[") ? JSON.parse(p.properties).join("\n") : p.properties) : nil ) }
