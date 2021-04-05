@@ -31,12 +31,6 @@ module V1
         V1::Public::ProductFamilySerializer
       end
 
-      def permanent_filters
-        {
-          public: true
-        }
-      end
-
       def permitted_includes
         %i[
           products

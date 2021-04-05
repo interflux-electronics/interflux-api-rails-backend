@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_043328) do
+ActiveRecord::Schema.define(version: 2021_04_05_051048) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -273,7 +273,6 @@ ActiveRecord::Schema.define(version: 2021_04_02_043328) do
   create_table "product_families", primary_key: "slug", id: :string, force: :cascade do |t|
     t.string "name_single"
     t.string "name_plural"
-    t.boolean "public", default: false
     t.integer "rank"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

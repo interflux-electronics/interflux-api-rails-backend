@@ -6,8 +6,7 @@ module V1
                  :name_plural,
                  :gist,
                  :the_full_monty,
-                 :rank,
-                 :public
+                 :rank
 
       belongs_to :product_family
 
