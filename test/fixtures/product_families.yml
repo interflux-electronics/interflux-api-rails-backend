@@ -1,31 +1,16 @@
-# == Schema Information
-#
-# Table name: product_families
-#
-#  slug        :string           not null, primary key
-#  name_single :string
-#  name_plural :string
-#  public      :boolean          default(FALSE)
-#  order       :integer
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  gist        :string
-#
+---
 
 soldering_flux:
   name_single: soldering flux
   name_plural: soldering fluxes
   slug: soldering-fluxes
-  public: true
 
 solder_paste:
   name_single: solder paste
   name_plural: solder pastes
   slug: solder-pastes
-  public: true
 
 hidden_family:
   name_single: hidden family
   name_plural: hidden family
   slug: hidden-family
-  public: false

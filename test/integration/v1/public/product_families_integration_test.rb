@@ -16,7 +16,7 @@ module V1
         json = JSON.parse(@response.body)
 
         # Should return 2 product families
-        assert_equal 2, json['data'].length
+        assert_equal 3, json['data'].length
       end
 
       test 'does not allow create' do
