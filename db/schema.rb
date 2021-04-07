@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_05_051048) do
+ActiveRecord::Schema.define(version: 2021_04_06_225150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -370,8 +370,10 @@ ActiveRecord::Schema.define(version: 2021_04_05_051048) do
     t.boolean "complies_with_iso"
     t.boolean "complies_with_rohs"
     t.boolean "complies_with_iec"
-    t.boolean "complies_with_ipc"
     t.string "test_results"
+    t.boolean "complies_with_ipcjstd004_a"
+    t.boolean "complies_with_ipcjstd004_b"
+    t.boolean "complies_with_ipcjstd005"
   end
 
   create_table "qualities", primary_key: "slug", id: :string, force: :cascade do |t|

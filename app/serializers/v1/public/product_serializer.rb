@@ -12,7 +12,9 @@ module V1
                  :complies_with_iso,
                  :complies_with_rohs,
                  :complies_with_iec,
-                 :complies_with_ipc,
+                 :complies_with_ipcjstd004_a,
+                 :complies_with_ipcjstd004_b,
+                 :complies_with_ipcjstd005,
                  :test_results
 
       belongs_to :image
