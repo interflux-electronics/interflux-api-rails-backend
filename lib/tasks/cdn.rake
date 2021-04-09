@@ -1,7 +1,7 @@
 namespace :cdn do
   desc 'For each file in the CDN we need a database entry. This task helps us sync CDN and database.'
 
-  task :sync => :environment do
+  task sync: :environment do
     puts 'starting sync'
     db = CdnFile.all.map(&:path)
     puts 'db paths collected'
@@ -21,7 +21,7 @@ namespace :cdn do
         puts 'done'
       end
     else
-      puts "nothing"
+      puts 'nothing'
     end
     puts '------'
     puts 'to remove from database:'
@@ -33,7 +33,7 @@ namespace :cdn do
         puts 'done'
       end
     else
-      puts "nothing"
+      puts 'nothing'
     end
     puts '------'
     puts 'sync complete'
