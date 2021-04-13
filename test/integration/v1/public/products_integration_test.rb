@@ -80,7 +80,6 @@ module V1
         assert_equal 'product-image', json['included'][2]['type']
         assert_equal 'image', json['included'][3]['type']
         assert_equal 'image', json['included'][4]['type']
-        assert_equal 'webp,jpg', json['included'][4]['attributes']['formats']
       end
 
       test 'throws 403 if bogus filter' do

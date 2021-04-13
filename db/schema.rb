@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_225150) do
+ActiveRecord::Schema.define(version: 2021_04_13_012829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -193,8 +193,6 @@ ActiveRecord::Schema.define(version: 2021_04_06_225150) do
   end
 
   create_table "images", primary_key: "path", id: :string, force: :cascade do |t|
-    t.string "sizes"
-    t.string "formats"
     t.string "caption"
     t.string "alt"
     t.datetime "created_at", null: false
