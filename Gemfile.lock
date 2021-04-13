@@ -60,9 +60,6 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
-    annotate (3.1.1)
-      activerecord (>= 3.2, < 7.0)
-      rake (>= 10.4, < 14.0)
     ast (2.4.2)
     awesome_print (1.9.2)
     bcrypt (3.1.16)
@@ -194,7 +191,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate
   awesome_print
   bcrypt
   byebug

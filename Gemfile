@@ -52,9 +52,6 @@ group :development do
   # For Ruby syntax formatting
   gem 'rubocop', require: false
   gem 'rubocop-rails'
-
-  # For annotating models with schemas
-  gem 'annotate', require: false
 end
 
 group :test do
