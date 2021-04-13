@@ -372,6 +372,10 @@ ActiveRecord::Schema.define(version: 2021_04_13_012829) do
     t.boolean "complies_with_ipcjstd004_a"
     t.boolean "complies_with_ipcjstd004_b"
     t.boolean "complies_with_ipcjstd005"
+    t.string "avatar_path"
+    t.string "avatar_variations"
+    t.string "avatar_caption"
+    t.string "avatar_alt"
   end
 
   create_table "qualities", primary_key: "slug", id: :string, force: :cascade do |t|

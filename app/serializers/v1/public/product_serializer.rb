@@ -15,7 +15,11 @@ module V1
                  :complies_with_ipcjstd004_a,
                  :complies_with_ipcjstd004_b,
                  :complies_with_ipcjstd005,
-                 :test_results
+                 :test_results,
+                 :avatar_path,
+                 :avatar_variations,
+                 :avatar_caption,
+                 :avatar_alt
 
       belongs_to :image
       belongs_to :product_family
