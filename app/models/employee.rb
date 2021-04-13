@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: employees
-#
-#  id         :uuid             not null, primary key
-#  company_id :uuid
-#  person_id  :uuid
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class Employee < ApplicationRecord
   # Relate to a model
   # belongs_to :company

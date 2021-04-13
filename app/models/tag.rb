@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: tags
-#
-#  id         :uuid             not null, primary key
-#  slug       :string
-#  name       :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class Tag < ApplicationRecord
   # Relate to a model
   # belongs_to :company

@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: currencies
-#
-#  code       :string           not null, primary key
-#  name       :string
-#  symbol     :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class Currency < ApplicationRecord
   # Relate to a model
   # belongs_to :company

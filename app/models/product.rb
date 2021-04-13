@@ -1,26 +1,3 @@
-# == Schema Information
-#
-# Table name: products
-#
-#  slug                :string           not null, primary key
-#  name                :string
-#  product_family_id   :string
-#  image_id            :string
-#  label               :string
-#  pitch               :text
-#  properties          :text
-#  public              :boolean          default(FALSE)
-#  orderable           :boolean          default(FALSE)
-#  featured            :boolean          default(FALSE)
-#  popular             :boolean          default(FALSE)
-#  new                 :boolean          default(FALSE)
-#  created_at          :datetime         not null
-#  updated_at          :datetime         not null
-#  status              :string           default("offline")
-#  superior_product_id :string
-#  rank_among_family   :integer
-#
-
 class Product < ApplicationRecord
   belongs_to :product_family, optional: true
   alias_attribute :family, :product_family

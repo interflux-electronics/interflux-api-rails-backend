@@ -1,14 +1,3 @@
-# == Schema Information
-#
-# Table name: product_videos
-#
-#  id         :uuid             not null, primary key
-#  product_id :uuid
-#  video_id   :uuid
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#
-
 class ProductVideo < ApplicationRecord
   # Relate to a model
   # belongs_to :company

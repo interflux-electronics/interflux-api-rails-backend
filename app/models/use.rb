@@ -1,17 +1,3 @@
-# == Schema Information
-#
-# Table name: uses
-#
-#  slug       :string           not null, primary key
-#  text       :string
-#  icon       :string
-#  gist       :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  image_id   :string
-#  rank       :integer
-#
-
 class Use < ApplicationRecord
   belongs_to :image, optional: true
 

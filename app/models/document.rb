@@ -1,17 +1,3 @@
-# == Schema Information
-#
-# Table name: documents
-#
-#  path                 :string           not null, primary key
-#  name                 :string
-#  language_id          :string
-#  document_category_id :string
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#  variations           :string
-#  public               :boolean          default(FALSE)
-#
-
 class Document < ApplicationRecord
   belongs_to :document_category, optional: true
   alias_attribute :category, :document_category
