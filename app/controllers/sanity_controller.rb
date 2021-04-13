@@ -12,6 +12,7 @@ class SanityController < ApplicationController
       msg: 'This back-end is live and running. This request just successfully got passed Nginx, SSL, Puma, Rack, Rails and back! Have a beer.',
       build: {
         environment: environment,
+        timestamp: build_timestamp,
         git: {
           branch: git_branch,
           revision: git_revision
@@ -30,5 +31,9 @@ class SanityController < ApplicationController
 
   def git_revision
     ENV['GIT_REVISION'] || '?'
+  end
+
+  def build_timestamp
+    ENV['BUILD_TIMESTAMP'] || '?'
   end
 end
