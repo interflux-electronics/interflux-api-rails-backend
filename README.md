@@ -1,27 +1,45 @@
 # Rails - api.interflux.com
 
-This Rails app is the back-end for three Ember apps:
+This Rails app serves as backend for Ember frontends:
 
 - [www.interflux.com](https://www.interflux.com)
 - [lmpa.interflux.com](https://lmpa.interflux.com)
 - [admin.interflux.com](https://admin.interflux.com)
 
-It is hosted on:
+This API endpoints live on:
 
 - [api.interflux.com](https://api.interflux.com)
 
-## Development
+### Getting your hands dirty?
 
-Refer to `wiki/development.sh`.
+Please refer to the following wikis:
 
-## Production
+* `wiki/development.sh`
+* `wiki/production.sh`
+* `wiki/testing.sh`
+* `wiki/postgres.sh`
 
-Refer to `wiki/production.sh`.
+### Monitoring
 
-## Testing
+Performance is being monitored with [Skylight](https://www.skylight.io/):
 
-Refer to `wiki/testing.sh`.
+[![View performance data on Skylight](https://badges.skylight.io/status/X6AeuWw7d420.svg?token=xjlaKnGsxC6MepZC9jrriSodEoM-ftVr710jzHUfbVE)](https://www.skylight.io/app/applications/X6AeuWw7d420)
 
-## Postgress
+[![View performance data on Skylight](https://badges.skylight.io/rpm/X6AeuWw7d420.svg?token=xjlaKnGsxC6MepZC9jrriSodEoM-ftVr710jzHUfbVE)](https://www.skylight.io/app/applications/X6AeuWw7d420)
 
-Refer to `wiki/postgres.sh`.
+[![View performance data on Skylight](https://badges.skylight.io/typical/X6AeuWw7d420.svg?token=xjlaKnGsxC6MepZC9jrriSodEoM-ftVr710jzHUfbVE)](https://www.skylight.io/app/applications/X6AeuWw7d420)
+
+[![View performance data on Skylight](https://badges.skylight.io/problem/X6AeuWw7d420.svg?token=xjlaKnGsxC6MepZC9jrriSodEoM-ftVr710jzHUfbVE)](https://www.skylight.io/app/applications/X6AeuWw7d420)
+
+
+### Need help?
+
+Ask maintainer Jan Werkhoven:  
+<a href="mailto:j.werkhoven@interflux.com">j.werkhoven@interflux.com</a> 
+
+---
+
+### Interflux  
+Chemistry + Metallurgy + Electronics  
+<a href="https://www.interflux.com">www.interflux.com</a>  
+<a href="https://lmpa.interflux.com">lmpa.interflux.com</a>
