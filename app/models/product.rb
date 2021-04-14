@@ -30,14 +30,21 @@ class Product < ApplicationRecord
 
   validates :status, inclusion: { in: %w[new popular recommended outdated discontinued offline] }
 
-  after_save :update_public
+  after_save :todo_after_save
 
   private
 
-  # Whenever a product is given the status "offline", set the public boolean to false so it is hidden
-  # from all our public facing websites.
-  def update_public
-    bool = status != 'offline'
-    update_column(:public, bool)
+  # 1. Whenever a product is given the status "offline", set the public boolean to false so it is
+  #    hidden from all our public facing websites.
+  # 2. Avatar image properties are stored on the product so we can avoid 100 N+1 requests when
+  #    serving all products to the frontend.
+  def todo_after_save
+    update_columns(
+      public: status != 'offline',
+      avatar_path: avatar ? avatar.path : nil,
+      avatar_variations: avatar ? avatar.variations : nil,
+      avatar_caption: avatar ? avatar.caption : nil,
+      avatar_alt: avatar ? avatar.alt : nil
+    )
   end
 end
