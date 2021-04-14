@@ -76,7 +76,7 @@ jobs:
       - run: ssh $URL "cd $ROOT; git --git-dir=repo fetch; git --git-dir=repo --work-tree=builds/$BRANCH/$REVISION checkout $REVISION -f"
 
       # Make log directory writable
-      - run: ssh $URL "cd $ROOT; chmod -R g+w ./log/"
+      - run: ssh $URL "cd $ROOT/$BUILD; chmod -R g+w ./log/"
 
       # Set up variables for rbenv to port into Rails
       - run: ssh $URL "cd $ROOT/$BUILD; echo \"GIT_BRANCH=$BRANCH\" >> .rbenv-vars; echo \"GIT_REVISION=$REVISION\" >> .rbenv-vars; echo \"BUILD_TIMESTAMP=$TIMESTAMP\" >> .rbenv-vars"
