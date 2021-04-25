@@ -43,6 +43,7 @@ module V1
       def permitted_filters
         %i[
           alt
+          path
         ]
       end
 

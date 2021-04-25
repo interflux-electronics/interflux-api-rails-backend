@@ -153,17 +153,30 @@ module JsonApiController
     # First we gather all records of the model class.
     resources = model_class.all
 
-    # Then we reduce this collection with the permanent and requested filters.
-    # We could remove all unwanted characters to avoid injection.
+    # Next we reduce this collection with the permanent and requested filters.
+    #
+    # Each filter consist of a key and value pair.
+    # If the value has a valid POSIX prefix.
+    # Because we use Postgres we can use POSIX regexes instead of LIKE and SIMILAR TO.
+    # https://www.postgresql.org/docs/9.6/functions-matching.html#FUNCTIONS-POSIX-TABLE
+    #
+    #       omit prefix for exact match
+    # ~     match regex, case sensitive
+    # ~*    match regex, case insensitive
+    # !~    does not match regex, case sensitive
+    # !~*   does not match regex, case insensitive
+    #
+    # TODO: We could remove all unwanted characters to avoid injection
     # value.gsub!(/[^0-9A-Za-z]/, '')
+    #
     filters&.each do |key, value|
-      # If the query does not contain a "*", then do an exact search.
-      resources = resources.where("#{key}": value) if value.to_s.exclude? '*'
+      prefix = /^!?~\*?/.match(value).to_s
 
-      # If the query contains a "*" then do a fuzzy search.
-      # We use Postrgress match operators to search:
-      # https://www.postgresql.org/docs/9.6/functions-matching.html#FUNCTIONS-POSIX-TABLE
-      resources = resources.where("#{key} ~* ?", value.gsub!('*', '')) if value.to_s.include? '*'
+      if prefix.present?
+        resources = resources.where("#{key} #{prefix} ?", value.gsub!(prefix, ''))
+      else
+        resources = resources.where("#{key}": value)
+      end
     end
 
     # Here we prepare the options we can pass to the serializers.
