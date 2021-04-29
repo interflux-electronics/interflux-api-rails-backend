@@ -170,7 +170,7 @@ module JsonApiController
     # value.gsub!(/[^0-9A-Za-z]/, '')
     #
     filters&.each do |key, value|
-      prefix = /^!?~\*?/.match(value).to_s
+      prefix = /^!?~\*?/.match(value).to_s if value.is_a? String
 
       if prefix.present?
         resources = resources.where("#{key} #{prefix} ?", value.gsub!(prefix, ''))
