@@ -42,6 +42,7 @@ module V1
         %i[
           rank_among_products
           rank_among_uses
+          show_on_product_list
         ]
       end
     end
