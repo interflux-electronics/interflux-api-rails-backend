@@ -7,6 +7,15 @@ remote/deploy.sh
 
 # PUMA
 
+# After server reboot
+
+ssh bot@server.interflux.com -i ~/.ssh/bot@server.interflux.com
+cd /var/www/api.interflux.com/builds/production/latest
+bin/puma -e production
+# which should do the same as:
+# bin/puma --environment production
+# bin/puma --config config/puma/production.rb
+
 # Control Puma
 
 bin/pumactl -F config/puma/production.rb -T '12345' start
@@ -41,9 +50,13 @@ bin/rails db:drop
 
 # ---------
 
-# HEALTH CHECK
+# SANITY CHECKS
 
+# From local
 curl https://api.interflux.com/sanity-check -H "Content-Type: application/vnd.api+json"
+
+# On server
+curl --unix-socket /var/www/api.interflux.com/sockets/puma.sock https://api.interflux.com/sanity-check -H "Content-Type: application/vnd.api+json"
 
 # ---------
 

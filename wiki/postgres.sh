@@ -19,7 +19,11 @@ psql --list
 
 # DEBIAN
 
-# TODO
+# First always switch to the postgres user:
+sudo -i -u postgres
+
+# Then you can run commands like:
+psql --list
 
 # ---------
 
