@@ -19,7 +19,9 @@ module V1
                  :avatar_path,
                  :avatar_variations,
                  :avatar_caption,
-                 :avatar_alt
+                 :avatar_alt,
+                 :on_front_page,
+                 :front_page_rank
 
       belongs_to :image
       belongs_to :product_family

@@ -72,6 +72,8 @@ module V1
           complies_with_ipcjstd004_b
           complies_with_ipcjstd005
           test_results
+          on_front_page
+          front_page_rank
         ]
       end
 
