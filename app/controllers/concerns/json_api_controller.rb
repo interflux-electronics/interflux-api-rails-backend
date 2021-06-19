@@ -497,13 +497,7 @@ module JsonApiController
   # end
   #
   def allow_destroy
-    resource = model_class.find_by id: params[:id]
-
-    return record_not_found if resource.nil?
-
-    # TODO: first destroy everything that's uniquely related to this resource?
-
-    resource.destroy
+    record.destroy
 
     head 204
   end
