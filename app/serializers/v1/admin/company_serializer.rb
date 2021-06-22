@@ -15,7 +15,9 @@ module V1
                  :longitude,
                  :fax,
                  :public,
-                 :order
+                 :order,
+                 :description,
+                 :notes
 
       belongs_to :country
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_16_110318) do
+ActiveRecord::Schema.define(version: 2021_06_22_110138) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 2021_06_16_110318) do
     t.string "email_support"
     t.string "email_orders"
     t.string "email_accounting"
+    t.text "description"
+    t.text "notes"
     t.index ["business_name"], name: "index_companies_on_business_name", unique: true
     t.index ["country_id"], name: "index_companies_on_country_id"
     t.index ["slug"], name: "index_companies_on_slug", unique: true

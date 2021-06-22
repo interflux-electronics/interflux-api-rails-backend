@@ -64,6 +64,8 @@ module V1
           slug
           website
           order
+          description
+          notes
         ]
       end
 
