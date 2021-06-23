@@ -10,6 +10,10 @@ module V1
 
       has_many :companies, if: requested?('companies')
       has_many :company_members, if: requested?('company_members')
+
+      attribute :has_user do |object|
+        object.user.present?
+      end
     end
   end
 end
