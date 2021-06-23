@@ -10,7 +10,7 @@ module V1
       end
 
       def create
-        forbidden
+        allow_create
       end
 
       def update
@@ -18,7 +18,7 @@ module V1
       end
 
       def destroy
-        forbidden
+        allow_destroy
       end
 
       private
