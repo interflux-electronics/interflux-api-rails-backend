@@ -28,7 +28,7 @@ module V1
       end
 
       def serializer_class
-        Public::V1::LeadSerializer
+        V1::Public::LeadSerializer
       end
 
       def creatable_attributes
@@ -53,9 +53,9 @@ module V1
         ]
       end
 
-      def after_create(lead)
-        PostLeadToSlackJob.perform_later lead
-      end
+      # def after_create(lead)
+      #   PostLeadToSlackJob.perform_later lead
+      # end
     end
   end
 end

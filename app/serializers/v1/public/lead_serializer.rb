@@ -13,7 +13,7 @@ module V1
                  :ip_city
 
       belongs_to :country
-      belongs_to :ip_country, record_type: :country
+      belongs_to :ip_country, serializer: :country
     end
   end
 end

@@ -367,7 +367,7 @@ module JsonApiController
   def allow_create
     resource = model_class.new(attributes_and_relationships)
     if resource.save!
-      after_create
+      after_create resource
       json = serializer_class.new(resource).serializable_hash.to_json
       render status: 201, json: json
     else
@@ -439,6 +439,7 @@ module JsonApiController
 
     # When no relationships are marked as updatable
     return {} if creatable_relationships.empty?
+
 
     # First we permit the all creatable relationships.
     # { product: { data: [:id, :type] }, product_family: { data: [:id, :type] } }
@@ -513,7 +514,7 @@ module JsonApiController
   #   PostLeadToSlackJob.perform_later lead
   # end
   #
-  def after_create
+  def after_create(resource)
     nil
   end
 
