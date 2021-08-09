@@ -40,6 +40,8 @@ module V1
           public_title
           public_email
           public_phone
+          rank_among_companies
+          rank_among_members
         ]
       end
 

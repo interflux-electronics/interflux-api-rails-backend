@@ -1,7 +1,12 @@
 module V1
   module Public
     class CompanyMemberSerializer < ApplicationSerializer
-      attribute :public
+      attribute :public,
+                :public_title,
+                :public_email,
+                :public_phone,
+                :rank_among_companies,
+                :rank_among_members
 
       attribute :title, if: proc { |record, _params|
         record.public_title

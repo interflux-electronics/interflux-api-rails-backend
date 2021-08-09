@@ -7,7 +7,9 @@ module V1
                  :public,
                  :public_title,
                  :public_email,
-                 :public_phone
+                 :public_phone,
+                 :rank_among_companies,
+                 :rank_among_members
 
       belongs_to :company
       belongs_to :person
