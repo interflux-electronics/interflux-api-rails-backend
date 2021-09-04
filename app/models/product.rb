@@ -28,6 +28,7 @@ class Product < ApplicationRecord
   has_many :product_containers
   has_many :containers, through: :product_containers, source: :container
 
+  validates :name, :slug, presence: true
   validates :status, inclusion: { in: %w[new popular recommended outdated discontinued offline] }
 
   after_save :todo_after_save
@@ -39,12 +40,53 @@ class Product < ApplicationRecord
   # 2. Avatar image properties are stored on the product so we can avoid 100 N+1 requests when
   #    serving all products to the frontend.
   def todo_after_save
+    old_slug = slug
+    new_slug = name.gsub(/\s/, '-').gsub(/[^a-zA-Z0-9-]/, '')
+
     update_columns(
+      slug: new_slug,
       public: status != 'offline',
       avatar_path: avatar ? avatar.path : nil,
       avatar_variations: avatar ? avatar.variations : nil,
       avatar_caption: avatar ? avatar.caption : nil,
       avatar_alt: avatar ? avatar.alt : nil
     )
+
+    # All tables with product_id in them
+    # product_complementary_products
+    # product_complements
+    # product_documents
+    # product_features
+    # product_images
+    # product_qualities
+    # product_related_articles
+    # product_substitutes
+    # product_uses
+    # product_videos
+
+    return if new_slug == old_slug
+
+    ProductDocument
+      .where(product_id: old_slug)
+      .find_each { |x| x.update(product_id: new_slug) }
+
+    ProductImage
+      .where(product_id: old_slug)
+      .find_each { |x| x.update(product_id: new_slug) }
+
+    ProductQuality
+      .where(product_id: old_slug)
+      .find_each { |x| x.update(product_id: new_slug) }
+
+    ProductUse
+      .where(product_id: old_slug)
+      .find_each { |x| x.update(product_id: new_slug) }
+
+    # TODO: drop ProductComplementaryProduct
+    # TODO: drop ProductComplement
+    # TODO: drop ProductSubstitute
+    # TODO: drop ProductRelatedArticle ?
+    # TODO: drop ProductFeature ?
+    # TODO: drop ProductVideo ?
   end
 end
