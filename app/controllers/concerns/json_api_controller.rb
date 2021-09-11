@@ -172,11 +172,11 @@ module JsonApiController
     filters&.each do |key, value|
       prefix = /^!?~\*?/.match(value).to_s if value.is_a? String
 
-      if prefix.present?
-        resources = resources.where("#{key} #{prefix} ?", value.gsub!(prefix, ''))
-      else
-        resources = resources.where("#{key}": value)
-      end
+      resources = if prefix.present?
+                    resources.where("#{key} #{prefix} ?", value.gsub!(prefix, ''))
+                  else
+                    resources.where("#{key}": value)
+                  end
     end
 
     # Here we prepare the options we can pass to the serializers.
@@ -431,6 +431,9 @@ module JsonApiController
   #     "type": "products"
   #   }
   # }
+  #
+  # TODO: Was able to create product whereas creatable_relationships did not include it...
+  #
   def strong_relationships
     relationships = params[:data][:relationships]
 
@@ -439,7 +442,6 @@ module JsonApiController
 
     # When no relationships are marked as updatable
     return {} if creatable_relationships.empty?
-
 
     # First we permit the all creatable relationships.
     # { product: { data: [:id, :type] }, product_family: { data: [:id, :type] } }
@@ -451,7 +453,7 @@ module JsonApiController
     # { "product_id": "IF-2005M", "family_id": "soldering-fluxes" }
     # Gotcha: the data payload will be nil when removing a relationship
     hash = {}
-    relationships.keys.each { |x| hash["#{x}_id"] = relationships[x][:data] ? relationships[x][:data][:id] : nil }
+    relationships.each_key { |x| hash["#{x}_id"] = relationships[x][:data] ? relationships[x][:data][:id] : nil }
     hash
   end
 
@@ -514,7 +516,7 @@ module JsonApiController
   #   PostLeadToSlackJob.perform_later lead
   # end
   #
-  def after_create(resource)
+  def after_create(_resource)
     nil
   end
 
