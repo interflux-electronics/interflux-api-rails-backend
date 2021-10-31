@@ -34,8 +34,12 @@ module V1
       def permitted_includes
         %i[
           person
+          image
+          video
           webinar_invitees
           webinar_invitees.person
+          webinar_attendees
+          webinar_attendees.person
         ]
       end
 
@@ -54,6 +58,8 @@ module V1
       def creatable_relationships
         %i[
           person
+          image
+          video
         ]
       end
     end

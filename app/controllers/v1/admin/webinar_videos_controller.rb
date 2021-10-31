@@ -1,6 +1,6 @@
 module V1
-  module Public
-    class WebinarsController < ApplicationController
+  module Admin
+    class WebinarVideosController < ApplicationController
       def index
         allow_index
       end
@@ -24,24 +24,17 @@ module V1
       private
 
       def model_class
-        Webinar
+        WebinarVideo
       end
 
       def serializer_class
-        V1::Public::WebinarSerializer
+        V1::Admin::WebinarVideoSerializer
       end
 
-      def permanent_filters
-        {
-          public: true
-        }
-      end
-
-      def permitted_includes
+      def creatable_relationships
         %i[
-          image
+          webinar
           video
-          person
         ]
       end
     end

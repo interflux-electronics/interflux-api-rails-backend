@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_08_145737) do
+ActiveRecord::Schema.define(version: 2021_10_28_092731) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -444,9 +444,30 @@ ActiveRecord::Schema.define(version: 2021_08_08_145737) do
     t.index ["tag_long"], name: "index_videos_on_tag_long", unique: true
   end
 
+  create_table "webinar_attendees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "webinar_id"
+    t.uuid "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "webinar_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "webinar_id"
+    t.uuid "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "webinar_invitees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "webinar_id"
     t.uuid "person_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "webinar_videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "webinar_id"
+    t.uuid "video_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -462,6 +483,8 @@ ActiveRecord::Schema.define(version: 2021_08_08_145737) do
     t.uuid "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_id"
+    t.uuid "video_id"
   end
 
 end

@@ -8,6 +8,10 @@ module V1
                  :start_time,
                  :duration,
                  :public
+
+      belongs_to :image
+      belongs_to :video
+      belongs_to :person
     end
   end
 end

@@ -9,9 +9,12 @@ module V1
                  :duration,
                  :public
 
+      belongs_to :image
+      belongs_to :video
       belongs_to :person
 
       has_many :webinar_invitees, if: requested?('webinar_invitees')
+      has_many :webinar_attendees, if: requested?('webinar_invitees')
     end
   end
 end

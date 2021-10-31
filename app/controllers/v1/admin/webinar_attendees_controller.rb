@@ -1,6 +1,6 @@
 module V1
-  module Public
-    class WebinarsController < ApplicationController
+  module Admin
+    class WebinarAttendeesController < ApplicationController
       def index
         allow_index
       end
@@ -9,14 +9,17 @@ module V1
         allow_show
       end
 
+      # Can only be created on Public by owner.
       def create
         forbidden
       end
 
+      # Can only be updated on Public by owner.
       def update
         forbidden
       end
 
+      # Can only be deleted on Public by owner.
       def destroy
         forbidden
       end
@@ -24,25 +27,11 @@ module V1
       private
 
       def model_class
-        Webinar
+        WebinarAttendee
       end
 
       def serializer_class
-        V1::Public::WebinarSerializer
-      end
-
-      def permanent_filters
-        {
-          public: true
-        }
-      end
-
-      def permitted_includes
-        %i[
-          image
-          video
-          person
-        ]
+        V1::Admin::WebinarAttendeeSerializer
       end
     end
   end

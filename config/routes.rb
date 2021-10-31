@@ -29,6 +29,7 @@ Rails.application.routes.draw do
       resources :products
       resources :qualities
       resources :uses
+      resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
     end
 
@@ -67,8 +68,12 @@ Rails.application.routes.draw do
       resources :use_images, path: '/use-images'
       resources :users
       resources :uses
-      resources :webinars
+      resources :videos
+      resources :webinar_attendees, path: '/webinar-attendees'
+      resources :webinar_images, path: '/webinar-images'
       resources :webinar_invitees, path: '/webinar-invitees'
+      resources :webinar_videos, path: '/webinar-videos'
+      resources :webinars
 
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'
