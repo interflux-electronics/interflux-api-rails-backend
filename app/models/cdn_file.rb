@@ -1,30 +1,32 @@
 class CdnFile < ApplicationRecord
   belongs_to :image, optional: true
+  belongs_to :video, optional: true
   belongs_to :document, optional: true
 
   validates :path, presence: true, uniqueness: true
 
   scope :fonts, -> { where 'path LIKE :prefix', prefix: 'fonts/%' }
   scope :images, -> { where 'path LIKE :prefix', prefix: 'images/%' }
+  scope :videos, -> { where 'path LIKE :prefix', prefix: 'videos/%' }
+  scope :webinars, -> { where 'path LIKE :prefix', prefix: 'videos/webinars%' }
   scope :documents, -> { where 'path LIKE :prefix', prefix: 'documents/%' }
 
-  after_create
-
-  # To make full name searches possible we update the full name column after every save
-  after_create :create_image_or_document
+  after_create :create_owner
   before_destroy :destroy_image_or_document
 
   private
 
-  def create_image_or_document
-    puts 'create_image_or_document'
+  def create_owner
+    puts 'create_owner'
     create_image if image?
+    create_video if video?
     create_document if document?
   end
 
-  def destroy_image_or_document
-    puts 'destroy_image_or_document'
+  def destroy_owner
+    puts 'destroy_owner'
     destroy_image if image?
+    destroy_video if video?
     destroy_document if document?
   end
 
@@ -55,6 +57,8 @@ class CdnFile < ApplicationRecord
     puts 'create_image'
 
     cdn_files = CdnFile.all
+
+    # TODO: filter out @original?
 
     subset = cdn_files.filter { |x| x.path.start_with?("#{base_image_path}@") } if path.include? '@'
     subset = cdn_files.filter { |x| x.path.start_with?("#{base_image_path}.") } if path.exclude? '@'
@@ -109,6 +113,91 @@ class CdnFile < ApplicationRecord
     if v.blank?
       image.destroy
       puts 'destroyed image'
+    end
+  end
+
+  # VIDEOS
+
+  def video?
+    [
+      'videos/webinars/'
+    ].any? { |p| path.start_with?(p) }
+  end
+
+  # Find the shared path for images. The below example should result in only 2 image records
+  # being created, the first one with 2 variations, the latter with 4 variations.
+  # logo.svg
+  # logo.png
+  # photo@800x800.jpg
+  # photo@800x800.webp
+  # photo@1200x1200.jpg
+  # photo@1200x1200.webp
+  def base_video_path
+    path.include?('@') ? path.split('@').first : path.split('.').first
+  end
+
+  def create_video
+    puts 'create_video'
+
+    cdn_files = CdnFile.all
+
+    subset = cdn_files.filter { |x| x.path.start_with?("#{base_video_path}@") } if path.include? '@'
+    subset = cdn_files.filter { |x| x.path.start_with?("#{base_video_path}.") } if path.exclude? '@'
+
+    variations = subset.map { |x| "@#{x.path.split('@').last}" }.sort_by { |x| x.split('x').first.to_i }.join(',') if path.include? '@'
+    variations = subset.map { |x| ".#{x.path.split('.').last}" }.join(',') if path.exclude? '@'
+
+    title = base_video_path.split('/').last.gsub('-', ' ')
+
+    props = OpenStruct.new(
+      path: base_video_path,
+      title_admin: title,
+      title_public: title,
+      variations: variations,
+      poster_url: nil
+    )
+
+    video = Video.find_by(path: base_video_path)
+
+    if video.present?
+      video.update!(props.to_h)
+      puts 'UPDATED video record'
+    else
+      video = Video.create!(props.to_h)
+      puts 'CREATED video record'
+    end
+
+    subset.each do |cdn_file|
+      cdn_file.video_id = video.id
+      cdn_file.save!
+    end
+  end
+
+  def destroy_video
+    puts 'destroy_video'
+
+    extension = path.include?('@') ? "@#{path.split('@').last}" : ".#{path.split('.').last}"
+    video = Video.find(base_video_path)
+
+    puts "shared path: #{base_video_path}"
+    puts "extension: #{extension}"
+
+    # Remove this one extension from the variations
+    v = video.variations.split(',').reject { |x| x == extension }.join(',')
+
+    puts "variations before: #{video.variations}"
+    puts "variations after: #{v}"
+
+    # If at least one variation remains, then keep the record, remove extension from variations
+    if v.present?
+      video.update(variations: v)
+      puts 'updated video'
+    end
+
+    # If no variations are left, destroy the record
+    if v.blank?
+      video.destroy
+      puts 'destroyed video'
     end
   end
 

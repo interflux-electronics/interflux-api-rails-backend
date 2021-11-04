@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_28_092731) do
+ActiveRecord::Schema.define(version: 2021_11_04_115340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2021_10_28_092731) do
     t.datetime "updated_at", null: false
     t.string "image_id"
     t.string "document_id"
+    t.string "video_id"
   end
 
   create_table "companies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -431,17 +432,13 @@ ActiveRecord::Schema.define(version: 2021_10_28_092731) do
     t.integer "rank"
   end
 
-  create_table "videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "cdn_path"
-    t.string "sizes"
-    t.string "formats"
-    t.string "tag_long"
-    t.string "tag_short"
+  create_table "videos", primary_key: "path", id: :string, force: :cascade do |t|
+    t.string "variations"
+    t.string "title_public"
+    t.string "title_admin"
     t.string "poster_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cdn_path"], name: "index_videos_on_cdn_path", unique: true
-    t.index ["tag_long"], name: "index_videos_on_tag_long", unique: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "webinar_attendees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
