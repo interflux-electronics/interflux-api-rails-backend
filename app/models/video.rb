@@ -1,4 +1,9 @@
 class Video < ApplicationRecord
-  has_many :webinar_videos, dependent: :destroy
-  has_many :webinars, through: :webinar_videos, source: :webinar
+  belongs_to :webinar, optional: true
+
+  has_many :cdn_files
+  alias_attribute :files, :cdn_files
+
+  validates :title_admin, presence: true, uniqueness: true
+  validates :title_public, presence: true, uniqueness: true
 end

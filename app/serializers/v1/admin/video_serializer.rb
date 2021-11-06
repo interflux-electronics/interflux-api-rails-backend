@@ -1,17 +1,13 @@
 module V1
   module Admin
     class VideoSerializer < ApplicationSerializer
-      # attributes :slug,
-      #            :name,
-      #            :public
+      attributes :path,
+                 :variations,
+                 :title_public,
+                 :title_admin,
+                 :poster_url
 
-      # belongs_to :thing
-      # belongs_to :main_group, record_type: :product_group, serializer: :product_group
-      # belongs_to :sub_group, record_type: :product_group, serializer: :product_group
-
-      # has_many :things
-      # has_many :related_products, record_type: :product, serializer: :related_products
-      # has_many :related_articles, record_type: :article, serializer: :related_articles
+      has_many :cdn_files, if: requested?('cdn_files')
     end
   end
 end

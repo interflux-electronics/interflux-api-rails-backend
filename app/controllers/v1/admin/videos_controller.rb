@@ -10,7 +10,7 @@ module V1
       end
 
       def create
-        forbidden
+        allow_create
       end
 
       def update
@@ -29,6 +29,32 @@ module V1
 
       def serializer_class
         V1::Admin::VideoSerializer
+      end
+
+      def permitted_includes
+        %i[
+          cdn_files
+          webinar
+        ]
+      end
+
+      def permitted_filters
+        %i[
+          title_admin
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          title_admin
+          title_public
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          webinar
+        ]
       end
     end
   end

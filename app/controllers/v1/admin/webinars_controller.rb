@@ -60,6 +60,13 @@ module V1
           person
           image
           video
+          document
+        ]
+      end
+
+      def permitted_filters
+        %i[
+          title
         ]
       end
     end
