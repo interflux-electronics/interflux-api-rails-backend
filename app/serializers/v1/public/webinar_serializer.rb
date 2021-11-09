@@ -12,6 +12,7 @@ module V1
       belongs_to :image
       belongs_to :video
       belongs_to :person
+      belongs_to :document
     end
   end
 end

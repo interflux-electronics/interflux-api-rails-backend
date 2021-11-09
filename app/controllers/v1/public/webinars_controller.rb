@@ -42,6 +42,7 @@ module V1
           image
           video
           person
+          document
         ]
       end
     end
