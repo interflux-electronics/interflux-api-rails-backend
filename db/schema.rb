@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_05_145822) do
+ActiveRecord::Schema.define(version: 2021_12_18_113657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -346,6 +346,8 @@ ActiveRecord::Schema.define(version: 2021_11_05_145822) do
     t.integer "rank_among_products"
     t.integer "rank_among_uses"
     t.boolean "show_on_product_list"
+    t.string "image_id"
+    t.boolean "show_alternative_avatar", default: false
   end
 
   create_table "product_videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -419,6 +421,8 @@ ActiveRecord::Schema.define(version: 2021_11_05_145822) do
     t.uuid "person_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "show_alternative_avatar", default: false
+    t.string "image_id"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

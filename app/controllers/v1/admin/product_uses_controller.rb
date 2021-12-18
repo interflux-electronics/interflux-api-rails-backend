@@ -35,6 +35,7 @@ module V1
         %i[
           product
           use
+          image
         ]
       end
 
@@ -43,6 +44,7 @@ module V1
           rank_among_products
           rank_among_uses
           show_on_product_list
+          show_alternative_avatar
         ]
       end
     end
