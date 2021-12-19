@@ -12,7 +12,7 @@ class CdnFile < ApplicationRecord
   scope :documents, -> { where 'path LIKE :prefix', prefix: 'documents/%' }
 
   after_create :create_owner
-  before_destroy :destroy_image_or_document
+  before_destroy :destroy_owner
 
   private
 
