@@ -47,3 +47,6 @@ kill -9 [pid]
 # TCP/IP connections on port 5432?
 
 rm /usr/local/var/postgres/postmaster.pid
+
+# In case you've upgraded Postgres, first migrate the database:
+brew postgresql-upgrade-database
