@@ -30,6 +30,12 @@ module V1
       def serializer_class
         V1::Public::CountrySerializer
       end
+
+      def permitted_filters
+        %i[
+          name_english
+        ]
+      end
     end
   end
 end
