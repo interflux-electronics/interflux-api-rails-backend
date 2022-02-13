@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_18_113657) do
+ActiveRecord::Schema.define(version: 2022_02_12_115706) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -88,6 +88,9 @@ ActiveRecord::Schema.define(version: 2021_12_18_113657) do
     t.string "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "rank_among_companies"
+    t.integer "rank_among_countries"
+    t.boolean "company_is_recommended", default: false
   end
 
   create_table "company_members", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -144,8 +147,8 @@ ActiveRecord::Schema.define(version: 2021_12_18_113657) do
   end
 
   create_table "country_languages", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "country_id"
-    t.uuid "language_id"
+    t.string "country_id"
+    t.string "language_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["country_id"], name: "index_country_languages_on_country_id"

@@ -27,8 +27,8 @@ after :countries, :languages do
         puts language.to_json
         puts '//////'
       else
-        country_record = Country.find_by(two_letter_code: country.alpha_2_code)
-        language_record = Language.find_by(two_letter_code: language.iso639_1)
+        country_record = Country.find(country.alpha_2_code)
+        language_record = Language.find(language.iso639_1)
 
         byebug if country_record.nil?
         byebug if language_record.nil?

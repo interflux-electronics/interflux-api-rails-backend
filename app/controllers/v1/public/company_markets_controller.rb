@@ -1,6 +1,6 @@
 module V1
-  module Admin
-    class CountryLanguagesController < V1::AdminController
+  module Public
+    class CompanyMarketsController < ApplicationController
       def index
         allow_index
       end
@@ -24,11 +24,11 @@ module V1
       private
 
       def model_class
-        CountryLanguage
+        CompanyMarket
       end
 
       def serializer_class
-        V1::Admin::CountryLanguageSerializer
+        V1::Public::CompanyMarketSerializer
       end
     end
   end

@@ -4,7 +4,6 @@ module V1
       attributes :id,
                  :name_english,
                  :name_native,
-                 :two_letter_code,
                  :three_letter_code,
                  :numeric_code,
                  :region,
@@ -19,6 +18,9 @@ module V1
                  :calling_codes,
                  :created_at,
                  :updated_at
+
+      has_many :languages, if: requested?('languages')
+      has_many :country_languages, if: requested?('country_languages')
     end
   end
 end

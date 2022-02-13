@@ -36,6 +36,13 @@ module V1
           name_english
         ]
       end
+
+      def permitted_includes
+        %i[
+          country_languages
+          country_languages.language
+        ]
+      end
     end
   end
 end

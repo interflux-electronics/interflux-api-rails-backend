@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  # Make the API future proof by versioning v1
+  # Namespacing v1 is to future proof our API.
+  # For example v2 could live on a different server and runs on Elixir instead of Ruby.
   namespace :v1 do
     # Public endpoints
     # These endpoints are meant for the public. No sensitive information is ever
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
       resources :article_categories, path: '/article-categories'
       resources :articles
       resources :companies
+      resources :company_markets, path: '/company-markets'
       resources :countries
       resources :document_categories, path: '/document-categories'
       resources :documents

@@ -1,5 +1,5 @@
 module V1
-  module Admin
+  module Public
     class CompanyMarketSerializer < ApplicationSerializer
       attributes :rank_among_companies,
                  :rank_among_countries,

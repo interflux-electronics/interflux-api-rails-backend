@@ -31,6 +31,14 @@ module V1
         V1::Admin::CompanyMarketSerializer
       end
 
+      def creatable_attributes
+        %i[
+          rank_among_companies
+          rank_among_countries
+          company_is_recommended
+        ]
+      end
+
       def creatable_relationships
         %i[
           company
