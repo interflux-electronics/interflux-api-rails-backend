@@ -26,7 +26,7 @@ echo "----------"
 
 (
   set -x
-  scp -i ~/.ssh/$user@$server -r $user@$server:/var/www/api.interflux.com/db/production-$timestamp/ ./db/backups/
+  scp -i ~/.ssh/$user@$server -r $user@$server:/var/www/api.interflux.com/db/production-$timestamp/ ./db/backups
   bin/rails db:data:load_dir dir=backups/production-$timestamp
 )
 
