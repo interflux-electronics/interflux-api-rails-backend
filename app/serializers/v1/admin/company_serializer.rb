@@ -17,7 +17,8 @@ module V1
                  :public,
                  :order,
                  :description,
-                 :notes
+                 :notes,
+                 :is_headquarter
 
       belongs_to :country
 

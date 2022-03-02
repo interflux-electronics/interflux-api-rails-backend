@@ -66,6 +66,7 @@ module V1
           order
           description
           notes
+          is_headquarter
         ]
       end
 

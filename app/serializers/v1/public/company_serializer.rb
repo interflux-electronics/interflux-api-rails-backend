@@ -16,7 +16,8 @@ module V1
                  :fax,
                  :public,
                  :order,
-                 :description
+                 :description,
+                 :is_headquarter
 
       belongs_to :country
 
