@@ -4,18 +4,24 @@
 brew update
 brew install rbenv ruby-build
 
+# As long brew exists in the PATH, then rbenv will exist as well and all next
+# steps are not necessary?
+
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+# echo "$PATH"
+
 # Someone suggest to then add `rbenv` to path, but no need...
 
-set --universal fish_user_paths $fish_user_paths ~/.rbenv/shims
+# set --universal fish_user_paths $fish_user_paths ~/.rbenv/shims
 
 # Instead:
 
-rbenv init
+# rbenv init
 
 # Suggest to add the following to Fish config:
 
-atom ~/.config/fish/config.fish
-status --is-interactive; and source (rbenv init -|psub)
+# atom ~/.config/fish/config.fish
+# status --is-interactive; and source (rbenv init -|psub)
 
 #  Install and start Postgres
 
@@ -27,10 +33,17 @@ brew services start postgresql
 git clone git@github.com:janwerkhoven/api.interflux.com.git
 cd api.interflux.com
 
-# Install Ruby and all gems
+# Install Ruby
 
 rbenv install -s
 rbenv rehash
+
+# Before you can install gems you may need to claim ownership over these directories:
+# TODO: find bettter way
+sudo chown -R jw /Library/Ruby/Gems/
+sudo chown -R jw /usr/local/bin/
+
+# Install gems
 gem install bundler
 gem install rails
 bin/bundle install
