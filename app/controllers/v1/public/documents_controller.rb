@@ -37,6 +37,12 @@ module V1
         ]
       end
 
+      def permitted_filters
+        %i[
+          name
+        ]
+      end
+
       def permanent_filters
         {
           public: true
