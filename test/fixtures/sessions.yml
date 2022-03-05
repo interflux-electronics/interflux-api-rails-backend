@@ -1,0 +1,11 @@
+# session_fixture_1:
+#   name: Some Name
+#   slug: some-name
+#   public: true
+#   group: other_thing_fixture_1
+# 
+# session_fixture_2:
+#   name: Some Name
+#   slug: some-name
+#   public: true
+#   group: other_thing_fixture_1

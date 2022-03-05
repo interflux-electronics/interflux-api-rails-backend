@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_02_080535) do
+ActiveRecord::Schema.define(version: 2022_03_05_153852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -400,6 +400,23 @@ ActiveRecord::Schema.define(version: 2022_03_02_080535) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "image_id"
+  end
+
+  create_table "sessions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "href"
+    t.string "referrer"
+    t.string "ip"
+    t.string "ip_country_id"
+    t.string "ip_timezone"
+    t.string "ip_isp"
+    t.string "browser_app"
+    t.string "browser_width"
+    t.string "browser_height"
+    t.string "browser_languages"
+    t.uuid "user_id"
+    t.boolean "is_interflux_member", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

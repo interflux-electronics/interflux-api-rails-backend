@@ -30,6 +30,7 @@ Rails.application.routes.draw do
       resources :product_uses, path: '/product-uses'
       resources :products
       resources :qualities
+      resources :sessions
       resources :uses
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
@@ -67,6 +68,7 @@ Rails.application.routes.draw do
       resources :product_uses, path: '/product-uses'
       resources :products, path: '/products'
       resources :qualities
+      resources :sessions
       resources :use_images, path: '/use-images'
       resources :users
       resources :uses
