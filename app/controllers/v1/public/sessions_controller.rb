@@ -13,9 +13,7 @@ module V1
       end
 
       def create
-        # ip = '78.20.198.66'
         ip = request.remote_ip
-        # ip = request.env['X-Forwarded-For']
 
         return no_ip_error if ip == '127.0.0.1'
 
