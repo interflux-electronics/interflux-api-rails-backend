@@ -5,6 +5,7 @@ module V1
                 :public_title,
                 :public_email,
                 :public_phone,
+                :public_landline,
                 :rank_among_companies,
                 :rank_among_members
 
@@ -18,6 +19,10 @@ module V1
 
       attribute :phone, if: proc { |record, _params|
         record.public_phone
+      }
+
+      attribute :landline, if: proc { |record, _params|
+        record.public_landline
       }
 
       belongs_to :company

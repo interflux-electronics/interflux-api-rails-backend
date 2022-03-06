@@ -4,10 +4,12 @@ module V1
       attributes :title,
                  :email,
                  :phone,
+                 :landline,
                  :public,
                  :public_title,
                  :public_email,
                  :public_phone,
+                 :public_landline,
                  :rank_among_companies,
                  :rank_among_members
 

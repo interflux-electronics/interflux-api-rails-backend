@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_05_153852) do
+ActiveRecord::Schema.define(version: 2022_03_06_102242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -108,6 +108,8 @@ ActiveRecord::Schema.define(version: 2022_03_05_153852) do
     t.boolean "public_phone", default: false
     t.integer "rank_among_companies"
     t.integer "rank_among_members"
+    t.string "landline"
+    t.boolean "public_landline", default: false
     t.index ["company_id"], name: "index_company_members_on_company_id"
     t.index ["person_id"], name: "index_company_members_on_person_id"
   end
