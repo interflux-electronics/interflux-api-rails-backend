@@ -1,3 +1,4 @@
+---
 - name: Certificates
   slug: certificates
   gist: Quality standards Interflux has been living upto for decades.
@@ -28,3 +29,13 @@
   gist: Health and safety regulation compliance documents.
   icon: file-check
   order: 6
+- name: Webinars
+  slug: webinars
+  gist: The slide shows of Interflux webinars.
+  icon: file-check
+  order: 7
+- name: Presentations
+  slug: presentations
+  gist: The slide shows of presentations given by Interflux.
+  icon: file-check
+  order: 8
