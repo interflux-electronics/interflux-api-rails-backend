@@ -1,7 +1,40 @@
+# ---------
 
-# DEPLOYING TO PRODUCTION
+# DATABASE
 
-remote/deploy.sh
+# Back up the production database
+
+remote/backup.sh
+
+# Restore a production database
+
+remote/restore-backup.sh "production-2022-03-09-013916-UTC"
+
+# Seed production database
+
+export RAILS_ENV=production
+bin/rails db:seed
+bin/rails db:seed:products
+
+# Dump and download database
+
+env RAILS_ENV=production rake db:data:dump
+jw@server-singapore.interflux.com:/var/www/api.interflux.com/builds/feature/authentication/cd977ad/db/data.yml .
+
+# Drop production database
+bin/rails db:data:dump
+bin/pumactl -F config/puma/production.rb -T '12345' stop
+export RAILS_ENV=production;
+export DISABLE_DATABASE_ENVIRONMENT_CHECK=1;
+bin/rails db:drop
+
+# ---------
+
+# CDN
+
+# Sync up CdnFile in database with the actual files in the CDN
+
+bin/rails cdn:sync
 
 # ---------
 
@@ -25,28 +58,6 @@ bin/pumactl -F config/puma/production.rb -T '12345' phased-restart
 # Access production console
 
 bin/rails console production
-
-# ---------
-
-# DATABASE
-
-# Seed production database
-
-export RAILS_ENV=production
-bin/rails db:seed
-bin/rails db:seed:products
-
-# Dump and download database
-
-env RAILS_ENV=production rake db:data:dump
-jw@server-singapore.interflux.com:/var/www/api.interflux.com/builds/feature/authentication/cd977ad/db/data.yml .
-
-# Drop production database
-bin/rails db:data:dump
-bin/pumactl -F config/puma/production.rb -T '12345' stop
-export RAILS_ENV=production;
-export DISABLE_DATABASE_ENVIRONMENT_CHECK=1;
-bin/rails db:drop
 
 # ---------
 
