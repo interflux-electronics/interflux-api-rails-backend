@@ -5,7 +5,7 @@ set -o pipefail
 
 user=jw
 server=server.interflux.com
-script=sync-cdn.sh
+script=report-cdn.sh
 
 echo "----------"
 echo "Reporting difference between CDN and database"
