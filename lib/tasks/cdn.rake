@@ -5,8 +5,8 @@ namespace :cdn do
     puts 'comparing CDN to database...'
     db = CdnFile.all.map(&:path)
     cdn = `s3cmd ls s3://cdn-interflux/ --recursive`.scan(%r{s3://cdn-interflux/(.*)\n}).flatten
-    to_add = db.filter { |x| !cdn.include? x }
-    to_remove = cdn.filter { |x| !db.include? x }
+    to_add = cdn.filter { |x| !db.include? x }
+    to_remove = db.filter { |x| !cdn.include? x }
     puts '------'
     puts 'To add to database:'
     if to_add.empty?
@@ -59,8 +59,8 @@ namespace :cdn do
     puts 'comparing CDN to database...'
     db = CdnFile.all.map(&:path)
     cdn = `s3cmd ls s3://cdn-interflux/ --recursive`.scan(%r{s3://cdn-interflux/(.*)\n}).flatten
-    to_add = db.filter { |x| !cdn.include? x }
-    to_remove = cdn.filter { |x| !db.include? x }
+    to_add = cdn.filter { |x| !db.include? x }
+    to_remove = db.filter { |x| !cdn.include? x }
     puts '------'
     puts 'To add to database:'
     if to_add.empty?
