@@ -12,7 +12,7 @@ namespace :cdn do
     puts '------'
     puts 'to add to database:'
     if to_add.length > 0
-      to_add.each do |path|
+      to_add.sort.each do |path|
         puts "ADD #{path}"
       end
     else
@@ -21,14 +21,13 @@ namespace :cdn do
     puts '------'
     puts 'to remove from database:'
     if to_remove.length > 0
-      to_remove.each do |path|
+      to_remove.sort.each do |path|
         puts "REMOVE #{path}"
       end
     else
       puts 'nothing'
     end
     puts '------'
-    puts 'sync complete'
   end
 
   task sync: :environment do
