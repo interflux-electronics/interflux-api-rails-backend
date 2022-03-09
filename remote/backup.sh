@@ -15,7 +15,6 @@ echo "----------"
 (
   set -x
   scp -i ~/.ssh/$user@$server remote/backup-remote.sh $user@$server:~/
-  # ssh -t $user@$server "~/backup-remote.sh $timestamp; rm -f ~/backup-remote.sh"
   ssh -i ~/.ssh/$user@$server $user@$server "~/backup-remote.sh $timestamp; rm -f ~/backup-remote.sh"
 )
 
