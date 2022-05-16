@@ -8,7 +8,7 @@ server=server.interflux.com
 script=sync-cdn.sh
 
 echo "----------"
-echo "Reporting difference between CDN and database"
+echo "Syncing production database with production CDN files"
 echo "----------"
 
 (
