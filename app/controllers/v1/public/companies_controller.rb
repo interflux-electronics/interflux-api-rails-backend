@@ -43,6 +43,12 @@ module V1
           public_members.person
         ]
       end
+
+      def permitted_filters
+        %i[
+          business_name
+        ]
+      end
     end
   end
 end
