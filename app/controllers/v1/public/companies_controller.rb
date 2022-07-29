@@ -41,6 +41,7 @@ module V1
         %i[
           public_members
           public_members.person
+          country
         ]
       end
 
