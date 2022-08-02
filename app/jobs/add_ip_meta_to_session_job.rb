@@ -5,7 +5,8 @@ class AddIpMetaToSessionJob < ApplicationJob
   queue_as :low_priority
 
   def perform(session, ip)
-    @ip = ip
+    # @ip = ip
+    @ip = '78.23.192.107'
 
     session.update!(meta.to_h)
   end
