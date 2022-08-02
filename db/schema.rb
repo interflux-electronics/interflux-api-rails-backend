@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_19_211316) do
+ActiveRecord::Schema.define(version: 2022_08_01_085331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -79,6 +79,11 @@ ActiveRecord::Schema.define(version: 2022_03_19_211316) do
     t.text "description"
     t.text "notes"
     t.boolean "is_headquarter", default: false
+    t.boolean "shown_on_group_website", default: false
+    t.string "core_activity"
+    t.string "history"
+    t.integer "rank_on_group_website", default: 999
+    t.boolean "show_markets", default: true
     t.index ["business_name"], name: "index_companies_on_business_name", unique: true
     t.index ["country_id"], name: "index_companies_on_country_id"
     t.index ["slug"], name: "index_companies_on_slug", unique: true

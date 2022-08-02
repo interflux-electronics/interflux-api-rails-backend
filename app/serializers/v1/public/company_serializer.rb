@@ -17,7 +17,12 @@ module V1
                  :public,
                  :order,
                  :description,
-                 :is_headquarter
+                 :is_headquarter,
+                 :shown_on_group_website,
+                 :core_activity,
+                 :history,
+                 :rank_on_group_website,
+                 :show_markets
 
       belongs_to :country
 

@@ -67,6 +67,11 @@ module V1
           description
           notes
           is_headquarter
+          shown_on_group_website
+          core_activity
+          history
+          rank_on_group_website
+          show_markets
         ]
       end
 
