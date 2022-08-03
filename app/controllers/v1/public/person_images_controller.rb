@@ -1,12 +1,12 @@
 module V1
-  module Admin
-    class ProductComplementsController < V1::AdminController
+  module Public
+    class PersonImagesController < ApplicationController
       def index
-        allow_index
+        forbidden
       end
 
       def show
-        allow_show
+        forbidden
       end
 
       def create
@@ -24,11 +24,11 @@ module V1
       private
 
       def model_class
-        ProductComplement
+        PersonImage
       end
 
       def serializer_class
-        V1::Admin::ProductComplementSerializer
+        V1::Public::PersonImageSerializer
       end
     end
   end

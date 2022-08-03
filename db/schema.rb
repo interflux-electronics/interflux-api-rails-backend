@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_03_055629) do
+ActiveRecord::Schema.define(version: 2022_08_03_101829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -256,6 +256,18 @@ ActiveRecord::Schema.define(version: 2022_08_03_055629) do
     t.string "phone"
     t.boolean "male"
     t.string "full_name"
+    t.string "image_id"
+    t.string "avatar_path"
+    t.string "avatar_variations"
+    t.string "avatar_caption"
+    t.string "avatar_alt"
+  end
+
+  create_table "person_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "person_id"
+    t.string "image_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "product_complementary_products", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class ProductComplementsController < V1::AdminController
+    class PersonImagesController < ApplicationController
       def index
         allow_index
       end
@@ -10,25 +10,32 @@ module V1
       end
 
       def create
-        forbidden
+        allow_create
       end
 
       def update
-        forbidden
+        allow_update
       end
 
       def destroy
-        forbidden
+        allow_destroy
       end
 
       private
 
       def model_class
-        ProductComplement
+        PersonImage
       end
 
       def serializer_class
-        V1::Admin::ProductComplementSerializer
+        V1::Admin::PersonImageSerializer
+      end
+
+      def creatable_relationships
+        %i[
+          person
+          image
+        ]
       end
     end
   end

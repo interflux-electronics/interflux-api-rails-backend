@@ -35,6 +35,8 @@ module V1
         %i[
           products
           product_images
+          people
+          person_images
           company
           cdn_files
         ]

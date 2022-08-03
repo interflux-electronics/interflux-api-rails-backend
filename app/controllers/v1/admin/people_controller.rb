@@ -41,6 +41,9 @@ module V1
         %i[
           company_members
           companies
+          image
+          person_images
+          person_images.image
         ]
       end
 
@@ -51,6 +54,16 @@ module V1
           chinese_name
           phone
           email
+          avatar_path
+          avatar_variations
+          avatar_caption
+          avatar_alt
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          image
         ]
       end
     end
