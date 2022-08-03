@@ -23,7 +23,8 @@ module V1
                  :core_activity,
                  :history,
                  :rank_on_group_website,
-                 :show_markets
+                 :show_markets,
+                 :head_count
 
       belongs_to :country
 

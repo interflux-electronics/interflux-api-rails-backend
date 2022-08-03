@@ -72,6 +72,7 @@ module V1
           history
           rank_on_group_website
           show_markets
+          head_count
         ]
       end
 
