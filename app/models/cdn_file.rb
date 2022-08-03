@@ -37,7 +37,8 @@ class CdnFile < ApplicationRecord
       'images/products/',
       'images/processes/',
       'images/logos/',
-      'images/icons/'
+      'images/icons/',
+      'images/people/'
     ].any? { |p| path.start_with?(p) }
   end
 
