@@ -112,8 +112,12 @@ class CdnFile < ApplicationRecord
 
     # If no variations are left, destroy the record
     if v.blank?
-      image.destroy
-      puts 'destroyed image'
+      if image.present?
+        image.destroy
+        puts 'destroyed image'
+      else
+        puts 'no image found'
+      end
     end
   end
 
