@@ -1,0 +1,34 @@
+- name: Matelec
+  location: Madrid, Spain
+  call_to_action: Meet AB Electronics at stand 5C01 in hall 5
+  start_date: 15/11/2022
+  end_date: 18/11/2022
+  id: 1
+
+- name: Philippines Semiconductor Electronics Convention & Exhibition
+  location: Manila, Philippines
+  call_to_action: Meet APM Technica at booth 1301
+  start_date: 16/11/2022
+  end_date: 18/11/2022
+  id: 2
+
+- name: Kurtz Ersa India technology days
+  location: Bangalore & Chennai, India
+  call_to_action: Meet Kurtz Ersa and ABAN Electronics
+  start_date: 23/11/2022
+  end_date: 25/11/2022
+  id: 3
+
+- name: Nepcon Asia
+  location: Shenzhen, China
+  call_to_action: Meet Sigmatek at booth 13A034
+  start_date: 30/11/2022
+  end_date: 02/12/2022
+  id: 4
+
+- name: IPC Apex
+  location: San Diego, USA
+  call_to_action: Meet Kurtz Ersa at booth 1301
+  start_date: 24/01/2023
+  end_date: 26/01/2023
+  id: 5

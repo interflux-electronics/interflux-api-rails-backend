@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       resources :countries
       resources :document_categories, path: '/document-categories'
       resources :documents
+      resources :events
       resources :features
       resources :images
       resources :languages
@@ -35,7 +36,7 @@ Rails.application.routes.draw do
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
     end
-
+    
     # Admin endpoints
     # These endpoints are meant for internal use by authenticated users such as
     # Interflux employees. These endpoints commonly allow read, create, update
@@ -54,6 +55,7 @@ Rails.application.routes.draw do
       resources :countries
       resources :document_categories, path: '/document-categories'
       resources :documents
+      resources :events
       resources :features
       resources :images
       resources :languages
