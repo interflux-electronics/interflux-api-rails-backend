@@ -1,0 +1,35 @@
+- name: Matelec 2022
+  city: Madrid
+  country_id: ES
+  dates: 15 – 18 Nov 2022
+  description: Matalec is an exhibition for electronics manufacturing. We recommend you meet **AB Electronic Devices** in hall 5 at stand 5C01. They are the primary distributor of Interflux for the Spanish and Portugese electronics industry.
+
+- name: PSECE 2022
+  city: Manila
+  country_id: PH
+  dates: 16 – 18 Nov 2022
+  description: The Philippine Semiconductor & Electronics Convention and Exhibition is a business platform where leaders, senior management, and industry professionals of the industry come together. Meet **APM Technica** at booth 1301.
+
+- name: Kurtz Ersa India technology day 1
+  city: Bangalore
+  country_id: IN
+  dates: 23 Nov 2022
+  description: Meet the **Kurtz Ersa** team and **ABAN Electronics** in person.
+
+- name: Kurtz Ersa India technology day 2
+  city: Chennai
+  country_id: IN
+  dates: 25 Nov 2022
+  description: Meet the **Kurtz Ersa** team and **ABAN Electronics** in person.
+
+- name: Nepcon Asia 2022
+  city: Shenzhen
+  country_id: CN
+  dates: 30 Nov – 2 Dec 2022
+  description: Meet **Sigmatek** at booth 13A034.
+
+- name: IPC Apex Expo 2023
+  city: San Diego
+  country_id: US
+  dates: 24 – 26 Jan 2023
+  description: Meet Kurtz Ersa at booth 1301

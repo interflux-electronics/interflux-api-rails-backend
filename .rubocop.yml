@@ -3,6 +3,7 @@ require: rubocop-rails
 
 # Ignore some folders completely
 AllCops:
+  NewCops: enable
   Exclude:
     - .buildkite/**/*
     - bin/**/*
