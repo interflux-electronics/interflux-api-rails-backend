@@ -16,14 +16,14 @@ data.each_with_index do |a, i|
 
   puts "#{i} - #{b.name}"
 
-  record = Event.find_by(name: b.name, start_date: b.start_date)
-  
+  record = Event.find_by(name: b.name, dates: b.dates)
+
   properties = OpenStruct.new(
     name: b.name,
-    location: b.location,
-    call_to_action: b.call_to_action,
-    start_date: b.start_date,
-    end_date: b.end_date
+    city: b.city,
+    country_id: b.country_id,
+    description: b.description,
+    dates: b.dates
   )
 
   if record.nil?
@@ -36,7 +36,7 @@ end
 puts '---------'
 count_after = Event.count
 difference = count_after - count_before
-puts "Before seeding, the database had #{count_before} containers."
+puts "Before seeding, the database had #{count_before} records."
 puts "After seeding, the database has #{count_after}."
 puts "That's #{difference} new ones."
 puts '---------'

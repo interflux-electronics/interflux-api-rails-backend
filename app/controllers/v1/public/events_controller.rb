@@ -30,6 +30,12 @@ module V1
       def serializer_class
         V1::Public::EventSerializer
       end
+
+      def permitted_includes
+        %i[
+          country
+        ]
+      end
     end
   end
 end

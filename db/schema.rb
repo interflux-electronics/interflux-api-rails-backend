@@ -201,10 +201,10 @@ ActiveRecord::Schema.define(version: 2022_11_10_081400) do
 
   create_table "events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
-    t.string "start_date"
-    t.string "end_date"
-    t.string "location"
-    t.string "call_to_action"
+    t.string "description"
+    t.string "dates"
+    t.string "city"
+    t.string "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

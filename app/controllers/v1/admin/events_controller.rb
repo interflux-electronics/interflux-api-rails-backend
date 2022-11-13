@@ -34,10 +34,15 @@ module V1
       def creatable_attributes
         %i[
           name
-          start_date
-          end_date
-          location
-          call_to_action
+          city
+          dates
+          description
+        ]
+      end
+
+      def creatable_relationships
+        %i[
+          country
         ]
       end
     end
