@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_10_081400) do
+ActiveRecord::Schema.define(version: 2022_11_28_064255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -54,6 +54,10 @@ ActiveRecord::Schema.define(version: 2022_11_10_081400) do
     t.string "image_id"
     t.string "document_id"
     t.string "video_id"
+    t.uuid "user_id"
+    t.string "locale"
+    t.string "original_file_name"
+    t.index ["path"], name: "index_cdn_files_on_path"
   end
 
   create_table "companies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -178,6 +182,7 @@ ActiveRecord::Schema.define(version: 2022_11_10_081400) do
     t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name_single"
   end
 
   create_table "documents", primary_key: "path", id: :string, force: :cascade do |t|

@@ -3,8 +3,8 @@ name: Continuous Integration
 on:
   push:
     branches:
-      - '**'
-      - '!production'
+      - "**"
+      - "!production"
 
 jobs:
   test:
@@ -24,6 +24,8 @@ jobs:
       PG_USER: bot
       PG_DATABASE: interflux_test
       PG_PASSWORD: password
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      IP_GEO_API_KEY: ${{ secrets.IP_GEO_API_KEY }}
     steps:
       - uses: actions/checkout@v2
       - uses: ruby/setup-ruby@v1

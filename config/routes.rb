@@ -36,7 +36,7 @@ Rails.application.routes.draw do
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
     end
-    
+
     # Admin endpoints
     # These endpoints are meant for internal use by authenticated users such as
     # Interflux employees. These endpoints commonly allow read, create, update
@@ -84,6 +84,7 @@ Rails.application.routes.draw do
 
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'
+      post '/create-upload-url', to: 'cdn_files#create_upload_url'
     end
   end
 

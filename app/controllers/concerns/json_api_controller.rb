@@ -526,7 +526,7 @@ module JsonApiController
   # Firefox has a known bug where they append "; charset=UTF-8" to the end, which breaks.
   # https://josef.codes/firefox-adds-charset-utf-8-when-doing-post-requests-with-ajax/
   def check_content_type
-    wrong_content_type unless request.content_type.split(';').first == 'application/vnd.api+json'
+    wrong_content_type unless request.content_type.present? && request.content_type.split(';').first == 'application/vnd.api+json'
   end
 
   # ERRORS

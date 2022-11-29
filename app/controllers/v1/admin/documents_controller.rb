@@ -18,7 +18,7 @@ module V1
       end
 
       def destroy
-        forbidden
+        allow_destroy
       end
 
       private
@@ -39,14 +39,16 @@ module V1
 
       def permitted_includes
         %i[
+          document_category
+          cdn_files
           products
           product_documents
-          cdn_files
         ]
       end
 
       def creatable_attributes
         %i[
+          path
           name
           public
         ]
