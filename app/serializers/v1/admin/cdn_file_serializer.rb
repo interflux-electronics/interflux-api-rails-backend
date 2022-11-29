@@ -1,7 +1,9 @@
 module V1
   module Admin
     class CdnFileSerializer < ApplicationSerializer
-      attributes :path
+      attributes :path,
+                 :locale,
+                 :original_file_name
 
       belongs_to :image
       belongs_to :video

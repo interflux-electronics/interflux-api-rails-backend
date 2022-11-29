@@ -1,9 +1,10 @@
 class CdnFile < ApplicationRecord
+  validates :path, uniqueness: true, allow_blank: true
+
+  belongs_to :user, optional: true
   belongs_to :image, optional: true
   belongs_to :video, optional: true
   belongs_to :document, optional: true
-
-  validates :path, presence: true, uniqueness: true
 
   scope :fonts, -> { where 'path LIKE :prefix', prefix: 'fonts/%' }
   scope :images, -> { where 'path LIKE :prefix', prefix: 'images/%' }
@@ -12,22 +13,51 @@ class CdnFile < ApplicationRecord
   scope :documents, -> { where 'path LIKE :prefix', prefix: 'documents/%' }
 
   after_create :create_owner
-  before_destroy :destroy_owner
+  before_destroy :destroy_owner, :delete_cdn_file
 
   private
 
   def create_owner
+    return if path.blank?
+
     puts 'create_owner'
     create_image if image?
     create_video if video?
-    create_document if document?
   end
 
   def destroy_owner
+    return if path.blank?
+
     puts 'destroy_owner'
     destroy_image if image?
     destroy_video if video?
-    destroy_document if document?
+  end
+
+  # CDN FILES
+
+  def delete_cdn_file
+    puts '------'
+    puts 'deleting from CDN...'
+
+    do_s3_client.delete_object(
+      {
+        bucket: ENV['DO_BUCKET'],
+        key: path
+      }
+    )
+
+    puts 'delete complete'
+    puts '------'
+  end
+
+  def do_s3_client
+    Aws::S3::Client.new(
+      access_key_id: ENV['DO_ACCESS'],
+      secret_access_key: ENV['DO_SECRET'],
+      endpoint: ENV['DO_ENDPOINT'],
+      force_path_style: false,
+      region: ENV['DO_REGION']
+    )
   end
 
   # IMAGES
@@ -203,79 +233,6 @@ class CdnFile < ApplicationRecord
     if v.blank?
       video.destroy
       puts 'destroyed video'
-    end
-  end
-
-  # DOCUMENTS
-
-  def document?
-    path.starts_with?('documents/')
-  end
-
-  # Find the shared path for documents. The below example should result in only 2 document records
-  # being created, the first one with 1 variations, the latter with 3 variations.
-  # foo.pdf
-  # bar-EN.pdf
-  # bar-DE.pdf
-  # bar-FR.pdf
-  def base_document_path
-    path.gsub(/.pdf$/, '').gsub(/-EN$|-DE$|-FR$/, '')
-  end
-
-  def multilingual
-    path.split(/.pdf$/).first.match?(/-EN$|-DE$|-FR$/)
-  end
-
-  def create_document
-    puts 'create_document'
-
-    cdn_files = CdnFile.all
-    document = Document.find_by(path: base_document_path)
-    subset = cdn_files.filter { |x| x.path.start_with?(base_document_path) }
-    variations = multilingual ? subset.map { |x| x.path.split('-').last }.join(',') : '.pdf'
-
-    props = OpenStruct.new(
-      path: base_document_path,
-      name: base_document_path.split('/').last.gsub('-', ' '),
-      document_category_id: base_document_path.split('/').second,
-      variations: variations,
-      public: true
-    )
-
-    if document.present?
-      document.update!(props.to_h)
-      puts 'UPDATED document record'
-    else
-      document = Document.create!(props.to_h)
-      puts 'CREATED document record'
-    end
-
-    subset.each do |cdn_file|
-      cdn_file.document_id = document.id
-      cdn_file.save!
-    end
-  end
-
-  def destroy_document
-    puts 'destroy_document'
-
-    document = Document.find(base_document_path)
-    extension = multilingual ? path.scan(/EN.pdf$|DE.pdf$|FR.pdf$/)[0] : '.pdf'
-    v = document.variations.split(',').reject { |x| x == extension }.join(',')
-
-    puts "variations before: #{document.variations}"
-    puts "variations after: #{v}"
-
-    # If at least one variation remains, then keep the record, remove extension from variations
-    if v.present?
-      document.update(variations: v)
-      puts 'updated document'
-    end
-
-    # If no variations are left, destroy the record
-    if v.blank?
-      document.destroy
-      puts 'destroyed document'
     end
   end
 end
