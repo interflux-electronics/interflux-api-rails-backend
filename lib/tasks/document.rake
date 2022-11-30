@@ -63,4 +63,32 @@ namespace :document do
     )
     DocumentCategory.create!(props.to_h)
   end
+
+  task uuid: :environment do
+    CdnFile.where.not(document: nil).each do |cdn_file|
+      doc = Document.find_by(path: cdn_file.document_id)
+      if doc.nil?
+        puts 'done'
+      else
+        puts cdn_file.path
+        puts doc.path
+        puts '---'
+        cdn_file.update(document: doc)
+      end
+    end
+
+    puts '===================='
+
+    ProductDocument.all.each do |pd|
+      doc = Document.find_by(path: pd.document_id)
+      if doc.nil?
+        puts 'done'
+      else
+        puts pd.product_id
+        puts pd.document_id
+        puts '---'
+        pd.update(document: doc)
+      end
+    end
+  end
 end
