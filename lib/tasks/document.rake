@@ -95,7 +95,7 @@ namespace :document do
   task variations: :environment do
     Document.all.each do |doc|
       puts doc.name
-      v = Document.find_by(id: 'fb1662fe-9822-44ae-91fc-e14029a54e23').files.map { |f| f.path.split('-').last }.join(',')
+      v = doc.files.map { |f| f.path.split('-').last }.join(',')
       puts v
       doc.update(variations: v)
     end
