@@ -12,8 +12,10 @@ class CdnFile < ApplicationRecord
   scope :webinars, -> { where 'path LIKE :prefix', prefix: 'videos/webinars%' }
   scope :documents, -> { where 'path LIKE :prefix', prefix: 'documents/%' }
 
-  after_create :create_owner
+  after_create :create_owner, :update_document_variation
+  after_update :update_document_variation
   before_destroy :destroy_owner, :delete_cdn_file
+  after_destroy :update_document_variation
 
   private
 
@@ -234,5 +236,17 @@ class CdnFile < ApplicationRecord
       video.destroy
       puts 'destroyed video'
     end
+  end
+
+  # DOCUMENTS
+
+  def update_document_variation
+    return if document.nil?
+
+    puts '------'
+    v = document.files.map { |f| f.path.split('-').last }.join(',')
+    document.update(variations: v)
+    puts "updated document variations to #{v}"
+    puts '------'
   end
 end
