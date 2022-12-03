@@ -36,6 +36,7 @@ module V1
           name
           deprecated
           popular
+          on_front_page
         ]
       end
 
