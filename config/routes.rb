@@ -32,6 +32,7 @@ Rails.application.routes.draw do
       resources :products
       resources :qualities
       resources :sessions
+      resources :translations
       resources :uses
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
@@ -72,6 +73,8 @@ Rails.application.routes.draw do
       resources :products, path: '/products'
       resources :qualities
       resources :sessions
+      resources :translations
+      resources :translation_events, path: '/translation-events'
       resources :use_images, path: '/use-images'
       resources :users
       resources :uses
