@@ -1,0 +1,96 @@
+- key: ui.header.products
+  native: Productos
+- key: ui.header.products.title
+  native: Productos que desarrollamos
+- key: ui.header.products.lmpa
+  native: LMPA-Q
+- key: ui.header.products.flux
+  native: Fundente de soldadura
+- key: ui.header.products.paste
+  native: Pasta de soldar
+- key: ui.header.products.wire
+  native: Alambre de soldadura
+- key: ui.header.products.alloy
+  native: Aleación de soldadura
+- key: ui.header.products.aux
+  native: Auxiliares
+- key: ui.header.products.icsf
+  native: Sistemas de flujo
+- key: ui.header.processes
+  native: Procesos
+- key: ui.header.processes.title
+  native: Procesos para los que desarrollamos productos
+- key: ui.header.processes.lmpa
+  native: Soldadura de bajo punto de fusión - LMPA-Q
+- key: ui.header.processes.selective
+  native: Soldadura selectiva
+- key: ui.header.processes.wave
+  native: Soldadura por ola
+- key: ui.header.processes.reflow
+  native: Soldadura por reflujo
+- key: ui.header.processes.stencil
+  native: Impresión por estarcido
+- key: ui.header.processes.rework
+  native: Retrabajo y reparación
+- key: ui.header.processes.vapor
+  native: Soldadura en fase vapor
+- key: ui.header.processes.jet-fluxing
+  native: Jet fluxing
+- key: ui.header.processes.jet-pasting
+  native: Chorro de pasta de soldadura
+- key: ui.header.processes.spray
+  native: Rociado de fundente
+- key: ui.header.processes.foam
+  native: Espuma fundente
+- key: ui.header.processes.pre-tinning
+  native: Pre-estañado
+- key: ui.header.processes.dip
+  native: Soldadura por inmersión
+- key: ui.header.processes.osp
+  native: Soldadura OSP
+- key: ui.header.processes.hand
+  native: Soldadura manual
+- key: ui.header.processes.robot
+  native: Robot soldadura
+- key: ui.header.processes.laser
+  native: Soldadura láser
+- key: ui.header.processes.dispensing
+  native: Dispensado
+- key: ui.header.processes.solder-bath
+  native: Acondicionamiento del baño de soldadura
+- key: ui.header.processes.cleaning
+  native: Limpieza
+- key: ui.header.webinars
+  native: Seminarios web
+- key: ui.header.company
+  native: Empresa
+- key: ui.header.docs
+  native: Docs
+- key: ui.header.contact
+  native: Contacto
+- key: ui.header.member-of-group
+  native: Miembro del Grupo Interflux
+- key: ui.product.h2.processes
+  native: Adecuado para
+- key: ui.product.h2.qualities
+  native: Ventajas key
+- key: ui.product.h2.properties
+  native: Propiedades físicas y químicas
+- key: ui.product.h2.compliance
+  native: Conformidad de calidad
+- key: ui.product.h2.documents
+  native: Documentos
+- key: ui.product.tag.new
+  native: nuevo ooo
+- key: ui.product.tag.popular
+  native: popular
+- key: ui.product.back
+  native: Todos los productos
+- key: ui.product.ask.title
+  native: ¿Necesita ayuda?
+- key: ui.product.ask.text
+  native: Pregunte a alguien con décadas de experiencia en soldadura electrónica.
+- key: ui.product.ask.button
+  native: Pregunte a Interflux
+- key: product.IF-2005M.intro
+  native: Interflux IF 2005M es el **estándar de flujo** sin resina ni colofonia, sin limpieza ni residuos.

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_03_065143) do
+ActiveRecord::Schema.define(version: 2022_12_15_061207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -464,6 +464,28 @@ ActiveRecord::Schema.define(version: 2022_12_03_065143) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_tags_on_slug", unique: true
+  end
+
+  create_table "translation_events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "translation_id"
+    t.string "code"
+    t.string "updated_by"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "translations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "key"
+    t.string "locale"
+    t.string "native"
+    t.string "english"
+    t.boolean "needs_review"
+    t.string "review_code"
+    t.string "custom_review_message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["key"], name: "index_translations_on_key"
+    t.index ["locale"], name: "index_translations_on_locale"
   end
 
   create_table "use_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
