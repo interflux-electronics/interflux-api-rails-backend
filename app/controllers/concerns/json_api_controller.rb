@@ -187,6 +187,9 @@ module JsonApiController
     # Most importantly, we define which related models to include in the request.
     options[:include] = strong_includes if strong_includes
 
+    puts 'XXXXXX'
+    puts permitted_includes
+
     # We create a JSON response from the records we collected using the fast and
     # JSON API compliant Netflux serializers.
     json = serializer_class.new(resources, options).serializable_hash.to_json
@@ -256,6 +259,7 @@ module JsonApiController
     }
 
     options[:include] = strong_includes if strong_includes
+
     json = serializer_class.new(record, options).serializable_hash.to_json
 
     render status: 200, json: json
