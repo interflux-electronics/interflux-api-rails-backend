@@ -1,0 +1,96 @@
+- key: ui.header.products
+  native: Products
+- key: ui.header.products.title
+  native: Products we develop
+- key: ui.header.products.lmpa
+  native: LMPA-Q
+- key: ui.header.products.flux
+  native: Soldering flux
+- key: ui.header.products.paste
+  native: Solder paste
+- key: ui.header.products.wire
+  native: Solder wire
+- key: ui.header.products.alloy
+  native: Solder alloys
+- key: ui.header.products.aux
+  native: Auxiliaries
+- key: ui.header.products.icsf
+  native: Fluxing systems
+- key: ui.header.processes
+  native: Processes
+- key: ui.header.processes.title
+  native: Processes we develop products for
+- key: ui.header.processes.lmpa
+  native: Low melting point soldering – LMPA-Q
+- key: ui.header.processes.selective
+  native: Selective soldering
+- key: ui.header.processes.wave
+  native: Wave soldering
+- key: ui.header.processes.reflow
+  native: Reflow soldering
+- key: ui.header.processes.stencil
+  native: Stencil printing
+- key: ui.header.processes.rework
+  native: Rework & repair
+- key: ui.header.processes.vapor
+  native: Vapor phase soldering
+- key: ui.header.processes.jet-fluxing
+  native: Jet fluxing
+- key: ui.header.processes.jet-pasting
+  native: Solder paste jetting
+- key: ui.header.processes.spray
+  native: Spray fluxing
+- key: ui.header.processes.foam
+  native: Foam fluxing
+- key: ui.header.processes.pre-tinning
+  native: Pre-tinning
+- key: ui.header.processes.dip
+  native: Dip soldering
+- key: ui.header.processes.osp
+  native: OSP soldering
+- key: ui.header.processes.hand
+  native: Hand soldering
+- key: ui.header.processes.robot
+  native: Robot soldering
+- key: ui.header.processes.laser
+  native: Laser soldering
+- key: ui.header.processes.dispensing
+  native: Dispensing
+- key: ui.header.processes.solder-bath
+  native: Solder bath conditioning
+- key: ui.header.processes.cleaning
+  native: Cleaning
+- key: ui.header.webinars
+  native: Webinars
+- key: ui.header.company
+  native: Company
+- key: ui.header.docs
+  native: Docs
+- key: ui.header.contact
+  native: Contact
+- key: ui.header.member-of-group
+  native: Member of the Interflux Group
+- key: ui.product.h2.processes
+  native: Suitable for
+- key: ui.product.h2.qualities
+  native: Key advantages
+- key: ui.product.h2.properties
+  native: Physical & chemical properties
+- key: ui.product.h2.compliance
+  native: Quality compliance
+- key: ui.product.h2.documents
+  native: Documents
+- key: ui.product.tag.new
+  native: new
+- key: ui.product.tag.popular
+  native: popular
+- key: ui.product.back
+  native: All products
+- key: ui.product.ask.title
+  native: Need help?
+- key: ui.product.ask.text
+  native: Ask someone with decades of fields experience in soldering electronics.
+- key: ui.product.ask.button
+  native: Ask Interflux
+- key: product.IF-2005M.intro
+  native: Interflux IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**.
