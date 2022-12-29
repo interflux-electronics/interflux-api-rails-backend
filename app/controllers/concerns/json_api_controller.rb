@@ -187,7 +187,6 @@ module JsonApiController
     # Most importantly, we define which related models to include in the request.
     options[:include] = strong_includes if strong_includes
 
-    puts 'XXXXXX'
     puts permitted_includes
 
     # We create a JSON response from the records we collected using the fast and

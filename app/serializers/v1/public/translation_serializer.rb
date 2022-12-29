@@ -2,7 +2,7 @@ module V1
   module Public
     class TranslationSerializer < ApplicationSerializer
       attributes :key,
-                 :locale,
+                 :language,
                  :native
     end
   end

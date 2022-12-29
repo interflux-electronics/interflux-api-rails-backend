@@ -2,7 +2,7 @@ module V1
   module Admin
     class TranslationSerializer < ApplicationSerializer
       attributes :key,
-                 :locale,
+                 :language,
                  :native,
                  :english,
                  :needs_review,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_15_061207) do
+ActiveRecord::Schema.define(version: 2022_12_29_090757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -476,7 +476,7 @@ ActiveRecord::Schema.define(version: 2022_12_15_061207) do
 
   create_table "translations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "key"
-    t.string "locale"
+    t.string "language"
     t.string "native"
     t.string "english"
     t.boolean "needs_review"
@@ -485,7 +485,7 @@ ActiveRecord::Schema.define(version: 2022_12_15_061207) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["key"], name: "index_translations_on_key"
-    t.index ["locale"], name: "index_translations_on_locale"
+    t.index ["language"], name: "index_translations_on_language"
   end
 
   create_table "use_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

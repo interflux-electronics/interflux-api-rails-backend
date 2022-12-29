@@ -1,4 +1,4 @@
-def seed(list, locale)
+def seed(list, language)
   list.each do |item|
     struct = OpenStruct.new(item)
 
@@ -6,8 +6,8 @@ def seed(list, locale)
     needs_review = false
     review_reason = nil
 
-    if locale != 'en'
-      english_record = Translation.find_by(locale: 'en', key: struct.key)
+    if language != 'en'
+      english_record = Translation.find_by(language: 'en', key: struct.key)
       byebug if english_record.nil?
       english = english_record.native
       byebug if english.nil?
@@ -17,25 +17,25 @@ def seed(list, locale)
 
     properties = OpenStruct.new(
       key: struct.key,
-      locale: locale,
+      language: language,
       native: struct.native,
       english: english,
       needs_review: needs_review,
       review_code: review_code
     )
 
-    record = Translation.find_by(locale: locale, key: struct.key)
+    record = Translation.find_by(language: language, key: struct.key)
 
     if record.nil?
-      puts "#{locale} | #{struct.key} | CREATE"
+      puts "#{language} | #{struct.key} | CREATE"
       new_record = Translation.create!(properties.to_h)
       TranslationEvent.create!(code: 'created', updated_by: 'Jan', translation: new_record)
     elsif record.native == struct.native
-      puts "#{locale} | #{struct.key} | ok"
+      puts "#{language} | #{struct.key} | ok"
     else
       record.update!(properties.to_h)
       TranslationEvent.create!(code: 'source-update', updated_by: 'Jan', translation: record)
-      puts "#{locale} | #{struct.key} | UPDATE"
+      puts "#{language} | #{struct.key} | UPDATE"
     end
   end
   puts '---------'

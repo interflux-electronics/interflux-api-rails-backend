@@ -40,7 +40,7 @@ module V1
       def creatable_attributes
         %i[
           key
-          locale
+          language
           native
           english
           needs_review
@@ -52,7 +52,7 @@ module V1
       def permitted_filters
         %i[
           key
-          locale
+          language
         ]
       end
     end

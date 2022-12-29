@@ -25,14 +25,14 @@ namespace :translations do
 
     languages = %w[en de es fr]
 
-    Translation.where(locale: 'en').each do |en|
+    Translation.where(language: 'en').each do |en|
       languages.each do |lang|
-        record = Translation.find_by(locale: lang, key: en.key)
+        record = Translation.find_by(language: lang, key: en.key)
 
         if record.nil?
           new_record = Translation.create!(
             key: en.key,
-            locale: lang,
+            language: lang,
             english: en.native,
             needs_review: true,
             review_code: 'untranslated'
@@ -60,19 +60,19 @@ namespace :translations do
     destroy_counter = 0
 
     Translation.all.each do |trans|
-      if trans.locale == 'en'
-        puts "#{trans.key} | #{trans.locale} | ok"
+      if trans.language == 'en'
+        puts "#{trans.key} | #{trans.language} | ok"
         next
       end
 
-      english_counterpart = Translation.find_by(locale: 'en', key: trans.key)
+      english_counterpart = Translation.find_by(language: 'en', key: trans.key)
 
       if english_counterpart.nil?
-        puts "#{trans.key} | #{trans.locale} | DESTROY"
+        puts "#{trans.key} | #{trans.language} | DESTROY"
         trans.destroy!
         destroy_counter += 1
       else
-        puts "#{trans.key} | #{trans.locale} | ok"
+        puts "#{trans.key} | #{trans.language} | ok"
       end
     end
     puts '---------'
