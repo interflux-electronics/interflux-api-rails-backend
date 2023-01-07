@@ -1,0 +1,3 @@
+class SimulationRequest < ApplicationRecord
+
+end
