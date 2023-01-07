@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_15_061207) do
+ActiveRecord::Schema.define(version: 2023_01_07_035145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -456,6 +456,23 @@ ActiveRecord::Schema.define(version: 2022_12_15_061207) do
     t.string "ip_response_code"
     t.string "ip_response_body"
     t.integer "ip_request_duration"
+  end
+
+  create_table "simulation_requests", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "project_name"
+    t.string "pallet_width"
+    t.string "pallet_height"
+    t.string "wave_speed"
+    t.string "cycle_time"
+    t.string "flux_brand"
+    t.string "flux_consumption"
+    t.string "board_reference"
+    t.string "known_issue"
+    t.string "solder_process"
+    t.string "flux_process"
+    t.string "full_name"
+    t.string "email"
+    t.string "company_name"
   end
 
   create_table "tags", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
