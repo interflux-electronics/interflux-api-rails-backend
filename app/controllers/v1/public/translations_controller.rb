@@ -10,7 +10,7 @@ module V1
       end
 
       def create
-        forbidden
+        allow_create
       end
 
       def update
@@ -35,6 +35,14 @@ module V1
         %i[
           key
           language
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          key
+          language
+          english
         ]
       end
     end

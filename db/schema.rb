@@ -469,7 +469,7 @@ ActiveRecord::Schema.define(version: 2022_12_29_090757) do
   create_table "translation_events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "translation_id"
     t.string "code"
-    t.string "updated_by"
+    t.string "person"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

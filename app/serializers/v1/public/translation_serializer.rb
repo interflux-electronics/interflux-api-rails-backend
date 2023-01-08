@@ -3,7 +3,8 @@ module V1
     class TranslationSerializer < ApplicationSerializer
       attributes :key,
                  :language,
-                 :native
+                 :native,
+                 :english
     end
   end
 end

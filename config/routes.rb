@@ -33,6 +33,7 @@ Rails.application.routes.draw do
       resources :qualities
       resources :sessions
       resources :translations
+      resources :translation_events, path: '/translation-events'
       resources :uses
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
