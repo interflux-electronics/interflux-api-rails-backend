@@ -25,6 +25,21 @@ class SimulationRequest < ApplicationRecord
     puts 'sending email to singapore'
     puts '------'
 
-    SimulatioRequestMailer.request_created.deliver_later
+    SimulationRequestMailer.with(
+      project_name: project_name,
+      pallet_width: pallet_width,
+      pallet_height: pallet_height,
+      wave_speed: wave_speed,
+      cycle_time: cycle_time,
+      flux_brand: flux_brand,
+      flux_consumption: flux_consumption,
+      board_reference: board_reference,
+      known_issue: known_issue,
+      solder_process: solder_process,
+      flux_processf: flux_process,
+      full_name: full_name,
+      email: email,
+      company_name: company_name
+    ).request_created.deliver_later
   end
 end
