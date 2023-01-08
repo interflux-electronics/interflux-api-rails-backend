@@ -1,17 +1,16 @@
 class SimulatioRequestMailer < ApplicationMailer
-  default from: 'jan.werkhoven@gamil.com'
+  default from: 'jw@floatplane.dev'
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.simulatio_request_mailer.request_created.subject
   #
   def request_created
-    @greeting = "Hi"
+    @greeting = 'Hi'
 
-    mail(to: "shuwen.w@hotmail.com", subject:'You have got a request')
+    mail(to: 'sw@floatplane.dev', subject: 'You have got a request')
   end
 end
-
 
 # Example from rails guide: I do not understand the usage of @user & @url
 #   def welcome_email
