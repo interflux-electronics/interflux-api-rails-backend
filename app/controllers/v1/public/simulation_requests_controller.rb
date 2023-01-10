@@ -71,6 +71,7 @@ module V1
 
       def creatable_attributes
         %i[
+          id
           project_name
           pallet_width
           pallet_height
@@ -85,6 +86,7 @@ module V1
           full_name
           email
           company_name
+          image
         ]
       end
     end
