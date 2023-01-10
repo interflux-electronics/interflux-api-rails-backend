@@ -14,7 +14,9 @@ module V1
                  :flux_process,
                  :full_name,
                  :email,
-                 :company_name
+                 :company_name,
+                 :image,
+                 :sequence
     end
   end
 end
