@@ -32,7 +32,7 @@ module V1
         return if params[:file_name].blank?
 
         file_name = params[:file_name]
-        cdn_path = "/images/simulation-requests/#{ENV['RAILS_ENV']}/#{file_name}"
+        cdn_path = "images/simulation-requests/#{ENV['RAILS_ENV']}/#{file_name}"
 
         client = Aws::S3::Client.new(
           access_key_id: ENV['DO_ACCESS'],
