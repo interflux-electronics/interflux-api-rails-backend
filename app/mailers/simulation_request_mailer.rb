@@ -4,11 +4,9 @@ class SimulationRequestMailer < ApplicationMailer
   def request_created
     @record = params[:record]
 
-    # TODO: send to ask@interflux.com.sg
-
     mail(
-      to: 'sw@floatplane.dev',
-      cc: 'jw@floatplane.dev',
+      to: 'ask@interflux.com.sg',
+      cc: 'jw@floatplane.dev, sw@floatplane.dev',
       reply_to: @record.email,
       subject: "ICSF simulation request ##{@record.sequence}"
     )
