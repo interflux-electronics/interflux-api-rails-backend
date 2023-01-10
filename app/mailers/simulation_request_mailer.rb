@@ -6,7 +6,7 @@ class SimulationRequestMailer < ApplicationMailer
 
     mail(
       to: 'ask@interflux.com.sg',
-      cc: 'jw@floatplane.dev, sw@floatplane.dev',
+      cc: 'jw@floatplane.dev',
       reply_to: @record.email,
       subject: "ICSF simulation request ##{@record.sequence}"
     )
