@@ -38,6 +38,9 @@ Rails.application.routes.draw do
       resources :uses
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
+
+      # Non-CRUD requests
+      post '/simulation-requests/image-upload-url', to: 'simulation_requests#create_upload_url'
     end
 
     # Admin endpoints

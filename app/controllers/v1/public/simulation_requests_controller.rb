@@ -21,6 +21,44 @@ module V1
         forbidden
       end
 
+      # This endpoint accepts a file name and returns a presigned URL for uploading
+      # a file from the front-end directly to the Digital Ocean CDN.
+      #
+      # Documentation
+      # https://docs.digitalocean.com/products/spaces/reference/s3-sdk-examples/
+      # https://stackoverflow.com/questions/66555915/cannot-upload-files-with-acl-public-read-to-digital-ocean-spaces
+      #
+      def create_upload_url
+        return if params[:file_name].blank?
+
+        file_name = params[:file_name]
+        cdn_path = "/images/simulation-requests/#{ENV['RAILS_ENV']}/#{file_name}"
+
+        client = Aws::S3::Client.new(
+          access_key_id: ENV['DO_ACCESS'],
+          secret_access_key: ENV['DO_SECRET'],
+          endpoint: ENV['DO_ENDPOINT'],
+          force_path_style: false,
+          region: ENV['DO_REGION']
+        )
+
+        signer = Aws::S3::Presigner.new(client: client)
+
+        upload_url = signer.presigned_url(
+          :put_object,
+          bucket: ENV['DO_BUCKET'],
+          key: cdn_path,
+          expires_in: 300
+        )
+
+        payload = {
+          upload_url: upload_url,
+          cdn_path: cdn_path
+        }
+
+        render json: payload, status: :ok
+      end
+
       private
 
       def model_class
