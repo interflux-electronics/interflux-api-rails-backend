@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     # https://www.interflux.com
     # https://lmpa.interflux.com
     #
+
     namespace :public do
       resources :article_categories, path: '/article-categories'
       resources :articles
@@ -32,11 +33,15 @@ Rails.application.routes.draw do
       resources :products
       resources :qualities
       resources :sessions
+      resources :simulation_requests, path: '/simulation-requests'
       resources :translations
       resources :translation_events, path: '/translation-events'
       resources :uses
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
+
+      # Non-CRUD requests
+      post '/simulation-requests/image-upload-url', to: 'simulation_requests#create_upload_url'
     end
 
     # Admin endpoints
