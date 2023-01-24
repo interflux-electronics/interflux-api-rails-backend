@@ -33,14 +33,14 @@ module V1
 
       def permitted_filters
         %i[
-          key
+          location
           language
         ]
       end
 
       def creatable_attributes
         %i[
-          key
+          location
           language
           english
         ]

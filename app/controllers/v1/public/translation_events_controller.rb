@@ -11,7 +11,7 @@ module V1
 
       def create
         props = OpenStruct.new(
-          key: params['key'],
+          location: params['location'],
           language: params['language'],
           english: params['english']
         )

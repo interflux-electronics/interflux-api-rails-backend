@@ -39,7 +39,7 @@ module V1
 
       def creatable_attributes
         %i[
-          key
+          location
           language
           native
           english
@@ -51,7 +51,7 @@ module V1
 
       def permitted_filters
         %i[
-          key
+          location
           language
         ]
       end
