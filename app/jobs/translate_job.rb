@@ -10,11 +10,14 @@ class TranslateJob < ApplicationJob
     phrase = record.english
     source_lang = 'EN'
     target_lang = record.language.upcase
-    translation = TranslateService.new(phrase, source_lang, target_lang).call
+    response = TranslateService.new(phrase, source_lang, target_lang).call
+    return puts 'FAIL' unless response[:success]
+
     puts '======'
-    puts translation
+    puts response
     puts '======'
-    record.update!(native: translation) unless translation.nil?
+    first_translation = response[:translations].first
+    record.update!(native: first_translation)
     puts 'translate_job end'
     puts '======'
   end

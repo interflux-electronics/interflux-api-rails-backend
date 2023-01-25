@@ -43,7 +43,10 @@ class TranslateService
     return puts 'FAIL: target_lang not supported' unless supported_languages.include?(@target_lang.to_sym)
     return puts 'FAIL: source_lang not supported' unless supported_languages.include?(@source_lang.to_sym)
 
-    'I am foo bar'
+    {
+      success: true,
+      translations: ['Ich bin foo bar', 'Meine Name is foo bar', 'Ich heise foo bar']
+    }
 
     # response = Faraday.post(url) do |req|
     #   req.headers['Content-Type'] = 'application/x-www-form-urlencoded'

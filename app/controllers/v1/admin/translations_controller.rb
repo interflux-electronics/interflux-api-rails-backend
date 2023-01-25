@@ -21,6 +21,16 @@ module V1
         forbidden
       end
 
+      def translate
+        return missing_param if params[:phrase].blank? || params[:source_lang].blank? || params[:target_lang].blank?
+
+        response = TranslateService.new(params[:phrase], params[:source_lang], params[:target_lang]).call
+
+        return robot_said_no unless response[:success]
+
+        render status: 200, json: response
+      end
+
       private
 
       def model_class
@@ -54,6 +64,22 @@ module V1
           location
           language
         ]
+      end
+
+      def missing_param
+        render_error(
+          422,
+          'missing-param',
+          'Please make sure the body of the request has the params: phrase, source_lang and target_lang.'
+        )
+      end
+
+      def robot_said_no
+        render_error(
+          422,
+          'robot-said-no',
+          'Something with the request to Deepl Translator did not go as planned.'
+        )
       end
     end
   end

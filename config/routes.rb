@@ -94,6 +94,7 @@ Rails.application.routes.draw do
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'
       post '/create-upload-url', to: 'cdn_files#create_upload_url'
+      post '/translate', to: 'translations#translate'
     end
   end
 
