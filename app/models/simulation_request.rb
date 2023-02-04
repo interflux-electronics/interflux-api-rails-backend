@@ -6,6 +6,6 @@ class SimulationRequest < ApplicationRecord
   def send_email_to_singapore
     update!(sequence: SimulationRequest.count + 1)
 
-    SimulationRequestMailer.with(record: self).request_created.deliver_later!
+    SimulationRequestMailer.with(record: self).request_created.deliver_later
   end
 end
