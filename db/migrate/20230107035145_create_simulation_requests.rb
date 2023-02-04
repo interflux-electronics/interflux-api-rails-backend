@@ -3,7 +3,7 @@ class CreateSimulationRequests < ActiveRecord::Migration[5.1]
     create_table :simulation_requests, id: :uuid do |t|
       t.string :project_name
       t.string :pallet_width
-      t.string :pallet_height
+      t.string :pallet_length
       t.string :wave_speed
       t.string :cycle_time
       t.string :flux_brand
