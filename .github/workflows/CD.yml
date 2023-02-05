@@ -87,7 +87,7 @@ jobs:
 
       # Install Bundler
       # - run: ssh $URL "cd $ROOT/$BUILD; gem install bundler"
-      - run: ssh $URL "cd $ROOT/$BUILD; gem install bundler -v '2.4.6'
+      - run: ssh $URL "cd $ROOT/$BUILD; gem install bundler:2.4.6"
 
       # Install gems
       - run: ssh $URL "cd $ROOT/$BUILD; bin/bundle install"
