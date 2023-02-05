@@ -1,8 +1,6 @@
 module V1
   module Public
     class SessionsController < ApplicationController
-      after_create :fetch_country_from_ip
-
       def index
         forbidden
       end
@@ -42,14 +40,6 @@ module V1
           browser_height
           browser_languages
         ]
-      end
-
-      def fetch_country_from_ip
-        AddIpMetaToSessionJob.perform_later(self, ip)
-      end
-
-      def ip
-        request.remote_ip
       end
     end
   end
