@@ -3,7 +3,7 @@ module V1
     class SimulationRequestSerializer < ApplicationSerializer
       attributes :project_name,
                  :pallet_width,
-                 :pallet_height,
+                 :pallet_length,
                  :wave_speed,
                  :cycle_time,
                  :flux_brand,
