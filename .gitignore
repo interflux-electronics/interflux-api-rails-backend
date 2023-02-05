@@ -24,7 +24,6 @@
 .DS_Store
 
 # Don't ever commit environment secrets stored in dot env files
-/.env
 /.env.production
 /.env.development
 /.env.test
