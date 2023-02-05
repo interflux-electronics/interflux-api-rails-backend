@@ -71,6 +71,13 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
+  # config.logger = Logger.new (Rails.root.join ("log / production.log"))
+
+  Rails.logger = Logger.new(STDOUT)
+  Rails.logger.level = Logger::DEBUG
+  Rails.logger.datetime_format = '%Y-%m-%d %H:%M:%S'
+  config.logger = ActiveSupport::Logger.new('/var/api.interflux.com/logs/production.log')
+
   if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
