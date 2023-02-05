@@ -123,10 +123,6 @@ module JsonApiController
     # ]
   end
 
-  # def after_create(lead)
-  #   PostLeadToSlackJob.perform_later lead
-  # end
-
   # FETCHING MANY RESOURCES
   #
   # GET /products
@@ -370,7 +366,6 @@ module JsonApiController
   def allow_create
     resource = model_class.new(attributes_and_relationships)
     if resource.save!
-      after_create resource
       json = serializer_class.new(resource).serializable_hash.to_json
       render status: 201, json: json
     else
@@ -506,21 +501,6 @@ module JsonApiController
     record.destroy
 
     head 204
-  end
-
-  # SIDE-EFFECTS
-  #
-  # TODO: Move to conventional approach: https://api.rubyonrails.org/classes/ActiveRecord/Callbacks.html
-  #
-  # To trigger side-effects to occur after succesfully creating a record, add
-  # the `after_create` method to your controller. Example:
-  #
-  # def after_create(lead)
-  #   PostLeadToSlackJob.perform_later lead
-  # end
-  #
-  def after_create(_resource)
-    nil
   end
 
   # VALIDATION

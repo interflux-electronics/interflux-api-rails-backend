@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       resources :sessions
       resources :simulation_requests, path: '/simulation-requests'
       resources :translations
+      resources :translation_events, path: '/translation-events'
       resources :uses
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
@@ -93,6 +94,7 @@ Rails.application.routes.draw do
       # Non-CRUD requests
       post '/auth-token', to: 'authentication#token'
       post '/create-upload-url', to: 'cdn_files#create_upload_url'
+      post '/translate', to: 'translations#translate'
     end
   end
 

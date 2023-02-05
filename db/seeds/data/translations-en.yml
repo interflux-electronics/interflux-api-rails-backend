@@ -1,25 +1,25 @@
-- key: ui.header.products
-  native: Products
-- key: ui.header.products.title
-  native: Products we develop
-- key: ui.header.products.lmpa
-  native: LMPA-Q
-- key: ui.header.products.flux
-  native: Soldering flux
-- key: ui.header.products.paste
-  native: Solder paste
-- key: ui.header.products.wire
-  native: Solder wire
-- key: ui.header.products.alloy
-  native: Solder alloys
-- key: ui.header.products.aux
-  native: Auxiliaries
-- key: ui.header.products.icsf
-  native: Fluxing systems
-- key: ui.header.processes
-  native: Processes
-- key: ui.header.processes.title
-  native: Processes we develop products for
+# - key: ui.header.products
+#   native: Products
+# - key: ui.header.products.title
+#   native: Products we develop
+# - key: ui.header.products.lmpa
+#   native: LMPA-Q
+# - key: ui.header.products.flux
+#   native: Soldering flux
+# - key: ui.header.products.paste
+#   native: Solder paste
+# - key: ui.header.products.wire
+#   native: Solder wire
+# - key: ui.header.products.alloy
+#   native: Solder alloys
+# - key: ui.header.products.aux
+#   native: Auxiliaries
+# - key: ui.header.products.icsf
+#   native: Fluxing systems
+# - key: ui.header.processes
+#   native: Processes
+# - key: ui.header.processes.title
+#   native: Processes we develop products for
 - key: ui.header.processes.lmpa
   native: Low melting point soldering – LMPA-Q
 - key: ui.header.processes.selective
@@ -92,5 +92,71 @@
   native: Ask someone with decades of fields experience in soldering electronics.
 - key: ui.product.ask.button
   native: Ask Interflux
+
 - key: product.IF-2005M.intro
   native: Interflux IF 2005M is the **internationally renowned** resin- and rosin-free, no-clean / No-residue™ **flux standard**.
+
+- key: ui-homepage-best-products
+  native: Our best-selling products
+- key: ui-homepage-why-interflux
+  native: Why Interflux?
+- key: ui-homepage-what-we-do
+  native: What we do
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:
+- key:
+  native:

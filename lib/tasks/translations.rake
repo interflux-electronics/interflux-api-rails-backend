@@ -81,4 +81,11 @@ namespace :translations do
     puts 'Done'
     puts '---------'
   end
+
+  task translate: :environment do
+    abort 'Abort, missing phrase' unless ENV['phrase']
+    abort 'Abort, missing source_lang' unless ENV['source_lang']
+    abort 'Abort, missing target_lang' unless ENV['target_lang']
+    TranslateService.new(ENV.fetch('phrase', nil), ENV.fetch('source_lang', nil), ENV.fetch('target_lang', nil)).call
+  end
 end

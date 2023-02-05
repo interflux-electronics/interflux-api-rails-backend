@@ -10,7 +10,7 @@ module V1
       end
 
       def create
-        forbidden
+        allow_create
       end
 
       def update
@@ -33,8 +33,16 @@ module V1
 
       def permitted_filters
         %i[
-          key
+          location
           language
+        ]
+      end
+
+      def creatable_attributes
+        %i[
+          location
+          language
+          english
         ]
       end
     end

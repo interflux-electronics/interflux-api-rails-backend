@@ -48,6 +48,9 @@ gem 'skylight', groups: %i[production]
 # So we can upload files to Digital Ocean Spaces (S3-compatible)
 gem 'aws-sdk-s3'
 
+# For HTTP requests (native Rails does this terribly...)
+gem 'faraday'
+
 group :development do
   # For listening to file changes
   gem 'listen'

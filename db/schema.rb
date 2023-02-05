@@ -496,7 +496,7 @@ ActiveRecord::Schema.define(version: 2023_02_04_055838) do
   end
 
   create_table "translations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.string "key"
+    t.string "location"
     t.string "language"
     t.string "native"
     t.string "english"
@@ -505,8 +505,9 @@ ActiveRecord::Schema.define(version: 2023_02_04_055838) do
     t.string "custom_review_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["key"], name: "index_translations_on_key"
+    t.index ["language", "english"], name: "unique_translation_index", unique: true
     t.index ["language"], name: "index_translations_on_language"
+    t.index ["location"], name: "index_translations_on_location"
   end
 
   create_table "use_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

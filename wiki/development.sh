@@ -4,6 +4,8 @@
 brew update
 brew install rbenv ruby-build
 
+
+
 # As long brew exists in the PATH, then rbenv will exist as well and all next
 # steps are not necessary?
 
@@ -26,7 +28,7 @@ brew install rbenv ruby-build
 #  Install and start Postgres
 
 brew install postgresql
-brew services start postgresql
+brew services start postgresql@14
 
 # Clone repo
 
@@ -37,6 +39,23 @@ cd api.interflux.com
 
 rbenv install -s
 rbenv rehash
+
+# When you run
+ruby -v
+
+# Your Mac will likely show
+# ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin22]
+# Which is the version Mac is locked down to and not the one we use in our repository.
+
+# By adding the rbenv directory to the $PATH
+set --universal fish_user_paths $fish_user_paths ~/.rbenv/shims
+# Then
+ruby -v
+# Should output
+# ruby 3.0.0p0 (2020-12-25 revision 95aff21468) [arm64-darwin21]
+# inside our repo and
+# ruby 2.6.10p210 (2022-04-12 revision 67958) [universal.arm64e-darwin22]
+# outside our repo.
 
 # Before you can install gems you may need to claim ownership over these directories:
 # TODO: find bettter way

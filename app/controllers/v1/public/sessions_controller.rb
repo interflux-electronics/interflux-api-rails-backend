@@ -1,6 +1,8 @@
 module V1
   module Public
     class SessionsController < ApplicationController
+      after_create :fetch_country_from_ip
+
       def index
         forbidden
       end
@@ -42,8 +44,8 @@ module V1
         ]
       end
 
-      def after_create(session)
-        AddIpMetaToSessionJob.perform_later(session, ip)
+      def fetch_country_from_ip
+        AddIpMetaToSessionJob.perform_later(self, ip)
       end
 
       def ip

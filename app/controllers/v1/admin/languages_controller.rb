@@ -79,10 +79,6 @@ module V1
         #   translations
         # ]
       end
-
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
     end
   end
 end

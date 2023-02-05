@@ -52,10 +52,6 @@ module V1
           ip_country
         ]
       end
-
-      # def after_create(lead)
-      #   PostLeadToSlackJob.perform_later lead
-      # end
     end
   end
 end
