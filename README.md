@@ -14,10 +14,10 @@ This API endpoints live on:
 
 Please refer to the following wikis:
 
-* `wiki/development.sh`
-* `wiki/production.sh`
-* `wiki/testing.sh`
-* `wiki/postgres.sh`
+- `wiki/development.sh`
+- `wiki/production.sh`
+- `wiki/testing.sh`
+- `wiki/postgres.sh`
 
 ### Monitoring
 
@@ -31,15 +31,15 @@ Performance is being monitored with [Skylight](https://www.skylight.io/):
 
 [![View performance data on Skylight](https://badges.skylight.io/problem/X6AeuWw7d420.svg?token=xjlaKnGsxC6MepZC9jrriSodEoM-ftVr710jzHUfbVE)](https://www.skylight.io/app/applications/X6AeuWw7d420)
 
-
 ### Need help?
 
 Ask maintainer Jan Werkhoven:  
-<a href="mailto:j.werkhoven@interflux.com">j.werkhoven@interflux.com</a> 
+<a href="mailto:jw@interflux.au">jw@interflux.au</a>
 
 ---
 
-### Interflux  
+### Interflux
+
 Chemistry + Metallurgy + Electronics  
 <a href="https://www.interflux.com">www.interflux.com</a>  
 <a href="https://lmpa.interflux.com">lmpa.interflux.com</a>
