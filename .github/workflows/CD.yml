@@ -79,6 +79,9 @@ jobs:
       # Make log directory writable
       - run: ssh $URL "cd $ROOT/$BUILD; chmod -R g+w ./log/"
 
+      # Make tmp directory writable
+      - run: ssh $URL "cd $ROOT/$BUILD; chmod -R g+w ./tmp/"
+
       # Set up variables for rbenv to port into Rails
       - run: ssh $URL "cd $ROOT/$BUILD; echo \"GIT_BRANCH=$BRANCH\" >> .rbenv-vars; echo \"GIT_REVISION=$REVISION\" >> .rbenv-vars; echo \"BUILD_TIMESTAMP=$TIMESTAMP\" >> .rbenv-vars"
 
