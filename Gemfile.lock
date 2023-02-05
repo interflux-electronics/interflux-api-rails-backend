@@ -137,6 +137,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.14.0-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.0-x86_64-linux)
+      racc (~> 1.4)
     olive_branch (4.0.1)
       multi_json
       rails (>= 4.0)
@@ -222,6 +224,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   awesome_print

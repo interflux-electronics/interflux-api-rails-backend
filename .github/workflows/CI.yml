@@ -31,7 +31,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
-          cache-version: 2
       - run: bin/rails db:create
       - run: bin/rails db:schema:load
       - run: bin/rails test --verbose
