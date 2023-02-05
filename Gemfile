@@ -49,7 +49,7 @@ gem 'skylight', groups: %i[production]
 gem 'aws-sdk-s3'
 
 # For HTTP requests (native Rails does this terribly...)
-# gem 'faraday'
+gem 'faraday'
 
 group :development do
   # For listening to file changes
