@@ -79,9 +79,6 @@ jobs:
       # Make log directory writable
       - run: ssh $URL "cd $ROOT/$BUILD; chmod -R g+w ./log/"
 
-      # TEMPORARY
-      - run: ssh $URL "cd $ROOT/$BUILD; ls -la log/; touch log/production.log; touch log/skylight.log; touch log/skylight.log; ls -la log/"
-
       # Make tmp directory writable
       - run: ssh $URL "cd $ROOT/$BUILD; chmod -R g+w ./tmp/"
 
@@ -108,6 +105,9 @@ jobs:
       # From this moment onwards Puma will serve the Rails app we just deployed and no longer the old one.
       # We conciously avoid Puma's "phased-restart" and "restart" because these have issues.
       - run: ssh $URL "cd $ROOT/$BUILD; bin/pumactl -F config/puma/production.rb -T '12345' stop; bin/pumactl -F config/puma/production.rb -T '12345' start"
+
+      # Set permissions for log files
+      - run: ssh $URL "cd $ROOT/$BUILD; ls -la log/; chmod g+w log/production.log; chmod g+w log/skylight.log; chmod g+w log/skylight.native.log; ls -la log/"
 
       # Clean up time! Remove all builds except the one that was just deployed.
       # The find command behaves a bit different in Fish, compared to Bash:
