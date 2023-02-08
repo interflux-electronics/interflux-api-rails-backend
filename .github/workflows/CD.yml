@@ -79,6 +79,9 @@ jobs:
       # Make log directory writable
       - run: ssh $URL "cd $ROOT/$BUILD; chmod -R g+w ./log/"
 
+      # TEMPORARY
+      - run: ssh $URL "cd $ROOT/$BUILD; ls -la log/; touch log/production.log; touch log/skylight.log; touch log/skylight.log; ls -la log/"
+
       # Make tmp directory writable
       - run: ssh $URL "cd $ROOT/$BUILD; chmod -R g+w ./tmp/"
 
