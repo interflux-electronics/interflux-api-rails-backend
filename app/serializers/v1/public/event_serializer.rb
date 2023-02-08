@@ -4,6 +4,8 @@ module V1
       attributes :name,
                  :city,
                  :dates,
+                 :start_date,
+                 :end_date,
                  :description
 
       belongs_to :country

@@ -36,6 +36,8 @@ module V1
           name
           city
           dates
+          start_date
+          end_date
           description
         ]
       end
