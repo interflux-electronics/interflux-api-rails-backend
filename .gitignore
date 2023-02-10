@@ -32,4 +32,8 @@
 db/backups/
 
 # Ignore the puma pids, sockets and logs
-# /puma/*
+/puma/*
+!/puma/.keep
+
+# Never commit the production secrets.
+.rbenv-vars
