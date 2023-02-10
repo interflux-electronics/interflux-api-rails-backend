@@ -28,10 +28,11 @@
 /.env.development
 /.env.test
 
-# Database backups are ephemeral and data sensitive, never commit
-db/backups/
+# Never commit database backups to the codebase.
+/db/backups/*
+!/db/backups/.keep
 
-# Ignore the puma pids, sockets and logs
+# Ignore all the Puma related files given they are ephemeral and production only.
 /puma/*
 !/puma/.keep
 
