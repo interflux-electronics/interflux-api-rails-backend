@@ -28,20 +28,20 @@ threads 0, 5
 
 # Where to store the Puma socket.
 # This is the socekt Nginx will forward requests to and expects responses from.
-bind 'unix:///var/www/rails.api.interflux.com/puma/server.sock'
+bind 'unix:///var/www/api.interflux.com/sockets/puma.sock'
 
 # Where to store the Puma control socket.
 # This socket allows us to interact with Puma (start, stop, status, ...)
-activate_control_app 'unix:///var/www/rails.api.interflux.com/puma/control.sock', auth_token: '12345'
+activate_control_app 'unix:///var/www/api.interflux.com/sockets/pumactl.sock', auth_token: '12345'
 
 # Where to store Pumag pid, state and logs.
-pidfile '/var/www/rails.api.interflux.com/puma/server.pid'
-state_path '/var/www/rails.api.interflux.com/puma/server.state'
-stdout_redirect '/var/www/rails.api.interflux.com/puma/stdout.log', '/var/www/rails.api.interflux.com/puma/stderr.log', true
+pidfile '/var/www/api.interflux.com/pids/puma.pid'
+state_path '/var/www/api.interflux.com/pids/puma.state'
+stdout_redirect '/var/www/api.interflux.com/logs/puma.stdout.log', '/var/www/api.interflux.com/logs/puma.stderr.log', true
 
 # Which Rails build to serve.
 # Note that this is a symlinked folder pointing at the latest build.
-directory '/var/www/rails.api.interflux.com/'
+directory '/var/www/api.interflux.com/builds/production/latest'
 
 # Verifies that all workers have checked in to the master process within the
 # given timeout. If not the worker process will be restarted. This is not a

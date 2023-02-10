@@ -30,3 +30,6 @@
 
 # Database backups are ephemeral and data sensitive, never commit
 db/backups/
+
+# Ignore the puma pids, sockets and logs
+# /puma/*
