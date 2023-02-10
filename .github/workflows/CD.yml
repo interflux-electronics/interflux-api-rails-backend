@@ -112,7 +112,7 @@ jobs:
       # Clean up time! Remove all builds except the one that was just deployed.
       # The find command behaves a bit different in Fish, compared to Bash:
       # https://unix.stackexchange.com/questions/301225/find-exec-not-working-in-fish
-      - run: ssh $URL "cd $ROOT/; find builds/production/ -type d -mindepth 1 -maxdepth 1 -not -name $REVISION -exec rm -rf '{}' +"
+      # - run: ssh $URL "cd $ROOT/; find builds/production/ -type d -mindepth 1 -maxdepth 1 -not -name $REVISION -exec rm -rf '{}' +"
 
       # Here we perform a sanity check to test that:
       # 1. The API is up, running and responding
