@@ -42,7 +42,7 @@ jobs:
     env:
       DOMAIN: rails.api.interflux.com
       ROOT: /var/www/rails.api.interflux.com/
-      SSH: ${{ secrets.SSH }}
+      SSH: ${{ secrets.SSH_FRANKFURT }}
       URL: admin@frankfurt.server.interflux.com
     steps:
       - name: Prepare code base
@@ -50,7 +50,7 @@ jobs:
       - name: Set up SSH
         run: |
           mkdir ~/.ssh
-          'echo "$SSH" > ~/.ssh/$URL'
+          'echo "$SSH_FRANKFURT" > ~/.ssh/$URL'
           'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
           ssh-keyscan -H server.interflux.com > ~/.ssh/known_hosts
           chmod 0755 ~/.ssh/
