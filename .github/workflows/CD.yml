@@ -52,12 +52,17 @@ jobs:
       - run: mkdir ~/.ssh
 
       # # Add the SSH key
+      - run: ls -la ~/.ssh
       - run: 'echo "$SSH_FRANKFURT" > ~/.ssh/$URL'
+      - run: ls -la ~/.ssh
 
       # # Configure SSH to always use the custom key, so we don't have to do ssh -i
+      - run: cat ~/.ssh/config
       - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
+      - run: cat ~/.ssh/config
 
       # # Add the remote server to trusted hosts
+      - run: cat ~/.ssh/known_hosts
       - run: ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts
       - run: cat ~/.ssh/known_hosts
 
