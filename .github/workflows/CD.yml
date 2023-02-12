@@ -65,7 +65,6 @@ jobs:
 
       - name: Set up SSH
         run: |
-          mkdir ~/.ssh
           'echo "$SSH_FRANKFURT" > ~/.ssh/$URL'
           'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
           ssh-keyscan -H server.interflux.com > ~/.ssh/known_hosts
