@@ -58,7 +58,7 @@ jobs:
       - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
 
       # # Add the remote server to trusted hosts
-      - run: "ssh-keyscan -H $HOST > ~/.ssh/known_hosts"
+      - run: ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts
       - run: cat ~/.ssh/known_hosts
 
       # # Set all SSH file permissions
