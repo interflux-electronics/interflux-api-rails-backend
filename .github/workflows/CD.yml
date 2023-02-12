@@ -61,7 +61,6 @@ jobs:
       - run: cat ~/.ssh/config
 
       # # Add the remote server to trusted hosts
-      - run: cat ~/.ssh/known_hosts
       - run: ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts
       - run: cat ~/.ssh/known_hosts
 
@@ -76,6 +75,7 @@ jobs:
       #     chmod 0755 ~/.ssh/
       #     chmod 600 ~/.ssh/$URL
       #     chmod 644 ~/.ssh/known_hosts
+      - run: ssh -v $URL "cd $ROOT; ls -la"
       - name: Back up database
         run: |
           echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
