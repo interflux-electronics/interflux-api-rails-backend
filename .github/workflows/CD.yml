@@ -43,8 +43,7 @@ jobs:
       URL: admin@frankfurt.server.interflux.com
       HOST: frankfurt.server.interflux.com
       ROOT: /var/www/rails.api.interflux.com/
-      SSH: ${{ secrets.SSH_FRANKFURT }}
-      PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+      SSH: ${{ secrets.SSH_FRANKFURT_DEPLOY }}
 
     steps:
       # Git clone the code base to worker
@@ -54,7 +53,7 @@ jobs:
       - run: mkdir ~/.ssh
 
       # # Add the SSH key
-      - run: 'echo "$SSH_FRANKFURT" > ~/.ssh/$URL'
+      - run: 'echo "$SSH_FRANKFURT_DEPLOY" > ~/.ssh/$URL'
 
       # # Configure SSH to always use the custom key, so we don't have to do ssh -i
       - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
