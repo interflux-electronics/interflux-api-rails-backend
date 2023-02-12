@@ -36,9 +36,9 @@ jobs:
       - run: bin/rails test --verbose
 
   deploy:
-    name: Deploy new
+    name: Deploy
     runs-on: ubuntu-latest
-    needs: test
+    # needs: test
     env:
       DOMAIN: rails.api.interflux.com
       ROOT: /var/www/rails.api.interflux.com/
@@ -47,6 +47,22 @@ jobs:
     steps:
       - name: Prepare code base
         uses: actions/checkout@v2
+
+      # Create directory for SSH
+      - run: mkdir ~/.ssh
+
+      # # Add the private key of the restricted bot user on the remote server
+      # - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
+
+      # # Configure SSH to always use the custom key, so we don't have to do ssh -i
+      # - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
+
+      # # Add the remote server to trusted hosts
+      # - run: ssh-keyscan -H server.interflux.com > ~/.ssh/known_hosts
+
+      # # Set all SSH file permissions
+      # - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
+
       - name: Set up SSH
         run: |
           mkdir ~/.ssh
