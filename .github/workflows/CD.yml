@@ -115,9 +115,9 @@ jobs:
       #   run: exit 0
 
       - name: "Sanity check: FAIL 2"
-        if: ${{ fromJson(env.JSON).build.git.revision }} != env.REVISION || ${{ fromJson(env.JSON).status }} != 200
+        if: ${{ fromJson(env.JSON).build.git.revision != env.REVISION }} || ${{ fromJson(env.JSON).status != 200 }}
         run: exit -1
 
       - name: "Sanity check: PASS 2"
-        if: ${{ fromJson(env.JSON).build.git.revision }} == env.REVISION && ${{ fromJson(env.JSON).status }} == 200
+        if: ${{ fromJson(env.JSON).build.git.revision == env.REVISION }} && ${{ fromJson(env.JSON).status == 200 }}
         run: exit 0
