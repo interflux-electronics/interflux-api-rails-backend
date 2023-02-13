@@ -64,6 +64,9 @@ jobs:
       # # Set all SSH file permissions
       - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
 
+      - run: ssh-add -l
+      - run: ssh-add ~/.ssh/$URL
+      - run: ssh-add -l
       # - name: Set up SSH
       #   run: |
       #     'echo "$SSH_FRANKFURT" > ~/.ssh/$URL'
