@@ -64,7 +64,7 @@ jobs:
       # # Set all SSH file permissions
       - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
 
-      - run: eval `ssh-agent -s`
+      - run: eval $(ssh-agent)
       - run: ssh-add -l
       - run: ssh-add ~/.ssh/$URL
       - run: ssh-add -l
