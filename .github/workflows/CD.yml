@@ -77,7 +77,7 @@ jobs:
       - run: ssh $URL "cd $ROOT; rbenv install --skip-existing"
 
       # Install Bundler
-      - run: ssh $URL "cd $ROOT; gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+      - run: ssh $URL "cd $ROOT; bundler_version=$(grep -A 1 \"BUNDLED WITH\" Gemfile.lock | tail -n 1); gem install bundler -v $bundler_version"
 
       # Install gems
       - run: ssh $URL "cd $ROOT; bundle install"
