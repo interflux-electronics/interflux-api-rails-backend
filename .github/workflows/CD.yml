@@ -88,23 +88,24 @@ jobs:
       # Restart Puma
       - run: ssh $URL "cd $ROOT; bin/pumactl -F config/puma/production.rb -T '12345' stop; bin/pumactl -F config/puma/production.rb -T '12345' start"
 
-      # Here we perform a sanity check to test that:
-      # 1. The API is up, running and responding
-      # 2. The API is running the latest code
-      # We do this by curl-ing a public end point which returns status 200 and the latest Git revision.
-      - name: Sanity check
-        run: |
-          'echo "JSON=$(curl --silent https://api.interflux.com/sanity-check -H ''Content-Type: application/vnd.api+json'')" >> $GITHUB_ENV'
-          'echo "$JSON" | jq .'
-          'echo "STATUS=$(echo "$JSON" | jq .status)" >> $GITHUB_ENV'
-          'echo "API_REVISION=$(echo "$JSON" | jq -r .build.git.revision)" >> $GITHUB_ENV'
+      # Hit the sanity check endpoint of the Interflux backend
+      - run: 'echo "JSON=$(curl --silent https://rails.api.interflux.com/sanity-check -H ''Content-Type: application/vnd.api+json'')" >> $GITHUB_ENV'
+
+      # Install jq for interpreting JSON payloads
+      - run: apt-get -y install jq
+
+      # Grab the status code
+      - run: 'echo "STATUS_CODE=$(echo "$JSON" | jq .status)" >> $GITHUB_ENV'
+
+      # Grab the git revision hash
+      - run: 'echo "GIT_REVISION=$(echo "$JSON" | jq -r .build.git.revision)" >> $GITHUB_ENV'
 
       # Fail the work flow, something is wrong.
       - name: "Sanity check: FAIL"
         run: exit -1
-        if: env.API_REVISION != env.REVISION || env.STATUS != 200
+        if: env.GIT_REVISION != env.REVISION || env.STATUS_CODE != 200
 
       # All green, deploy was successful!
       - name: "Sanity check: PASS"
-        if: env.API_REVISION == env.REVISION && env.STATUS == 200
+        if: env.GIT_REVISION == env.REVISION && env.STATUS_CODE == 200
         run: exit 0
