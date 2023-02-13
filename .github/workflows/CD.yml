@@ -88,9 +88,9 @@ jobs:
 
       # Hit the sanity check endpoint of the Interflux backend
       - run: 'echo "JSON=$(curl --silent https://rails.api.interflux.com/sanity-check -H ''Content-Type: application/vnd.api+json'')" >> $GITHUB_ENV'
-
-      - run: 'echo "STATUS_CODE=${{ fromJson(env.JSON).status }}" >> $GITHUB_ENV'
-      - run: 'echo "API_REVISION=${{ fromJson(env.JSON).build.git.revision }}" >> $GITHUB_ENV'
+      - run: echo "STATUS=${{ fromJson(env.JSON).status }}" >> $GITHUB_ENV
+      - run: echo "LOCAL_REVISION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+      - run: echo "REMOTE_REVISION=${{ fromJson(env.JSON).build.git.revision }}" >> $GITHUB_ENV
 
       # Install jq for interpreting JSON payloads
       # - run: apt-get -y install jq
@@ -109,12 +109,12 @@ jobs:
 
       # Fail the work flow, something is wrong.
       - name: "Sanity check: FAIL"
-        if: env.API_REVISION != env.REVISION || env.STATUS_CODE != 200
+        if: env.REMOTE_REVISION != env.LOCAL_REVISION || env.STATUS != 200
         run: exit -1
 
       # All green, deploy was successful!
       - name: "Sanity check: PASS"
-        if: env.API_REVISION == env.REVISION && env.STATUS_CODE == 200
+        if: env.REMOTE_REVISION == env.LOCAL_REVISION && env.STATUS == 200
         run: exit 0
 
       # - name: "Sanity check: FAIL 2"
