@@ -46,66 +46,65 @@ jobs:
       BRANCH: production
       ROOT: /var/www/rails.api.interflux.com
     steps:
+      # Clone the repo to the worker server
       - uses: actions/checkout@v2
-      # - run: sudo apt-get install jq
-      # - run: echo "REVISION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
-      # - run: echo "BUILD="builds/$BRANCH/$REVISION/"" >> $GITHUB_ENV
-      # - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
-
-      - name: Prepare SSH
-        run: 'mkdir ~/.ssh; echo "$PRIVATE_KEY" > ~/.ssh/$URL; echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config; ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts; chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts'
 
       # Create directory for SSH
-      # - run: mkdir ~/.ssh
+      - run: mkdir ~/.ssh
 
       # Add the private key of the restricted bot user on the remote server
-      # - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
+      - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
 
       # Configure SSH to always use the custom key, so we don't have to do ssh -i
-      # - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
+      - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
 
       # Add the remote server to trusted hosts
-      # - run: ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts
+      - run: ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts
 
       # Set all SSH file permissions
-      # - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
+      - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
 
-      - name: Create timestamp
-        run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
+      # Create time stamp
+      - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
 
-      - name: Back up database
-        run: ssh $URL "cd $ROOT; bin/rails db:data:dump_dir dir=backups/production-$TIMESTAMP"
-      # - name: Pull the latest production code
-      #   run: ssh $URL "cd $ROOT; git checkout production; git pull"
-      # - name: Install Ruby
-      #   run: ssh $URL "cd $ROOT; rbenv install --skip-existing"
-      # - name: Install Bundler
-      #   run: ssh $URL "cd $ROOT; gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
-      # - name: Install gems
-      #   run: ssh $URL "cd $ROOT; bundle install"
-      # - name: Migrate database
-      #   run: ssh $URL "cd $ROOT; bin/rails db:migrate"
-      # - name: Restart Puma
-      #   run: ssh $URL "cd $ROOT; bin/pumactl -F config/puma/production.rb -T '12345' stop; bin/pumactl -F config/puma/production.rb -T '12345' start"
+      # Back up the database
+      - run: ssh $URL "cd $ROOT; bin/rails db:data:dump_dir dir=backups/production-$TIMESTAMP"
+
+      # Pull the latest production code
+      - run: ssh $URL "cd $ROOT; git checkout production; git pull"
+
+      # Install Ruby
+      - run: ssh $URL "cd $ROOT; rbenv install --skip-existing"
+
+      # Install Bundler
+      - run: ssh $URL "cd $ROOT; gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+
+      # Install gems
+      - run: ssh $URL "cd $ROOT; bundle install"
+
+      # Migrate database
+      - run: ssh $URL "cd $ROOT; bin/rails db:migrate"
+
+      # Restart Puma
+      - run: ssh $URL "cd $ROOT; bin/pumactl -F config/puma/production.rb -T '12345' stop; bin/pumactl -F config/puma/production.rb -T '12345' start"
 
       # Here we perform a sanity check to test that:
       # 1. The API is up, running and responding
       # 2. The API is running the latest code
       # We do this by curl-ing a public end point which returns status 200 and the latest Git revision.
-      # - name: Sanity check
-      #   run: |
-      #     sudo apt-get install jq
-      #     'echo "JSON=$(curl --silent https://api.interflux.com/sanity-check -H ''Content-Type: application/vnd.api+json'')" >> $GITHUB_ENV'
-      #     'echo "$JSON" | jq .'
-      #     'echo "STATUS=$(echo "$JSON" | jq .status)" >> $GITHUB_ENV'
-      #     'echo "API_REVISION=$(echo "$JSON" | jq -r .build.git.revision)" >> $GITHUB_ENV'
+      - name: Sanity check
+        run: |
+          'echo "JSON=$(curl --silent https://api.interflux.com/sanity-check -H ''Content-Type: application/vnd.api+json'')" >> $GITHUB_ENV'
+          'echo "$JSON" | jq .'
+          'echo "STATUS=$(echo "$JSON" | jq .status)" >> $GITHUB_ENV'
+          'echo "API_REVISION=$(echo "$JSON" | jq -r .build.git.revision)" >> $GITHUB_ENV'
 
       # Fail the work flow, something is wrong.
-      # - name: "Sanity check: FAIL"
-      #   run: exit -1
-      #   if: env.API_REVISION != env.REVISION || env.STATUS != 200
+      - name: "Sanity check: FAIL"
+        run: exit -1
+        if: env.API_REVISION != env.REVISION || env.STATUS != 200
 
       # All green, deploy was successful!
-      # - name: "Sanity check: PASS"
-      #   if: env.API_REVISION == env.REVISION && env.STATUS == 200
-      #   run: exit 0
+      - name: "Sanity check: PASS"
+        if: env.API_REVISION == env.REVISION && env.STATUS == 200
+        run: exit 0
