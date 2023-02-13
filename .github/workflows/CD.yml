@@ -63,31 +63,34 @@ jobs:
       - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
 
       # Create time stamp
-      - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
+      # - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
 
       # Back up the database
-      - run: ssh $URL "cd $ROOT; bin/rails db:data:dump_dir dir=backups/production-$TIMESTAMP"
+      # - run: ssh $URL "cd $ROOT; bin/rails db:data:dump_dir dir=backups/production-$TIMESTAMP"
 
       # Pull the latest production code
       - run: ssh $URL "cd $ROOT; git checkout production; git pull"
 
       # Install Ruby
-      - run: ssh $URL "cd $ROOT; rbenv install --skip-existing"
+      # - run: ssh $URL "cd $ROOT; rbenv install --skip-existing"
 
       # Install Bundler
-      - run: ssh $URL "cd $ROOT; gem install bundler -v \"$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)\""
+      # - run: ssh $URL "cd $ROOT; gem install bundler -v \"$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)\""
 
       # Install gems
-      - run: ssh $URL "cd $ROOT; bundle install"
+      # - run: ssh $URL "cd $ROOT; bundle install"
 
       # Migrate database
-      - run: ssh $URL "cd $ROOT; bin/rails db:migrate"
+      # - run: ssh $URL "cd $ROOT; bin/rails db:migrate"
 
       # Restart Puma
       - run: ssh $URL "cd $ROOT; bin/pumactl -F config/puma/production.rb -T '12345' stop; bin/pumactl -F config/puma/production.rb -T '12345' start"
 
       # Hit the sanity check endpoint of the Interflux backend
       - run: 'echo "JSON=$(curl --silent https://rails.api.interflux.com/sanity-check -H ''Content-Type: application/vnd.api+json'')" >> $GITHUB_ENV'
+
+      - run: 'echo "STATUS_CODE=${{ fromJson(env.JSON).status }} >> $GITHUB_ENV'
+      - run: 'echo "API_REVISION=${{ fromJson(env.JSON).build.git.revision }} >> $GITHUB_ENV'
 
       # Install jq for interpreting JSON payloads
       # - run: apt-get -y install jq
@@ -105,19 +108,19 @@ jobs:
       #     run: 'echo "GIT_REVISION=$(echo "$JSON" | jq -r .build.git.revision)" >> $GITHUB_ENV'
 
       # Fail the work flow, something is wrong.
-      # - name: "Sanity check: FAIL"
-      #   if: env.GIT_REVISION != env.REVISION || env.STATUS_CODE != 200
-      #   run: exit -1
-
-      # All green, deploy was successful!
-      # - name: "Sanity check: PASS"
-      #   if: env.GIT_REVISION == env.REVISION && env.STATUS_CODE == 200
-      #   run: exit 0
-
-      - name: "Sanity check: FAIL 2"
-        if: ${{ fromJson(env.JSON).build.git.revision != env.REVISION }} || ${{ fromJson(env.JSON).status != 200 }}
+      - name: "Sanity check: FAIL"
+        if: env.API_REVISION != env.REVISION || env.STATUS_CODE != 200
         run: exit -1
 
-      - name: "Sanity check: PASS 2"
-        if: ${{ fromJson(env.JSON).build.git.revision == env.REVISION }} && ${{ fromJson(env.JSON).status == 200 }}
+      # All green, deploy was successful!
+      - name: "Sanity check: PASS"
+        if: env.API_REVISION == env.REVISION && env.STATUS_CODE == 200
         run: exit 0
+
+      # - name: "Sanity check: FAIL 2"
+      #   if: ${{ fromJson(env.JSON).build.git.revision != env.REVISION }} || ${{ fromJson(env.JSON).status != 200 }}
+      #   run: exit -1
+
+      # - name: "Sanity check: PASS 2"
+      #   if: ${{ fromJson(env.JSON).build.git.revision == env.REVISION }} && ${{ fromJson(env.JSON).status == 200 }}
+      #   run: exit 0
