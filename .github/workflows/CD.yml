@@ -89,7 +89,7 @@ jobs:
       # Hit the sanity check endpoint of the Interflux backend
       - run: 'echo "JSON=$(curl --silent https://rails.api.interflux.com/sanity-check -H ''Content-Type: application/vnd.api+json'')" >> $GITHUB_ENV'
       - run: echo "STATUS=${{ fromJson(env.JSON).status }}" >> $GITHUB_ENV
-      - run: echo "LOCAL_REVISION=$(echo $GITHUB_SHA | cut -c 1-6)" >> $GITHUB_ENV
+      - run: echo "LOCAL_REVISION=$(echo $GITHUB_SHA | cut -c 1-7)" >> $GITHUB_ENV
       - run: echo "REMOTE_REVISION=${{ fromJson(env.JSON).build.git.revision }}" >> $GITHUB_ENV
 
       # Install jq for interpreting JSON payloads
