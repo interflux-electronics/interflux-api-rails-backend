@@ -67,12 +67,10 @@ jobs:
       # Set all SSH file permissions
       - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
 
-      - run: ssh -v $URL "cd $ROOT; ls -la"
+      - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
 
       - name: Back up database
-        run: |
-          echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
-          ssh $URL "cd $ROOT; bin/rails db:data:dump_dir dir=backups/$TIMESTAMP"
+        run: ssh $URL "cd $ROOT; bin/rails db:data:dump_dir dir=backups/production-$TIMESTAMP"
       # - name: Pull the latest production code
       #   run: ssh $URL "cd $ROOT; git checkout production; git pull"
       # - name: Install Ruby
