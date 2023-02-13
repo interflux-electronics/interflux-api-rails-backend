@@ -52,22 +52,26 @@ jobs:
       # - run: echo "BUILD="builds/$BRANCH/$REVISION/"" >> $GITHUB_ENV
       # - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
 
+      - name: Prepare SSH
+        run: 'mkdir ~/.ssh; echo "$PRIVATE_KEY" > ~/.ssh/$URL; echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config; ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts; chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts'
+
       # Create directory for SSH
-      - run: mkdir ~/.ssh
+      # - run: mkdir ~/.ssh
 
       # Add the private key of the restricted bot user on the remote server
-      - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
+      # - run: 'echo "$PRIVATE_KEY" > ~/.ssh/$URL'
 
       # Configure SSH to always use the custom key, so we don't have to do ssh -i
-      - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
+      # - run: 'echo "IdentityFile ~/.ssh/$URL" > ~/.ssh/config'
 
       # Add the remote server to trusted hosts
-      - run: ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts
+      # - run: ssh-keyscan -H frankfurt.server.interflux.com > ~/.ssh/known_hosts
 
       # Set all SSH file permissions
-      - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
+      # - run: chmod 0755 ~/.ssh/; chmod 600 ~/.ssh/$URL; chmod 644 ~/.ssh/known_hosts
 
-      - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
+      - name: Create timestamp
+        run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
 
       - name: Back up database
         run: ssh $URL "cd $ROOT; bin/rails db:data:dump_dir dir=backups/production-$TIMESTAMP"
