@@ -89,8 +89,8 @@ jobs:
       # Hit the sanity check endpoint of the Interflux backend
       - run: 'echo "JSON=$(curl --silent https://rails.api.interflux.com/sanity-check -H ''Content-Type: application/vnd.api+json'')" >> $GITHUB_ENV'
 
-      - run: 'echo "STATUS_CODE=${{ fromJson(env.JSON).status }} >> $GITHUB_ENV'
-      - run: 'echo "API_REVISION=${{ fromJson(env.JSON).build.git.revision }} >> $GITHUB_ENV'
+      - run: 'echo "STATUS_CODE=${{ fromJson(env.JSON).status }}" >> $GITHUB_ENV'
+      - run: 'echo "API_REVISION=${{ fromJson(env.JSON).build.git.revision }}" >> $GITHUB_ENV'
 
       # Install jq for interpreting JSON payloads
       # - run: apt-get -y install jq
