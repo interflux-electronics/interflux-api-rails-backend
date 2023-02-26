@@ -17,7 +17,7 @@ class TranslateJob < ApplicationJob
     puts response
     puts '======'
     first_translation = response[:translations].first
-    record.update!(native: first_translation)
+    record.update!(native: first_translation, status: 'to-review')
     puts 'translate_job end'
     puts '======'
   end

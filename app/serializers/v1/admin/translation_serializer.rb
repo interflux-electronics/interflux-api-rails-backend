@@ -5,11 +5,8 @@ module V1
                  :language,
                  :native,
                  :english,
-                 :needs_review,
-                 :review_code,
-                 :custom_review_message
-
-      has_many :translation_events, if: requested?('translation_events')
+                 :english_before,
+                 :status
     end
   end
 end

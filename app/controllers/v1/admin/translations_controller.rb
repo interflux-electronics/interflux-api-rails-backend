@@ -41,21 +41,14 @@ module V1
         V1::Admin::TranslationSerializer
       end
 
-      def permitted_includes
-        %i[
-          translation_events
-        ]
-      end
-
       def creatable_attributes
         %i[
           location
           language
           native
           english
-          needs_review
-          review_code
-          custom_review_message
+          english_before
+          status
         ]
       end
 

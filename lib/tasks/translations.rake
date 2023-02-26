@@ -33,9 +33,9 @@ namespace :translations do
           new_record = Translation.create!(
             key: en.key,
             language: lang,
-            english: en.native,
-            needs_review: true,
-            review_code: 'untranslated'
+            english: en.native
+            # needs_review: true,
+            # review_code: 'untranslated'
           )
           TranslationEvent.create!(code: 'created', updated_by: 'Jan Werkhoven', translation: new_record)
           puts "#{en.key} | #{lang} | CREATED"

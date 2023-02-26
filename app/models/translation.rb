@@ -1,25 +1,23 @@
 class Translation < ApplicationRecord
-  has_many :translation_events, dependent: :destroy
-
-  validates :english, uniqueness: { scope: %i[language] }
-  validates :review_code, inclusion: {
-    in: [
-      nil,
-      'untranslated',
-      'robot-translated',
-      'source-changed',
-      'custom'
+  validates :location, uniqueness: { scope: %i[language] }
+  validates :status, inclusion: {
+    in: %w[
+      to-translate
+      to-update
+      to-review
+      done
     ]
   }
 
-  after_create :translate
+  # after_create :translate
 
-  def translate
-    puts '------'
-    puts 'after_create'
-    puts "language: #{language}"
-    puts "phrase: #{english}"
-    puts '------'
-    TranslateJob.perform_later(self) if native.nil?
-  end
+  # def translate
+  #   puts '------'
+  #   puts 'after_create'
+  #   puts "language: #{language}"
+  #   puts "location: #{location}"
+  #   puts "english: #{english}"
+  #   puts '------'
+  #   TranslateJob.perform_later(self) if native.nil?
+  # end
 end

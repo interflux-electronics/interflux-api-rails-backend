@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_07_063955) do
+ActiveRecord::Schema.define(version: 2023_02_25_230018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -489,25 +489,16 @@ ActiveRecord::Schema.define(version: 2023_02_07_063955) do
     t.index ["slug"], name: "index_tags_on_slug", unique: true
   end
 
-  create_table "translation_events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "translation_id"
-    t.string "code"
-    t.string "person"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "translations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "location"
     t.string "language"
     t.string "native"
     t.string "english"
-    t.boolean "needs_review"
-    t.string "review_code"
-    t.string "custom_review_message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["language", "english"], name: "unique_translation_index", unique: true
+    t.string "status"
+    t.text "english_before"
+    t.index ["language", "location"], name: "unique_location_per_language_index", unique: true
     t.index ["language"], name: "index_translations_on_language"
     t.index ["location"], name: "index_translations_on_location"
   end

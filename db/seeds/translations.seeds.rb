@@ -3,25 +3,25 @@ def seed(list, language)
     struct = OpenStruct.new(item)
 
     english = nil
-    needs_review = false
-    review_reason = nil
+    # needs_review = false
+    # review_reason = nil
 
     if language != 'en'
       english_record = Translation.find_by(language: 'en', key: struct.key)
       byebug if english_record.nil?
       english = english_record.native
       byebug if english.nil?
-      needs_review = true
-      review_code = 'robot-translated'
+      # needs_review = true
+      # review_code = 'robot-translated'
     end
 
     properties = OpenStruct.new(
       key: struct.key,
       language: language,
       native: struct.native,
-      english: english,
-      needs_review: needs_review,
-      review_code: review_code
+      english: english
+      # needs_review: needs_review,
+      # review_code: review_code
     )
 
     record = Translation.find_by(language: language, key: struct.key)

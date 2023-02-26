@@ -14,7 +14,7 @@ module V1
       end
 
       def update
-        forbidden
+        allow_update
       end
 
       def destroy
@@ -40,9 +40,11 @@ module V1
 
       def creatable_attributes
         %i[
-          location
           language
+          location
           english
+          english_before
+          status
         ]
       end
     end

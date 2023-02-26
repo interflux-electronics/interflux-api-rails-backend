@@ -43,33 +43,33 @@ class TranslateService
     return puts 'FAIL: target_lang not supported' unless supported_languages.include?(@target_lang.to_sym)
     return puts 'FAIL: source_lang not supported' unless supported_languages.include?(@source_lang.to_sym)
 
+    response = Faraday.post(url) do |req|
+      req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
+      req.headers['Authorization'] = "DeepL-Auth-Key #{api_key}"
+      req.body = URI.encode_www_form(data)
+    end
+
+    return puts 'FAIL: request failed' unless response.status == 200
+
+    body = JSON.parse(response.body)
+
+    # The response body will look something like:
+    # {"translations"=>[{"detected_source_language"=>"EN", "text"=>"Sie sind schwul"}]}
+    # Note how the translations key is an array which may return multiple translations.
+
+    return puts 'FAIL: no translations key' unless body.key?('translations')
+
+    translations = body['translations'].map { |t| t['text'] }
+
+    # Here we map all suggested translations to a flat array like:
+    # ['Sie sind schwul', 'Suggestion 2']
+
+    puts "translations: #{translations}"
+
     {
       success: true,
-      translations: ['Ich bin foo bar', 'Meine Name is foo bar', 'Ich heise foo bar']
+      translations: translations
     }
-
-    # response = Faraday.post(url) do |req|
-    #   req.headers['Content-Type'] = 'application/x-www-form-urlencoded'
-    #   req.headers['Authorization'] = "DeepL-Auth-Key #{api_key}"
-    #   req.body = URI.encode_www_form(data)
-    # end
-
-    # return puts 'FAIL: request failed' unless response.status == 200
-
-    # body = JSON.parse(response.body)
-
-    # return puts 'FAIL: no translations key' unless body.key?('translations')
-
-    # translations = body['translations']
-
-    # return puts 'FAIL: no translations' if translations.empty?
-
-    # translation = translations.first['text']
-
-    # puts "translations: #{translation}"
-    # puts '---'
-
-    # translation
   end
 
   def url
@@ -80,7 +80,8 @@ class TranslateService
     {
       text: @phrase,
       target_lang: @target_lang,
-      source_lang: @source_lang
+      source_lang: @source_lang,
+      formality: 'prefer_more'
     }
   end
 

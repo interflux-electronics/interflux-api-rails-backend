@@ -35,7 +35,6 @@ Rails.application.routes.draw do
       resources :sessions
       resources :simulation_requests, path: '/simulation-requests'
       resources :translations
-      resources :translation_events, path: '/translation-events'
       resources :uses
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinars
@@ -80,7 +79,6 @@ Rails.application.routes.draw do
       resources :qualities
       resources :sessions
       resources :translations
-      resources :translation_events, path: '/translation-events'
       resources :use_images, path: '/use-images'
       resources :users
       resources :uses
