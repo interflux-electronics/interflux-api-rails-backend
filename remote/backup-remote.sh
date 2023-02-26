@@ -7,8 +7,7 @@ timestamp=$1
 
 (
   set -x
-  cd /var/www/api.interflux.com/builds/production/latest/
+  cd /var/www/rails.api.interflux.com/
   export RAILS_ENV=production
-  bin/rails db:data:dump_dir dir=$timestamp
-  mv db/$timestamp/ /var/www/api.interflux.com/db/production-$timestamp/
+  bin/rails db:data:dump_dir dir=backups/$timestamp
 )
