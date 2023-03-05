@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_25_230018) do
+ActiveRecord::Schema.define(version: 2023_03_05_053321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -498,6 +498,7 @@ ActiveRecord::Schema.define(version: 2023_02_25_230018) do
     t.datetime "updated_at", null: false
     t.string "status"
     t.text "english_before"
+    t.string "error"
     t.index ["language", "location"], name: "unique_location_per_language_index", unique: true
     t.index ["language"], name: "index_translations_on_language"
     t.index ["location"], name: "index_translations_on_location"

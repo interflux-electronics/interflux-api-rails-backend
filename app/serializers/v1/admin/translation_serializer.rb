@@ -6,7 +6,8 @@ module V1
                  :native,
                  :english,
                  :english_before,
-                 :status
+                 :status,
+                 :error
     end
   end
 end

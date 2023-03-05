@@ -49,6 +49,7 @@ module V1
           english
           english_before
           status
+          error
         ]
       end
 

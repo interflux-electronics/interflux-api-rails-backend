@@ -6,6 +6,7 @@ class Translation < ApplicationRecord
       to-update
       to-review
       done
+      error
     ]
   }
 
