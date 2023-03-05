@@ -12,6 +12,8 @@ module V1
 
       has_many :products, if: requested?('products')
       has_many :product_family_images, if: requested?('product_family_images')
+
+      cache_options store: Rails.cache, namespace: 'jsonapi-serializer', expires_in: 1.day
     end
   end
 end

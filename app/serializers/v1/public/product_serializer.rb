@@ -38,6 +38,8 @@ module V1
 
       has_many :documents, if: requested?('documents')
       has_many :product_documents, if: requested?('product_documents')
+
+      cache_options store: Rails.cache, namespace: 'jsonapi-serializer', expires_in: 1.day
     end
   end
 end

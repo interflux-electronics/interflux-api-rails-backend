@@ -5,6 +5,8 @@ module V1
                  :name_native,
                  :latitude,
                  :longitude
+
+      cache_options store: Rails.cache, namespace: 'jsonapi-serializer', expires_in: 1.day
     end
   end
 end
