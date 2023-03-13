@@ -54,28 +54,25 @@ namespace :translations do
   # bin/rails translations:fix
   task clean: :environment do
     puts '---------'
-    puts 'Destroy unlinked translations'
+    puts 'Cleaning up translations'
     puts '---------'
 
     destroy_counter = 0
 
-    Translation.all.each do |trans|
-      if trans.language == 'en'
-        puts "#{trans.key} | #{trans.language} | ok"
-        next
-      end
+    locations_to_delete = [
+      'product.6'
+    ]
 
-      english_counterpart = Translation.find_by(language: 'en', key: trans.key)
-
-      if english_counterpart.nil?
-        puts "#{trans.key} | #{trans.language} | DESTROY"
-        trans.destroy!
+    locations_to_delete.each do |location|
+      records = Translation.where(location: location)
+      records.each do |record|
+        puts "destroying #{location} #{record.language}..."
+        record.destroy!
         destroy_counter += 1
-      else
-        puts "#{trans.key} | #{trans.language} | ok"
+        puts '---------'
       end
     end
-    puts '---------'
+
     puts "Destroyed #{destroy_counter}"
     puts '---------'
     puts 'Done'
