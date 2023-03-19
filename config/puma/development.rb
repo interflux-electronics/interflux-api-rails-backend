@@ -2,7 +2,8 @@
 
 environment 'development'
 
-bind 'tcp://0.0.0.0:3000'
+# bind 'tcp://0.0.0.0:3000'
+bind 'ssl://127.0.0.1:3000?key=ssl/server.key&cert=ssl/server.crt'
 
 tag 'Puma server for Interflux API (development)'
 
