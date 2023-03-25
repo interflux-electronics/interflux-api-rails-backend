@@ -16,42 +16,35 @@ namespace :translations do
   desc 'Common tasks for managing translations'
 
   # Usage:
-  # export RAILS_ENV=production
-  # bin/rails translations:fix
-  task fix: :environment do
+  # bin/rails translations:sync
+  task sync: :environment do
     puts '---------'
-    puts 'Creating missing translations'
+    puts 'Syncing translations'
     puts '---------'
 
-    languages = %w[en de es fr]
+    locations = Translation.distinct.pluck(:location)
+    languages = %w[de fr es]
 
-    Translation.where(language: 'en').each do |en|
+    locations.each do |loc|
       languages.each do |lang|
-        record = Translation.find_by(language: lang, key: en.key)
-
-        if record.nil?
-          new_record = Translation.create!(
-            key: en.key,
-            language: lang,
-            english: en.native
-            # needs_review: true,
-            # review_code: 'untranslated'
-          )
-          TranslationEvent.create!(code: 'created', updated_by: 'Jan Werkhoven', translation: new_record)
-          puts "#{en.key} | #{lang} | CREATED"
+        record = Translation.find_by(location: loc, language: lang)
+        if record.present?
+          puts "#{loc} #{lang} ok"
         else
-          puts "#{en.key} | #{lang} | ok"
+          puts "#{loc} #{lang} CREATING!"
+          Translation.create!(
+            location: loc,
+            language: lang,
+            english: Translation.find_by(location: loc).english,
+            status: 'to-translate'
+          )
         end
       end
     end
-    puts '---------'
-    puts 'Done'
-    puts '---------'
   end
 
   # Usage:
-  # export RAILS_ENV=production
-  # bin/rails translations:fix
+  # bin/rails translations:clean
   task clean: :environment do
     puts '---------'
     puts 'Cleaning up translations'
