@@ -63,7 +63,9 @@ namespace :translations do
       'product.6',
       'products.8',
       'products.11',
-      'products.12'
+      'products.12',
+      'webinars.13',
+      'webinars.14'
     ]
 
     locations_to_delete.each do |location|
