@@ -60,7 +60,10 @@ namespace :translations do
     destroy_counter = 0
 
     locations_to_delete = [
-      'product.6'
+      'product.6',
+      'products.8',
+      'products.11',
+      'products.12'
     ]
 
     locations_to_delete.each do |location|
