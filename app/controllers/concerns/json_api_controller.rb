@@ -143,11 +143,14 @@ module JsonApiController
     # Return 403 unless explicitely allowed in the controller
     return forbidden unless allowed
 
+    # Return 403 if the user does not have the ability to perform this action.
+    return forbidden_ability unless user_has_ability?('read')
+
     # Return 403 if unknown filters are used
     return error_forbidden_filters if forbidden_filters.any?
 
     # First we gather all records of the model class.
-    resources = model_class.all
+    records = model_class_with_includes.all
 
     # Next we reduce this collection with the permanent and requested filters.
     #
@@ -168,11 +171,11 @@ module JsonApiController
     filters&.each do |key, value|
       prefix = /^!?~\*?/.match(value).to_s if value.is_a? String
 
-      resources = if prefix.present?
-                    resources.where("#{key} #{prefix} ?", value.gsub!(prefix, ''))
-                  else
-                    resources.where("#{key}": value)
-                  end
+      records = if prefix.present?
+                  records.where("#{key} #{prefix} ?", value.gsub!(prefix, ''))
+                else
+                  records.where("#{key}": value)
+                end
     end
 
     # Here we prepare the options we can pass to the serializers.
@@ -183,11 +186,9 @@ module JsonApiController
     # Most importantly, we define which related models to include in the request.
     options[:include] = strong_includes if strong_includes
 
-    puts permitted_includes
-
     # We create a JSON response from the records we collected using the fast and
     # JSON API compliant Netflux serializers.
-    json = serializer_class.new(resources, options).serializable_hash.to_json
+    json = serializer_class.new(records, options).serializable_hash.to_json
 
     # Finally we return the JSON with a 200.
     render status: 200, json: json
@@ -246,8 +247,19 @@ module JsonApiController
   # end
 
   def allow_show
-    return record_not_found if record.nil?
+    # Return 403 if one of the include params is forbidden.
     return error_forbidden_includes if forbidden_includes.any?
+
+    # Return 403 if the user does not have the ability to perform this action.
+    return forbidden_ability unless user_has_ability?('read')
+
+    # Returns the record for given ID
+    # Get /products/IF-2005M
+    # Would yield ID "IF-2005M" and the primary key on products has the key "slug", not "id"
+    record = model_class_with_includes.find_by "#{primary_key}": params[:id]
+
+    # Return 404 if no record was found for ID
+    return record_not_found if record.nil?
 
     options = {
       params: params.as_json
@@ -260,20 +272,36 @@ module JsonApiController
     render status: 200, json: json
   end
 
+  # To avoid N+1 we include all the includes.
+  def model_class_with_includes
+    return model_class unless strong_includes
+
+    list = []
+
+    strong_includes.each do |symbol|
+      string = symbol.to_s
+
+      if string.include?('.')
+        split = string.split('.')
+        key = split[0]
+        value = split[1]
+        hash = {}
+        hash[key] = value
+        # list.push(**hash)
+      else
+        list.push(symbol)
+      end
+    end
+
+    model_class.includes(*list)
+  end
+
   # The primary key is not always "id", sometimes it's "slug" or "path".
   # resource = model_class.find_by "#{primary_key}": params[:id]
   # resource = model_class.find_by id: params[:id]
   #
   def primary_key
     model_class.primary_key
-  end
-
-  # Returns the record param ID
-  # Get /products/IF-2005M
-  # Would yield ID "IF-2005M" and the primary key on products has the key "slug", not "id"
-  #
-  def record
-    model_class.find_by "#{primary_key}": params[:id]
   end
 
   # INCLUDES
@@ -503,6 +531,13 @@ module JsonApiController
     head 204
   end
 
+  # AUTHENTICATION
+
+  # Optional hook which can be overriden to disallowe some, but not all users, from performing this action.
+  def user_has_ability?(_action)
+    true
+  end
+
   # VALIDATION
 
   # Check for the JSON API Content Type header. Throw 415 error if not present.
@@ -564,6 +599,14 @@ module JsonApiController
     )
   end
 
+  def forbidden_ability
+    render_error(
+      403,
+      'forbidden-ability',
+      'Your user lacks the ability to perform this requests.'
+    )
+  end
+
   def nothing_to_update
     render_error(
       400,
@@ -591,7 +634,7 @@ module JsonApiController
 
   def record_not_found(meta = nil)
     render_error(
-      422,
+      404,
       'record-not-found',
       'No record was found with the given ID.',
       meta
