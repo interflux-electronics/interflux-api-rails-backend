@@ -95,15 +95,98 @@ namespace :user do
   end
 
   task assign_abilities: :environment do
+    base = %w[
+      access_admin
+
+      create_products
+      read_products
+      update_products
+      delete_products
+
+      create_product_families
+      read_product_families
+      update_product_families
+      delete_product_families
+
+      create_uses
+      read_uses
+      update_uses
+      delete_uses
+
+      create_product_uses
+      read_product_uses
+      update_product_uses
+      delete_product_uses
+
+      create_qualities
+      read_qualities
+      update_qualities
+      delete_qualities
+
+      create_product_qualities
+      read_product_qualities
+      update_product_qualities
+      delete_product_qualities
+
+      create_documents
+      read_documents
+      update_documents
+      delete_documents
+
+      create_events
+      read_events
+      update_events
+      delete_events
+
+      create_webinars
+      read_webinars
+      update_webinars
+      delete_webinars
+
+      create_images
+      read_images
+      update_images
+      delete_images
+
+      create_people
+      read_people
+      update_people
+      delete_people
+
+      create_companies
+      read_companies
+      update_companies
+      delete_companies
+
+      create_company_members
+      read_company_members
+      update_company_members
+      delete_company_members
+
+      create_translations
+      read_translations
+      update_translations
+      delete_translations
+    ].join(',')
+
+    translation_base = %w[
+      create_translations
+      read_translations
+      update_translations
+      delete_translations
+    ]
+
     todos = [
-      ['d.werkhoven@interflux.com', 'access_admin'],
-      ['i.maris@interflux.com', 'access_admin'],
-      ['j.werkhoven@interflux.com', 'access_admin,write_users'],
-      ['farrah@interflux.com.sg', 'access_admin'],
-      ['r.lauwaert@interflux.com', 'access_admin'],
-      ['s.teliszewski@interflux.com', 'access_admin'],
-      ['wimvanriet@interflux.com.sg', 'access_admin'],
-      ['a.peeters@interflux.com', 'access_admin']
+      ['d.werkhoven@interflux.com', base],
+      ['i.maris@interflux.com', base],
+      ['jw@interflux.au', base],
+      ['farrah@interflux.com.sg', base],
+      ['r.lauwaert@interflux.com', base],
+      ['s.teliszewski@interflux.com', base],
+      ['wimvanriet@interflux.com.sg', base],
+      ['a.peeters@interflux.com', base],
+      ['c.guerrero@interflux.com', translation_base],
+      ['d.laprade@interfluxfrance.com', translation_base]
     ]
 
     todos.each do |todo|
