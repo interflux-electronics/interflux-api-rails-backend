@@ -6,8 +6,9 @@ module V1
       end
 
       def show
-        # Exit, if the user ID in the auth token does not match the one being retrieved
-        return no_user_match if params[:id] != auth_user.id
+        # In case the user does not have the "read_users" ability, the user
+        # can still retrieve their own user record.
+        @user_is_able = true if params[:id] == @auth_user.id
 
         allow_show
       end
@@ -17,8 +18,9 @@ module V1
       end
 
       def update
-        # Exit, if the user ID in the auth token does not match the one being edited
-        return no_user_match if params[:data][:id] != auth_user.id
+        # In case the user does not have the "update_users" ability, the user
+        # can still update their own user record.
+        @user_is_able = true if params[:data][:id] == @auth_user.id
 
         allow_update
       end
@@ -54,15 +56,6 @@ module V1
         %i[
           person
         ]
-      end
-
-      def no_user_match
-        render_error(
-          401,
-          'unauthorized',
-          'Your auth token does not match the user you are editing / retrieving. How naughty!',
-          meta
-        )
       end
     end
   end
