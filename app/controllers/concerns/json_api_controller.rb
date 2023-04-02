@@ -492,6 +492,8 @@ module JsonApiController
   # end
   #
   def allow_update
+    record = model_class.find params[:id]
+
     return record_not_found if record.nil?
     return forbidden_attribute if forbidden_attributes.any?
     return forbidden_relationship if forbidden_relationships.any?
@@ -526,6 +528,8 @@ module JsonApiController
   # end
   #
   def allow_destroy
+    record = model_class.find params[:id]
+
     record.destroy
 
     head 204
