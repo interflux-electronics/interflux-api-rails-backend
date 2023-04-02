@@ -1,7 +1,8 @@
 module V1
   module Admin
     class UserSerializer < ApplicationSerializer
-      attributes :email
+      attributes :email,
+                 :abilities
 
       belongs_to :person
     end
