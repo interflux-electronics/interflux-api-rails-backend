@@ -54,16 +54,15 @@ gem 'aws-sdk-s3'
 # For HTTP requests (native Rails does this terribly...)
 gem 'faraday'
 
-group :development do
-  # For listening to file changes
-  gem 'listen'
+# For catching N+1 queries
+gem 'bullet', groups: %i[development test]
 
-  # For Ruby syntax formatting
-  gem 'rubocop', require: false
-  gem 'rubocop-rails'
-end
+# For listening to file changes
+gem 'listen', groups: %i[development]
 
-group :test do
-  # For testing (out-of-the-box with Rails 5)
-  gem 'minitest'
-end
+# For Ruby syntax formatting
+gem 'rubocop', groups: %i[development], require: false
+gem 'rubocop-rails', groups: %i[development]
+
+# For testing (out-of-the-box with Rails 5)
+gem 'minitest', groups: %i[test]
