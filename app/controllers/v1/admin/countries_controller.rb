@@ -2,10 +2,12 @@ module V1
   module Admin
     class CountriesController < V1::AdminController
       def index
+        @user_is_able = true
         allow_index
       end
 
       def show
+        @user_is_able = true
         allow_show
       end
 

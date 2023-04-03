@@ -47,6 +47,12 @@ module V1
           country
         ]
       end
+
+      def permitted_includes
+        %i[
+          country
+        ]
+      end
     end
   end
 end
