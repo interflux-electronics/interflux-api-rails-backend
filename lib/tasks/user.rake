@@ -163,6 +163,11 @@ namespace :user do
       update_company_members
       delete_company_members
 
+      create_company_markets
+      read_company_markets
+      update_company_markets
+      delete_company_markets
+
       create_translations
       read_translations
       update_translations
@@ -174,7 +179,7 @@ namespace :user do
       read_translations
       update_translations
       delete_translations
-    ]
+    ].join(',')
 
     todos = [
       ['d.werkhoven@interflux.com', base],
