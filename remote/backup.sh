@@ -27,6 +27,7 @@ echo "----------"
   scp $url:/var/www/rails.api.interflux.com/db/backups/$timestamp.tar.gz ./db/backups
   tar --extract --file db/backups/$timestamp.tar.gz
   bin/rails db:data:load_dir dir=backups/$timestamp
+  rm db/backups/$timestamp.tar.gz
 )
 
 echo "----------"
