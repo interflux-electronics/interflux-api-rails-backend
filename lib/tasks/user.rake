@@ -133,6 +133,11 @@ namespace :user do
       update_documents
       delete_documents
 
+      create_document_categories
+      read_document_categories
+      update_document_categories
+      delete_document_categories
+
       create_events
       read_events
       update_events
