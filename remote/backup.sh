@@ -13,8 +13,8 @@ echo "----------"
 
 (
   set -x
-  scp -i ~/.ssh/$url remote/backup-remote.sh $url:~/
-  ssh -i ~/.ssh/$url $url "~/backup-remote.sh $timestamp; rm -f ~/backup-remote.sh"
+  scp remote/backup-remote.sh $url:~/
+  ssh $url "~/backup-remote.sh $timestamp; rm -f ~/backup-remote.sh"
 )
 
 echo "----------"
@@ -24,9 +24,9 @@ echo "----------"
 
 (
   set -x
-  scp -i ~/.ssh/$url -r $url:/var/www/rails.api.interflux.com/db/backups/$timestamp/ ./db/backups
-  mv ./db/backups/$timestamp ./db/backups/production-$timestamp
-  bin/rails db:data:load_dir dir=backups/production-$timestamp
+  scp $url:/var/www/rails.api.interflux.com/db/backups/$timestamp.tar.gz ./db/backups
+  tar --extract --file db/backups/$timestamp.tar.gz
+  bin/rails db:data:load_dir dir=backups/$timestamp
 )
 
 echo "----------"
