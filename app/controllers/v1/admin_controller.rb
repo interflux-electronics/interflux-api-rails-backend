@@ -35,7 +35,7 @@ module V1
     # Checks the abilities on the user record to see if this action is permitted.
     # Set @user_is_able to override this behaviour locally.
     def user_has_ability?(action)
-      resource = model_class.name.downcase.pluralize
+      resource = model_class.name.underscore.pluralize
 
       @user_is_able || @auth_user.can?("#{action}_#{resource}")
     end
