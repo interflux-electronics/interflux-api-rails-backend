@@ -58,7 +58,26 @@ namespace :translations do
       'products.11',
       'products.12',
       'webinars.13',
-      'webinars.14'
+      'webinars.14',
+      'footer.1',
+      'footer.2',
+      'footer.3',
+      'footer.4',
+      'footer.5',
+      'footer.6',
+      'footer.7',
+      'footer.8',
+      'footer.9',
+      'footer.10',
+      'footer.11',
+      'footer.12',
+      'footer.13',
+      'footer.14',
+      'footer.15',
+      'footer.16',
+      'footer.17',
+      'footer.18',
+      'footer.19'
     ]
 
     locations_to_delete.each do |location|
