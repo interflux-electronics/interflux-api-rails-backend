@@ -55,6 +55,7 @@ namespace :translations do
     locations_to_delete = [
       'product.6',
       'products.8',
+      'products.10',
       'products.11',
       'products.12',
       'webinars.13',
