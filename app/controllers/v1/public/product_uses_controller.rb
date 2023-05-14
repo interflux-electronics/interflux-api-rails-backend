@@ -30,6 +30,12 @@ module V1
       def serializer_class
         V1::Public::ProductUseSerializer
       end
+
+      def permitted_includes
+        %i[
+          image
+        ]
+      end
     end
   end
 end
