@@ -60,6 +60,7 @@ module V1
           product_documents
           product_qualities
           product_uses
+          product_uses.image
         ]
       end
     end
