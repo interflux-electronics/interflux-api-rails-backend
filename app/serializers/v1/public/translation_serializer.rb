@@ -4,7 +4,8 @@ module V1
       attributes :location,
                  :language,
                  :native,
-                 :english
+                 :english,
+                 :status
     end
   end
 end
