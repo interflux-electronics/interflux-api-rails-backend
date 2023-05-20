@@ -111,4 +111,14 @@ namespace :translations do
     abort 'Abort, missing target_lang' unless ENV['target_lang']
     TranslateService.new(ENV.fetch('phrase', nil), ENV.fetch('source_lang', nil), ENV.fetch('target_lang', nil)).call
   end
+
+  task open_all_product_pages: :environment do
+    commands = []
+    Product.where(public: true).each do |product|
+      puts product.slug
+      commands.push("open https://interflux.de/product/#{product.slug}")
+      commands.push('sleep 1')
+    end
+    exec(commands.join(' && '))
+  end
 end
