@@ -23,7 +23,7 @@ namespace :translations do
     puts '---------'
 
     locations = Translation.distinct.pluck(:location)
-    languages = %w[de fr es]
+    languages = %w[de fr es zh]
 
     locations.each do |loc|
       languages.each do |lang|
