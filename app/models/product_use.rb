@@ -4,5 +4,5 @@ class ProductUse < ApplicationRecord
 
   # If :show_alternative_avatar is true then the frontend will prefer ProductUse.image over Product.image.
   alias_attribute :alternative_avatar, :image
-  belongs_to :image
+  belongs_to :image, optional: true
 end
