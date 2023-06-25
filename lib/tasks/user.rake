@@ -177,6 +177,10 @@ namespace :user do
       read_translations
       update_translations
       delete_translations
+
+      create_permalinks
+      read_permalinks
+      update_permalinks
     ].join(',')
 
     translation_base = %w[

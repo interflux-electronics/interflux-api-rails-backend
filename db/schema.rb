@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_18_234226) do
+ActiveRecord::Schema.define(version: 2023_06_24_105321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -279,6 +279,12 @@ ActiveRecord::Schema.define(version: 2023_03_18_234226) do
     t.string "avatar_variations"
     t.string "avatar_caption"
     t.string "avatar_alt"
+  end
+
+  create_table "permalinks", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "slug"
+    t.string "redirect_to"
+    t.string "notes"
   end
 
   create_table "person_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

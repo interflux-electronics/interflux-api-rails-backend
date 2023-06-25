@@ -67,6 +67,7 @@ Rails.application.routes.draw do
       resources :languages
       resources :leads
       resources :people
+      resources :permalinks
       resources :person_images, path: '/person-images'
       resources :product_documents, path: '/product-documents'
       resources :product_families, path: '/product-families'
