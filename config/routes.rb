@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       resources :images
       resources :languages
       resources :leads
+      resources :permalinks
       resources :product_families, path: '/product-families'
       resources :product_qualities, path: '/product-qualities'
       resources :product_uses, path: '/product-uses'
