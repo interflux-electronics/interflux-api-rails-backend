@@ -52,7 +52,7 @@ namespace :translations do
 
     destroy_counter = 0
 
-    locations_to_delete = [
+    exact_locations_to_delete = [
       'product.6',
       'products.8',
       'products.10',
@@ -81,10 +81,24 @@ namespace :translations do
       'footer.19'
     ]
 
-    locations_to_delete.each do |location|
+    exact_locations_to_delete.each do |location|
       records = Translation.where(location: location)
       records.each do |record|
         puts "destroying #{location} #{record.language}..."
+        record.destroy!
+        destroy_counter += 1
+        puts '---------'
+      end
+    end
+
+    starting_with_locations_to_delete = [
+      'seo.5'
+    ]
+
+    starting_with_locations_to_delete.each do |location|
+      records = Translation.all.select { |t| t.location.starts_with? location }
+      records.each do |record|
+        puts "destroying #{record.location} #{record.language}..."
         record.destroy!
         destroy_counter += 1
         puts '---------'
