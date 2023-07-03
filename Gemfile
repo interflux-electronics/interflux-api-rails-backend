@@ -43,7 +43,7 @@ gem 'seedbank'
 gem 'yaml_db'
 
 # For logging activity to skylight.io
-gem 'skylight', groups: %i[production]
+# gem 'skylight', groups: %i[production]
 
 # So we can upload files to Digital Ocean Spaces (S3-compatible)
 gem 'aws-sdk-s3'
