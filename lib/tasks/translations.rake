@@ -93,7 +93,8 @@ namespace :translations do
 
     starting_with_locations_to_delete = [
       'seo.5',
-      'seo.6'
+      'seo.6',
+      'seo.7'
     ]
 
     # TODO: optimise with
