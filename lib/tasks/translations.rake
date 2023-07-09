@@ -92,8 +92,12 @@ namespace :translations do
     end
 
     starting_with_locations_to_delete = [
-      'seo.5'
+      'seo.5',
+      'seo.6'
     ]
+
+    # TODO: optimise with
+    # Translation.where("location ~ ?", '^seo.5')
 
     starting_with_locations_to_delete.each do |location|
       records = Translation.all.select { |t| t.location.starts_with? location }
