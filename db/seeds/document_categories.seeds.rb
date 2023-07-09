@@ -18,6 +18,7 @@ list.each_with_index do |_item, i|
 
   props = OpenStruct.new(
     name: item.name,
+    name_single: item.name_single,
     slug: item.slug,
     gist: item.gist,
     icon: item.icon,

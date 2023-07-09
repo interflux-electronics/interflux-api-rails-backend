@@ -1,41 +1,55 @@
 ---
 - name: Certificates
   slug: certificates
+  name_single: certificate
   gist: Quality standards Interflux has been living upto for decades.
   icon: file-certificate
   order: 1
 - name: Declarations
   slug: declarations
+  name_single: declaration
   gist: Public statements made and held by Interflux.
   icon: file-contract
   order: 2
 - name: Guides
   slug: guides
+  name_single: guide
   gist: Learn about soldering processes and to get the most out of our products.
   icon: clipboard-list-check
   order: 3
 - name: Technical Data (TD)
+  name_single: technical data sheet
   slug: TD
   gist: Learn the technical details of our products.
   icon: clipboard-list
   order: 4
 - name: Safety Data Sheets (SDS)
+  name_single: safety data sheet
   slug: SDS
   gist: Learn to use our products in a safe manner.
   icon: file-medical
   order: 5
 - name: REACH
+  name_single: REACH
   slug: REACH
   gist: Health and safety regulation compliance documents.
   icon: file-check
   order: 6
 - name: Webinars
   slug: webinars
+  name_single: webinar
   gist: The slide shows of Interflux webinars.
   icon: file-check
   order: 7
-- name: Presentations
-  slug: presentations
+- slug: presentations
+  name: Presentations
+  name_single: presentation
   gist: The slide shows of presentations given by Interflux.
   icon: file-check
   order: 8
+- slug: manuals
+  name: Manuals
+  name_single: manual
+  gist: How-to guides for products
+  icon: clipboard-list-check
+  order: 9
