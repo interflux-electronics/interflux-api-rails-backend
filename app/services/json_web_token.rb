@@ -9,13 +9,11 @@
 # https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248
 #
 class JsonWebToken
-  def initialize(data, expiry = 90.days.from_now)
+  def initialize(data)
     @data = data
-    @expiry = expiry
   end
 
   def encode
-    @data[:expiry] = @expiry.to_i
     JWT.encode(@data, jwt_secret)
   end
 

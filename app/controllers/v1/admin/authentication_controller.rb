@@ -12,32 +12,47 @@ module V1
 
         return wrong_email if user.nil?
 
-        auth_user = user.authenticate(password)
+        @auth_user = user.authenticate(password)
 
-        return wrong_password unless auth_user
+        return wrong_password unless @auth_user
 
-        payload = { user_id: auth_user.id }
-        expiry = 30.days.from_now.utc
-        token = JsonWebToken.new(payload, expiry.to_i).encode
-        json = {
-          auth: {
-            token: token,
-            expiry: expiry.strftime('%Y-%m-%d %H:%M:%S %Z'),
-            uuid: auth_user.id
-          }
-        }
+        cookies.encrypted[:session] = auth_cookie
 
-        render status: 200, json: json
+        render status: 200
       end
 
       private
 
+      def auth_cookie
+        {
+          value: jwt,
+          httponly: true,
+          expires: 30.days.from_now,
+          secure: true,
+          same_site: :none
+        }
+      end
+
+      def jwt
+        payload = {
+          sub: @auth_user.id,
+          email: @auth_user.email,
+          exp: 30.days.from_now.utc.to_i
+        }
+
+        JsonWebToken.new(payload).encode
+      end
+
+      def strong_params
+        params.permit(:email, :password)
+      end
+
       def email
-        params.permit(:email)[:email]
+        strong_params[:email]
       end
 
       def password
-        params.permit(:password)[:password]
+        strong_params[:password]
       end
 
       def missing_email
