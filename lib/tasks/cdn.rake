@@ -1,3 +1,8 @@
+# On server
+# sudo apt-get s3cmd
+# sudo apt-get install gpg
+# s3cmd --configure
+
 namespace :cdn do
   desc 'For each file in the CDN we need a database entry. This task helps us sync CDN and database.'
 
