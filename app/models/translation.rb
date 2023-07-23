@@ -9,6 +9,16 @@ class Translation < ApplicationRecord
       error
     ]
   }
+  validates :language, inclusion: {
+    in: %w[
+      en
+      es
+      de
+      fr
+      nl
+      zh
+    ]
+  }
 
   # after_create :translate
 
