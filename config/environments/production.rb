@@ -92,4 +92,15 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true
   }
+
+  # Configure CORS
+  config.middleware.insert_before 0, Rack::Cors, debug: true do
+    allow do
+      origins 'admin.interflux.com'
+      resource '*',
+               headers: :any,
+               methods: %i[options get post patch delete],
+               credentials: true
+    end
+  end
 end

@@ -13,7 +13,6 @@ Rails.application.routes.draw do
     # https://www.interflux.com
     # https://lmpa.interflux.com
     #
-
     namespace :public do
       resources :article_categories, path: '/article-categories'
       resources :articles
@@ -92,9 +91,14 @@ Rails.application.routes.draw do
       resources :webinars
 
       # Non-CRUD requests
-      post '/auth-token', to: 'authentication#token'
       post '/create-upload-url', to: 'cdn_files#create_upload_url'
       post '/translate', to: 'translations#translate'
+    end
+
+    # For authentication across Interflux
+    namespace :auth do
+      post '/token', to: 'token#create'
+      get '/user', to: 'user#show'
     end
   end
 

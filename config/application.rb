@@ -38,20 +38,30 @@ module ApiInterfluxCom
     # Enables the use of setting and reading cookies from controllers
     config.middleware.use ActionDispatch::Cookies
 
-    # Allow public endpoints to be hit from any origin (CORS)
-    config.middleware.insert_before 0, Rack::Cors do
-      allow do
-        origins '*'
-        resource '/v1/public/*',
-                 headers: :any,
-                 methods: %i[options get post patch delete]
-      end
-      allow do
-        origins '*'
-        resource '/v1/admin/*',
-                 headers: :any,
-                 methods: %i[options get post patch delete]
-      end
-    end
+    # config.middleware.insert_before 0, Rack::Cors, debug: true do
+    #   allow do
+    #     origins 'https://admin.interflux.com', 'http://localhost:4300'
+    #     resource '*',
+    #              headers: :any,
+    #              methods: %i[options get post patch delete],
+    #              credentials: true
+    #   end
+    # end
+
+    # # Allow public endpoints to be hit from any origin (CORS)
+    # config.middleware.insert_before 0, Rack::Cors do
+    #   allow do
+    #     origins '*'
+    #     resource '/v1/public/*',
+    #              headers: :any,
+    #              methods: %i[options get post patch delete]
+    #   end
+    #   allow do
+    #     origins 'localhost:4300'
+    #     resource '/v1/admin/*',
+    #              headers: :any,
+    #              methods: %i[options get post patch delete]
+    #   end
+    # end
   end
 end

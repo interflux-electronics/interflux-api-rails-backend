@@ -9,10 +9,11 @@ module V1
 
     def verify_auth_token
       # Make sure the Authorization header exists
-      return header_error if auth_header.nil?
+      # return header_error if auth_header.nil?
 
       # Decode the token, error if not decodable
-      data = decoded_data
+      data = decoded_jwt
+
       return decode_error if data.nil?
 
       # Error if the token has expired.
@@ -40,12 +41,20 @@ module V1
       @user_is_able || @auth_user.can?("#{action}_#{resource}")
     end
 
-    def auth_header
-      request.headers['Authorization']
+    # def auth_header
+    #   request.headers['Authorization']
+    # end
+
+    # def decoded_data
+    #   JsonWebToken.new(auth_header).try(:decode)
+    # end
+
+    def auth_cookie
+      cookies.encrypted[:session]
     end
 
-    def decoded_data
-      JsonWebToken.new(auth_header).try(:decode)
+    def decoded_jwt
+      JsonWebToken.new(auth_cookie).decode
     end
 
     def header_error

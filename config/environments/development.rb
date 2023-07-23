@@ -60,4 +60,15 @@ Rails.application.configure do
 
   # Output to terminal?
   config.logger = Logger.new(STDOUT)
+
+  # Configure CORS
+  config.middleware.insert_before 0, Rack::Cors, debug: true do
+    allow do
+      origins 'localhost:4300'
+      resource '*',
+               headers: :any,
+               methods: %i[options get post patch delete],
+               credentials: true
+    end
+  end
 end

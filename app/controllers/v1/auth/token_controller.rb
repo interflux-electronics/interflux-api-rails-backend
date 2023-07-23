@@ -2,9 +2,9 @@
 # https://medium.com/binar-academy/rails-api-jwt-authentication-a04503ea3248
 #
 module V1
-  module Admin
-    class AuthenticationController < ApplicationController
-      def token
+  module Auth
+    class TokenController < ApplicationController
+      def create
         return missing_email unless email
         return missing_password unless password
 
@@ -18,7 +18,7 @@ module V1
 
         cookies.encrypted[:session] = auth_cookie
 
-        render status: 200
+        render status: 201
       end
 
       private
