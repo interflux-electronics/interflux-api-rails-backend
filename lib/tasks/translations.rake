@@ -119,6 +119,16 @@ namespace :translations do
       puts '---------'
     end
 
+    # Aparently 80 records have
+    # :language => "login",
+    language_login = Translation.where(language: 'login')
+    language_login.each do |record|
+      puts "destroying #{record.location} #{record.language}..."
+      record.destroy!
+      destroy_counter += 1
+      puts '---------'
+    end
+
     puts "Destroyed #{destroy_counter}"
     puts '---------'
     puts 'Done'
