@@ -47,6 +47,7 @@ module V1
           uses
           product_images.image
           product_family
+          product_family.product_family
           product_images
           product_documents
           product_qualities
