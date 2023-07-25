@@ -98,6 +98,12 @@ Rails.application.routes.draw do
     end
   end
 
+  # For authentication across Interflux
+  namespace :auth do
+    post '/token', to: 'token#create'
+    get '/user', to: 'user#show'
+  end
+
   # Return app meta info for health check.
   get 'sanity-check', to: 'sanity#check'
 
