@@ -35,6 +35,9 @@ module ApiInterfluxCom
     # config.middleware.use OliveBranch::Middleware
     config.middleware.use OliveBranch::Middleware, inflection: 'dash', content_type_check: ->(_content_type) { true }
 
+    # Enables the use of setting and reading cookies from controllers
+    config.middleware.use ActionDispatch::Cookies
+
     # Allow public endpoints to be hit from any origin (CORS)
     config.middleware.insert_before 0, Rack::Cors do
       allow do
