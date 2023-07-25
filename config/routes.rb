@@ -96,12 +96,12 @@ Rails.application.routes.draw do
       post '/create-upload-url', to: 'cdn_files#create_upload_url'
       post '/translate', to: 'translations#translate'
     end
-  end
 
-  # For authentication across Interflux
-  namespace :auth do
-    post '/token', to: 'token#create'
-    get '/user', to: 'user#show'
+    # For authentication across Interflux
+    namespace :auth do
+      post '/token', to: 'token#create'
+      get '/user', to: 'user#show'
+    end
   end
 
   # Return app meta info for health check.
