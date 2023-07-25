@@ -108,14 +108,16 @@ Rails.application.configure do
       origins 'admin.interflux.com'
       resource '/v1/admin/*',
                headers: :any,
-               methods: %i[options get post patch delete]
+               methods: %i[options get post patch delete],
+               credentials: true
     end
 
     allow do
       origins 'admin.interflux.com'
       resource '/v1/auth/*',
                headers: :any,
-               methods: %i[options get post patch delete]
+               methods: %i[options get post patch delete],
+               credentials: true
     end
   end
 end
