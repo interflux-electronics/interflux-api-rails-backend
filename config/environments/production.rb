@@ -92,4 +92,30 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true
   }
+
+  # Configure CORS.
+  # Note that the Interflux front-end live on different domains than their backend.
+  # Therefor cross-origin rules are needed.
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins '*'
+      resource '/v1/public/*',
+               headers: :any,
+               methods: %i[options get post patch delete]
+    end
+
+    allow do
+      origins 'admin.interflux.com'
+      resource '/v1/admin/*',
+               headers: :any,
+               methods: %i[options get post patch delete]
+    end
+
+    allow do
+      origins 'admin.interflux.com'
+      resource '/v1/auth/*',
+               headers: :any,
+               methods: %i[options get post patch delete]
+    end
+  end
 end

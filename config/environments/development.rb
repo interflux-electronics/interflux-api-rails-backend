@@ -60,4 +60,30 @@ Rails.application.configure do
 
   # Output to terminal?
   config.logger = Logger.new(STDOUT)
+
+  # Configure CORS.
+  # Note that the Interflux front-end live on different domains than their backend.
+  # Therefor cross-origin rules are needed.
+  config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins '*'
+      resource '/v1/public/*',
+               headers: :any,
+               methods: %i[options get post patch delete]
+    end
+
+    allow do
+      origins 'localhost:4300'
+      resource '/v1/admin/*',
+               headers: :any,
+               methods: %i[options get post patch delete]
+    end
+
+    allow do
+      origins 'localhost:4300'
+      resource '/v1/auth/*',
+               headers: :any,
+               methods: %i[options get post patch delete]
+    end
+  end
 end
