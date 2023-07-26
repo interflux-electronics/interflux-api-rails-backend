@@ -25,14 +25,14 @@ module V1
 
       # https://api.rubyonrails.org/v6.1.3/classes/ActionDispatch/Cookies.html
       # https://blog.saeloun.com/2023/02/01/rails-allow-opting-out-of-samesite/
+      # https://api.rubyonrails.org/v5.1/classes/ActionDispatch/Cookies.html
       def auth_cookie
         {
           value: jwt,
           httponly: true,
           expires: 30.days.from_now,
-          secure: true,
           same_site: :none,
-          domain: 'admin.interflux.com'
+          domain: Rails.env.production? ? 'admin.interflux.com' : 'localhost'
         }
       end
 
