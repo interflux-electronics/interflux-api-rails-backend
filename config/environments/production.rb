@@ -129,4 +129,7 @@ Rails.application.configure do
   # https://stackoverflow.com/questions/62487912/rails-6-0-2-1-samesite-attribute-set-to-none-secure-attribute
   #
   config.action_dispatch.cookies_same_site_protection = :none
+
+  # https://pragmaticstudio.com/tutorials/rails-session-cookies-for-api-authentication
+  config.action_controller.forgery_protection_origin_check = false
 end
