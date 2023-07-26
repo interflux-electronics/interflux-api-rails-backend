@@ -23,7 +23,7 @@ module V1
 
       private
 
-      # This article explains how to unset SameSite on cookies for cross-site requests.
+      # https://api.rubyonrails.org/v6.1.3/classes/ActionDispatch/Cookies.html
       # https://blog.saeloun.com/2023/02/01/rails-allow-opting-out-of-samesite/
       def auth_cookie
         {
