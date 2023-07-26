@@ -120,4 +120,13 @@ Rails.application.configure do
                credentials: true
     end
   end
+
+  # Specify cookies SameSite protection level: either :none, :lax, or :strict.
+  #
+  # This change is not backwards compatible with earlier Rails versions.
+  # It's best enabled when your entire app is migrated and stable on 6.1.
+  #
+  # https://stackoverflow.com/questions/62487912/rails-6-0-2-1-samesite-attribute-set-to-none-secure-attribute
+  #
+  config.action_dispatch.cookies_same_site_protection = :none
 end

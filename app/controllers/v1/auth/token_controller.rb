@@ -23,14 +23,15 @@ module V1
 
       private
 
+      # This article explains how to unset SameSite on cookies for cross-site requests.
+      # https://blog.saeloun.com/2023/02/01/rails-allow-opting-out-of-samesite/
       def auth_cookie
         {
           value: jwt,
           httponly: true,
           expires: 30.days.from_now,
           secure: true,
-          same_site: nil
-          # same_site: :none
+          same_site: :none
         }
       end
 
