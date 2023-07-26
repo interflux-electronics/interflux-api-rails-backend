@@ -16,7 +16,15 @@ module V1
 
         return wrong_password unless @auth_user
 
-        cookies.encrypted[:session] = auth_cookie
+        # cookies.encrypted[:session] = auth_cookie
+        response.set_cookie(
+          :session,
+          value: jwt,
+          expires: 30.days.from_now,
+          httponly: true,
+          secure: true,
+          domain: Rails.env.production? ? 'admin.interflux.com' : 'localhost'
+        )
 
         render status: 201
       end
