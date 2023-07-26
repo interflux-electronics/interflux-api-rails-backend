@@ -26,6 +26,9 @@ module V1
       # https://api.rubyonrails.org/v6.1.3/classes/ActionDispatch/Cookies.html
       # https://blog.saeloun.com/2023/02/01/rails-allow-opting-out-of-samesite/
       # https://api.rubyonrails.org/v5.1/classes/ActionDispatch/Cookies.html
+
+      # Gotcha, turning on secure: true prevents the cookie from being set on the response.
+      # https://stackoverflow.com/questions/63217086/actiondispatchcookies-not-setting-set-cookie-header-in-response-but-response-s
       def auth_cookie
         {
           value: jwt,

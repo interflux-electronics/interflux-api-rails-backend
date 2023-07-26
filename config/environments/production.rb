@@ -36,7 +36,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
@@ -127,6 +127,7 @@ Rails.application.configure do
   # It's best enabled when your entire app is migrated and stable on 6.1.
   #
   # https://stackoverflow.com/questions/62487912/rails-6-0-2-1-samesite-attribute-set-to-none-secure-attribute
+  # https://www.linkedin.com/pulse/rails-mystery-missing-cookie-jitendra-chandani
   #
   config.action_dispatch.cookies_same_site_protection = :none
 
