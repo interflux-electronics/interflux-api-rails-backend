@@ -35,7 +35,7 @@ module V1
           httponly: true,
           expires: 30.days.from_now,
           same_site: :none,
-          secure: true,
+          secure: false,
           domain: Rails.env.production? ? 'admin.interflux.com' : 'localhost'
         }
       end
