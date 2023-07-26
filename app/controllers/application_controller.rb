@@ -4,8 +4,4 @@ class ApplicationController < ActionController::API
 
   # To allow controllers to set and read cookies.
   include ActionController::Cookies
-
-  # https://pragmaticstudio.com/tutorials/rails-session-cookies-for-api-authentication
-  include ActionController::RequestForgeryProtection
-  protect_from_forgery with: :exception
 end
