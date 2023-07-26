@@ -37,5 +37,6 @@ module ApiInterfluxCom
 
     # Enables the use of setting and reading cookies from controllers
     config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
   end
 end
