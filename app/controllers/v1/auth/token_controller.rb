@@ -31,7 +31,8 @@ module V1
           httponly: true,
           expires: 30.days.from_now,
           secure: true,
-          same_site: :none
+          same_site: :none,
+          domain: 'admin.interflux.com'
         }
       end
 
