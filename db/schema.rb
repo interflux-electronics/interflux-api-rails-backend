@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_24_105321) do
+ActiveRecord::Schema.define(version: 2023_08_15_221129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -234,6 +234,10 @@ ActiveRecord::Schema.define(version: 2023_06_24_105321) do
     t.datetime "updated_at", null: false
     t.uuid "company_id"
     t.string "variations"
+    t.uuid "user_id"
+    t.string "original"
+    t.boolean "converting"
+    t.string "conversion_error_log"
   end
 
   create_table "languages", primary_key: "two_letter_code", id: :string, force: :cascade do |t|
