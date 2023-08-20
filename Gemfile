@@ -42,14 +42,14 @@ gem 'seedbank'
 # For dumping database data into a YAML file (great for maintenance backups)
 gem 'yaml_db'
 
-# For logging activity to skylight.io
-# gem 'skylight', groups: %i[production]
-
 # So we can upload files to Digital Ocean Spaces (S3-compatible)
 gem 'aws-sdk-s3'
 
 # For HTTP requests (native Rails does this terribly...)
 gem 'faraday'
+
+# For converting images into WEBP.
+gem 'webp-ffi'
 
 # For catching N+1 queries
 gem 'bullet', groups: %i[development test]
