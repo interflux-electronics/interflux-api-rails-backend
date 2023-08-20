@@ -38,3 +38,7 @@
 
 # Never commit the production secrets.
 .rbenv-vars
+
+# Ignore all the temporary CDN related files, except the README.
+/cdn/*
+!/cdn/README.md
