@@ -58,8 +58,14 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  # Output to terminal?
-  config.logger = Logger.new(STDOUT)
+  # When developing, do not log. Instead output everything in terminal.
+  config.logger = Logger.new($stdout)
+  config.log_level = :debug
+  # config.logger.datetime_format = '%Y-%m-%d %H:%M:%S'
+  config.logger.formatter = proc do |severity, _datetime, _progname, msg|
+    "#{severity} #{msg}\n"
+    # "#{datetime.strftime('%H:%M:%S')} #{severity} #{msg}\n"
+  end
 
   # Configure CORS.
   # Note that the Interflux front-end live on different domains than their backend.
