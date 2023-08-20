@@ -4,9 +4,13 @@ module V1
       attributes :path,
                  :alt,
                  :caption,
-                 :variations
+                 :original,
+                 :variations,
+                 :converting,
+                 :conversion_error_log
 
       belongs_to :company
+      belongs_to :user
 
       has_many :products, if: requested?('products')
       has_many :product_images, if: requested?('product_images')

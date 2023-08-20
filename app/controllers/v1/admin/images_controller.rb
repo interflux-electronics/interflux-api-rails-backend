@@ -51,14 +51,20 @@ module V1
 
       def creatable_attributes
         %i[
+          path
+          original
+          variations
           alt
           caption
+          converting
+          conversion_error_log
         ]
       end
 
       def creatable_relationships
         %i[
           company
+          user
         ]
       end
     end
