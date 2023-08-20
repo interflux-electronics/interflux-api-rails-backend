@@ -150,3 +150,26 @@ bin/rails user:password email=foo@bar password=12345
 
 # Delete user
 bin/rails user:delete email=foo@bar
+
+# ---------
+
+# WEBP
+
+# The webp-ffi gem will likely blow up on an M1 or M2 Mac.
+# The issue and solution were described here:
+# https://github.com/myfoodlink/myfoodlink/wiki/Development-Environment-Setup#:~:text=solution%20was%20described-,here,-.
+# In short, follow the commands below to resolve:
+
+# 1. Set CPATH and LIBRARY_PATH as global variables.
+# 2. Add gem 'webp-ffi' to Gemfile
+# 3. Install bundle.
+
+# ZSH
+export CPATH=/opt/homebrew/include/
+export LIBRARY_PATH=$LIBRARY_PATH:/opt/homebrew/lib/
+
+# Fish
+set -x CPATH /opt/homebrew/include/
+set -x LIBRARY_PATH "/opt/homebrew/lib/"
+
+bin/bundle install
