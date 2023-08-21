@@ -109,12 +109,10 @@ class ImageConversionService
       logger.info 'converting to WEBP ...'
 
       webps.each do |webp|
-        sizes = webp.gsub('@', '').gsub('.webp', '').split('x')
-        width = sizes.first.to_i
-        height = sizes.last.to_i
+        size = webp.gsub('@', '').gsub('.webp', '')
         target = "cdn/#{file_name}#{webp}"
 
-        WebP.encode(local_path_original, target, quality: 90, resize_w: width, resize_h: height)
+        `cwebp -quiet -q 90 -m 6 -resize #{size} 0 "#{local_path_original}" -o "#{target}"`
 
         to_upload.push(target)
 

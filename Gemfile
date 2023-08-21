@@ -48,9 +48,6 @@ gem 'aws-sdk-s3'
 # For HTTP requests (native Rails does this terribly...)
 gem 'faraday'
 
-# For converting images into WEBP.
-gem 'webp-ffi'
-
 # For catching N+1 queries
 gem 'bullet', groups: %i[development test]
 
