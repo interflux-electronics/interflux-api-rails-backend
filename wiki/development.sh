@@ -4,8 +4,6 @@
 brew update
 brew install rbenv ruby-build
 
-
-
 # As long brew exists in the PATH, then rbenv will exist as well and all next
 # steps are not necessary?
 
