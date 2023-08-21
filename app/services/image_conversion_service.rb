@@ -45,7 +45,7 @@ class ImageConversionService
 
     lock_image
 
-    files = CdnService.new.list(path)
+    files = CdnService.new.list("#{path}@")
     existing = files.map { |file| "@#{file.split('@').last}" }
 
     raise 'original is not on CDN' unless existing.include? original
@@ -156,21 +156,12 @@ class ImageConversionService
 
     logger.info '------'
     logger.info 'found on CDN:'
-    files = CdnService.new.list(path)
+    files = CdnService.new.list("#{path}@")
     files.each { |file| logger.info file }
 
     logger.info '------'
     logger.info 'syncing Image.variations'
-    variations = CdnService.new.list(path).map { |p| "@#{p.split('@').last}" }.sort.join(',')
-    logger.info variations
-    @image.update!(
-      variations: variations,
-      converting: false
-    )
-
-    logger.info '------'
-    logger.info 'syncing Image.variations'
-    variations = CdnService.new.list(path).map { |p| "@#{p.split('@').last}" }.sort.join(',')
+    variations = files.map { |p| "@#{p.split('@').last}" }.sort.join(',')
     logger.info variations
     @image.update!(
       variations: variations,
