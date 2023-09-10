@@ -37,6 +37,8 @@ module V1
           deprecated
           popular
           on_front_page
+          main_family
+          sub_family
         ]
       end
 
@@ -62,6 +64,8 @@ module V1
           product_qualities
           product_uses
           product_uses.image
+          main_family
+          sub_family
         ]
       end
     end

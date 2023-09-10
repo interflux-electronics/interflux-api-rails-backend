@@ -31,9 +31,18 @@ module V1
         V1::Public::ProductUseSerializer
       end
 
+      def permitted_filters
+        %i[
+          use
+          product
+        ]
+      end
+
       def permitted_includes
         %i[
           image
+          use
+          product
         ]
       end
     end
