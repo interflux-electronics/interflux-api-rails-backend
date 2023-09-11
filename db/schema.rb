@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_15_221129) do
+ActiveRecord::Schema.define(version: 2023_09_03_032044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -439,6 +439,8 @@ ActiveRecord::Schema.define(version: 2023_08_15_221129) do
     t.string "avatar_alt"
     t.boolean "on_front_page", default: false
     t.integer "front_page_rank", default: 9
+    t.string "main_family_id"
+    t.string "sub_family_id"
   end
 
   create_table "qualities", primary_key: "slug", id: :string, force: :cascade do |t|

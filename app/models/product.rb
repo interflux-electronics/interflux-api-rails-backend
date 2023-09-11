@@ -1,4 +1,10 @@
 class Product < ApplicationRecord
+  # key: label
+
+  belongs_to :main_family, class_name: 'ProductFamily', optional: true
+  belongs_to :sub_family, class_name: 'ProductFamily', optional: true
+
+  # DEPRECATED
   belongs_to :product_family, optional: true
   alias_attribute :family, :product_family
   accepts_nested_attributes_for :product_family
