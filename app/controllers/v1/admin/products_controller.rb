@@ -52,6 +52,8 @@ module V1
           product_documents
           product_qualities
           product_uses
+          main_family
+          sub_family
         ]
       end
 
@@ -83,6 +85,8 @@ module V1
           image
           product_family
           superior_product
+          main_family
+          sub_family
         ]
       end
     end
