@@ -12,27 +12,27 @@ class Product < ApplicationRecord
   belongs_to :image, optional: true
   alias_attribute :avatar, :image
 
-  has_many :product_qualities
+  has_many :product_qualities, dependent: :destroy
   has_many :qualities, through: :product_qualities, source: :quality
 
-  has_many :product_uses
+  has_many :product_uses, dependent: :destroy
   has_many :uses, through: :product_uses, source: :use
 
-  has_many :product_images
+  has_many :product_images, dependent: :destroy
   has_many :images, through: :product_images, source: :image
 
-  has_many :product_documents
+  has_many :product_documents, dependent: :destroy
   has_many :documents, through: :product_documents, source: :document
 
   belongs_to :superior_product, optional: true
 
   # TODO: review
-  has_many :product_variants
-  has_many :variants, through: :product_variants, source: :product
+  # has_many :product_variants, dependent: :destroy
+  # has_many :variants, through: :product_variants, source: :product
 
   # TODO: review
-  has_many :product_containers
-  has_many :containers, through: :product_containers, source: :container
+  # has_many :product_containers, dependent: :destroy
+  # has_many :containers, through: :product_containers, source: :container
 
   validates :name, :slug, presence: true
   validates :status, inclusion: { in: %w[new popular recommended outdated discontinued offline] }
