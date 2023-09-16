@@ -25,6 +25,8 @@ module V1
 
       belongs_to :image
       belongs_to :product_family
+      belongs_to :main_family, serializer: :product_family
+      belongs_to :sub_family, serializer: :product_family
       belongs_to :superior_product, serializer: :product
 
       has_many :uses, if: requested?('uses')
