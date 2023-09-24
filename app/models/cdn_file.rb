@@ -34,8 +34,8 @@ class CdnFile < ApplicationRecord
 
   # The owner can be an Image, Video or Document record.
   def owner
-    return image if image.present?
-    return video if video.present?
+    # return image if image.present?
+    # return video if video.present?
     return document if document.present?
 
     nil
