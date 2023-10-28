@@ -18,6 +18,7 @@ module V1
                  :order,
                  :description,
                  :is_headquarter,
+                 :shown_on_main_website,
                  :shown_on_group_website,
                  :core_activity,
                  :history,
