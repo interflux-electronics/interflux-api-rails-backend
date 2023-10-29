@@ -42,6 +42,7 @@ module V1
           company_members
           companies
           image
+          images
           person_images
           person_images.image
         ]

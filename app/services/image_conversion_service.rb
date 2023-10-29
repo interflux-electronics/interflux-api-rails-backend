@@ -33,7 +33,7 @@ class ImageConversionService
     raise 'already in progress' if @image.converting
     raise 'missing original' if @image.original.nil?
     raise 'missing ratio' if @image.ratio.nil?
-    raise 'wrong format' unless %w[png jpg].include? @image.original_ext
+    raise 'wrong format' unless %w[png jpg jpeg].include? @image.original_ext
 
     path = @image.path
     file_name = @image.file_name
