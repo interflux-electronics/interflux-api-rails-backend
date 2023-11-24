@@ -60,3 +60,6 @@ gem 'rubocop-rails', groups: %i[development]
 
 # For testing (out-of-the-box with Rails 5)
 gem 'minitest', groups: %i[test]
+
+# For annotating models and fixtures with schema info.
+gem 'annotate', groups: %i[development]
