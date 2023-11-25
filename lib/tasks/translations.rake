@@ -53,22 +53,7 @@ namespace :translations do
     destroy_counter = 0
 
     exact_locations_to_delete = [
-      'product.6',
-      'products.8',
-      'products.10',
-      'products.11',
-      'products.12',
-      'webinars.13',
-      'webinars.14',
       'footer.1',
-      'footer.2',
-      'footer.3',
-      'footer.4',
-      'footer.5',
-      'footer.6',
-      'footer.7',
-      'footer.8',
-      'footer.9',
       'footer.10',
       'footer.11',
       'footer.12',
@@ -78,7 +63,33 @@ namespace :translations do
       'footer.16',
       'footer.17',
       'footer.18',
-      'footer.19'
+      'footer.19',
+      'footer.2',
+      'footer.3',
+      'footer.4',
+      'footer.5',
+      'footer.6',
+      'footer.7',
+      'footer.8',
+      'footer.9',
+      'header.38',
+      'header.39',
+      'product.6',
+      'products.10',
+      'products.10',
+      'products.11',
+      'products.12',
+      'products.13',
+      'products.2',
+      'products.3',
+      'products.5',
+      'products.6',
+      'products.7',
+      'products.8',
+      'products.9',
+      'seo.2',
+      'webinars.13',
+      'webinars.14'
     ]
 
     exact_locations_to_delete.each do |location|
@@ -92,10 +103,15 @@ namespace :translations do
     end
 
     starting_with_locations_to_delete = [
+      'products.10',
+      'products.13',
+      'products.5',
+      'products.6',
+      'products.7',
+      'products.9',
       'seo.5',
       'seo.6',
-      'seo.7',
-      'product.6'
+      'seo.7'
     ]
 
     # TODO: optimise with
