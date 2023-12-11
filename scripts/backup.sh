@@ -13,7 +13,7 @@ echo "----------"
 
 (
   set -x
-  scp remote/backup-remote.sh $url:~/
+  scp scripts/backup-remote.sh $url:~/
   ssh $url "~/backup-remote.sh $timestamp; rm -f ~/backup-remote.sh"
 )
 
