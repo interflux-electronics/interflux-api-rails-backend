@@ -181,6 +181,10 @@ namespace :user do
       create_permalinks
       read_permalinks
       update_permalinks
+
+      create_videos
+      read_videos
+      update_videos
     ].join(',')
 
     translation_base = %w[
