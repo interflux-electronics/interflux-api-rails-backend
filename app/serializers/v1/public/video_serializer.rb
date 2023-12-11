@@ -3,9 +3,7 @@ module V1
     class VideoSerializer < ApplicationSerializer
       attributes :path,
                  :variations,
-                 :title_public,
-                 :title_admin,
-                 :poster_url
+                 :title
     end
   end
 end

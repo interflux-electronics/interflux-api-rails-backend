@@ -33,21 +33,22 @@ module V1
 
       def permitted_includes
         %i[
-          cdn_files
           webinar
         ]
       end
 
       def permitted_filters
         %i[
-          title_admin
+          title
         ]
       end
 
       def creatable_attributes
         %i[
-          title_admin
-          title_public
+          path
+          title
+          notes
+          variations
         ]
       end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_10_28_014205) do
+ActiveRecord::Schema.define(version: 2023_12_11_090932) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -548,9 +548,8 @@ ActiveRecord::Schema.define(version: 2023_10_28_014205) do
 
   create_table "videos", primary_key: "path", id: :string, force: :cascade do |t|
     t.string "variations"
-    t.string "title_public"
-    t.string "title_admin"
-    t.string "poster_url"
+    t.string "title"
+    t.string "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

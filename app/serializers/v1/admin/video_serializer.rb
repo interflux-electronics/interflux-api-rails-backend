@@ -3,11 +3,8 @@ module V1
     class VideoSerializer < ApplicationSerializer
       attributes :path,
                  :variations,
-                 :title_public,
-                 :title_admin,
-                 :poster_url
-
-      has_many :cdn_files, if: requested?('cdn_files')
+                 :title,
+                 :notes
     end
   end
 end
