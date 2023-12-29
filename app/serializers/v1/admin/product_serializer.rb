@@ -38,6 +38,9 @@ module V1
       has_many :images, if: requested?('images')
       has_many :product_images, if: requested?('product_images')
 
+      has_many :videos, if: requested?('images')
+      has_many :product_videos, if: requested?('product_images')
+
       has_many :documents, if: requested?('documents')
       has_many :product_documents, if: requested?('product_documents')
     end

@@ -50,22 +50,24 @@ module V1
 
       def permitted_includes
         %i[
-          image
-          images
           documents
           documents.language
-          qualities
-          uses
-          product_images.image
+          image
+          images
+          main_family
+          product_documents
           product_family
           product_family.product_family
           product_images
-          product_documents
+          product_images.image
           product_qualities
           product_uses
           product_uses.image
-          main_family
+          product_videos
+          qualities
           sub_family
+          uses
+          videos
         ]
       end
     end

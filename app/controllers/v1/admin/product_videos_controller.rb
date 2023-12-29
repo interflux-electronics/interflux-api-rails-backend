@@ -1,6 +1,6 @@
 module V1
   module Admin
-    class VideosController < ApplicationController
+    class ProductVideosController < V1::AdminController
       def index
         allow_index
       end
@@ -18,45 +18,30 @@ module V1
       end
 
       def destroy
-        forbidden
+        allow_destroy
       end
 
       private
 
       def model_class
-        Video
+        ProductVideo
       end
 
       def serializer_class
-        V1::Admin::VideoSerializer
-      end
-
-      def permitted_includes
-        %i[
-          webinar
-          products
-          product_videos
-        ]
-      end
-
-      def permitted_filters
-        %i[
-          title
-        ]
+        V1::Admin::ProductVideoSerializer
       end
 
       def creatable_attributes
         %i[
-          path
-          title
-          notes
-          variations
+          rank
+          public
         ]
       end
 
       def creatable_relationships
         %i[
-          webinar
+          product
+          video
         ]
       end
     end

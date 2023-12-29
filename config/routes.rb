@@ -75,6 +75,7 @@ Rails.application.routes.draw do
       resources :product_family_images, path: '/product-family-images'
       resources :product_features, path: '/product-features'
       resources :product_images, path: '/product-images'
+      resources :product_videos, path: '/product-videos'
       resources :product_qualities, path: '/product-qualities'
       resources :product_uses, path: '/product-uses'
       resources :products, path: '/products'

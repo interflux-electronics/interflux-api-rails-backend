@@ -5,6 +5,9 @@ module V1
                  :variations,
                  :title,
                  :notes
+
+      has_many :product_videos, if: requested?('product_videos')
+      has_many :products, if: requested?('products')
     end
   end
 end

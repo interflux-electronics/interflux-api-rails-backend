@@ -1,5 +1,5 @@
 module V1
-  module Public
+  module Admin
     class ProductVideoSerializer < ApplicationSerializer
       attributes :rank,
                  :public

@@ -21,6 +21,9 @@ class Product < ApplicationRecord
   has_many :product_images, dependent: :destroy
   has_many :images, through: :product_images, source: :image
 
+  has_many :product_videos, dependent: :destroy
+  has_many :videos, through: :product_videos, source: :video
+
   has_many :product_documents, dependent: :destroy
   has_many :documents, through: :product_documents, source: :document
 
@@ -80,6 +83,10 @@ class Product < ApplicationRecord
       .where(product_id: old_slug)
       .find_each { |x| x.update(product_id: new_slug) }
 
+    ProductVideo
+      .where(product_id: old_slug)
+      .find_each { |x| x.update(product_id: new_slug) }
+
     ProductQuality
       .where(product_id: old_slug)
       .find_each { |x| x.update(product_id: new_slug) }
@@ -93,6 +100,5 @@ class Product < ApplicationRecord
     # TODO: drop ProductSubstitute
     # TODO: drop ProductRelatedArticle ?
     # TODO: drop ProductFeature ?
-    # TODO: drop ProductVideo ?
   end
 end

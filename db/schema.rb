@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_11_090932) do
+ActiveRecord::Schema.define(version: 2023_12_29_043350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -404,12 +404,10 @@ ActiveRecord::Schema.define(version: 2023_12_11_090932) do
   end
 
   create_table "product_videos", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.uuid "product_id"
-    t.uuid "video_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_product_videos_on_product_id"
-    t.index ["video_id"], name: "index_product_videos_on_video_id"
+    t.string "product_id"
+    t.string "video_id"
+    t.integer "rank"
+    t.boolean "public"
   end
 
   create_table "products", primary_key: "slug", id: :string, force: :cascade do |t|
