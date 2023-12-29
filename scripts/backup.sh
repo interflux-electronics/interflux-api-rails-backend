@@ -3,7 +3,8 @@
 set -e
 set -o pipefail
 
-url=admin@frankfurt.server.interflux.com
+# url=admin@frankfurt.server.interflux.com
+server=frankfurt # Configured in ~/.ssh/config
 timestamp="$(date -u +"%Y-%m-%d-%H%M%S")-UTC"
 
 echo "----------"
@@ -13,8 +14,8 @@ echo "----------"
 
 (
   set -x
-  scp scripts/backup-remote.sh $url:~/
-  ssh $url "~/backup-remote.sh $timestamp; rm -f ~/backup-remote.sh"
+  scp scripts/backup-remote.sh $server:~/
+  ssh $server "~/backup-remote.sh $timestamp; rm -f ~/backup-remote.sh"
 )
 
 echo "----------"
@@ -24,7 +25,7 @@ echo "----------"
 
 (
   set -x
-  scp $url:/var/www/rails.api.interflux.com/db/backups/$timestamp.tar.gz ./db/backups
+  scp $server:/var/www/rails.api.interflux.com/db/backups/$timestamp.tar.gz ./db/backups
   tar --extract --file db/backups/$timestamp.tar.gz
   bin/rails db:data:load_dir dir=backups/$timestamp
   rm db/backups/$timestamp.tar.gz
