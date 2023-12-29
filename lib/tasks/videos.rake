@@ -15,7 +15,7 @@ namespace :videos do
       ['videos/webinars/interflux-webinar-spray-fluxing-wave-soldering', '@1920x1080.mp4,@1920x1080.jpg', 'interflux webinar spray fluxing wave soldering'],
       ['videos/webinars/interflux-webinar-stencil-printing-part-1-the-printing-parameters', '@1920x1080.mp4,@1920x1080.jpg', 'interflux webinar stencil printing part 1 the printing parameters'],
       ['videos/webinars/interflux-webinar-stencil-printing-part-2-the-solder-paste', '@1920x1080.mp4,@1920x1080.jpg', 'interflux webinar stencil printing part 2 the solder paste'],
-      ['videos/ICSF-Select6/ICSF-Select6', '@1920x1080.mp4,@1920x1080.ogg,@1920x1080.jpg', 'ICSF Select6']
+      ['videos/ICSF-Select6/ICSF-Select6', '@1920x1080.mp4,@1920x1080.webm,@1920x1080.jpg', 'ICSF Select6']
     ]
 
     videos.each do |video|
