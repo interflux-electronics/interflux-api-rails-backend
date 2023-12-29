@@ -64,6 +64,7 @@ module V1
           product_uses
           product_uses.image
           product_videos
+          product_videos.video
           qualities
           sub_family
           uses
