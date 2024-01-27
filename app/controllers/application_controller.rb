@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::API
-  # To give all controllers the tools to be JSON API spec compliant.
+  # Give all controllers the methods for handling requests per JSON API spec.
   include JsonApiController
 
-  # To allow controllers to set and read cookies.
+  # Allow controllers to set and read cookies.
   include ActionController::Cookies
+
+  # Allow all controllers to log with a shorthand.
+  def log
+    Rails.logger
+  end
 end

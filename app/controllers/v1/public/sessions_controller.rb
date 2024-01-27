@@ -1,6 +1,6 @@
 module V1
   module Public
-    class SessionsController < ApplicationController
+    class SessionsController < V1::PublicController
       def index
         forbidden
       end

@@ -1,6 +1,6 @@
 module V1
   module Public
-    class PersonImagesController < ApplicationController
+    class PersonImagesController < V1::PublicController
       def index
         forbidden
       end

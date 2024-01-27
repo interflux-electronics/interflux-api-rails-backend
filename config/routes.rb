@@ -9,11 +9,13 @@ Rails.application.routes.draw do
     # such as scrapers and bots, to read from them.
     #
     # Used by:
-    # https://app.interflux.com
-    # https://www.interflux.com
-    # https://lmpa.interflux.com
+    # https://interflux.com
+    # https://interflux.de
+    # https://interflux.fr
+    # https://interflux.es
+    # https://interflux.group
+    # https://lmpa-q.com
     #
-
     namespace :public do
       resources :article_categories, path: '/article-categories'
       resources :articles

@@ -1,6 +1,6 @@
 module V1
   module Public
-    class SimulationRequestsController < ApplicationController
+    class SimulationRequestsController < V1::PublicController
       def index
         forbidden
       end

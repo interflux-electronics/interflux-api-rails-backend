@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_12_29_043350) do
+ActiveRecord::Schema.define(version: 2024_01_21_003248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -550,6 +550,19 @@ ActiveRecord::Schema.define(version: 2023_12_29_043350) do
     t.string "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "visits", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "ip"
+    t.string "ip_isp"
+    t.string "ip_country"
+    t.string "user_agent"
+    t.string "user_agent_ssr"
+    t.string "browser_width"
+    t.string "browser_height"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.uuid "user_id"
   end
 
   create_table "webinar_attendees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

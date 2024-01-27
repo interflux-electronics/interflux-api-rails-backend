@@ -1,6 +1,6 @@
 module V1
   module Public
-    class WebinarAttendeesController < ApplicationController
+    class WebinarAttendeesController < V1::PublicController
       def index
         # TODO: only allow current user index
         allow_index

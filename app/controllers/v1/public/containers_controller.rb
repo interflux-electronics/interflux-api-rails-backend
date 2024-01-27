@@ -1,6 +1,6 @@
 module V1
   module Public
-    class ContainersController < ApplicationController
+    class ContainersController < V1::PublicController
       def index
         allow_index
       end
