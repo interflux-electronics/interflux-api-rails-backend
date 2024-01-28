@@ -25,7 +25,8 @@ module V1
                  :history,
                  :rank_on_group_website,
                  :show_markets,
-                 :head_count
+                 :head_count,
+                 :shown_on_icsf_website
 
       belongs_to :country
 

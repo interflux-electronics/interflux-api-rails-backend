@@ -48,7 +48,9 @@ module V1
       def permitted_filters
         %i[
           business_name
+          shown_on_main_website
           shown_on_group_website
+          shown_on_icsf_website
         ]
       end
     end
