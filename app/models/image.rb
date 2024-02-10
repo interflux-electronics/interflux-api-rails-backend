@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: images
+#
+#  alt                  :string
+#  caption              :string
+#  conversion_error_log :string
+#  converting           :boolean
+#  original             :string
+#  path                 :string           not null, primary key
+#  variations           :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  company_id           :uuid
+#  user_id              :uuid
+#
 class Image < ApplicationRecord
   # key :path, String, ID
   # key :original, String

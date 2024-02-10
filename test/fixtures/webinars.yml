@@ -2,17 +2,20 @@
 #
 # Table name: webinars
 #
-#  id         :uuid             not null, primary key
-#  title      :string
-#  topic      :string
-#  audience   :string
-#  url        :string
-#  public     :boolean          default(FALSE)
-#  start_time :bigint(8)
-#  duration   :integer
-#  person_id  :uuid
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id          :uuid             not null, primary key
+#  audience    :string
+#  duration    :integer
+#  public      :boolean          default(FALSE)
+#  start_time  :bigint
+#  title       :string
+#  topic       :string
+#  url         :string
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  document_id :string
+#  image_id    :string
+#  person_id   :uuid
+#  video_id    :string
 #
 
 # webinar_fixture_1:

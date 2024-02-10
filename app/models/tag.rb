@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: tags
+#
+#  id         :uuid             not null, primary key
+#  name       :string
+#  slug       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_tags_on_slug  (slug) UNIQUE
+#
 class Tag < ApplicationRecord
   # Relate to a model
   # belongs_to :company

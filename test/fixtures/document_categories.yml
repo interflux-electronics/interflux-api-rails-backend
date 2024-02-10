@@ -2,13 +2,14 @@
 #
 # Table name: document_categories
 #
-#  created_at :datetime         not null
-#  gist       :string
-#  icon       :string
-#  name       :string
-#  order      :integer
-#  slug       :string           not null, primary key
-#  updated_at :datetime         not null
+#  gist        :string
+#  icon        :string
+#  name        :string
+#  name_single :string
+#  order       :integer
+#  slug        :string           not null, primary key
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
 #
 
 # document_category_fixture_1:

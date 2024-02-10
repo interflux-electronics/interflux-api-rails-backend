@@ -2,26 +2,43 @@
 #
 # Table name: companies
 #
-#  id               :uuid             not null, primary key
-#  slug             :string
-#  business_name    :string
-#  address          :string
-#  emails           :string
-#  phone            :string
-#  fax              :string
-#  latitude         :decimal(, )
-#  longitude        :decimal(, )
-#  country_id       :string
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  legal_name       :string
-#  website          :string
-#  public           :boolean
-#  order            :integer
-#  email_general    :string
-#  email_support    :string
-#  email_orders     :string
-#  email_accounting :string
+#  id                     :uuid             not null, primary key
+#  address                :string
+#  business_name          :string
+#  core_activity          :string
+#  description            :text
+#  email_accounting       :string
+#  email_general          :string
+#  email_orders           :string
+#  email_support          :string
+#  emails                 :string
+#  fax                    :string
+#  head_count             :integer          default(1)
+#  history                :string
+#  is_headquarter         :boolean          default(FALSE)
+#  latitude               :decimal(, )
+#  legal_name             :string
+#  longitude              :decimal(, )
+#  notes                  :text
+#  order                  :integer
+#  phone                  :string
+#  public                 :boolean
+#  rank_on_group_website  :integer          default(999)
+#  show_markets           :boolean          default(TRUE)
+#  shown_on_group_website :boolean          default(FALSE)
+#  shown_on_icsf_website  :boolean          default(FALSE)
+#  shown_on_main_website  :boolean          default(FALSE)
+#  slug                   :string
+#  website                :string
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  country_id             :string
+#
+# Indexes
+#
+#  index_companies_on_business_name  (business_name) UNIQUE
+#  index_companies_on_country_id     (country_id)
+#  index_companies_on_slug           (slug) UNIQUE
 #
 
 # company_fixture_1:

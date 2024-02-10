@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: cdn_files
+#
+#  id                 :uuid             not null, primary key
+#  locale             :string
+#  original_file_name :string
+#  path               :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  document_id        :string
+#  image_id           :string
+#  user_id            :uuid
+#  video_id           :string
+#
+# Indexes
+#
+#  index_cdn_files_on_path  (path)
+#
 class CdnFile < ApplicationRecord
   validates :path, uniqueness: true, allow_blank: true
 

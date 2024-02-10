@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: people
+#
+#  id                :uuid             not null, primary key
+#  avatar_alt        :string
+#  avatar_caption    :string
+#  avatar_path       :string
+#  avatar_variations :string
+#  chinese_name      :string
+#  email             :string
+#  first_name        :string
+#  full_name         :string
+#  last_name         :string
+#  male              :boolean
+#  phone             :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  image_id          :string
+#
 class Person < ApplicationRecord
   has_one :user
 

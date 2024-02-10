@@ -1,3 +1,28 @@
+# == Schema Information
+#
+# Table name: leads
+#
+#  id            :uuid             not null, primary key
+#  company       :string
+#  email         :string
+#  ip            :string
+#  ip_city       :string
+#  ip_region     :string
+#  message       :text
+#  mobile        :string
+#  name          :string
+#  purpose       :string
+#  source        :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  country_id    :uuid
+#  ip_country_id :uuid
+#
+# Indexes
+#
+#  index_leads_on_country_id     (country_id)
+#  index_leads_on_ip_country_id  (ip_country_id)
+#
 class Lead < ApplicationRecord
   # Relate to a model
   # belongs_to :company

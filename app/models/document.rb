@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: documents
+#
+#  id                   :uuid             not null, primary key
+#  name                 :string
+#  path                 :string           not null
+#  public               :boolean          default(FALSE)
+#  variations           :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  document_category_id :string
+#  language_id          :string
+#
 # create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
 #   t.string "path", null: false
 #   t.string "name"

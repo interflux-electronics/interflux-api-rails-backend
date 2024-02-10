@@ -2,14 +2,15 @@
 #
 # Table name: documents
 #
-#  path                 :string           not null, primary key
+#  id                   :uuid             not null, primary key
 #  name                 :string
-#  language_id          :string
-#  document_category_id :string
+#  path                 :string           not null
+#  public               :boolean          default(FALSE)
+#  variations           :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
-#  variations           :string
-#  public               :boolean          default(FALSE)
+#  document_category_id :string
+#  language_id          :string
 #
 
 # document_fixture_1:
