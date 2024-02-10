@@ -12,7 +12,6 @@
 #  document_category_id :string
 #  language_id          :string
 #
-
 class Document < ApplicationRecord
   belongs_to :document_category, optional: true
   alias_attribute :category, :document_category
