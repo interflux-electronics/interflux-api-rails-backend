@@ -1,6 +1,6 @@
 module V1
   module Public
-    class ProductImagesController < ApplicationController
+    class ProductImagesController < V1::PublicController
       def index
         allow_index
       end

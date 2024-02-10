@@ -1,6 +1,6 @@
 module V1
   module Public
-    class PermalinksController < ApplicationController
+    class PermalinksController < V1::PublicController
       def index
         allow_index
       end

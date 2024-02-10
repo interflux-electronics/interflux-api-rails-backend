@@ -1,6 +1,6 @@
 module V1
   module Public
-    class EventsController < ApplicationController
+    class EventsController < V1::PublicController
       def index
         allow_index
       end
