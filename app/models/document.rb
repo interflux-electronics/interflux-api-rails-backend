@@ -12,17 +12,6 @@
 #  document_category_id :string
 #  language_id          :string
 #
-# create_table "documents", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-#   t.string "path", null: false
-#   t.string "name"
-#   t.string "language_id"
-#   t.string "document_category_id"
-#   t.datetime "created_at", null: false
-#   t.datetime "updated_at", null: false
-#   t.string "variations"
-#   t.boolean "public", default: false
-# end
-
 class Document < ApplicationRecord
   belongs_to :document_category, optional: true
   alias_attribute :category, :document_category
