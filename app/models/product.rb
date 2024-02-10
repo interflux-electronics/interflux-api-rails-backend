@@ -1,3 +1,38 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  avatar_alt                 :string
+#  avatar_caption             :string
+#  avatar_path                :string
+#  avatar_variations          :string
+#  complies_with_iec          :boolean
+#  complies_with_ipcjstd004_a :boolean
+#  complies_with_ipcjstd004_b :boolean
+#  complies_with_ipcjstd005   :boolean
+#  complies_with_iso          :boolean
+#  complies_with_rohs         :boolean
+#  front_page_rank            :integer          default(9)
+#  instructions               :string
+#  label                      :string
+#  name                       :string
+#  on_front_page              :boolean          default(FALSE)
+#  pitch                      :text
+#  properties                 :text
+#  public                     :boolean          default(FALSE)
+#  rank_among_family          :integer
+#  slug                       :string           not null, primary key
+#  status                     :string           default("offline")
+#  summary                    :string
+#  test_results               :string
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  image_id                   :string
+#  main_family_id             :string
+#  product_family_id          :string
+#  sub_family_id              :string
+#  superior_product_id        :string
+#
 class Product < ApplicationRecord
   # key: label
 

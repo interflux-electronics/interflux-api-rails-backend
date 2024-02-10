@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: product_uses
+#
+#  id                      :uuid             not null, primary key
+#  rank_among_products     :integer
+#  rank_among_uses         :integer
+#  show_alternative_avatar :boolean          default(FALSE)
+#  show_on_product_list    :boolean
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  image_id                :string
+#  product_id              :string
+#  use_id                  :string
+#
 class ProductUse < ApplicationRecord
   belongs_to :product
   belongs_to :use

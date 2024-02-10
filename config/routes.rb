@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     namespace :public do
       resources :article_categories, path: '/article-categories'
       resources :articles
+      resources :client_side_renders, path: '/client-side-renders'
       resources :companies
       resources :company_markets, path: '/company-markets'
       resources :countries
@@ -29,12 +30,14 @@ Rails.application.routes.draw do
       resources :images
       resources :languages
       resources :leads
+      resources :page_views, path: '/page-views'
       resources :permalinks
       resources :product_families, path: '/product-families'
       resources :product_qualities, path: '/product-qualities'
       resources :product_uses, path: '/product-uses'
       resources :products
       resources :qualities
+      resources :server_side_renders, path: '/server-side-renders'
       resources :sessions
       resources :simulation_requests, path: '/simulation-requests'
       resources :translations
@@ -58,6 +61,7 @@ Rails.application.routes.draw do
       resources :article_categories, path: '/article-categories'
       resources :articles
       resources :cdn_files, path: '/cdn-files'
+      resources :client_side_renders, path: '/client-side-renders'
       resources :companies
       resources :company_markets, path: '/company-markets'
       resources :company_members, path: '/company-members'
@@ -69,6 +73,7 @@ Rails.application.routes.draw do
       resources :images
       resources :languages
       resources :leads
+      resources :page_views, path: '/page-views'
       resources :people
       resources :permalinks
       resources :person_images, path: '/person-images'
@@ -77,17 +82,19 @@ Rails.application.routes.draw do
       resources :product_family_images, path: '/product-family-images'
       resources :product_features, path: '/product-features'
       resources :product_images, path: '/product-images'
-      resources :product_videos, path: '/product-videos'
       resources :product_qualities, path: '/product-qualities'
       resources :product_uses, path: '/product-uses'
+      resources :product_videos, path: '/product-videos'
       resources :products, path: '/products'
       resources :qualities
+      resources :server_side_renders, path: '/server-side-renders'
       resources :sessions
       resources :translations
       resources :use_images, path: '/use-images'
       resources :users
       resources :uses
       resources :videos
+      resources :visits
       resources :webinar_attendees, path: '/webinar-attendees'
       resources :webinar_images, path: '/webinar-images'
       resources :webinar_invitees, path: '/webinar-invitees'

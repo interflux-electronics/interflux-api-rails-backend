@@ -1,14 +1,27 @@
+# == Schema Information
+#
+# Table name: visits
+#
+#  id              :uuid             not null, primary key
+#  host            :string
+#  ip              :string
+#  ip_isp          :string
+#  is_bot          :boolean
+#  is_interflux    :boolean
+#  referrer        :string
+#  user_agent      :string
+#  viewport_height :integer
+#  viewport_width  :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  ip_country_id   :string
+#  user_id         :uuid
+#
 class Visit < ApplicationRecord
   belongs_to :user, optional: true
-  # TODO: belongs_to :monthly_visitor_report
 
-  # TODO: interpret the user agent
-  def is_robot
-    false
-  end
+  has_one :server_side_render, optional: true, dependent: nil
+  has_one :client_side_render, optional: true, dependent: nil
 
-  # TODO: interpret the user, IP and ISP
-  def is_interflux
-    false
-  end
+  has_many :page_view, dependent: :restrict_with_exception
 end

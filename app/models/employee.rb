@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: employees
+#
+#  id         :uuid             not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  company_id :uuid
+#  person_id  :uuid
+#
+# Indexes
+#
+#  index_employees_on_company_id  (company_id)
+#  index_employees_on_person_id   (person_id)
+#
 class Employee < ApplicationRecord
   # Relate to a model
   # belongs_to :company

@@ -2,12 +2,20 @@
 #
 # Table name: cdn_files
 #
-#  id          :uuid             not null, primary key
-#  path        :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  image_id    :string
-#  document_id :string
+#  id                 :uuid             not null, primary key
+#  locale             :string
+#  original_file_name :string
+#  path               :string
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  document_id        :string
+#  image_id           :string
+#  user_id            :uuid
+#  video_id           :string
+#
+# Indexes
+#
+#  index_cdn_files_on_path  (path)
 #
 
 # cdn_file_fixture_1:

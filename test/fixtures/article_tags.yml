@@ -3,10 +3,15 @@
 # Table name: article_tags
 #
 #  id         :uuid             not null, primary key
-#  article_id :uuid
-#  tag_id     :uuid
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  article_id :uuid
+#  tag_id     :uuid
+#
+# Indexes
+#
+#  index_article_tags_on_article_id  (article_id)
+#  index_article_tags_on_tag_id      (tag_id)
 #
 
 # article_tag_fixture_1:

@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: webinar_attendees
+#
+#  id         :uuid             not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  person_id  :uuid
+#  webinar_id :uuid
+#
 # webinar_attendee_fixture_1:
 #   name: Some Name
 #   slug: some-name

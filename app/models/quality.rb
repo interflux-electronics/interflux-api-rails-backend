@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: qualities
+#
+#  gist       :text
+#  icon       :string
+#  slug       :string           not null, primary key
+#  text       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  image_id   :string
+#
 class Quality < ApplicationRecord
   belongs_to :image, optional: true
 

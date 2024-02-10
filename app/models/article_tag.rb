@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: article_tags
+#
+#  id         :uuid             not null, primary key
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  article_id :uuid
+#  tag_id     :uuid
+#
+# Indexes
+#
+#  index_article_tags_on_article_id  (article_id)
+#  index_article_tags_on_tag_id      (tag_id)
+#
 class ArticleTag < ApplicationRecord
   # Relate to a model
   # belongs_to :company

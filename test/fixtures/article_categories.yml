@@ -8,6 +8,11 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_article_categories_on_name  (name) UNIQUE
+#  index_article_categories_on_slug  (slug) UNIQUE
+#
 
 # article_category_fixture_1:
 #   name: Some Name

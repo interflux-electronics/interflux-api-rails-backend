@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_27_091511) do
+ActiveRecord::Schema.define(version: 2024_02_10_021903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -58,6 +58,19 @@ ActiveRecord::Schema.define(version: 2024_01_27_091511) do
     t.string "locale"
     t.string "original_file_name"
     t.index ["path"], name: "index_cdn_files_on_path"
+  end
+
+  create_table "client_side_renders", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "host"
+    t.string "referrer"
+    t.string "user_agent"
+    t.string "ip"
+    t.integer "viewport_width"
+    t.integer "viewport_height"
+    t.uuid "visit_id"
+    t.uuid "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "companies", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -270,6 +283,12 @@ ActiveRecord::Schema.define(version: 2024_01_27_091511) do
     t.index ["ip_country_id"], name: "index_leads_on_ip_country_id"
   end
 
+  create_table "page_views", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "path"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "people", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -452,6 +471,16 @@ ActiveRecord::Schema.define(version: 2024_01_27_091511) do
     t.string "image_id"
   end
 
+  create_table "server_side_renders", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "host"
+    t.string "referrer"
+    t.string "user_agent"
+    t.string "ip"
+    t.uuid "visit_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sessions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "href"
     t.string "referrer"
@@ -554,16 +583,19 @@ ActiveRecord::Schema.define(version: 2024_01_27_091511) do
   end
 
   create_table "visits", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "host"
+    t.string "referrer"
+    t.string "user_agent"
     t.string "ip"
     t.string "ip_isp"
-    t.string "ip_country"
-    t.string "user_agent"
-    t.string "user_agent_ssr"
-    t.string "browser_width"
-    t.string "browser_height"
-    t.datetime "start_time"
-    t.datetime "end_time"
+    t.string "ip_country_id"
+    t.integer "viewport_width"
+    t.integer "viewport_height"
     t.uuid "user_id"
+    t.boolean "is_interflux"
+    t.boolean "is_bot"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "webinar_attendees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
