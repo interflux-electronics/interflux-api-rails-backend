@@ -31,53 +31,18 @@ module V1
         V1::Admin::VisitSerializer
       end
 
-      def creatable_attributes
-        %[]
-        # %i[
-        #   name
-        #   company
-        #   email
-        #   mobile
-        #   message
-        #   purpose
-        #   source
-        #   ip
-        #   ip_region
-        #   ip_city
-        # ]
-      end
-
-      def creatable_relationships
-        %[]
-        # %i[
-        #  country
-        #  ip_country
-        # ]
-      end
-
       def permitted_filters
-        %[]
-        # %i[
-        #  main_group_id
-        #  sub_group_id
-        # ]
-      end
-
-      def permanent_filters
-        {}
-        # {
-        #   public: true
-        # }
+        %i[
+          host
+        ]
       end
 
       def permitted_includes
-        %[]
-        # %i[
-        #   related_articles
-        #   related_products
-        #   related_products.main_group
-        #   translations
-        # ]
+        %i[
+          server_side_renders
+          client_side_renders
+          user
+        ]
       end
     end
   end
