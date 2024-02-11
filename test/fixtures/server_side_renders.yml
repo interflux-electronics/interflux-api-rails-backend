@@ -5,6 +5,7 @@
 #  id         :uuid             not null, primary key
 #  host       :string
 #  ip         :string
+#  path       :string
 #  referrer   :string
 #  user_agent :string
 #  created_at :datetime         not null

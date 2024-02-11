@@ -10,7 +10,12 @@ module V1
       end
 
       def create
-        allow_create({ ip: request.remote_ip })
+        allow_create(
+          {
+            id: params[:data][:id],
+            ip: request.remote_ip
+          }
+        )
       end
 
       def update
@@ -33,12 +38,14 @@ module V1
 
       def creatable_attributes
         %i[
-          visit_id
           host
+          path
           referrer
           user_agent
           viewport_width
           viewport_height
+          server_side_render_id
+          browser_session_id
           user_id
         ]
       end
