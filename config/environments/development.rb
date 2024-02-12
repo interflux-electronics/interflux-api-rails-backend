@@ -60,7 +60,7 @@ Rails.application.configure do
 
   # When developing, do not log. Instead output everything in terminal.
   config.logger = Logger.new($stdout)
-  config.log_level = :debug
+  config.log_level = :info
   # config.logger.datetime_format = '%Y-%m-%d %H:%M:%S'
   config.logger.formatter = proc do |severity, _datetime, _progname, msg|
     "#{severity} #{msg}\n"

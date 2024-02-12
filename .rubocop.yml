@@ -57,6 +57,11 @@ Style/FrozenStringLiteralComment:
 Style/PercentLiteralDelimiters:
   Enabled: false
 
+# Until today I have never needed to know created_at and updated_at. ¯\_(ツ)_/¯
+# Let's only add them when we have a good reason.
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
 # Because warning asked to add these...
 Lint/RaiseException:
   Enabled: true
@@ -68,3 +73,5 @@ Style/HashTransformKeys:
   Enabled: true
 Style/HashTransformValues:
   Enabled: true
+
+

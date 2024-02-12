@@ -391,8 +391,13 @@ module JsonApiController
   #   allow_create
   # end
   #
-  def allow_create
-    resource = model_class.new(attributes_and_relationships)
+  def allow_create(controller_attributes)
+    hash = strong_attributes
+           .merge(strong_relationships)
+           .merge(controller_attributes)
+
+    resource = model_class.new(hash)
+
     if resource.save!
       json = serializer_class.new(resource).serializable_hash.to_json
       render status: 201, json: json
