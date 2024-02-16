@@ -391,7 +391,7 @@ module JsonApiController
   #   allow_create
   # end
   #
-  def allow_create(controller_attributes)
+  def allow_create(controller_attributes: nil)
     hash = strong_attributes
            .merge(strong_relationships)
            .merge(controller_attributes)
