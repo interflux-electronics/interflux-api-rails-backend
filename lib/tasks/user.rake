@@ -185,6 +185,8 @@ namespace :user do
       create_videos
       read_videos
       update_videos
+
+      read_visitors
     ].join(',')
 
     translation_base = %w[
