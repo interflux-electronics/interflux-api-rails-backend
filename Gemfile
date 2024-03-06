@@ -63,3 +63,6 @@ gem 'minitest', groups: %i[test]
 
 # For annotating models and fixtures with schema info.
 gem 'annotate', groups: %i[development]
+
+# For detecting
+gem 'browser', require: false
