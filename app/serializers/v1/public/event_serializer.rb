@@ -6,7 +6,12 @@ module V1
                  :dates,
                  :start_date,
                  :end_date,
-                 :description
+                 :description,
+                 :has_registration_form,
+                 :ask_first_name,
+                 :ask_last_name,
+                 :ask_role,
+                 :ask_company
 
       belongs_to :country
     end

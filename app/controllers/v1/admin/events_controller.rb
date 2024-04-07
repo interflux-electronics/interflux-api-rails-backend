@@ -39,6 +39,14 @@ module V1
           start_date
           end_date
           description
+          has_registration_form
+          ask_first_name
+          ask_last_name
+          ask_role
+          ask_company
+          confirmation_email_subject
+          confirmation_email_body
+          confirmation_email_bcc
         ]
       end
 
@@ -51,6 +59,8 @@ module V1
       def permitted_includes
         %i[
           country
+          permalinks
+          event_attendees
         ]
       end
     end
