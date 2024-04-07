@@ -6,9 +6,14 @@
 #  notes       :string
 #  redirect_to :string
 #  slug        :string
+#  event_id    :uuid
+#
+# Indexes
+#
+#  index_permalinks_on_slug  (slug) UNIQUE
 #
 class Permalink < ApplicationRecord
-  # attr :redirect_from
-  # attr :redirect_to
-  # attr :notes
+  belongs_to :event, optional: true
+
+  validates :slug, presence: true, uniqueness: true
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_10_021903) do
+ActiveRecord::Schema.define(version: 2024_04_07_010227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -223,6 +223,18 @@ ActiveRecord::Schema.define(version: 2024_02_10_021903) do
     t.index ["person_id"], name: "index_employees_on_person_id"
   end
 
+  create_table "event_attendees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "event_id"
+    t.uuid "person_id"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "role"
+    t.string "company"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -233,6 +245,14 @@ ActiveRecord::Schema.define(version: 2024_02_10_021903) do
     t.datetime "updated_at", null: false
     t.string "start_date"
     t.string "end_date"
+    t.boolean "has_registration_form"
+    t.boolean "ask_first_name"
+    t.boolean "ask_last_name"
+    t.boolean "ask_role"
+    t.boolean "ask_company"
+    t.string "confirmation_email_subject", default: "See you soon at {event_name}!"
+    t.string "confirmation_email_body", default: "Hello {first_name} {last_name},    We look forward seeing you at {event_name} on {event_date} in {event_location}.    Best regards,    The Interflux Electronics team"
+    t.string "confirmation_email_bcc", default: "s.teliszewski@interflux.com, jw@interflux.au"
   end
 
   create_table "features", primary_key: "slug", id: :string, force: :cascade do |t|
@@ -314,6 +334,8 @@ ActiveRecord::Schema.define(version: 2024_02_10_021903) do
     t.string "slug"
     t.string "redirect_to"
     t.string "notes"
+    t.uuid "event_id"
+    t.index ["slug"], name: "index_permalinks_on_slug", unique: true
   end
 
   create_table "person_images", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

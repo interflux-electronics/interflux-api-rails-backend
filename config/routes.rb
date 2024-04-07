@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       resources :document_categories, path: '/document-categories'
       resources :documents
       resources :events
+      resources :event_attendees, path: '/event-attendees'
       resources :features
       resources :images
       resources :languages
@@ -69,6 +70,7 @@ Rails.application.routes.draw do
       resources :document_categories, path: '/document-categories'
       resources :documents
       resources :events
+      resources :event_attendees, path: '/event-attendees'
       resources :features
       resources :images
       resources :languages

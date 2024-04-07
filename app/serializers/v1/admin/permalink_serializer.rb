@@ -4,6 +4,8 @@ module V1
       attributes :slug,
                  :redirect_to,
                  :notes
+
+      belongs_to :event
     end
   end
 end
