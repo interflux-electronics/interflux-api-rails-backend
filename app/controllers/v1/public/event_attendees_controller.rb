@@ -38,6 +38,7 @@ module V1
           role
           company
           email
+          locale
         ]
       end
 

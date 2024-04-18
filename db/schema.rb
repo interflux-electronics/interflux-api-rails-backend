@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_07_010227) do
+ActiveRecord::Schema.define(version: 2024_04_18_113914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -214,6 +214,27 @@ ActiveRecord::Schema.define(version: 2024_04_07_010227) do
     t.boolean "public", default: false
   end
 
+  create_table "email_attempts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "created_by_type"
+    t.uuid "created_by_id"
+    t.string "from"
+    t.string "to"
+    t.string "cc"
+    t.string "bcc"
+    t.string "reply_to"
+    t.integer "provider"
+    t.string "postmark_stream"
+    t.string "postmark_template_alias"
+    t.jsonb "postmark_template_model", default: {}
+    t.jsonb "response_body", default: {}
+    t.integer "response_status"
+    t.boolean "delivered"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_by_type", "created_by_id"], name: "index_email_attempts_on_created_by"
+    t.index ["response_body"], name: "index_email_attempts_on_response_body", using: :gin
+  end
+
   create_table "employees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "company_id"
     t.uuid "person_id"
@@ -233,6 +254,7 @@ ActiveRecord::Schema.define(version: 2024_04_07_010227) do
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "locale"
   end
 
   create_table "events", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

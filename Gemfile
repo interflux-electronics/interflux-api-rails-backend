@@ -48,6 +48,9 @@ gem 'aws-sdk-s3'
 # For HTTP requests (native Rails does this terribly...)
 gem 'faraday'
 
+# For printing curl requests after Faraday requests
+gem 'faraday_curl', groups: %i[development]
+
 # For catching N+1 queries
 gem 'bullet', groups: %i[development test]
 

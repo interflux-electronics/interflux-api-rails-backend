@@ -28,4 +28,28 @@ class Event < ApplicationRecord
   has_many :event_attendees
 
   alias_attribute :attendees, :event_attendees
+
+  def location
+    "#{city}, #{country.name_english}"
+  end
+
+  def start_to_end_date
+    return '?' if sd.nil? && ed.nil?
+
+    return sd.strftime('%a %-d %b %Y') if sd.present? && ed.nil?
+
+    return sd.strftime('%a %-d %b %Y') if ed == sd
+
+    return "#{sd.strftime('%a %d')} to #{ed.strftime('%a %-d %b %Y')}" if sd.month == ed.month
+
+    "#{sd.strftime('%a %-d %b %Y')} to #{ed.strftime('%a %-d %b %Y')}"
+  end
+
+  def sd
+    start_date&.to_date
+  end
+
+  def ed
+    end_date&.to_date
+  end
 end
