@@ -7,6 +7,7 @@
 #  email      :string
 #  first_name :string
 #  last_name  :string
+#  locale     :string
 #  role       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
