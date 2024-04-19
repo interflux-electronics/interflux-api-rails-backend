@@ -99,9 +99,9 @@ module Postmark
           'User-Agent': 'Jan Werkhoven (jw@interflux.au)'
         }
       ) do |f|
-        f.request :url_encoded
-        f.request :curl, log, :info
-        f.adapter Faraday.default_adapter
+        # f.request :url_encoded
+        # f.request :curl, log, :info
+        # f.adapter Faraday.default_adapter
       end
     end
 
