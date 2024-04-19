@@ -14,7 +14,8 @@ module V1
                  :ask_company,
                  :confirmation_email_subject,
                  :confirmation_email_body,
-                 :confirmation_email_bcc
+                 :confirmation_email_bcc,
+                 :website
 
       belongs_to :country
 

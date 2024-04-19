@@ -11,7 +11,8 @@ module V1
                  :ask_first_name,
                  :ask_last_name,
                  :ask_role,
-                 :ask_company
+                 :ask_company,
+                 :website
 
       belongs_to :country
     end

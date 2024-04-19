@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_18_113914) do
+ActiveRecord::Schema.define(version: 2024_04_19_091308) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -275,6 +275,7 @@ ActiveRecord::Schema.define(version: 2024_04_18_113914) do
     t.string "confirmation_email_subject", default: "See you soon at {event_name}!"
     t.string "confirmation_email_body", default: "Hello {first_name} {last_name},    We look forward seeing you at {event_name} on {event_date} in {event_location}.    Best regards,    The Interflux Electronics team"
     t.string "confirmation_email_bcc", default: "s.teliszewski@interflux.com, jw@interflux.au"
+    t.string "website"
   end
 
   create_table "features", primary_key: "slug", id: :string, force: :cascade do |t|
