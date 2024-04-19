@@ -17,6 +17,7 @@
 #  has_registration_form      :boolean
 #  name                       :string
 #  start_date                 :string
+#  website                    :string
 #  created_at                 :datetime         not null
 #  updated_at                 :datetime         not null
 #  country_id                 :string

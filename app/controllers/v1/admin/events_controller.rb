@@ -47,6 +47,7 @@ module V1
           confirmation_email_subject
           confirmation_email_body
           confirmation_email_bcc
+          website
         ]
       end
 
