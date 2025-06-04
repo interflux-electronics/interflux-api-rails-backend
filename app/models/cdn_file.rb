@@ -8,7 +8,7 @@
 #  path               :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
-#  document_id        :string
+#  document_id        :uuid
 #  image_id           :string
 #  user_id            :uuid
 #  video_id           :string
@@ -48,6 +48,40 @@ class CdnFile < ApplicationRecord
   after_update :sync_owner_variations
   before_destroy :delete_cdn_file
   after_destroy :sync_owner_variations
+
+  def rename(to:)
+    return unless document.present?
+    return unless document.variations.present?
+
+    # Safeguards when working in development
+    if Rails.env.development? && !path.start_with?("temporary/")
+      return log.info "❌ from development you cannot rename production files"
+    end
+
+    variation = document.variations.split(',').find { |v| path.end_with?(v) }
+
+    return unless variation.present?
+
+    old_path = path
+    new_path = "#{to}-#{variation}"
+
+    if Rails.env.development?
+      new_path = "temporary/#{new_path}"
+    end
+
+    log.info "ℹ️ old path: #{old_path}"
+    log.info "ℹ️ new path: #{new_path}"
+
+    response = CdnService.new.rename(from: old_path, to: new_path)
+
+    return log.info "❌ file rename FAILED in CDN" if response == :fail
+
+    log.info "✅ file renamed in CDN"
+
+    update!(path: new_path)
+
+    log.info "✅ file renamed in DB"
+  end
 
   private
 

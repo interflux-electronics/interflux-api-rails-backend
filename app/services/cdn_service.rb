@@ -72,6 +72,28 @@ class CdnService
     success
   end
 
+  # Rename a file (read: copy, then delete)
+  def rename(from:, to:)
+    client.copy_object(
+      bucket: bucket,
+      copy_source: "#{bucket}/#{from}",
+      key: to,
+      acl: 'public-read'
+    )
+
+    client.delete_object(
+      bucket: bucket,
+      key: from
+    )
+
+    :success
+  rescue Aws::S3::Errors::ServiceError => e
+    logger.error "❌ failed to copy #{from} to #{to}"
+    logger.error e
+
+    :fail
+  end
+
   private
 
   def success
@@ -90,5 +112,9 @@ class CdnService
       force_path_style: false,
       region: ENV['DO_REGION']
     )
+  end
+
+  def logger
+    Rails.logger
   end
 end

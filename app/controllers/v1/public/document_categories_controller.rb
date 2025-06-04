@@ -30,6 +30,13 @@ module V1
       def serializer_class
         V1::Public::DocumentCategorySerializer
       end
+
+      def permitted_includes
+        %i[
+          documents
+          cdn_files
+        ]
+      end
     end
   end
 end

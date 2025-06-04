@@ -67,6 +67,9 @@ Rails.application.configure do
     # "#{datetime.strftime('%H:%M:%S')} #{severity} #{msg}\n"
   end
 
+  # Return a 404 to all requests who are not these hosts:
+  config.hosts = ["localhost", "127.0.0.1"]
+
   # Configure CORS.
   # Note that the Interflux front-end live on different domains than their backend.
   # Therefor cross-origin rules are needed.
