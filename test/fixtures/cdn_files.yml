@@ -8,7 +8,7 @@
 #  path               :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
-#  document_id        :string
+#  document_id        :uuid
 #  image_id           :string
 #  user_id            :uuid
 #  video_id           :string

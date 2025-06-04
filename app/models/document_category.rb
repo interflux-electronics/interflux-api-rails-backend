@@ -13,4 +13,5 @@
 #
 class DocumentCategory < ApplicationRecord
   has_many :documents
+  has_many :cdn_files, through: :documents
 end
