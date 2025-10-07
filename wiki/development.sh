@@ -71,6 +71,11 @@ bin/rails db:drop;
 bin/rails db:create
 bin/rails db:migrate
 
+# Create backup of production database
+# Sync production database down to development
+
+scripts/backup.sh
+
 # Serve Rails
 
 bin/rails s
@@ -88,7 +93,7 @@ bin/rails c
 bin/rails generate custom_scaffold products --version=v1 --scope=public
 bin/rails generate custom_scaffold product_documents --version=v1 --scope=admin
 
-# Seed database
+# Seed database (outdated)
 
 bin/rails db:seed
 bin/rails db:seed:documents
@@ -98,7 +103,7 @@ bin/rails db:seed:products
 
 bin/rails db:fixtures:load FIXTURES=articles
 
-# Drop database and start over
+# Drop database and start over (outdated)
 
 bin/rails db:environment:set RAILS_ENV=development;
 bin/rails db:drop;
