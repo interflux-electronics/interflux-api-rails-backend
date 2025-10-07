@@ -82,6 +82,6 @@ class Image < ApplicationRecord
     sizes = original.split('.').first.gsub('@', '').split('x')
     width = sizes.first.to_i
     height = sizes.last.to_i
-    (width / height).to_f
+    width.to_f / height
   end
 end
