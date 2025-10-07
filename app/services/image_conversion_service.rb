@@ -32,7 +32,7 @@ class ImageConversionService
     raise 'wrong class' unless @image.is_a? Image
     raise 'already in progress' if @image.converting
     raise 'missing original' if @image.original.nil?
-    raise 'missing ratio' if @image.ratio.nil?
+    raise 'missing ratio' if @image.ratio.nil? || @image.ratio.zero?
     raise 'wrong format' unless %w[png jpg jpeg].include? @image.original_ext
 
     path = @image.path
@@ -64,7 +64,6 @@ class ImageConversionService
     end
     to_create = wish_list - existing
     to_delete = existing - wish_list - [original]
-
     logger.info '------'
     logger.info 'found on CDN:'
     existing.each { |file| logger.info file }
@@ -190,7 +189,8 @@ class ImageConversionService
     logger.info '------'
 
     @image.update!(
-      conversion_error_log: "#{e.message} | #{e.class.name} | #{e.backtrace}"
+      conversion_error_log: "#{e.message} | #{e.class.name} | #{e.backtrace}",
+      converting: false
     )
 
     # TODO: notify Jan of fail
@@ -200,13 +200,13 @@ class ImageConversionService
 
   def lock_image
     logger.info '------'
-    logger.info 'Lock image'
+    logger.info 'lock image'
     @image.update!(converting: true)
   end
 
   def unlock_image
     logger.info '------'
-    logger.info 'Unlock image'
+    logger.info 'unlock image'
     @image.update!(converting: false)
   end
 
