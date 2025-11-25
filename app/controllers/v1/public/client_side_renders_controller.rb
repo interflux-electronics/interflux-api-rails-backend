@@ -10,12 +10,13 @@ module V1
       end
 
       def create
-        allow_create(
-          {
-            id: params[:data][:id],
-            ip: request.remote_ip
-          }
-        )
+        forbidden
+        # allow_create(
+        #   {
+        #     id: params[:data][:id],
+        #     ip: request.remote_ip
+        #   }
+        # )
       end
 
       def update
