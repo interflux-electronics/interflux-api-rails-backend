@@ -4,11 +4,11 @@
 
 # Back up the production database
 
-remote/backup.sh
+script/backup.sh
 
 # Restore a production database
 
-remote/restore-backup.sh "production-2022-03-09-013916-UTC"
+script/restore-backup.sh "production-2022-03-09-013916-UTC"
 
 # Seed production database
 

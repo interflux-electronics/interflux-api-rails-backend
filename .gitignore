@@ -31,6 +31,8 @@
 # Never commit database backups to the codebase.
 /db/backups/*
 !/db/backups/.keep
+/db/dumps/*
+!/db/dumps/.keep
 
 # Ignore all the Puma related files given they are ephemeral and production only.
 /puma/*
