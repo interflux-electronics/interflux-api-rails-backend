@@ -6,10 +6,6 @@
 module JsonApiController
   extend ActiveSupport::Concern
 
-  included do
-    before_action :check_content_type
-  end
-
   # CRUD
   #
   # In order to follow the JSON API specs, unsported request endpoints should
@@ -547,15 +543,6 @@ module JsonApiController
     true
   end
 
-  # VALIDATION
-
-  # Check for the JSON API Content Type header. Throw 415 error if not present.
-  # Firefox has a known bug where they append "; charset=UTF-8" to the end, which breaks.
-  # https://josef.codes/firefox-adds-charset-utf-8-when-doing-post-requests-with-ajax/
-  def check_content_type
-    wrong_content_type unless request.content_type.present? && request.content_type.split(';').first == 'application/vnd.api+json'
-  end
-
   # ERRORS
 
   def unauthorized(meta = nil)
@@ -630,14 +617,6 @@ module JsonApiController
       'route-not-found',
       'This route does not match any of the routes in `config/routes.rb`. Please check whether it exists and whether it needs an explicit hyphenated path.',
       meta
-    )
-  end
-
-  def wrong_content_type
-    render_error(
-      415,
-      'unsupported-media-type',
-      'This API follows the JSON API standards and can therefor only accepts request with Content-Type "application/vnd.api+json".'
     )
   end
 
