@@ -39,9 +39,6 @@ gem 'byebug', groups: %i[development test]
 # For seeding the database with modular control and dependencies
 gem 'seedbank'
 
-# For dumping database data into a YAML file (great for maintenance backups)
-gem 'yaml_db'
-
 # So we can upload files to Digital Ocean Spaces (S3-compatible)
 gem 'aws-sdk-s3'
 
