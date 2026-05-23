@@ -274,6 +274,7 @@ module JsonApiController
 
   # To avoid N+1 we include all the includes.
   def model_class_with_includes
+    return model_class if params[:include].blank?
     return model_class unless strong_includes
 
     list = []
