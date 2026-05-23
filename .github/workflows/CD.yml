@@ -66,7 +66,7 @@ jobs:
       - run: echo "TIMESTAMP=$(date -u +"%Y-%m-%d-%H%M%S")-UTC" >> $GITHUB_ENV
 
       # Back up the database
-      - run: ssh $URL "cd $ROOT; bin/rails db:data:dump_dir dir=backups/production-$TIMESTAMP"
+      - run: ssh $URL "cd $ROOT; pg_dump -Fc --no-owner --no-privileges --verbose -f db/dumps/production-$TIMESTAMP.dump interflux_production"
 
       # Pull the latest production code
       - run: ssh $URL "cd $ROOT; git checkout production; git pull"
