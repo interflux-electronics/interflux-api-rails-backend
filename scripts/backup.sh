@@ -20,7 +20,7 @@ echo "✅ Downloaded production database"
 echo "----------"
 ls -la db/dumps
 echo "----------"
-RAILS_ENV=development rails db:drop db:create
+RAILS_ENV=development DISABLE_DATABASE_ENVIRONMENT_CHECK=1 rails db:drop db:create
 echo "----------"
 echo "✅ Reset local database"
 echo "----------"

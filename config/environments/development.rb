@@ -6,6 +6,13 @@ Rails.application.configure do
     Bullet.console       = true
     Bullet.rails_logger  = true
     Bullet.add_footer    = true
+
+    # Disable only the "AVOID eager loading" warnings
+    Bullet.unused_eager_loading_enable = false
+
+    # Keep other useful warnings
+    Bullet.n_plus_one_query_enable = true
+    Bullet.counter_cache_enable = true
   end
 
   # Settings specified here will take precedence over those in config/application.rb.
@@ -68,7 +75,7 @@ Rails.application.configure do
   end
 
   # Return a 404 to all requests who are not these hosts:
-  config.hosts = ["localhost", "127.0.0.1"]
+  config.hosts = ['localhost', '127.0.0.1']
 
   # Configure CORS.
   # Note that the Interflux front-end live on different domains than their backend.

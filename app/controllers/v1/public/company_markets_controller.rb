@@ -30,6 +30,19 @@ module V1
       def serializer_class
         V1::Public::CompanyMarketSerializer
       end
+
+      def permitted_includes
+        %i[
+          company
+          country
+        ]
+      end
+
+      def permitted_filters
+        %i[
+          country
+        ]
+      end
     end
   end
 end

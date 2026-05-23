@@ -146,7 +146,11 @@ module JsonApiController
     return error_forbidden_filters if forbidden_filters.any?
 
     # First we gather all records of the model class.
-    records = model_class_with_includes.all
+    records = if @records.nil?
+                params[:include].present? ? model_class_with_includes.all : model_class.all
+              else
+                @records # set in the controller, prevents .all
+              end
 
     # Next we reduce this collection with the permanent and requested filters.
     #
@@ -183,7 +187,7 @@ module JsonApiController
     options[:include] = strong_includes if strong_includes
 
     # We create a JSON response from the records we collected using the fast and
-    # JSON API compliant Netflux serializers.
+    # JSON API compliant Netflix serializers.
     json = serializer_class.new(records, options).serializable_hash.to_json
 
     # Finally we return the JSON with a 200.
@@ -270,6 +274,7 @@ module JsonApiController
 
   # To avoid N+1 we include all the includes.
   def model_class_with_includes
+    return model_class if params[:include].blank?
     return model_class unless strong_includes
 
     list = []
@@ -283,7 +288,7 @@ module JsonApiController
         value = split[1]
         hash = {}
         hash[key] = value
-        # list.push(**hash)
+        list.push(**hash)
       else
         list.push(symbol)
       end
