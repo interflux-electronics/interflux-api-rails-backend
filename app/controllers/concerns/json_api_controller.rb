@@ -288,7 +288,7 @@ module JsonApiController
         value = split[1]
         hash = {}
         hash[key] = value
-        # list.push(**hash)
+        list.push(**hash)
       else
         list.push(symbol)
       end

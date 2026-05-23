@@ -6,6 +6,13 @@ Rails.application.configure do
     Bullet.console       = true
     Bullet.rails_logger  = true
     Bullet.add_footer    = true
+
+    # Disable only the "AVOID eager loading" warnings
+    Bullet.unused_eager_loading_enable = false
+
+    # Keep other useful warnings
+    Bullet.n_plus_one_query_enable = true
+    Bullet.counter_cache_enable = true
   end
 
   # Settings specified here will take precedence over those in config/application.rb.
