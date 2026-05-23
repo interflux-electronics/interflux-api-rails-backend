@@ -68,7 +68,7 @@ Rails.application.configure do
   end
 
   # Return a 404 to all requests who are not these hosts:
-  config.hosts = ["localhost", "127.0.0.1"]
+  config.hosts = ['localhost', '127.0.0.1']
 
   # Configure CORS.
   # Note that the Interflux front-end live on different domains than their backend.
