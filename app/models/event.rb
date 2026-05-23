@@ -34,13 +34,13 @@ class Event < ApplicationRecord
     "#{city}, #{country.name_english}"
   end
 
+  scope :past, -> { where('start_date < ?', Date.current - 2.days) }
+  scope :upcoming, -> { where('start_date >= ?', Date.current - 2.days) }
+
   def start_to_end_date
     return '?' if sd.nil? && ed.nil?
-
     return sd.strftime('%a %-d %b %Y') if sd.present? && ed.nil?
-
     return sd.strftime('%a %-d %b %Y') if ed == sd
-
     return "#{sd.strftime('%a %d')} to #{ed.strftime('%a %-d %b %Y')}" if sd.month == ed.month
 
     "#{sd.strftime('%a %-d %b %Y')} to #{ed.strftime('%a %-d %b %Y')}"
