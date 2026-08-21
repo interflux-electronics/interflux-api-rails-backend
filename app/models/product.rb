@@ -73,7 +73,7 @@ class Product < ApplicationRecord
   # has_many :containers, through: :product_containers, source: :container
 
   validates :name, :slug, presence: true
-  validates :status, inclusion: { in: %w[new popular recommended outdated discontinued offline] }
+  validates :status, inclusion: { in: %w[new popular promoted demoted replaced discontinued offline] }
 
   after_save :todo_after_save
 
