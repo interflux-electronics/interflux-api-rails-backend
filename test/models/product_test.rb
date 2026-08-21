@@ -78,7 +78,7 @@ class ProductTest < ActiveSupport::TestCase
     assert_not product.valid?
   end
 
-  test 'valid with 5 statuses' do
+  test 'valid with 6 statuses' do
     product = Product.new(
       name: 'Foo 2000',
       slug: 'Foo-2000',
@@ -89,12 +89,16 @@ class ProductTest < ActiveSupport::TestCase
     assert product.valid?
     product.update(status: 'popular')
     assert product.valid?
-    product.update(status: 'recommended')
+    product.update(status: 'promoted')
     assert product.valid?
-    product.update(status: 'outdated')
+    product.update(status: 'demoted')
+    assert product.valid?
+    product.update(status: 'replaced')
     assert product.valid?
     product.update(status: 'discontinued')
     assert product.valid?
+    product.update(status: 'bogus')
+    assert_not product.valid?
   end
 
   test 'defaults new products to offline' do

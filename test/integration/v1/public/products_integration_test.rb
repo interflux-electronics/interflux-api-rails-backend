@@ -16,8 +16,8 @@ module V1
 
         json = JSON.parse(@response.body)
 
-        # Should return 5 out of 6 products (should filter out public=false)
-        assert_equal 5, json['data'].length
+        # Should return 6 out of 7 products (should filter out public=false)
+        assert_equal 6, json['data'].length
       end
 
       test 'can fetch one by slug' do
@@ -44,7 +44,7 @@ module V1
       end
 
       test 'can include product family' do
-        skip("TODO: improve test")
+        skip('TODO: improve test')
 
         get '/v1/public/products/LMPA-Q6?include=product_family', headers: @header
 
@@ -61,7 +61,7 @@ module V1
       end
 
       test 'can include family and images' do
-        skip("TODO: includes become optional in the payload")
+        skip('TODO: includes become optional in the payload')
 
         # curl "http://localhost:3000/v1/public/products?slug=LMPA-Q6&include=product-family,product-images,product-images.image" -H "Content-Type: application/vnd.api+json"
         get '/v1/public/products?slug=IF-2005M&include=product-family,product-images,product-images.image', headers: @header
